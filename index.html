@@ -58,7 +58,10 @@
             width: 40px; height: 40px; border: 1px solid #CCFF00;
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
-        body:has(a:hover) .cursor-outline, body:has(button:hover) .cursor-outline, body:has(.clickable:hover) .cursor-outline, body:has(input:hover) .cursor-outline {
+        body:has(a:hover) .cursor-outline, 
+        body:has(button:hover) .cursor-outline, 
+        body:has(.clickable:hover) .cursor-outline, 
+        body:has(input:hover) .cursor-outline {
             width: 80px; height: 80px; background-color: rgba(204, 255, 0, 0.1);
             backdrop-filter: invert(1); border-color: transparent;
         }
@@ -117,7 +120,6 @@
         .article-body img { width: 100%; border: 1px solid #CCFF00; filter: grayscale(100%); transition: filter 0.5s ease; }
         .article-body img:hover { filter: grayscale(0%); }
 
-
         /* 表示切り替え用 */
         .hidden-view { display: none !important; }
         
@@ -139,7 +141,7 @@
         </div>
         <nav class="hidden md:flex gap-8 font-mono text-sm">
             <a href="#" onclick="showList()" class="hover:line-through decoration-acid-green clickable">INDEX</a>
-            <a href="#" class="hover:line-through decoration-acid-green clickable">ABOUT</a>
+            <a href="#" onclick="showAbout()" class="hover:line-through decoration-acid-green clickable">ABOUT</a>
         </nav>
     </header>
 
@@ -163,7 +165,7 @@
                         /// TYPE
                     </div>
                 </div>
-                </div>
+            </div>
 
             <div id="no-results" class="hidden text-center py-20">
                  <p class="font-mono text-acid-green text-xl mb-2">>> SYSTEM ERROR: DATA NOT FOUND</p>
@@ -176,7 +178,6 @@
     </div>
 
     <div id="view-detail" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        
         <button onclick="showList()" class="mb-10 font-mono text-xs border border-gray-600 px-4 py-2 hover:bg-acid-green hover:text-black hover:border-acid-green transition-colors uppercase clickable">
             &larr; BACK TO INDEX
         </button>
@@ -204,16 +205,49 @@
                 <h1 id="detail-title" class="text-5xl md:text-7xl font-black tracking-tight mb-12 leading-[1.1]">
                     TITLE GOES HERE
                 </h1>
-                
                 <div id="detail-content" class="article-body text-lg text-gray-300">
                     </div>
-
                 <div class="mt-20 pt-10 border-t border-gray-800 flex justify-between items-center">
                     <span class="font-mono text-gray-500">END OF TRANSMISSION</span>
                     <button onclick="showList()" class="font-mono text-acid-green hover:underline clickable">CLOSE FILE</button>
                 </div>
             </div>
         </article>
+    </div>
+
+    <div id="view-about" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-[12vw] leading-[0.8] font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-800">
+                    WHO<br>AM<br><span class="text-acid-green">I ?</span>
+                </h1>
+            </div>
+            <div class="border border-gray-800 p-8 bg-[#0a0a0a] relative group">
+                <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-acid-green"></div>
+                <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-acid-green"></div>
+
+                <h2 class="text-2xl font-bold mb-6 font-display">AI_GEEK <span class="text-gray-600 text-sm font-mono ml-2">// ADMIN</span></h2>
+                <p class="font-mono text-gray-400 mb-6 leading-relaxed">
+                    AI技術とデザインの境界線を探求するエンジニア。<br>
+                    最新のLLMニュースや、実験的なコードをこの "ログ" に記録しています。
+                    <br><br>
+                    <span class="text-acid-green">>> CURRENT STATUS:</span> BUILDING NEW AGENTS.
+                </p>
+                <div class="mb-8">
+                    <p class="font-mono text-xs text-gray-500 mb-2">SKILL_SET</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">PYTHON</span>
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">JAVASCRIPT</span>
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">LLM INTEGRATION</span>
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">UI DESIGN</span>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">TWITTER (X)</a>
+                    <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">GITHUB</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="border-t border-gray-800 bg-black pt-20 pb-6 px-6 mt-20">
@@ -233,7 +267,7 @@
                 title: "Claude Codeについて",
                 category: "AI AGENT",
                 date: "2026.02.17",
-                type: "normal",
+                type: "big",
                 summary: "Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。",
                 body: `
                     <p>Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。</p>
@@ -254,25 +288,51 @@
                 `
             },
             {
-                id: 2,                      
-                title: "ここにタイトル",      
-                category: "AI NEWS",        
-                date: "2026.02.18",         
-                type: "tall",             
-                summary: "一覧画面に表示される短い説明文です。", 
+                id: 2,
+                title: "今日のニュース",
+                category: "AI News",
+                date: "2026.02.18",
+                type: "normal",
+                summary: "ByteDanceから出されているSeedreamとSeedanceにとても期待しています。",
                 body: `
-                    <p>ここから本文です。</p>
-                    <h2>見出しも使えます</h2>
-                    <p>文章は p タグで囲んでください。</p>
-                    <blockquote>引用はこう書きます</blockquote>
+                    <p>ByteDanceから出されているSeedreamとSeedanceにとても期待しています。</p>
+                    <h2>動画生成の民主化</h2>
+                    <p>これまで高価なGPUが必要だった動画生成が、より手軽に、かつ高品質に行える時代が来ました。</p>
+                    <p>特にキャラクターの一貫性（Consistency）を保ったままアニメーションさせる技術は、クリエイターにとって革命的です。</p>
                 `
             },
             {
                 id: 3,
+                title: "CSS is Art",
+                category: "CODE",
+                date: "2026.02.15",
+                type: "tall",
+                summary: "Exploration of generative art using only CSS gradients and blend modes.",
+                body: `
+                    <p>You don't always need WebGL or Canvas to create art. CSS has evolved.</p>
+                    <p>By layering <code>mix-blend-mode: difference</code> and complex gradients, we can create organic, shifting textures that feel alive.</p>
+                `
+            }, 
+            {
+                id: 4,                      
+                title: "Neo-Brutalism Guide",      
+                category: "DESIGN",        
+                date: "2026.02.18",         
+                type: "normal",             
+                summary: "Why clean interfaces are becoming invisible, and how chaos is the new order.", 
+                body: `
+                    <p>For the last decade, we have been obsessed with "clean". White space, sans-serif fonts, flat colors. But clean has become sterile.</p>
+                    <h2>Enter Neo-Brutalism</h2>
+                    <p>We are seeing a resurgence of raw, unpolished aesthetics. It's not about being ugly; it's about being <strong>honest</strong>.</p>
+                    <p>Borders are thick. Colors are clashing. Typography is aggressive. This is the new language of the web.</p>
+                `
+            },
+            {
+                id: 5,
                 title: "画像表示のテスト",
                 category: "TEST",
                 date: "2026.02.19",
-                type: "big",
+                type: "normal",
                 summary: "記事内に画像を挿入するテストです。",
                 body: `
                     <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
@@ -294,6 +354,8 @@
 
         const viewList = document.getElementById('view-list');
         const viewDetail = document.getElementById('view-detail');
+        const viewAbout = document.getElementById('view-about');
+        
         const blogGrid = document.getElementById('blog-grid');
         const searchInput = document.getElementById('search-input');
         const noResultsMsg = document.getElementById('no-results');
@@ -304,10 +366,9 @@
         const detailDate = document.getElementById('detail-date');
         const detailContent = document.getElementById('detail-content');
 
-        // グリッド描画関数（引数で表示する記事リストを受け取る）
+        // グリッド描画関数
         function renderPosts(articles) {
             blogGrid.innerHTML = '';
-
             if (articles.length === 0) {
                 noResultsMsg.classList.remove('hidden');
                 return;
@@ -345,22 +406,20 @@
 
         // 初期化処理
         function init() {
-            // まずID順（新しい順）に並べ替える
+            // ID順（新しい順）に並べ替える
             posts.sort((a, b) => b.id - a.id);
             
             // 全記事を描画
             renderPosts(posts);
 
-            // 検索ボックスのイベントリスナー
+            // 検索イベントリスナー
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                
                 const filtered = posts.filter(post => {
                     return post.title.toLowerCase().includes(term) || 
                            post.category.toLowerCase().includes(term) ||
                            post.summary.toLowerCase().includes(term);
                 });
-
                 renderPosts(filtered);
             });
         }
@@ -376,14 +435,16 @@
             detailDate.innerText = post.date;
             detailContent.innerHTML = post.body;
 
-            // 画面切り替えアニメーション
+            // 画面切り替え
             viewList.style.opacity = '0';
+            viewAbout.style.opacity = '0'; // Aboutも隠す
+            
             setTimeout(() => {
                 viewList.classList.add('hidden-view');
+                viewAbout.classList.add('hidden-view');
                 viewDetail.classList.remove('hidden-view');
                 window.scrollTo(0, 0);
                 
-                // フェードイン
                 viewDetail.style.opacity = '0';
                 requestAnimationFrame(() => {
                     viewDetail.style.transition = 'opacity 0.5s';
@@ -392,14 +453,35 @@
             }, 500);
         };
 
-        // リストに戻る
+        // ABOUTページを表示
+        window.showAbout = function() {
+            viewList.style.opacity = '0';
+            viewDetail.style.opacity = '0';
+
+            setTimeout(() => {
+                viewList.classList.add('hidden-view');
+                viewDetail.classList.add('hidden-view');
+                viewAbout.classList.remove('hidden-view');
+                window.scrollTo(0, 0);
+                
+                viewAbout.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    viewAbout.style.transition = 'opacity 0.5s';
+                    viewAbout.style.opacity = '1';
+                });
+            }, 500);
+        };
+
+        // リスト（TOP）に戻る
         window.showList = function() {
             viewDetail.style.opacity = '0';
+            viewAbout.style.opacity = '0';
+
             setTimeout(() => {
                 viewDetail.classList.add('hidden-view');
+                viewAbout.classList.add('hidden-view');
                 viewList.classList.remove('hidden-view');
                 
-                // フェードイン
                 viewList.style.opacity = '1';
             }, 500);
         };

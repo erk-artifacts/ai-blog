@@ -318,7 +318,11 @@
         // 初期化：リスト描画
         function init() {
             blogGrid.innerHTML = '';
-            posts.forEach(post => {
+            
+            // ▼▼▼ ここでソート（ID降順）を実行しています ▼▼▼
+            posts
+            .sort((a, b) => b.id - a.id) // IDが大きい順（新しい順）に並べ替え
+            .forEach(post => {
                 let colClass = "lg:col-span-4";
                 let heightClass = "h-[400px]";
                 

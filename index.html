@@ -135,15 +135,37 @@
     <div class="cursor-outline" id="cursor-outline"></div>
     <div id="reading-progress"></div>
 
-    <header class="fixed top-0 w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center">
+    <header class="fixed top-0 w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center bg-transparent backdrop-blur-[2px]">
         <div onclick="showList()" class="text-2xl font-black tracking-tighter hover:text-acid-green transition-colors cursor-pointer clickable">
             AI_GEEK<span class="text-acid-green">.</span>
         </div>
+        
         <nav class="hidden md:flex gap-8 font-mono text-sm">
-            <a href="#" onclick="showList()" class="hover:line-through decoration-acid-green clickable">INDEX</a>
+            <a href="#" onclick="showList()" class="hover:line-through decoration-acid-green clickable">HOME</a>
             <a href="#" onclick="showAbout()" class="hover:line-through decoration-acid-green clickable">ABOUT</a>
         </nav>
+
+        <button id="mobile-menu-btn" class="md:hidden font-mono text-xs border border-acid-green text-acid-green px-2 py-1 hover:bg-acid-green hover:text-black transition-colors clickable">
+            // MENU
+        </button>
     </header>
+
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-[#050505] z-[100] transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-12 md:hidden">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 font-mono text-xl text-acid-green clickable">
+            [X]
+        </button>
+        
+        <a href="#" onclick="showList(); closeMobileMenu()" class="text-6xl font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none">
+            HOME
+        </a>
+        <a href="#" onclick="showAbout(); closeMobileMenu()" class="text-6xl font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none">
+            ABOUT
+        </a>
+        
+        <div class="absolute bottom-10 font-mono text-xs text-gray-500">
+            /// SYSTEM NAVIGATION
+        </div>
+    </div>
 
     <div id="view-list" class="transition-opacity duration-500">
         <section class="h-[60vh] w-full flex flex-col justify-center items-center relative pt-20">
@@ -217,33 +239,34 @@
 
     <div id="view-about" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h1 class="text-[12vw] leading-[0.8] font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-800">
+            <div class="relative z-0">
+                <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-800">
                     WHO<br>AM<br><span class="text-acid-green">I ?</span>
                 </h1>
             </div>
-            <div class="border border-gray-800 p-8 bg-[#0a0a0a] relative group">
+            <div class="border border-gray-800 p-8 bg-[#0a0a0a] relative group z-10 shadow-2xl">
                 <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-acid-green"></div>
                 <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-acid-green"></div>
 
-                <h2 class="text-2xl font-bold mb-6 font-display">AI_GEEK <span class="text-gray-600 text-sm font-mono ml-2">// ADMIN</span></h2>
+                <h2 class="text-2xl font-bold mb-6 font-display">AI_ERIKA <span class="text-gray-600 text-sm font-mono ml-2">// ADMIN</span></h2>
                 <p class="font-mono text-gray-400 mb-6 leading-relaxed">
-                    AI技術とデザインの境界線を探求するエンジニア。<br>
-                    最新のLLMニュースや、実験的なコードをこの "ログ" に記録しています。
+                    AI技術と最新ツールを探求するスペシャリスト。<br>
+                    最新のAI関連ニュースや、探求した実験的なコードをこの "ログ" に記録しています。
                     <br><br>
                     <span class="text-acid-green">>> CURRENT STATUS:</span> BUILDING NEW AGENTS.
                 </p>
                 <div class="mb-8">
                     <p class="font-mono text-xs text-gray-500 mb-2">SKILL_SET</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">PYTHON</span>
-                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">JAVASCRIPT</span>
-                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">LLM INTEGRATION</span>
-                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">UI DESIGN</span>
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">CLAUDE CODE</span>
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">ANTIGRAVITY</span>
+                        <span class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">AI VIDEO GENERATION</span>
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">TWITTER (X)</a>
+                    <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">INSTAGRAM</a>
+                    <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">FACEBOOK</a>
+                    <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">X</a>
                     <a href="#" class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">GITHUB</a>
                 </div>
             </div>
@@ -267,7 +290,7 @@
                 title: "Claude Codeについて",
                 category: "AI AGENT",
                 date: "2026.02.17",
-                type: "big",
+                type: "normal",
                 summary: "Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。",
                 body: `
                     <p>Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。</p>
@@ -292,7 +315,7 @@
                 title: "今日のニュース",
                 category: "AI News",
                 date: "2026.02.18",
-                type: "normal",
+                type: "tall",
                 summary: "ByteDanceから出されているSeedreamとSeedanceにとても期待しています。",
                 body: `
                     <p>ByteDanceから出されているSeedreamとSeedanceにとても期待しています。</p>
@@ -303,36 +326,10 @@
             },
             {
                 id: 3,
-                title: "CSS is Art",
-                category: "CODE",
-                date: "2026.02.15",
-                type: "tall",
-                summary: "Exploration of generative art using only CSS gradients and blend modes.",
-                body: `
-                    <p>You don't always need WebGL or Canvas to create art. CSS has evolved.</p>
-                    <p>By layering <code>mix-blend-mode: difference</code> and complex gradients, we can create organic, shifting textures that feel alive.</p>
-                `
-            }, 
-            {
-                id: 4,                      
-                title: "Neo-Brutalism Guide",      
-                category: "DESIGN",        
-                date: "2026.02.18",         
-                type: "normal",             
-                summary: "Why clean interfaces are becoming invisible, and how chaos is the new order.", 
-                body: `
-                    <p>For the last decade, we have been obsessed with "clean". White space, sans-serif fonts, flat colors. But clean has become sterile.</p>
-                    <h2>Enter Neo-Brutalism</h2>
-                    <p>We are seeing a resurgence of raw, unpolished aesthetics. It's not about being ugly; it's about being <strong>honest</strong>.</p>
-                    <p>Borders are thick. Colors are clashing. Typography is aggressive. This is the new language of the web.</p>
-                `
-            },
-            {
-                id: 5,
                 title: "画像表示のテスト",
                 category: "TEST",
                 date: "2026.02.19",
-                type: "normal",
+                type: "big",
                 summary: "記事内に画像を挿入するテストです。",
                 body: `
                     <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
@@ -365,6 +362,11 @@
         const detailCategory = document.getElementById('detail-category');
         const detailDate = document.getElementById('detail-date');
         const detailContent = document.getElementById('detail-content');
+
+        // スマホメニュー要素
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
 
         // グリッド描画関数
         function renderPosts(articles) {
@@ -422,22 +424,34 @@
                 });
                 renderPosts(filtered);
             });
+
+            // スマホメニュー開閉ロジック
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+            });
+
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
         }
+
+        // スマホメニューを閉じる
+        function closeMobileMenu() {
+            mobileMenuOverlay.classList.add('translate-x-full');
+        }
+        // グローバルにアクセスできるようにwindowに紐付け
+        window.closeMobileMenu = closeMobileMenu;
 
         // 詳細ページを表示
         window.showDetail = function(id) {
             const post = posts.find(p => p.id === id);
             if (!post) return;
 
-            // データ注入
             detailTitle.innerText = post.title;
             detailCategory.innerText = post.category;
             detailDate.innerText = post.date;
             detailContent.innerHTML = post.body;
 
-            // 画面切り替え
             viewList.style.opacity = '0';
-            viewAbout.style.opacity = '0'; // Aboutも隠す
+            viewAbout.style.opacity = '0'; 
             
             setTimeout(() => {
                 viewList.classList.add('hidden-view');

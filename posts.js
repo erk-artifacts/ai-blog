@@ -4,6 +4,7 @@ const posts = [
         title: "記事の書き方",
         category: "NEW",
         date: "2026.02.19",
+        thumbnail: "",
         summary: "HTMLタグのテキスト要素について",
         body: `
         <h1>メインタイトル</h1>

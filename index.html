@@ -282,92 +282,9 @@
         </div>
     </footer>
 
+    <script src="./posts.js"></script>
+
     <script>
-        // ================= データ管理エリア =================
-        const posts = [
-            {
-                id: 1,
-                title: "Claude Codeについて",
-                category: "AI AGENT",
-                date: "2026.02.17",
-                type: "normal",
-                summary: "Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。",
-                body: `
-                    <p>Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。</p>
-                    <p>これまでのAIコーディングツールと一線を画すのは、その<strong>「自律性」</strong>の高さです。単にコードを補完するだけでなく、ターミナルでコマンドを実行し、エラーが出れば自分で修正し、Gitのコミットまでやってのけます。</p>
-                    
-                    <h2>なぜ「最強」なのか</h2>
-                    <ul>
-                        <li>文脈理解力が圧倒的に高い（Claude 3.7 Sonnetを使用）</li>
-                        <li>開発環境のファイル構造を深く理解する</li>
-                        <li>指示待ちではなく、提案型の動きをする</li>
-                    </ul>
-
-                    <blockquote>
-                        "It's not just a tool, it's a partner."
-                    </blockquote>
-
-                    <p>これからもこのブログ自体の開発をClaude Codeと共に進めていく予定です。次に実装したいのは、WebGLを使った3D背景です。</p>
-                `
-            },
-            {
-                id: 2,
-                title: "今日のニュース",
-                category: "AI News",
-                date: "2026.02.18",
-                type: "normal",
-                summary: "ByteDanceから出されているSeedreamとSeedanceにとても期待しています。",
-                body: `
-                    <p>ByteDanceから出されているSeedreamとSeedanceにとても期待しています。</p>
-                    <h2>動画生成の民主化</h2>
-                    <p>これまで高価なGPUが必要だった動画生成が、より手軽に、かつ高品質に行える時代が来ました。</p>
-                    <p>特にキャラクターの一貫性（Consistency）を保ったままアニメーションさせる技術は、クリエイターにとって革命的です。</p>
-                `
-            },
-            {
-                id: 3,
-                title: "画像表示のテスト",
-                category: "TEST",
-                date: "2026.02.19",
-                type: "tall",
-                summary: "記事内に画像を挿入するテストです。",
-                body: `
-                    <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
-                    
-                    <figure>
-                        <img 
-                            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" 
-                            alt="Cyberpunk City" 
-                        >
-                        <figcaption>/// FIG.01 - CYBER_RENDER_TEST</figcaption>
-                    </figure>
-
-                    <p>画像の下に本文が続きます。画像のURLを自分の好きなものに書き換えてください。</p>
-                `
-            },
-            {
-                id: 4,
-                title: "GitHub",
-                category: "Images test",
-                date: "2026.02.18",
-                type: "big",
-                summary: "記事内に画像を挿入するテストです。",
-                body: `
-                    <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
-                    
-                    <figure>
-                        <img 
-                            src="./images/article01.jpg" 
-                            alt="GitHub infographic"
-                        >
-                        <figcaption>/// FIG.01 - CYBER_RENDER_TEST</figcaption>
-                    </figure>
-
-                    <p>画像の下に本文が続きます。画像のURLを自分の好きなものに書き換えてください。</p>
-                `
-            }
-        ];
-
         // ================= アプリケーションロジック =================
 
         const viewList = document.getElementById('view-list');
@@ -403,6 +320,7 @@
                 let colClass = "lg:col-span-4";
                 let heightClass = "h-[400px]";
                 
+                // init関数内で割り振られた type プロパティに基づいてクラスを決定
                 if (post.type === 'big') { colClass = "lg:col-span-8"; heightClass = "h-[450px]"; }
                 else if (post.type === 'tall') { colClass = "lg:col-span-4 row-span-2"; heightClass = "h-[auto] min-h-[500px]"; }
 
@@ -429,8 +347,26 @@
 
         // 初期化処理
         function init() {
-            // ID順（新しい順）に並べ替える
-            posts.sort((a, b) => b.id - a.id);
+            // posts変数は posts.js から読み込まれています
+
+            // 1. 日付順（新しい順）に並べ替える
+            posts.sort((a, b) => {
+                return b.date.localeCompare(a.date);
+            });
+
+            // 2. IDとレイアウトタイプ（big/tall/normal）を自動割り当て
+            posts.forEach((post, index) => {
+                post.id = index; // クリック判定用のID
+
+                // 最新＝big、2番目＝tall、それ以外＝normal
+                if (index === 0) {
+                    post.type = 'big';
+                } else if (index === 1) {
+                    post.type = 'tall';
+                } else {
+                    post.type = 'normal';
+                }
+            });
             
             // 全記事を描画
             renderPosts(posts);

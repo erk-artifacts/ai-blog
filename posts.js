@@ -7,41 +7,21 @@ const posts = [
         thumbnail: "",
         summary: "HTMLタグのテキスト要素について説明しています。まずはこちらを確認してください。",
         body: `
-        <h1>メインタイトル</h1>
-        <p>テキスト</p>
-        <strong>重要</strong><br>
-        <em>強調</em>
+        <h1>h1タグを使っています</h1>
+        <p>pタグを使っています</p>
+        <strong>strongタグを使っています</strong>
+        <em>emタグを使って強調しています</em>
         <hr>
-        <blockquote>引用文</blockquote>
-        <code>var x = 10;</code>
-        <pre>コード ブロック</pre>
-        `
-    },
-    {
-        title: "画像表示のテスト",
-        category: "TEST",
-        date: "2026.02.19",
-        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
-        summary: "記事内に画像を挿入するテストです。",
-        body: `
-            <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
-            
-            <figure>
-                <img 
-                    src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" 
-                    alt="Cyberpunk City" 
-                >
-                <figcaption>/// FIG.01 - CYBER_RENDER_TEST</figcaption>
-            </figure>
-
-            <p>画像の下に本文が続きます。画像のURLを自分の好きなものに書き換えてください。</p>
+        <blockquote>blockwuoteタグを使っています</blockquote>
+        <code>codeタグを使っています</code>
+        <pre>preタグを使っています</pre>
         `
     },
     {
         title: "GitHub",
         category: "Images test",
         date: "2026.02.18",
-        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
+        thumbnail: "./images/article01.jpg",
         summary: "記事内に画像を挿入するテストです。",
         body: `
             <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
@@ -55,19 +35,6 @@ const posts = [
             </figure>
 
             <p>画像の下に本文が続きます。画像のURLを自分の好きなものに書き換えてください。</p>
-        `
-    },
-    {
-        title: "今日のニュース",
-        category: "AI News",
-        date: "2026.02.18",
-        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
-        summary: "ByteDanceから出されているSeedreamとSeedanceにとても期待しています。",
-        body: `
-            <p>ByteDanceから出されているSeedreamとSeedanceにとても期待しています。</p>
-            <h2>動画生成の民主化</h2>
-            <p>これまで高価なGPUが必要だった動画生成が、より手軽に、かつ高品質に行える時代が来ました。</p>
-            <p>特にキャラクターの一貫性（Consistency）を保ったままアニメーションさせる技術は、クリエイターにとって革命的です。</p>
         `
     },
     {

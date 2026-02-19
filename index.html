@@ -83,11 +83,13 @@
             position: relative; overflow: hidden;
             display: flex; flex-direction: column; justify-content: space-between;
         }
+        /* サムネイルがある場合は背景色のアニメーションを少し控えめにする */
         .brutalist-card::before {
             content: ''; position: absolute; top: 0; left: 0;
             width: 100%; height: 100%; background: #CCFF00;
             transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
             z-index: 0;
+            opacity: 0.1; /* 画像があるときは少し薄くして画像を見やすくする */
         }
         .brutalist-card:hover {
             border-color: #CCFF00; transform: translateY(-5px);
@@ -95,9 +97,16 @@
         }
         .brutalist-card:hover::before { transform: translateY(0); }
         .brutalist-card:hover * {
-            color: #050505 !important; position: relative; z-index: 1;
+            position: relative; z-index: 10;
         }
-        .brutalist-card:hover .meta-tag { border-color: #050505; }
+        /* ホバー時のテキスト色制御 */
+        .brutalist-card:hover h3, 
+        .brutalist-card:hover p, 
+        .brutalist-card:hover span {
+            color: #fff !important; /* 画像の上なので白文字を維持 */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* 読みやすさ確保 */
+        }
+        .brutalist-card:hover .meta-tag { border-color: #CCFF00; color: #CCFF00 !important; background: rgba(0,0,0,0.8); }
 
         /* 記事本文のスタイル */
         .article-body h2 {
@@ -324,20 +333,43 @@
                 if (post.type === 'big') { colClass = "lg:col-span-8"; heightClass = "h-[450px]"; }
                 else if (post.type === 'tall') { colClass = "lg:col-span-4 row-span-2"; heightClass = "h-[auto] min-h-[500px]"; }
 
+                // ★サムネイル画像のHTML生成（背景画像として処理）
+                // - opacity-50: 画像を暗くする
+                // - grayscale: 彩度を落とす
+                // - hover時にカラーになり、少し拡大する
+                const imageHTML = post.thumbnail ? `
+                    <div class="absolute inset-0 z-0 overflow-hidden">
+                        <img src="${post.thumbnail}" 
+                             class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out"
+                             alt="${post.title}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
+                    </div>
+                ` : '';
+
                 const articleHTML = `
-                    <article onclick="showDetail(${post.id})" class="clickable group brutalist-card ${colClass} ${heightClass} p-8 bg-[#0a0a0a] cursor-pointer">
-                        <div class="flex justify-between items-start w-full mb-6">
-                            <span class="font-mono text-xs border border-gray-600 px-2 py-1 rounded-full meta-tag group-hover:border-black transition-colors">${post.category}</span>
-                            <span class="font-mono text-xs text-gray-500 group-hover:text-black transition-colors">${post.date}</span>
-                        </div>
-                        <div class="flex flex-col justify-end h-full">
-                            <h3 class="text-3xl md:text-4xl font-bold mb-4 leading-tight group-hover:translate-x-2 transition-transform duration-500">
-                                ${post.title}
-                            </h3>
-                            <div class="w-full h-[1px] bg-gray-800 my-4 group-hover:bg-black transition-colors"></div>
-                            <p class="font-mono text-sm text-gray-400 max-w-md group-hover:text-black transition-colors">
-                                ${post.summary}
-                            </p>
+                    <article onclick="showDetail(${post.id})" class="clickable group brutalist-card ${colClass} ${heightClass} relative bg-[#0a0a0a] cursor-pointer overflow-hidden border border-[#333]">
+                        
+                        ${imageHTML}
+
+                        <div class="relative z-10 flex flex-col justify-between h-full p-8">
+                            <div class="flex justify-between items-start w-full mb-6">
+                                <span class="font-mono text-xs border border-gray-600 px-2 py-1 rounded-full meta-tag bg-black/50 backdrop-blur-sm group-hover:border-acid-green group-hover:text-acid-green transition-colors">
+                                    ${post.category}
+                                </span>
+                                <span class="font-mono text-xs text-gray-400 group-hover:text-white transition-colors drop-shadow-md">
+                                    ${post.date}
+                                </span>
+                            </div>
+                            
+                            <div class="flex flex-col justify-end">
+                                <h3 class="text-3xl md:text-4xl font-bold mb-4 leading-tight drop-shadow-lg group-hover:translate-x-2 transition-transform duration-500">
+                                    ${post.title}
+                                </h3>
+                                <div class="w-full h-[1px] bg-gray-800 my-4 group-hover:bg-acid-green transition-colors"></div>
+                                <p class="font-mono text-sm text-gray-400 max-w-md line-clamp-2 drop-shadow-md group-hover:text-white transition-colors">
+                                    ${post.summary}
+                                </p>
+                            </div>
                         </div>
                     </article>
                 `;

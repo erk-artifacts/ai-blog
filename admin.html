@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI_GEEK // POST_GENERATOR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: #F0F0F0; font-family: 'JetBrains Mono', monospace; }
+        input, textarea { background: #111; border: 1px solid #333; color: #ccff00; width: 100%; padding: 10px; margin-top: 5px; font-family: 'JetBrains Mono', monospace; }
+        input:focus, textarea:focus { outline: none; border-color: #ccff00; }
+        .label { color: #888; font-size: 0.8rem; margin-top: 15px; display: block; }
+        button { background: #ccff00; color: black; font-weight: bold; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px; }
+        button:hover { opacity: 0.8; }
+        #output { background: #000; border: 1px solid #ccff00; color: #ccc; padding: 20px; margin-top: 20px; white-space: pre-wrap; font-size: 0.9rem; }
+    </style>
+</head>
+<body class="p-8 max-w-4xl mx-auto">
+
+    <h1 class="text-2xl font-bold mb-8 text-acid-green">>> POST_DATA_GENERATOR</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <label class="label">TITLE</label>
+            <input type="text" id="title" placeholder="記事のタイトル">
+
+            <label class="label">CATEGORY</label>
+            <input type="text" id="category" placeholder="AI NEWS, DEV LOG...">
+
+            <label class="label">DATE (YYYY.MM.DD)</label>
+            <input type="text" id="date" value="2026.">
+
+            <label class="label">THUMBNAIL URL (Optional)</label>
+            <input type="text" id="thumbnail" placeholder="https://...">
+            <p class="text-xs text-gray-500 mt-1">※画像がない場合は空欄でOK</p>
+
+            <label class="label">SUMMARY (一覧用)</label>
+            <textarea id="summary" rows="3" placeholder="短い要約..."></textarea>
+        </div>
+        
+        <div>
+            <label class="label">BODY (HTML対応)</label>
+            <textarea id="body" rows="12" placeholder="<p>本文はここに入力...</p>"></textarea>
+            <div class="text-xs text-gray-500 mt-2">
+                TAGS: &lt;p&gt;, &lt;h2&gt;, &lt;ul&gt;&lt;li&gt;, &lt;blockquote&gt;, &lt;figure&gt;
+            </div>
+        </div>
+    </div>
+
+    <button onclick="generateCode()">Generate Code</button>
+
+    <div class="mt-8">
+        <p class="text-sm text-gray-500 mb-2">/// COPY THIS CODE & PASTE INTO posts.js</p>
+        <div id="output" onclick="copyToClipboard()">（ここに生成されたコードが表示されます）</div>
+        <p id="copy-msg" class="text-acid-green text-xs mt-2 hidden">COPIED TO CLIPBOARD!</p>
+    </div>
+
+    <script>
+        // 今日の日付をセット
+        const today = new Date();
+        const y = today.getFullYear();
+        const m = String(today.getMonth() + 1).padStart(2, '0');
+        const d = String(today.getDate()).padStart(2, '0');
+        document.getElementById('date').value = `${y}.${m}.${d}`;
+
+        function generateCode() {
+            const title = document.getElementById('title').value;
+            const category = document.getElementById('category').value;
+            const date = document.getElementById('date').value;
+            const thumbnail = document.getElementById('thumbnail').value; // サムネイル取得
+            const summary = document.getElementById('summary').value;
+            let body = document.getElementById('body').value;
+
+            // 改行をHTML上で見やすくインデントするための処理（簡易）
+            // バックティック文字だけエスケープ
+            body = body.replace(/`/g, "\\`");
+
+            const code = `{
+        title: "${title}",
+        category: "${category}",
+        date: "${date}",
+        thumbnail: "${thumbnail}",
+        summary: "${summary}",
+        body: \`
+${body}
+        \`
+    },`;
+
+            document.getElementById('output').innerText = code;
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById('output').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const msg = document.getElementById('copy-msg');
+                msg.classList.remove('hidden');
+                setTimeout(() => msg.classList.add('hidden'), 2000);
+            });
+        }
+    </script>
+</body>
+</html>

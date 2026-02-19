@@ -1,6 +1,22 @@
 // 記事データを管理するファイル
 const posts = [
     {
+        title: "記事の書き方",
+        category: "NEW",
+        date: "2026.02.19",
+        summary: "HTMLタグのテキスト要素について",
+        body: `
+        <h1>メインタイトル</h1>
+        <p>テキスト</p>
+        <strong>重要</strong><br>
+        <em>強調</em>
+        <hr>
+        <blockquote>引用文</blockquote>
+        <code>var x = 10;</code>
+        <pre>コード ブロック</pre>
+        `
+    },
+    {
         title: "画像表示のテスト",
         category: "TEST",
         date: "2026.02.19",

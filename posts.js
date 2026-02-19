@@ -4,6 +4,7 @@ const posts = [
         title: "画像表示のテスト",
         category: "TEST",
         date: "2026.02.19",
+        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
         summary: "記事内に画像を挿入するテストです。",
         body: `
             <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>

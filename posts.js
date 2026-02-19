@@ -5,7 +5,7 @@ const posts = [
         category: "NEW",
         date: "2026.02.19",
         thumbnail: "",
-        summary: "HTMLタグのテキスト要素について",
+        summary: "HTMLタグのテキスト要素について説明しています。まずはこちらを確認してください。",
         body: `
         <h1>メインタイトル</h1>
         <p>テキスト</p>

@@ -24,6 +24,7 @@ const posts = [
         title: "GitHub",
         category: "Images test",
         date: "2026.02.18",
+        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
         summary: "記事内に画像を挿入するテストです。",
         body: `
             <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
@@ -43,6 +44,7 @@ const posts = [
         title: "今日のニュース",
         category: "AI News",
         date: "2026.02.18",
+        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
         summary: "ByteDanceから出されているSeedreamとSeedanceにとても期待しています。",
         body: `
             <p>ByteDanceから出されているSeedreamとSeedanceにとても期待しています。</p>
@@ -55,6 +57,7 @@ const posts = [
         title: "Claude Codeについて",
         category: "AI AGENT",
         date: "2026.02.17",
+        thumbnail: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
         summary: "Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。",
         body: `
             <p>Claude Codeは、現時点で最強のAIエージェントです。私にとって最高のおもちゃになりました。</p>

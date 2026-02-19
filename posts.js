@@ -2,28 +2,27 @@
 const posts = [
     {
         title: "記事の書き方",
-        category: "NEW",
+        category: "HTML",
         date: "2026.02.19",
         thumbnail: "",
         summary: "HTMLタグのテキスト要素について説明しています。まずはこちらを確認してください。",
         body: `
-        <h1>h1タグを使っています</h1>
+        <h2>h2タグを使っています</h2>
         <p>pタグを使っています</p>
         <strong>strongタグを使っています</strong>
         <em>emタグを使って強調しています</em>
         <hr>
         <blockquote>blockwuoteタグを使っています</blockquote>
-        <code>codeタグを使っています</code>
-        <pre>preタグを使っています</pre>
         `
     },
     {
         title: "GitHub",
-        category: "Images test",
+        category: "GitHub",
         date: "2026.02.18",
-        thumbnail: "./images/article01.jpg",
+        thumbnail: "",
         summary: "記事内に画像を挿入するテストです。",
         body: `
+            <h2>h2タグを使っています</h2>
             <p>記事の中に画像を挿入するテストです。白黒フィルターがかかり、ホバーするとカラーになるエフェクトを適用しています。</p>
             
             <figure>
@@ -34,7 +33,7 @@ const posts = [
                 <figcaption>/// FIG.01 - CYBER_RENDER_TEST</figcaption>
             </figure>
 
-            <p>画像の下に本文が続きます。画像のURLを自分の好きなものに書き換えてください。</p>
+            <p>画像の下に本文が続きます。</p>
         `
     },
     {

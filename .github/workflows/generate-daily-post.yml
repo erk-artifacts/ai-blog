@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: .github/scripts
-        run: npm ci
+        run: npm install
 
       - name: Generate news post
         working-directory: .github/scripts

@@ -22,7 +22,9 @@ async function fetchAllFeeds() {
   const results = await Promise.allSettled(
     feedsConfig.feeds.map(async (feed) => {
       try {
+        console.log(`  Fetching ${feed.name}...`);
         const data = await parser.parseURL(feed.url);
+        console.log(`  ${feed.name}: ${data.items.length} items`);
         return data.items.map((item) => ({
           title: item.title || '',
           link: item.link || '',
@@ -31,7 +33,7 @@ async function fetchAllFeeds() {
           pubDate: item.isoDate || item.pubDate || '',
         }));
       } catch (err) {
-        console.warn(`Warning: Failed to fetch ${feed.name}: ${err.message}`);
+        console.warn(`  Warning: Failed to fetch ${feed.name}: ${err.message}`);
         return [];
       }
     })
@@ -41,6 +43,8 @@ async function fetchAllFeeds() {
     .filter((r) => r.status === 'fulfilled')
     .flatMap((r) => r.value)
     .filter((item) => item.title && item.link);
+
+  console.log(`Total items from all feeds: ${items.length}`);
 
   // Filter to last 24 hours, expand to 48h if too few
   const now = Date.now();
@@ -68,6 +72,10 @@ async function fetchAllFeeds() {
 // ---------------------------------------------------------------------------
 
 async function generateBlogPost(newsItems) {
+  if (!process.env.ANTHROPIC_API_KEY) {
+    throw new Error('ANTHROPIC_API_KEY environment variable is not set');
+  }
+
   const client = new Anthropic();
 
   const newsList = newsItems
@@ -80,8 +88,10 @@ async function generateBlogPost(newsItems) {
   const today = new Date();
   const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
 
+  console.log(`Calling Claude API (claude-haiku-4-5-20251001)...`);
+
   const response = await client.messages.create({
-    model: 'claude-haiku-4-5-20250929',
+    model: 'claude-haiku-4-5-20251001',
     max_tokens: 4096,
     system:
       'あなたは日本語テックブロガーです。AI初心者にもわかりやすく、読みやすい記事を書きます。出力は必ず指定されたJSON形式のみで返してください。マークダウンのコードブロックで囲まないでください。',
@@ -110,6 +120,8 @@ ${newsList}`,
     ],
   });
 
+  console.log(`API response received. Usage: ${response.usage.input_tokens} input, ${response.usage.output_tokens} output tokens`);
+
   const text = response.content[0].text.trim();
 
   // Try to parse as JSON, with fallback extraction
@@ -130,6 +142,8 @@ ${newsList}`,
 
 async function updatePostsJs(newPost, repoDir) {
   const postsJsPath = path.join(repoDir, 'posts.js');
+  console.log(`Reading ${postsJsPath}...`);
+
   const original = await fs.readFile(postsJsPath, 'utf-8');
 
   const today = new Date();
@@ -184,7 +198,14 @@ async function updatePostsJs(newPost, repoDir) {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  console.log('Fetching RSS feeds...');
+  console.log('=== AI News Blog Post Generator ===');
+  console.log(`Date: ${new Date().toISOString()}`);
+  console.log(`REPO_DIR: ${process.env.REPO_DIR || '(not set, using ".")'}`);
+  console.log(`DRY_RUN: ${DRY_RUN}`);
+  console.log(`FETCH_ONLY: ${FETCH_ONLY}`);
+  console.log('');
+
+  console.log('Step 1: Fetching RSS feeds...');
   const newsItems = await fetchAllFeeds();
 
   if (newsItems.length === 0) {
@@ -192,10 +213,10 @@ async function main() {
     process.exit(0);
   }
 
-  console.log(`Found ${newsItems.length} news items.`);
+  console.log(`Found ${newsItems.length} news items.\n`);
 
   if (FETCH_ONLY) {
-    console.log('\n--- Fetched News Items ---');
+    console.log('--- Fetched News Items ---');
     newsItems.forEach((item, i) => {
       console.log(`${i + 1}. [${item.source}] ${item.title}`);
       console.log(`   ${item.link}`);
@@ -205,31 +226,38 @@ async function main() {
     process.exit(0);
   }
 
-  console.log('Generating blog post via Claude API...');
+  console.log('Step 2: Generating blog post via Claude API...');
   let blogPost;
   try {
     blogPost = await generateBlogPost(newsItems);
   } catch (err) {
-    // Retry once after 5 seconds
-    console.warn(`First attempt failed: ${err.message}. Retrying in 5s...`);
+    console.warn(`First attempt failed: ${err.message}`);
+    console.warn('Retrying in 5s...');
     await new Promise((r) => setTimeout(r, 5000));
     blogPost = await generateBlogPost(newsItems);
   }
 
-  console.log(`Generated: ${blogPost.title}`);
+  console.log(`Generated: ${blogPost.title}\n`);
 
   if (DRY_RUN) {
-    console.log('\n--- DRY RUN (no file changes) ---');
+    console.log('--- DRY RUN (no file changes) ---');
     console.log(JSON.stringify(blogPost, null, 2));
     process.exit(0);
   }
 
+  console.log('Step 3: Updating posts.js...');
   const repoDir = process.env.REPO_DIR || '.';
   await updatePostsJs(blogPost, repoDir);
-  console.log('Done!');
+  console.log('\nDone!');
 }
 
 main().catch((err) => {
-  console.error('Fatal error:', err.message);
+  console.error('');
+  console.error('========== FATAL ERROR ==========');
+  console.error(`Message: ${err.message}`);
+  if (err.status) console.error(`Status: ${err.status}`);
+  if (err.error) console.error(`Error detail: ${JSON.stringify(err.error)}`);
+  console.error(`Stack: ${err.stack}`);
+  console.error('=================================');
   process.exit(1);
 });

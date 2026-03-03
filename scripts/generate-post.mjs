@@ -266,14 +266,19 @@ const SUPPORTED_LANGUAGES = {
   ko: { deepl: 'KO', name: '한국어' }
 };
 
-// Abstracted translation function
+// Abstracted translation function - DeepL優先、失敗時はClaudeフォールバック
 async function translate(text, targetLang) {
-  if (TRANSLATION_PROVIDER === 'deepl') {
-    return await translateWithDeepL(text, targetLang);
-  } else if (TRANSLATION_PROVIDER === 'claude') {
-    return await translateWithClaude(text, targetLang);
+  // DeepL優先
+  if (process.env.DEEPL_API_KEY) {
+    try {
+      return await translateWithDeepL(text, targetLang);
+    } catch (err) {
+      console.warn(`DeepL translation failed for ${targetLang}: ${err.message}`);
+      console.warn(`Falling back to Claude API...`);
+    }
   }
-  throw new Error(`Unknown translation provider: ${TRANSLATION_PROVIDER}`);
+  // フォールバック: Claude API
+  return await translateWithClaude(text, targetLang);
 }
 
 // DeepL API translation implementation

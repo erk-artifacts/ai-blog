@@ -1,6 +1,14 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：LLMによるプライバシー脅威とOpenAIの防衛契約が話題に",
+    "category": "AI NEWS",
+    "date": "2026.03.03",
+    "thumbnail": "",
+    "summary": "LLM（大規模言語モデル）が匿名ユーザーを大規模に特定できることが判明し、プライバシー問題が浮上。一方、OpenAIはペンタゴンとの契約を発表し、AI活用領域が拡大している。",
+    "slug": "2026-03-03-3"
+  },
+  {
     "title": "今日のAI最前線：LLMの匿名ユーザー特定技術と生成AI時代の新課題",
     "category": "AI NEWS",
     "date": "2026.03.03",

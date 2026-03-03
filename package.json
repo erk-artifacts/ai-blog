@@ -1,0 +1,16 @@
+{
+  "name": "gennews-post",
+  "version": "1.0.0",
+  "description": "AI news blog post generator for GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-post.mjs",
+    "test:fetch": "node scripts/generate-post.mjs --fetch-only",
+    "test:dry": "node scripts/generate-post.mjs --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.61.0",
+    "canvas": "^3.2.1",
+    "rss-parser": "^3.13.0"
+  }
+}

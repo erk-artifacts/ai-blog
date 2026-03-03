@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8W7KJQHE6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-V8W7KJQHE6');
+    </script>
+    <title>AI_GEEK - AI Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        'acid-green': '#CCFF00',
+                        'deep-black': '#050505',
+                        'off-white': '#F0F0F0',
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #F0F0F0;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* ノイズ & カーソル */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.07;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #CCFF00;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #CCFF00;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:has(a:hover) .cursor-outline,
+        body:has(button:hover) .cursor-outline,
+        body:has(.clickable:hover) .cursor-outline,
+        body:has(input:hover) .cursor-outline {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(204, 255, 0, 0.1);
+            backdrop-filter: invert(1);
+            border-color: transparent;
+        }
+
+        /* ▼ ここから追加：デジタル・エンバーズ背景CSS ▼ */
+        .digital-embers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -10px;
+            width: 4px;
+            height: 4px;
+            background: #CCFF00;
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 10px #CCFF00, 0 0 20px #CCFF00;
+            /* 光る表現 */
+            animation: rise 15s infinite ease-in;
+        }
+
+        /* 各粒子の位置とアニメーション時間をランダムにずらす */
+        .ember:nth-child(1) {
+            left: 10%;
+            animation-duration: 18s;
+            animation-delay: 0s;
+        }
+
+        .ember:nth-child(2) {
+            left: 25%;
+            animation-duration: 15s;
+            animation-delay: 2s;
+            width: 3px;
+            height: 3px;
+        }
+
+        .ember:nth-child(3) {
+            left: 40%;
+            animation-duration: 20s;
+            animation-delay: 4s;
+        }
+
+        .ember:nth-child(4) {
+            left: 55%;
+            animation-duration: 17s;
+            animation-delay: 1s;
+            width: 5px;
+            height: 5px;
+        }
+
+        .ember:nth-child(5) {
+            left: 70%;
+            animation-duration: 22s;
+            animation-delay: 3s;
+        }
+
+        .ember:nth-child(6) {
+            left: 85%;
+            animation-duration: 19s;
+            animation-delay: 5s;
+            width: 3px;
+            height: 3px;
+        }
+
+        .ember:nth-child(7) {
+            left: 15%;
+            animation-duration: 21s;
+            animation-delay: 7s;
+        }
+
+        .ember:nth-child(8) {
+            left: 30%;
+            animation-duration: 16s;
+            animation-delay: 9s;
+            width: 2px;
+            height: 2px;
+        }
+
+        .ember:nth-child(9) {
+            left: 45%;
+            animation-duration: 23s;
+            animation-delay: 6s;
+        }
+
+        .ember:nth-child(10) {
+            left: 60%;
+            animation-duration: 18s;
+            animation-delay: 8s;
+        }
+
+        .ember:nth-child(11) {
+            left: 75%;
+            animation-duration: 20s;
+            animation-delay: 11s;
+            width: 4px;
+            height: 4px;
+        }
+
+        .ember:nth-child(12) {
+            left: 90%;
+            animation-duration: 24s;
+            animation-delay: 10s;
+        }
+
+        .ember:nth-child(13) {
+            left: 5%;
+            animation-duration: 25s;
+            animation-delay: 12s;
+        }
+
+        .ember:nth-child(14) {
+            left: 50%;
+            animation-duration: 19s;
+            animation-delay: 14s;
+            width: 3px;
+            height: 3px;
+        }
+
+        .ember:nth-child(15) {
+            left: 95%;
+            animation-duration: 22s;
+            animation-delay: 13s;
+        }
+
+        @keyframes rise {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+
+            20% {
+                opacity: 0.5;
+            }
+
+            80% {
+                opacity: 0.2;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-120vh) scale(1);
+            }
+        }
+
+        /* ▲ ここまで追加 ▲ */
+
+        /* スクロールバー非表示 */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* テキストエフェクト */
+        .text-outline {
+            -webkit-text-stroke: 1px #F0F0F0;
+            color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .group:hover .text-outline {
+            color: #CCFF00;
+            -webkit-text-stroke: 0px;
+        }
+
+        /* カードデザイン */
+        .brutalist-card {
+            border: 1px solid #333;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* サムネイルがある場合は背景色のアニメーションを少し控えめにする */
+        .brutalist-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #CCFF00;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 0;
+            opacity: 0.1;
+            /* 画像があるときは少し薄くして画像を見やすくする */
+        }
+
+        .brutalist-card:hover {
+            border-color: #CCFF00;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(204, 255, 0, 0.1);
+        }
+
+        .brutalist-card:hover::before {
+            transform: translateY(0);
+        }
+
+        .brutalist-card:hover * {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ホバー時のテキスト色制御 */
+        .brutalist-card:hover h3,
+        .brutalist-card:hover p,
+        .brutalist-card:hover span {
+            color: #fff !important;
+            /* 画像の上なので白文字を維持 */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            /* 読みやすさ確保 */
+        }
+
+        .brutalist-card:hover .meta-tag {
+            border-color: #CCFF00;
+            color: #CCFF00 !important;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 記事本文のスタイル */
+        .article-body h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: #CCFF00;
+        }
+
+        .article-body p {
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .article-body strong {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .article-body ul {
+            list-style: square;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid #CCFF00;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #fff;
+            background: #111;
+            padding: 1rem;
+        }
+
+        /* 画像パーツの追加スタイル */
+        .article-body figure {
+            margin: 2rem 0;
+        }
+
+        .article-body figcaption {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #CCFF00;
+            margin-top: 0.5rem;
+            text-align: right;
+        }
+
+        .article-body img {
+            width: 100%;
+            border: 1px solid #CCFF00;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .article-body img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* リンクスタイル（参考記事リンク用） */
+        .article-body a {
+            color: #CCFF00;
+            text-decoration: none;
+            border-bottom: 1px solid #CCFF00;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .article-body a:hover {
+            background-color: #CCFF00;
+            color: #050505;
+            padding: 2px 4px;
+            border-bottom: 2px solid #CCFF00;
+            box-shadow: 0 0 10px rgba(204, 255, 0, 0.3);
+        }
+
+        .article-body a:visited {
+            color: #99CC00;
+            border-bottom-color: #99CC00;
+        }
+
+        .article-body .source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            margin-top: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .article-body .source-link:hover {
+            opacity: 1;
+        }
+
+        .article-body .references-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #333;
+        }
+
+        .article-body .references-section ol {
+            list-style: decimal;
+            margin-left: 2rem;
+        }
+
+        .article-body .references-section li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 見出しレベル (h1, h3, h4) */
+        .article-body h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: #CCFF00;
+        }
+
+        .article-body h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #CCFF00;
+        }
+
+        .article-body h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #CCFF00;
+        }
+
+        /* コードブロック (```) */
+        .article-body pre {
+            background: #0d1a00;
+            border: 1px solid #3a5200;
+            border-left: 4px solid #CCFF00;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            border-radius: 0.25rem;
+            box-shadow: 0 0 12px rgba(204, 255, 0, 0.06);
+        }
+
+        .article-body pre code {
+            background: none;
+            border: none;
+            padding: 0;
+            color: #CCFF00;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* インラインコード (`) */
+        .article-body code {
+            background: #1c2800;
+            color: #CCFF00;
+            padding: 0.2rem 0.45rem;
+            border-radius: 0.25rem;
+            border: 1px solid #4d6600;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.88em;
+        }
+
+        /* 番号付きリスト (1. 2. 3.) */
+        .article-body ol {
+            list-style: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        /* 水平線 (---) */
+        .article-body hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 2.5rem 0;
+        }
+
+        /* テーブル (GFM) */
+        .article-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .article-body th {
+            background: #111;
+            color: #CCFF00;
+            font-weight: 700;
+            padding: 0.75rem 1rem;
+            border: 1px solid #333;
+            text-align: left;
+        }
+
+        .article-body td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #333;
+            color: #ccc;
+        }
+
+        .article-body tr:nth-child(even) {
+            background: #0a0a0a;
+        }
+
+        /* 表示切り替え用 */
+        .hidden-view {
+            display: none !important;
+        }
+
+        /* 読書プログレスバー */
+        #reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #CCFF00;
+            z-index: 9999;
+            width: 0%;
+        }
+    </style>
+</head>
+
+<body class="font-display">
+    <div class="noise-overlay"></div>
+    <div class="digital-embers">
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+        <div class="ember"></div>
+    </div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    <div id="reading-progress"></div>
+
+    <header
+        class="fixed top-0 w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center bg-transparent backdrop-blur-[2px]">
+        <div onclick="showList()"
+            class="text-2xl font-black tracking-tighter hover:text-acid-green transition-colors cursor-pointer clickable">
+            AI_GEEK<span class="text-acid-green">.</span>
+        </div>
+
+        <nav class="hidden md:flex gap-8 font-mono text-sm items-center">
+            <a href="#" onclick="showList()" class="hover:line-through decoration-acid-green clickable"
+                data-i18n="nav-home">HOME</a>
+            <a href="#" onclick="showArchive()" class="hover:line-through decoration-acid-green clickable"
+                data-i18n="nav-archive">ARCHIVE</a>
+            <a href="#" onclick="showAbout()" class="hover:line-through decoration-acid-green clickable"
+                data-i18n="nav-about">ABOUT</a>
+            <select id="lang-switcher" onchange="applyLanguage(this.value)" class="font-mono text-xs bg-transparent border border-gray-600 text-gray-400
+                       px-2 py-1 hover:border-acid-green focus:border-acid-green
+                       focus:outline-none transition-colors cursor-pointer ml-2">
+                <option value="ja">日本語</option>
+                <option value="en">EN</option>
+                <option value="zh-tw">繁中</option>
+                <option value="zh-cn">简中</option>
+                <option value="ko">한국어</option>
+            </select>
+        </nav>
+
+        <button id="mobile-menu-btn"
+            class="md:hidden font-mono text-xs border border-acid-green text-acid-green px-2 py-1 hover:bg-acid-green hover:text-black transition-colors clickable"
+            data-i18n="menu-btn">
+            // MENU
+        </button>
+    </header>
+
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-[#050505] z-[100] transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-12 md:hidden">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 font-mono text-xl text-acid-green clickable">
+            [X]
+        </button>
+
+        <a href="#" onclick="showList(); closeMobileMenu()"
+            class="text-[2.75rem] font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none"
+            data-i18n="nav-home">
+            HOME
+        </a>
+        <a href="#" onclick="showArchive(); closeMobileMenu()"
+            class="text-[2.75rem] font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none"
+            data-i18n="nav-archive">
+            ARCHIVE
+        </a>
+        <a href="#" onclick="showAbout(); closeMobileMenu()"
+            class="text-[2.75rem] font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none"
+            data-i18n="nav-about">
+            ABOUT
+        </a>
+
+        <div class="flex gap-3 font-mono text-xs">
+            <button onclick="applyLanguage('ja'); closeMobileMenu()"
+                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="ja">日本語</button>
+            <span class="text-gray-700">|</span>
+            <button onclick="applyLanguage('en'); closeMobileMenu()"
+                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="en">EN</button>
+            <span class="text-gray-700">|</span>
+            <button onclick="applyLanguage('zh-tw'); closeMobileMenu()"
+                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="zh-tw">繁中</button>
+            <span class="text-gray-700">|</span>
+            <button onclick="applyLanguage('zh-cn'); closeMobileMenu()"
+                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="zh-cn">简中</button>
+            <span class="text-gray-700">|</span>
+            <button onclick="applyLanguage('ko'); closeMobileMenu()"
+                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="ko">한국어</button>
+        </div>
+
+        <div class="absolute bottom-10 font-mono text-xs text-gray-500" data-i18n="menu-sys-nav">
+            /// SYSTEM NAVIGATION
+        </div>
+    </div>
+
+    <div id="view-list" class="transition-opacity duration-500">
+        <section class="h-[60vh] w-full flex flex-col justify-center items-center relative pt-20">
+            <div class="z-10 text-center mix-blend-exclusion">
+                <h1 class="text-[10vw] leading-[0.85] font-black tracking-tighter">
+                    DEV<br><span class="text-outline">LOG</span>
+                </h1>
+            </div>
+        </section>
+
+        <main class="px-4 py-10 max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12 border-b border-gray-800 pb-4">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter" data-i18n="latest-articles">LATEST ARTICLES
+                </h2>
+            </div>
+
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+            </div>
+
+            <div class="flex justify-center mt-16 mb-8">
+                <button onclick="showArchive()" class="group relative font-mono text-sm border-2 border-acid-green text-acid-green
+                           px-10 py-4 uppercase tracking-widest overflow-hidden
+                           hover:text-black transition-colors duration-300 clickable">
+                    <span class="relative z-10" data-i18n="browse-all">BROWSE ALL ARTICLES &rarr;</span>
+                    <div class="absolute inset-0 bg-acid-green transform scale-x-0 group-hover:scale-x-100
+                                transition-transform duration-300 origin-left"></div>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <div id="view-archive" class="hidden-view transition-opacity duration-500">
+        <main class="px-4 pt-32 pb-10 max-w-7xl mx-auto min-h-screen">
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <button onclick="showList()" class="font-mono text-xs border border-gray-600 px-4 py-2
+                               hover:bg-acid-green hover:text-black hover:border-acid-green
+                               transition-colors uppercase clickable" data-i18n="back-home">
+                        &larr; HOME
+                    </button>
+                    <span class="font-mono text-xs text-gray-500" data-i18n="full-archive">// FULL ARCHIVE</span>
+                </div>
+
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8" data-i18n-html="archive-heading">
+                    ALL<br><span class="text-outline">LOGS</span>
+                </h1>
+
+                <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-800 pb-4 gap-6">
+                    <p class="font-mono text-sm text-gray-400">
+                        <span id="archive-count" class="text-acid-green">0</span><span data-i18n="entries-found">
+                            ENTRIES FOUND</span>
+                    </p>
+
+                    <div class="w-full md:w-1/3 relative group">
+                        <div class="absolute -inset-1 bg-acid-green opacity-20 group-focus-within:opacity-100
+                                    transition-opacity duration-500 blur-sm rounded-sm"></div>
+                        <input type="text" id="archive-search-input" placeholder="SEARCH_LOGS..."
+                            data-i18n-placeholder="search-placeholder" class="relative w-full bg-[#050505] border border-gray-700 text-acid-green
+                                      font-mono p-3 focus:outline-none focus:border-acid-green
+                                      transition-colors uppercase placeholder-gray-600 text-sm">
+                        <div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 font-mono text-xs pointer-events-none"
+                            data-i18n="search-type">
+                            /// TYPE
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="archive-no-results" class="hidden text-center py-20">
+                <p class="font-mono text-acid-green text-xl mb-2" data-i18n="system-error">>> SYSTEM ERROR: DATA NOT
+                    FOUND</p>
+                <p class="font-mono text-gray-500 text-sm" data-i18n="try-keyword">TRY ANOTHER KEYWORD.</p>
+            </div>
+
+            <div id="archive-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+            </div>
+        </main>
+    </div>
+
+    <div id="view-detail" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <button onclick="goBack()"
+            class="mb-10 font-mono text-xs border border-gray-600 px-4 py-2 hover:bg-acid-green hover:text-black hover:border-acid-green transition-colors uppercase clickable"
+            data-i18n="back-to-index">
+            &larr; BACK TO INDEX
+        </button>
+
+        <article class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <aside class="lg:col-span-3 lg:sticky lg:top-32 h-fit">
+                <div class="border-t border-acid-green pt-4 mb-8">
+                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="label-category">CATEGORY</p>
+                    <p id="detail-category" class="font-mono text-lg font-bold text-acid-green">AI AGENT</p>
+                </div>
+                <div class="border-t border-gray-800 pt-4 mb-8">
+                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="label-published">PUBLISHED</p>
+                    <p id="detail-date" class="font-mono text-lg">2026.02.17</p>
+                </div>
+                <div class="hidden lg:block border-t border-gray-800 pt-4">
+                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="label-status">STATUS</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-acid-green rounded-full animate-pulse"></div>
+                        <span class="font-mono text-xs" data-i18n="reading">READING...</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="lg:col-span-9">
+                <h1 id="detail-title" class="text-5xl md:text-7xl font-black tracking-tight mb-12 leading-[1.1]">
+                    TITLE GOES HERE
+                </h1>
+                <div id="detail-content" class="article-body text-lg text-gray-300">
+                </div>
+                <div class="mt-20 pt-10 border-t border-gray-800 flex justify-between items-center">
+                    <span class="font-mono text-gray-500" data-i18n="end-of-transmission">END OF TRANSMISSION</span>
+                    <button onclick="goBack()" class="font-mono text-acid-green hover:underline clickable"
+                        data-i18n="close-file">CLOSE FILE</button>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div id="view-about" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative z-0">
+                <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-800"
+                    data-i18n-html="about-heading">
+                    WHO<br>AM<br><span class="text-acid-green">I ?</span>
+                </h1>
+            </div>
+            <div class="border border-gray-800 p-8 bg-[#0a0a0a] relative group z-10 shadow-2xl">
+                <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-acid-green"></div>
+                <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-acid-green"></div>
+
+                <h2 class="text-2xl font-bold mb-6 font-display">AI_ERIKA <span
+                        class="text-gray-600 text-sm font-mono ml-2" data-i18n="admin-label">// ADMIN</span></h2>
+                <p class="font-mono text-gray-400 mb-6 leading-relaxed" data-i18n-html="about-bio">
+                    AI技術と最新ツールの可能性を探求するスペシャリスト。<br>
+                    最新のAI関連ニュースや、独自に検証した実験的なコードを、この "ログ" に記録しています。
+                    <br><br>
+                    <span class="text-acid-green">>> CURRENT STATUS:</span> BUILDING NEW AGENTS.
+                </p>
+                <div class="mb-8">
+                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="skill-set">SKILL_SET</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">WORKFLOW
+                            AUTOMATION</span>
+                        <span
+                            class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">APP
+                            DEVELOPMENT</span>
+                        <span
+                            class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">AI
+                            VIDEO GENERATION</span>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">INSTAGRAM</a>
+                    <a href="#"
+                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">FACEBOOK</a>
+                    <a href="#"
+                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">X</a>
+                    <a href="#"
+                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">GITHUB</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-t border-gray-800 bg-black pt-20 pb-6 px-6 mt-20">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-10">
+            <h2
+                class="text-[15vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-700 to-black select-none">
+                GEEK</h2>
+            <div class="font-mono text-sm text-gray-500 mb-4 text-right">
+                <p data-i18n="footer-location">TOKYO, JAPAN</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== i18n =====
+        const TRANSLATIONS = {
+            ja: {
+                'nav-home': 'HOME', 'nav-archive': 'ARCHIVE', 'nav-about': 'ABOUT',
+                'menu-btn': '// MENU', 'menu-sys-nav': '/// SYSTEM NAVIGATION',
+                'latest-articles': 'LATEST ARTICLES', 'browse-all': 'BROWSE ALL ARTICLES \u2192',
+                'back-home': '\u2190 HOME', 'full-archive': '// FULL ARCHIVE',
+                'archive-heading': 'ALL<br><span class="text-outline">LOGS</span>',
+                'entries-found': ' ENTRIES FOUND', 'search-placeholder': 'SEARCH_LOGS...',
+                'search-type': '/// TYPE',
+                'system-error': '>> SYSTEM ERROR: DATA NOT FOUND',
+                'try-keyword': 'TRY ANOTHER KEYWORD.',
+                'back-to-index': '\u2190 BACK TO INDEX',
+                'label-category': 'CATEGORY', 'label-published': 'PUBLISHED', 'label-status': 'STATUS',
+                'reading': 'READING...',
+                'end-of-transmission': 'END OF TRANSMISSION', 'close-file': 'CLOSE FILE',
+                'about-heading': 'WHO<br>AM<br><span class="text-acid-green">I ?</span>',
+                'admin-label': '// ADMIN',
+                'about-bio': 'AI\u6280\u8853\u3068\u6700\u65b0\u30c4\u30fc\u30eb\u306e\u53ef\u80fd\u6027\u3092\u63a2\u6c42\u3059\u308b\u30b9\u30da\u30b7\u30e3\u30ea\u30b9\u30c8\u3002<br>\u6700\u65b0\u306eAI\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u3084\u3001\u72ec\u81ea\u306b\u691c\u8a3c\u3057\u305f\u5b9f\u9a13\u7684\u306a\u30b3\u30fc\u30c9\u3092\u3001\u3053\u306e \u201c\u30ed\u30b0\u201d \u306b\u8a18\u9332\u3057\u3066\u3044\u307e\u3059\u3002<br><br><span class="text-acid-green">&gt;&gt; CURRENT STATUS:</span> BUILDING NEW AGENTS.',
+                'skill-set': 'SKILL_SET',
+                'footer-location': 'TOKYO, JAPAN',
+                'loading': 'LOADING...', 'load-error': '\u8a18\u4e8b\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002'
+            },
+            en: {
+                'nav-home': 'HOME', 'nav-archive': 'ARCHIVE', 'nav-about': 'ABOUT',
+                'menu-btn': '// MENU', 'menu-sys-nav': '/// SYSTEM NAVIGATION',
+                'latest-articles': 'LATEST ARTICLES', 'browse-all': 'BROWSE ALL ARTICLES \u2192',
+                'back-home': '\u2190 HOME', 'full-archive': '// FULL ARCHIVE',
+                'archive-heading': 'ALL<br><span class="text-outline">LOGS</span>',
+                'entries-found': ' ENTRIES FOUND', 'search-placeholder': 'SEARCH_LOGS...',
+                'search-type': '/// TYPE',
+                'system-error': '>> SYSTEM ERROR: DATA NOT FOUND',
+                'try-keyword': 'TRY ANOTHER KEYWORD.',
+                'back-to-index': '\u2190 BACK TO INDEX',
+                'label-category': 'CATEGORY', 'label-published': 'PUBLISHED', 'label-status': 'STATUS',
+                'reading': 'READING...',
+                'end-of-transmission': 'END OF TRANSMISSION', 'close-file': 'CLOSE FILE',
+                'about-heading': 'WHO<br>AM<br><span class="text-acid-green">I ?</span>',
+                'admin-label': '// ADMIN',
+                'about-bio': 'A specialist exploring the potential of AI technology and the latest tools.<br>Recording the latest AI news and independently verified experimental code in this \u201clog\u201d.<br><br><span class="text-acid-green">&gt;&gt; CURRENT STATUS:</span> BUILDING NEW AGENTS.',
+                'skill-set': 'SKILL_SET',
+                'footer-location': 'TOKYO, JAPAN',
+                'loading': 'LOADING...', 'load-error': 'Failed to load article.'
+            },
+            'zh-tw': {
+                'nav-home': '\u9996\u9801', 'nav-archive': '\u5b58\u6a94', 'nav-about': '\u95dc\u65bc',
+                'menu-btn': '// \u9078\u55ae', 'menu-sys-nav': '/// \u7cfb\u7d71\u5c0e\u89bd',
+                'latest-articles': '\u6700\u65b0\u6587\u7ae0', 'browse-all': '\u700f\u89bd\u6240\u6709\u6587\u7ae0 \u2192',
+                'back-home': '\u2190 \u9996\u9801', 'full-archive': '// \u5b8c\u6574\u5b58\u6a94',
+                'archive-heading': '\u6240\u6709<br><span class="text-outline">\u8a18\u9304</span>',
+                'entries-found': ' \u7bc7\u6587\u7ae0', 'search-placeholder': '\u641c\u5c0b\u6587\u7ae0...',
+                'search-type': '/// \u8f38\u5165',
+                'system-error': '>> \u7cfb\u7d71\u932f\u8aa4\uff1a\u627e\u4e0d\u5230\u8cc7\u6599',
+                'try-keyword': '\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002',
+                'back-to-index': '\u2190 \u8fd4\u56de\u5217\u8868',
+                'label-category': '\u5206\u985e', 'label-published': '\u767c\u5e03\u65e5\u671f', 'label-status': '\u72c0\u614b',
+                'reading': '\u8f09\u5165\u4e2d...',
+                'end-of-transmission': '\u6587\u7ae0\u7d50\u675f', 'close-file': '\u95dc\u9589',
+                'about-heading': '\u6211<br>\u662f<br><span class="text-acid-green">\u8ab0\uff1f</span>',
+                'admin-label': '// \u7ba1\u7406\u54e1',
+                'about-bio': '\u63a2\u7d22 AI \u6280\u8853\u8207\u6700\u65b0\u5de5\u5177\u53ef\u80fd\u6027\u7684\u5c08\u5bb6\u3002<br>\u5728\u9019\u500b\u300c\u65e5\u8a8c\u300d\u4e2d\u8a18\u9304\u6700\u65b0\u7684 AI \u76f8\u95dc\u65b0\u8061\u548c\u7368\u7acb\u9a57\u8b49\u7684\u5be6\u9a57\u6027\u7a0b\u5f0f\u78bc\u3002<br><br><span class="text-acid-green">&gt;&gt; \u76ee\u524d\u72c0\u614b\uff1a</span> \u6b63\u5728\u5efa\u69cb\u65b0\u7684 AI \u4ee3\u7406\u7a0b\u5f0f\u3002',
+                'skill-set': '\u6280\u80fd\u7d44\u5408',
+                'footer-location': '\u6771\u4eac\uff0c\u65e5\u672c',
+                'loading': '\u8f09\u5165\u4e2d...', 'load-error': '\u6587\u7ae0\u8f09\u5165\u5931\u6557\u3002'
+            },
+            'zh-cn': {
+                'nav-home': '\u9996\u9875', 'nav-archive': '\u6863\u6848', 'nav-about': '\u5173\u4e8e',
+                'menu-btn': '// \u83dc\u5355', 'menu-sys-nav': '/// \u7cfb\u7edf\u5bfc\u822a',
+                'latest-articles': '\u6700\u65b0\u6587\u7ae0', 'browse-all': '\u6d4f\u89c8\u6240\u6709\u6587\u7ae0 \u2192',
+                'back-home': '\u2190 \u9996\u9875', 'full-archive': '// \u5b8c\u6574\u6863\u6848',
+                'archive-heading': '\u6240\u6709<br><span class="text-outline">\u8bb0\u5f55</span>',
+                'entries-found': ' \u7bc7\u6587\u7ae0', 'search-placeholder': '\u641c\u7d22\u6587\u7ae0...',
+                'search-type': '/// \u8f93\u5165',
+                'system-error': '>> \u7cfb\u7edf\u9519\u8bef\uff1a\u627e\u4e0d\u5230\u6570\u636e',
+                'try-keyword': '\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u5173\u952e\u8bcd\u3002',
+                'back-to-index': '\u2190 \u8fd4\u56de\u5217\u8868',
+                'label-category': '\u5206\u7c7b', 'label-published': '\u53d1\u5e03\u65e5\u671f', 'label-status': '\u72b6\u6001',
+                'reading': '\u52a0\u8f7d\u4e2d...',
+                'end-of-transmission': '\u6587\u7ae0\u7ed3\u675f', 'close-file': '\u5173\u95ed',
+                'about-heading': '\u6211<br>\u662f<br><span class="text-acid-green">\u8c01\uff1f</span>',
+                'admin-label': '// \u7ba1\u7406\u5458',
+                'about-bio': '\u63a2\u7d22 AI \u6280\u672f\u4e0e\u6700\u65b0\u5de5\u5177\u53ef\u80fd\u6027\u7684\u4e13\u5bb6\u3002<br>\u5728\u8fd9\u4e2a\u300c\u65e5\u5fd7\u300d\u4e2d\u8bb0\u5f55\u6700\u65b0\u7684 AI \u76f8\u5173\u65b0\u95fb\u548c\u72ec\u7acb\u9a8c\u8bc1\u7684\u5b9e\u9a8c\u6027\u4ee3\u7801\u3002<br><br><span class="text-acid-green">&gt;&gt; \u5f53\u524d\u72b6\u6001\uff1a</span> \u6b63\u5728\u6784\u5efa\u65b0\u7684 AI \u4ee3\u7406\u3002',
+                'skill-set': '\u6280\u80fd\u7ec4\u5408',
+                'footer-location': '\u4e1c\u4eac\uff0c\u65e5\u672c',
+                'loading': '\u52a0\u8f7d\u4e2d...', 'load-error': '\u6587\u7ae0\u52a0\u8f7d\u5931\u8d25\u3002'
+            },
+            ko: {
+                'nav-home': '\ud648', 'nav-archive': '\uc544\uce74\uc774\ube0c', 'nav-about': '\uc18c\uac1c',
+                'menu-btn': '// \uba54\ub274', 'menu-sys-nav': '/// \uc2dc\uc2a4\ud15c \ub0b4\ube44\uac8c\uc774\uc158',
+                'latest-articles': '\uc5ec\uac04 \uae30\uc0ac', 'browse-all': '\uc804\uccb4 \uae00 \ubcf4\uae30 \u2192',
+                'back-home': '\u2190 \ud648', 'full-archive': '// \uc804\uccb4 \uc544\uce74\uc774\ube0c',
+                'archive-heading': '\uc804\uccb4<br><span class="text-outline">\uae30\ub85d</span>',
+                'entries-found': '\uac1c\uc758 \uae30\uc0ac', 'search-placeholder': '\uae30\uc0ac \uac80\uc0c9...',
+                'search-type': '/// \uc785\ub825',
+                'system-error': '>> \uc2dc\uc2a4\ud15c \uc624\ub958: \ub370\uc774\ud130\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc74c',
+                'try-keyword': '\ub2e4\ub978 \ud0a4\uc6cc\ub4dc\ub97c \uc2dc\ub3c4\ud574 \ubcf4\uc138\uc694.',
+                'back-to-index': '\u2190 \ubaa9\ub85d\uc73c\ub85c',
+                'label-category': '\uce74\ud14c\uace0\ub9ac', 'label-published': '\uac8c\uc2dc\uc77c', 'label-status': '\uc0c1\ud0dc',
+                'reading': '\ubd88\ub7ec\uc624\ub294 \uc911...',
+                'end-of-transmission': '\uc804\uc1a1 \uc644\ub8cc', 'close-file': '\ub2eb\uae30',
+                'about-heading': '\ub098\ub294<br>\ub204\uad6c<br><span class="text-acid-green">\uc778\uac00\uff1f</span>',
+                'admin-label': '// \uad00\ub9ac\uc790',
+                'about-bio': 'AI \uae30\uc220\uacfc \ucd5c\uc2e0 \ub3c4\uad6c\uc758 \uac00\ub2a5\uc131\uc744 \ud0d0\uad6c\ud558\ub294 \uc804\ubb38\uac00.<br>\uc5ec\uac04 AI \uad00\ub828 \ub274\uc2a4\uc640 \ub3c5\uc790\uc801\uc73c\ub85c \uac80\uc99d\ud55c \uc2e4\ud5d8\uc801\uc778 \ucf54\ub4dc\ub97c \uc774 \u201c\ub85c\uadf8\u201d\uc5d0 \uae30\ub85d\ud569\ub2c8\ub2e4.<br><br><span class="text-acid-green">&gt;&gt; \ud604\uc7ac \uc0c1\ud0dc:</span> \uc0c8\ub85c\uc6b4 \uc5d0\uc774\uc804\ud2b8 \uad6c\ucd95 \uc911.',
+                'skill-set': '\uc2a4\ud0ac\uc14b',
+                'footer-location': '\ub3c4\ucfc4, \uc77c\ubcf8',
+                'loading': '\ubd88\ub7ec\uc624\ub294 \uc911...', 'load-error': '\uae30\uc0ac\ub97c \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4.'
+            }
+        };
+
+        function t(key) {
+            const lang = localStorage.getItem('lang') || 'ja';
+            const tr = TRANSLATIONS[lang] || TRANSLATIONS['ja'];
+            return tr[key] !== undefined ? tr[key] : (TRANSLATIONS['ja'][key] || key);
+        }
+
+        window.applyLanguage = function (lang) {
+            if (!TRANSLATIONS[lang]) lang = 'ja';
+            localStorage.setItem('lang', lang);
+            document.querySelectorAll('[data-i18n]').forEach(function (el) {
+                el.textContent = t(el.getAttribute('data-i18n'));
+            });
+            document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+                el.innerHTML = t(el.getAttribute('data-i18n-html'));
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+                el.placeholder = t(el.getAttribute('data-i18n-placeholder'));
+            });
+            var sel = document.getElementById('lang-switcher');
+            if (sel) sel.value = lang;
+            document.querySelectorAll('.lang-btn[data-lang]').forEach(function (btn) {
+                var active = btn.getAttribute('data-lang') === lang;
+                btn.classList.toggle('text-acid-green', active);
+                btn.classList.toggle('text-gray-500', !active);
+            });
+        };
+    </script>
+
+    <script src="./posts/index.js"></script>
+
+    <script>
+        // marked.js カスタム設定：リンクに target="_blank" を自動付与
+        const renderer = new marked.Renderer();
+        const originalLinkRenderer = renderer.link.bind(renderer);
+        renderer.link = function (token) {
+            const html = originalLinkRenderer.call(this, token);
+            return html.replace('<a ', '<a target="_blank" rel="noopener noreferrer" ');
+        };
+        marked.setOptions({ renderer, gfm: true, breaks: true });
+    </script>
+
+    <script>
+        // ================= アプリケーションロジック =================
+
+        const viewList = document.getElementById('view-list');
+        const viewArchive = document.getElementById('view-archive');
+        const viewDetail = document.getElementById('view-detail');
+        const viewAbout = document.getElementById('view-about');
+
+        const blogGrid = document.getElementById('blog-grid');
+
+        // アーカイブページ要素
+        const archiveGrid = document.getElementById('archive-grid');
+        const archiveSearchInput = document.getElementById('archive-search-input');
+        const archiveNoResultsMsg = document.getElementById('archive-no-results');
+        const archiveCount = document.getElementById('archive-count');
+
+        // 詳細ページ要素
+        const detailTitle = document.getElementById('detail-title');
+        const detailCategory = document.getElementById('detail-category');
+        const detailDate = document.getElementById('detail-date');
+        const detailContent = document.getElementById('detail-content');
+
+        // スマホメニュー要素
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        // 詳細ページからの戻り先を記録
+        let previousView = 'list';
+
+        // グリッド描画関数（汎用：targetGrid に描画、noResultsEl で結果なし表示を制御）
+        // forceNormal: true の場合、全カードを normal サイズで描画（アーカイブ用）
+        // lang: 言語コード（省略時はlocalStorageから取得）
+        function renderPosts(articles, targetGrid, noResultsEl, forceNormal, lang) {
+            const currentLang = lang || localStorage.getItem('lang') || 'ja';
+
+            targetGrid.innerHTML = '';
+            if (articles.length === 0) {
+                if (noResultsEl) noResultsEl.classList.remove('hidden');
+                return;
+            } else {
+                if (noResultsEl) noResultsEl.classList.add('hidden');
+            }
+
+            articles.forEach(post => {
+                // 多言語対応：現在の言語のタイトル・要約を取得、なければ日本語フォールバック
+                const displayTitle = post[`title_${currentLang}`] || post.title || '';
+                const displaySummary = post[`summary_${currentLang}`] || post.summary || '';
+
+                let colClass = "lg:col-span-4";
+                let heightClass = "h-[400px]";
+
+                if (!forceNormal) {
+                    if (post.type === 'big') { colClass = "lg:col-span-8"; heightClass = "h-[450px]"; }
+                    else if (post.type === 'tall') { colClass = "lg:col-span-4 row-span-2"; heightClass = "h-[auto] min-h-[500px]"; }
+                }
+
+                const imageHTML = post.thumbnail ? `
+                    <div class="absolute inset-0 z-0 overflow-hidden">
+                        <img src="${post.thumbnail}"
+                             class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out"
+                             alt="${displayTitle}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
+                    </div>
+                ` : '';
+
+                const articleHTML = `
+                    <article onclick="showDetail(${post.id})" class="clickable group brutalist-card ${colClass} ${heightClass} relative bg-[#0a0a0a] cursor-pointer overflow-hidden border border-[#333]">
+                        ${imageHTML}
+                        <div class="relative z-10 flex flex-col justify-between h-full p-8">
+                            <div class="flex justify-between items-start w-full mb-6">
+                                <span class="font-mono text-xs border border-gray-600 px-2 py-1 rounded-full meta-tag bg-black/50 backdrop-blur-sm group-hover:border-acid-green group-hover:text-acid-green transition-colors">
+                                    ${post.category}
+                                </span>
+                                <span class="font-mono text-xs text-gray-400 group-hover:text-white transition-colors drop-shadow-md">
+                                    ${post.date}
+                                </span>
+                            </div>
+                            <div class="flex flex-col justify-end">
+                                <h3 class="text-3xl md:text-4xl font-bold mb-4 leading-tight drop-shadow-lg group-hover:translate-x-2 transition-transform duration-500">
+                                    ${displayTitle}
+                                </h3>
+                                <div class="w-full h-[1px] bg-gray-800 my-4 group-hover:bg-acid-green transition-colors"></div>
+                                <p class="font-mono text-sm text-gray-400 max-w-md line-clamp-2 drop-shadow-md group-hover:text-white transition-colors">
+                                    ${displaySummary}
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                `;
+                targetGrid.innerHTML += articleHTML;
+            });
+        }
+
+        // 初期化処理
+        function init() {
+            // 1. 日付順（新しい順）に並べ替える
+            posts.sort((a, b) => b.date.localeCompare(a.date));
+
+            // 2. IDとレイアウトタイプ（big/tall/normal）を自動割り当て
+            posts.forEach((post, index) => {
+                post.id = index;
+                if (index === 0) post.type = 'big';
+                else if (index === 1) post.type = 'tall';
+                else post.type = 'normal';
+            });
+
+            // 3. トップページは最新4件のみ描画
+            const initialLang = localStorage.getItem('lang') || 'ja';
+            renderPosts(posts.slice(0, 4), blogGrid, null, false, initialLang);
+
+            // 4. アーカイブ検索イベントリスナー
+            archiveSearchInput.addEventListener('input', (e) => {
+                const lang = localStorage.getItem('lang') || 'ja';
+                const term = e.target.value.toLowerCase();
+                const filtered = posts.filter(post =>
+                    (post[`title_${lang}`] || post.title || '').toLowerCase().includes(term) ||
+                    post.category.toLowerCase().includes(term) ||
+                    (post[`summary_${lang}`] || post.summary || '').toLowerCase().includes(term)
+                );
+                archiveCount.textContent = filtered.length;
+                renderPosts(filtered, archiveGrid, archiveNoResultsMsg, true, lang);
+            });
+
+            // 5. スマホメニュー開閉ロジック
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuOverlay.classList.remove('translate-x-full');
+            });
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+
+            // 6. 言語設定を適用
+            applyLanguage(localStorage.getItem('lang') || 'ja');
+
+            // 言語切り替え時の再描画処理を追加
+            const originalApplyLanguage = window.applyLanguage;
+            window.applyLanguage = function (lang) {
+                originalApplyLanguage(lang);
+                // 現在のビューに応じて再描画
+                if (!viewList.classList.contains('hidden-view')) {
+                    renderPosts(posts.slice(0, 4), blogGrid, null, false, lang);
+                } else if (!viewArchive.classList.contains('hidden-view')) {
+                    const term = archiveSearchInput.value.toLowerCase();
+                    const filtered = posts.filter(post =>
+                        (post[`title_${lang}`] || post.title || '').toLowerCase().includes(term) ||
+                        post.category.toLowerCase().includes(term) ||
+                        (post[`summary_${lang}`] || post.summary || '').toLowerCase().includes(term)
+                    );
+                    archiveCount.textContent = filtered.length;
+                    renderPosts(filtered, archiveGrid, archiveNoResultsMsg, true, lang);
+                } else if (!viewDetail.classList.contains('hidden-view') && window.currentPostSlug) {
+                    // 詳細ページを再読み込み
+                    const post = posts.find(p => p.slug === window.currentPostSlug);
+                    if (post) showDetail(post.id);
+                }
+            };
+        }
+
+        // スマホメニューを閉じる
+        function closeMobileMenu() {
+            mobileMenuOverlay.classList.add('translate-x-full');
+        }
+        // グローバルにアクセスできるようにwindowに紐付け
+        window.closeMobileMenu = closeMobileMenu;
+
+        // 詳細ページを表示
+        window.showDetail = function (id) {
+            const post = posts.find(p => p.id === id);
+            if (!post) return;
+
+            // 言語切り替え用に現在の記事スラグを保存
+            window.currentPostSlug = post.slug;
+
+            const currentLang = localStorage.getItem('lang') || 'ja';
+            const displayTitle = post[`title_${currentLang}`] || post.title || '';
+
+            // 遷移元を記録（戻るボタン用）
+            if (!viewArchive.classList.contains('hidden-view')) {
+                previousView = 'archive';
+            } else {
+                previousView = 'list';
+            }
+
+            detailTitle.innerText = displayTitle;
+            detailCategory.innerText = post.category;
+            detailDate.innerText = post.date;
+            detailContent.innerHTML = `<p class="font-mono text-gray-500 animate-pulse">${t('loading')}</p>`;
+
+            viewList.style.opacity = '0';
+            viewArchive.style.opacity = '0';
+            viewAbout.style.opacity = '0';
+
+            setTimeout(() => {
+                viewList.classList.add('hidden-view');
+                viewArchive.classList.add('hidden-view');
+                viewAbout.classList.add('hidden-view');
+                viewDetail.classList.remove('hidden-view');
+                window.scrollTo(0, 0);
+
+                viewDetail.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    viewDetail.style.transition = 'opacity 0.5s';
+                    viewDetail.style.opacity = '1';
+                });
+
+                // Markdownファイルの言語接尾辞を決定
+                const langSuffix = currentLang === 'ja' ? '' : `.${currentLang}`;
+
+                // Fetch Markdown and convert to HTML
+                fetch(`./posts/${post.slug}${langSuffix}.md`)
+                    .then(res => {
+                        // 翻訳版が存在しない場合、日本語フォールバック
+                        if (!res.ok && langSuffix !== '') {
+                            return fetch(`./posts/${post.slug}.md`);
+                        }
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.text();
+                    })
+                    .then(md => {
+                        let html = marked.parse(md);
+                        // 「→ 元記事を読む」リンクを含む<p>にsource-linkクラスを付与
+                        html = html.replace(/<p>(<a [^>]*>→[^<]*<\/a>)<\/p>/g,
+                            '<p class="source-link">$1</p>');
+                        // 最後の「参考リンク」セクションにreferences-sectionクラスを付与
+                        html = html.replace(/<h2[^>]*>参考リンク<\/h2>([\s\S]*)$/,
+                            '<div class="references-section"><h2>参考リンク</h2>$1</div>');
+                        detailContent.innerHTML = html;
+                    })
+                    .catch(err => {
+                        if (post.body) {
+                            detailContent.innerHTML = renderPostBody(post.body);
+                        } else {
+                            detailContent.innerHTML = `<p class="text-red-400 font-mono">${t('load-error')}</p>`;
+                        }
+                        console.error('Failed to load post body:', err);
+                    });
+            }, 500);
+        };
+
+        function renderPostBody(body) {
+            if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+                return marked.parse(body);
+            }
+
+            return body;
+        }
+
+        // ABOUTページを表示
+        window.showAbout = function () {
+            viewList.style.opacity = '0';
+            viewArchive.style.opacity = '0';
+            viewDetail.style.opacity = '0';
+
+            setTimeout(() => {
+                viewList.classList.add('hidden-view');
+                viewArchive.classList.add('hidden-view');
+                viewDetail.classList.add('hidden-view');
+                viewAbout.classList.remove('hidden-view');
+                window.scrollTo(0, 0);
+
+                viewAbout.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    viewAbout.style.transition = 'opacity 0.5s';
+                    viewAbout.style.opacity = '1';
+                });
+            }, 500);
+        };
+
+        // リスト（TOP）に戻る
+        window.showList = function () {
+            viewArchive.style.opacity = '0';
+            viewDetail.style.opacity = '0';
+            viewAbout.style.opacity = '0';
+
+            setTimeout(() => {
+                viewArchive.classList.add('hidden-view');
+                viewDetail.classList.add('hidden-view');
+                viewAbout.classList.add('hidden-view');
+                viewList.classList.remove('hidden-view');
+                window.scrollTo(0, 0);
+
+                viewList.style.opacity = '1';
+            }, 500);
+        };
+
+        // アーカイブ（全記事一覧）を表示
+        window.showArchive = function () {
+            viewList.style.opacity = '0';
+            viewDetail.style.opacity = '0';
+            viewAbout.style.opacity = '0';
+
+            setTimeout(() => {
+                viewList.classList.add('hidden-view');
+                viewDetail.classList.add('hidden-view');
+                viewAbout.classList.add('hidden-view');
+                viewArchive.classList.remove('hidden-view');
+                window.scrollTo(0, 0);
+
+                // 全記事を描画
+                archiveSearchInput.value = '';
+                renderPosts(posts, archiveGrid, archiveNoResultsMsg, true);
+                archiveCount.textContent = posts.length;
+
+                viewArchive.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    viewArchive.style.transition = 'opacity 0.5s';
+                    viewArchive.style.opacity = '1';
+                });
+            }, 500);
+        };
+
+        // 詳細ページから戻る（遷移元に応じてhomeかarchiveに戻る）
+        window.goBack = function () {
+            if (previousView === 'archive') showArchive();
+            else showList();
+        };
+
+        // カーソル追従
+        const cursorDot = document.getElementById("cursor-dot");
+        const cursorOutline = document.getElementById("cursor-outline");
+        window.addEventListener("mousemove", function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+        });
+
+        // 読書プログレスバー
+        window.onscroll = function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("reading-progress").style.width = scrolled + "%";
+        };
+
+        init();
+    </script>
+</body>
+
+</html>

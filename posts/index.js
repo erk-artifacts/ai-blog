@@ -1,14 +1,6 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
-    "title": "今日のAI最前線：LLMの匿名ユーザー特定技術と生成AI時代の新課題",
-    "category": "AI NEWS",
-    "date": "2026.03.03",
-    "thumbnail": "",
-    "summary": "LLM（大規模言語モデル）が匿名ユーザーを高精度で特定できることが判明。プライバシーの脅威となる一方、OpenAIはペンタゴン（国防総省）との提携を発表。AI技術の二面性が浮き彫りに。",
-    "slug": "2026-03-03-2"
-  },
-  {
     "title": "今週のAI最前線：ChatGPTの政府契約で波紋、Claudeが利用者を勢力拡大中",
     "title_en": "",
     "title_zh-tw": "",

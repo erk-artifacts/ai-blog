@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：生成AIコーディング革命とAI政治運動の焦点",
+    "title_en": "# Today's AI Frontier: Generative AI Coding Revolution and AI Political Movement Focus",
+    "title_zh-tw": "今日的AI最前線：生成AI編程革命和AI政治運動的焦點",
+    "title_zh-cn": "今日的AI前沿：生成AI编码革命和AI政治运动的焦点",
+    "title_ko": "오늘의 AI 최전선: 생성형 AI 코딩 혁명과 AI 정치 운동의 초점",
+    "category": "AI NEWS",
+    "date": "2026.03.04",
+    "thumbnail": "",
+    "summary": "Raycastの生成AIコーディングプラットフォーム「Glaze」、AI業界リーダーによる秘密会議での政治的抵抗運動が話題。AI民主化とAIガバナンスの両面で業界が動く。",
+    "summary_en": "Raycast's generative AI coding platform \"Glaze\" becomes a hot topic as political resistance movement emerges from secret meetings of AI industry leaders. The industry is moving on both fronts of AI democratization and AI governance.",
+    "summary_zh-tw": "Raycast 生成式 AI 編碼平台「Glaze」，AI 業界領袖在秘密會議中的政治阻力運動成為話題。業界在 AI 民主化和 AI 治理兩方面推進。",
+    "summary_zh-cn": "Raycast的生成AI编码平台\"Glaze\"引发关注，AI业界领导者在秘密会议中的政治阻力运动成为话题。业界在AI民主化和AI治理两个方面都在推进。",
+    "summary_ko": "Raycast의 생성형 AI 코딩 플랫폼 \"Glaze\", AI 업계 리더들의 비공개 회의에서 정치적 저항 운동이 화제. AI 민주화와 AI 거버넌스 양면에서 업계가 움직이고 있다.",
+    "slug": "2026-03-04-4"
+  },
+  {
     "title": "今日のAI最前線：AI政治運動の秘密会議が明かされる",
     "title_en": "Today's AI Frontline: Secret Meeting of AI Political Campaign Revealed",
     "title_zh-tw": "# 今日的AI前線：AI政治運動的秘密會議被曝光",

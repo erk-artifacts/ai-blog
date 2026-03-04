@@ -1,6 +1,14 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Microsoft Build 2026、Alibaba Qwen体制変更、生成AIの人材育成課題が話題に",
+    "category": "AI NEWS",
+    "date": "2026.03.04",
+    "thumbnail": "",
+    "summary": "Microsoft Build 2026がサンフランシスコで開催予定、Alibaba Qwenの技術責任者が退任、生成AIが若手のスキル獲得に影響する可能性が業界で議論されています。",
+    "slug": "2026-03-04"
+  },
+  {
     "title": "今週のAI最前線：ChatGPTの政府契約で波紋、Claudeが利用者を勢力拡大中",
     "title_en": "",
     "title_zh-tw": "",

@@ -1,5 +1,13 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
+  {
+    "title": "今日のAI最前線：洋上データセンター構想とAI規制の動き",
+    "category": "AI NEWS",
+    "date": "2026.03.04",
+    "thumbnail": "",
+    "summary": "洋上風力発電施設へのAIデータセンター配置や、政治指導者によるAI規制議論など、インフラとガバナンス面でのAI関連の新展開が相次いでいます。",
+    "slug": "2026-03-04-3"
+  },
     {
     "title": "プロンプトテクニック ~基礎編~",
     "category": "For Beginner",

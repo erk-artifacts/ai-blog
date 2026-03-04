@@ -258,68 +258,21 @@ function validateNewsItemCount(blogPost, minItems = 3) {
 // 2.5. Translation Provider Abstraction
 // ---------------------------------------------------------------------------
 
-const TRANSLATION_PROVIDER = process.env.TRANSLATION_PROVIDER || 'deepl';
 const SUPPORTED_LANGUAGES = {
-  en: { deepl: 'EN-US', name: 'English' },
-  'zh-tw': { deepl: 'ZH-TW', name: '繁體中文' },
-  'zh-cn': { deepl: 'ZH', name: '简体中文' },
-  ko: { deepl: 'KO', name: '한국어' }
+  en: { name: 'English', prompt: 'translate to natural English' },
+  'zh-tw': { name: '繁體中文（Traditional Chinese）', prompt: 'translate to Traditional Chinese (繁體中文)' },
+  'zh-cn': { name: '简体中文（Simplified Chinese）', prompt: 'translate to Simplified Chinese (简体中文)' },
+  ko: { name: '한국어（Korean）', prompt: 'translate to Korean (한국어)' }
 };
 
-// Abstracted translation function - DeepL優先、失敗時はClaudeフォールバック
+// Claude APIで翻訳
 async function translate(text, targetLang) {
-  // DeepL優先
-  if (process.env.DEEPL_API_KEY) {
-    try {
-      return await translateWithDeepL(text, targetLang);
-    } catch (err) {
-      console.warn(`DeepL translation failed for ${targetLang}: ${err.message}`);
-      console.warn(`Falling back to Claude API...`);
-    }
-  }
-  // フォールバック: Claude API
   return await translateWithClaude(text, targetLang);
 }
 
-// DeepL API translation implementation
-async function translateWithDeepL(text, targetLang) {
-  const apiKey = process.env.DEEPL_API_KEY;
-  if (!apiKey) {
-    throw new Error('DEEPL_API_KEY environment variable is not set');
-  }
-
-  const deeplLang = SUPPORTED_LANGUAGES[targetLang].deepl;
-  const endpoint = process.env.DEEPL_USE_PRO === 'true'
-    ? 'https://api.deepl.com/v2/translate'
-    : 'https://api-free.deepl.com/v2/translate';
-
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Authorization': `DeepL-Auth-Key ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      text: [text],
-      target_lang: deeplLang,
-      preserve_formatting: true,
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`DeepL API error (${response.status}): ${errorText}`);
-  }
-
-  const data = await response.json();
-  return data.translations[0].text;
-}
-
-// Claude API translation implementation (for future use)
+// Claude API translation implementation
 async function translateWithClaude(text, targetLang) {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    throw new Error('ANTHROPIC_API_KEY environment variable is not set');
-  }
+  const langConfig = SUPPORTED_LANGUAGES[targetLang];
 
   const client = new Anthropic({
     baseURL: process.env.ANTHROPIC_BASE_URL || undefined,
@@ -327,14 +280,12 @@ async function translateWithClaude(text, targetLang) {
     maxRetries: 2,
   });
 
-  const langName = SUPPORTED_LANGUAGES[targetLang].name;
-
   const response = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 4000,
-    system: `You are a professional translator. Translate the following text to ${langName}.
+    system: `You are a professional translator. ${langConfig.prompt}.
 - Keep technical terms accurate
-- Preserve Markdown formatting
+- Preserve Markdown formatting exactly
 - Do not add explanations or extra text
 - Return only the translated text`,
     messages: [
@@ -539,8 +490,6 @@ async function main() {
 
   // Step 2.5: Translate to all languages
   console.log('Step 2.5: Translating to all languages...');
-  console.log(`  TRANSLATION_PROVIDER: ${TRANSLATION_PROVIDER}`);
-  console.log(`  DEEPL_API_KEY set: ${!!process.env.DEEPL_API_KEY}`);
   console.log(`  ANTHROPIC_API_KEY set: ${!!process.env.ANTHROPIC_API_KEY}`);
 
   // Ensure we have blogPost before translation

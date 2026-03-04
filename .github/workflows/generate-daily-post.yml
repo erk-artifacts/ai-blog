@@ -30,8 +30,6 @@ jobs:
         working-directory: .github/scripts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
-          TRANSLATION_PROVIDER: deepl
           REPO_DIR: ${{ github.workspace }}
         run: timeout 480 node generate-post.mjs
 

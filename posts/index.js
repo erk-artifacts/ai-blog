@@ -1,5 +1,13 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
+    {
+    "title": "プロンプトテクニック ~基礎編~",
+    "category": "For Beginner",
+    "date": "2026.03.04",
+    "thumbnail": "images/prompt-technique.png",
+    "summary": "AIの回答は、私たちが指示する内容（プロンプト）によって精度がかなり変わります。より良い回答が得られるためのテクニックをご紹介します。",
+    "slug": "2026-03-04-2"
+  },
   {
     "title": "今日のAI最前線：Microsoft Build 2026、Alibaba Qwen体制変更、生成AIの人材育成課題が話題に",
     "category": "AI NEWS",

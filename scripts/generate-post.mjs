@@ -337,6 +337,11 @@ async function updatePosts(translations, repoDir) {
   // Ensure posts/ directory exists
   await fs.mkdir(postsDir, { recursive: true });
 
+  // Create language directories
+  for (const lang of Object.keys(translations)) {
+    await fs.mkdir(path.join(postsDir, lang), { recursive: true });
+  }
+
   const today = new Date();
   const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
   const baseSlug = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
@@ -346,7 +351,7 @@ async function updatePosts(translations, repoDir) {
   let counter = 2;
   while (true) {
     try {
-      await fs.access(path.join(postsDir, `${slug}.md`));
+      await fs.access(path.join(postsDir, 'ja', `${slug}.md`));
       slug = `${baseSlug}-${counter}`;
       counter++;
     } catch {
@@ -354,11 +359,11 @@ async function updatePosts(translations, repoDir) {
     }
   }
 
-  // Step A: Write Markdown files for each language
+  // Step A: Write Markdown files to language directories
   const createdFiles = [];
   for (const [lang, content] of Object.entries(translations)) {
-    const langSuffix = lang === 'ja' ? '' : `.${lang}`;
-    const mdPath = path.join(postsDir, `${slug}${langSuffix}.md`);
+    const langDir = path.join(postsDir, lang);
+    const mdPath = path.join(langDir, `${slug}.md`);
     await fs.writeFile(mdPath, content.body, 'utf-8');
     createdFiles.push(mdPath);
     console.log(`Created ${mdPath}`);

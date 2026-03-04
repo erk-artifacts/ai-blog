@@ -1203,15 +1203,15 @@
                     viewDetail.style.opacity = '1';
                 });
 
-                // Markdownファイルの言語接尾辞を決定
-                const langSuffix = currentLang === 'ja' ? '' : `.${currentLang}`;
+                // 言語ディレクトリを決定
+                const langPath = currentLang;
 
                 // Fetch Markdown and convert to HTML
-                fetch(`./posts/${post.slug}${langSuffix}.md`)
+                fetch(`./posts/${langPath}/${post.slug}.md`)
                     .then(res => {
                         // 翻訳版が存在しない場合、日本語フォールバック
-                        if (!res.ok && langSuffix !== '') {
-                            return fetch(`./posts/${post.slug}.md`);
+                        if (!res.ok && langPath !== 'ja') {
+                            return fetch(`./posts/ja/${post.slug}.md`);
                         }
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
                         return res.text();

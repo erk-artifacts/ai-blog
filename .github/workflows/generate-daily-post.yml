@@ -30,7 +30,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           REPO_DIR: ${{ github.workspace }}
-        run: timeout 480 node scripts/generate-post.mjs
+        run: timeout 1200 node scripts/generate-post.mjs
 
       - name: Commit and push
         run: |

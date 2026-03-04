@@ -300,7 +300,7 @@ async function translateWithClaude(text, targetLang) {
   return translatedText;
 }
 
-// Translate article to all supported languages
+// Translate article to all supported languages (parallel)
 async function translateArticleToAllLanguages(article) {
   const translations = {
     ja: { title: article.title, summary: article.summary, body: article.body }
@@ -308,18 +308,32 @@ async function translateArticleToAllLanguages(article) {
 
   const langCodes = Object.keys(SUPPORTED_LANGUAGES);
 
-  for (const langCode of langCodes) {
+  console.log(`  Translating to ${langCodes.length} languages in parallel...`);
+
+  // 並列で翻訳
+  const translationPromises = langCodes.map(async (langCode) => {
     console.log(`  Translating to ${langCode}...`);
     try {
-      translations[langCode] = {
+      const result = {
         title: await translate(article.title, langCode),
         summary: await translate(article.summary, langCode),
         body: await translate(article.body, langCode)
       };
       console.log(`  ✓ ${langCode} translation complete`);
+      return { langCode, result };
     } catch (err) {
       console.warn(`  ✗ ${langCode} translation failed: ${err.message}`);
-      // エラー時は翻訳をスキップ（空文字列で次の言語へ）
+      return null;
+    }
+  });
+
+  // すべての翻訳を待つ
+  const results = await Promise.all(translationPromises);
+
+  // 成功した翻訳をtranslationsオブジェクトに追加
+  for (const { langCode, result } of results) {
+    if (result) {
+      translations[langCode] = result;
     }
   }
 
@@ -427,9 +441,9 @@ async function updatePosts(translations, repoDir) {
 // ---------------------------------------------------------------------------
 
 // Hard timeout: exit cleanly before GitHub Actions job timeout
-const SCRIPT_TIMEOUT_MS = 8 * 60 * 1000;
+const SCRIPT_TIMEOUT_MS = 20 * 60 * 1000;
 const scriptTimer = setTimeout(() => {
-  console.error('FATAL: Script exceeded 8-minute hard timeout. Exiting.');
+  console.error('FATAL: Script exceeded 20-minute hard timeout. Exiting.');
   process.exit(1);
 }, SCRIPT_TIMEOUT_MS);
 

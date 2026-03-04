@@ -6,7 +6,8 @@
   "scripts": {
     "generate": "node scripts/generate-post.mjs",
     "test:fetch": "node scripts/generate-post.mjs --fetch-only",
-    "test:dry": "node scripts/generate-post.mjs --dry-run"
+    "test:dry": "node scripts/generate-post.mjs --dry-run",
+    "translate:existing": "node scripts/translate-existing.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.61.0",

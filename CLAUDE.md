@@ -10,8 +10,18 @@ AI関連ニュースを収集し、GitHub Pages ブログ (erk-artifacts/ai-blog
 ## ワークフロー
 1. RSSフィードからAI関連ニュースを取得
 2. Claude API (Haiku 4.5) で日本語ブログ記事を生成
-3. ai-blogリポジトリの `posts/index.js` にメタデータを追加、`posts/{slug}.md` に本文を保存
+3. ai-blogリポジトリの `posts/index.js` にメタデータを追加、`posts/{lang}/{slug}.md` に本文を保存
 4. GitHub Pagesに自動デプロイ（毎朝9時JST）
+
+## 既存記事の翻訳
+過去の記事を多言語に翻訳するには：
+```bash
+npm run translate:existing
+```
+- `posts/ja/*.md` から記事を読み込み
+- 英語、中国語（繁体/簡体）、韓国語に並列翻訳
+- 各言語のファイルを `posts/{lang}/{slug}.md` に保存
+- `posts/index.js` の各エントリに `title_*`、`summary_*` フィールドを追加
 
 ## 記事の構成
 - `posts/index.js` - 全記事のメタデータ（title, category, date, thumbnail, summary, slug）

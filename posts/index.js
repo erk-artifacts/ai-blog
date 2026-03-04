@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：政治的抵抗運動とAI倫理が話題に",
+    "title_en": "# Today's AI Frontline: Political Resistance Movements and AI Ethics in Focus",
+    "title_zh-tw": "今日的AI最前線：政治抵抗運動和AI倫理成為熱門話題",
+    "title_zh-cn": "今日的AI最前线：政治抵抗运动和AI伦理成为话题焦点",
+    "title_ko": "오늘의 AI 최전선: 정치적 저항 운동과 AI 윤리가 화제로",
+    "category": "AI NEWS",
+    "date": "2026.03.04",
+    "thumbnail": "",
+    "summary": "AIの政治的影響に関する秘密会議や、AIを使用した地球観測技術など、AI業界における重要なニュースが続々と報告されています。",
+    "summary_en": "Significant news continues to emerge from the AI industry, including secret meetings regarding AI's political influence and Earth observation technology using AI.",
+    "summary_zh-tw": "關於AI的政治影響的秘密會議，以及使用AI的地球觀測技術等，AI業界持續報導重要新聞。",
+    "summary_zh-cn": "关于AI的政治影响的秘密会议和使用AI的地球观测技术等，AI行业中的重要新闻不断被报道。",
+    "summary_ko": "AI의 정치적 영향에 관한 비밀 회의나 AI를 사용한 지구 관측 기술 등 AI 산업의 중요한 뉴스가 계속 보도되고 있습니다.",
+    "slug": "2026-03-04-3"
+  },
+  {
     "title": "プロンプトテクニック ~基礎編~",
     "category": "For Beginner",
     "date": "2026.03.04",

@@ -276,13 +276,15 @@ async function translateWithClaude(text, targetLang) {
 
   const client = new Anthropic({
     baseURL: process.env.ANTHROPIC_BASE_URL || undefined,
-    timeout: 60_000,
+    timeout: 120_000,  // タイムアウトを60秒から120秒に増加
     maxRetries: 2,
   });
 
+  console.log(`    Calling Claude API for ${targetLang} (${text.length} chars)...`);
+
   const response = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 4000,
+    max_tokens: 8192,  // 4000から8192に増加
     system: `You are a professional translator. ${langConfig.prompt}.
 - Keep technical terms accurate
 - Preserve Markdown formatting exactly
@@ -293,7 +295,9 @@ async function translateWithClaude(text, targetLang) {
     ],
   });
 
-  return response.content[0].text;
+  const translatedText = response.content[0].text;
+  console.log(`    Translation received (${translatedText.length} chars)`);
+  return translatedText;
 }
 
 // Translate article to all supported languages
@@ -302,13 +306,21 @@ async function translateArticleToAllLanguages(article) {
     ja: { title: article.title, summary: article.summary, body: article.body }
   };
 
-  for (const [langCode] of Object.keys(SUPPORTED_LANGUAGES)) {
+  const langCodes = Object.keys(SUPPORTED_LANGUAGES);
+
+  for (const langCode of langCodes) {
     console.log(`  Translating to ${langCode}...`);
-    translations[langCode] = {
-      title: await translate(article.title, langCode),
-      summary: await translate(article.summary, langCode),
-      body: await translate(article.body, langCode)
-    };
+    try {
+      translations[langCode] = {
+        title: await translate(article.title, langCode),
+        summary: await translate(article.summary, langCode),
+        body: await translate(article.body, langCode)
+      };
+      console.log(`  ✓ ${langCode} translation complete`);
+    } catch (err) {
+      console.warn(`  ✗ ${langCode} translation failed: ${err.message}`);
+      // エラー時は翻訳をスキップ（空文字列で次の言語へ）
+    }
   }
 
   return translations;

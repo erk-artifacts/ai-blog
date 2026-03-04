@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI政治運動の秘密会議が明かされる",
+    "title_en": "Today's AI Frontline: Secret Meeting of AI Political Campaign Revealed",
+    "title_zh-tw": "# 今日的AI前線：AI政治運動的秘密會議被曝光",
+    "title_zh-cn": "今日的人工智能最前线：人工智能政治运动的秘密会议被揭露",
+    "title_ko": "오늘의 AI 최전선: AI 정치운동의 비밀회의가 드러나다",
+    "category": "AI NEWS",
+    "date": "2026.03.04",
+    "thumbnail": "",
+    "summary": "AIに関する秘密会議で政治指導者が集結。AI規制に向けた動きが活発化。一方、オフショア浮遊型データセンターでAIインフラの新展開も注目されています。",
+    "summary_en": "Political leaders gather at a secret conference on AI. Moves toward AI regulation are accelerating. Meanwhile, attention is also being drawn to new developments in AI infrastructure at offshore floating data centers.",
+    "summary_zh-tw": "在AI相關秘密會議上，政治領導人聚集。針對AI監管的行動變得活躍。同時，離岸浮動式數據中心的AI基礎設施新展開也引人關注。",
+    "summary_zh-cn": "政治领导人在有关AI的秘密会议中集结。针对AI监管的动作变得活跃。另一方面，离岸浮动式数据中心的AI基础设施新发展也引人关注。",
+    "summary_ko": "AI에 관한 비밀 회의에 정치 지도자들이 집결했습니다. AI 규제를 향한 움직임이 활발해지고 있습니다. 한편, 해상 부유식 데이터센터에서 AI 인프라의 새로운 전개도 주목받고 있습니다.",
+    "slug": "2026-03-04-4"
+  },
+  {
     "title": "今日のAI最前線：浮体式洋上データセンターとAI政治運動の動き",
     "category": "AI NEWS",
     "date": "2026.03.04",

@@ -73,14 +73,23 @@ async function translateSingleFile(slug) {
 
   // posts/index.js から記事のメタデータを取得
   console.log(`Reading ${indexPath}...`);
-  const indexContent = await fs.readFile(indexPath, 'utf-8');
-
-  const match = indexContent.match(/const posts = \[([\s\S]*?)\];/);
-  if (!match) {
-    throw new Error('Could not parse posts/index.js');
+  let indexContent;
+  try {
+    indexContent = await fs.readFile(indexPath, 'utf-8');
+  } catch (err) {
+    console.error(`Failed to read index.js: ${err.message}`);
+    throw new Error(`Could not read posts/index.js`);
   }
 
-  const posts = JSON.parse(`[${match[1]}]`);
+  let posts;
+  try {
+    posts = JSON.parse(indexContent);
+  } catch (err) {
+    console.error(`Failed to parse index.js: ${err.message}`);
+    console.error(`First 200 chars of index.js:\n${indexContent.slice(0, 200)}`);
+    throw new Error(`Could not parse posts/index.js as JSON`);
+  }
+
   const post = posts.find(p => p.slug === slug);
 
   if (!post) {

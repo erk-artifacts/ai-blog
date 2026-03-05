@@ -14,13 +14,24 @@ AI関連ニュースを収集し、GitHub Pages ブログ (erk-artifacts/ai-blog
 4. GitHub Pagesに自動デプロイ（毎朝9時JST）
 
 ## 既存記事の翻訳
-過去の記事を多言語に翻訳するには：
+### すべての記事を翻訳する場合：
 ```bash
 npm run translate:existing
 ```
-- `posts/ja/*.md` から記事を読み込み
+
+### 単一のファイルを翻訳する場合：
+```bash
+npm run translate:single -- <slug>
+```
+
+例:
+```bash
+npm run translate:single -- 2026-03-04-2
+```
+
+- `posts/ja/${slug}.md` から記事を読み込み
 - 英語、中国語（繁体/簡体）、韓国語に並列翻訳
-- 各言語のファイルを `posts/{lang}/{slug}.md` に保存
+- 各言語のファイルを `posts/${lang}/${slug}.md` に保存
 - `posts/index.js` の各エントリに `title_*`、`summary_*` フィールドを追加
 
 ## 記事の構成

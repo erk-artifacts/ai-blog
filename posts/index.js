@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Anthropicが仕掛けるSaaS革命とNvidiaの投資戦略の転換",
+    "title_en": "# Today's AI Frontline: The SaaS Revolution Anthropic is Driving and Nvidia's Shift in Investment Strategy",
+    "title_zh-tw": "今日的AI前沿：Anthropic發起的SaaS革命與Nvidia投資戰略的轉變",
+    "title_zh-cn": "今天的AI最前线：Anthropic发起的SaaS革命与Nvidia投资战略的转变",
+    "title_ko": "오늘의 AI 최전선: Anthropic이 추진하는 SaaS 혁명과 Nvidia의 투자 전략 전환",
+    "category": "AI NEWS",
+    "date": "2026.03.05",
+    "thumbnail": "",
+    "summary": "Anthropicの新機能がSaaS企業の株価を急落させ、NvidiaのCEOがOpenAIとAnthropicへの投資を引き上げると発表。AI業界の勢力図が大きく変わる週となっました。",
+    "summary_en": "Anthropic's new features caused SaaS company stock prices to plummet, and Nvidia's CEO announced it would increase investments in OpenAI and Anthropic. This week marked a significant shift in the AI industry's power dynamics.",
+    "summary_zh-tw": "Anthropic 的新功能導致 SaaS 企業股價急跌，Nvidia 執行長宣布提高對 OpenAI 和 Anthropic 的投資。本週 AI 業界的勢力版圖出現重大變化。",
+    "summary_zh-cn": "Anthropic 的新功能导致 SaaS 企业股价暴跌,英伟达首席执行官宣布将增加对 OpenAI 和 Anthropic 的投资。这一周 AI 行业的格局发生了重大变化。",
+    "summary_ko": "Anthropic의 새로운 기능이 SaaS 기업의 주가를 급락시켰고, Nvidia의 CEO가 OpenAI와 Anthropic에 대한 투자를 늘린다고 발표했습니다. AI 업계의 세력도가 크게 변하는 주간이 되었습니다.",
+    "slug": "2026-03-05"
+  },
+  {
     "title": "プロンプトテクニック ~基礎編~",
     "category": "For Beginner",
     "date": "2026.03.04",

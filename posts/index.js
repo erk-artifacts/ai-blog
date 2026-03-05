@@ -16,36 +16,52 @@ const posts = [
     "summary_ko": "Anthropic의 새로운 기능이 SaaS 기업의 주가를 급락시켰고, Nvidia의 CEO가 OpenAI와 Anthropic에 대한 투자를 늘린다고 발표했습니다. AI 업계의 세력도가 크게 변하는 주간이 되었습니다.",
     "slug": "2026-03-05"
   },
-  {
+        {
     "title": "プロンプトテクニック ~基礎編~",
+    "title_en": "Prompt Techniques ~Basic Edition~",
+    "title_zh-tw": "提示詞技巧 ~基礎篇~",
+    "title_zh-cn": "提示词技巧 ~基础篇~",
+    "title_ko": "프롬프트 기술 ~기초편~",
     "category": "For Beginner",
     "date": "2026.03.04",
     "thumbnail": "images/prompt-technique.png",
     "summary": "AIの回答は、私たちが指示する内容（プロンプト）によって精度がかなり変わります。より良い回答が得られるためのテクニックをご紹介します。",
+    "summary_en": "The quality of AI responses varies considerably depending on the content we instruct it to provide (the prompt). Here are some techniques for obtaining better responses.",
+    "summary_zh-tw": "AI的回答根據我們指示的內容（提示詞）精度會有相當大的差異。以下介紹一些能獲得更佳回答的技巧。",
+    "summary_zh-cn": "AI的回答精度会根据我们指示的内容（提示）而有很大差异。以下是为您获取更好回答的技巧。",
+    "summary_ko": "AI의 응답은 우리가 지시하는 내용(프롬프트)에 따라 정확도가 상당히 달라집니다. 더 나은 응답을 얻기 위한 기법을 소개합니다.",
     "slug": "2026-03-04-2"
   },
   {
     "title": "今日のAI最前線：Microsoft Build 2026、Alibaba Qwen体制変更、生成AIの人材育成課題が話題に",
-    "category": "AI NEWS",
-    "date": "2026.03.04",
-    "thumbnail": "",
-    "summary": "Microsoft Build 2026がサンフランシスコで開催予定、Alibaba Qwenの技術責任者が退任、生成AIが若手のスキル獲得に影響する可能性が業界で議論されています。",
-    "slug": "2026-03-04"
-  },
-  {
-    "title": "今週のAI最前線：ChatGPTの政府契約で波紋、Claudeが利用者を勢力拡大中",
     "title_en": "",
     "title_zh-tw": "",
     "title_zh-cn": "",
     "title_ko": "",
     "category": "AI NEWS",
-    "date": "2026.03.03",
+    "date": "2026.03.04",
     "thumbnail": "",
-    "summary": "AIアシスタント市場が激動。ChatGPTは国防総省との契約で大波紋、一方Claudeはメモリ機能を無料プランに拡大し利用者増を狙う。Cursorは年間売上20億ドル突破。",
+    "summary": "Microsoft Build 2026がサンフランシスコで開催予定、Alibaba Qwenの技術責任者が退任、生成AIが若手のスキル獲得に影響する可能性が業界で議論されています。",
     "summary_en": "",
     "summary_zh-tw": "",
     "summary_zh-cn": "",
     "summary_ko": "",
+    "slug": "2026-03-04"
+  },
+    {
+    "title": "今週のAI最前線：ChatGPTの政府契約で波紋、Claudeが利用者を勢力拡大中",
+    "title_en": "# AI Front Lines This Week: Ripples from ChatGPT's Government Contract, Claude Gaining Users",
+    "title_zh-tw": "本週AI前線：ChatGPT政府合約引發波瀾，Claude用戶勢力持續擴大",
+    "title_zh-cn": "本周AI前沿动态：ChatGPT政府合同引发波澜，Claude用户势力扩大",
+    "title_ko": "이번 주 AI 최전선: ChatGPT의 정부 계약으로 파문, Claude가 사용자 세력 확대 중",
+    "category": "AI NEWS",
+    "date": "2026.03.03",
+    "thumbnail": "",
+    "summary": "AIアシスタント市場が激動。ChatGPTは国防総省との契約で大波紋、一方Claudeはメモリ機能を無料プランに拡大し利用者増を狙う。Cursorは年間売上20億ドル突破。",
+    "summary_en": "The AI assistant market is in turmoil. ChatGPT makes waves with a Department of Defense contract, while Claude expands memory features to free plans to attract more users. Cursor surpasses $2 billion in annual revenue.",
+    "summary_zh-tw": "AI助手市場掀起波瀾。ChatGPT因與國防部簽訂合約引發軒然大波，另一方面Claude則將記憶功能擴展至免費方案以吸引更多用戶。Cursor年度銷售額突破20億美元。",
+    "summary_zh-cn": "AI助手市场动荡。ChatGPT与国防部签约引发波澜，而Claude则将内存功能扩展到免费计划以争取更多用户。Cursor年销售额突破20亿美元。",
+    "summary_ko": "AI 어시스턴트 시장이 급변 중. ChatGPT는 국방부 계약으로 큰 파장을 일으키고 있으며, 한편 Claude는 메모리 기능을 무료 플랜으로 확대하여 사용자 증가를 노린다. Cursor는 연간 매출 20억 달러를 돌파했다.",
     "slug": "2026-03-03"
   },
   {

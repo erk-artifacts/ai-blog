@@ -83,11 +83,16 @@ async function translateSingleFile(slug) {
 
   let posts;
   try {
-    posts = JSON.parse(indexContent);
+    // Extract the array content from JavaScript format (const posts = [...];)
+    const match = indexContent.match(/const posts = (\[[\s\S]*\]);/);
+    if (!match) {
+      throw new Error('Could not extract posts array from posts/index.js');
+    }
+    posts = JSON.parse(match[1]);
   } catch (err) {
     console.error(`Failed to parse index.js: ${err.message}`);
     console.error(`First 200 chars of index.js:\n${indexContent.slice(0, 200)}`);
-    throw new Error(`Could not parse posts/index.js as JSON`);
+    throw new Error(`Could not parse posts/index.js`);
   }
 
   const post = posts.find(p => p.slug === slug);
@@ -142,49 +147,70 @@ async function translateSingleFile(slug) {
 }
 
 async function updatePostInIndex(indexPath, originalContent, post, translations) {
-  // エントリを探す
-  const entryPattern = new RegExp(`\\{\\s*"slug":\\s*"${post.slug}"[\\s\\S]*?\\}`, 'g');
-  const match = originalContent.match(entryPattern);
+  // slugマーカーを探す
+  const slugMarker = `"slug": "${post.slug}"`;
+  const slugIndex = originalContent.indexOf(slugMarker);
 
-  if (!match) {
-    console.warn(`  Could not find entry for ${post.slug} in index.js`);
+  if (slugIndex === -1) {
+    console.warn(`  Could not find slug marker for ${post.slug} in index.js`);
     return;
   }
 
-  let entryString = match[0];
+  // 後方検索で開始 { を見つける
+  let depth = 0;
+  let entryStart = slugIndex;
+  while (entryStart >= 0) {
+    if (originalContent[entryStart] === '}') depth++;
+    if (originalContent[entryStart] === '{') {
+      depth--;
+      if (depth < 0) break;
+    }
+    entryStart--;
+  }
 
-  // 各言語のtitleとsummaryフィールドを追加（存在しない場合のみ）
+  // 前方検索で終了 } を見つける
+  depth = 0;
+  let entryEnd = slugIndex + slugMarker.length;
+  while (entryEnd < originalContent.length) {
+    if (originalContent[entryEnd] === '{') depth++;
+    if (originalContent[entryEnd] === '}') {
+      depth--;
+      if (depth < 0) break;
+    }
+    entryEnd++;
+  }
+
+  const originalEntry = originalContent.slice(entryStart, entryEnd + 1);
+
+  // エントリをパースしてオブジェクトに変換
+  let entryObj;
+  try {
+    entryObj = JSON.parse(originalEntry);
+  } catch (err) {
+    console.warn(`  Could not parse entry for ${post.slug}: ${err.message}`);
+    return;
+  }
+
+  // 各言語のtitleとsummaryフィールドを追加（存在しないまたは空の場合のみ）
   for (const lang of Object.keys(SUPPORTED_LANGUAGES)) {
     const titleField = `title_${lang}`;
     const summaryField = `summary_${lang}`;
 
-    // titleフィールドが存在しない場合のみ追加
-    if (!entryString.includes(`"${titleField}"`)) {
-      // titleの後に追加
-      const titlePattern = `("title": ${JSON.stringify(post.title)}`;
-      if (entryString.includes(titlePattern)) {
-        entryString = entryString.replace(
-          titlePattern,
-          `${titlePattern},\n    "${titleField}": ${JSON.stringify(translations[lang]?.title || '')}`
-        );
-      }
+    if (translations[lang]?.title) {
+      entryObj[titleField] = translations[lang].title;
     }
-
-    // summaryフィールドが存在しない場合のみ追加
-    if (!entryString.includes(`"${summaryField}"`)) {
-      // summaryの後に追加
-      const summaryPattern = `("summary": ${JSON.stringify(post.summary)}`;
-      if (entryString.includes(summaryPattern)) {
-        entryString = entryString.replace(
-          summaryPattern,
-          `${summaryPattern},\n    "${summaryField}": ${JSON.stringify(translations[lang]?.summary || '')}`
-        );
-      }
+    if (translations[lang]?.summary) {
+      entryObj[summaryField] = translations[lang].summary;
     }
   }
 
-  // ファイルを更新
-  await fs.writeFile(indexPath, entryString, 'utf-8');
+  // オブジェクトを文字列に変換（元のフォーマットに合わせる）
+  const updatedEntry = JSON.stringify(entryObj, null, 2);
+  const indentedEntry = updatedEntry.split('\n').map(line => '  ' + line).join('\n');
+
+  // 元のコンテンツ内でエントリを置換して、ファイル全体を更新
+  const updatedContent = originalContent.replace(originalEntry, indentedEntry);
+  await fs.writeFile(indexPath, updatedContent, 'utf-8');
   console.log(`Updated ${indexPath}`);
 }
 

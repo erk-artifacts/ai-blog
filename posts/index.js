@@ -16,7 +16,7 @@ const posts = [
     "summary_ko": "Anthropic의 새로운 기능이 SaaS 기업의 주가를 급락시켰고, Nvidia의 CEO가 OpenAI와 Anthropic에 대한 투자를 늘린다고 발표했습니다. AI 업계의 세력도가 크게 변하는 주간이 되었습니다.",
     "slug": "2026-03-05"
   },
-        {
+  {
     "title": "プロンプトテクニック ~基礎編~",
     "title_en": "Prompt Techniques ~Basic Edition~",
     "title_zh-tw": "提示詞技巧 ~基礎篇~",
@@ -34,21 +34,21 @@ const posts = [
   },
   {
     "title": "今日のAI最前線：Microsoft Build 2026、Alibaba Qwen体制変更、生成AIの人材育成課題が話題に",
-    "title_en": "",
-    "title_zh-tw": "",
-    "title_zh-cn": "",
-    "title_ko": "",
+    "title_en": "AI Frontier Today: Microsoft Build 2026, Alibaba Qwen Leadership Shift, and Generative AI’s Impact on Talent Development.",
+    "title_zh-tw": "今日 AI 前沿：Microsoft Build 2026、阿里巴巴通義千問（Qwen）架構調整、生成式 AI 人才培養挑戰引發關注",
+    "title_zh-cn": "今日 AI 前沿：Microsoft Build 2026、阿里巴巴通义千问（Qwen）架构调整、生成式 AI 人才培养挑战引发关注",
+    "title_ko": "오늘의 AI 최전선: Microsoft Build 2026, 알리바바 Qwen 체제 변경, 생성형 AI 인재 육성 과제 화제",
     "category": "AI NEWS",
     "date": "2026.03.04",
     "thumbnail": "",
     "summary": "Microsoft Build 2026がサンフランシスコで開催予定、Alibaba Qwenの技術責任者が退任、生成AIが若手のスキル獲得に影響する可能性が業界で議論されています。",
-    "summary_en": "",
-    "summary_zh-tw": "",
-    "summary_zh-cn": "",
-    "summary_ko": "",
+    "summary_en": "Microsoft Build 2026 is scheduled to be held in San Francisco. Meanwhile, the technical lead of Alibaba Qwen has resigned, and the industry is debating how generative AI might affect skill acquisition among junior professionals.",
+    "summary_zh-tw": "Microsoft Build 2026 計劃在舊金山舉行。同時，阿里巴巴通義千問的技術負責人林俊旸（Junyang Lin）已離職。此外，業界正在討論生成式 AI 可能對年輕人才技能獲取產生的影響。",
+    "summary_zh-cn": "Microsoft Build 2026 计划在旧金山举行。同时，阿里巴巴通义千问的负责人林俊旸（Junyang Lin）已离职。此外，业界正在讨论生成式 AI 可能对年轻人才技能获取产生的影响。",
+    "summary_ko": "Microsoft Build 2026이 샌프란시스코에서 개최될 예정이며, 알리바바 Qwen의 기술 책임자가 사임했습니다. 또한, 생성형 AI가 젊은 층의 스킬 습득에 미칠 영향에 대해 업계에서 논의가 이루어지고 있습니다.",
     "slug": "2026-03-04"
   },
-    {
+  {
     "title": "今週のAI最前線：ChatGPTの政府契約で波紋、Claudeが利用者を勢力拡大中",
     "title_en": "# AI Front Lines This Week: Ripples from ChatGPT's Government Contract, Claude Gaining Users",
     "title_zh-tw": "本週AI前線：ChatGPT政府合約引發波瀾，Claude用戶勢力持續擴大",
@@ -66,21 +66,21 @@ const posts = [
   },
   {
     "title": "ハルシネーションを減らすためのプロンプト",
-    "title_en": "",
-    "title_zh-tw": "",
-    "title_zh-cn": "",
-    "title_ko": "",
+    "title_en": "Prompts to reduce hallucinations",
+    "title_zh-tw": "減少幻覺的提示詞",
+    "title_zh-cn": "减少幻觉的提示词",
+    "title_ko": "할루시네이션(환각)을 줄이기 위한 프롬프트",
     "category": "For Beginner",
     "date": "2026.03.02",
     "thumbnail": "images/hallucination.png",
     "summary": "AIは間違った情報を回答することがあります。それを防ぐための方法を説明します。",
-    "summary_en": "",
-    "summary_zh-tw": "",
-    "summary_zh-cn": "",
-    "summary_ko": "",
+    "summary_en": "AI can sometimes provide incorrect information. I will explain the methods to prevent this from happening.",
+    "summary_zh-tw": "AI 有時會提供錯誤信息。我將為您講解防止這種情況發生的方法。",
+    "summary_zh-cn": "AI 有时会提供错误信息。我将为您讲解防止这种情况发生的方法。",
+    "summary_ko": "AI는 때때로 잘못된 정보를 답변할 수 있습니다. 이를 방지하기 위한 방법을 설명해 드리겠습니다.",
     "slug": "2026-03-02-2"
   },
-    {
+  {
     "title": "今日のAI最前線：軍事利用から生成AIエージェント時代へ、AI依存の現実が浮き彫りに",
     "title_en": "# AI's Front Lines Today: From Military Applications to the Age of Generative AI Agents, Reality of AI Dependency Laid Bare",
     "title_zh-tw": "當今AI最前線：從軍事利用到生成AI代理時代，AI依賴的現實浮現",
@@ -96,7 +96,7 @@ const posts = [
     "summary_ko": "미군이 Claude를 실전 투입, CEO의 90%가 AI 에이전트 성과에 확신, 회사원 70%가 \"AI 의존\"을 자각. 음악 생성 AI나 AI 어시스턴트 등 AI가 생활과 업무에 깊게 침투하는 상황이 가속화되고 있습니다.",
     "slug": "2026-03-02"
   },
-    {
+  {
     "title": "今週のAI最前線：Anthropic vs 米政府、OpenAIの防衛契約、そして資金調達の大型発表",
     "title_en": "# AI Frontlines This Week: Anthropic vs. U.S. Government, OpenAI's Defense Contract, and Major Funding Announcements",
     "title_zh-tw": "# 本週的AI前沿：Anthropic vs 美國政府、OpenAI的國防合約，以及融資大公告",
@@ -112,7 +112,7 @@ const posts = [
     "summary_ko": "AI 업계에서 격동의 1주일. 미국 정부가 Anthropic을 배제, OpenAI가 국방부와 계약, 17조 원 이상의 자금 조달 발표. AI 안전 정책을 둘러싼 대립이 가속화되고 업계 전체의 재편이 진행 중.",
     "slug": "2026-03-01"
   },
-    {
+  {
     "title": "今日のAI最前線：Anthropic vs. ペンタゴン、ChatGPT9億ユーザー到達",
     "title_en": "# AI's Cutting Edge Today: Anthropic vs. Pentagon, ChatGPT Reaches 900 Million Users",
     "title_zh-tw": "# AI 最前線：Anthropic vs. 五角大廈，ChatGPT 達到 9 億用戶",
@@ -130,21 +130,21 @@ const posts = [
   },
   {
     "title": "メタプロンプトという考え方",
-    "title_en": "",
-    "title_zh-tw": "",
-    "title_zh-cn": "",
-    "title_ko": "",
+    "title_en": "The concept of 'Meta-prompting",
+    "title_zh-tw": "元提示（Meta-prompting）的概念",
+    "title_zh-cn": "元提示（Meta-prompting）的概念",
+    "title_ko": "메타 프롬프팅(Meta-prompting)'이라는 개념",
     "category": "For Beginner",
     "date": "2026.02.27",
     "thumbnail": "images/meta-prompting.png",
     "summary": "基本的にはAIにプロンプトを書かせれば大概うまくいきますので、それについてご紹介します。",
-    "summary_en": "",
-    "summary_zh-tw": "",
-    "summary_zh-cn": "",
-    "summary_ko": "",
+    "summary_en": "Basically, letting the AI write the prompts for you will usually get the job done, so I’d like to introduce you to that approach.",
+    "summary_zh-tw": "基本上，只要讓 AI 來編寫提示詞，大部分情況下都能取得很好的效果。接下來我就為大家介紹一下這種方法。",
+    "summary_zh-cn": "基本上，只要让 AI 来编写提示词，大部分情况下都能取得很好的效果。接下来我就为大家介绍一下这种方法。",
+    "summary_ko": "기본적으로 AI에게 프롬프트를 작성하게 하면 대개 잘 풀리기 때문에, 그 방법에 대해 소개해 드리겠습니다.",
     "slug": "2026-02-27"
   },
-    {
+  {
     "title": "今週のAI最前線：AIコード支援ツール進化から日本のデータセンター展開まで",
     "title_en": "# This Week's AI Frontline: From the Evolution of AI Code Assistance Tools to Japan's Data Center Expansion",
     "title_zh-tw": "本週的AI前沿：從AI代碼支援工具進化到日本數據中心部署",
@@ -160,7 +160,7 @@ const posts = [
     "summary_ko": "AWS의 신형 AI 코드 에디터 \"Kiro 0.9\" 릴리스, 카가와현의 폐교를 NVIDIA GPU 탑재 데이터센터로 전환, Backlog AI 어시스턴트의 정식 출시 예정 등 AI 관련 중요 뉴스가 계속 등장하고 있습니다.",
     "slug": "2026-02-27-2"
   },
-    {
+  {
     "title": "今日のAI最前線：企業向けAIエージェント続々登場、ロボティクス企業がGoogleに統合",
     "title_en": "Today's AI Front Lines: Enterprise AI Agents Proliferating, Robotics Company Integrates with Google",
     "title_zh-tw": "今日的AI最前線：企業用AI代理程式紛紛登場，機器人公司整合至Google",
@@ -176,7 +176,7 @@ const posts = [
     "summary_ko": "일본 기업이 맞춤형 AI 에이전트와 관리직 대상 대화 트레이닝 제공을 시작했습니다. 한편, Google은 로봇공학 소프트웨어 Intrinsic을 자회사에 통합하여 AI 활용의 새로운 단계로 나아가고 있습니다.",
     "slug": "2026-02-26"
   },
-    {
+  {
     "title": "今日のAI最前線：ネットワーク保守AIと農業生成AIが商用化へ",
     "title_en": "# AI Frontlines Today: Network Maintenance AI and Agricultural Generative AI Move Toward Commercialization",
     "title_zh-tw": "今日的AI最前線：網路維護AI與農業生成AI邁向商用化",
@@ -192,7 +192,7 @@ const posts = [
     "summary_ko": "국립국회도서관의 OCR 도구 공개, 네트워크 유지보수용 AI 에이전트의 상용화, vRAN 기반에서의 AI 앱 운용 실증, 농업×생성AI의 사회 실장, 그리고 로봇틱 장치의 개발 진전 등, AI·로봇틱스 관련의 복수 뉴스가 보도되었습니다.",
     "slug": "2026-02-25"
   },
-    {
+  {
     "title": "今日のAI最前線：防衛省が生成AI活用、クレッシェンドがAIネイティブCDP搭載",
     "title_en": "# Today's AI Front Line: Defense Ministry Utilizes Generative AI, Crescendo Equipped with AI-Native CDP",
     "title_zh-tw": "今日的AI最前線：防衛省活用生成AI，Crescendo搭載AI原生CDP",
@@ -208,7 +208,7 @@ const posts = [
     "summary_ko": "방위성이 국회 답변 자료 작성에 생성 AI를 도입하고, 크레셴도 랩이 AI 데이터 분석 엔진을 강화하며, 일본발 크리에이터 육성 AI 플랫폼이 론칭하는 등 AI 활용이 급속도로 확산되고 있다.",
     "slug": "2026-02-24"
   },
-    {
+  {
     "title": "今週のAI最前線：OpenAIアルトマンCEOが語るAGI時代、SamsungがPerplexity統合、新型アニメAIモデル登場",
     "title_en": "# AI Frontline This Week: OpenAI CEO Altman Discusses AGI Era, Samsung Integrates Perplexity, New Anime AI Model Emerges",
     "title_zh-tw": "本週AI最前線：OpenAI首席執行官阿爾特曼談論AGI時代、三星整合Perplexity、新型動畫AI模型登場",
@@ -224,7 +224,7 @@ const posts = [
     "summary_ko": "OpenAI의 샘 알트만 CEO가 인도에서 AGI 실현의 임박함을 언급했으며, Samsung이 Galaxy AI에 Perplexity를 통합했습니다. 한편 ComfyUI가 개발한 애니메 특화 이미지 생성 AI \"Anima\"가 SDXL을 대체할 표준을 목표로 하고 있습니다. AI 인프라 정비의 진화와 다양한 AI 에코시스템 형성이 가속화되고 있습니다.",
     "slug": "2026-02-23"
   },
-    {
+  {
     "title": "今日のAI最前線：Samsungが新AI統合、AIスタートアップの生き残り戦が本格化",
     "title_en": "AI on the Cutting Edge Today: Samsung Launches New AI Integration, AI Startup Survival Battle Intensifies",
     "title_zh-tw": "今日のAI最前線：Samsung推出新型AI整合，AI初創公司生存戰正式展開",

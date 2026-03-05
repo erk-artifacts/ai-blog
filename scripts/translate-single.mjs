@@ -2,8 +2,11 @@ import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
+// .envファイルを読み込み
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config();
 
 const SUPPORTED_LANGUAGES = {
   en: { name: 'English', prompt: 'translate to natural English' },

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：GPT-5.4登場とAIアプリ生成の新時代へ",
+    "title_en": "# Today's AI Frontline: GPT-5.4 Launch and the New Era of AI App Generation",
+    "title_zh-tw": "今日的AI最前線：GPT-5.4登場與AI應用生成的新時代",
+    "title_zh-cn": "今日的AI前沿：GPT-5.4登场和AI应用生成的新时代",
+    "title_ko": "오늘의 AI 최전선: GPT-5.4 등장과 AI 앱 생성의 새로운 시대로",
+    "category": "AI NEWS",
+    "date": "2026.03.06",
+    "thumbnail": "",
+    "summary": "OpenAIが最新モデル「GPT-5.4」をリリース。PC操作で人間超えの性能を実現。同時にRaycastの新サービス「Glaze」が自然文でアプリ生成を可能に。AI活用の民主化が急速に進展。",
+    "summary_en": "OpenAI releases latest model \"GPT-5.4.\" Achieves superhuman performance in PC operations. Simultaneously, Raycast's new service \"Glaze\" enables app generation through natural language. AI democratization is rapidly advancing.",
+    "summary_zh-tw": "OpenAI 發佈最新模型「GPT-5.4」。在電腦操作方面實現超越人類的性能。同時，Raycast 的新服務「Glaze」能夠通過自然語言實現應用程式生成。AI 應用的民主化正在迅速推進。",
+    "summary_zh-cn": "OpenAI发布最新模型\"GPT-5.4\"。在PC操作方面实现了超越人类的性能。同时，Raycast的新服务\"Glaze\"实现了通过自然文本生成应用。AI应用民主化正在快速推进。",
+    "summary_ko": "OpenAI가 최신 모델 「GPT-5.4」를 릴리스. PC 조작에서 인간을 능가하는 성능을 실현. 동시에 Raycast의 새로운 서비스 「Glaze」가 자연문으로 앱 생성을 가능하게. AI 활용의 민주화가 빠르게 진행 중.",
+    "slug": "2026-03-06"
+  },
+  {
     "title": "今日のAI最前線：Anthropicが仕掛けるSaaS革命とNvidiaの投資戦略の転換",
     "title_en": "AI Frontier Today: The SaaS Revolution Anthropic is Driving and Nvidia's Shift in Investment Strategy",
     "title_zh-tw": "今日 AI 前沿：Anthropic發起的SaaS革命與Nvidia投資戰略的轉變",

@@ -116,6 +116,53 @@ const modelFallbacks = [
   'claude-sonnet-4-5',           // フォールバック
 ].filter((model, index, arr) => model && arr.indexOf(model) === index);
 
+  // 指数バックオフ付きで各モデルを試す
+  const MAX_RETRIES_PER_MODEL = 3;
+  for (const model of modelFallbacks) {
+    let lastModelError;
+    for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
+      try {
+        console.log(`Calling Claude API model: ${model} (attempt ${attempt}/${MAX_RETRIES_PER_MODEL})`);
+        response = await client.messages.create({
+          model,
+          ...requestPayload,
+        });
+        console.log(`Success with ${model}`);
+        break;
+      } catch (err) {
+        lastModelError = err;
+        console.warn(`Model ${model} failed (attempt ${attempt}): ${err.status || 'unknown'} ${err.message || ''}`);
+
+        // オーバーロードエラーまたはタイムアウトの場合は指数バックオフでリトライ
+        const isOverloaded = err.status === 529 || String(err.message || '').toLowerCase().includes('overloaded');
+        const isTimeout = err.status === 408 || err.code === 'ECONNABORTED' || String(err.message || '').toLowerCase().includes('timeout');
+        const isRateLimit = err.status === 429;
+
+        if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES_PER_MODEL) {
+          const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000); // Max 10秒
+          console.warn(`  Retrying in ${delay}ms...`);
+          await new Promise(r => setTimeout(r, delay));
+          continue;
+        }
+
+        // クレジット不足や認証エラーなど、リトライしても無意味なエラー
+        const isFatal = err.status === 401 || err.status === 403 ||
+          String(err.message || '').toLowerCase().includes('credit') ||
+          String(err.message || '').toLowerCase().includes('balance');
+
+        if (isFatal) {
+          throw err; // すぐに失敗させる
+        }
+
+        // その他のエラーは次のモデルを試す
+        if (attempt === MAX_RETRIES_PER_MODEL) {
+          console.warn(`  Giving up on ${model}, trying next model...`);
+        }
+      }
+    }
+    if (response) break; // 成功したらループ終了
+  }
+
   const requestPayload = {
     max_tokens: 8000,
     system: `あなたは日本語テックブロガーです。AI初心者にもわかりやすく、読みやすい記事を書きます。
@@ -276,28 +323,58 @@ async function translateWithClaude(text, targetLang) {
 
   const client = new Anthropic({
     baseURL: process.env.ANTHROPIC_BASE_URL || undefined,
-    timeout: 120_000,  // タイムアウトを60秒から120秒に増加
-    maxRetries: 2,
+    timeout: 120_000,
+    maxRetries: 0,  // カスタムリトライロジックを使用するため0に設定
   });
 
-  console.log(`    Calling Claude API for ${targetLang} (${text.length} chars)...`);
+  const MAX_RETRIES = 3;
+  const model = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
 
-  const response = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 8192,  // 4000から8192に増加
-    system: `You are a professional translator. ${langConfig.prompt}.
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      console.log(`    Calling Claude API for ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
+
+      const response = await client.messages.create({
+        model,
+        max_tokens: 8192,
+        system: `You are a professional translator. ${langConfig.prompt}.
 - Keep technical terms accurate
 - Preserve Markdown formatting exactly
 - Do not add explanations or extra text
 - Return only the translated text`,
-    messages: [
-      { role: 'user', content: text }
-    ],
-  });
+        messages: [
+          { role: 'user', content: text }
+        ],
+      });
 
-  const translatedText = response.content[0].text;
-  console.log(`    Translation received (${translatedText.length} chars)`);
-  return translatedText;
+      const translatedText = response.content[0].text;
+      console.log(`    Translation received (${translatedText.length} chars)`);
+      return translatedText;
+    } catch (err) {
+      console.warn(`    Translation attempt ${attempt} failed: ${err.status || 'unknown'} ${err.message || ''}`);
+
+      // オーバーロードエラー、タイムアウト、レート制限の場合は指数バックオフでリトライ
+      const isOverloaded = err.status === 529 || String(err.message || '').toLowerCase().includes('overloaded');
+      const isTimeout = err.status === 408 || err.code === 'ECONNABORTED' || String(err.message || '').toLowerCase().includes('timeout');
+      const isRateLimit = err.status === 429;
+
+      if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES) {
+        const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000); // Max 10秒
+        console.warn(`    Retrying translation in ${delay}ms...`);
+        await new Promise(r => setTimeout(r, delay));
+        continue;
+      }
+
+      // リトライ不要なエラー
+      const isFatal = err.status === 401 || err.status === 403 ||
+        String(err.message || '').toLowerCase().includes('credit') ||
+        String(err.message || '').toLowerCase().includes('balance');
+
+      if (isFatal || attempt === MAX_RETRIES) {
+        throw err;
+      }
+    }
+  }
 }
 
 // Translate article to all supported languages (parallel)

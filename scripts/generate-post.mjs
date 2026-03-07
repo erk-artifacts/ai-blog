@@ -109,60 +109,6 @@ async function generateBlogPost(newsItems) {
   const today = new Date();
   const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
 
-const preferredModel = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
-const modelFallbacks = [
-  preferredModel,
-  'claude-haiku-4-5-20251001',  // 軽量・高速・低コスト
-  'claude-sonnet-4-5',           // フォールバック
-].filter((model, index, arr) => model && arr.indexOf(model) === index);
-
-  // 指数バックオフ付きで各モデルを試す
-  const MAX_RETRIES_PER_MODEL = 3;
-  for (const model of modelFallbacks) {
-    let lastModelError;
-    for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
-      try {
-        console.log(`Calling Claude API model: ${model} (attempt ${attempt}/${MAX_RETRIES_PER_MODEL})`);
-        response = await client.messages.create({
-          model,
-          ...requestPayload,
-        });
-        console.log(`Success with ${model}`);
-        break;
-      } catch (err) {
-        lastModelError = err;
-        console.warn(`Model ${model} failed (attempt ${attempt}): ${err.status || 'unknown'} ${err.message || ''}`);
-
-        // オーバーロードエラーまたはタイムアウトの場合は指数バックオフでリトライ
-        const isOverloaded = err.status === 529 || String(err.message || '').toLowerCase().includes('overloaded');
-        const isTimeout = err.status === 408 || err.code === 'ECONNABORTED' || String(err.message || '').toLowerCase().includes('timeout');
-        const isRateLimit = err.status === 429;
-
-        if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES_PER_MODEL) {
-          const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000); // Max 10秒
-          console.warn(`  Retrying in ${delay}ms...`);
-          await new Promise(r => setTimeout(r, delay));
-          continue;
-        }
-
-        // クレジット不足や認証エラーなど、リトライしても無意味なエラー
-        const isFatal = err.status === 401 || err.status === 403 ||
-          String(err.message || '').toLowerCase().includes('credit') ||
-          String(err.message || '').toLowerCase().includes('balance');
-
-        if (isFatal) {
-          throw err; // すぐに失敗させる
-        }
-
-        // その他のエラーは次のモデルを試す
-        if (attempt === MAX_RETRIES_PER_MODEL) {
-          console.warn(`  Giving up on ${model}, trying next model...`);
-        }
-      }
-    }
-    if (response) break; // 成功したらループ終了
-  }
-
   const requestPayload = {
     max_tokens: 8000,
     system: `あなたは日本語テックブロガーです。AI初心者にもわかりやすく、読みやすい記事を書きます。
@@ -211,27 +157,63 @@ ${newsList}`,
     ],
   };
 
+  const preferredModel = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
+  const modelFallbacks = [
+    preferredModel,
+    'claude-haiku-4-5-20251001',  // 軽量・高速・低コスト
+    'claude-sonnet-4-5',           // フォールバック
+  ].filter((model, index, arr) => model && arr.indexOf(model) === index);
+
+  // 指数バックオフ付きで各モデルを試す
+  const MAX_RETRIES_PER_MODEL = 3;
   let response;
-  let lastError;
   for (const model of modelFallbacks) {
-    try {
-      console.log(`Calling Claude API model: ${model}`);
-      response = await client.messages.create({
-        model,
-        ...requestPayload,
-      });
-      break;
-    } catch (err) {
-      lastError = err;
-      console.warn(`Model ${model} failed: ${err.message}`);
-      if (!String(err.message || '').toLowerCase().includes('model')) {
-        throw err;
+    let lastModelError;
+    for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
+      try {
+        console.log(`Calling Claude API model: ${model} (attempt ${attempt}/${MAX_RETRIES_PER_MODEL})`);
+        response = await client.messages.create({
+          model,
+          ...requestPayload,
+        });
+        console.log(`Success with ${model}`);
+        break;
+      } catch (err) {
+        lastModelError = err;
+        console.warn(`Model ${model} failed (attempt ${attempt}): ${err.status || 'unknown'} ${err.message || ''}`);
+
+        // オーバーロードエラーまたはタイムアウトの場合は指数バックオフでリトライ
+        const isOverloaded = err.status === 529 || String(err.message || '').toLowerCase().includes('overloaded');
+        const isTimeout = err.status === 408 || err.code === 'ECONNABORTED' || String(err.message || '').toLowerCase().includes('timeout');
+        const isRateLimit = err.status === 429;
+
+        if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES_PER_MODEL) {
+          const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000); // Max 10秒
+          console.warn(`  Retrying in ${delay}ms...`);
+          await new Promise(r => setTimeout(r, delay));
+          continue;
+        }
+
+        // クレジット不足や認証エラーなど、リトライしても無意味なエラー
+        const isFatal = err.status === 401 || err.status === 403 ||
+          String(err.message || '').toLowerCase().includes('credit') ||
+          String(err.message || '').toLowerCase().includes('balance');
+
+        if (isFatal) {
+          throw err; // すぐに失敗させる
+        }
+
+        // その他のエラーは次のモデルを試す
+        if (attempt === MAX_RETRIES_PER_MODEL) {
+          console.warn(`  Giving up on ${model}, trying next model...`);
+        }
       }
     }
+    if (response) break; // 成功したらループ終了
   }
 
   if (!response) {
-    throw new Error(`Failed to call Claude API with all candidate models. Last error: ${lastError?.message || 'unknown error'}`);
+    throw new Error(`Failed to call Claude API with all candidate models. Last error: ${lastModelError?.message || 'unknown error'}`);
   }
 
   console.log(`API response received. Usage: ${response.usage.input_tokens} input, ${response.usage.output_tokens} output tokens`);

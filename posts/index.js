@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIテニスマシンが体験会開催、ChatGPT搭載スマートウォッチが早割セール中",
+    "title_en": "",
+    "title_zh-tw": "",
+    "title_zh-cn": "",
+    "title_ko": "",
+    "category": "AI NEWS",
+    "date": "2026.03.07",
+    "thumbnail": "",
+    "summary": "オープンソースAIコミュニティの盛り上がり、AIテニスマシンの体験会、ChatGPT搭載スマートウォッチのセールなど、AIの実用化が加速しています。",
+    "summary_en": "",
+    "summary_zh-tw": "",
+    "summary_zh-cn": "",
+    "summary_ko": "",
+    "slug": "2026-03-07"
+  },
+  {
     "title": "今日のAI最前線：GPT-5.4登場とAIアプリ生成の新時代へ",
     "title_en": "# Today's AI Frontline: GPT-5.4 Launch and the New Era of AI App Generation",
     "title_zh-tw": "今日的AI最前線：GPT-5.4登場與AI應用生成的新時代",

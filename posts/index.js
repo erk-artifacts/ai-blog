@@ -16,20 +16,20 @@ const posts = [
     "summary_ko": "OpenAI 간부의 사임, ChatGPT 새로운 기능의 지연, Grammarly '전문가 검토' 기능의 문제 등 AI 기업의 최신 동향을 정리했습니다.",
     "slug": "2026-03-08"
   },
-  {
+    {
     "title": "今日のAI最前線：AIテニスマシンが体験会開催、ChatGPT搭載スマートウォッチが早割セール中",
-    "title_en": "",
-    "title_zh-tw": "",
-    "title_zh-cn": "",
-    "title_ko": "",
+    "title_en": "# AI Front Lines Today: AI Tennis Machine Hosting Experience Event, ChatGPT-Enabled Smartwatch on Early Bird Sale",
+    "title_zh-tw": "今日的AI最前線：AI網球機參與體驗會，ChatGPT搭載智慧手錶早鳥優惠銷售中",
+    "title_zh-cn": "今日的AI前沿：AI网球机开展体验会，搭载ChatGPT智能手表正在进行早鸟优惠销售",
+    "title_ko": "오늘의 AI 최전선: AI 테니스 머신이 체험회 개최, ChatGPT 탑재 스마트워치가 얼리버드 세일 중",
     "category": "AI NEWS",
     "date": "2026.03.07",
     "thumbnail": "",
     "summary": "オープンソースAIコミュニティの盛り上がり、AIテニスマシンの体験会、ChatGPT搭載スマートウォッチのセールなど、AIの実用化が加速しています。",
-    "summary_en": "",
-    "summary_zh-tw": "",
-    "summary_zh-cn": "",
-    "summary_ko": "",
+    "summary_en": "The open-source AI community is thriving, AI tennis machine experience events are being held, ChatGPT-equipped smartwatch sales are underway, and the practical application of AI is accelerating.",
+    "summary_zh-tw": "開源AI社區的蓬勃發展、AI網球機的體驗會、搭載ChatGPT的智能手錶促銷等，AI的實際應用正在加速進行。",
+    "summary_zh-cn": "开源AI社区的蓬勃发展、AI网球机的体验会、搭载ChatGPT的智能手表销售等，AI的实用化正在加速推进。",
+    "summary_ko": "오픈소스 AI 커뮤니티의 활성화, AI 테니스 머신 체험회, ChatGPT 탑재 스마트워치 세일 등 AI의 실용화가 가속화되고 있습니다.",
     "slug": "2026-03-07"
   },
   {

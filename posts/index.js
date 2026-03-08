@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIの人事異動とGrammarly新機能が話題に",
+    "title_en": "# Today's AI Frontline: OpenAI Personnel Changes and Grammarly's New Features in the Spotlight",
+    "title_zh-tw": "今日の AI 最前線：OpenAI 的人事調動與 Grammarly 新功能成為話題",
+    "title_zh-cn": "我来翻译这个标题：\n\n**今日的AI最前线：OpenAI的人事变动和Grammarly新功能成为话题**\n\n或者更自然的表述：\n\n**AI前沿动态：OpenAI人事调整与Grammarly新功能引发关注**",
+    "title_ko": "오늘의 AI 최전선: OpenAI의 인사이동과 Grammarly 신기능이 화제",
+    "category": "AI NEWS",
+    "date": "2026.03.08",
+    "thumbnail": "",
+    "summary": "OpenAI幹部の辞任、ChatGPT新機能の遅延、Grammarly『expert review』機能の問題など、AI企業の最新動向をまとめました。",
+    "summary_en": "We've compiled the latest developments in AI companies, including the resignation of OpenAI executives, delays in new ChatGPT features, and issues with Grammarly's 'expert review' feature.",
+    "summary_zh-tw": "OpenAI幹部的辭職、ChatGPT新功能的延遲、Grammarly『專家審閱』功能的問題等，彙總了AI企業的最新動向。",
+    "summary_zh-cn": "OpenAI高管辞职、ChatGPT新功能延迟、Grammarly\"专家审查\"功能问题等，我们总结了AI企业的最新动向。",
+    "summary_ko": "OpenAI 간부의 사임, ChatGPT 새로운 기능의 지연, Grammarly '전문가 검토' 기능의 문제 등 AI 기업의 최신 동향을 정리했습니다.",
+    "slug": "2026-03-08"
+  },
+  {
     "title": "今日のAI最前線：AIテニスマシンが体験会開催、ChatGPT搭載スマートウォッチが早割セール中",
     "title_en": "",
     "title_zh-tw": "",

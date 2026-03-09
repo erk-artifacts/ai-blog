@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：日本の行政AIから企業向け生成AI活用まで",
+    "title_en": "# Today's AI Frontline: From Japan's Administrative AI to Enterprise Generative AI Applications",
+    "title_zh-tw": "今日的AI最前沿：從日本行政AI到企業生成式AI應用",
+    "title_zh-cn": "# 今日的AI前沿：从日本行政AI到企业生成AI应用",
+    "title_ko": "오늘의 AI 최전선: 일본의 행정 AI부터 기업용 생성 AI 활용까지",
+    "category": "AI NEWS",
+    "date": "2026.03.09",
+    "thumbnail": "",
+    "summary": "日本のデジタル庁が18万人の職員向けに国産AI「源内」を大規模実証へ、Slack上の複数AI活用アプリが進化、弁護士向けAI書面作成が正式リリース。AndroidのAI機能革新がアップルに差をつけられる可能性も指摘されています。",
+    "summary_en": "Japan's Digital Agency will conduct large-scale demonstration of the domestic AI \"Gennnai\" for 180,000 employees, multiple AI-powered applications on Slack are evolving, and AI document drafting tools for lawyers have officially launched. It is also pointed out that Android's AI feature innovations could potentially put Apple at a disadvantage.",
+    "summary_zh-tw": "日本的數位廳將針對18萬名職員大規模驗證國產AI「源內」,Slack上的多個AI應用程式不斷進化,律師用AI書面作成工具正式發布。有人指出Android的AI功能創新可能會超越蘋果。",
+    "summary_zh-cn": "日本的数字厅将为18万名职员进行国产AI\"源内\"的大规模试证，Slack上的多个AI应用在不断演进，面向律师的AI文件撰写已正式发布。有人指出Android的AI功能创新可能会超越苹果。",
+    "summary_ko": "일본의 디지털청이 18만 명의 직원을 대상으로 국산 AI「겐나이」의 대규모 실증 추진, Slack 상의 복수 AI 활용 앱이 진화, 변호사용 AI 서면 작성이 정식 릴리스. Android의 AI 기능 혁신이 애플에 뒤처질 가능성도 지적되고 있습니다.",
+    "slug": "2026-03-09"
+  },
+  {
     "title": "今日のAI最前線：OpenAIの人事異動とGrammarly新機能が話題に",
     "title_en": "# Today's AI Frontline: OpenAI Personnel Changes and Grammarly's New Features in the Spotlight",
     "title_zh-tw": "今日の AI 最前線：OpenAI 的人事調動與 Grammarly 新功能成為話題",

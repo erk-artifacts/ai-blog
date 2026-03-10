@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Anthropic vs. トランプ政権、生成AIの軍事利用をめぐる緊迫の対立",
+    "title_en": "# AI at the Forefront Today: Anthropic vs. Trump Administration, Escalating Tensions Over Military Use of Generative AI",
+    "title_zh-tw": "今日的AI最前線：Anthropic vs. 川普政權，圍繞生成AI軍事應用的激烈對立",
+    "title_zh-cn": "今日的AI最前线：Anthropic vs. 特朗普政权，围绕生成AI军事应用的紧张对立",
+    "title_ko": "오늘의 AI 최전선: Anthropic vs. 트럼프 행정부, 생성AI의 군사 활용을 둘러싼 긴박한 대립",
+    "category": "AI NEWS",
+    "date": "2026.03.10",
+    "thumbnail": "",
+    "summary": "Anthropicがトランプ政権を提訴し、GoogleやOpenAIの従業員が支持を表明。生成AIの軍事・監視利用を巡る政府との対立が深刻化。同時にサムスンが生成AI搭載スマートフォンを発表し、自動運転AIの新展開も。",
+    "summary_en": "Anthropic Sues Trump Administration as Google and OpenAI Employees Voice Support. Government Conflict Intensifies Over Military and Surveillance Use of Generative AI. Meanwhile, Samsung Announces Generative AI-Equipped Smartphones and Autonomous Driving AI Shows New Developments.",
+    "summary_zh-tw": "Anthropic 提訴特朗普政權,Google 和 OpenAI 員工表示支持。圍繞生成式 AI 的軍事和監視應用,與政府的對立加劇。與此同時,三星發佈搭載生成式 AI 的智能手機,自動駕駛 AI 也有新進展。",
+    "summary_zh-cn": "Anthropic对特朗普政权提起诉讼，谷歌和OpenAI员工表示支持。围绕生成AI的军事和监视应用，政府对立局势加剧。同时，三星发布了搭载生成AI的智能手机，自动驾驶AI也出现了新进展。",
+    "summary_ko": "Anthropic이 트럼프 정권을 고소하고, Google과 OpenAI 직원들이 지지를 표명. 생성 AI의 군사·감시 이용을 둘러싼 정부와의 대립이 심화. 동시에 삼성이 생성 AI 탑재 스마트폰을 발표하고, 자율주행 AI의 새로운 전개도.",
+    "slug": "2026-03-10"
+  },
+  {
     "title": "今日のAI最前線：日本の行政AIから企業向け生成AI活用まで",
     "title_en": "# Today's AI Frontline: From Japan's Administrative AI to Enterprise Generative AI Applications",
     "title_zh-tw": "今日的AI最前沿：從日本行政AI到企業生成式AI應用",

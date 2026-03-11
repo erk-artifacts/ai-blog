@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：MetaがAIエージェント向けSNSを買収、GoogleはWorkspaceにGeminiを深く統合",
+    "title_en": "# AI Frontline Today: Meta Acquires SNS for AI Agents, Google Deeply Integrates Gemini into Workspace",
+    "title_zh-tw": "# 今日的AI最前線：Meta收購AI代理商用社交媒體，Google在Workspace中深度整合Gemini",
+    "title_zh-cn": "今日的AI前沿：Meta收购AI代理人专用SNS，Google深度整合Gemini到Workspace",
+    "title_ko": "오늘의 AI 최전선: Meta가 AI 에이전트용 SNS를 인수, Google은 Workspace에 Gemini를 깊숙이 통합",
+    "category": "AI NEWS",
+    "date": "2026.03.11",
+    "thumbnail": "",
+    "summary": "MetaのMoltbook買収、GoogleのWorkspace統合、NVIDIAのThinking Machines Lab出資、MicrosoftのAnthropic支持表明、フォーティネットのAIセキュリティゲートウェイなど、AI業界の重要なニュースが相次ぎました。",
+    "summary_en": "Meta's acquisition of Moltbook, Google's Workspace integration, NVIDIA's investment in Thinking Machines Lab, Microsoft's declaration of support for Anthropic, and Fortinet's AI security gateway are among the important news stories that have emerged in succession in the AI industry.",
+    "summary_zh-tw": "Meta的Moltbook收購、Google的Workspace整合、NVIDIA對Thinking Machines Lab的投資、Microsoft對Anthropic的支持聲明、Fortinet的AI安全閘道等，AI業界接連出現了重要新聞。",
+    "summary_zh-cn": "Meta的Moltbook收购、Google的Workspace集成、NVIDIA对Thinking Machines Lab的投资、Microsoft对Anthropic的支持声明、Fortinet的AI安全网关等，AI行业接连出现了重要新闻。",
+    "summary_ko": "Meta의 Moltbook 인수, Google의 Workspace 통합, NVIDIA의 Thinking Machines Lab 투자, Microsoft의 Anthropic 지지 표명, Fortinet의 AI 보안 게이트웨이 등 AI 업계의 중요한 뉴스가 잇따랐습니다.",
+    "slug": "2026-03-11"
+  },
+  {
     "title": "今日のAI最前線：Anthropic vs. トランプ政権、生成AIの軍事利用をめぐる緊迫の対立",
     "title_en": "# AI at the Forefront Today: Anthropic vs. Trump Administration, Escalating Tensions Over Military Use of Generative AI",
     "title_zh-tw": "今日的AI最前線：Anthropic vs. 川普政權，圍繞生成AI軍事應用的激烈對立",

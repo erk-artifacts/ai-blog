@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今週のAI最前線：GoogleがWiz買収完了、MetaがAIチップ新モデル発表、Anthropicがシンクタンク設立",
+    "title_en": "# AI Frontline This Week: Google Completes Wiz Acquisition, Meta Announces New AI Chip Model, Anthropic Establishes Think Tank",
+    "title_zh-tw": "本週AI前沿：Google完成收購Wiz，Meta發表AI芯片新型號，Anthropic成立智庫",
+    "title_zh-cn": "本周AI前沿：Google完成Wiz收购、Meta发布AI芯片新款、Anthropic成立智库",
+    "title_ko": "이번 주 AI 최전선: Google이 Wiz 인수 완료, Meta가 AI칩 신모델 발표, Anthropic이 싱크탱크 설립",
+    "category": "AI NEWS",
+    "date": "2026.03.12",
+    "thumbnail": "",
+    "summary": "Google傘下のクラウド・AIセキュリティ企業Wizの320億ドル買収完了、MetaのカスタムAIチップ「MTIA」新モデル公開、Anthropicが社会的影響研究の新部門を設立。AIセキュリティ強化と大規模言語モデル関連技術の進展が業界を牽引。",
+    "summary_en": "Google Completes $32 Billion Acquisition of Cloud and AI Security Company Wiz, Meta Releases New Custom AI Chip \"MTIA\" Model, Anthropic Establishes New Division for Social Impact Research. AI security enhancement and large language model-related technology developments are driving the industry forward.",
+    "summary_zh-tw": "Google 傘下的雲端和 AI 安全公司 Wiz 完成 320 億美元收購，Meta 公開定製 AI 晶片「MTIA」新款機型，Anthropic 成立社會影響研究新部門。AI 安全強化和大規模語言模型相關技術進展引領業界發展。",
+    "summary_zh-cn": "Google 旗下云端和 AI 安全企业 Wiz 完成 320 亿美元收购，Meta 公开自定义 AI 芯片\"MTIA\"新型号，Anthropic 成立社会影响研究新部门。AI 安全强化和大规模语言模型相关技术进展正在引领业界发展。",
+    "summary_ko": "Google 산하의 클라우드·AI 보안 기업 Wiz의 320억 달러 인수 완료, Meta의 커스텀 AI 칩 「MTIA」 신모델 공개, Anthropic이 사회적 영향 연구의 신규 부문 설립. AI 보안 강화와 대규모 언어 모델 관련 기술의 진전이 업계를 주도.",
+    "slug": "2026-03-12"
+  },
+  {
     "title": "今日のAI最前線：MetaがAIエージェント向けSNSを買収、GoogleはWorkspaceにGeminiを深く統合",
     "title_en": "# AI Frontline Today: Meta Acquires SNS for AI Agents, Google Deeply Integrates Gemini into Workspace",
     "title_zh-tw": "# 今日的AI最前線：Meta收購AI代理商用社交媒體，Google在Workspace中深度整合Gemini",

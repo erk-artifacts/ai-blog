@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：生成AIの活用から軍事応用まで、急速に進化するAI業界の最新動向",
+    "title_en": "AI Front Lines Today: Latest Trends in the Rapidly Evolving AI Industry, from Generative AI Applications to Military Use",
+    "title_zh-tw": "今日的AI前沿：從生成AI應用到軍事應用，快速演進的AI產業最新動向",
+    "title_zh-cn": "# 今日的AI前线：从生成AI应用到军事应用，快速发展的AI行业最新动向",
+    "title_ko": "오늘의 AI 최전선: 생성 AI의 활용부터 군사 응용까지, 빠르게 진화하는 AI 업계의 최신 동향",
+    "category": "AI NEWS",
+    "date": "2026.03.13",
+    "thumbnail": "",
+    "summary": "生成AIの実践的活用法、AIセキュリティの脅威、Geminiの論理推論能力、AIスタートアップの急成長など、AI業界を揺るがすニュースが相次いでいます。",
+    "summary_en": "The AI industry is being shaken by successive major news stories, including practical applications of generative AI, threats from AI security vulnerabilities, Gemini's logical reasoning capabilities, and the rapid growth of AI startups.",
+    "summary_zh-tw": "生成式AI的實踐活用法、AI安全威脅、Gemini的邏輯推理能力、AI新創公司的快速成長等，接連不斷地撼動著AI產業的消息頻繁出現。",
+    "summary_zh-cn": "生成AI的实际应用方法、AI安全威胁、Gemini的逻辑推理能力、AI初创公司的急速增长等，AI行业的震撼性新闻接连出现。",
+    "summary_ko": "생성형 AI의 실천적 활용법, AI 보안 위협, Gemini의 논리 추론 능력, AI 스타트업의 급성장 등 AI 업계를 흔드는 뉴스가 잇따르고 있습니다.",
+    "slug": "2026-03-13"
+  },
+  {
     "title": "今週のAI最前線：GoogleがWiz買収完了、MetaがAIチップ新モデル発表、Anthropicがシンクタンク設立",
     "title_en": "# AI Frontline This Week: Google Completes Wiz Acquisition, Meta Announces New AI Chip Model, Anthropic Establishes Think Tank",
     "title_zh-tw": "本週AI前沿：Google完成收購Wiz，Meta發表AI芯片新型號，Anthropic成立智庫",

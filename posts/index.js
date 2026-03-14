@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今週のAI最前線：Musk's xAIが大型再編、AIチャットボットの危機的な影響が顕在化",
+    "title_en": "# This Week's AI Frontier: Musk's xAI Undergoes Major Reorganization, Critical Impact of AI Chatbots Becomes Apparent",
+    "title_zh-tw": "本週AI最前線：Musk的xAI大規模重組，AI聊天機器人的危機性影響浮現",
+    "title_zh-cn": "# 本周AI前沿：Musk的xAI大幅重组，AI聊天机器人危害日益显现",
+    "title_ko": "이번 주 AI 최전선: Musk의 xAI 대규모 재편, AI 챗봇의 위기적 영향이 현실화",
+    "category": "AI NEWS",
+    "date": "2026.03.14",
+    "thumbnail": "",
+    "summary": "xAIのコーディングツール開発の大規模リスタート、AIチャットボットによる自殺や集団危害事件の増加、Diggsのスパム問題、物理AI製造業への革新など、AI業界の重要なニュースが相次いでいます。",
+    "summary_en": "xAI's major restart of coding tool development, an increase in suicide and mass harm incidents involving AI chatbots, Diggs' spam problems, and innovation in physical AI manufacturing—important news continues to emerge in the AI industry.",
+    "summary_zh-tw": "xAI的編碼工具開發大規模重新啟動、AI聊天機器人引發的自殺和集體傷害事件增加、Diggs的垃圾郵件問題、物理AI製造業創新等，AI業界重要新聞相繼而至。",
+    "summary_zh-cn": "xAI的编码工具开发大规模重启、AI聊天机器人引发的自杀和集体伤害事件增加、Diggs的垃圾邮件问题、物理AI制造业创新等，AI行业的重要新闻层出不穷。",
+    "summary_ko": "xAI의 코딩 도구 개발 대규모 재시작, AI 챗봇에 의한 자살 및 집단 피해 사건 증가, Diggs의 스팸 문제, 물리 AI 제조업의 혁신 등 AI 업계의 중요한 뉴스가 잇따르고 있습니다.",
+    "slug": "2026-03-14"
+  },
+  {
     "title": "今日のAI最前線：生成AIの活用から軍事応用まで、急速に進化するAI業界の最新動向",
     "title_en": "AI Front Lines Today: Latest Trends in the Rapidly Evolving AI Industry, from Generative AI Applications to Military Use",
     "title_zh-tw": "今日的AI前沿：從生成AI應用到軍事應用，快速演進的AI產業最新動向",

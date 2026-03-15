@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenClawの中国ブーム、ChatGPTの新統合機能、そしてAI軍事利用の議論",
+    "title_en": "# AI Frontline Today: OpenClaw's China Boom, ChatGPT's New Integration Features, and Debates on AI Military Use",
+    "title_zh-tw": "今日的AI前沿：OpenClaw的中國熱潮、ChatGPT的新整合功能，以及AI軍事應用的討論",
+    "title_zh-cn": "今日的AI前沿：OpenClaw的中国热潮、ChatGPT的新集成功能及AI军事应用的讨论",
+    "title_ko": "오늘의 AI 최전선: OpenClaw의 중국 붐, ChatGPT의 새로운 통합 기능, 그리고 AI 군사 이용 논의",
+    "category": "AI NEWS",
+    "date": "2026.03.15",
+    "thumbnail": "",
+    "summary": "中国でAIエージェント「OpenClaw」が爆発的ブームに。一方、ChatGPTは複数アプリとの統合を実現。米国ではAnthropicとOpenAIのAI軍事利用をめぐる対立が深刻化している。",
+    "summary_en": "An AI agent called \"OpenClaw\" is experiencing an explosive boom in China. Meanwhile, ChatGPT is achieving integration with multiple applications. In the United States, conflicts between Anthropic and OpenAI over military use of AI are intensifying.",
+    "summary_zh-tw": "中國的AI代理程式「OpenClaw」掀起爆炸性熱潮。另一方面，ChatGPT實現了與多個應用程式的整合。美國則因Anthropic和OpenAI在AI軍事用途方面的對立而局勢加劇。",
+    "summary_zh-cn": "中国 AI 代理\"OpenClaw\"引发爆炸性热潮。与此同时，ChatGPT 实现了与多个应用的集成。在美国，Anthropic 和 OpenAI 围绕 AI 军事应用的对立加剧。",
+    "summary_ko": "중국에서 AI 에이전트 \"OpenClaw\"가 폭발적 붐을 일으키고 있다. 한편, ChatGPT는 여러 앱과의 통합을 실현했다. 미국에서는 Anthropic과 OpenAI의 AI 군사 이용을 둘러싼 갈등이 심화되고 있다.",
+    "slug": "2026-03-15"
+  },
+  {
     "title": "今週のAI最前線：Musk's xAIが大型再編、AIチャットボットの危機的な影響が顕在化",
     "title_en": "# This Week's AI Frontier: Musk's xAI Undergoes Major Reorganization, Critical Impact of AI Chatbots Becomes Apparent",
     "title_zh-tw": "本週AI最前線：Musk的xAI大規模重組，AI聊天機器人的危機性影響浮現",

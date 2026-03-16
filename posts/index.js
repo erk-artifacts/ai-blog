@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今週のAI最前線：法人向けエージェント実用化とデータセンター戦略が加速",
+    "title_en": "# This Week's AI Frontier: Acceleration of Enterprise Agent Deployment and Data Center Strategy",
+    "title_zh-tw": "本週AI前線：企業代理人實用化與數據中心戰略加速",
+    "title_zh-cn": "本周AI前沿动态：企业级代理实用化和数据中心战略加速推进",
+    "title_ko": "# 이번 주 AI 최전선: 법인용 에이전트 실용화 및 데이터센터 전략 가속화",
+    "category": "AI NEWS",
+    "date": "2026.03.16",
+    "thumbnail": "",
+    "summary": "NTTデータが実用段階の法人向けAIエージェントを公開、KDDIのAIデータセンター戦略が注目、動画生成AIの著作権問題で展開停止など、AI業界の最新動向をまとめました。",
+    "summary_en": "NTT Data releases practical AI agents for businesses, KDDI's AI data center strategy draws attention, video generation AI halts expansion due to copyright issues, and other latest trends in the AI industry have been compiled.",
+    "summary_zh-tw": "NTT數據公開實用階段的法人向AI代理，KDDI的AI數據中心戰略備受關注，動畫生成AI的著作權問題導致服務暫停等，彙總了AI業界的最新動向。",
+    "summary_zh-cn": "NTT Data公开了实用阶段的法人向AI代理，KDDI的AI数据中心战略受到关注，视频生成AI因著作权问题而停止部署等，总结了AI行业的最新动向。",
+    "summary_ko": "NTT데이터가 실용 단계의 법인향 AI 에이전트를 공개했으며, KDDI의 AI 데이터센터 전략이 주목받고 있고, 동영상 생성 AI의 저작권 문제로 서비스 중단 등 AI 업계의 최신 동향을 정리했습니다.",
+    "slug": "2026-03-16"
+  },
+  {
     "title": "今日のAI最前線：OpenClawの中国ブーム、ChatGPTの新統合機能、そしてAI軍事利用の議論",
     "title_en": "# AI Frontline Today: OpenClaw's China Boom, ChatGPT's New Integration Features, and Debates on AI Military Use",
     "title_zh-tw": "今日的AI前沿：OpenClaw的中國熱潮、ChatGPT的新整合功能，以及AI軍事應用的討論",

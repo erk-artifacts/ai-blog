@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：NVIDIAの推論革命からビジネス無人化まで",
+    "title_en": "Today's AI Front Lines: From NVIDIA's Inference Revolution to Business Automation",
+    "title_zh-tw": "今日の AI 最前線：NVIDIA 推論革命からビジ企業自動化まで",
+    "title_zh-cn": "今日的AI前沿：从NVIDIA推理革命到业务自动化",
+    "title_ko": "오늘의 AI 최전선: NVIDIA의 추론 혁명부터 비즈니스 자동화까지",
+    "category": "AI NEWS",
+    "date": "2026.03.17",
+    "thumbnail": "",
+    "summary": "NVIDIA新チップで推論性能35倍向上、ゲーム描画革新のDLSS 5発表、企業のAI導入加速。エージェンティックAIの実装が本格化し、バックオフィス無人化が現実化へ。",
+    "summary_en": "NVIDIA's new chip delivers 35x inference performance improvement, announces DLSS 5 revolutionizing game rendering, accelerating enterprise AI adoption. Agentic AI implementation becomes mainstream, with unmanned back-office automation moving toward reality.",
+    "summary_zh-tw": "NVIDIA 新晶片推論性能提升 35 倍，DLSS 5 發表遊戲繪圖革新，企業 AI 導入加速。代理型 AI 的實裝正式展開，後台辦公室無人化逐漸成為現實。",
+    "summary_zh-cn": "NVIDIA新芯片推理性能提升35倍，游戏画面革新的DLSS 5发布，企业AI导入加速。具身AI的实施开始正式化，后台办公无人化成为现实。",
+    "summary_ko": "NVIDIA 신칩으로 추론 성능 35배 향상, 게임 그래픽 혁신의 DLSS 5 발표, 기업의 AI 도입 가속화. 에이전틱 AI의 구현이 본격화되고 백오피스 무인화가 현실화로 향하고 있음.",
+    "slug": "2026-03-17"
+  },
+  {
     "title": "今週のAI最前線：法人向けエージェント実用化とデータセンター戦略が加速",
     "title_en": "# This Week's AI Frontier: Acceleration of Enterprise Agent Deployment and Data Center Strategy",
     "title_zh-tw": "本週AI前線：企業代理人實用化與數據中心戰略加速",

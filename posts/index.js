@@ -8,7 +8,7 @@ const posts = [
     "title_ko": "매진식 프롬프트를 사용해봤다",
     "category": "For Beginner",
     "date": "2026.03.18",
-    "thumbnail": "",
+    "thumbnail": "images/majin-slide.png",
     "summary": "おしゃれで統一感のあるGoogleスライドを爆速で生成する魔法のプロンプトをご紹介します。",
     "summary_en": "# A Magic Prompt to Generate Stylish, Cohesive Google Slides at Lightning Speed\n\nI'll introduce you to a magic prompt that creates fashionable and unified Google Slides in no time.",
     "summary_zh-tw": "以下是將文本翻譯成繁體中文：\n\n介紹一個能快速生成時尚且統一風格Google幻燈片的魔法提示詞。",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Midjourneyが新モデルV8を発表、OpenAIは小型モデルを投入",
+    "title_en": "AI at the Forefront Today: Midjourney Announces New Model V8, OpenAI Launches Compact Model",
+    "title_zh-tw": "今日的AI前沿：Midjourney發佈新模型V8，OpenAI推出小型模型",
+    "title_zh-cn": "# 今日的AI最前线：Midjourney发布新模型V8，OpenAI推出小型模型",
+    "title_ko": "오늘의 AI 최전선: Midjourney가 신형 모델 V8을 발표, OpenAI는 소형 모델 투입",
+    "category": "AI NEWS",
+    "date": "2026.03.18",
+    "thumbnail": "",
+    "summary": "画像生成AI「Midjourney V8」が5倍高速化で登場、OpenAIが「GPT-5.4 mini/nano」を発表。脳細胞でのデータセンター開発、ペンタゴンの機密データ学習計画など、生成AIの最新動向が加速している。",
+    "summary_en": "Image generation AI \"Midjourney V8\" launches with 5x speed boost, OpenAI announces \"GPT-5.4 mini/nano.\" Latest trends in generative AI are accelerating, including data center development with brain cells and the Pentagon's plan to train on classified data.",
+    "summary_zh-tw": "圖像生成AI「Midjourney V8」以5倍高速化登場，OpenAI發表「GPT-5.4 mini/nano」。腦細胞數據中心開發、五角大廈機密數據學習計劃等生成AI的最新動向正在加速。",
+    "summary_zh-cn": "图像生成AI\"Midjourney V8\"以5倍提速亮相，OpenAI推出\"GPT-5.4 mini/nano\"。脑细胞数据中心开发、五角大楼机密数据学习计划等生成AI最新动向在加速推进。",
+    "summary_ko": "이미지 생성 AI「Midjourney V8」이 5배 고속화로 등장, OpenAI가「GPT-5.4 mini/nano」를 발표했다. 뇌세포를 활용한 데이터센터 개발, 펜타곤의 기밀 데이터 학습 계획 등 생성 AI의 최신 동향이 가속화되고 있다.",
+    "slug": "2026-03-18"
+  },
+  {
     "title": "今日のAI最前線：NVIDIAの推論革命からビジネス無人化まで",
     "title_en": "Today's AI Front Lines: From NVIDIA's Inference Revolution to Business Automation",
     "title_zh-tw": "今日の AI 最前線：NVIDIA 推論革命からビジ企業自動化まで",

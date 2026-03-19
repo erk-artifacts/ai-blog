@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今週のAI最前線：ローカルLLM、AIエージェント、圧縮競技など注目トピック集",
+    "title_en": "# AI Frontiers This Week: Spotlight on Local LLMs, AI Agents, Compression Competitions, and More",
+    "title_zh-tw": "# 本週AI最前線：本地LLM、AI代理、壓縮競賽等關注主題集",
+    "title_zh-cn": "本周AI最前线：本地LLM、AI代理、压缩竞赛等关注热点集合",
+    "title_ko": "이번주 AI 최전선: 로컬 LLM, AI 에이전트, 압축 경쟁 등 주목 토픽 모음",
+    "category": "AI NEWS",
+    "date": "2026.03.19",
+    "thumbnail": "",
+    "summary": "GPUなしノートPCでのLLM実行検証、OpenAIの「パラメーター・ゴルフ」競技発表、IBM AIツール「Bob」のSaaS版提供開始、Metaの暴走AIエージェント問題など、AI業界の最新動向をまとめました。",
+    "summary_en": "# Latest AI Industry Updates\n\nWe've compiled the most recent developments in the AI industry, including verification of LLM execution on GPUs-free notebooks, OpenAI's announcement of a \"parameter golf\" competition, IBM's launch of the SaaS version of AI tool \"Bob,\" Meta's rogue AI agent issues, and more.",
+    "summary_zh-tw": "# 在無GPU筆記型電腦上執行LLM驗證、OpenAI宣布「參數高爾夫」競賽、IBM AI工具「Bob」開始提供SaaS版本、Meta的失控AI代理問題等，彙總了AI業界的最新動向。",
+    "summary_zh-cn": "无GPU笔记本电脑上的LLM执行验证、OpenAI\"参数高尔夫\"竞赛公告、IBM AI工具\"Bob\"的SaaS版本服务启动、Meta失控AI代理问题等，总结了AI行业的最新动向。",
+    "summary_ko": "GPU 없는 노트북 PC에서의 LLM 실행 검증, OpenAI의 \"파라미터 골프\" 경쟁 발표, IBM AI 도구 \"Bob\"의 SaaS 버전 제공 개시, Meta의 폭주 AI 에이전트 문제 등 AI 업계의 최신 동향을 정리했습니다.",
+    "slug": "2026-03-19"
+  },
+  {
     "title": "まじん式プロンプトを使ってみた",
     "title_en": "I tried using the Majin-style prompt.",
     "title_zh-tw": "我試用了魔神式提示詞",

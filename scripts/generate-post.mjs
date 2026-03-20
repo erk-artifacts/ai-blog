@@ -4,6 +4,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import { validateEntry } from './validate-post.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -627,6 +628,31 @@ async function main() {
   // 固定プレフィックスをタイトルに付与
   applyTitlePrefix(translatedPost);
   console.log(`Title (ja): ${translatedPost.ja.title}`);
+
+  // バリデーション（警告のみ、CI失敗はさせない）
+  const previewEntry = {
+    title: translatedPost.ja?.title || '',
+    title_en: translatedPost.en?.title || '',
+    'title_zh-tw': translatedPost['zh-tw']?.title || '',
+    'title_zh-cn': translatedPost['zh-cn']?.title || '',
+    title_ko: translatedPost.ko?.title || '',
+    category: 'AI NEWS',
+    summary: translatedPost.ja?.summary || '',
+    summary_en: translatedPost.en?.summary || '',
+    'summary_zh-tw': translatedPost['zh-tw']?.summary || '',
+    'summary_zh-cn': translatedPost['zh-cn']?.summary || '',
+    summary_ko: translatedPost.ko?.summary || '',
+  };
+  const validationErrors = validateEntry(previewEntry);
+  if (validationErrors.length > 0) {
+    console.warn('\n⚠ Post validation warnings:');
+    for (const err of validationErrors) {
+      console.warn(`  ${err}`);
+    }
+    console.warn('');
+  } else {
+    console.log('✓ Post validation passed');
+  }
 
   if (DRY_RUN) {
     console.log('--- DRY RUN (no file changes) ---');

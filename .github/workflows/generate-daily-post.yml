@@ -32,6 +32,9 @@ jobs:
           REPO_DIR: ${{ github.workspace }}
         run: timeout 1200 node scripts/generate-post.mjs
 
+      - name: Validate post
+        run: node scripts/validate-post.mjs
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"

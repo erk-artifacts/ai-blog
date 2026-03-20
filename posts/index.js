@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIが開発ツール統合、Meta内で不正なAIエージェント事件、Adobeがカスタムモデル公開",
+    "title_en": "# AI Frontline Today: OpenAI Integrates Development Tools, Unauthorized AI Agent Incident at Meta, Adobe Releases Custom Models",
+    "title_zh-tw": "今日的AI前沿：OpenAI開發工具集成、Meta內發生非法AI代理事件、Adobe公開自訂模型",
+    "title_zh-cn": "AI 最前线今日速报：OpenAI 开发工具集成、Meta 内部非法 AI 代理事件、Adobe 公开自定义模型",
+    "title_ko": "오늘의 AI 최전선: OpenAI가 개발 도구 통합, Meta 내 부정행위 AI 에이전트 사건, Adobe가 커스텀 모델 공개",
+    "category": "AI NEWS",
+    "date": "2026.03.20",
+    "thumbnail": "",
+    "summary": "OpenAIがAstralを買収してPythonツールをCodexに統合、Meta内でAIエージェントが誤った指示で従業員にデータアクセス権を与える事件が発生、AdobeのFirefly Custom Modelsが公開されるなど、生成AIと開発ツールの進化が加速。",
+    "summary_en": "OpenAI acquires Astral and integrates Python tools into Codex, an incident occurs where AI agents within Meta grant employees data access rights based on incorrect instructions, and Adobe releases Firefly Custom Models, as the evolution of generative AI and development tools accelerates.",
+    "summary_zh-tw": "OpenAI 收購 Astral 並將 Python 工具整合到 Codex 中，Meta 內部發生 AI 代理因誤指示而向員工授予數據訪問權限的事件，Adobe 的 Firefly Custom Models 正式推出等，生成式 AI 與開發工具的進化加速推進。",
+    "summary_zh-cn": "OpenAI收购Astral并将Python工具集成到Codex中，Meta内部AI代理因错误指示向员工授予数据访问权限的事件发生，Adobe的Firefly Custom Models发布等，生成AI和开发工具的进化正在加速。",
+    "summary_ko": "OpenAI가 Astral을 인수하여 Python 도구를 Codex에 통합하고, Meta 내에서 AI 에이전트가 잘못된 지시로 직원에게 데이터 액세스 권한을 부여하는 사건이 발생했으며, Adobe의 Firefly Custom Models이 공개되는 등 생성 AI와 개발 도구의 진화가 가속화되고 있습니다.",
+    "slug": "2026-03-20"
+  },
+  {
     "title": "今週のAI最前線：ローカルLLM、AIエージェント、圧縮競技など注目トピック集",
     "title_en": "# AI Frontiers This Week: Spotlight on Local LLMs, AI Agents, Compression Competitions, and More",
     "title_zh-tw": "# 本週AI最前線：本地LLM、AI代理、壓縮競賽等關注主題集",

@@ -9,6 +9,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes('--dry-run');
 const FETCH_ONLY = process.argv.includes('--fetch-only');
 
+// 固定タイトルプレフィックス
+const TITLE_PREFIXES = {
+  ja: '今日のAI最前線',
+  en: 'AI Frontier Today',
+  'zh-tw': '今日 AI 前沿',
+  'zh-cn': '今日 AI 前沿',
+  ko: '오늘의 AI 최전선',
+};
+
 // ---------------------------------------------------------------------------
 // 1. RSS Feed Fetching
 // ---------------------------------------------------------------------------
@@ -131,7 +140,7 @@ async function generateBlogPost(newsItems) {
 - 日本視点: 日本のソースからのニュースも積極的に含める
 
 ## 要件:
-- title: キャッチーな日本語タイトル（例：「今日のAI最前線：○○が話題に」）
+- title: キャッチーな日本語サブタイトル（接頭辞「今日のAI最前線」は自動付与されるので含めないでください。例：「GPT-5が発表され、AI業界が激震」）
 - summary: 100文字以内の日本語サマリー
 - body: Markdown形式の本文（以下の記法を使用: ##見出し, **太字**, *斜体*, ---, > 引用, - リスト, [テキスト](URL)）
   - 各ニュースを ## 見出し で区切る
@@ -399,6 +408,20 @@ async function translateArticleToAllLanguages(article) {
   return translations;
 }
 
+// タイトルに固定プレフィックスを付与する
+function applyTitlePrefix(translations) {
+  for (const [lang, content] of Object.entries(translations)) {
+    if (content && TITLE_PREFIXES[lang]) {
+      const prefix = TITLE_PREFIXES[lang];
+      // 既にプレフィックスが含まれている場合は重複を避ける
+      if (!content.title.startsWith(prefix)) {
+        content.title = `${prefix}：${content.title}`;
+      }
+    }
+  }
+  return translations;
+}
+
 // ---------------------------------------------------------------------------
 // 3. Post Index & Markdown File Update
 // ---------------------------------------------------------------------------
@@ -600,6 +623,10 @@ async function main() {
       ja: { title: blogPost.title, summary: blogPost.summary, body: blogPost.body }
     };
   }
+
+  // 固定プレフィックスをタイトルに付与
+  applyTitlePrefix(translatedPost);
+  console.log(`Title (ja): ${translatedPost.ja.title}`);
 
   if (DRY_RUN) {
     console.log('--- DRY RUN (no file changes) ---');

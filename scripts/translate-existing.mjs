@@ -12,6 +12,23 @@ const SUPPORTED_LANGUAGES = {
   ko: { name: '한국어（Korean）', prompt: 'translate to Korean (한국어)' }
 };
 
+// 固定タイトルプレフィックス
+const TITLE_PREFIXES = {
+  ja: '今日のAI最前線',
+  en: 'AI Frontier Today',
+  'zh-tw': '今日 AI 前沿',
+  'zh-cn': '今日 AI 前沿',
+  ko: '오늘의 AI 최전선',
+};
+
+// タイトルに固定プレフィックスを付与する
+function applyTitlePrefix(title, lang) {
+  const prefix = TITLE_PREFIXES[lang];
+  if (!prefix) return title;
+  if (title.startsWith(prefix)) return title;
+  return `${prefix}：${title}`;
+}
+
 async function translateWithClaude(text, targetLang) {
   const langConfig = SUPPORTED_LANGUAGES[targetLang];
 
@@ -164,7 +181,7 @@ async function updatePostInIndex(indexPath, originalContent, post, translations)
       // titleの後に追加
       updatedEntry = updatedEntry.replace(
         `("title": ${JSON.stringify(post.title)}`,
-        `("title": ${JSON.stringify(post.title)},\n    "${titleField}": ${JSON.stringify(translations[lang]?.title || '')}`
+        `("title": ${JSON.stringify(post.title)},\n    "${titleField}": ${JSON.stringify(applyTitlePrefix(translations[lang]?.title || '', lang))}`
       );
     }
 

@@ -2,9 +2,9 @@
 const posts = [
   {
     "title": "今日のAI最前線：OpenAIが開発ツール統合、Meta内で不正なAIエージェント事件、Adobeがカスタムモデル公開",
-    "title_en": "# AI Frontline Today: OpenAI Integrates Development Tools, Unauthorized AI Agent Incident at Meta, Adobe Releases Custom Models",
-    "title_zh-tw": "今日的AI前沿：OpenAI開發工具集成、Meta內發生非法AI代理事件、Adobe公開自訂模型",
-    "title_zh-cn": "AI 最前线今日速报：OpenAI 开发工具集成、Meta 内部非法 AI 代理事件、Adobe 公开自定义模型",
+    "title_en": "AI Frontier Today: OpenAI Integrates Development Tools, Unauthorized AI Agent Incident at Meta, Adobe Releases Custom Models",
+    "title_zh-tw": "今日 AI 前沿：OpenAI開發工具集成、Meta內發生非法AI代理事件、Adobe公開自訂模型",
+    "title_zh-cn": "今日 AI 前沿：OpenAI 开发工具集成、Meta 内部非法 AI 代理事件、Adobe 公开自定义模型",
     "title_ko": "오늘의 AI 최전선: OpenAI가 개발 도구 통합, Meta 내 부정행위 AI 에이전트 사건, Adobe가 커스텀 모델 공개",
     "category": "AI NEWS",
     "date": "2026.03.20",
@@ -17,11 +17,11 @@ const posts = [
     "slug": "2026-03-20"
   },
   {
-    "title": "今週のAI最前線：ローカルLLM、AIエージェント、圧縮競技など注目トピック集",
-    "title_en": "# AI Frontiers This Week: Spotlight on Local LLMs, AI Agents, Compression Competitions, and More",
-    "title_zh-tw": "# 本週AI最前線：本地LLM、AI代理、壓縮競賽等關注主題集",
-    "title_zh-cn": "本周AI最前线：本地LLM、AI代理、压缩竞赛等关注热点集合",
-    "title_ko": "이번주 AI 최전선: 로컬 LLM, AI 에이전트, 압축 경쟁 등 주목 토픽 모음",
+    "title": "今日のAI最前線：ローカルLLM、AIエージェント、圧縮競技など注目トピック集",
+    "title_en": "AI Frontier Today: Spotlight on Local LLMs, AI Agents, Compression Competitions, and More",
+    "title_zh-tw": "今日 AI 前沿：本地LLM、AI代理、壓縮競賽等關注主題集",
+    "title_zh-cn": "今日 AI 前沿：本地LLM、AI代理、压缩竞赛等关注热点集合",
+    "title_ko": "오늘의 AI 최전선: 로컬 LLM, AI 에이전트, 압축 경쟁 등 주목 토픽 모음",
     "category": "AI NEWS",
     "date": "2026.03.19",
     "thumbnail": "",

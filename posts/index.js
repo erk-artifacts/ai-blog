@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI規制、自動化研究者、Windows統合の見直し。今週の主要ニュース",
+    "title_en": "AI Frontier Today：AI Regulation, Automation Research, Windows Integration Review. This Week's Main News",
+    "title_zh-tw": "今日 AI 前沿：AI 監管、自動化研究人員、Windows 整合重新檢視。本週主要新聞",
+    "title_zh-cn": "今日 AI 前沿：AI监管、自动化研究者、Windows集成审查。本周主要新闻",
+    "title_ko": "오늘의 AI 최전선：AI 규제, 자동화 연구자, Windows 통합 검토. 이번 주 주요 뉴스",
+    "category": "AI NEWS",
+    "date": "2026.03.21",
+    "thumbnail": "",
+    "summary": "OpenAIが完全自動化されたAI研究者の開発に注力、Microsoftが Windows 11のCopilot統合を見直し、TrumpがAI規制フレームワークを発表。日本ではソフトバンクら企業連合がオハイオ州でAIインフラに5兆円投資。",
+    "summary_en": "OpenAI is focusing on developing fully automated AI researchers, Microsoft is reviewing Copilot integration in Windows 11, and Trump has announced an AI regulatory framework. In Japan, a corporate alliance led by SoftBank is investing 5 trillion yen in AI infrastructure in Ohio.",
+    "summary_zh-tw": "OpenAI 專注開發完全自動化的 AI 研究員，微軟重新檢視 Windows 11 的 Copilot 整合，川普發表 AI 監管框架。在日本，軟銀等企業聯盟在俄亥俄州 AI 基礎設施投資 5 兆日圓。",
+    "summary_zh-cn": "OpenAI 正专注于开发完全自动化的人工智能研究员，微软正在重新考虑 Windows 11 中的 Copilot 集成，Trump 发布了 AI 监管框架。在日本，软银等企业联盟计划在俄亥俄州的 AI 基础设施中投资 5 万亿日元。",
+    "summary_ko": "OpenAI가 완전 자동화된 AI 연구자 개발에 집중, Microsoft가 Windows 11의 Copilot 통합을 재검토, Trump가 AI 규제 프레임워크 발표. 일본에서는 소프트뱅크 등 기업연합이 오하이오주에서 AI 인프라에 5조 엔 투자.",
+    "slug": "2026-03-21"
+  },
+  {
     "title": "今日のAI最前線：OpenAIが開発ツール統合、Meta内で不正なAIエージェント事件、Adobeがカスタムモデル公開",
     "title_en": "AI Frontier Today: OpenAI Integrates Development Tools, Unauthorized AI Agent Incident at Meta, Adobe Releases Custom Models",
     "title_zh-tw": "今日 AI 前沿：OpenAI開發工具集成、Meta內發生非法AI代理事件、Adobe公開自訂模型",

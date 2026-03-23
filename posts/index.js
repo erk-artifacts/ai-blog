@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI文字起こし・スマート照明・Gemini Enterprise、AI活用の新展開相次ぐ",
+    "title_en": "AI Frontier Today：# AI Transcription, Smart Lighting, Gemini Enterprise: Series of New AI Application Developments",
+    "title_zh-tw": "今日 AI 前沿：AI 文字起こし・智慧照明・Gemini Enterprise，AI 應用的新展開相繼推出",
+    "title_zh-cn": "今日 AI 前沿：# AI文字起草、智能照明、Gemini Enterprise，AI应用新进展频频出现",
+    "title_ko": "오늘의 AI 최전선：AI 음성 인식, 스마트 조명, Gemini Enterprise, AI 활용의 새로운 전개가 잇따르다",
+    "category": "AI NEWS",
+    "date": "2026.03.23",
+    "thumbnail": "",
+    "summary": "オフライン対応のAI文字起こしソフト、AI活用スマート照明のグローバル展開、Gemini Enterpriseのエージェント開発など、実務的なAI活用が加速している。",
+    "summary_en": "Practical AI applications are accelerating, including offline-compatible AI transcription software, global expansion of AI-powered smart lighting, and agent development with Gemini Enterprise.",
+    "summary_zh-tw": "離線支援的AI文字辨識軟體、AI活用智慧照明的全球擴展、Gemini Enterprise的代理開發等，實務性的AI活用正在加速進行。",
+    "summary_zh-cn": "离线AI语音转录软件、具有AI功能的智能照明全球扩展、Gemini Enterprise代理开发等实际AI应用正在加速发展。",
+    "summary_ko": "오프라인 대응 AI 음성 인식 소프트웨어, AI 활용 스마트 조명의 글로벌 확대, Gemini Enterprise의 에이전트 개발 등 실무적인 AI 활용이 가속화하고 있다.",
+    "slug": "2026-03-23"
+  },
+  {
     "title": "今日のAI最前線：AI規制、自動化研究者、Windows統合の見直し。今週の主要ニュース",
     "title_en": "AI Frontier Today：AI Regulation, Automation Research, Windows Integration Review. This Week's Main News",
     "title_zh-tw": "今日 AI 前沿：AI 監管、自動化研究人員、Windows 整合重新檢視。本週主要新聞",

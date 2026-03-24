@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIが広告本格化、MetaがAIエージェント企業を吸収——業界再編が加速",
+    "title_en": "AI Frontier Today：OpenAI Steps Up Advertising Push, Meta Absorbs AI Agent Company——Industry Consolidation Accelerates",
+    "title_zh-tw": "今日 AI 前沿：OpenAI 大力推進廣告業務，Meta 吸收 AI 代理公司——產業重組加速",
+    "title_zh-cn": "今日 AI 前沿：OpenAI 加大广告力度，Meta 收购 AI 代理公司——行业重组加速",
+    "title_ko": "오늘의 AI 최전선：OpenAI가 광고 본격화, Meta가 AI 에이전트 기업 인수——업계 재편 가속화",
+    "category": "AI NEWS",
+    "date": "2026.03.24",
+    "thumbnail": "",
+    "summary": "OpenAIがMeta幹部を引き抜き広告事業を強化、MetaはAIエージェント企業Dreamerを買収。製造業向けAI活用ソリューションやAI倫理研究も進展。AI産業の競争が一層激化している。",
+    "summary_en": "OpenAI poaches Meta executive to strengthen advertising business, while Meta acquires AI agent company Dreamer. Progress is being made in AI solutions for manufacturing and AI ethics research. Competition in the AI industry is intensifying further.",
+    "summary_zh-tw": "OpenAI挖角Meta高管加強廣告業務，Meta收購AI代理商企業Dreamer。製造業AI應用解決方案和AI倫理研究也在推進中。AI產業競爭進一步加劇。",
+    "summary_zh-cn": "OpenAI挖角Meta高管加强广告业务，Meta收购AI智能体公司Dreamer。制造业AI应用解决方案和AI伦理研究也在取得进展。AI产业竞争进一步白热化。",
+    "summary_ko": "OpenAI가 Meta 임원을 영입해 광고 사업을 강화하고, Meta는 AI 에이전트 기업 Dreamer를 인수합니다. 제조업 향 AI 활용 솔루션과 AI 윤리 연구도 진전하고 있습니다. AI 산업의 경쟁이 더욱 심화되고 있습니다.",
+    "slug": "2026-03-24"
+  },
+  {
     "title": "今日のAI最前線：AI文字起こし・スマート照明・Gemini Enterprise、AI活用の新展開相次ぐ",
     "title_en": "AI Frontier Today：# AI Transcription, Smart Lighting, Gemini Enterprise: Series of New AI Application Developments",
     "title_zh-tw": "今日 AI 前沿：AI 文字起こし・智慧照明・Gemini Enterprise，AI 應用的新展開相繼推出",

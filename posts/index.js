@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Armが自社初のAI特化CPU発表、Kleiner Perkinsが35億ドルのAI投資ファンド立ち上げ",
+    "title_en": "AI Frontier Today：Arm Announces First In-House AI-Specialized CPU, Kleiner Perkins Launches $3.5 Billion AI Investment Fund",
+    "title_zh-tw": "今日 AI 前沿：Arm 宣佈首款 AI 專用 CPU，Kleiner Perkins 啟動 35 億美元 AI 投資基金",
+    "title_zh-cn": "今日 AI 前沿：Arm发布首款AI专用CPU，Kleiner Perkins推出35亿美元AI投资基金",
+    "title_ko": "오늘의 AI 최전선：Arm이 자사 첫 AI 특화 CPU 발표, Kleiner Perkins가 35억 달러 규모 AI 투자 펀드 출범",
+    "category": "AI NEWS",
+    "date": "2026.03.25",
+    "thumbnail": "",
+    "summary": "Armが「AGI CPU」を発表し、Meta共同開発のエージェンティックAI向けチップで次世代インフラの中核を目指す。一方、Kleiner Perkinsが35億ドルの大型AIファンドを立ち上げ、スタートアップから成長企業まで広くサポート。",
+    "summary_en": "Arm announces \"AGI CPU,\" aiming to become the core of next-generation infrastructure with a chip co-developed with Meta for agentic AI. Meanwhile, Kleiner Perkins launches a massive $3.5 billion AI fund to support startups through growth-stage companies.",
+    "summary_zh-tw": "Arm宣布推出「AGI CPU」，這是與Meta共同開發的代理型AI專用芯片，旨在成為下一代基礎設施的核心。與此同時，Kleiner Perkins推出了35億美元的大型AI基金，為從初創公司到成長企業的廣泛企業提供支持。",
+    "summary_zh-cn": "Arm 发布了\"AGI CPU\"，这是与 Meta 共同开发的面向智能体 AI 的芯片，旨在成为下一代基础设施的核心。与此同时，Kleiner Perkins 推出了一只 35 亿美元的大型 AI 基金，广泛支持从初创企业到成长型企业。",
+    "summary_ko": "Arm이 「AGI CPU」를 발표했으며, Meta와 공동개발한 에이전트 AI용 칩으로 차세대 인프라의 핵심을 목표로 하고 있습니다. 한편, Kleiner Perkins는 35억 달러 규모의 대형 AI 펀드를 출범해 스타트업부터 성장 기업까지 폭넓게 지원하고 있습니다.",
+    "slug": "2026-03-25"
+  },
+  {
     "title": "今日のAI最前線：OpenAIが広告本格化、MetaがAIエージェント企業を吸収——業界再編が加速",
     "title_en": "AI Frontier Today：OpenAI Steps Up Advertising Push, Meta Absorbs AI Agent Company——Industry Consolidation Accelerates",
     "title_zh-tw": "今日 AI 前沿：OpenAI 大力推進廣告業務，Meta 吸收 AI 代理公司——產業重組加速",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：トランプ政権のAI推進体制発足、生成AI動画翻訳が大手企業に次々採用、量子コンピューター実用化へ",
+    "title_en": "AI Frontier Today：# Trump Administration Launches AI Promotion Framework; Generative AI Video Translation Rapidly Adopted by Major Companies; Quantum Computer Moves Toward Practical Implementation",
+    "title_zh-tw": "今日 AI 前沿：川普政權AI推進體制啟動，生成式AI影片翻譯被大型企業相繼採用，量子電腦邁向實用化",
+    "title_zh-cn": "今日 AI 前沿：特朗普政权AI推进体制启动，生成式AI视频翻译被大型企业相继采用，量子计算机实用化推进",
+    "title_ko": "오늘의 AI 최전선：트럼프 정부의 AI 추진 체제 출범, 생성형 AI 동영상 번역이 대기업에 잇달아 채택, 양자컴퓨터 실용화로",
+    "category": "AI NEWS",
+    "date": "2026.03.26",
+    "thumbnail": "",
+    "summary": "トランプ政権がテック業界主導のAI政策推進体制を発足、日本企業のAI動画翻訳サービスが大手に採用される一方、AIスキル格差の拡大が懸念されています。",
+    "summary_en": "The Trump administration has established an AI policy promotion system led by the tech industry, while a Japanese company's AI video translation service has been adopted by major corporations. Meanwhile, there are growing concerns about the widening gap in AI skills.",
+    "summary_zh-tw": "川普政權成立由科技業界主導的AI政策推進體制，日本企業的AI視頻翻譯服務被大型企業採用，同時人們對AI技能差距擴大表示擔憂。",
+    "summary_zh-cn": "特朗普政权启动了由科技行业主导的人工智能政策推进体制，日本企业的人工智能视频翻译服务被大型企业采用，与此同时，人们对人工智能技能差距扩大的担忧也在增加。",
+    "summary_ko": "트럼프 정부가 테크 업계 주도의 AI 정책 추진 체제를 발족했으며, 일본 기업의 AI 동영상 번역 서비스가 대형사에 채택되는 한편, AI 스킬 격차 확대가 우려되고 있습니다.",
+    "slug": "2026-03-26"
+  },
+  {
     "title": "今日のAI最前線：Armが自社初のAI特化CPU発表、Kleiner Perkinsが35億ドルのAI投資ファンド立ち上げ",
     "title_en": "AI Frontier Today：Arm Announces First In-House AI-Specialized CPU, Kleiner Perkins Launches $3.5 Billion AI Investment Fund",
     "title_zh-tw": "今日 AI 前沿：Arm 宣佈首款 AI 專用 CPU，Kleiner Perkins 啟動 35 億美元 AI 投資基金",

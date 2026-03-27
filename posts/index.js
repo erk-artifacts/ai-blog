@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Anthropicが政府規制に勝利、GoogleがLLM圧縮技術発表、川邊氏がAI起業宣言",
+    "title_en": "AI Frontier Today：# Anthropic Wins Against Government Regulation, Google Announces LLM Compression Technology, Kawabe Declares AI Startup Launch",
+    "title_zh-tw": "今日 AI 前沿：Anthropic在政府監管上取得勝利，Google宣布LLM壓縮技術，川邊氏宣布AI創業",
+    "title_zh-cn": "今日 AI 前沿：Anthropic在政府监管中胜利，Google发布LLM压缩技术，川边氏宣布AI创业",
+    "title_ko": "오늘의 AI 최전선：Anthropic이 정부 규제에 승리, Google이 LLM 압축 기술 발표, 카와베 씨가 AI 창업 선언",
+    "category": "AI NEWS",
+    "date": "2026.03.27",
+    "thumbnail": "",
+    "summary": "Anthropicがトランプ政権の制限をめぐる訴訟で勝利し仮差し止めを獲得。GoogleはLLMのメモリ消費を6分の1に削減する新技術「TurboQuant」を発表。LINEヤフー川邊会長がAIとの起業に挑戦することを宣言。",
+    "summary_en": "Anthropic wins legal battle over Trump administration restrictions and secures temporary injunction. Google announces new technology \"TurboQuant\" that reduces LLM memory consumption to one-sixth. LINE Yahoo Chairman Kawabe declares challenge to entrepreneurship with AI.",
+    "summary_zh-tw": "Anthropic 在與特朗普政權限制措施相關的訴訟中獲勝，獲得臨時禁令。Google 發表新技術「TurboQuant」，可將大語言模型的記憶體消耗減少六分之一。LINE Yahoo 董事長川邊宣布將挑戰與 AI 相關的創業。",
+    "summary_zh-cn": "Anthropic在特朗普政权限制诉讼中获胜,获得临时禁令。Google宣布新技术\"TurboQuant\",将LLM内存消耗降低六分之一。LINE Yahoo董事长川边宣布挑战与AI的创业。",
+    "summary_ko": "Anthropic이 트럼프 정권의 제한을 둘러싼 소송에서 승리하여 임시 금지 판결을 획득. Google이 LLM의 메모리 소비를 6분의 1로 줄이는 새로운 기술 \"TurboQuant\"를 발표. LINE Yahoo 카와베 회장이 AI와의 창업에 도전할 것을 선언.",
+    "slug": "2026-03-27"
+  },
+  {
     "title": "今日のAI最前線：トランプ政権のAI推進体制発足、生成AI動画翻訳が大手企業に次々採用、量子コンピューター実用化へ",
     "title_en": "AI Frontier Today：# Trump Administration Launches AI Promotion Framework; Generative AI Video Translation Rapidly Adopted by Major Companies; Quantum Computer Moves Toward Practical Implementation",
     "title_zh-tw": "今日 AI 前沿：川普政權AI推進體制啟動，生成式AI影片翻譯被大型企業相繼採用，量子電腦邁向實用化",

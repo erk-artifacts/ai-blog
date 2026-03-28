@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの幻覚性が科学的に判明、データセンター電力規制へ動き加速、OpenAIのSora終了など",
+    "title_en": "AI Frontier Today：AI Hallucinations Scientifically Proven, Data Center Power Regulations Accelerate, OpenAI's Sora Discontinued, and More",
+    "title_zh-tw": "今日 AI 前沿：# AI幻覺性科學認證，數據中心電力監管加快，OpenAI Sora終止等",
+    "title_zh-cn": "今日 AI 前沿：AI的幻觉性已被科学证实，数据中心电力监管行动加速，OpenAI的Sora终止等",
+    "title_ko": "오늘의 AI 최전선：AI의 환각성이 과학적으로 규명, 데이터센터 전력 규제로의 움직임 가속, OpenAI의 Sora 종료 등",
+    "category": "AI NEWS",
+    "date": "2026.03.28",
+    "thumbnail": "",
+    "summary": "スタンフォード大学がAIの幻覚メカニズムを初分析。OpenAIがSoraを終了する一方、Codexに新機能追加。データセンター電力使用量の監視強化をめぐる動きが活発化。",
+    "summary_en": "Stanford University Conducts First Analysis of AI Hallucination Mechanisms. While OpenAI Discontinues Sora, Codex Receives New Features. Increased Activity Surrounding Enhanced Monitoring of Data Center Power Consumption.",
+    "summary_zh-tw": "斯坦福大學首次分析AI幻覺機制。OpenAI一方面終止Sora，另一方面為Codex新增功能。圍繞加強數據中心電力使用量監視的動向日趨活躍。",
+    "summary_zh-cn": "斯坦福大学首次分析AI幻觉机制。OpenAI在终止Sora的同时，为Codex增加新功能。围绕加强数据中心电力使用监控的举措日趋活跃。",
+    "summary_ko": "스탠포드 대학이 AI 환각 메커니즘을 처음 분석. OpenAI가 Sora를 종료하는 한편, Codex에 새로운 기능 추가. 데이터센터 전력 사용량 모니터링 강화를 둘러싼 움직임이 활발화.",
+    "slug": "2026-03-28"
+  },
+  {
     "title": "今日のAI最前線：Anthropicが政府規制に勝利、GoogleがLLM圧縮技術発表、川邊氏がAI起業宣言",
     "title_en": "AI Frontier Today：# Anthropic Wins Against Government Regulation, Google Announces LLM Compression Technology, Kawabe Declares AI Startup Launch",
     "title_zh-tw": "今日 AI 前沿：Anthropic在政府監管上取得勝利，Google宣布LLM壓縮技術，川邊氏宣布AI創業",

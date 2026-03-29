@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI音楽生成が進化、Claudeの人気急上昇、Soraの終焉——AI業界の転換点",
+    "title_en": "AI Frontier Today：# AI Music Generation Evolves, Claude's Popularity Surges, Sora's End——Turning Point in the AI Industry",
+    "title_zh-tw": "今日 AI 前沿：# AI音樂生成進化、Claude人氣急升、Sora的終焉——AI業界的轉折點",
+    "title_zh-cn": "今日 AI 前沿：AI音乐生成进化、Claude人气暴涨、Sora走向终焉——AI行业的转折点",
+    "title_ko": "오늘의 AI 최전선：AI 음악 생성의 진화, Claude의 급상승하는 인기, Sora의 종말——AI 산업의 전환점",
+    "category": "AI NEWS",
+    "date": "2026.03.29",
+    "thumbnail": "",
+    "summary": "Sunoが音楽生成AIを大幅アップデート、AnthropicのClaude有料ユーザーが倍増、OpenAIがSora終了を発表。AI業界で大きな動きが相次ぎ、生成AIの実用化と課題が同時に進行中。",
+    "summary_en": "Suno Significantly Updates Music Generation AI, Anthropic's Claude Paid Users Double, OpenAI Announces End of Sora. The AI industry continues to see major developments, with practical applications of generative AI advancing alongside emerging challenges.",
+    "summary_zh-tw": "Suno大幅更新了音樂生成AI，Anthropic的Claude付費用戶增加了一倍，OpenAI宣佈終止Sora。AI行業接連出現重大動向，生成AI的實用化和課題同時推進中。",
+    "summary_zh-cn": "Suno大幅更新音乐生成AI，Anthropic的Claude付费用户翻倍，OpenAI宣布Sora终止。AI行业接连出现大动作，生成式AI的实用化与课题同时推进中。",
+    "summary_ko": "Sunoが음악 생성 AI를 대폭 업데이트했으며, Anthropic의 Claude 유료 사용자가 두 배로 증가했고, OpenAI가 Sora 종료를 발표했습니다. AI 업계에서 큰 움직임이 잇따르고 있으며, 생성 AI의 실용화와 과제가 동시에 진행 중입니다.",
+    "slug": "2026-03-29"
+  },
+  {
     "title": "今日のAI最前線：AIの幻覚性が科学的に判明、データセンター電力規制へ動き加速、OpenAIのSora終了など",
     "title_en": "AI Frontier Today：AI Hallucinations Scientifically Proven, Data Center Power Regulations Accelerate, OpenAI's Sora Discontinued, and More",
     "title_zh-tw": "今日 AI 前沿：# AI幻覺性科學認證，數據中心電力監管加快，OpenAI Sora終止等",

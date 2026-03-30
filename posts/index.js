@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：生成AIの実装進化とロボティクス革新が加速",
+    "title_en": "AI Frontier Today：# The Accelerating Evolution of Generative AI Implementation and Robotics Innovation",
+    "title_zh-tw": "今日 AI 前沿：生成式AI的實現進化與機器人技術革新加速",
+    "title_zh-cn": "今日 AI 前沿：# AI生成技术实现进化与机器人创新加速",
+    "title_ko": "오늘의 AI 최전선：생성 AI의 구현 진화와 로봇공학 혁신이 가속화되고 있음",
+    "category": "AI NEWS",
+    "date": "2026.03.30",
+    "thumbnail": "",
+    "summary": "Microsoft 365 CopilotのAIエージェント化、Blueskyの個人主導型AI「Attie」、動画生成AI「LTX-2.3」の無料提供、そしてMujinの自律搬送ロボットの進化など、AI業界全体で実装レベルの革新が急速に進んでいます。",
+    "summary_en": "Microsoft 365 Copilot's evolution into an AI agent, Bluesky's personal-led AI \"Attie,\" the free provision of video generation AI \"LTX-2.3,\" and the advancement of Mujin's autonomous transport robots—implementation-level innovations are rapidly progressing across the entire AI industry.",
+    "summary_zh-tw": "Microsoft 365 Copilot的AI代理化、Bluesky的個人主導型AI「Attie」、影片生成AI「LTX-2.3」的免費提供，以及Mujin的自主搬運機器人的進化等，AI產業整體中實裝層級的創新正在急速推進。",
+    "summary_zh-cn": "Microsoft 365 Copilot的AI代理化、Bluesky推出的个人主导型AI\"Attie\"、视频生成AI\"LTX-2.3\"的免费提供，以及Mujin自主搬运机器人的进化等，AI行业整体的实装级别创新正在迅速推进。",
+    "summary_ko": "Microsoft 365 Copilot의 AI 에이전트화, Bluesky의 개인 주도형 AI「Attie」, 동영상 생성 AI「LTX-2.3」의 무료 제공, 그리고 Mujin의 자율 반송 로봇의 진화 등, AI 업계 전체에서 구현 수준의 혁신이 급속도로 진행되고 있습니다.",
+    "slug": "2026-03-30"
+  },
+  {
     "title": "今日のAI最前線：AI音楽生成が進化、Claudeの人気急上昇、Soraの終焉——AI業界の転換点",
     "title_en": "AI Frontier Today：# AI Music Generation Evolves, Claude's Popularity Surges, Sora's End——Turning Point in the AI Industry",
     "title_zh-tw": "今日 AI 前沿：# AI音樂生成進化、Claude人氣急升、Sora的終焉——AI業界的轉折點",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Mistral AIが欧州最大級のAIインフラ構築へ、アドビのAI戦略とフィジカルAIの工場無人化が加速",
+    "title_en": "AI Frontier Today：Mistral AI to Build One of Europe's Largest AI Infrastructure, Adobe's AI Strategy and Physical AI Accelerating Factory Automation",
+    "title_zh-tw": "今日 AI 前沿：Mistral AI在歐洲最大級AI基礎設施的構建上，Adobe的AI戰略和物理AI工廠無人化加速推進",
+    "title_zh-cn": "今日 AI 前沿：Mistral AI 建设欧洲最大规模的 AI 基础设施，Adobe 的 AI 战略与物理 AI 工厂无人化加速推进",
+    "title_ko": "오늘의 AI 최전선：Mistral AI가 유럽 최대급의 AI 인프라 구축으로, Adobe의 AI 전략과 피지컬 AI의 공장 무인화 가속화",
+    "category": "AI NEWS",
+    "date": "2026.03.31",
+    "thumbnail": "",
+    "summary": "Mistral AIが8億3000万ドルの融資を獲得してヨーロッパ最大級のAIインフラ構築を目指し、アドビは各製品でのAI機能強化を発表。同時に日本でも三菱電機がフィジカルAIで工場無人化に向けて動いている。",
+    "summary_en": "Mistral AI has secured $830 million in funding to build Europe's largest AI infrastructure, while Adobe has announced AI feature enhancements across its products. At the same time, in Japan, Mitsubishi Electric is moving forward with physical AI to achieve factory automation without human workers.",
+    "summary_zh-tw": "Mistral AI獲得8億3000萬美元融資，致力於打造歐洲最大規模的AI基礎設施，Adobe則宣布在各產品中強化AI功能。與此同時，日本的三菱電機也正在推進物理AI技術，朝著工廠無人化的目標邁進。",
+    "summary_zh-cn": "Mistral AI获得8.3亿美元融资，致力于构建欧洲规模最大的AI基础设施。同时，Adobe宣布了在各产品中强化AI功能。与此同时，日本的三菱电机也在利用物理AI推进工厂无人化。",
+    "summary_ko": "Mistral AI가 8억 3000만 달러의 융자를 확보하여 유럽 최대급의 AI 인프라 구축을 목표로 하고 있으며, 어도비는 각 제품의 AI 기능 강화를 발표했다. 동시에 일본에서도 미쓰비시 전기가 피지컬 AI로 공장 무인화를 향해 움직이고 있다.",
+    "slug": "2026-03-31"
+  },
+  {
     "title": "今日のAI最前線：生成AIの実装進化とロボティクス革新が加速",
     "title_en": "AI Frontier Today：# The Accelerating Evolution of Generative AI Implementation and Robotics Innovation",
     "title_zh-tw": "今日 AI 前沿：生成式AI的實現進化與機器人技術革新加速",

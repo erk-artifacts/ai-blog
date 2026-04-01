@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIが19兆円調達で激動、AnthropicのClaudeコード流出、Slackに30個のAI機能が追加",
+    "title_en": "AI Frontier Today：OpenAI Raises 19 Trillion Yen in Massive Funding Round, Anthropic's Claude Code Leaks, Slack Adds 30 AI Features",
+    "title_zh-tw": "今日 AI 前沿：OpenAI以190億日元融資引發激烈動蕩，Anthropic的Claude程式碼洩露，Slack新增30項AI功能",
+    "title_zh-cn": "今日 AI 前沿：OpenAI以19万亿日元融资引发激动，Anthropic的Claude代码泄露，Slack添加30个AI功能",
+    "title_ko": "오늘의 AI 최전선：OpenAI가 19조 원 조달로 격변, Anthropic의 Claude 코드 유출, Slack에 30개의 AI 기능 추가",
+    "category": "AI NEWS",
+    "date": "2026.04.01",
+    "thumbnail": "",
+    "summary": "OpenAIが過去最大規模の資金調達を完了し企業価値が大幅上昇。一方Anthropicではセキュリティインシデントが相次ぎ、SalesforceはSlackに大規模なAI機能を追加するなど、AI業界が大きな動きを見せています。",
+    "summary_en": "OpenAI completes its largest-ever fundraising round, with its valuation soaring significantly. Meanwhile, Anthropic faces a series of security incidents, while Salesforce adds extensive AI capabilities to Slack. The AI industry is witnessing major developments.",
+    "summary_zh-tw": "OpenAI完成了過去最大規模的融資，企業價值大幅上升。與此同時，Anthropic頻繁發生安全事件，而Salesforce則向Slack添加了大規模AI功能，AI產業呈現出重大動向。",
+    "summary_zh-cn": "OpenAI完成了有史以来最大规模的融资，企业估值大幅上升。与此同时，Anthropic遭遇多起安全事件，Salesforce则在Slack中添加了大规模AI功能，整个AI行业呈现出巨大的动向。",
+    "summary_ko": "OpenAI가 과거 최대 규모의 자금조달을 완료하며 기업 가치가 크게 상승했습니다. 한편 Anthropic에서는 보안 인시던트가 잇따르고 있으며, Salesforce는 Slack에 대규모 AI 기능을 추가하는 등 AI 업계가 큰 변화를 보이고 있습니다.",
+    "slug": "2026-04-01"
+  },
+  {
     "title": "今日のAI最前線：Mistral AIが欧州最大級のAIインフラ構築へ、アドビのAI戦略とフィジカルAIの工場無人化が加速",
     "title_en": "AI Frontier Today：Mistral AI to Build One of Europe's Largest AI Infrastructure, Adobe's AI Strategy and Physical AI Accelerating Factory Automation",
     "title_zh-tw": "今日 AI 前沿：Mistral AI在歐洲最大級AI基礎設施的構建上，Adobe的AI戰略和物理AI工廠無人化加速推進",

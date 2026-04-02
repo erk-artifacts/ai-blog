@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全性議論から日本企業の実践的導入まで、AI業界に大きな動きが相次ぐ",
+    "title_en": "AI Frontier Today：# From AI Safety Discussions to Practical Adoption by Japanese Companies: Major Developments in the AI Industry",
+    "title_zh-tw": "今日 AI 前沿：從AI安全性議論到日本企業的實踐導入，AI業界動作頻繁",
+    "title_zh-cn": "今日 AI 前沿：从AI安全性讨论到日本企业的实践应用，AI行业接连出现重大动向",
+    "title_ko": "오늘의 AI 최전선：AI의 안전성 논의부터 일본 기업의 실질적 도입까지, AI 업계에 큰 움직임이 잇따르고 있다",
+    "category": "AI NEWS",
+    "date": "2026.04.02",
+    "thumbnail": "",
+    "summary": "Metaの脳活動予測AI、Anthropicのセキュリティ事案、日本企業による生成AI活用とセキュリティの両立、ヘルスAIの安全性問題など、AI業界の最前線の多様なニュースをまとめました。",
+    "summary_en": "Meta's Brain Activity Prediction AI, Anthropic's Security Incident, Japanese Companies Balancing Generative AI Adoption with Security, Health AI Safety Issues, and Other Diverse News from the Frontlines of the AI Industry.",
+    "summary_zh-tw": "Meta的腦活動預測AI、Anthropic的安全事件、日本企業生成AI應用與安全性的平衡、健康AI的安全問題等,我們整理了AI產業最前沿的多樣化新聞。",
+    "summary_zh-cn": "Meta的脑活动预测AI、Anthropic的安全事件、日本企业生成AI应用与安全的兼顾、医疗AI的安全性问题等，汇总了AI产业最前沿的多样化新闻。",
+    "summary_ko": "Meta의 뇌 활동 예측 AI, Anthropic의 보안 사건, 일본 기업의 생성 AI 활용과 보안의 양립, 헬스 AI의 안전성 문제 등 AI 업계 최전선의 다양한 뉴스를 정리했습니다.",
+    "slug": "2026-04-02"
+  },
+  {
     "title": "今日のAI最前線：OpenAIが19兆円調達で激動、AnthropicのClaudeコード流出、Slackに30個のAI機能が追加",
     "title_en": "AI Frontier Today：OpenAI Raises 19 Trillion Yen in Massive Funding Round, Anthropic's Claude Code Leaks, Slack Adds 30 AI Features",
     "title_zh-tw": "今日 AI 前沿：OpenAI以190億日元融資引發激烈動蕩，Anthropic的Claude程式碼洩露，Slack新增30項AI功能",

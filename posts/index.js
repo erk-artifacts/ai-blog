@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI業界の重大な人事異動と買収ラッシュ、セキュリティ懸念も浮上",
+    "title_en": "AI Frontier Today：# Major Personnel Changes and M&A Wave in AI Industry, with Security Concerns Emerging",
+    "title_zh-tw": "今日 AI 前沿：AI業界的重大人事異動和收購熱潮，安全隱憂也浮現",
+    "title_zh-cn": "今日 AI 前沿：AI行业重大人事变动和收购潮，安全隐患也浮出水面",
+    "title_ko": "오늘의 AI 최전선：AI 업계의 주요 인사 이동과 인수 붐, 보안 우려도 대두",
+    "category": "AI NEWS",
+    "date": "2026.04.04",
+    "thumbnail": "",
+    "summary": "OpenAIとAnthropicで経営陣の大規模な異動が発生。Anthropicは生物工学スタートアップを4億ドルで買収し、一方OpenClawのセキュリティリスクが明らかになった。",
+    "summary_en": "Major executive reshuffles have occurred at OpenAI and Anthropic. Anthropic acquired a bioengineering startup for $400 million, while security risks in OpenClaw were revealed.",
+    "summary_zh-tw": "OpenAI和Anthropic發生了管理層的大規模人事調動。Anthropic以4億美元收購了一家生物工程初創公司，而OpenClaw的安全風險隨之浮出水面。",
+    "summary_zh-cn": "OpenAI和Anthropic发生大规模管理层变动。Anthropic以4亿美元收购生物工程初创公司，与此同时OpenClaw的安全风险被曝光。",
+    "summary_ko": "OpenAI와 Anthropic에서 경영진의 대규모 인사이동이 발생했습니다. Anthropic은 생물공학 스타트업을 4억 달러에 인수했으며, 한편 OpenClaw의 보안 위험이 드러났습니다.",
+    "slug": "2026-04-04"
+  },
+  {
     "title": "今日のAI最前線：AIの安全性議論から日本企業の実践的導入まで、AI業界に大きな動きが相次ぐ",
     "title_en": "AI Frontier Today：# From AI Safety Discussions to Practical Adoption by Japanese Companies: Major Developments in the AI Industry",
     "title_zh-tw": "今日 AI 前沿：從AI安全性議論到日本企業的實踐導入，AI業界動作頻繁",

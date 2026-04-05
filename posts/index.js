@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Xの自動翻訳が拡大、Claude Codeが値上げ、AI生成コンテンツの証明が課題に",
+    "title_en": "AI Frontier Today：X's Auto-Translation Expands, Claude Code Raises Prices, AI-Generated Content Authentication Becomes Challenge",
+    "title_zh-tw": "今日 AI 前沿：X的自動翻譯擴大、Claude Code漲價、AI生成內容的證明成為課題",
+    "title_zh-cn": "今日 AI 前沿：X的自动翻译扩大、Claude Code涨价、AI生成内容的证明成为课题",
+    "title_ko": "오늘의 AI 최전선：X의 자동 번역 확대, Claude Code 인상, AI 생성 콘텐츠 증명이 과제로",
+    "category": "AI NEWS",
+    "date": "2026.04.05",
+    "thumbnail": "",
+    "summary": "Xの生成AI「Grok」による自動翻訳が日本でも利用可能に。一方、AnthropicはClaude Code利用者向けにOpenClaw使用時の追加課金を発表。AI生成コンテンツの真正性証明が業界課題として浮上。",
+    "summary_en": "X's generative AI \"Grok\" automatic translation service is now available in Japan. Meanwhile, Anthropic has announced additional charges for Claude Code users when using OpenClaw. Verification of authenticity for AI-generated content is emerging as an industry challenge.",
+    "summary_zh-tw": "X 的生成式 AI「Grok」自動翻譯功能現已在日本推出。另一方面，Anthropic 宣佈對 Claude Code 使用者在使用 OpenClaw 時進行額外收費。AI 生成內容的真實性認證成為業界新課題。",
+    "summary_zh-cn": "X的生成AI\"Grok\"的自动翻译功能现已在日本也可使用。另一方面，Anthropic宣布对Claude Code用户在使用OpenClaw时收取额外费用。AI生成内容的真正性证明已成为行业课题。",
+    "summary_ko": "X의 생성AI「Grok」에 의한 자동 번역이 일본에서도 이용 가능해졌다. 한편, Anthropic은 Claude Code 이용자를 대상으로 OpenClaw 사용 시 추가 과금을 발표했다. AI 생성 콘텐츠의 진정성 증명이 업계 과제로 떠올랐다.",
+    "slug": "2026-04-05"
+  },
+  {
     "title": "今日のAI最前線：AI業界の重大な人事異動と買収ラッシュ、セキュリティ懸念も浮上",
     "title_en": "AI Frontier Today：# Major Personnel Changes and M&A Wave in AI Industry, with Security Concerns Emerging",
     "title_zh-tw": "今日 AI 前沿：AI業界的重大人事異動和收購熱潮，安全隱憂也浮現",

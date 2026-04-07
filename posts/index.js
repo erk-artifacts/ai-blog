@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI大手の提携拡大からロボティクスの革新まで、業界の大きな動きが続々",
+    "title_en": "AI Frontier Today：# From Major AI Company Partnerships to Robotics Innovation, Major Industry Developments Continue",
+    "title_zh-tw": "今日 AI 前沿：從AI大手的合作擴大到機器人技術的創新，業界的重大動向持續湧現",
+    "title_zh-cn": "今日 AI 前沿：从AI大手的合作扩展到机器人技术的创新，行业重大动向层出不穷",
+    "title_ko": "오늘의 AI 최전선：AI 대형사의 제휴 확대부터 로보틱스 혁신까지, 업계의 큰 움직임이 잇따르고 있다",
+    "category": "AI NEWS",
+    "date": "2026.04.07",
+    "thumbnail": "",
+    "summary": "Anthropicが次世代TPUで3.5GWのAIインフラを確保、GEN-1ロボティクスモデルが99%の信頼性を達成、OpenAIが超知能時代の産業政策を提案するなど、AI業界で大型案件と技術革新が加速している。",
+    "summary_en": "Anthropic secures 3.5GW of AI infrastructure with next-generation TPUs, GEN-1 robotics model achieves 99% reliability, and OpenAI proposes industrial policy for the era of superintelligence, as major projects and technological innovations accelerate across the AI industry.",
+    "summary_zh-tw": "Anthropic在下一代TPU上確保了3.5GW的AI基礎設施、GEN-1機器人模型達到99%的可靠性、OpenAI提出了超級智能時代的產業政策等，AI行業的大型項目和技術創新正在加速推進。",
+    "summary_zh-cn": "Anthropic通过下一代TPU确保3.5GW的AI基础设施，GEN-1机器人模型达到99%的可靠性，OpenAI提出超级智能时代的产业政策建议等，AI行业的大型项目和技术创新正在加速进行。",
+    "summary_ko": "Anthropic이 차세대 TPU로 3.5GW의 AI 인프라를 확보하고, GEN-1 로봇 공학 모델이 99%의 신뢰성을 달성했으며, OpenAI가 초지능 시대의 산업 정책을 제안하는 등 AI 업계에서 대규모 프로젝트와 기술 혁신이 가속화되고 있다.",
+    "slug": "2026-04-07"
+  },
+  {
     "title": "今日のAI最前線：Xの自動翻訳が拡大、Claude Codeが値上げ、AI生成コンテンツの証明が課題に",
     "title_en": "AI Frontier Today：X's Auto-Translation Expands, Claude Code Raises Prices, AI-Generated Content Authentication Becomes Challenge",
     "title_zh-tw": "今日 AI 前沿：X的自動翻譯擴大、Claude Code漲價、AI生成內容的證明成為課題",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：中国の長時間AI自律タスク実行、Anthropicの高性能モデル、日本のAIエージェント活用が加速",
+    "title_en": "AI Frontier Today：# China's Long-Duration AI Autonomous Task Execution, Anthropic's High-Performance Model, Japan's AI Agent Adoption Accelerates",
+    "title_zh-tw": "今日 AI 前沿：中國長時間AI自主任務執行、Anthropic高性能模型、日本AI代理活用加速",
+    "title_zh-cn": "今日 AI 前沿：中国长时间AI自主任务执行、Anthropic高性能模型、日本AI智能体应用加速",
+    "title_ko": "오늘의 AI 최전선：중국의 장시간 AI 자율 작업 실행, Anthropic의 고성능 모델, 일본의 AI 에이전트 활용 가속화",
+    "category": "AI NEWS",
+    "date": "2026.04.08",
+    "thumbnail": "",
+    "summary": "中国Z.AIが8時間の自律タスク実行可能なGLM-5.1を発表。Anthropicは高性能モデルClaudeを公開見送り。日本ではマネーフォワードが経理業務向けAIエージェント、medimoが多言語診療録作成支援など、実務レベルでのAI導入が急速に進展している。",
+    "summary_en": "China's Z.AI has announced GLM-5.1, capable of autonomous task execution for 8 hours. Anthropic has decided to postpone the public release of its high-performance model Claude. In Japan, practical-level AI adoption is rapidly advancing, with Money Forward launching an AI agent for accounting operations and Medimo providing multilingual medical record creation support.",
+    "summary_zh-tw": "中國Z.AI發表可進行8小時自主任務執行的GLM-5.1。Anthropic暫緩公開高性能模型Claude。日本方面，Money Forward推出經理業務用AI代理，Medimo提供多語言診療記錄製作支援等，實務層級的AI導入正在迅速推進。",
+    "summary_zh-cn": "中国Z.AI发布了能够执行8小时自主任务的GLM-5.1。Anthropic推迟了高性能模型Claude的公开发布。在日本，MoneyForward推出了面向会计业务的AI代理，medimo推出了多语言诊疗记录创建支持等，AI在实务层面的应用正在迅速推进。",
+    "summary_ko": "중국 Z.AI가 8시간의 자율 작업 실행이 가능한 GLM-5.1을 발표했습니다. Anthropic은 고성능 모델 Claude의 공개를 보류했습니다. 일본에서는 머니포워드가 경리 업무용 AI 에이전트를, medimo가 다국어 진료 기록 작성 지원 등을 제공하면서 실무 수준의 AI 도입이 급속도로 진행되고 있습니다.",
+    "slug": "2026-04-08"
+  },
+  {
     "title": "今日のAI最前線：AI大手の提携拡大からロボティクスの革新まで、業界の大きな動きが続々",
     "title_en": "AI Frontier Today：# From Major AI Company Partnerships to Robotics Innovation, Major Industry Developments Continue",
     "title_zh-tw": "今日 AI 前沿：從AI大手的合作擴大到機器人技術的創新，業界的重大動向持續湧現",

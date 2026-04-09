@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIエージェント革新の時代へ。Anthropicが応答速度90%改善、Googleは組織化ツール統合、マネーフォワードが全業務自動化へ",
+    "title_en": "AI Frontier Today：# The Era of AI Agent Innovation. Anthropic Achieves 90% Response Speed Improvement, Google Integrates Organization Tools, Moneyforward Moves Toward Full Business Automation",
+    "title_zh-tw": "今日 AI 前沿：AI 代理人革新的時代降臨。Anthropic 實現回應速度 90% 改善，Google 整合組織化工具，Money Forward 邁向全業務自動化",
+    "title_zh-cn": "今日 AI 前沿：AI代理人创新时代到来。Anthropic提升响应速度90%，Google整合组织工具，MoneyForward迈向全业务自动化",
+    "title_ko": "오늘의 AI 최전선：AI 에이전트 혁신의 시대로. Anthropic이 응답 속도 90% 개선, Google은 조직화 도구 통합, 머니포워드가 전업무 자동화로",
+    "category": "AI NEWS",
+    "date": "2026.04.09",
+    "thumbnail": "",
+    "summary": "Anthropicが革新的なAIエージェントアーキテクチャを発表し応答速度を大幅改善。GoogleはGeminiにNotebookLM統合、メタは新AI「Muse Spark」公開。マネーフォワードはAIによるバックオフィス自動化「Cowork」機能を投入予定。AI業界の実用化が加速している。",
+    "summary_en": "Anthropic announces innovative AI agent architecture with significant response speed improvements. Google integrates NotebookLM into Gemini, and Meta releases new AI \"Muse Spark.\" Money Forward plans to launch \"Cowork,\" a backoffice automation feature powered by AI. The AI industry is accelerating its practical implementation.",
+    "summary_zh-tw": "Anthropic推出創新的AI代理架構，大幅改善回應速度。Google將Notebook LM整合至Gemini，Meta公開新AI「Muse Spark」。Money Forward計畫推出由AI驅動的後台辦公室自動化「Cowork」功能。AI產業的實用化正在加速。",
+    "summary_zh-cn": "Anthropic发布了革新性AI代理架构，大幅改进响应速度。Google将NotebookLM集成到Gemini中，Meta公开了新AI\"Muse Spark\"。Money Forward计划推出由AI驱动的后台办公自动化功能\"Cowork\"。AI行业的实用化正在加速。",
+    "summary_ko": "Anthropic이 혁신적인 AI 에이전트 아키텍처를 발표하며 응답 속도를 대폭 개선했습니다. Google은 Gemini에 NotebookLM 통합을, Meta는 새로운 AI \"Muse Spark\"를 공개했습니다. Money Forward는 AI를 통한 백오피스 자동화 \"Cowork\" 기능을 곧 출시할 예정입니다. AI 산업의 실용화가 가속화되고 있습니다.",
+    "slug": "2026-04-09"
+  },
+  {
     "title": "今日のAI最前線：中国の長時間AI自律タスク実行、Anthropicの高性能モデル、日本のAIエージェント活用が加速",
     "title_en": "AI Frontier Today：# China's Long-Duration AI Autonomous Task Execution, Anthropic's High-Performance Model, Japan's AI Agent Adoption Accelerates",
     "title_zh-tw": "今日 AI 前沿：中國長時間AI自主任務執行、Anthropic高性能模型、日本AI代理活用加速",

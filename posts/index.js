@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ソニーのロボットが舞台の出演者に、ChatGPTに月100ドルの高級プラン登場、Geminiはシミュレーション機能を実装",
+    "title_en": "AI Frontier Today：# Sony Robot Performs Onstage as Actor, ChatGPT Launches Premium Plan at $100/Month, Gemini Implements Simulation Feature",
+    "title_zh-tw": "今日 AI 前沿：索尼的機器人在舞台上出演，ChatGPT推出月費100美元的高級方案，Gemini實現了模擬功能",
+    "title_zh-cn": "今日 AI 前沿：索尼机器人登上舞台成为演员、ChatGPT推出月费100美元的高级计划、Gemini实现模拟功能",
+    "title_ko": "오늘의 AI 최전선：소니의 로봇이 무대 출연자로 출연, ChatGPT에 월 100달러의 프리미엄 플랜 등장, Gemini는 시뮬레이션 기능 구현",
+    "category": "AI NEWS",
+    "date": "2026.04.10",
+    "thumbnail": "",
+    "summary": "ソニーのロボット「groovots」が武道館でアイドル公演に出演、OpenAIがChatGPT Proプランを発表、GoogleのGeminiがインタラクティブなシミュレーション機能を搭載するなど、生成AI・ロボティクス分野で急速な進展が続いている。",
+    "summary_en": "Sony's robot \"groovots\" performed at the Budokan in an idol concert, OpenAI announced the ChatGPT Pro plan, and Google's Gemini has been equipped with interactive simulation capabilities. Rapid advancements continue in the generative AI and robotics fields.",
+    "summary_zh-tw": "索尼的機器人「groovots」在武道館出演偶像演唱會、OpenAI發表ChatGPT Pro計畫、Google的Gemini搭載互動式模擬功能等，生成AI・機器人技術領域持續快速發展。",
+    "summary_zh-cn": "索尼的机器人\"groovots\"在武道馆参加偶像演出,OpenAI推出ChatGPT Pro计划,谷歌的Gemini搭载交互式仿真功能等,生成AI和机器人领域持续快速发展。",
+    "summary_ko": "소니의 로봇 \"groovots\"가 무도관에서 아이돌 공연에 출연하고, OpenAI가 ChatGPT Pro 플랜을 발표했으며, Google의 Gemini가 인터랙티브한 시뮬레이션 기능을 탑재하는 등 생성 AI·로보틱스 분야에서 급속한 진전이 계속되고 있다.",
+    "slug": "2026-04-10"
+  },
+  {
     "title": "今日のAI最前線：AIエージェント革新の時代へ。Anthropicが応答速度90%改善、Googleは組織化ツール統合、マネーフォワードが全業務自動化へ",
     "title_en": "AI Frontier Today：# The Era of AI Agent Innovation. Anthropic Achieves 90% Response Speed Improvement, Google Integrates Organization Tools, Moneyforward Moves Toward Full Business Automation",
     "title_zh-tw": "今日 AI 前沿：AI 代理人革新的時代降臨。Anthropic 實現回應速度 90% 改善，Google 整合組織化工具，Money Forward 邁向全業務自動化",

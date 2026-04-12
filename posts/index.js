@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Sam Altmanが個人ブログで心情吐露、Claude Mythosが数千の脆弱性発見で議論勃発",
+    "title_en": "AI Frontier Today：# Sam Altman Shares Personal Thoughts on His Blog, Claude Mythos Sparks Debate Over Discovery of Thousands of Vulnerabilities",
+    "title_zh-tw": "今日 AI 前沿：Sam Altman 在個人部落格中吐露心聲，Claude Mythos 因發現數千個漏洞引發爭議",
+    "title_zh-cn": "今日 AI 前沿：Sam Altman在个人博客中倾诉心声，Claude Mythos因发现数千个漏洞而引发争议",
+    "title_ko": "오늘의 AI 최전선：Sam Altman이 개인 블로그에서 심정 토로, Claude Mythos가 수천 개의 취약점 발견으로 논쟁 발발",
+    "category": "AI NEWS",
+    "date": "2026.04.12",
+    "thumbnail": "",
+    "summary": "OpenAIのアルトマンCEOが批判記事と自宅への事件についてブログで言及。一方、AnthropicのLLM「Claude Mythos」が高い脆弱性発見能力を持つことが明らかになり、セキュリティ対策の新たな課題が浮上。",
+    "summary_en": "OpenAI's CEO Altman Addresses Critical Article and Incident at His Home in Blog Post. Meanwhile, Anthropic's LLM \"Claude Mythos\" Reveals High Vulnerability Detection Capabilities, Raising New Security Challenges.",
+    "summary_zh-tw": "OpenAI的艾爾特曼CEO在部落格中提及批評文章和自宅事件。與此同時，Anthropic的LLM「Claude Mythos」被發現具有高度的漏洞發現能力，浮現了安全對策的新課題。",
+    "summary_zh-cn": "OpenAI的阿尔特曼首席执行官在博客中提到了批评文章和家中发生的事件。同时，Anthropic的大语言模型\"Claude Mythos\"被发现具有较强的漏洞发现能力，引发了安全防护的新课题。",
+    "summary_ko": "OpenAI의 알트만 CEO가 비판 기사와 자택 사건에 대해 블로그에서 언급했습니다. 한편, Anthropic의 LLM인 「Claude Mythos」가 높은 취약성 발견 능력을 보유하고 있는 것으로 밝혀졌으며, 보안 대책의 새로운 과제가 대두되고 있습니다.",
+    "slug": "2026-04-12"
+  },
+  {
     "title": "今日のAI最前線：ソニーのロボットが舞台の出演者に、ChatGPTに月100ドルの高級プラン登場、Geminiはシミュレーション機能を実装",
     "title_en": "AI Frontier Today：# Sony Robot Performs Onstage as Actor, ChatGPT Launches Premium Plan at $100/Month, Gemini Implements Simulation Feature",
     "title_zh-tw": "今日 AI 前沿：索尼的機器人在舞台上出演，ChatGPT推出月費100美元的高級方案，Gemini實現了模擬功能",

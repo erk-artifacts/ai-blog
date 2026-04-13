@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIサービスの実用化が加速、企業採用や生成AIの課題浮き彫りに",
+    "title_en": "AI Frontier Today：# AI Services Accelerate Toward Practical Implementation, Corporate Adoption and Generative AI Challenges Come to Light",
+    "title_zh-tw": "今日 AI 前沿：AI服務實用化加速，企業採用與生成AI課題浮出水面",
+    "title_zh-cn": "今日 AI 前沿：AI服务实用化加速，企业采用及生成AI问题浮现",
+    "title_ko": "오늘의 AI 최전선：AI 서비스의 실용화 가속, 기업 도입 및 생성 AI의 과제 드러나",
+    "category": "AI NEWS",
+    "date": "2026.04.13",
+    "thumbnail": "",
+    "summary": "AI面接サービスの導入拡大、生成AIを活用した見積もり自動化SaaS、マッチングアプリでのAI活用など、AIが実務レベルで浸透。一方、アニメ制作での生成AI使用問題も浮上。",
+    "summary_en": "The widespread adoption of AI in practical applications is evident, including the expansion of AI interview services, the development of quote automation SaaS leveraging generative AI, and the utilization of AI in matching apps. Meanwhile, issues surrounding the use of generative AI in anime production have also emerged.",
+    "summary_zh-tw": "AI面試服務的導入擴大、利用生成AI的估價自動化SaaS、在配對應用中活用AI等，AI在實務層面不斷滲透。另一方面，動畫製作中使用生成AI的問題也隨之浮現。",
+    "summary_zh-cn": "AI面试服务的推广扩大、利用生成AI的报价自动化SaaS、在匹配应用中活用AI等，AI在实务层面得到普及。另一方面，动画制作中使用生成AI的问题也浮出水面。",
+    "summary_ko": "AI 면접 서비스 도입 확대, 생성 AI를 활용한 견적 자동화 SaaS, 매칭 앱에서의 AI 활용 등 AI가 실무 수준에서 확산. 한편, 애니메이션 제작에서의 생성 AI 사용 문제도 대두.",
+    "slug": "2026-04-13"
+  },
+  {
     "title": "今日のAI最前線：Sam Altmanが個人ブログで心情吐露、Claude Mythosが数千の脆弱性発見で議論勃発",
     "title_en": "AI Frontier Today：# Sam Altman Shares Personal Thoughts on His Blog, Claude Mythos Sparks Debate Over Discovery of Thousands of Vulnerabilities",
     "title_zh-tw": "今日 AI 前沿：Sam Altman 在個人部落格中吐露心聲，Claude Mythos 因發現數千個漏洞引發爭議",

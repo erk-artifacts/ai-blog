@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ソフトウェア開発AI「Devin」が日本上陸、OpenAIが金融スタートアップを買収、FIFAワールドカップでAI審判システムが導入へ",
+    "title_en": "AI Frontier Today：# Software Development AI \"Devin\" Arrives in Japan, OpenAI Acquires Finance Startup, AI Referee System to Be Introduced at FIFA World Cup",
+    "title_zh-tw": "今日 AI 前沿：軟體開發AI「Devin」登陸日本，OpenAI收購金融新創，FIFA世界盃將導入AI裁判系統",
+    "title_zh-cn": "今日 AI 前沿：软件开发AI\"Devin\"登陆日本，OpenAI收购金融初创公司，FIFA世界杯将引入AI裁判系统",
+    "title_ko": "오늘의 AI 최전선：소프트웨어 개발 AI \"Devin\"이 일본 상륙, OpenAI가 금융 스타트업 인수, FIFA 월드컵에 AI 심판 시스템 도입 예정",
+    "category": "AI NEWS",
+    "date": "2026.04.14",
+    "thumbnail": "",
+    "summary": "ソフトウェア開発AI「Devin」の日本法人設立、OpenAIによる金融AI企業買収、FIFAワールドカップへのAI試合分析ツール導入など、AIの実用化が急速に進展しています。",
+    "summary_en": "Software development AI \"Devin\" is establishing a Japanese subsidiary, OpenAI is acquiring a financial AI company, and AI match analysis tools are being introduced to the FIFA World Cup. AI is rapidly advancing toward practical implementation.",
+    "summary_zh-tw": "軟體開發AI「Devin」的日本法人成立、OpenAI對金融AI企業的收購、AI比賽分析工具在FIFA世界盃中的應用等，AI的實用化正在迅速推進。",
+    "summary_zh-cn": "软件开发AI\"Devin\"的日本法人成立、OpenAI收购金融AI企业、AI比赛分析工具在FIFA世界杯中的应用等，AI的实用化正在迅速推进。",
+    "summary_ko": "소프트웨어 개발 AI \"Devin\"의 일본 법인 설립, OpenAI에 의한 금융 AI 기업 인수, FIFA 월드컵에 대한 AI 경기 분석 도구 도입 등 AI의 실용화가 급속도로 진전되고 있습니다.",
+    "slug": "2026-04-14"
+  },
+  {
     "title": "今日のAI最前線：AIサービスの実用化が加速、企業採用や生成AIの課題浮き彫りに",
     "title_en": "AI Frontier Today：# AI Services Accelerate Toward Practical Implementation, Corporate Adoption and Generative AI Challenges Come to Light",
     "title_zh-tw": "今日 AI 前沿：AI服務實用化加速，企業採用與生成AI課題浮出水面",

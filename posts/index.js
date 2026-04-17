@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIが生命科学特化のAIモデル発表、自然AI搭載スマホ国内販売開始",
+    "title_en": "AI Frontier Today：OpenAI Announces Life Sciences-Focused AI Model; Natural AI-Equipped Smartphone Launches in Domestic Market",
+    "title_zh-tw": "今日 AI 前沿：OpenAI發表生命科學專用AI模型，搭載自然AI的智能手機國內開始銷售",
+    "title_zh-cn": "今日 AI 前沿：OpenAI发布生命科学专业AI模型，搭载自然AI的智能手机国内销售启动",
+    "title_ko": "오늘의 AI 최전선：OpenAI가 생명과학 특화 AI 모델 발표, 자연 AI 탑재 스마트폰 국내 판매 개시",
+    "category": "AI NEWS",
+    "date": "2026.04.17",
+    "thumbnail": "",
+    "summary": "OpenAIが創薬研究を加速する「GPT-Rosalind」を発表。同時にソフトバンクが自然言語AI搭載スマホを独占販売開始。Web会議AIやAI監視カメラなど、企業向けAI活用も広がっている。",
+    "summary_en": "OpenAI Announces \"GPT-Rosalind\" to Accelerate Drug Discovery Research. Simultaneously, SoftBank Begins Exclusive Sales of Smartphones Equipped with Natural Language AI. Enterprise AI Adoption is Expanding, Including Web Conference AI and AI Surveillance Cameras.",
+    "summary_zh-tw": "OpenAI 宣布推出加速藥物研發的「GPT-Rosalind」。與此同時，軟銀銀行開始獨家販售搭載自然語言 AI 的智慧型手機。企業 AI 應用也在擴大，包括網路會議 AI 和 AI 監視攝影機等。",
+    "summary_zh-cn": "OpenAI宣布推出\"GPT-Rosalind\"以加速药物研发。与此同时，软银开始独家销售搭载自然语言AI的智能手机。网络会议AI和AI监控摄像头等企业级AI应用也在不断扩展。",
+    "summary_ko": "OpenAI가 신약 개발 연구를 가속화하는 「GPT-Rosalind」를 발표했습니다. 동시에 소프트뱅크가 자연어 AI 탑재 스마트폰을 독점 판매 시작했습니다. 웹 회의 AI나 AI 감시 카메라 등 기업용 AI 활용도 확대되고 있습니다.",
+    "slug": "2026-04-17"
+  },
+  {
     "title": "今日のAI最前線：ソフトウェア開発AI「Devin」が日本上陸、OpenAIが金融スタートアップを買収、FIFAワールドカップでAI審判システムが導入へ",
     "title_en": "AI Frontier Today：# Software Development AI \"Devin\" Arrives in Japan, OpenAI Acquires Finance Startup, AI Referee System to Be Introduced at FIFA World Cup",
     "title_zh-tw": "今日 AI 前沿：軟體開發AI「Devin」登陸日本，OpenAI收購金融新創，FIFA世界盃將導入AI裁判系統",

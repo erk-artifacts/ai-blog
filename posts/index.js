@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIの組織転換、AnthropicのAI新展開、そしてAIの日常生活への急速な浸透",
+    "title_en": "AI Frontier Today：# OpenAI's Organizational Transformation, Anthropic's New AI Developments, and the Rapid Integration of AI into Daily Life",
+    "title_zh-tw": "今日 AI 前沿：OpenAI的組織轉型、Anthropic的AI新展開，以及AI在日常生活中的迅速滲透",
+    "title_zh-cn": "今日 AI 前沿：OpenAI的组织转型、Anthropic的AI新进展以及AI在日常生活中的快速渗透",
+    "title_ko": "오늘의 AI 최전선：OpenAI의 조직 개편, Anthropic의 AI 신규 전개, 그리고 AI의 일상생활으로의 급속한 확산",
+    "category": "AI NEWS",
+    "date": "2026.04.18",
+    "thumbnail": "",
+    "summary": "OpenAIがSoraを中止し重要メンバーが離職、AnthropicがAIデザインツールと新型スマホが登場。AI企業の戦略転換とAIの実用化が加速している。",
+    "summary_en": "OpenAI has discontinued Sora with key members departing, while Anthropic launches AI design tools and new smartphones. AI companies are shifting strategies and accelerating the practical implementation of AI.",
+    "summary_zh-tw": "OpenAI 停止了 Sora，重要成員離職，Anthropic 推出 AI 設計工具和新款智慧型手機。AI 企業正在加速戰略轉換和 AI 的實用化。",
+    "summary_zh-cn": "OpenAI中止了Sora并失去重要成员，Anthropic推出AI设计工具和新型智能手机。AI企业战略调整和AI实用化正在加速。",
+    "summary_ko": "OpenAI가 Sora를 중단하고 주요 인력이 이직, Anthropic이 AI 디자인 툴과 신형 스마트폰 출시. AI 기업의 전략 전환과 AI 실용화가 가속화되고 있다.",
+    "slug": "2026-04-18"
+  },
+  {
     "title": "今日のAI最前線：OpenAIが生命科学特化のAIモデル発表、自然AI搭載スマホ国内販売開始",
     "title_en": "AI Frontier Today：OpenAI Announces Life Sciences-Focused AI Model; Natural AI-Equipped Smartphone Launches in Domestic Market",
     "title_zh-tw": "今日 AI 前沿：OpenAI發表生命科學專用AI模型，搭載自然AI的智能手機國內開始銷售",

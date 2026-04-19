@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIチップ企業が相次ぐIPO申請、テスラはロボタクシーを全米展開へ",
+    "title_en": "AI Frontier Today：# AI Chip Companies File Successive IPO Applications; Tesla to Roll Out Robotaxi Nationwide",
+    "title_zh-tw": "今日 AI 前沿：AI芯片企業接連提交IPO申請，特斯拉將在全美推廣機器人計程車",
+    "title_zh-cn": "今日 AI 前沿：AI芯片企业接连申请IPO，特斯拉将在全美推出机器人出租车",
+    "title_ko": "오늘의 AI 최전선：AI칩 기업들이 잇따라 IPO 신청, 테슬라는 로봇택시를 미국 전역에 전개할 예정",
+    "category": "AI NEWS",
+    "date": "2026.04.19",
+    "thumbnail": "",
+    "summary": "Cerebras AIチップスタートアップがIPO申請、動画生成AI「NoLang」がスライド生成機能を拡充、テスラのロボタクシーサービスがダラスとヒューストンで展開開始。AI業界の商用化が急速に進展。",
+    "summary_en": "Cerebras AI chip startup files for IPO, video generation AI \"NoLang\" expands slide generation capabilities, Tesla's robotaxi service begins deployment in Dallas and Houston. Commercialization in the AI industry is accelerating rapidly.",
+    "summary_zh-tw": "Cerebras AI芯片初創公司申報IPO、視頻生成AI「NoLang」擴充幻燈片生成功能、特斯拉的機器人出租車服務開始在達拉斯和休斯頓部署。AI產業商業化正在迅速推進。",
+    "summary_zh-cn": "Cerebras AI芯片初创公司申请IPO，视频生成AI\"NoLang\"扩充幻灯片生成功能，特斯拉的机器人出租车服务开始在达拉斯和休斯顿部署。AI行业商业化正在快速推进。",
+    "summary_ko": "Cerebras AI 칩 스타트업이 IPO 신청, 동영상 생성 AI「NoLang」이 슬라이드 생성 기능을 확충, 테슬라의 로봇택시 서비스가 댈러스와 휴스턴에서 전개 시작. AI 산업의 상용화가 급속히 진전.",
+    "slug": "2026-04-19"
+  },
+  {
     "title": "今日のAI最前線：OpenAIの組織転換、AnthropicのAI新展開、そしてAIの日常生活への急速な浸透",
     "title_en": "AI Frontier Today：# OpenAI's Organizational Transformation, Anthropic's New AI Developments, and the Rapid Integration of AI into Daily Life",
     "title_zh-tw": "今日 AI 前沿：OpenAI的組織轉型、Anthropic的AI新展開，以及AI在日常生活中的迅速滲透",

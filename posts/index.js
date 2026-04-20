@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：中国人型ロボが世界記録超え、AIエージェント急拡大、AIアバター受付システム登場—AI技術の実用化が加速",
+    "title_en": "AI Frontier Today：# Chinese Humanoid Robot Breaks World Record, AI Agents Rapidly Expand, AI Avatar Reception Systems Emerge—AI Technology Practical Applications Accelerating",
+    "title_zh-tw": "今日 AI 前沿：中國人型機器人超越世界紀錄，AI代理商快速擴展，AI虛擬人物接待系統出現——AI技術的實際應用正在加速",
+    "title_zh-cn": "今日 AI 前沿：中国人形机器人超越世界纪录，AI智能体急速扩大，AI虚拟形象接待系统问世——AI技术的实用化加速推进",
+    "title_ko": "오늘의 AI 최전선：중국 인형로봇이 세계기록 경신, AI에이전트 급속 확대, AI아바타 접수 시스템 등장—AI 기술의 실용화가 가속화",
+    "category": "AI NEWS",
+    "date": "2026.04.20",
+    "thumbnail": "",
+    "summary": "中国の人型ロボットがハーフマラソンで世界記録を上回る成績を達成。同時にAIエージェントの利用が急拡大し、AIアバターが企業受付を革新するなど、AI技術の実用化が急速に進展している。",
+    "summary_en": "A Chinese humanoid robot has achieved a performance exceeding the world record in a half-marathon. Simultaneously, the use of AI agents is rapidly expanding, with AI avatars revolutionizing corporate receptions and other practical applications of AI technology advancing at a fast pace.",
+    "summary_zh-tw": "中國的人形機器人在半馬拉松中超越世界紀錄。與此同時，AI代理的使用急劇擴大，AI虛擬形象正在革新企業前台，AI技術的實際應用正在快速推進。",
+    "summary_zh-cn": "中国人型机器人在半程马拉松中创造世界纪录。与此同时，AI代理的使用急剧扩大，AI头像正在革新企业前台等，AI技术的实际应用正在快速推进。",
+    "summary_ko": "중국의 인형 로봇이 하프마라톤에서 세계 기록을 상회하는 성적을 달성했습니다. 동시에 AI 에이전트의 활용이 급속히 확대되고 있으며, AI 아바타가 기업 접수를 혁신하는 등 AI 기술의 실용화가 빠르게 진전되고 있습니다.",
+    "slug": "2026-04-20"
+  },
+  {
     "title": "今日のAI最前線：AIチップ企業が相次ぐIPO申請、テスラはロボタクシーを全米展開へ",
     "title_en": "AI Frontier Today：# AI Chip Companies File Successive IPO Applications; Tesla to Roll Out Robotaxi Nationwide",
     "title_zh-tw": "今日 AI 前沿：AI芯片企業接連提交IPO申請，特斯拉將在全美推廣機器人計程車",

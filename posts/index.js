@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AmazonがAnthropicへの出資を330億ドルに拡大、AI生成コード時代の課題も浮き彫りに",
+    "title_en": "AI Frontier Today：# Amazon Expands Investment in Anthropic to $33 Billion, Highlighting Challenges in the Age of AI-Generated Code",
+    "title_zh-tw": "今日 AI 前沿：Amazon 將對 Anthropic 的投資擴大至 330 億美元，AI 生成代碼時代的課題也浮出水面",
+    "title_zh-cn": "今日 AI 前沿：Amazon将对Anthropic的投资扩大至330亿美元，AI生成代码时代的挑战也随之浮现",
+    "title_ko": "오늘의 AI 최전선：Amazon이 Anthropic에 대한 투자를 330억 달러로 확대, AI 생성 코드 시대의 과제도 드러나다",
+    "category": "AI NEWS",
+    "date": "2026.04.21",
+    "thumbnail": "",
+    "summary": "AmazonがAnthropicへの投資を最大330億ドルに拡大し、AI業界の結合が加速。一方、AI生成コードのレビュー負担が深刻化し、開発現場での課題が顕在化している。",
+    "summary_en": "Amazon expands its investment in Anthropic to a maximum of $33 billion, accelerating consolidation in the AI industry. Meanwhile, the burden of reviewing AI-generated code is becoming severe, revealing challenges in development environments.",
+    "summary_zh-tw": "Amazon將對Anthropic的投資擴大至最高330億美元，加速AI產業的整合。與此同時，AI生成代碼的審查負擔日益加重，開發現場的課題日漸浮出水面。",
+    "summary_zh-cn": "Amazon将对Anthropic的投资扩大至最高330亿美元,加速AI行业整合。与此同时,AI生成代码的审查负担日益加重,开发现场的问题日渐凸显。",
+    "summary_ko": "Amazon이 Anthropic에 대한 투자를 최대 330억 달러로 확대하면서 AI 업계의 결합이 가속화되고 있다. 한편, AI 생성 코드의 검토 부담이 심각해지면서 개발 현장에서의 과제가 드러나고 있다.",
+    "slug": "2026-04-21"
+  },
+  {
     "title": "今日のAI最前線：中国人型ロボが世界記録超え、AIエージェント急拡大、AIアバター受付システム登場—AI技術の実用化が加速",
     "title_en": "AI Frontier Today：# Chinese Humanoid Robot Breaks World Record, AI Agents Rapidly Expand, AI Avatar Reception Systems Emerge—AI Technology Practical Applications Accelerating",
     "title_zh-tw": "今日 AI 前沿：中國人型機器人超越世界紀錄，AI代理商快速擴展，AI虛擬人物接待系統出現——AI技術的實際應用正在加速",

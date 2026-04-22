@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIの新画像生成AI、Metaのキーストローク学習、SpaceXのCursor買収オプション—4月22日のAI最前線",
+    "title_en": "AI Frontier Today：# OpenAI's New Image Generation AI, Meta's Keystroke Learning, SpaceX's Cursor Acquisition Option—AI Frontlines for April 22",
+    "title_zh-tw": "今日 AI 前沿：OpenAI的新圖像生成AI、Meta的按鍵學習、SpaceX的Cursor收購選項——4月22日的AI前線",
+    "title_zh-cn": "今日 AI 前沿：OpenAI的新图像生成AI、Meta的击键学习、SpaceX的Cursor收购选项—4月22日AI前沿",
+    "title_ko": "오늘의 AI 최전선：OpenAI의 새 이미지 생성 AI, Meta의 키스트로크 학습, SpaceX의 Cursor 인수 옵션—4월 22일의 AI 최전선",
+    "category": "AI NEWS",
+    "date": "2026.04.22",
+    "thumbnail": "",
+    "summary": "OpenAIが漫画や広告に強い「ChatGPT Images 2.0」を発表。MetaはAI学習用にキーストロークデータ収集を開始。SpaceXはAIコーディング企業Cursorを60億ドルで買収するオプション権を獲得。",
+    "summary_en": "OpenAI announced \"ChatGPT Images 2.0,\" which excels at creating manga and advertisements. Meta has begun collecting keystroke data for AI training. SpaceX has acquired option rights to purchase AI coding company Cursor for $6 billion.",
+    "summary_zh-tw": "OpenAI推出了在漫畫和廣告方面表現出色的「ChatGPT Images 2.0」。Meta開始收集鍵盤按鍵數據用於AI訓練。SpaceX獲得了以60億美元收購AI編程公司Cursor的選擇權。",
+    "summary_zh-cn": "OpenAI 发布了擅长漫画和广告的\"ChatGPT Images 2.0\"。Meta 开始收集用于 AI 训练的按键记录数据。SpaceX 获得了以 60 亿美元收购 AI 编码公司 Cursor 的期权权利。",
+    "summary_ko": "OpenAI가 만화와 광고에 강한 「ChatGPT Images 2.0」을 발표했습니다. Meta는 AI 학습용으로 키스트로크 데이터 수집을 시작했습니다. SpaceX는 AI 코딩 기업 Cursor를 60억 달러에 인수할 수 있는 옵션권을 획득했습니다.",
+    "slug": "2026-04-22"
+  },
+  {
     "title": "今日のAI最前線：AmazonがAnthropicへの出資を330億ドルに拡大、AI生成コード時代の課題も浮き彫りに",
     "title_en": "AI Frontier Today：# Amazon Expands Investment in Anthropic to $33 Billion, Highlighting Challenges in the Age of AI-Generated Code",
     "title_zh-tw": "今日 AI 前沿：Amazon 將對 Anthropic 的投資擴大至 330 億美元，AI 生成代碼時代的課題也浮出水面",

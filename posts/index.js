@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIの自動エージェント機能、自衛隊のAI中心戦略、Google次世代TPU発表で業界激動",
+    "title_en": "AI Frontier Today：# OpenAI's Autonomous Agent Features, Self-Defense Force AI-Centric Strategy, Google's Next-Generation TPU Announcement Shake Up the Industry",
+    "title_zh-tw": "今日 AI 前沿：OpenAI的自動代理功能、自衛隊的AI中心戰略、Google下一代TPU發表引發業界動蕩",
+    "title_zh-cn": "今日 AI 前沿：OpenAI的自动代理功能、自卫队的AI中心战略、Google下一代TPU发布引发行业震动",
+    "title_ko": "오늘의 AI 최전선：OpenAI의 자동 에이전트 기능, 자위대의 AI 중심 전략, Google 차세대 TPU 발표로 업계 격변",
+    "category": "AI NEWS",
+    "date": "2026.04.23",
+    "thumbnail": "",
+    "summary": "OpenAIが自動でタスクを実行するWorkspace agentsを発表、自衛隊はAI中心の戦略へ転換、Googleが第8世代TPUで開発期間を短縮するなど、生成AIとAIハードウェアの大型発表が相次いだ。",
+    "summary_en": "OpenAI announced Workspace agents that automatically execute tasks, the Self-Defense Forces are shifting to an AI-centric strategy, and Google is shortening development time with its 8th generation TPU, among other major announcements in generative AI and AI hardware.",
+    "summary_zh-tw": "OpenAI 宣佈自動執行任務的 Workspace agents、日本自衛隊轉向以 AI 為中心的戰略、Google 利用第 8 代 TPU 縮短開發週期等，生成式 AI 和 AI 硬體的重大發佈接踵而至。",
+    "summary_zh-cn": "OpenAI宣布自动执行任务的Workspace agents，日本自卫队转向AI中心战略，Google用第8代TPU缩短开发周期等，生成AI和AI硬件的重大发表接连不断。",
+    "summary_ko": "OpenAI가 자동으로 작업을 실행하는 Workspace agents를 발표했고, 자위대가 AI 중심 전략으로 전환했으며, Google이 제8세대 TPU로 개발 기간을 단축하는 등 생성형 AI와 AI 하드웨어의 대형 발표가 잇따랐다.",
+    "slug": "2026-04-23"
+  },
+  {
     "title": "今日のAI最前線：OpenAIの新画像生成AI、Metaのキーストローク学習、SpaceXのCursor買収オプション—4月22日のAI最前線",
     "title_en": "AI Frontier Today：# OpenAI's New Image Generation AI, Meta's Keystroke Learning, SpaceX's Cursor Acquisition Option—AI Frontlines for April 22",
     "title_zh-tw": "今日 AI 前沿：OpenAI的新圖像生成AI、Meta的按鍵學習、SpaceX的Cursor收購選項——4月22日的AI前線",

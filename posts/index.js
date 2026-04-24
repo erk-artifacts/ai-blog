@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：化石解析から実用AIまで、業界を揺さぶるAI活用事例が次々と登場",
+    "title_en": "AI Frontier Today：# From Fossil Analysis to Practical AI: Game-Changing AI Applications Continue to Emerge Across Industries",
+    "title_zh-tw": "今日 AI 前沿：從化石解析到實用AI，業界震撼的AI應用案例不斷湧現",
+    "title_zh-cn": "今日 AI 前沿：从化石分析到实用AI，一个接一个的AI应用案例正在震撼各行业",
+    "title_ko": "오늘의 AI 최전선：화석 분석부터 실용 AI까지, 업계를 뒤흔드는 AI 활용 사례가 잇따라 등장",
+    "category": "AI NEWS",
+    "date": "2026.04.24",
+    "thumbnail": "",
+    "summary": "古生物研究のAI解析、Claude の連携機能拡充、自律型AIエージェント、図面自動化、高精度OCR、AI OCR、生成AI読書サービスなど、AI技術が研究からビジネスまで幅広い領域で革新をもたらしています。",
+    "summary_en": "AI technologies are bringing innovation across a wide range of fields, from research to business, including AI analysis in paleontology research, expanded integration capabilities for Claude, autonomous AI agents, diagram automation, high-precision OCR, AI OCR, and generative AI reading services.",
+    "summary_zh-tw": "古生物研究的AI解析、Claude的聯動功能擴充、自律型AI代理、圖紙自動化、高精度OCR、AI OCR、生成AI閱讀服務等，AI技術正在從研究到商業的廣泛領域帶來創新。",
+    "summary_zh-cn": "古生物研究的AI分析、Claude的联合功能扩展、自主型AI代理、图纸自动化、高精度OCR、AI OCR、生成型AI阅读服务等，AI技术正在从研究到商业的广泛领域带来革新。",
+    "summary_ko": "고생물학 연구의 AI 분석, Claude의 연계 기능 확충, 자율형 AI 에이전트, 도면 자동화, 고정밀 OCR, AI OCR, 생성형 AI 독서 서비스 등 AI 기술이 연구에서 비즈니스까지 광범위한 영역에서 혁신을 가져오고 있습니다.",
+    "slug": "2026-04-24"
+  },
+  {
     "title": "今日のAI最前線：OpenAIの自動エージェント機能、自衛隊のAI中心戦略、Google次世代TPU発表で業界激動",
     "title_en": "AI Frontier Today：# OpenAI's Autonomous Agent Features, Self-Defense Force AI-Centric Strategy, Google's Next-Generation TPU Announcement Shake Up the Industry",
     "title_zh-tw": "今日 AI 前沿：OpenAI的自動代理功能、自衛隊的AI中心戰略、Google下一代TPU發表引發業界動蕩",

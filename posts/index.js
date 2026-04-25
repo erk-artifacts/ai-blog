@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：GoogleのAnthropicへの400億ドル投資、MetaのエージェントAI強化、DeepSeekのV4発表で激動するAI業界",
+    "title_en": "AI Frontier Today：# Google's $40 Billion Investment in Anthropic, Meta's Boost to Agentic AI, and DeepSeek's V4 Announcement Shake Up the AI Industry",
+    "title_zh-tw": "今日 AI 前沿：Google對Anthropic的400億美元投資、Meta強化代理AI、DeepSeek發表V4引發AI產業劇變",
+    "title_zh-cn": "今日 AI 前沿：谷歌向Anthropic投资400亿美元、Meta强化代理AI、DeepSeek发布V4，AI行业激烈变动",
+    "title_ko": "오늘의 AI 최전선：Google의 Anthropic에 대한 400억 달러 투자, Meta의 에이전트 AI 강화, DeepSeek의 V4 발표로 격동하는 AI 업계",
+    "category": "AI NEWS",
+    "date": "2026.04.25",
+    "thumbnail": "",
+    "summary": "Google がAnthropicに最大400億ドルを投資、MetaはAWSと提携してAIインフラを強化、DeepSeekが新モデルV4を発表。AI業界の競争がグローバルに加速し、各企業が莫大な資金と技術を投じて覇権争いを展開している。",
+    "summary_en": "Google is investing up to $40 billion in Anthropic, Meta is partnering with AWS to strengthen AI infrastructure, and DeepSeek has announced its new V4 model. Competition in the AI industry is accelerating globally, with each company investing massive capital and technology to compete for dominance.",
+    "summary_zh-tw": "Google向Anthropic投資最高400億美元，Meta與AWS合作強化AI基礎設施，DeepSeek發布新模型V4。AI行業的競爭在全球加速，各企業投入莫大資金和技術進行霸權爭奪。",
+    "summary_zh-cn": "谷歌向Anthropic投资最多400亿美元，Meta与AWS合作增强AI基础设施，DeepSeek发布新模型V4。AI行业竞争全球加速，各企业投入巨资和技术展开争夺主导权的竞争。",
+    "summary_ko": "Google가 Anthropic에 최대 400억 달러 투자, Meta는 AWS와 제휴해 AI 인프라 강화, DeepSeek이 새로운 모델 V4 발표. AI 업계의 경쟁이 글로벌하게 가속화되고 있으며, 각 기업이 막대한 자금과 기술을 투입해 패권 경쟁을 펼치고 있다.",
+    "slug": "2026-04-25"
+  },
+  {
     "title": "今日のAI最前線：化石解析から実用AIまで、業界を揺さぶるAI活用事例が次々と登場",
     "title_en": "AI Frontier Today：# From Fossil Analysis to Practical AI: Game-Changing AI Applications Continue to Emerge Across Industries",
     "title_zh-tw": "今日 AI 前沿：從化石解析到實用AI，業界震撼的AI應用案例不斷湧現",

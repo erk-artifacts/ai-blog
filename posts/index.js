@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：マスク対アルトマン訴訟開始、Anthropic が Blender 連携でクリエイティブ AI 加速、AWS が OpenAI 最新モデル提供",
+    "title_en": "AI Frontier Today：Musk Files Lawsuit Against Altman, Anthropic Accelerates Creative AI with Blender Integration, AWS Offers OpenAI's Latest Models",
+    "title_zh-tw": "今日 AI 前沿：馬斯克對阿爾特曼訴訟開始、Anthropic 與 Blender 合作加速創意 AI、AWS 提供 OpenAI 最新模型",
+    "title_zh-cn": "今日 AI 前沿：马斯克诉讼开始，Anthropic 与 Blender 合作加速创意 AI，AWS 提供 OpenAI 最新模型",
+    "title_ko": "오늘의 AI 최전선：머스크 대 알트만 소송 시작, Anthropic이 Blender 연계로 크리에이티브 AI 가속화, AWS가 OpenAI 최신 모델 제공",
+    "category": "AI NEWS",
+    "date": "2026.04.29",
+    "thumbnail": "",
+    "summary": "OpenAI 創業者マスクとアルトマンの訴訟が始まり、Anthropic は Claude を 3D ソフト Blender と連携させる大型提携を発表。AWS も OpenAI 最新モデルを提供開始し、生成 AI 業界の競争が激化。",
+    "summary_en": "OpenAI founders Musk and Altman's lawsuit begins, while Anthropic announces a major partnership integrating Claude with 3D software Blender. AWS also begins offering OpenAI's latest models, intensifying competition in the generative AI industry.",
+    "summary_zh-tw": "OpenAI 創業者馬斯克與奧特曼的訴訟已經開始，Anthropic 宣布了一項與 3D 軟體 Blender 的大型合作。AWS 也開始提供 OpenAI 最新模型，生成式 AI 產業的競爭加劇。",
+    "summary_zh-cn": "OpenAI创始人马斯克与奥特曼的诉讼开始,Anthropic宣布了Claude与3D软件Blender的大型合作。AWS也开始提供OpenAI最新模型,生成AI行业的竞争日趋激烈。",
+    "summary_ko": "OpenAI 창업자 머스크와 알트만의 소송이 시작되었고, Anthropic은 Claude를 3D 소프트웨어 Blender와 연계하는 대형 파트너십을 발표했습니다. AWS도 OpenAI의 최신 모델 제공을 시작했으며, 생성 AI 산업의 경쟁이 심화되고 있습니다.",
+    "slug": "2026-04-29"
+  },
+  {
     "title": "今日のAI最前線：GoogleのAnthropicへの400億ドル投資、MetaのエージェントAI強化、DeepSeekのV4発表で激動するAI業界",
     "title_en": "AI Frontier Today：# Google's $40 Billion Investment in Anthropic, Meta's Boost to Agentic AI, and DeepSeek's V4 Announcement Shake Up the AI Industry",
     "title_zh-tw": "今日 AI 前沿：Google對Anthropic的400億美元投資、Meta強化代理AI、DeepSeek發表V4引發AI產業劇變",

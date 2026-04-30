@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Amazon・Alphabetが過去最速のAI投資拡大、Anthropicが900億ドル超の評価額に",
+    "title_en": "AI Frontier Today：# Amazon and Alphabet Expanding AI Investment at Record Pace, Anthropic Valued at Over $90 Billion",
+    "title_zh-tw": "今日 AI 前沿：亞馬遜、Alphabet 以過去最快速度擴大 AI 投資，Anthropic 估值超 900 億美元",
+    "title_zh-cn": "今日 AI 前沿：亚马逊・Alphabet以破纪录速度扩大AI投资,Anthropic估值超过900亿美元",
+    "title_ko": "오늘의 AI 최전선：Amazon・Alphabet, AI 투자 확대 과거 최고 속도 경신, Anthropic 900억 달러 이상 기업 가치 평가",
+    "category": "AI NEWS",
+    "date": "2026.04.30",
+    "thumbnail": "",
+    "summary": "Amazon・Alphabetが決算でAI需要による売上急増を発表。一方、LLMが日本文化に偏る実態が研究で判明し、AIセキュリティの課題も浮き彫りに。Anthropicは新たな50億ドル調達で評価額が900億ドルに迫る。",
+    "summary_en": "Amazon and Alphabet announced a sharp increase in sales driven by AI demand in their earnings reports. Meanwhile, research has revealed that LLMs tend to be biased toward Japanese culture, while AI security challenges have also come to light. Anthropic raised a new $5 billion in funding, bringing its valuation close to $90 billion.",
+    "summary_zh-tw": "Amazon、Alphabet 在決算中宣佈 AI 需求帶動銷售額急增。另一方面，研究表明大型語言模型存在偏向日本文化的實況，AI 安全性課題也因此浮現。Anthropic 通過新一輪 50 億美元融資，估值逼近 900 億美元。",
+    "summary_zh-cn": "Amazon和Alphabet在财报中宣布因AI需求导致收入大幅增长。与此同时，研究发现LLM存在偏向日本文化的现象，AI安全问题也浮出水面。Anthropic通过新一轮50亿美元融资，估值接近900亿美元。",
+    "summary_ko": "Amazon・Alphabet가 결산에서 AI 수요로 인한 매출 급증을 발표했습니다. 한편, LLM이 일본 문화에 편향되는 실태가 연구로 밝혀졌으며, AI 보안 문제도 드러났습니다. Anthropic은 새로운 50억 달러 조달로 기업가치가 900억 달러에 육박하고 있습니다.",
+    "slug": "2026-04-30"
+  },
+  {
     "title": "今日のAI最前線：マスク対アルトマン訴訟開始、Anthropic が Blender 連携でクリエイティブ AI 加速、AWS が OpenAI 最新モデル提供",
     "title_en": "AI Frontier Today：Musk Files Lawsuit Against Altman, Anthropic Accelerates Creative AI with Blender Integration, AWS Offers OpenAI's Latest Models",
     "title_zh-tw": "今日 AI 前沿：馬斯克對阿爾特曼訴訟開始、Anthropic 與 Blender 合作加速創意 AI、AWS 提供 OpenAI 最新模型",

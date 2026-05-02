@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIモデルの正確性と倫理、軍事利用から規制まで：最新5つのAI動向",
+    "title_en": "AI Frontier Today：# AI Model Accuracy and Ethics, from Military Applications to Regulation: Top 5 AI Trends",
+    "title_zh-tw": "今日 AI 前沿：AI 模型的準確性與倫理、軍事應用到規制：最新 5 個 AI 動向",
+    "title_zh-cn": "今日 AI 前沿：AI模型的准确性和伦理、从军事应用到监管：最新5个AI趋势",
+    "title_ko": "오늘의 AI 최전선：AI 모델의 정확성과 윤리, 군사 활용부터 규제까지: 최신 5가지 AI 동향",
+    "category": "AI NEWS",
+    "date": "2026.05.02",
+    "thumbnail": "",
+    "summary": "AIモデルが共感優先で精度低下、Meta のロボット買収、Musk vs Altman 裁判、ミネソタ州のディープフェイク規制、ペンタゴンの AI 調達など、業界を揺るがす重要ニュースをまとめました。",
+    "summary_en": "AI Models Prioritize Empathy Over Accuracy, Meta's Robot Acquisition, Musk vs Altman Lawsuit, Minnesota's Deepfake Regulations, Pentagon's AI Procurement, and other major news shaking the industry—a roundup of critical stories.",
+    "summary_zh-tw": "AI 模型因優先同情而精準度下降、Meta 收購機器人、Musk 對陣 Altman 訴訟、明尼蘇達州深度偽造規制、五角大廈 AI 採購等，我們匯總了撼動業界的重要新聞。",
+    "summary_zh-cn": "AI模型优先共情导致精度下降、Meta的机器人收购、Musk诉Altman案件、明尼苏达州的深度伪造监管、五角大楼的AI采购等，汇总了撼动业界的重要新闻。",
+    "summary_ko": "AI 모델이 공감 우선으로 정확도 저하, Meta의 로봇 인수, Musk vs Altman 소송, 미네소타주의 딥페이크 규제, 펜타곤의 AI 조달 등 업계를 뒤흔드는 중요 뉴스를 정리했습니다.",
+    "slug": "2026-05-02"
+  },
+  {
     "title": "今日のAI最前線：Amazon・Alphabetが過去最速のAI投資拡大、Anthropicが900億ドル超の評価額に",
     "title_en": "AI Frontier Today：# Amazon and Alphabet Expanding AI Investment at Record Pace, Anthropic Valued at Over $90 Billion",
     "title_zh-tw": "今日 AI 前沿：亞馬遜、Alphabet 以過去最快速度擴大 AI 投資，Anthropic 估值超 900 億美元",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI音声認識アプリが進化、ゲーミングPCもAI対話に対応—アカデミー賞ではAI生成作品を除外",
+    "title_en": "AI Frontier Today：AI Speech Recognition Apps Evolve, Gaming PCs Now Support AI Dialogue—Academy Awards Exclude AI-Generated Works",
+    "title_zh-tw": "今日 AI 前沿：AI 語音辨識應用程式進化，遊戲 PC 也支援 AI 對話——奧斯卡金像獎將排除 AI 生成作品",
+    "title_zh-cn": "今日 AI 前沿：AI 语音识别应用程序进化，游戏 PC 也支持 AI 对话——学院奖将排除 AI 生成作品",
+    "title_ko": "오늘의 AI 최전선：AI 음성인식 앱이 진화, 게이밍 PC도 AI 대화에 대응—아카데미 상에서는 AI 생성 작품 제외",
+    "category": "AI NEWS",
+    "date": "2026.05.03",
+    "thumbnail": "",
+    "summary": "AI音声認識ツールの進化やゲーミングPC上でのAI対話機能の登場、そしてアカデミー賞がAI生成俳優・脚本を除外する新ルール導入など、AI活用の最前線と課題が同時に浮かび上がっています。",
+    "summary_en": "The evolution of AI speech recognition tools, the emergence of AI dialogue features on gaming PCs, and the Academy Awards' introduction of new rules excluding AI-generated actors and screenplays—all of these reveal both the cutting edge of AI utilization and the challenges it presents simultaneously.",
+    "summary_zh-tw": "AI語音辨識工具的進化、遊戲PC上AI對話功能的推出，以及奧斯卡獎引入排除AI生成演員、劇本的新規則等，AI應用的最前線與課題同時浮現。",
+    "summary_zh-cn": "AI语音识别工具的进化、游戏PC上AI对话功能的出现，以及奥斯卡金像奖采用排除AI生成演员和剧本的新规则，使得AI应用的最前沿与课题同时浮现出来。",
+    "summary_ko": "AI 음성 인식 도구의 진화, 게이밍 PC에서의 AI 대화 기능의 등장, 그리고 아카데미상이 AI 생성 배우·각본을 제외하는 새로운 규칙 도입 등, AI 활용의 최전선과 과제가 동시에 부각되고 있습니다.",
+    "slug": "2026-05-03"
+  },
+  {
     "title": "今日のAI最前線：AIモデルの正確性と倫理、軍事利用から規制まで：最新5つのAI動向",
     "title_en": "AI Frontier Today：# AI Model Accuracy and Ethics, from Military Applications to Regulation: Top 5 AI Trends",
     "title_zh-tw": "今日 AI 前沿：AI 模型的準確性與倫理、軍事應用到規制：最新 5 個 AI 動向",

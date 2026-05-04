@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：医療診断でAIが人間の医者を上回る性能を発揮、画像生成AIがノーコードで誰でも開発可能に",
+    "title_en": "AI Frontier Today：AI Outperforms Human Doctors in Medical Diagnosis, Image Generation AI Now Developable by Anyone Without Code",
+    "title_zh-tw": "今日 AI 前沿：醫療診斷中AI的性能超越人類醫生，影像生成AI可無代碼供所有人開發",
+    "title_zh-cn": "今日 AI 前沿：医疗诊断中AI超越人类医生的性能，图像生成AI可通过无代码方式供任何人开发",
+    "title_ko": "오늘의 AI 최전선：의료 진단에서 AI가 인간 의사를 능가하는 성능 발휘, 이미지 생성 AI가 노코드로 누구나 개발 가능하게",
+    "category": "AI NEWS",
+    "date": "2026.05.04",
+    "thumbnail": "",
+    "summary": "ハーバード大学の研究でAIが緊急治療室の診断で医師より正確な結果を示す一方、プログラミング初心者でも数百万円級のAIツール開発が可能になるなど、AI活用の民主化が加速している。",
+    "summary_en": "A Harvard University study shows that AI achieves more accurate results than doctors in emergency room diagnosis, while the democratization of AI is accelerating, with even programming beginners now able to develop AI tools worth millions of yen.",
+    "summary_zh-tw": "哈佛大學的研究顯示AI在急診室診斷中的準確度超越醫師，同時程式設計初學者也能開發數百萬日圓級別的AI工具，AI應用的民主化正在加速發展。",
+    "summary_zh-cn": "哈佛大学的研究表明，人工智能在急诊室诊断中显示出比医生更准确的结果，同时即使是编程初学者也能开发数百万日元级别的AI工具，这些现象表明AI应用的民主化正在加速推进。",
+    "summary_ko": "하버드 대학교의 연구에서 AI가 응급실 진단에서 의사보다 정확한 결과를 보이는 한편, 프로그래밍 초보자도 수백만 엔대의 AI 도구 개발이 가능해지는 등 AI 활용의 민주화가 가속화하고 있다.",
+    "slug": "2026-05-04"
+  },
+  {
     "title": "今日のAI最前線：AI音声認識アプリが進化、ゲーミングPCもAI対話に対応—アカデミー賞ではAI生成作品を除外",
     "title_en": "AI Frontier Today：AI Speech Recognition Apps Evolve, Gaming PCs Now Support AI Dialogue—Academy Awards Exclude AI-Generated Works",
     "title_zh-tw": "今日 AI 前沿：AI 語音辨識應用程式進化，遊戲 PC 也支援 AI 對話——奧斯卡金像獎將排除 AI 生成作品",

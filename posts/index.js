@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI企業の大型投資ラッシュと日本行政のAI基盤公開で業界が激震",
+    "title_en": "AI Frontier Today：# Major Investment Rush in AI Companies and Japan's Public Release of AI Infrastructure Shake Up the Industry",
+    "title_zh-tw": "今日 AI 前沿：AI企業的大型投資熱潮與日本政府AI基礎設施公開引發業界震盪",
+    "title_zh-cn": "今日 AI 前沿：AI企业大规模投资热潮与日本政府AI基础设施公开导致行业震荡",
+    "title_ko": "오늘의 AI 최전선：AI 기업의 대규모 투자 러시와 일본 행정의 AI 기반 공개로 업계가 지진",
+    "category": "AI NEWS",
+    "date": "2026.05.05",
+    "thumbnail": "",
+    "summary": "OpenAI裁判の進行、Cerebrasの大型IPO計画、SierraとAnthropicの大規模資金調達、そして日本デジタル庁のAI基盤無償公開など、AI業界を揺るがす重大なニュースが相次ぎました。",
+    "summary_en": "OpenAI's arbitration proceedings, Cerebras's major IPO plans, Sierra and Anthropic's large-scale fundraising, and Japan's Digital Agency's free release of AI infrastructure—major news shaking the AI industry has followed in succession.",
+    "summary_zh-tw": "OpenAI裁判的進展、Cerebras的大型IPO計劃、Sierra和Anthropic的大規模融資，以及日本數位廳的AI基礎免費公開等，AI業界接連出現了震動產業的重大新聞。",
+    "summary_zh-cn": "OpenAI裁判的进展、Cerebras的大型IPO计划、Sierra和Anthropic的大规模融资、以及日本数字厅免费公开AI基础设施等，AI行业接连出现了震撼业界的重大新闻。",
+    "summary_ko": "OpenAI 재판의 진행, Cerebras의 대형 IPO 계획, Sierra와 Anthropic의 대규모 자금 조달, 그리고 일본 디지털청의 AI 기반 무료 공개 등 AI 업계를 뒤흔드는 중대한 뉴스가 잇따랐습니다.",
+    "slug": "2026-05-05"
+  },
+  {
     "title": "今日のAI最前線：医療診断でAIが人間の医者を上回る性能を発揮、画像生成AIがノーコードで誰でも開発可能に",
     "title_en": "AI Frontier Today：AI Outperforms Human Doctors in Medical Diagnosis, Image Generation AI Now Developable by Anyone Without Code",
     "title_zh-tw": "今日 AI 前沿：醫療診斷中AI的性能超越人類醫生，影像生成AI可無代碼供所有人開發",

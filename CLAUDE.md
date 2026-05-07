@@ -32,17 +32,17 @@ npm run translate:single -- <slug>  # 特定の記事を翻訳
 
 ### データフロー
 1. **RSSフィード取得**: `rss-feeds.json` で定義されたフィードから24〜48時間以内のニュースを取得
-2. **記事生成**: Claude API (`claude-haiku-4-5-20251001` デフォルト) で日本語記事をJSON形式で生成
+2. **記事生成**: Gemini API (`gemini-2.5-flash` デフォルト) で日本語記事をJSON形式で生成
 3. **翻訳**: 生成された記事を英語、中国語（繁体/簡体）、韓国語に並列翻訳
 4. **保存**: 各言語の `posts/{lang}/{slug}.md` に本文保存、`posts/index.js` にメタデータ追加
 
 ### エラーハンドリングとリトライ戦略
 
 **メイン生成 (`generate-post.mjs`)**:
-- モデルフォールバック: 優先モデル → Haiku → Sonnet
+- モデルフォールバック: 優先モデル → gemini-2.5-flash → gemini-2.5-flash-lite
 - 各モデルで最大3回リトライ（指数バックオフ: 1秒 → 2秒 → 4秒、最大10秒）
-- 529 (Overloaded)、408 (Timeout)、429 (Rate Limit) はリトライ
-- 401/403 および "credit"/"balance" エラーは即時失敗（致命的エラー）
+- 503/500 (Overloaded/Internal)、504 (Timeout)、429 (Rate Limit) はリトライ
+- 400/401/403 エラーは即時失敗（致命的エラー）
 - 翻訳失敗時は日本語のみで継続
 
 **翻訳関数**:
@@ -50,9 +50,8 @@ npm run translate:single -- <slug>  # 特定の記事を翻訳
 - リトライ不要なエラーはスキップして次の言語へ
 
 ### 環境変数
-- `ANTHROPIC_API_KEY` (必須): Anthropic APIキー
-- `ANTHROPIC_MODEL` (任意): デフォルト `claude-haiku-4-5-20251001`
-- `ANTHROPIC_BASE_URL` (任意): カスタムAPIエンドポイント
+- `GEMINI_API_KEY` (必須): Google Gemini APIキー
+- `GEMINI_MODEL` (任意): デフォルト `gemini-2.5-flash`
 - `REPO_DIR` (GitHub Actionsで設定): リポジトリのルートパス
 
 ### 記事構造

@@ -1,4 +1,4 @@
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenAI } from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -32,41 +32,64 @@ function applyTitlePrefix(title, lang) {
   return `${prefix}：${title}`;
 }
 
-async function translateWithClaude(text, targetLang) {
+async function translateWithGemini(text, targetLang) {
   const langConfig = SUPPORTED_LANGUAGES[targetLang];
 
-  const client = new Anthropic({
-    baseURL: process.env.ANTHROPIC_BASE_URL || undefined,
-    timeout: 120_000,
-    maxRetries: 2,
+  const ai = new GoogleGenAI({
+    apiKey: process.env.GEMINI_API_KEY,
   });
 
-  console.log(`    Translating to ${targetLang} (${text.length} chars)...`);
+  const MAX_RETRIES = 3;
+  const model = 'gemini-2.5-flash';
 
-  const response = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 8192,
-    system: `You are a professional translator. ${langConfig.prompt}.
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      console.log(`    Translating to ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
+
+      const response = await ai.models.generateContent({
+        model,
+        contents: text,
+        config: {
+          systemInstruction: `You are a professional translator. ${langConfig.prompt}.
 - Keep technical terms accurate
 - Preserve Markdown formatting exactly
 - Do not add explanations or extra text
 - Return only the translated text`,
-    messages: [
-      { role: 'user', content: text }
-    ],
-  });
+          maxOutputTokens: 8192,
+        },
+      });
 
-  const translatedText = response.content[0].text;
-  console.log(`    Translation received (${translatedText.length} chars)`);
-  return translatedText;
+      const translatedText = response.text;
+      console.log(`    Translation received (${translatedText.length} chars)`);
+      return translatedText;
+    } catch (err) {
+      console.warn(`    Translation attempt ${attempt} failed: ${err.status || 'unknown'} ${err.message || ''}`);
+
+      const isOverloaded = err.status === 503 || err.status === 500;
+      const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
+      const isRateLimit = err.status === 429;
+
+      if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES) {
+        const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
+        console.warn(`    Retrying translation in ${delay}ms...`);
+        await new Promise(r => setTimeout(r, delay));
+        continue;
+      }
+
+      const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
+      if (isFatal || attempt === MAX_RETRIES) {
+        throw err;
+      }
+    }
+  }
 }
 
 async function translateArticle(article, targetLang) {
   try {
     return {
-      title: await translateWithClaude(article.title, targetLang),
-      summary: await translateWithClaude(article.summary, targetLang),
-      body: await translateWithClaude(article.body, targetLang)
+      title: await translateWithGemini(article.title, targetLang),
+      summary: await translateWithGemini(article.summary, targetLang),
+      body: await translateWithGemini(article.body, targetLang)
     };
   } catch (err) {
     console.warn(`  ✗ ${targetLang} translation failed: ${err.message}`);
@@ -75,8 +98,8 @@ async function translateArticle(article, targetLang) {
 }
 
 async function translateSingleFile(slug) {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    throw new Error('ANTHROPIC_API_KEY environment variable is not set');
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY environment variable is not set');
   }
 
   const postsDir = path.join(__dirname, '..', 'posts');

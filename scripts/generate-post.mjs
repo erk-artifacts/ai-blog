@@ -1,10 +1,13 @@
-import Anthropic from '@anthropic-ai/sdk';
+import { GoogleGenAI } from '@google/genai';
 import Parser from 'rss-parser';
 import fs from 'fs/promises';
 import path from 'path';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 import { validateEntry } from './validate-post.mjs';
+
+dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -99,14 +102,12 @@ async function fetchAllFeeds() {
 // ---------------------------------------------------------------------------
 
 async function generateBlogPost(newsItems) {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    throw new Error('ANTHROPIC_API_KEY environment variable is not set');
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY environment variable is not set');
   }
 
-  const client = new Anthropic({
-    baseURL: process.env.ANTHROPIC_BASE_URL || undefined,
-    timeout: 90_000,    // 90 seconds max per request
-    maxRetries: 0,      // no SDK-level retries (script has its own 3-attempt loop)
+  const ai = new GoogleGenAI({
+    apiKey: process.env.GEMINI_API_KEY,
   });
 
   const newsList = newsItems
@@ -119,17 +120,13 @@ async function generateBlogPost(newsItems) {
   const today = new Date();
   const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
 
-  const requestPayload = {
-    max_tokens: 8000,
-    system: `あなたは日本語テックブロガーです。AI初心者にもわかりやすく、読みやすい記事を書きます。
+  const systemPrompt = `あなたは日本語テックブロガーです。AI初心者にもわかりやすく、読みやすい記事を書きます。
 
 【重要】出力は必ず指定されたJSON形式のみで返してください。余計な形式やテキストを一切加えず、JSONオブジェクトのみを出力してください。マークダウンのコードブロック（\`\`\`）で囲まないでください。説明文や前置きも不要です。記事には必ず元記事へのリンクを含めてください。
 
-【JSON形式の注意】bodyフィールドはMarkdown形式です。JSONとして有効な文字列にしてください。`,
-    messages: [
-      {
-        role: 'user',
-        content: `以下のニュース一覧から**AI（人工知能）に直接関連するニュースのみ**を選び、日本語のブログ記事を作成してください。
+【JSON形式の注意】bodyフィールドはMarkdown形式です。JSONとして有効な文字列にしてください。`;
+
+  const userPrompt = `以下のニュース一覧から**AI（人工知能）に直接関連するニュースのみ**を選び、日本語のブログ記事を作成してください。
 
 【重要】AI・機械学習・LLM・生成AI・ロボティクスなどに直接関係しないニュース（一般的なIT・ビジネス・半導体・セキュリティなど）は必ず除外してください。AI関連ニュースが少ない場合は、5件や10件でも構いません。無理にかき集めず、質を優先してください。
 
@@ -162,16 +159,13 @@ async function generateBlogPost(newsItems) {
 ## 本日の日付: ${dateStr}
 
 ## ニュース一覧:
-${newsList}`,
-      },
-    ],
-  };
+${newsList}`;
 
-  const preferredModel = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
+  const preferredModel = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
   const modelFallbacks = [
     preferredModel,
-    'claude-haiku-4-5-20251001',  // 軽量・高速・低コスト
-    'claude-sonnet-4-5',           // フォールバック
+    'gemini-2.5-flash',
+    'gemini-2.5-flash-lite',
   ].filter((model, index, arr) => model && arr.indexOf(model) === index);
 
   // 指数バックオフ付きで各モデルを試す
@@ -181,10 +175,15 @@ ${newsList}`,
     let lastModelError;
     for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
       try {
-        console.log(`Calling Claude API model: ${model} (attempt ${attempt}/${MAX_RETRIES_PER_MODEL})`);
-        response = await client.messages.create({
+        console.log(`Calling Gemini API model: ${model} (attempt ${attempt}/${MAX_RETRIES_PER_MODEL})`);
+        response = await ai.models.generateContent({
           model,
-          ...requestPayload,
+          contents: userPrompt,
+          config: {
+            systemInstruction: systemPrompt,
+            maxOutputTokens: 8000,
+            responseMimeType: 'application/json',
+          },
         });
         console.log(`Success with ${model}`);
         break;
@@ -192,9 +191,9 @@ ${newsList}`,
         lastModelError = err;
         console.warn(`Model ${model} failed (attempt ${attempt}): ${err.status || 'unknown'} ${err.message || ''}`);
 
-        // オーバーロードエラーまたはタイムアウトの場合は指数バックオフでリトライ
-        const isOverloaded = err.status === 529 || String(err.message || '').toLowerCase().includes('overloaded');
-        const isTimeout = err.status === 408 || err.code === 'ECONNABORTED' || String(err.message || '').toLowerCase().includes('timeout');
+        // 過負荷・タイムアウト・レート制限の場合は指数バックオフでリトライ
+        const isOverloaded = err.status === 503 || err.status === 500;
+        const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
         const isRateLimit = err.status === 429;
 
         if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES_PER_MODEL) {
@@ -204,10 +203,8 @@ ${newsList}`,
           continue;
         }
 
-        // クレジット不足や認証エラーなど、リトライしても無意味なエラー
-        const isFatal = err.status === 401 || err.status === 403 ||
-          String(err.message || '').toLowerCase().includes('credit') ||
-          String(err.message || '').toLowerCase().includes('balance');
+        // リトライしても無意味なエラー
+        const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
 
         if (isFatal) {
           throw err; // すぐに失敗させる
@@ -223,12 +220,12 @@ ${newsList}`,
   }
 
   if (!response) {
-    throw new Error(`Failed to call Claude API with all candidate models. Last error: ${lastModelError?.message || 'unknown error'}`);
+    throw new Error(`Failed to call Gemini API with all candidate models. Last error: ${lastModelError?.message || 'unknown error'}`);
   }
 
-  console.log(`API response received. Usage: ${response.usage.input_tokens} input, ${response.usage.output_tokens} output tokens`);
+  console.log(`API response received. Usage: ${response.usageMetadata.promptTokenCount} input, ${response.usageMetadata.candidatesTokenCount} output tokens`);
 
-  const text = response.content[0].text.trim();
+  const text = response.text.trim();
 
   // Try to parse as JSON, with multi-step fallback extraction
   try {
@@ -266,7 +263,7 @@ ${newsList}`,
     console.error('========== INVALID API RESPONSE ==========');
     console.error(`Full response (first 1000 chars):\n${text.slice(0, 1000)}`);
     console.error('==========================================');
-    throw new Error(`Claude API response is not valid JSON. See logs above for details.`);
+    throw new Error(`Gemini API response is not valid JSON. See logs above for details.`);
   }
 }
 
@@ -304,50 +301,48 @@ const SUPPORTED_LANGUAGES = {
   ko: { name: '한국어（Korean）', prompt: 'translate to Korean (한국어)' }
 };
 
-// Claude APIで翻訳
+// Gemini APIで翻訳
 async function translate(text, targetLang) {
-  return await translateWithClaude(text, targetLang);
+  return await translateWithGemini(text, targetLang);
 }
 
-// Claude API translation implementation
-async function translateWithClaude(text, targetLang) {
+// Gemini API translation implementation
+async function translateWithGemini(text, targetLang) {
   const langConfig = SUPPORTED_LANGUAGES[targetLang];
 
-  const client = new Anthropic({
-    baseURL: process.env.ANTHROPIC_BASE_URL || undefined,
-    timeout: 120_000,
-    maxRetries: 0,  // カスタムリトライロジックを使用するため0に設定
+  const ai = new GoogleGenAI({
+    apiKey: process.env.GEMINI_API_KEY,
   });
 
   const MAX_RETRIES = 3;
-  const model = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
+  const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
-      console.log(`    Calling Claude API for ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
+      console.log(`    Calling Gemini API for ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
 
-      const response = await client.messages.create({
+      const response = await ai.models.generateContent({
         model,
-        max_tokens: 8192,
-        system: `You are a professional translator. ${langConfig.prompt}.
+        contents: text,
+        config: {
+          systemInstruction: `You are a professional translator. ${langConfig.prompt}.
 - Keep technical terms accurate
 - Preserve Markdown formatting exactly
 - Do not add explanations or extra text
 - Return only the translated text`,
-        messages: [
-          { role: 'user', content: text }
-        ],
+          maxOutputTokens: 8192,
+        },
       });
 
-      const translatedText = response.content[0].text;
+      const translatedText = response.text;
       console.log(`    Translation received (${translatedText.length} chars)`);
       return translatedText;
     } catch (err) {
       console.warn(`    Translation attempt ${attempt} failed: ${err.status || 'unknown'} ${err.message || ''}`);
 
-      // オーバーロードエラー、タイムアウト、レート制限の場合は指数バックオフでリトライ
-      const isOverloaded = err.status === 529 || String(err.message || '').toLowerCase().includes('overloaded');
-      const isTimeout = err.status === 408 || err.code === 'ECONNABORTED' || String(err.message || '').toLowerCase().includes('timeout');
+      // 過負荷・タイムアウト・レート制限の場合は指数バックオフでリトライ
+      const isOverloaded = err.status === 503 || err.status === 500;
+      const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
       const isRateLimit = err.status === 429;
 
       if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES) {
@@ -358,9 +353,7 @@ async function translateWithClaude(text, targetLang) {
       }
 
       // リトライ不要なエラー
-      const isFatal = err.status === 401 || err.status === 403 ||
-        String(err.message || '').toLowerCase().includes('credit') ||
-        String(err.message || '').toLowerCase().includes('balance');
+      const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
 
       if (isFatal || attempt === MAX_RETRIES) {
         throw err;
@@ -559,13 +552,13 @@ async function main() {
     process.exit(0);
   }
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.warn('ANTHROPIC_API_KEY is not set. Skipping generation to avoid workflow failure.');
+  if (!process.env.GEMINI_API_KEY) {
+    console.warn('GEMINI_API_KEY is not set. Skipping generation to avoid workflow failure.');
     clearTimeout(scriptTimer);
     process.exit(0);
   }
 
-  console.log('Step 2: Generating blog post via Claude API...');
+  console.log('Step 2: Generating blog post via Gemini API...');
   let blogPost;
   const MAX_ATTEMPTS = 3;
   const MIN_NEWS_ITEMS = 3;
@@ -604,7 +597,7 @@ async function main() {
 
   // Step 2.5: Translate to all languages
   console.log('Step 2.5: Translating to all languages...');
-  console.log(`  ANTHROPIC_API_KEY set: ${!!process.env.ANTHROPIC_API_KEY}`);
+  console.log(`  GEMINI_API_KEY set: ${!!process.env.GEMINI_API_KEY}`);
 
   // Ensure we have blogPost before translation
   if (!blogPost) {

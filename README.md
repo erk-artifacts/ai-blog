@@ -24,7 +24,7 @@ ai-blog/
 ### 自動生成（GitHub Actions）
 毎日朝9時JST（00:00 UTC）に実行され、以下を行います：
 1. RSSフィードからAI関連ニュースを収集
-2. Claude APIで日本語ブログ記事を生成
+2. Gemini APIで日本語ブログ記事を生成
 3. 各言語に翻訳（英語、中国語繁体/簡体、韓国語）
 4. ファイル保存とGitHubへプッシュ
 
@@ -57,7 +57,7 @@ npm run translate:single -- 2026-03-04-2
 `.env` ファイルを作成してAPIキーを設定：
 
 ```env
-ANTHROPIC_API_KEY=your-api-key-here
+GEMINI_API_KEY=your-api-key-here
 ```
 
 `.env` ファイルは `.gitignore` に含まれているため、リポジトリにプッシュされません。
@@ -66,7 +66,7 @@ ANTHROPIC_API_KEY=your-api-key-here
 
 GitHub Actionsで使用する環境変数はリポジトリの「Settings → Secrets and variables → Actions」で設定してください：
 
-- `ANTHROPIC_API_KEY` - Anthropic APIキー
+- `GEMINI_API_KEY` - Google Gemini APIキー
 
 ## ファイル構造
 
@@ -110,7 +110,7 @@ const posts = [
 
 ```json
 {
-  "@anthropic-ai/sdk": "^0.61.0",
+  "@google/genai": "^1.0.0",
   "rss-parser": "^3.13.0",
   "dotenv": "^17.3.1"
 }

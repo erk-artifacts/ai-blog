@@ -7,7 +7,8 @@
       "Bash(node:*)",
       "Bash(echo \"EXIT: $?\")",
       "Bash(npm run:*)",
-      "Bash(echo \"EXIT: $PIPESTATUS[0]\")"
+      "Bash(echo \"EXIT: $PIPESTATUS[0]\")",
+      "Bash(gh run:*)"
     ]
   }
 }

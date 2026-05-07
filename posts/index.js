@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ロボットが変形！AI活用ビジネスが加速する未来",
+    "title_en": "AI Frontier Today：Robots transform! A future where AI-powered businesses accelerate",
+    "title_zh-tw": "今日 AI 前沿：機器人變形！AI應用業務加速發展的未來",
+    "title_zh-cn": "今日 AI 前沿：机器人变形！AI驱动商业加速发展的未来",
+    "title_ko": "오늘의 AI 최전선：로봇이 변신! AI 활용 비즈니스가 가속화되는 미래",
+    "category": "AI NEWS",
+    "date": "2026.05.07",
+    "thumbnail": "",
+    "summary": "変形ロボット、ディープフェイクの脅威、ビジネスAI活用サービスなど、私たちの生活に直結する最新AIニュースを分かりやすく解説。未来の変化を読み解きます。",
+    "summary_en": "We will clearly explain the latest AI news directly impacting our lives, such as transforming robots, the threat of deepfakes, and AI utilization services in business. We will decipher future changes.",
+    "summary_zh-tw": "變形機器人、深度偽造的威脅、商業AI應用服務等，我們將淺顯易懂地解說這些與我們的生活息息相關的最新AI新聞，並洞察未來的變化。",
+    "summary_zh-cn": "变形机器人、深度伪造的威胁、商业AI应用服务等，我们将对与我们生活息息相关的最新AI新闻进行通俗易懂的解读，助您洞悉未来的变化。",
+    "summary_ko": "변형 로봇, 딥페이크 위협, 비즈니스 AI 활용 서비스 등 우리 삶에 직결되는 최신 AI 뉴스를 알기 쉽게 설명합니다. 미래의 변화를 읽어냅니다.",
+    "slug": "2026-05-07"
+  },
+  {
     "title": "今日のAI最前線：AI企業の大型投資ラッシュと日本行政のAI基盤公開で業界が激震",
     "title_en": "AI Frontier Today：# Major Investment Rush in AI Companies and Japan's Public Release of AI Infrastructure Shake Up the Industry",
     "title_zh-tw": "今日 AI 前沿：AI企業的大型投資熱潮與日本政府AI基礎設施公開引發業界震盪",

@@ -1,88 +1,13 @@
-import { GoogleGenAI } from '@google/genai';
 import fs from 'fs/promises';
 import path from 'path';
+import vm from 'vm';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { SUPPORTED_LANGUAGES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
 
-// .envファイルを読み込み
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config();
 
-const SUPPORTED_LANGUAGES = {
-  en: { name: 'English', prompt: 'translate to natural English' },
-  'zh-tw': { name: '繁體中文（Traditional Chinese）', prompt: 'translate to Traditional Chinese (繁體中文)' },
-  'zh-cn': { name: '简体中文（Simplified Chinese）', prompt: 'translate to Simplified Chinese (简体中文)' },
-  ko: { name: '한국어（Korean）', prompt: 'translate to Korean (한국어)' }
-};
-
-// 固定タイトルプレフィックス
-const TITLE_PREFIXES = {
-  ja: '今日のAI最前線',
-  en: 'AI Frontier Today',
-  'zh-tw': '今日 AI 前沿',
-  'zh-cn': '今日 AI 前沿',
-  ko: '오늘의 AI 최전선',
-};
-
-// タイトルに固定プレフィックスを付与する
-function applyTitlePrefix(title, lang) {
-  const prefix = TITLE_PREFIXES[lang];
-  if (!prefix) return title;
-  if (title.startsWith(prefix)) return title;
-  return `${prefix}：${title}`;
-}
-
-async function translateWithGemini(text, targetLang) {
-  const langConfig = SUPPORTED_LANGUAGES[targetLang];
-
-  const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-  });
-
-  const MAX_RETRIES = 3;
-  const model = 'gemini-2.5-flash';
-
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      console.log(`    Translating to ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
-
-      const response = await ai.models.generateContent({
-        model,
-        contents: text,
-        config: {
-          systemInstruction: `You are a professional translator. ${langConfig.prompt}.
-- Keep technical terms accurate
-- Preserve Markdown formatting exactly
-- Do not add explanations or extra text
-- Return only the translated text`,
-          maxOutputTokens: 8192,
-        },
-      });
-
-      const translatedText = response.text;
-      console.log(`    Translation received (${translatedText.length} chars)`);
-      return translatedText;
-    } catch (err) {
-      console.warn(`    Translation attempt ${attempt} failed: ${err.status || 'unknown'} ${err.message || ''}`);
-
-      const isOverloaded = err.status === 503 || err.status === 500;
-      const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
-      const isRateLimit = err.status === 429;
-
-      if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES) {
-        const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
-        console.warn(`    Retrying translation in ${delay}ms...`);
-        await new Promise(r => setTimeout(r, delay));
-        continue;
-      }
-
-      const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
-      if (isFatal || attempt === MAX_RETRIES) {
-        throw err;
-      }
-    }
-  }
-}
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function translateArticle(article, targetLang) {
   try {
@@ -123,12 +48,10 @@ async function translateSingleFile(slug) {
 
   let posts;
   try {
-    // Extract the array content from JavaScript format (const posts = [...];)
-    const match = indexContent.match(/const posts = (\[[\s\S]*\]);/);
-    if (!match) {
-      throw new Error('Could not extract posts array from posts/index.js');
-    }
-    posts = JSON.parse(match[1]);
+    const script = new vm.Script(indexContent.replace('const posts', 'var posts'));
+    const context = vm.createContext({});
+    script.runInContext(context);
+    posts = context.posts;
   } catch (err) {
     console.error(`Failed to parse index.js: ${err.message}`);
     console.error(`First 200 chars of index.js:\n${indexContent.slice(0, 200)}`);
@@ -244,11 +167,11 @@ async function updatePostInIndex(indexPath, originalContent, post, translations)
     }
   }
 
-  // オブジェクトを文字列に変換（元のフォーマットに合わせる）
+  // オブジェクトを文字列に変換（元のフォーマットに合わせてインデント）
   const updatedEntry = JSON.stringify(entryObj, null, 2);
   const indentedEntry = updatedEntry.split('\n').map(line => '  ' + line).join('\n');
 
-  // 元のコンテンツ内でエントリを置換して、ファイル全体を更新
+  // ファイル全体内でエントリを置換
   const updatedContent = originalContent.replace(originalEntry, indentedEntry);
   await fs.writeFile(indexPath, updatedContent, 'utf-8');
   console.log(`Updated ${indexPath}`);

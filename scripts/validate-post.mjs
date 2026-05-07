@@ -2,18 +2,10 @@ import fs from 'fs/promises';
 import path from 'path';
 import vm from 'vm';
 import { fileURLToPath } from 'url';
+import { TITLE_PREFIXES } from './shared.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CHECK_ALL = process.argv.includes('--all');
-
-// 固定タイトルプレフィックス（generate-post.mjs と同じ定義）
-const TITLE_PREFIXES = {
-  ja: '今日のAI最前線',
-  en: 'AI Frontier Today',
-  'zh-tw': '今日 AI 前沿',
-  'zh-cn': '今日 AI 前沿',
-  ko: '오늘의 AI 최전선',
-};
 
 // 言語コード → index.js フィールド名
 const TITLE_FIELDS = {

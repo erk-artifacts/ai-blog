@@ -23,7 +23,6 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        working-directory: scripts
         run: npm install
 
       - name: Generate news post

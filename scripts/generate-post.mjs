@@ -6,21 +6,13 @@ import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { validateEntry } from './validate-post.mjs';
+import { SUPPORTED_LANGUAGES, TITLE_PREFIXES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
 
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes('--dry-run');
 const FETCH_ONLY = process.argv.includes('--fetch-only');
-
-// 固定タイトルプレフィックス
-const TITLE_PREFIXES = {
-  ja: '今日のAI最前線',
-  en: 'AI Frontier Today',
-  'zh-tw': '今日 AI 前沿',
-  'zh-cn': '今日 AI 前沿',
-  ko: '오늘의 AI 최전선',
-};
 
 // ---------------------------------------------------------------------------
 // 1. RSS Feed Fetching
@@ -98,7 +90,7 @@ async function fetchAllFeeds() {
 }
 
 // ---------------------------------------------------------------------------
-// 2. Blog Post Generation via Claude API
+// 2. Blog Post Generation via Gemini API
 // ---------------------------------------------------------------------------
 
 async function generateBlogPost(newsItems) {
@@ -291,76 +283,8 @@ function validateNewsItemCount(blogPost, minItems = 3) {
 }
 
 // ---------------------------------------------------------------------------
-// 2.5. Translation Provider Abstraction
+// 2.5. Translation
 // ---------------------------------------------------------------------------
-
-const SUPPORTED_LANGUAGES = {
-  en: { name: 'English', prompt: 'translate to natural English' },
-  'zh-tw': { name: '繁體中文（Traditional Chinese）', prompt: 'translate to Traditional Chinese (繁體中文)' },
-  'zh-cn': { name: '简体中文（Simplified Chinese）', prompt: 'translate to Simplified Chinese (简体中文)' },
-  ko: { name: '한국어（Korean）', prompt: 'translate to Korean (한국어)' }
-};
-
-// Gemini APIで翻訳
-async function translate(text, targetLang) {
-  return await translateWithGemini(text, targetLang);
-}
-
-// Gemini API translation implementation
-async function translateWithGemini(text, targetLang) {
-  const langConfig = SUPPORTED_LANGUAGES[targetLang];
-
-  const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-  });
-
-  const MAX_RETRIES = 3;
-  const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      console.log(`    Calling Gemini API for ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
-
-      const response = await ai.models.generateContent({
-        model,
-        contents: text,
-        config: {
-          systemInstruction: `You are a professional translator. ${langConfig.prompt}.
-- Keep technical terms accurate
-- Preserve Markdown formatting exactly
-- Do not add explanations or extra text
-- Return only the translated text`,
-          maxOutputTokens: 8192,
-        },
-      });
-
-      const translatedText = response.text;
-      console.log(`    Translation received (${translatedText.length} chars)`);
-      return translatedText;
-    } catch (err) {
-      console.warn(`    Translation attempt ${attempt} failed: ${err.status || 'unknown'} ${err.message || ''}`);
-
-      // 過負荷・タイムアウト・レート制限の場合は指数バックオフでリトライ
-      const isOverloaded = err.status === 503 || err.status === 500;
-      const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
-      const isRateLimit = err.status === 429;
-
-      if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES) {
-        const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000); // Max 10秒
-        console.warn(`    Retrying translation in ${delay}ms...`);
-        await new Promise(r => setTimeout(r, delay));
-        continue;
-      }
-
-      // リトライ不要なエラー
-      const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
-
-      if (isFatal || attempt === MAX_RETRIES) {
-        throw err;
-      }
-    }
-  }
-}
 
 // Translate article to all supported languages (parallel)
 async function translateArticleToAllLanguages(article) {
@@ -377,9 +301,9 @@ async function translateArticleToAllLanguages(article) {
     console.log(`  Translating to ${langCode}...`);
     try {
       const result = {
-        title: await translate(article.title, langCode),
-        summary: await translate(article.summary, langCode),
-        body: await translate(article.body, langCode)
+        title: await translateWithGemini(article.title, langCode),
+        summary: await translateWithGemini(article.summary, langCode),
+        body: await translateWithGemini(article.body, langCode)
       };
       console.log(`  ✓ ${langCode} translation complete`);
       return { langCode, result };
@@ -403,14 +327,10 @@ async function translateArticleToAllLanguages(article) {
 }
 
 // タイトルに固定プレフィックスを付与する
-function applyTitlePrefix(translations) {
+function applyTitlePrefixAll(translations) {
   for (const [lang, content] of Object.entries(translations)) {
-    if (content && TITLE_PREFIXES[lang]) {
-      const prefix = TITLE_PREFIXES[lang];
-      // 既にプレフィックスが含まれている場合は重複を避ける
-      if (!content.title.startsWith(prefix)) {
-        content.title = `${prefix}：${content.title}`;
-      }
+    if (content) {
+      content.title = applyTitlePrefix(content.title, lang);
     }
   }
   return translations;
@@ -574,14 +494,14 @@ async function main() {
         break;
       } else {
         if (attempt < MAX_ATTEMPTS) {
-          console.warn(`Attempt ${attempt} generated too few items. Retrying in 5s...`);
+          console.warn(`Attempt ${attempt} generated too few items. Retrying in 3s...`);
           await new Promise((r) => setTimeout(r, 3000));
         }
       }
     } catch (err) {
       console.warn(`Attempt ${attempt} failed: ${err.message}`);
       if (attempt < MAX_ATTEMPTS) {
-        console.warn('Retrying in 5s...');
+        console.warn('Retrying in 3s...');
         await new Promise((r) => setTimeout(r, 3000));
       } else {
         throw err;
@@ -599,11 +519,6 @@ async function main() {
   console.log('Step 2.5: Translating to all languages...');
   console.log(`  GEMINI_API_KEY set: ${!!process.env.GEMINI_API_KEY}`);
 
-  // Ensure we have blogPost before translation
-  if (!blogPost) {
-    throw new Error('blogPost is not defined after Step 2');
-  }
-
   let translatedPost;
   try {
     translatedPost = await translateArticleToAllLanguages(blogPost);
@@ -619,7 +534,7 @@ async function main() {
   }
 
   // 固定プレフィックスをタイトルに付与
-  applyTitlePrefix(translatedPost);
+  applyTitlePrefixAll(translatedPost);
   console.log(`Title (ja): ${translatedPost.ja.title}`);
 
   // バリデーション（警告のみ、CI失敗はさせない）

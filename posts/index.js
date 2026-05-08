@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが業務を劇的に変える！最新事例と進化するツール",
+    "title_en": "AI Frontier Today：AI is Dramatically Transforming Business Operations! Latest Use Cases and Evolving Tools",
+    "title_zh-tw": "今日 AI 前沿：AI將徹底改變業務！最新案例與不斷演進的工具",
+    "title_zh-cn": "今日 AI 前沿：AI将彻底改变业务！最新案例与不断演进的工具",
+    "title_ko": "오늘의 AI 최전선：AI가 업무를 극적으로 변화시킨다! 최신 사례와 진화하는 도구",
+    "category": "AI NEWS",
+    "date": "2026.05.08",
+    "thumbnail": "",
+    "summary": "営業、製造、イベント、災害対策まで、AIが社会のあらゆる場面で活躍する最新動向と進化する技術を紹介します。",
+    "summary_en": "We will introduce the latest trends and evolving technologies where AI is playing an active role in every aspect of society, from sales, manufacturing, and events, to disaster response.",
+    "summary_zh-tw": "從銷售、製造、活動，到災害應對，我們將介紹AI在社會各個層面發揮作用的最新趨勢與不斷發展的技術。",
+    "summary_zh-cn": "从销售、制造、活动乃至灾害对策，我们将介绍AI在社会各个方面活跃的最新动向和不断进化的技术。",
+    "summary_ko": "영업, 제조, 이벤트, 재난 대책에 이르기까지, AI가 사회의 모든 영역에서 활약하는 최신 동향과 진화하는 기술을 소개합니다.",
+    "slug": "2026-05-08"
+  },
+  {
     "title": "今日のAI最前線：ロボットが変形！AI活用ビジネスが加速する未来",
     "title_en": "AI Frontier Today：Robots transform! A future where AI-powered businesses accelerate",
     "title_zh-tw": "今日 AI 前沿：機器人變形！AI應用業務加速發展的未來",

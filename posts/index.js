@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：激動のAI業界を読み解く：技術とビジネス、そして私たちの未来",
+    "title_en": "AI Frontier Today：Unraveling the Turbulent AI Industry: Technology and Business, and Our Future",
+    "title_zh-tw": "今日 AI 前沿：剖析激盪的 AI 產業：技術與商業，以及我們的未來",
+    "title_zh-cn": "今日 AI 前沿：解读动荡的AI行业：技术与商业，以及我们的未来",
+    "title_ko": "오늘의 AI 최전선：격동의 AI 업계를 해독: 기술과 비즈니스, 그리고 우리의 미래",
+    "category": "AI NEWS",
+    "date": "2026.05.10",
+    "thumbnail": "",
+    "summary": "AIの進化は止まらない！OpenAIとテスラの攻防から、NVIDIAの巨額投資、身近なAI活用まで、最新ニュースを解説します。",
+    "summary_en": "AI's evolution is unstoppable! We break down the latest news, from the rivalry between OpenAI and Tesla, to NVIDIA's massive investments, and everyday AI applications.",
+    "summary_zh-tw": "AI的進化永不止息！從OpenAI與特斯拉的攻防，NVIDIA的巨額投資，到我們身邊的AI應用，本文將為您解析最新消息。",
+    "summary_zh-cn": "AI的进化势不可挡！从OpenAI与特斯拉的攻防，到NVIDIA的巨额投资，再到我们身边的AI应用，本文将为您解读最新新闻。",
+    "summary_ko": "AI의 진화는 멈추지 않는다! OpenAI와 테슬라의 공방부터, NVIDIA의 거액 투자, 일상 속 AI 활용까지, 최신 뉴스를 해설합니다.",
+    "slug": "2026-05-10"
+  },
+  {
     "title": "今日のAI最前線：AIが業務を劇的に変える！最新事例と進化するツール",
     "title_en": "AI Frontier Today：AI is Dramatically Transforming Business Operations! Latest Use Cases and Evolving Tools",
     "title_zh-tw": "今日 AI 前沿：AI將徹底改變業務！最新案例與不斷演進的工具",

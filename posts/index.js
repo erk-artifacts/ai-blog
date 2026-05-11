@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが日常に溶け込む！最新技術と活用事例で未来を覗く",
+    "title_en": "AI Frontier Today：AI integrates into daily life! A look into the future with the latest technologies and use cases.",
+    "title_zh-tw": "今日 AI 前沿：AI融入日常！以最新技術與應用案例一窺未來",
+    "title_zh-cn": "今日 AI 前沿：AI融入日常生活！通过最新技术和应用案例窥探未来",
+    "title_ko": "오늘의 AI 최전선：AI가 일상에 녹아들다! 최신 기술과 활용 사례로 미래를 엿보다",
+    "category": "AI NEWS",
+    "date": "2026.05.11",
+    "thumbnail": "",
+    "summary": "最新のAI技術がディスプレイの焼き付き防止から建設業の自動化、バーチャルヒューマンまで、私たちの生活やビジネスをどう変えているか、注目のニュースを深掘りします。",
+    "summary_en": "We delve into noteworthy news, exploring how the latest AI technology is transforming our lives and businesses, from preventing display burn-in to construction industry automation and virtual humans.",
+    "summary_zh-tw": "最新的AI技術如何從防止顯示器烙印、建築業自動化到虛擬人物等，改變我們的生活和業務，我們將深入探討備受矚目的新聞。",
+    "summary_zh-cn": "最新的AI技术将如何改变我们的生活和商业，从显示器防烧屏到建筑业自动化、虚拟人类，我们将深入探讨备受关注的新闻。",
+    "summary_ko": "최신 AI 기술이 디스플레이 번인 방지부터 건설업 자동화, 버추얼 휴먼에 이르기까지, 우리의 삶과 비즈니스를 어떻게 변화시키고 있는지 주목할 만한 뉴스를 심층 분석합니다.",
+    "slug": "2026-05-11"
+  },
+  {
     "title": "今日のAI最前線：激動のAI業界を読み解く：技術とビジネス、そして私たちの未来",
     "title_en": "AI Frontier Today：Unraveling the Turbulent AI Industry: Technology and Business, and Our Future",
     "title_zh-tw": "今日 AI 前沿：剖析激盪的 AI 產業：技術與商業，以及我們的未來",

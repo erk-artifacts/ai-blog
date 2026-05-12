@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが拓く未来：セキュリティから地域活性化、働き方の変革まで",
+    "title_en": "AI Frontier Today：AI: Unlocking the Future – From Security to Regional Revitalization and Work Style Transformation",
+    "title_zh-tw": "今日 AI 前沿：AI開創未來：從資訊安全到地方創生、工作模式的轉型",
+    "title_zh-cn": "今日 AI 前沿：AI开启的未来：从安全到区域振兴、工作方式的变革",
+    "title_ko": "오늘의 AI 최전선：AI가 열어갈 미래: 보안부터 지역 활성화, 일하는 방식의 변혁까지",
+    "category": "AI NEWS",
+    "date": "2026.05.12",
+    "thumbnail": "",
+    "summary": "AI技術がセキュリティ、労働市場、行政、地域活性化の各分野で進化。社会の様々な側面に影響を与えています。",
+    "summary_en": "AI technology is evolving in areas such as security, the labor market, public administration, and regional revitalization, impacting various aspects of society.",
+    "summary_zh-tw": "AI技術在安全、勞動市場、行政、區域活化等各領域進化。對社會的各個層面產生影響。",
+    "summary_zh-cn": "AI技术在安全、劳动力市场、行政、区域振兴等各个领域不断发展，正在影响社会的各个方面。",
+    "summary_ko": "AI 기술이 보안, 노동 시장, 행정, 지역 활성화의 각 분야에서 발전하며 사회의 다양한 측면에 영향을 미치고 있습니다.",
+    "slug": "2026-05-12"
+  },
+  {
     "title": "今日のAI最前線：AIが日常に溶け込む！最新技術と活用事例で未来を覗く",
     "title_en": "AI Frontier Today：AI integrates into daily life! A look into the future with the latest technologies and use cases.",
     "title_zh-tw": "今日 AI 前沿：AI融入日常！以最新技術與應用案例一窺未來",

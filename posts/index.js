@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：最先端スマホのAIからビジネス変革まで！",
+    "title_en": "AI Frontier Today：From AI in cutting-edge smartphones to business transformation!",
+    "title_zh-tw": "今日 AI 前沿：從最尖端智慧型手機的AI到商業轉型！",
+    "title_zh-cn": "今日 AI 前沿：从最先进智能手机的AI到商业变革！",
+    "title_ko": "오늘의 AI 최전선：최첨단 스마트폰 AI부터 비즈니스 변혁까지!",
+    "category": "AI NEWS",
+    "date": "2026.05.13",
+    "thumbnail": "",
+    "summary": "最新XperiaのAI撮影機能、GIGABYTEのゲーミングノートPC、AIを活用した営業組織変革ウェビナー、LINEヤフーのAI活用事例を紹介。",
+    "summary_en": "Introducing the AI camera features of the latest Xperia, GIGABYTE gaming laptops, an AI-driven sales organization transformation webinar, and LINE Yahoo's AI use cases.",
+    "summary_zh-tw": "最新 Xperia 的 AI 拍攝功能、技嘉的電競筆記型電腦、運用 AI 的銷售組織轉型網路研討會、介紹 LINE Yahoo 的 AI 應用案例。",
+    "summary_zh-cn": "最新Xperia的AI拍摄功能、技嘉(GIGABYTE)游戏笔记本电脑、利用AI实现销售组织变革的网络研讨会、介绍LINE雅虎的AI应用案例。",
+    "summary_ko": "최신 엑스페리아의 AI 촬영 기능, 기가바이트의 게이밍 노트북, AI를 활용한 영업 조직 변혁 웨비나, 라인야후의 AI 활용 사례 소개.",
+    "slug": "2026-05-13"
+  },
+  {
     "title": "今日のAI最前線：AIが拓く未来：セキュリティから地域活性化、働き方の変革まで",
     "title_en": "AI Frontier Today：AI: Unlocking the Future – From Security to Regional Revitalization and Work Style Transformation",
     "title_zh-tw": "今日 AI 前沿：AI開創未來：從資訊安全到地方創生、工作模式的轉型",

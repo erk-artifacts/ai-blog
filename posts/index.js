@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの光と影：セキュリティ、著作権、社会受容性、そして進化するビジネスAI",
+    "title_en": "AI Frontier Today：The Light and Shadow of AI: Security, Copyright, Social Acceptability, and Evolving Business AI",
+    "title_zh-tw": "今日 AI 前沿：AI 的光與影：安全性、著作權、社會接受度，以及不斷進化的商業 AI",
+    "title_zh-cn": "今日 AI 前沿：AI的光与影：安全性、著作权、社会接受度，以及不断进化的商业AI",
+    "title_ko": "오늘의 AI 최전선：AI의 빛과 그림자: 보안, 저작권, 사회적 수용성, 그리고 진화하는 비즈니스 AI",
+    "category": "AI NEWS",
+    "date": "2026.05.15",
+    "thumbnail": "",
+    "summary": "OpenAIのセキュリティ脅威から著作権問題、AIインフラの課題まで。一方でゲーミングPCやビジネス用AIの進化も。AIの多角的な側面を探ります。",
+    "summary_en": "From OpenAI's security threats to copyright issues and challenges in AI infrastructure. Meanwhile, gaming PCs and business AI are also evolving. We will explore the multifaceted aspects of AI.",
+    "summary_zh-tw": "從 OpenAI 的資安威脅到著作權問題，再到 AI 基礎設施的挑戰。另一方面，電競電腦和商用 AI 也在持續進化。本文將探討 AI 的多重面向。",
+    "summary_zh-cn": "从OpenAI的安全威胁到著作权问题，再到AI基础设施的挑战。另一方面，游戏PC和商用AI也在不断发展。本文将探讨AI的多个方面。",
+    "summary_ko": "OpenAI의 보안 위협부터 저작권 문제, AI 인프라 과제까지. 한편으로는 게이밍 PC 및 비즈니스용 AI의 진화 또한. AI의 다각적인 측면을 탐구합니다.",
+    "slug": "2026-05-15"
+  },
+  {
     "title": "今日のAI最前線：最先端スマホのAIからビジネス変革まで！",
     "title_en": "AI Frontier Today：From AI in cutting-edge smartphones to business transformation!",
     "title_zh-tw": "今日 AI 前沿：從最尖端智慧型手機的AI到商業轉型！",

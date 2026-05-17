@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの波が生む経済格差、進化する技術倫理、そして組織再編の最前線",
+    "title_en": "AI Frontier Today：The economic disparity created by the AI wave, the evolving technological ethics, and the forefront of organizational restructuring",
+    "title_zh-tw": "今日 AI 前沿：AI浪潮帶來的經濟差距、演進中的技術倫理，以及組織重整的最前線",
+    "title_zh-cn": "今日 AI 前沿：AI浪潮引发的经济差距、不断演进的技术伦理以及组织重组的最前沿",
+    "title_ko": "오늘의 AI 최전선：AI 물결이 초래하는 경제 격차, 진화하는 기술 윤리, 그리고 조직 재편의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.05.17",
+    "thumbnail": "",
+    "summary": "AIブームの光と影、研究論文でのAI利用規制、ソニーのAIカメラ機能説明、OpenAIの戦略変更、米国のAIによるインサイダー取引検出計画など、AIが社会にもたらす多角的な変化を深掘りします。",
+    "summary_en": "We will delve into the multifaceted changes AI brings to society, including the light and shadow of the AI boom, regulations on AI use in research papers, Sony's explanation of its AI camera features, OpenAI's strategy changes, and the US plan to detect insider trading using AI.",
+    "summary_zh-tw": "AI熱潮的光與影、研究論文中AI應用的規範、Sony的AI相機功能說明、OpenAI的策略調整、以及美國AI偵測內線交易計畫等，我們將深入探討AI為社會帶來的多面向變化。",
+    "summary_zh-cn": "AI热潮的光与影、研究论文中AI使用规定、索尼AI相机功能说明、OpenAI战略调整、美国利用AI检测内幕交易的计划等，深入探讨AI给社会带来的多方面变化。",
+    "summary_ko": "AI 붐의 명암, 연구 논문에서의 AI 이용 규제, 소니의 AI 카메라 기능 설명, OpenAI의 전략 변경, 미국의 AI 기반 내부자 거래 탐지 계획 등 AI가 사회에 가져오는 다각적인 변화를 심층적으로 다룹니다.",
+    "slug": "2026-05-17"
+  },
+  {
     "title": "今日のAI最前線：AIの光と影：セキュリティ、著作権、社会受容性、そして進化するビジネスAI",
     "title_en": "AI Frontier Today：The Light and Shadow of AI: Security, Copyright, Social Acceptability, and Evolving Business AI",
     "title_zh-tw": "今日 AI 前沿：AI 的光與影：安全性、著作權、社會接受度，以及不斷進化的商業 AI",

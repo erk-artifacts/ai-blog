@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：日本の中小企業におけるAI導入の現状と最新トレンド",
+    "title_en": "AI Frontier Today：The current state and latest trends of AI adoption among Japanese SMEs",
+    "title_zh-tw": "今日 AI 前沿：日本中小企業AI導入的現狀與最新趨勢",
+    "title_zh-cn": "今日 AI 前沿：日本中小企业AI导入的现状与最新趋势",
+    "title_ko": "오늘의 AI 최전선：일본 중소기업의 AI 도입 현황과 최신 트렌드",
+    "category": "AI NEWS",
+    "date": "2026.05.18",
+    "thumbnail": "",
+    "summary": "Backlog AIアシスタント連載開始、中小企業のAI導入障壁、最先端AIソリューションが集結する「AI Market ExCon 2026」の先行情報をお届け。",
+    "summary_en": "The Backlog AI Assistant series launches. We deliver advance information on AI adoption barriers for small and medium-sized enterprises (SMEs) and 'AI Market ExCon 2026,' where cutting-edge AI solutions will converge.",
+    "summary_zh-tw": "為您帶來 Backlog AI 助理連載的啟動、中小企業導入 AI 的障礙，以及匯集最尖端 AI 解決方案的「AI Market ExCon 2026」搶先資訊。",
+    "summary_zh-cn": "Backlog AI助理系列连载开始，涵盖中小企业AI引入障碍，并带来最前沿AI解决方案汇聚的“AI Market ExCon 2026”的先行信息。",
+    "summary_ko": "백로그 AI 어시스턴트 연재 시작, 중소기업의 AI 도입 장벽, 최첨단 AI 솔루션이 집결하는 \"AI 마켓 엑스콘 2026\"의 선행 정보를 제공합니다.",
+    "slug": "2026-05-18"
+  },
+  {
     "title": "今日のAI最前線：AIの波が生む経済格差、進化する技術倫理、そして組織再編の最前線",
     "title_en": "AI Frontier Today：The economic disparity created by the AI wave, the evolving technological ethics, and the forefront of organizational restructuring",
     "title_zh-tw": "今日 AI 前沿：AI浪潮帶來的經濟差距、演進中的技術倫理，以及組織重整的最前線",

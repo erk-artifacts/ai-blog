@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが拓く日本のDX！国産LLMとOpenAI訴訟、ビジネス最前線",
+    "title_en": "AI Frontier Today：AI Forges Japan's DX! Homegrown LLMs and OpenAI Lawsuit, Business Front Line",
+    "title_zh-tw": "今日 AI 前沿：AI 開啟日本的 DX！國產 LLM 和 OpenAI 訴訟，商業最前線",
+    "title_zh-cn": "今日 AI 前沿：AI开辟日本DX！国产LLM与OpenAI诉讼，商业最前沿",
+    "title_ko": "오늘의 AI 최전선：AI가 열어갈 일본의 DX! 국산 LLM과 OpenAI 소송, 비즈니스 최전선",
+    "category": "AI NEWS",
+    "date": "2026.05.19",
+    "thumbnail": "",
+    "summary": "純国産LLMの視覚理解能力向上、生成AIによる顧客体験変革、AI時代のDX人材育成、AI自動発注、そしてイーロン・マスクのOpenAI訴訟など、多様なAIニュースを解説します。",
+    "summary_en": "We will cover a variety of AI news topics, including the enhancement of visual understanding capabilities in purely domestic LLMs, the transformation of customer experience through generative AI, the development of DX talent for the AI era, AI automated ordering, and Elon Musk's lawsuit against OpenAI.",
+    "summary_zh-tw": "純國產LLM的視覺理解能力提升、生成式AI帶來的顧客體驗變革、AI時代的DX人才培育、AI自動下單，以及伊隆·馬斯克控告OpenAI的訴訟案等，我們將解說各式各樣的AI新聞。",
+    "summary_zh-cn": "纯国产LLM的视觉理解能力提升、生成式AI带来的客户体验变革、AI时代的DX人才培养、AI自动订货，以及伊隆·马斯克的OpenAI诉讼等，我们将对各类AI新闻进行解读。",
+    "summary_ko": "순수 국내 LLM의 시각 이해 능력 향상, 생성 AI로 인한 고객 경험 혁신, AI 시대의 DX 인재 양성, AI 자동 발주, 그리고 일론 머스크의 OpenAI 소송 등 다양한 AI 뉴스를 해설합니다.",
+    "slug": "2026-05-19"
+  },
+  {
     "title": "今日のAI最前線：日本の中小企業におけるAI導入の現状と最新トレンド",
     "title_en": "AI Frontier Today：The current state and latest trends of AI adoption among Japanese SMEs",
     "title_zh-tw": "今日 AI 前沿：日本中小企業AI導入的現狀與最新趨勢",

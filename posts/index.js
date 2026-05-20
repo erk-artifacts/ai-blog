@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Google I/OでAIの未来が加速！個人向けエージェントから業務支援まで",
+    "title_en": "AI Frontier Today：Google I/O: Accelerating the Future of AI! From personal agents to business support.",
+    "title_zh-tw": "今日 AI 前沿：Google I/O 加速 AI 的未來！從個人助理到業務支援",
+    "title_zh-cn": "今日 AI 前沿：在 Google I/O，AI 的未来加速！从个人助理到业务支持",
+    "title_ko": "오늘의 AI 최전선：Google I/O에서 AI 미래 가속! 개인 에이전트부터 업무 지원까지",
+    "category": "AI NEWS",
+    "date": "2026.05.20",
+    "thumbnail": "",
+    "summary": "Google I/Oで発表された個人向けAIエージェント「Gemini Spark」や新モデル「Gemini Omni」に注目。日本の中小企業DXを支援するAI活用も。私たちの生活と仕事にAIがより深く溶け込む未来が見えてきました。",
+    "summary_en": "We are focusing on \"Gemini Spark,\" a personal AI agent, and \"Gemini Omni,\" a new model, both announced at Google I/O. There's also AI utilization to support DX for Japanese SMEs. A future where AI integrates more deeply into our lives and work is becoming apparent.",
+    "summary_zh-tw": "Google I/O 中發表的個人用 AI 代理程式「Gemini Spark」及新模型「Gemini Omni」備受矚目。支援日本中小企業數位轉型的 AI 應用也值得關注。我們看到 AI 將更深入地融入我們的生活與工作的未來。",
+    "summary_zh-cn": "在 Google I/O 上发布的个人AI代理「Gemini Spark」以及新模型「Gemini Omni」备受关注。AI在支持日本中小企业数字化转型（DX）方面的应用也同样受到关注。我们看到了AI更深入地融入我们的生活和工作的未来。",
+    "summary_ko": "Google I/O에서 발표된 개인용 AI 에이전트 ‘Gemini Spark’와 신규 모델 ‘Gemini Omni’에 주목. 일본 중소기업의 DX를 지원하는 AI 활용 역시. 우리의 삶과 업무에 AI가 더욱 깊이 스며드는 미래가 보입니다.",
+    "slug": "2026-05-20"
+  },
+  {
     "title": "今日のAI最前線：AIが拓く日本のDX！国産LLMとOpenAI訴訟、ビジネス最前線",
     "title_en": "AI Frontier Today：AI Forges Japan's DX! Homegrown LLMs and OpenAI Lawsuit, Business Front Line",
     "title_zh-tw": "今日 AI 前沿：AI 開啟日本的 DX！國產 LLM 和 OpenAI 訴訟，商業最前線",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI競争激化！Googleの新広告、NVIDIAの新市場、そして日本企業の挑戦",
+    "title_en": "AI Frontier Today：AI Competition Intensifies! Google's New Ads, NVIDIA's New Market, and Japanese Companies' Challenges",
+    "title_zh-tw": "今日 AI 前沿：AI競爭激化！Google的新廣告、NVIDIA的新市場，以及日本企業的挑戰",
+    "title_zh-cn": "今日 AI 前沿：AI竞争激化！谷歌的新广告、英伟达的新市场、以及日本企业的挑战",
+    "title_ko": "오늘의 AI 최전선：AI 경쟁 격화! 구글의 신규 광고, 엔비디아의 새로운 시장, 그리고 일본 기업의 도전",
+    "category": "AI NEWS",
+    "date": "2026.05.21",
+    "thumbnail": "",
+    "summary": "GoogleがAI広告を導入、NVIDIAはAIエージェント向けCPUで新市場開拓を予測。Anthropicが初の黒字化を発表し、国内ではAI電話応対サービスが大型調達。ゲーム業界のAI活用ルールも注目されています。",
+    "summary_en": "Google introduced AI advertising, and NVIDIA predicts opening new markets with CPUs for AI agents. Anthropic announced its first profitability, while domestically, an AI phone answering service secured significant funding. Rules for AI utilization in the gaming industry are also drawing attention.",
+    "summary_zh-tw": "Google導入AI廣告，NVIDIA預測將藉由AI代理專用CPU開拓新市場。Anthropic宣布首次實現盈利，在國內，AI電話應答服務獲得巨額融資。遊戲產業的AI應用規範也備受關注。",
+    "summary_zh-cn": "谷歌推出AI广告，英伟达预测面向AI智能体的CPU将开拓新市场。Anthropic宣布首次实现盈利，国内AI电话应答服务获得巨额融资。游戏行业的AI应用规则也备受关注。",
+    "summary_ko": "구글이 AI 광고를 도입하고, 엔비디아는 AI 에이전트용 CPU로 새로운 시장 개척을 예측합니다. 앤스로픽이 첫 흑자 전환을 발표했으며, 국내에서는 AI 전화 응대 서비스가 대규모 투자를 유치했습니다. 게임 업계의 AI 활용 규칙 또한 주목받고 있습니다.",
+    "slug": "2026-05-21"
+  },
+  {
     "title": "今日のAI最前線：Google I/OでAIの未来が加速！個人向けエージェントから業務支援まで",
     "title_en": "AI Frontier Today：Google I/O: Accelerating the Future of AI! From personal agents to business support.",
     "title_zh-tw": "今日 AI 前沿：Google I/O 加速 AI 的未來！從個人助理到業務支援",

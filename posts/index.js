@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：「OpenAI Codex」最新情報から「AIによるSNS監視」、そして「音声認識AI搭載の新車」まで",
+    "title_en": "AI Frontier Today：From the latest updates on OpenAI Codex to AI-powered social media monitoring, and even new cars equipped with voice recognition AI",
+    "title_zh-tw": "今日 AI 前沿：從「OpenAI Codex」最新資訊，到「AI 社群媒體監控」，以及「搭載語音辨識 AI 的新車」",
+    "title_zh-cn": "今日 AI 前沿：从「OpenAI Codex」最新动态，到「AI社交媒体监控」，乃至「搭载语音识别AI的新车」",
+    "title_ko": "오늘의 AI 최전선：「OpenAI Codex」 최신 정보부터 「AI를 통한 SNS 감시」, 그리고 「음성 인식 AI 탑재 신차」까지",
+    "category": "AI NEWS",
+    "date": "2026.05.22",
+    "thumbnail": "",
+    "summary": "OpenAIのAIコーディングツールCodexがMac画面共有に対応。ドコモがAIセキュリティ、入管がAIでSNS監視、マツダがGoogle音声認識車を発表。",
+    "summary_en": "OpenAI's AI coding tool Codex adds Mac screen sharing support. Docomo announced AI security, the Immigration Bureau will monitor social media with AI, and Mazda unveiled Google voice recognition cars.",
+    "summary_zh-tw": "OpenAI的AI編碼工具Codex支援Mac螢幕共享。Docomo發表AI安全，入境管理局以AI監控社群媒體，Mazda發表Google語音辨識汽車。",
+    "summary_zh-cn": "OpenAI 的 AI 编码工具 Codex 支持 Mac 屏幕共享。Docomo 推出 AI 安全服务，移民局利用 AI 监控社交媒体，马自达发布谷歌语音识别汽车。",
+    "summary_ko": "OpenAI의 AI 코딩 도구 Codex가 Mac 화면 공유를 지원한다. 도코모가 AI 보안, 출입국관리소가 AI로 SNS 감시, 마쓰다가 Google 음성 인식 차량을 발표했다.",
+    "slug": "2026-05-22"
+  },
+  {
     "title": "今日のAI最前線：AI競争激化！Googleの新広告、NVIDIAの新市場、そして日本企業の挑戦",
     "title_en": "AI Frontier Today：AI Competition Intensifies! Google's New Ads, NVIDIA's New Market, and Japanese Companies' Challenges",
     "title_zh-tw": "今日 AI 前沿：AI競爭激化！Google的新廣告、NVIDIA的新市場，以及日本企業的挑戰",

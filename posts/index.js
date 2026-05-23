@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの光と影：故人の声から検索の落とし穴、そして未来のAIグラスまで",
+    "title_en": "AI Frontier Today：AI's Light and Shadow: From the Voices of the Deceased to Search Pitfalls, and Then to Future AI Glasses",
+    "title_zh-tw": "今日 AI 前沿：AI的光與影：從逝者之聲到搜尋陷阱，再到未來的AI眼鏡",
+    "title_zh-cn": "今日 AI 前沿：人工智能的光与影：从逝者的声音到搜索的陷阱，以及未来的AI眼镜",
+    "title_ko": "오늘의 AI 최전선：AI의 빛과 그림자: 고인의 목소리부터 검색의 함정, 그리고 미래의 AI 글라스까지",
+    "category": "AI NEWS",
+    "date": "2026.05.23",
+    "thumbnail": "",
+    "summary": "故人の声をAIで再現する倫理的議論から、Google検索のAI機能の誤作動、生成AIの展示会、そして未来のAI搭載メガネまで、AIの最新動向を深掘りします。",
+    "summary_en": "From ethical discussions on recreating the voices of the deceased with AI, to malfunctions of Google Search's AI features, generative AI exhibitions, and even future AI-powered glasses, we will delve deeper into the latest trends in AI.",
+    "summary_zh-tw": "從以AI重現逝者之聲的倫理討論，到Google搜尋AI功能的誤判、生成式AI展覽，以及未來的AI眼鏡，我們將深入探討AI的最新動態。",
+    "summary_zh-cn": "从AI重现逝者声音的伦理讨论，到谷歌搜索AI功能的故障，生成式AI的展览，直至未来的AI眼镜，我们将深入探讨AI的最新动态。",
+    "summary_ko": "고인의 목소리를 AI로 재현하는 윤리적 논란부터, 구글 검색 AI 기능의 오작동, 생성 AI 전시회, 그리고 미래의 AI 탑재 안경까지, AI의 최신 동향을 심층적으로 다룹니다.",
+    "slug": "2026-05-23"
+  },
+  {
     "title": "今日のAI最前線：「OpenAI Codex」最新情報から「AIによるSNS監視」、そして「音声認識AI搭載の新車」まで",
     "title_en": "AI Frontier Today：From the latest updates on OpenAI Codex to AI-powered social media monitoring, and even new cars equipped with voice recognition AI",
     "title_zh-tw": "今日 AI 前沿：從「OpenAI Codex」最新資訊，到「AI 社群媒體監控」，以及「搭載語音辨識 AI 的新車」",

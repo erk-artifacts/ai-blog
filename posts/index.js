@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIがF1ファン体験を革新！Googleの多機能AIやAMD新CPUも登場",
+    "title_en": "AI Frontier Today：AI revolutionizes F1 fan experience! Google's versatile AI and new AMD CPU also unveiled",
+    "title_zh-tw": "今日 AI 前沿：AI 革新 F1 粉絲體驗！Google 的多功能 AI 和 AMD 新 CPU 也登場",
+    "title_zh-cn": "今日 AI 前沿：AI革新F1粉丝体验！谷歌多功能AI和AMD新CPU也登场",
+    "title_ko": "오늘의 AI 최전선：AI, F1 팬 경험을 혁신! Google의 다기능 AI 및 AMD 신규 CPU도 등장",
+    "category": "AI NEWS",
+    "date": "2026.05.24",
+    "thumbnail": "",
+    "summary": "IBM AIがF1ファン体験を向上、Googleの新AIモデルが登場、AMDのAIプロセッサ搭載PCが注目を集めています。イーロン・マスクのxAIの動向にも迫ります。",
+    "summary_en": "IBM AI enhances the F1 fan experience, Google's new AI model debuts, and AMD AI processor-powered PCs are drawing attention. We also delve into the movements of Elon Musk's xAI.",
+    "summary_zh-tw": "IBM AI 提升 F1 粉絲體驗，Google 的新 AI 模型登場，搭載 AMD AI 處理器的 PC 備受關注。我們也將探討伊隆·馬斯克 xAI 的動向。",
+    "summary_zh-cn": "IBM AI提升F1粉丝体验，谷歌新人工智能模型亮相，搭载AMD人工智能处理器的PC备受关注。还将深入探讨埃隆·马斯克xAI的动向。",
+    "summary_ko": "IBM AI가 F1 팬 경험을 향상시키고, Google의 새로운 AI 모델이 등장했으며, AMD의 AI 프로세서 탑재 PC가 주목받고 있습니다. Elon Musk의 xAI 동향도 다룹니다.",
+    "slug": "2026-05-24"
+  },
+  {
     "title": "今日のAI最前線：AIの光と影：故人の声から検索の落とし穴、そして未来のAIグラスまで",
     "title_en": "AI Frontier Today：AI's Light and Shadow: From the Voices of the Deceased to Search Pitfalls, and Then to Future AI Glasses",
     "title_zh-tw": "今日 AI 前沿：AI的光與影：從逝者之聲到搜尋陷阱，再到未來的AI眼鏡",

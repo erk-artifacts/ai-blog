@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：グーグルCEOが語るGeminiの未来、中国のAIドラマ量産、そして生成AIリスキリングの波",
+    "title_en": "AI Frontier Today：Google CEO on the future of Gemini, China mass-producing AI dramas, and the generative AI reskilling wave",
+    "title_zh-tw": "今日 AI 前沿：Google 執行長談 Gemini 的未來、中國 AI 劇集量產、以及生成式 AI 技能再培訓的浪潮",
+    "title_zh-cn": "今日 AI 前沿：谷歌CEO讲述Gemini的未来，中国AI剧集量产，以及生成式AI技能再培训的浪潮",
+    "title_ko": "오늘의 AI 최전선：Google CEO가 이야기하는 Gemini의 미래, 중국의 AI 드라마 양산, 그리고 생성 AI 리스킬링의 물결",
+    "category": "AI NEWS",
+    "date": "2026.05.25",
+    "thumbnail": "",
+    "summary": "グーグルCEOがエージェント型AIの未来を語り、中国ではAIがショートドラマを量産。企業では生成AI活用のリスキリングが加速。AIが日常とビジネスを変革する最前線。",
+    "summary_en": "Google CEO discusses the future of agentic AI, while in China, AI mass-produces short dramas. For businesses, reskilling for generative AI utilization is accelerating. This is the forefront of AI transforming daily life and business.",
+    "summary_zh-tw": "谷歌CEO暢談代理型AI的未來，中國AI量產短劇。企業加速生成式AI應用的技能再培訓。AI正在變革日常生活與商業的最前線。",
+    "summary_zh-cn": "谷歌CEO畅谈智能体AI的未来，中国AI批量生产短剧。企业加速生成式AI应用相关的技能再培训。AI正在变革日常生活和商业的最前沿。",
+    "summary_ko": "구글 CEO가 에이전트형 AI의 미래를 논하고, 중국에서는 AI가 숏폼 드라마를 양산합니다. 기업에서는 생성 AI 활용 리스킬링이 가속화됩니다. AI가 일상과 비즈니스를 혁신하는 최전선입니다.",
+    "slug": "2026-05-25"
+  },
+  {
     "title": "今日のAI最前線：AIがF1ファン体験を革新！Googleの多機能AIやAMD新CPUも登場",
     "title_en": "AI Frontier Today：AI revolutionizes F1 fan experience! Google's versatile AI and new AMD CPU also unveiled",
     "title_zh-tw": "今日 AI 前沿：AI 革新 F1 粉絲體驗！Google 的多功能 AI 和 AMD 新 CPU 也登場",

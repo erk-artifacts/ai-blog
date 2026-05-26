@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが切り拓くビジネスとコミュニケーションの未来",
+    "title_en": "AI Frontier Today：AI: Forging the Future of Business and Communication",
+    "title_zh-tw": "今日 AI 前沿：AI開創商業與溝通的未來",
+    "title_zh-cn": "今日 AI 前沿：AI开创商业与沟通的未来",
+    "title_ko": "오늘의 AI 최전선：AI가 개척하는 비즈니스와 커뮤니케이션의 미래",
+    "category": "AI NEWS",
+    "date": "2026.05.26",
+    "thumbnail": "",
+    "summary": "ZoomのAI連携強化、Google AIのユニークな応答、ビジネスでのAI活用術、生成AIの普及促進など、AIが社会にもたらす変革の最新情報をお届けします。",
+    "summary_en": "We will deliver the latest information on the transformations AI brings to society, including strengthened AI integration with Zoom, unique responses from Google AI, methods for AI utilization in business, and the promotion of generative AI's widespread adoption.",
+    "summary_zh-tw": "Zoom 的 AI 整合強化、Google AI 獨特的應答、AI 在商業上的應用技巧、以及促進生成式 AI 的普及等等，我們將提供 AI 為社會帶來變革的最新資訊。",
+    "summary_zh-cn": "Zoom强化AI协作、Google AI的独特回应、AI在商业领域的应用技巧、生成式AI的普及推广等，我们将为您带来AI为社会带来变革的最新资讯。",
+    "summary_ko": "Zoom의 AI 연동 강화, Google AI의 독특한 응답, 비즈니스에서의 AI 활용법, 생성 AI의 보급 촉진 등, AI가 사회에 가져올 변혁의 최신 정보를 전달해 드립니다.",
+    "slug": "2026-05-26"
+  },
+  {
     "title": "今日のAI最前線：グーグルCEOが語るGeminiの未来、中国のAIドラマ量産、そして生成AIリスキリングの波",
     "title_en": "AI Frontier Today：Google CEO on the future of Gemini, China mass-producing AI dramas, and the generative AI reskilling wave",
     "title_zh-tw": "今日 AI 前沿：Google 執行長談 Gemini 的未來、中國 AI 劇集量產、以及生成式 AI 技能再培訓的浪潮",

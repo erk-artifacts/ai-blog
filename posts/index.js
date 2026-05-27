@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの進化と社会の対応：法規制から倫理、実用化まで",
+    "title_en": "AI Frontier Today：The Evolution of AI and Societal Response: From Legal Regulations to Ethics and Practical Application",
+    "title_zh-tw": "今日 AI 前沿：AI的演進與社會的應對：從法規監管、倫理到實用化",
+    "title_zh-cn": "今日 AI 前沿：人工智能的演进与社会应对：从法律法规、伦理到实际应用",
+    "title_ko": "오늘의 AI 최전선：AI의 발전과 사회의 대응: 법규제부터 윤리, 실용화까지",
+    "category": "AI NEWS",
+    "date": "2026.05.27",
+    "thumbnail": "",
+    "summary": "AIによる偽情報対策、創作活動におけるAI利用報告義務、ローマ教皇のAI活用議論、顔認証改札の導入、AIセキュリティ、LLMO戦略ウェビナーの開催など、多角的なAIの動きを解説します。",
+    "summary_en": "This article will explain the diverse developments in AI, including countermeasures against disinformation by AI, the obligation to report AI usage in creative activities, discussions on the Pope's use of AI, the introduction of facial recognition ticket gates, AI security, and the holding of an LLMO strategy webinar.",
+    "summary_zh-tw": "AI應對假資訊的措施、創作活動中AI使用申報義務、羅馬教宗對AI應用的討論、人臉辨識驗票閘門的導入、AI資安、LLMO策略網路研討會的舉辦等，本文將深入解析AI在多個面向的發展動態。",
+    "summary_zh-cn": "AI虚假信息对策、创作活动中AI使用报告义务、罗马教皇关于AI应用的讨论、人脸识别闸机的引入、AI安全、LLMO战略网络研讨会的举办等，我们将对AI在多方面的动向进行阐述。",
+    "summary_ko": "AI에 의한 가짜 정보 대책, 창작 활동에서의 AI 이용 보고 의무, 로마 교황의 AI 활용 논의, 얼굴 인식 개찰구 도입, AI 보안, LLMO 전략 웨비나 개최 등, 다각적인 AI의 움직임을 해설합니다.",
+    "slug": "2026-05-27"
+  },
+  {
     "title": "今日のAI最前線：AIが切り拓くビジネスとコミュニケーションの未来",
     "title_en": "AI Frontier Today：AI: Forging the Future of Business and Communication",
     "title_zh-tw": "今日 AI 前沿：AI開創商業與溝通的未來",

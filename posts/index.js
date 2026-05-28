@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが広げる創造性と効率化：Google AIの課題も浮き彫りに",
+    "title_en": "AI Frontier Today：AI Fuels Creativity and Efficiency: Challenges for Google AI Also Highlighted",
+    "title_zh-tw": "今日 AI 前沿：AI 拓展創造力與效率：Google AI 的課題也凸顯",
+    "title_zh-cn": "今日 AI 前沿：AI拓展创造力与效率：Google AI的挑战也凸显",
+    "title_ko": "오늘의 AI 최전선：AI가 확장하는 창의성과 효율화: 구글 AI의 과제도 부각되다",
+    "category": "AI NEWS",
+    "date": "2026.05.28",
+    "thumbnail": "",
+    "summary": "生成AIを活用した国会議員マップ、AmazonのAI映像ファンド、Google AIのスペルミス、人流分析AIなど、AIの最新動向を深掘りします。",
+    "summary_en": "Generative AI-powered map of Diet members, Amazon's AI video fund, a Google AI spelling error, human traffic analysis AI, and more – we will take a deep dive into the latest AI trends.",
+    "summary_zh-tw": "利用生成式AI的國會議員地圖、亞馬遜的AI影像基金、Google AI的拼寫錯誤、人流分析AI等，我們將深入探討AI的最新動態。",
+    "summary_zh-cn": "生成式AI赋能的国会议员地图、亚马逊AI影视基金、谷歌AI的拼写错误、人流分析AI等，我们将深入探讨AI的最新动态。",
+    "summary_ko": "생성형 AI를 활용한 국회의원 맵, 아마존의 AI 영상 펀드, 구글 AI의 스펠링 오류, 유동인구 분석 AI 등, AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-05-28"
+  },
+  {
     "title": "今日のAI最前線：AIの進化と社会の対応：法規制から倫理、実用化まで",
     "title_en": "AI Frontier Today：The Evolution of AI and Societal Response: From Legal Regulations to Ethics and Practical Application",
     "title_zh-tw": "今日 AI 前沿：AI的演進與社會的應對：從法規監管、倫理到實用化",

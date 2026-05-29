@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：最新AIモデル公開とAI活用事例が続々！",
+    "title_en": "AI Frontier Today：Latest AI model releases and AI application examples in rapid succession!",
+    "title_zh-tw": "今日 AI 前沿：最新AI模型公開和AI應用案例陸續登場！",
+    "title_zh-cn": "今日 AI 前沿：最新AI模型发布和AI应用案例层出不穷！",
+    "title_ko": "오늘의 AI 최전선：최신 AI 모델 공개 및 AI 활용 사례가 쏟아져!",
+    "category": "AI NEWS",
+    "date": "2026.05.29",
+    "thumbnail": "",
+    "summary": "Anthropicの最新AIモデル発表や、AIを活用したセキュリティ、ラジオ番組生成、エンタープライズ検索、YouTubeの新機能など、AIの進化と広がりをお届けします。",
+    "summary_en": "We bring you the evolution and expansion of AI, including Anthropic's latest AI model announcement, AI-powered security, radio program generation, enterprise search, and new YouTube features.",
+    "summary_zh-tw": "為您帶來Anthropic最新AI模型的發布，以及AI在資安、電台節目生成、企業級搜尋、YouTube新功能等方面的進化與普及。",
+    "summary_zh-cn": "安索罗匹最新AI模型发布、AI驱动的安全、广播节目生成、企业搜索以及YouTube新功能等，为您带来AI的演进与拓展。",
+    "summary_ko": "앤트로픽의 최신 AI 모델 발표와, AI를 활용한 보안, 라디오 프로그램 생성, 엔터프라이즈 검색, YouTube의 새로운 기능 등 AI의 진화와 확장을 전해드립니다.",
+    "slug": "2026-05-29"
+  },
+  {
     "title": "今日のAI最前線：AIが広げる創造性と効率化：Google AIの課題も浮き彫りに",
     "title_en": "AI Frontier Today：AI Fuels Creativity and Efficiency: Challenges for Google AI Also Highlighted",
     "title_zh-tw": "今日 AI 前沿：AI 拓展創造力與效率：Google AI 的課題也凸顯",

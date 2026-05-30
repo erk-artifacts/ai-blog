@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIフェイク対策からロボット学習まで！最新AIトレンド深掘り",
+    "title_en": "AI Frontier Today：From Combating AI Fakes to Robot Learning! A Deep Dive into the Latest AI Trends",
+    "title_zh-tw": "今日 AI 前沿：從AI偽造對策到機器人學習！最新AI趨勢深度解析",
+    "title_zh-cn": "今日 AI 前沿：从AI造假防范到机器人学习！最新AI趋势深度解读",
+    "title_ko": "오늘의 AI 최전선：AI 페이크 대책부터 로봇 학습까지! 최신 AI 트렌드 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.05.30",
+    "thumbnail": "",
+    "summary": "AIの信頼性向上技術、生命科学AIの防衛利用、企業文化への影響、そしてAI開発の裏側まで、最新のAIニュースを初心者にも分かりやすく解説します。",
+    "summary_en": "We will explain the latest AI news in an easy-to-understand way for beginners, covering topics from AI reliability enhancement technologies, defense applications of life science AI, and their impact on corporate culture, to what goes on behind the scenes of AI development.",
+    "summary_zh-tw": "提升AI可靠性的技術、生命科學AI的國防應用、對企業文化的影響，乃至AI開發的幕後，我們將為初學者深入淺出地解説最新的AI新聞。",
+    "summary_zh-cn": "我们将为初学者深入浅出地解读最新的AI新闻，内容涵盖AI可靠性提升技术、生命科学AI的国防应用、对企业文化的影响，以及AI开发的幕后故事。",
+    "summary_ko": "AI 신뢰성 향상 기술, 생명 과학 AI의 방위 활용, 기업 문화에 미치는 영향, 그리고 AI 개발의 이면까지, 최신 AI 뉴스를 초보자도 알기 쉽게 설명합니다.",
+    "slug": "2026-05-30"
+  },
+  {
     "title": "今日のAI最前線：最新AIモデル公開とAI活用事例が続々！",
     "title_en": "AI Frontier Today：Latest AI model releases and AI application examples in rapid succession!",
     "title_zh-tw": "今日 AI 前沿：最新AI模型公開和AI應用案例陸續登場！",

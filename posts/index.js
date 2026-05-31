@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI最前線は大規模投資と新デバイスの時代へ",
+    "title_en": "AI Frontier Today：The AI forefront enters an era of massive investment and new devices.",
+    "title_zh-tw": "今日 AI 前沿：AI最前線進入大規模投資與新裝置的時代",
+    "title_zh-cn": "今日 AI 前沿：AI最前沿迈向大规模投资和新设备的时代",
+    "title_ko": "오늘의 AI 최전선：AI 최전선은 대규모 투자와 신규 디바이스의 시대로",
+    "category": "AI NEWS",
+    "date": "2026.05.31",
+    "thumbnail": "",
+    "summary": "ソフトバンクのAIデータセンター巨額投資、GitHub Copilotの課金方式変更、MetaのAIペンダント開発、Google Gemini Sparkの実用性など、AIの進化が加速しています。",
+    "summary_en": "The evolution of AI is accelerating, as evidenced by SoftBank's massive investment in AI data centers, changes to GitHub Copilot's billing model, Meta's development of an AI pendant, and the practicality of Google Gemini Spark, among other advancements.",
+    "summary_zh-tw": "軟銀對AI資料中心的巨額投資、GitHub Copilot的計費方式變更、Meta的AI吊墜開發、Google Gemini Spark的實用性等，AI的進化正在加速。",
+    "summary_zh-cn": "软银在AI数据中心上的巨额投资、GitHub Copilot收费模式的改变、Meta开发AI吊坠、Google Gemini Spark的实用性等等，AI的进化正在加速。",
+    "summary_ko": "소프트뱅크의 AI 데이터센터 거액 투자, GitHub Copilot의 과금 방식 변경, Meta의 AI 펜던트 개발, Google Gemini Spark의 실용성 등, AI의 진화가 가속화되고 있습니다.",
+    "slug": "2026-05-31"
+  },
+  {
     "title": "今日のAI最前線：AIフェイク対策からロボット学習まで！最新AIトレンド深掘り",
     "title_en": "AI Frontier Today：From Combating AI Fakes to Robot Learning! A Deep Dive into the Latest AI Trends",
     "title_zh-tw": "今日 AI 前沿：從AI偽造對策到機器人學習！最新AI趨勢深度解析",

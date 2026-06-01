@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI PCの波が加速！クリエイティブの未来とプラットフォームの動向",
+    "title_en": "AI Frontier Today：The AI PC wave accelerates! The future of creativity and platform trends",
+    "title_zh-tw": "今日 AI 前沿：AI PC 浪潮加速！創意的未來與平台動向",
+    "title_zh-cn": "今日 AI 前沿：AI PC浪潮加速！创意的未来与平台动向",
+    "title_ko": "오늘의 AI 최전선：AI PC의 물결이 가속화! 크리에이티브의 미래와 플랫폼의 동향",
+    "category": "AI NEWS",
+    "date": "2026.06.01",
+    "thumbnail": "",
+    "summary": "COMPUTEXでASRock、AcerがAI対応新製品を多数発表しAI PCの普及が加速する一方、クリエイティブプラットフォームではAI生成コンテンツを巡るルール変更が物議を醸しています。AIがもたらす変化は多岐にわたります。",
+    "summary_en": "At COMPUTEX, ASRock and Acer announced numerous new AI-enabled products, accelerating the adoption of AI PCs. Meanwhile, on creative platforms, changes to rules surrounding AI-generated content are stirring controversy. The changes brought about by AI are wide-ranging.",
+    "summary_zh-tw": "在COMPUTEX展上，華擎、宏碁發表了許多支援AI的新產品，加速AI PC普及的同時，在創意平台上，圍繞著AI生成內容的規則變動卻引發了爭議。AI所帶來的變化是多方面的。",
+    "summary_zh-cn": "在COMPUTEX展上，华擎（ASRock）和宏碁（Acer）发布了众多支持AI的新产品，AI PC的普及正在加速；与此同时，在创意平台方面，围绕AI生成内容的规则修改引发了争议。AI带来的变化是多方面的。",
+    "summary_ko": "컴퓨텍스에서 애즈락과 에이서가 AI 지원 신제품을 대거 발표하며 AI PC 보급이 가속화되는 한편, 크리에이티브 플랫폼에서는 AI 생성 콘텐츠를 둘러싼 규칙 변경이 논란을 빚고 있습니다. AI가 가져올 변화는 다방면에 걸쳐 있습니다.",
+    "slug": "2026-06-01"
+  },
+  {
     "title": "今日のAI最前線：AI最前線は大規模投資と新デバイスの時代へ",
     "title_en": "AI Frontier Today：The AI forefront enters an era of massive investment and new devices.",
     "title_zh-tw": "今日 AI 前沿：AI最前線進入大規模投資與新裝置的時代",

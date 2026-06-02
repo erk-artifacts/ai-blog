@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI PC、生成AIの社会影響、そして最新ロボット技術の最前線",
+    "title_en": "AI Frontier Today：AI PC, the social impact of generative AI, and the forefront of the latest robotics technology",
+    "title_zh-tw": "今日 AI 前沿：AI PC、生成式AI的社會影響、以及最新機器人技術的最前線",
+    "title_zh-cn": "今日 AI 前沿：AI PC、生成式AI的社会影响，以及最新机器人技术的最前沿",
+    "title_ko": "오늘의 AI 최전선：AI PC, 생성형 AI의 사회적 영향, 그리고 최신 로봇 기술의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.06.02",
+    "thumbnail": "",
+    "summary": "AI機能を搭載したPCから、生成AIの社会への影響、そして最新のロボット技術まで、今日のAI動向をわかりやすく解説します。",
+    "summary_en": "We will provide an easy-to-understand explanation of today's AI trends, covering everything from PCs equipped with AI functions to the impact of generative AI on society and the latest robotics technology.",
+    "summary_zh-tw": "從搭載AI功能的個人電腦，到生成式AI對社會的影響，以及最新的機器人技術，我們將深入淺出地解說今日的AI趨勢。",
+    "summary_zh-cn": "从搭载AI功能的PC，到生成式AI对社会的影响，再到最新的机器人技术，我们将通俗易懂地解读当今的AI发展趋势。",
+    "summary_ko": "AI 기능을 탑재한 PC부터, 생성 AI가 사회에 미치는 영향, 그리고 최신 로봇 기술까지, 오늘날의 AI 동향을 알기 쉽게 설명합니다.",
+    "slug": "2026-06-02"
+  },
+  {
     "title": "今日のAI最前線：AI PCの波が加速！クリエイティブの未来とプラットフォームの動向",
     "title_en": "AI Frontier Today：The AI PC wave accelerates! The future of creativity and platform trends",
     "title_zh-tw": "今日 AI 前沿：AI PC 浪潮加速！創意的未來與平台動向",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Microsoftが量子AIと次世代モデルを発表！青少年保護にもAI対策",
+    "title_en": "AI Frontier Today：Microsoft Announces Quantum AI and Next-Generation Models! AI Measures for Youth Protection Too",
+    "title_zh-tw": "今日 AI 前沿：微軟發表量子AI與次世代模型！青少年保護亦採AI對策",
+    "title_zh-cn": "今日 AI 前沿：微软宣布量子AI和下一代模型！青少年保护也有AI对策",
+    "title_ko": "오늘의 AI 최전선：마이크로소프트가 양자 AI와 차세대 모델을 발표! 청소년 보호에도 AI 대책",
+    "category": "AI NEWS",
+    "date": "2026.06.03",
+    "thumbnail": "",
+    "summary": "Microsoftが量子コンピューティングとAI技術の進化を加速させ、新たなAIモデルやエージェント環境を発表。同時に、生成AIの悪用対策として青少年保護の議論も進んでいます。",
+    "summary_en": "Microsoft has accelerated the evolution of quantum computing and AI technology, announcing new AI models and agent environments. Simultaneously, discussions on youth protection are progressing as a countermeasure against the misuse of generative AI.",
+    "summary_zh-tw": "Microsoft 加速量子運算和 AI 技術的進化，並發表了新的 AI 模型和代理人環境。同時，作為生成式 AI 濫用對策，青少年保護的討論也正在進行中。",
+    "summary_zh-cn": "微软正在加速量子计算和AI技术的发展，并发布了新的AI模型和智能体环境。同时，关于如何防止生成式AI被滥用以保护青少年的讨论也在进行中。",
+    "summary_ko": "마이크로소프트가 양자 컴퓨팅과 AI 기술의 진화를 가속화하고, 새로운 AI 모델과 에이전트 환경을 발표했습니다. 동시에, 생성형 AI의 악용 대책으로 청소년 보호 논의도 진행 중입니다.",
+    "slug": "2026-06-03"
+  },
+  {
     "title": "今日のAI最前線：AI PC、生成AIの社会影響、そして最新ロボット技術の最前線",
     "title_en": "AI Frontier Today：AI PC, the social impact of generative AI, and the forefront of the latest robotics technology",
     "title_zh-tw": "今日 AI 前沿：AI PC、生成式AI的社會影響、以及最新機器人技術的最前線",

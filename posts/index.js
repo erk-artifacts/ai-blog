@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：MicrosoftのAI戦略再編からGoogleのAI検索制御まで",
+    "title_en": "AI Frontier Today：From Microsoft's AI Strategy Restructuring to Google's AI Search Control",
+    "title_zh-tw": "今日 AI 前沿：從微軟的AI戰略重組到Google的AI搜尋控制",
+    "title_zh-cn": "今日 AI 前沿：从 Microsoft 的 AI 战略重组到 Google 的 AI 搜索控制",
+    "title_ko": "오늘의 AI 최전선：마이크로소프트의 AI 전략 재편부터 구글의 AI 검색 제어까지",
+    "category": "AI NEWS",
+    "date": "2026.06.04",
+    "thumbnail": "",
+    "summary": "MicrosoftのAIエージェント戦略とAI端末構想、日本政府のサイバー防衛AI活用、GoogleのAI検索表示拒否機能、AI広告最適化ツールの連携強化を紹介します。",
+    "summary_en": "Introducing Microsoft's AI agent strategy and AI device concept, the Japanese government's utilization of AI for cyber defense, Google's AI search opt-out feature, and enhanced collaboration among AI ad optimization tools.",
+    "summary_zh-tw": "將介紹微軟的AI代理人策略與AI終端裝置構想、日本政府在網路防禦中對AI的應用、Google的AI搜尋結果顯示拒絕功能，以及AI廣告優化工具的整合強化。",
+    "summary_zh-cn": "介绍微软的AI代理战略和AI终端构想、日本政府的网络防御AI应用、谷歌的AI搜索结果拒绝显示功能，以及AI广告优化工具的协作强化。",
+    "summary_ko": "Microsoft의 AI 에이전트 전략과 AI 단말기 구상, 일본 정부의 사이버 방어 AI 활용, Google의 AI 검색 표시 거부 기능, AI 광고 최적화 도구의 연계 강화를 소개합니다.",
+    "slug": "2026-06-04"
+  },
+  {
     "title": "今日のAI最前線：Microsoftが量子AIと次世代モデルを発表！青少年保護にもAI対策",
     "title_en": "AI Frontier Today：Microsoft Announces Quantum AI and Next-Generation Models! AI Measures for Youth Protection Too",
     "title_zh-tw": "今日 AI 前沿：微軟發表量子AI與次世代模型！青少年保護亦採AI對策",

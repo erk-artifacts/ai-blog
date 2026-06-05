@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIがビジネスと生活を変える！デザインからスマート家電まで最新動向",
+    "title_en": "AI Frontier Today：AI is transforming business and life! The latest trends from design to smart appliances.",
+    "title_zh-tw": "今日 AI 前沿：AI改變商業與生活！從設計到智慧家電的最新動向",
+    "title_zh-cn": "今日 AI 前沿：AI正在改变商业和生活！从设计到智能家电的最新动态",
+    "title_ko": "오늘의 AI 최전선：AI가 비즈니스와 생활을 변화시킨다! 디자인부터 스마트 가전까지 최신 동향",
+    "category": "AI NEWS",
+    "date": "2026.06.05",
+    "thumbnail": "",
+    "summary": "AIがデザイン、ハードウェア、スマートホーム、ビジネスプロセスまで、多岐にわたる分野で進化を加速。AIネイティブなものづくりや自動化ツールが、私たちの働き方と暮らしを大きく変えようとしています。",
+    "summary_en": "AI is accelerating its evolution across a wide range of fields, from design, hardware, and smart homes to business processes. AI-native manufacturing and automation tools are poised to significantly transform how we work and live.",
+    "summary_zh-tw": "人工智慧正在設計、硬體、智慧家庭乃至商業流程等多個廣泛領域中加速演進。AI原生製造與自動化工具，正準備大幅改變我們的工作和生活方式。",
+    "summary_zh-cn": "AI在设计、硬件、智能家居、业务流程等广泛领域加速发展。AI原生制造和自动化工具正在大幅改变我们的工作和生活方式。",
+    "summary_ko": "AI는 디자인, 하드웨어, 스마트홈, 비즈니스 프로세스까지, 다방면에 걸친 분야에서 진화를 가속화하고 있습니다. AI 네이티브 제품 개발과 자동화 도구가 우리의 업무 방식과 삶을 크게 바꾸려 하고 있습니다.",
+    "slug": "2026-06-05"
+  },
+  {
     "title": "今日のAI最前線：MicrosoftのAI戦略再編からGoogleのAI検索制御まで",
     "title_en": "AI Frontier Today：From Microsoft's AI Strategy Restructuring to Google's AI Search Control",
     "title_zh-tw": "今日 AI 前沿：從微軟的AI戰略重組到Google的AI搜尋控制",

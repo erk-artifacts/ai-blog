@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが切り拓く新時代：デバイス、インフラ、そして社会への影響",
+    "title_en": "AI Frontier Today：AI Forges a New Era: Devices, Infrastructure, and Its Impact on Society",
+    "title_zh-tw": "今日 AI 前沿：AI開闢的新時代：裝置、基礎設施以及對社會的影響",
+    "title_zh-cn": "今日 AI 前沿：AI开创的新时代：设备、基础设施以及对社会的影响",
+    "title_ko": "오늘의 AI 최전선：AI가 개척하는 신시대: 디바이스, 인프라, 그리고 사회에 미치는 영향",
+    "category": "AI NEWS",
+    "date": "2026.06.06",
+    "thumbnail": "",
+    "summary": "エッジAIからデータセンター、コスト管理、コンテンツ予測、そして私たちの脳への影響まで、AIの最新動向を深掘りします。",
+    "summary_en": "We take a deep dive into the latest trends in AI, from Edge AI to data centers, cost management, content prediction, and its impact on our brains.",
+    "summary_zh-tw": "從邊緣 AI 到資料中心、成本管理、內容預測，以及對我們大腦的影響，我們將深入探討 AI 的最新趨勢。",
+    "summary_zh-cn": "从边缘AI到数据中心、成本管理、内容预测，乃至对我们大脑的影响，我们将深入探讨AI的最新动向。",
+    "summary_ko": "에지 AI부터 데이터센터, 비용 관리, 콘텐츠 예측, 그리고 우리 뇌에 미치는 영향까지, AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-06-06"
+  },
+  {
     "title": "今日のAI最前線：AIがビジネスと生活を変える！デザインからスマート家電まで最新動向",
     "title_en": "AI Frontier Today：AI is transforming business and life! The latest trends from design to smart appliances.",
     "title_zh-tw": "今日 AI 前沿：AI改變商業與生活！從設計到智慧家電的最新動向",

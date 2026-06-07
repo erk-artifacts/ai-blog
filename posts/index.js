@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の波、ビジネスから政治、私たちの日常まで変革の予兆",
+    "title_en": "AI Frontier Today：The wave of AI evolution, heralding transformation across business, politics, and our daily lives.",
+    "title_zh-tw": "今日 AI 前沿：AI進化的浪潮，從商業到政治，乃至我們的日常生活，都預示著變革。",
+    "title_zh-cn": "今日 AI 前沿：AI进化的浪潮，从商业到政治，乃至我们的日常生活，都是变革的预兆。",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 물결, 비즈니스부터 정치, 우리의 일상까지 변혁의 예고",
+    "category": "AI NEWS",
+    "date": "2026.06.07",
+    "thumbnail": "",
+    "summary": "Googleの大型AIインフラ契約、ChatGPTのセキュリティ強化、AppleのSiri進化、ホワイトハウスのAI政策、そして中小企業のAI活用事例まで、AIの最新動向を深掘りします。",
+    "summary_en": "We will deep dive into the latest AI trends, from Google's large AI infrastructure contracts, ChatGPT's security enhancements, Apple's Siri evolution, and the White House's AI policy, to AI use cases for small and medium-sized businesses.",
+    "summary_zh-tw": "Google的大型AI基礎設施合約、ChatGPT的安全性強化、Apple Siri的演進、白宮的AI政策，以及中小型企業的AI應用案例，我們將深入探討AI的最新動向。",
+    "summary_zh-cn": "从Google的大型AI基础设施合同、ChatGPT的安全强化、Apple的Siri进化、白宫的AI政策，到中小企业的AI应用案例，我们将深入探讨AI的最新动向。",
+    "summary_ko": "Google의 대규모 AI 인프라 계약, ChatGPT 보안 강화, Apple Siri 진화, 백악관 AI 정책, 그리고 중소기업 AI 활용 사례까지, AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-06-07"
+  },
+  {
     "title": "今日のAI最前線：AIが切り拓く新時代：デバイス、インフラ、そして社会への影響",
     "title_en": "AI Frontier Today：AI Forges a New Era: Devices, Infrastructure, and Its Impact on Society",
     "title_zh-tw": "今日 AI 前沿：AI開闢的新時代：裝置、基礎設施以及對社會的影響",

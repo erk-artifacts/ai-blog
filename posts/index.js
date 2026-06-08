@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：「モフリン」からAIエージェントまで！進化が止まらないAIの最新動向",
+    "title_en": "AI Frontier Today：From \"Moflin\" to AI Agents! The Unstoppable Evolution of AI's Latest Trends",
+    "title_zh-tw": "今日 AI 前沿：從「莫夫林」到AI代理人！進化永不止息的AI最新動向",
+    "title_zh-cn": "今日 AI 前沿：「莫夫林」到AI智能体！进化不止的AI最新动向",
+    "title_ko": "오늘의 AI 최전선：「모프린」부터 AI 에이전트까지! 진화가 멈추지 않는 AI의 최신 동향",
+    "category": "AI NEWS",
+    "date": "2026.06.08",
+    "thumbnail": "",
+    "summary": "AIペットロボット、次世代AIメモリ開発、Google MapのAI対策、営業支援AI、風況予測AIなど、多岐にわたるAIの最新ニュースをお届けします。",
+    "summary_en": "We deliver the latest news on a wide range of AI topics, including AI pet robots, next-generation AI memory development, AI strategies for Google Maps, sales support AI, and wind condition forecasting AI.",
+    "summary_zh-tw": "AI寵物機器人、次世代AI記憶體開發、Google地圖的AI對策、業務支援AI、風況預測AI等，為您帶來多方面AI的最新消息。",
+    "summary_zh-cn": "AI宠物机器人、下一代AI内存开发、Google地图的AI对策、销售支持AI、风况预测AI等，为您带来多方面AI的最新资讯。",
+    "summary_ko": "AI 반려동물 로봇, 차세대 AI 메모리 개발, Google 지도 AI 대책, 영업 지원 AI, 풍황 예측 AI 등, 다방면에 걸친 AI의 최신 뉴스를 전달해 드립니다.",
+    "slug": "2026-06-08"
+  },
+  {
     "title": "今日のAI最前線：AI進化の波、ビジネスから政治、私たちの日常まで変革の予兆",
     "title_en": "AI Frontier Today：The wave of AI evolution, heralding transformation across business, politics, and our daily lives.",
     "title_zh-tw": "今日 AI 前沿：AI進化的浪潮，從商業到政治，乃至我們的日常生活，都預示著變革。",

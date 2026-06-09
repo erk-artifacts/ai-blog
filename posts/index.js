@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIサービス価格競争激化！OpenAI上場準備とAppleの堅実なAI戦略",
+    "title_en": "AI Frontier Today：AI Service Price Competition Intensifies! OpenAI Preparing for IPO and Apple's Solid AI Strategy",
+    "title_zh-tw": "今日 AI 前沿：AI服務價格競爭激化！OpenAI準備上市與Apple的穩健AI策略",
+    "title_zh-cn": "今日 AI 前沿：AI服务价格竞争激化！OpenAI上市准备和苹果的稳健AI战略",
+    "title_ko": "오늘의 AI 최전선：AI 서비스 가격 경쟁 심화! OpenAI 상장 준비와 Apple의 견실한 AI 전략",
+    "category": "AI NEWS",
+    "date": "2026.06.09",
+    "thumbnail": "",
+    "summary": "GoogleのAIサービス値下げ、OpenAIのIPO申請、AppleのAI戦略、watchOSのSiri AI対応、生成AIガバナンス、不動産AI活用など、AI業界の最新動向を深掘りします。",
+    "summary_en": "We will delve into the latest trends in the AI industry, such as Google's AI service price cuts, OpenAI's IPO application, Apple's AI strategy, watchOS Siri AI support, generative AI governance, and real estate AI utilization.",
+    "summary_zh-tw": "Google的AI服務降價、OpenAI的IPO申請、Apple的AI策略、watchOS的Siri AI支援、生成式AI治理、不動產AI應用等，深入探討AI產業的最新動向。",
+    "summary_zh-cn": "谷歌AI服务降价、OpenAI的IPO申请、苹果的AI战略、watchOS的Siri AI支持、生成式AI治理、房地产AI应用等，深入探讨AI行业的最新动态。",
+    "summary_ko": "구글 AI 서비스 가격 인하, OpenAI IPO 신청, 애플 AI 전략, watchOS 시리 AI 지원, 생성형 AI 거버넌스, 부동산 AI 활용 등 AI 업계의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-06-09"
+  },
+  {
     "title": "今日のAI最前線：「モフリン」からAIエージェントまで！進化が止まらないAIの最新動向",
     "title_en": "AI Frontier Today：From \"Moflin\" to AI Agents! The Unstoppable Evolution of AI's Latest Trends",
     "title_zh-tw": "今日 AI 前沿：從「莫夫林」到AI代理人！進化永不止息的AI最新動向",

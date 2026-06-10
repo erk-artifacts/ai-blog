@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI PCの普及、建設現場の変革、そして最新AIモデルの躍進",
+    "title_en": "AI Frontier Today：Widespread adoption of AI PCs, transformation of construction sites, and breakthroughs in the latest AI models",
+    "title_zh-tw": "今日 AI 前沿：AI PC的普及、建築工地的變革，以及最新AI模型的躍進",
+    "title_zh-cn": "今日 AI 前沿：AI PC的普及、建筑工地的变革以及最新AI模型的跃进",
+    "title_ko": "오늘의 AI 최전선：AI PC 확산, 건설 현장 변혁, 그리고 최신 AI 모델 약진",
+    "category": "AI NEWS",
+    "date": "2026.06.10",
+    "thumbnail": "",
+    "summary": "AI PCの進化から、建設現場や教育、ビジネスへのAI導入、そして最新AIモデルの統合まで、AI技術の広がりと可能性に迫ります。",
+    "summary_en": "From the evolution of AI PCs, to the integration of AI in construction sites, education, and business, and even the incorporation of the latest AI models, we explore the expanding reach and potential of AI technology.",
+    "summary_zh-tw": "從AI PC的演進，到AI在建築工地、教育和商業領域的導入，以及最新AI模型的整合，我們將深入探討AI技術的普及與潛力。",
+    "summary_zh-cn": "从AI PC的进化，到AI在建筑工地、教育、商业领域的导入，以及最新AI模型的整合，我们将深入探讨AI技术的普及与潜力。",
+    "summary_ko": "AI PC의 진화부터 건설 현장과 교육, 비즈니스 분야로의 AI 도입, 그리고 최신 AI 모델의 통합까지, AI 기술의 확산과 가능성을 살펴봅니다.",
+    "slug": "2026-06-10"
+  },
+  {
     "title": "今日のAI最前線：AIサービス価格競争激化！OpenAI上場準備とAppleの堅実なAI戦略",
     "title_en": "AI Frontier Today：AI Service Price Competition Intensifies! OpenAI Preparing for IPO and Apple's Solid AI Strategy",
     "title_zh-tw": "今日 AI 前沿：AI服務價格競爭激化！OpenAI準備上市與Apple的穩健AI策略",

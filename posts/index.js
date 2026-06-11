@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：最新AIワークステーションから音楽著作権問題まで、AIの多面的な進化と課題",
+    "title_en": "AI Frontier Today：From the latest AI workstations to music copyright issues, AI's multifaceted evolution and challenges",
+    "title_zh-tw": "今日 AI 前沿：從最新AI工作站到音樂著作權問題，AI的多面向演進與挑戰",
+    "title_zh-cn": "今日 AI 前沿：从最新AI工作站到音乐版权问题，AI的多方面发展与挑战",
+    "title_ko": "오늘의 AI 최전선：최신 AI 워크스테이션부터 음악 저작권 문제까지, AI의 다면적인 진화와 과제",
+    "category": "AI NEWS",
+    "date": "2026.06.11",
+    "thumbnail": "",
+    "summary": "AIワークステーションの発表、生成AIによる音楽著作権侵害、AI技術展の開催、AI搭載ゲーミングモニターの登場など、多岐にわたるAIの最新動向をお届けします。",
+    "summary_en": "We bring you the latest AI trends across a wide range of topics, including the announcement of AI workstations, music copyright infringement by generative AI, the holding of an AI technology exhibition, and the emergence of AI-powered gaming monitors.",
+    "summary_zh-tw": "我們將為您帶來AI在各領域的最新動向，包括AI工作站的發表、生成式AI造成的音樂著作權侵權、AI技術展的舉辦，以及搭載AI的電競螢幕登場等。",
+    "summary_zh-cn": "AI工作站的发布、生成式AI导致的音乐著作权侵权、AI技术展的举办、搭载AI的电竞显示器亮相等，我们将为您呈现多方面的AI最新动态。",
+    "summary_ko": "AI 워크스테이션 발표, 생성형 AI로 인한 음악 저작권 침해, AI 기술전 개최, AI 탑재 게이밍 모니터 등장 등 다양한 AI 최신 동향을 전해드립니다.",
+    "slug": "2026-06-11"
+  },
+  {
     "title": "今日のAI最前線：AI PCの普及、建設現場の変革、そして最新AIモデルの躍進",
     "title_en": "AI Frontier Today：Widespread adoption of AI PCs, transformation of construction sites, and breakthroughs in the latest AI models",
     "title_zh-tw": "今日 AI 前沿：AI PC的普及、建築工地的變革，以及最新AI模型的躍進",

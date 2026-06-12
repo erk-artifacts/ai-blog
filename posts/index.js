@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の波に乗る！最新プロダクトと体験型学習の最前線",
+    "title_en": "AI Frontier Today：Ride the Wave of AI Evolution! The Forefront of Latest Products and Experiential Learning",
+    "title_zh-tw": "今日 AI 前沿：搭乘AI進化的浪潮！最新產品與體驗型學習的最前線",
+    "title_zh-cn": "今日 AI 前沿：驾驭AI进化的浪潮！最新产品与体验式学习的最前沿",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 물결을 타다! 최신 제품과 체험형 학습의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.06.12",
+    "thumbnail": "",
+    "summary": "MSIのAIエージェント搭載PC、富士通のAI体験教室、汎用ロボット開発、物理AI企業への巨額投資、AIプロジェクト管理ツールなど、多岐にわたるAIの進化をお届け。",
+    "summary_en": "We bring you updates on the diverse evolution of AI, including MSI's AI agent-equipped PCs, Fujitsu's AI experience classes, general-purpose robot development, massive investments in physical AI companies, and AI project management tools.",
+    "summary_zh-tw": "微星搭載AI代理程式的電腦、富士通的AI體驗教室、通用機器人開發、對實體AI企業的鉅額投資、AI專案管理工具等，為您帶來AI在多個領域的進化與發展。",
+    "summary_zh-cn": "微星搭载AI代理的PC、富士通的AI体验教室、通用机器人开发、对物理AI公司的巨额投资、AI项目管理工具等，为您带来AI在多方面的进化。",
+    "summary_ko": "MSI의 AI 에이전트 탑재 PC, 후지쯔의 AI 체험 교실, 범용 로봇 개발, 물리 AI 기업에 대한 거액 투자, AI 프로젝트 관리 도구 등 다방면에 걸친 AI의 발전을 전해드립니다.",
+    "slug": "2026-06-12"
+  },
+  {
     "title": "今日のAI最前線：最新AIワークステーションから音楽著作権問題まで、AIの多面的な進化と課題",
     "title_en": "AI Frontier Today：From the latest AI workstations to music copyright issues, AI's multifaceted evolution and challenges",
     "title_zh-tw": "今日 AI 前沿：從最新AI工作站到音樂著作權問題，AI的多面向演進與挑戰",

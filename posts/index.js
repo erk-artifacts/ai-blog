@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Anthropicモデル規制の衝撃、AIの信頼性課題と創造的活用",
+    "title_en": "AI Frontier Today：Shock of Anthropic model regulations, AI reliability challenges, and creative utilization",
+    "title_zh-tw": "今日 AI 前沿：Anthropic 模型監管的衝擊、AI 可靠性挑戰與創造性應用",
+    "title_zh-cn": "今日 AI 前沿：Anthropic模型监管的冲击、AI的可靠性挑战与创造性应用",
+    "title_ko": "오늘의 AI 최전선：앤스로픽 모델 규제의 충격, AI 신뢰성 과제와 창조적 활용",
+    "category": "AI NEWS",
+    "date": "2026.06.14",
+    "thumbnail": "",
+    "summary": "Anthropicモデルが国家安全保障で規制。AIの信頼性課題が露呈する一方、Appleやハリウッドでの創造的活用が進むAI最前線。",
+    "summary_en": "Anthropic models are regulated for national security. While AI reliability issues are exposed, creative applications advance at the forefront of AI, including at Apple and in Hollywood.",
+    "summary_zh-tw": "Anthropic 模型在國家安全領域受到規範，這凸顯了 AI 的可靠性挑戰；然而，AI 的前沿應用卻在 Apple 和好萊塢等領域持續推進其創意性活用。",
+    "summary_zh-cn": "Anthropic模型受到国家安全方面的监管。在AI的可靠性挑战显露的同时，AI前沿正在苹果和好莱坞推进创造性应用。",
+    "summary_ko": "Anthropic 모델이 국가 안보 규제를 받는 가운데 AI 신뢰성 문제가 드러나고 있지만, Apple과 할리우드에서는 창의적 활용이 진전되고 있는 AI 최전선입니다.",
+    "slug": "2026-06-14"
+  },
+  {
     "title": "今日のAI最前線：AI進化の波に乗る！最新プロダクトと体験型学習の最前線",
     "title_en": "AI Frontier Today：Ride the Wave of AI Evolution! The Forefront of Latest Products and Experiential Learning",
     "title_zh-tw": "今日 AI 前沿：搭乘AI進化的浪潮！最新產品與體驗型學習的最前線",

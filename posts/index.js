@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Gemini悪用提訴からAIエージェントの実力まで",
+    "title_en": "AI Frontier Today：From the Gemini Misuse Lawsuit to the True Capabilities of AI Agents",
+    "title_zh-tw": "今日 AI 前沿：從 Gemini 濫用訴訟到 AI 代理人的實力",
+    "title_zh-cn": "今日 AI 前沿：从Gemini滥用诉讼到AI智能体的实力",
+    "title_ko": "오늘의 AI 최전선：Gemini 악용 제소부터 AI 에이전트의 실력까지",
+    "category": "AI NEWS",
+    "date": "2026.06.15",
+    "thumbnail": "",
+    "summary": "GoogleのGemini悪用提訴、化学素材AIエージェントの高性能、製造業でのAI活用、AI英語教育など、多様なAIニュースを深掘り。",
+    "summary_en": "A deep dive into diverse AI news, including Google being sued over Gemini misuse, high-performance AI agents for chemical materials, AI utilization in manufacturing, AI English education, and more.",
+    "summary_zh-tw": "Google Gemini遭濫用提告、化學材料AI代理的高性能、製造業的AI應用、AI英語教育等多元AI新聞，深入探討。",
+    "summary_zh-cn": "谷歌Gemini滥用诉讼、化学材料AI代理的高性能、制造业中的AI应用、AI英语教育等多样AI新闻的深度解析。",
+    "summary_ko": "구글 Gemini(제미니) 오용 소송, 화학 소재 AI 에이전트의 고성능, 제조업에서의 AI 활용, AI 영어 교육 등, 다양한 AI 뉴스를 심층 분석.",
+    "slug": "2026-06-15"
+  },
+  {
     "title": "今日のAI最前線：Anthropicモデル規制の衝撃、AIの信頼性課題と創造的活用",
     "title_en": "AI Frontier Today：Shock of Anthropic model regulations, AI reliability challenges, and creative utilization",
     "title_zh-tw": "今日 AI 前沿：Anthropic 模型監管的衝擊、AI 可靠性挑戰與創造性應用",

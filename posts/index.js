@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：最先端AIが私たちの日常を変える！スマホ、PC、そして未来の「AIグラス」まで",
+    "title_en": "AI Frontier Today：Cutting-edge AI to transform our daily lives! Smartphones, PCs, and even future \"AI Glasses\"",
+    "title_zh-tw": "今日 AI 前沿：最尖端AI將改變我們的日常生活！從智慧型手機、個人電腦，乃至未來的「AI眼鏡」",
+    "title_zh-cn": "今日 AI 前沿：尖端AI正在改变我们的日常生活！智能手机、电脑，乃至未来的“AI眼镜”。",
+    "title_ko": "오늘의 AI 최전선：최첨단 AI가 우리의 일상을 바꾼다! 스마트폰, PC, 그리고 미래의 「AI 글라스」까지",
+    "category": "AI NEWS",
+    "date": "2026.06.16",
+    "thumbnail": "",
+    "summary": "AIの進化が止まりません！最新のスマートフォンやPCに搭載されるAI機能から、工場監視や営業支援の最前線で活躍するAIグラスまで、私たちの生活とビジネスにAIがどう浸透していくのか、具体的なニュースを深掘りします。",
+    "summary_en": "The evolution of AI is unstoppable! From AI features embedded in the latest smartphones and PCs, to AI glasses actively deployed on the front lines of factory monitoring and sales support, we will take a deep dive into concrete news stories, exploring how AI is permeating our lives and businesses.",
+    "summary_zh-tw": "人工智慧的演進永不止歇！從最新智慧型手機和個人電腦搭載的人工智慧功能，到活躍於工廠監控和業務支援最前線的人工智慧眼鏡，我們將透過具體新聞，深入探討人工智慧如何滲透我們的生活和商業。",
+    "summary_zh-cn": "AI的进化势不可挡！从最新智能手机和PC中搭载的AI功能，到活跃在工厂监控和销售支持最前线的AI眼镜，我们将深入探讨AI如何渗透到我们的生活和业务中，并深挖具体新闻。",
+    "summary_ko": "AI의 진화는 멈추지 않습니다! 최신 스마트폰이나 PC에 탑재되는 AI 기능부터, 공장 감시나 영업 지원의 최전선에서 활약하는 AI 글라스까지, 우리의 생활과 비즈니스에 AI가 어떻게 침투해 들어가는지, 구체적인 뉴스를 심층 분석합니다.",
+    "slug": "2026-06-16"
+  },
+  {
     "title": "今日のAI最前線：Gemini悪用提訴からAIエージェントの実力まで",
     "title_en": "AI Frontier Today：From the Gemini Misuse Lawsuit to the True Capabilities of AI Agents",
     "title_zh-tw": "今日 AI 前沿：從 Gemini 濫用訴訟到 AI 代理人的實力",

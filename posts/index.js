@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIがビジネスを変革！効率化から新技術、コスト戦略まで",
+    "title_en": "AI Frontier Today：AI is transforming business! From efficiency to new technologies and cost strategies.",
+    "title_zh-tw": "今日 AI 前沿：AI 徹底變革商業！從效率提升到新技術、成本策略",
+    "title_zh-cn": "今日 AI 前沿：AI变革商业！从效率提升到新技术、成本战略",
+    "title_ko": "오늘의 AI 최전선：AI가 비즈니스를 혁신! 효율화부터 신기술, 비용 전략까지",
+    "category": "AI NEWS",
+    "date": "2026.06.17",
+    "thumbnail": "",
+    "summary": "ネオキャリアのAI導入で広告運用が効率化。Physical AI研究加速、MicrosoftのAIモデル戦略など、AIがビジネスと未来を形作る最新動向を深掘りします。",
+    "summary_en": "Neo-Career's AI implementation streamlines ad operations. We will delve into the latest trends where AI is shaping business and the future, including the acceleration of Physical AI research and Microsoft's AI model strategy.",
+    "summary_zh-tw": "尼歐職涯導入AI以提升廣告運用效率。本文將深入探討AI如何形塑商業與未來的最新動態，包括實體AI研究加速以及微軟的AI模型策略等。",
+    "summary_zh-cn": "新职业通过导入AI实现了广告运营效率化。本文将深入解析物理AI研究加速、微软的AI模型战略等AI塑造商业和未来的最新动向。",
+    "summary_ko": "네오캐리어의 AI 도입으로 광고 운영이 효율화. Physical AI 연구 가속, Microsoft의 AI 모델 전략 등, AI가 비즈니스와 미래를 형성하는 최신 동향을 심층 분석합니다.",
+    "slug": "2026-06-17"
+  },
+  {
     "title": "今日のAI最前線：最先端AIが私たちの日常を変える！スマホ、PC、そして未来の「AIグラス」まで",
     "title_en": "AI Frontier Today：Cutting-edge AI to transform our daily lives! Smartphones, PCs, and even future \"AI Glasses\"",
     "title_zh-tw": "今日 AI 前沿：最尖端AI將改變我們的日常生活！從智慧型手機、個人電腦，乃至未來的「AI眼鏡」",

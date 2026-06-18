@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Google DocsのAIをオフに！業務効率化と最先端OCR、進化する営業戦略",
+    "title_en": "AI Frontier Today：Turn off Google Docs AI! Business efficiency and cutting-edge OCR, evolving sales strategies",
+    "title_zh-tw": "今日 AI 前沿：關閉 Google 文件 AI！業務效率化、最尖端 OCR，進化的銷售策略",
+    "title_zh-cn": "今日 AI 前沿：关闭 Google 文档的 AI！业务效率化、最先进 OCR、演进中的销售战略",
+    "title_ko": "오늘의 AI 최전선：Google 문서 AI 끄기! 업무 효율화와 최첨단 OCR, 진화하는 영업 전략",
+    "category": "AI NEWS",
+    "date": "2026.06.18",
+    "thumbnail": "",
+    "summary": "Google DocsのAI機能設定から、AI駆動型営業戦略、そして生成AI型OCRの最新機能まで、AIが私たちの働き方をどう変えるか、その最前線を分かりやすくご紹介します。",
+    "summary_en": "We'll provide a clear overview of the cutting edge of how AI is transforming the way we work, covering everything from AI feature settings in Google Docs to AI-driven sales strategies and the latest features of generative AI OCR.",
+    "summary_zh-tw": "從 Google 文件 的 AI 功能設定，到 AI 驅動型銷售策略，乃至於生成式 AI OCR 的最新功能，我們將深入淺出地介紹 AI 如何改變我們工作方式的最前線。",
+    "summary_zh-cn": "从Google Docs的AI功能设置，到AI驱动型销售策略，再到生成式AI OCR的最新功能，我们将清晰地介绍AI如何改变我们的工作方式的最前沿进展。",
+    "summary_ko": "Google Docs의 AI 기능 설정부터 AI 기반 영업 전략, 그리고 생성 AI형 OCR의 최신 기능까지, AI가 우리의 업무 방식을 어떻게 바꾸는지 그 최전선을 알기 쉽게 소개해 드립니다.",
+    "slug": "2026-06-18"
+  },
+  {
     "title": "今日のAI最前線：AIがビジネスを変革！効率化から新技術、コスト戦略まで",
     "title_en": "AI Frontier Today：AI is transforming business! From efficiency to new technologies and cost strategies.",
     "title_zh-tw": "今日 AI 前沿：AI 徹底變革商業！從效率提升到新技術、成本策略",

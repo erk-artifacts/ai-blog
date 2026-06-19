@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIとGPUの進化、Midjourneyの医療参入、AdobeのAIアシスタントが未来を拓く",
+    "title_en": "AI Frontier Today：AI and GPU evolution, Midjourney's entry into healthcare, and Adobe's AI Assistant will open up the future.",
+    "title_zh-tw": "今日 AI 前沿：AI 與 GPU 的演進，Midjourney 進軍醫療領域，Adobe 的 AI 助理開創未來",
+    "title_zh-cn": "今日 AI 前沿：AI和GPU的演进、Midjourney进军医疗领域、Adobe的AI助手开创未来",
+    "title_ko": "오늘의 AI 최전선：AI와 GPU의 진화, Midjourney의 의료 분야 진출, Adobe의 AI 어시스턴트가 미래를 연다",
+    "category": "AI NEWS",
+    "date": "2026.06.19",
+    "thumbnail": "",
+    "summary": "Midjourneyの医療分野進出やAdobeのAIアシスタント導入、OpenAIの自動化ツールなど、AIが私たちの日常とビジネスに深く浸透する最新動向をお届けします。",
+    "summary_en": "We bring you the latest developments showing how AI is deeply integrating into our daily lives and businesses, such as Midjourney's entry into the medical field, Adobe's introduction of AI assistants, and OpenAI's automation tools.",
+    "summary_zh-tw": "為您帶來AI深入滲透我們的日常生活與商業的最新動態，包括Midjourney進軍醫療領域、Adobe導入AI助理，以及OpenAI的自動化工具等。",
+    "summary_zh-cn": "Midjourney进军医疗领域、Adobe引入AI助手、OpenAI的自动化工具等，我们将为您带来AI深入渗透我们日常生活和业务的最新动态。",
+    "summary_ko": "Midjourney의 의료 분야 진출 및 Adobe의 AI 어시스턴트 도입, OpenAI의 자동화 도구 등, AI가 우리의 일상과 비즈니스에 깊이 침투하는 최신 동향을 전해 드립니다.",
+    "slug": "2026-06-19"
+  },
+  {
     "title": "今日のAI最前線：Google DocsのAIをオフに！業務効率化と最先端OCR、進化する営業戦略",
     "title_en": "AI Frontier Today：Turn off Google Docs AI! Business efficiency and cutting-edge OCR, evolving sales strategies",
     "title_zh-tw": "今日 AI 前沿：關閉 Google 文件 AI！業務效率化、最尖端 OCR，進化的銷售策略",

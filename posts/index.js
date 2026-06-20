@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：米政府のAI規制と革新的技術：進化するAIの未来",
+    "title_en": "AI Frontier Today：U.S. Government's AI Regulation and Innovative Technology: The Future of Evolving AI",
+    "title_zh-tw": "今日 AI 前沿：美國政府的AI監管與創新技術：不斷演進的人工智慧未來",
+    "title_zh-cn": "今日 AI 前沿：美国政府的AI监管与创新技术：进化的AI未来",
+    "title_ko": "오늘의 AI 최전선：미 정부의 AI 규제 및 혁신 기술: 진화하는 AI의 미래",
+    "category": "AI NEWS",
+    "date": "2026.06.20",
+    "thumbnail": "",
+    "summary": "米政府のAnthropicモデル禁止、LLMの技術的ブレークスルー、Sam Altman氏の動向、そしてAIの普及を目指す巨大企業の野望まで、今日のAI業界の多角的な動きを深掘り。",
+    "summary_en": "A deep dive into today's multifaceted AI industry, from the US government's ban on Anthropic models, technical breakthroughs in LLMs, and Sam Altman's movements, to the ambitions of tech giants aiming for AI proliferation.",
+    "summary_zh-tw": "美國政府禁用 Anthropic 模型、大型語言模型 (LLM) 的技術突破、Sam Altman 的動向，以及旨在普及人工智慧 (AI) 的科技巨頭的野心，本文將深入探討當今 AI 業界的多方面動態。",
+    "summary_zh-cn": "深入探讨今天的AI行业多方面动态，涵盖从美国政府禁止Anthropic模型、LLM技术突破、Sam Altman的动向，到旨在普及AI的科技巨头的野心。",
+    "summary_ko": "미국 정부의 Anthropic 모델 금지, LLM의 기술적 돌파구, Sam Altman의 행보, 그리고 AI 확산을 목표로 하는 거대 기업들의 야망까지, 오늘날 AI 산업의 다각적인 움직임을 심층 분석합니다.",
+    "slug": "2026-06-20"
+  },
+  {
     "title": "今日のAI最前線：AIとGPUの進化、Midjourneyの医療参入、AdobeのAIアシスタントが未来を拓く",
     "title_en": "AI Frontier Today：AI and GPU evolution, Midjourney's entry into healthcare, and Adobe's AI Assistant will open up the future.",
     "title_zh-tw": "今日 AI 前沿：AI 與 GPU 的演進，Midjourney 進軍醫療領域，Adobe 的 AI 助理開創未來",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIが独自AIチップを発表！生成AI対応PCの進化も加速",
+    "title_en": "AI Frontier Today：OpenAI announces its own AI chip! Evolution of generative AI-compatible PCs also accelerates.",
+    "title_zh-tw": "今日 AI 前沿：OpenAI發表自家AI晶片！生成式AI PC的進化也加速",
+    "title_zh-cn": "今日 AI 前沿：OpenAI 宣布自研AI芯片！生成式AI PC的进化也加速",
+    "title_ko": "오늘의 AI 최전선：OpenAI가 자체 AI 칩을 발표! 생성형 AI 지원 PC의 진화도 가속",
+    "category": "AI NEWS",
+    "date": "2026.06.25",
+    "thumbnail": "",
+    "summary": "OpenAIが独自AIチップ「Jalapeño」を発表し、AIハードウェア競争が激化。さらに、生成AIに対応したゲーミングPCやAIワークステーションの登場が、私たちの生活におけるAIの利用を加速させます。",
+    "summary_en": "OpenAI announced its proprietary AI chip \"Jalapeño,\" intensifying the AI hardware competition. Furthermore, the emergence of gaming PCs and AI workstations compatible with generative AI will accelerate the use of AI in our daily lives.",
+    "summary_zh-tw": "OpenAI宣布推出獨家AI晶片「Jalapeño」，使AI硬體競爭日益激烈。此外，支援生成式AI的電競PC和AI工作站的問世，將加速AI在我們生活中的應用。",
+    "summary_zh-cn": "OpenAI发布了自研AI芯片“Jalapeño”，加剧了AI硬件竞争。此外，支持生成式AI的游戏PC和AI工作站的出现，将加速AI在我们生活中的应用。",
+    "summary_ko": "OpenAI가 독자 AI 칩 \"Jalapeño\"를 발표하며 AI 하드웨어 경쟁이 격화되고 있습니다. 더 나아가, 생성 AI에 대응하는 게이밍 PC 및 AI 워크스테이션의 등장이 우리 삶에서의 AI 활용을 가속화할 것입니다.",
+    "slug": "2026-06-25"
+  },
+  {
     "title": "今日のAI最前線：米政府のAI規制と革新的技術：進化するAIの未来",
     "title_en": "AI Frontier Today：U.S. Government's AI Regulation and Innovative Technology: The Future of Evolving AI",
     "title_zh-tw": "今日 AI 前沿：美國政府的AI監管與創新技術：不斷演進的人工智慧未來",

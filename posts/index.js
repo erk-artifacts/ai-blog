@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIインフラ新潮流から生成AI活用術まで、最新トレンドを深掘り",
+    "title_en": "AI Frontier Today：A deep dive into the latest trends, from emerging AI infrastructure to Generative AI application techniques.",
+    "title_zh-tw": "今日 AI 前沿：從AI基礎設施新潮流到生成式AI應用實務，深入探討最新趨勢",
+    "title_zh-cn": "今日 AI 前沿：从AI基础设施新潮流到生成式AI应用技巧，深度解读最新趋势",
+    "title_ko": "오늘의 AI 최전선：AI 인프라 신조류부터 생성 AI 활용법까지, 최신 트렌드를 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.06.26",
+    "thumbnail": "",
+    "summary": "NVIDIA一強に挑むAMDのAI戦略、生成AIの安全な活用法、そしてAIキャラクターやビジネス・商品開発への応用事例まで、多角的なAIの進化を解説します。",
+    "summary_en": "We will explain the multi-faceted evolution of AI, covering AMD's AI strategy challenging NVIDIA's dominance, safe utilization methods for generative AI, and application examples ranging from AI characters to business and product development.",
+    "summary_zh-tw": "挑戰NVIDIA獨強的AMD AI策略、生成式AI的安全應用方法，以及AI角色、商業與產品開發的應用案例，我們將從多個角度解析AI的演進。",
+    "summary_zh-cn": "挑战NVIDIA独霸地位的AMD的AI战略、生成式AI的安全活用方法、以及AI角色与商业及产品开发的应用案例，我们将多角度解析AI的进化。",
+    "summary_ko": "NVIDIA의 독주 체제에 도전하는 AMD의 AI 전략, 생성형 AI의 안전한 활용법, 그리고 AI 캐릭터 및 비즈니스・상품 개발에의 응용 사례까지, 다각적인 AI의 진화를 설명합니다.",
+    "slug": "2026-06-26"
+  },
+  {
     "title": "今日のAI最前線：OpenAIが独自AIチップを発表！生成AI対応PCの進化も加速",
     "title_en": "AI Frontier Today：OpenAI announces its own AI chip! Evolution of generative AI-compatible PCs also accelerates.",
     "title_zh-tw": "今日 AI 前沿：OpenAI發表自家AI晶片！生成式AI PC的進化也加速",

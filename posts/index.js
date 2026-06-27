@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI規制の波と進化する業界地図",
+    "title_en": "AI Frontier Today：The Wave of AI Regulation and the Evolving Industry Landscape",
+    "title_zh-tw": "今日 AI 前沿：AI監管的浪潮與不斷演進的產業格局",
+    "title_zh-cn": "今日 AI 前沿：AI监管浪潮与演进的行业格局",
+    "title_ko": "오늘의 AI 최전선：AI 규제의 물결과 진화하는 업계 지도",
+    "category": "AI NEWS",
+    "date": "2026.06.27",
+    "thumbnail": "",
+    "summary": "Anthropicの規制問題、OpenAIのGPT-5.6発表と政府要請、自社製AIチップ開発競争、そしてAIの著作権論争や軍事利用まで、今日のAI業界の最新動向を深掘りします。",
+    "summary_en": "We will delve into the latest trends in today's AI industry, covering everything from Anthropic's regulatory issues, OpenAI's GPT-5.6 announcement and government requests, and the race to develop proprietary AI chips, to AI copyright disputes and military use.",
+    "summary_zh-tw": "深入探討今日 AI 產業的最新動向，從 Anthropic 的監管問題、OpenAI 的 GPT-5.6 發表與政府要求、自研 AI 晶片開發競爭，到 AI 的著作權爭議和軍事應用等議題。",
+    "summary_zh-cn": "Anthropic 的监管问题、OpenAI 发布 GPT-5.6 以及政府要求、自研 AI 芯片的开发竞争，还有 AI 的著作权争议和军事应用等，我们将深入探讨当今 AI 行业的最新动向。",
+    "summary_ko": "Anthropic의 규제 문제, OpenAI의 GPT-5.6 발표와 정부 요청, 자체 AI 칩 개발 경쟁, 그리고 AI의 저작권 논쟁 및 군사적 이용까지, 오늘날 AI 업계의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-06-27"
+  },
+  {
     "title": "今日のAI最前線：AIインフラ新潮流から生成AI活用術まで、最新トレンドを深掘り",
     "title_en": "AI Frontier Today：A deep dive into the latest trends, from emerging AI infrastructure to Generative AI application techniques.",
     "title_zh-tw": "今日 AI 前沿：從AI基礎設施新潮流到生成式AI應用實務，深入探討最新趨勢",

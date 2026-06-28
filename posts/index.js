@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：米政府のAI規制と進化する次世代モデル、そして広がるAI活用",
+    "title_en": "AI Frontier Today：US government AI regulations, evolving next-generation models, and expanding AI use",
+    "title_zh-tw": "今日 AI 前沿：美國政府的AI監管、演進中的次世代模型，以及日益普及的AI應用",
+    "title_zh-cn": "今日 AI 前沿：美国政府的AI监管、演进中的下一代模型以及广泛的AI应用",
+    "title_ko": "오늘의 AI 최전선：미국 정부의 AI 규제와 진화하는 차세대 모델, 그리고 확대되는 AI 활용",
+    "category": "AI NEWS",
+    "date": "2026.06.28",
+    "thumbnail": "",
+    "summary": "OpenAIのGPT-5.6限定プレビュー、Anthropicモデルの規制緩和、そしてAIの医療応用や新ハードウェアまで、AI業界の最前線を速報します。",
+    "summary_en": "We bring you breaking news from the forefront of the AI industry, covering everything from OpenAI's GPT-5.6 limited preview and the deregulation of Anthropic models, to AI medical applications and new hardware.",
+    "summary_zh-tw": "OpenAI 的 GPT-5.6 獨家預覽、Anthropic 模型鬆綁管制，以及 AI 在醫療上的應用及新硬體，我們將速報 AI 業界最前線的動態。",
+    "summary_zh-cn": "速报AI行业最前沿动态，包括OpenAI的GPT-5.6限定预览、Anthropic模型的监管放宽，以及AI在医疗领域的应用和新硬件等。",
+    "summary_ko": "OpenAI의 GPT-5.6 한정 미리보기, Anthropic 모델 규제 완화, 그리고 AI의 의료 응용 및 신규 하드웨어까지, AI 업계의 최전선을 속보로 전해드립니다.",
+    "slug": "2026-06-28"
+  },
+  {
     "title": "今日のAI最前線：AI規制の波と進化する業界地図",
     "title_en": "AI Frontier Today：The Wave of AI Regulation and the Evolving Industry Landscape",
     "title_zh-tw": "今日 AI 前沿：AI監管的浪潮與不斷演進的產業格局",

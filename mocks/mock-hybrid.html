@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モック C — ハイブリッド / AI_GEEK Mystic Codex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: {
+                display: ['New Rocker', 'Noto Sans JP', 'cursive'],
+                body: ['Cossette Texte', 'Noto Sans JP', 'sans-serif'],
+                mono: ['IBM Plex Mono', 'Noto Sans JP', 'monospace'],
+            },
+            colors: {
+                night: '#0B1437', 'night-2': '#0F1A4B', gold: '#FDC800', azure: '#0250CC',
+                parchment: '#FFE9CE', ink: '#1A1A1A', cream: '#F5E6C8',
+                success: '#16A34A', warning: '#D97706', danger: '#DC2626',
+            },
+            borderRadius: { '2xl': '16px', '3xl': '24px' },
+            boxShadow: { 'card': '0 2px 8px rgba(0,0,0,0.3)', 'gold-glow': '0 0 12px rgba(253,200,0,0.4)' },
+            borderWidth: { '3': '3px', '4': '4px' },
+        }}};
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&family=IBM+Plex+Mono:wght@400;500;700&family=New+Rocker&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(ellipse at top, #0F1A4B 0%, #0B1437 55%) fixed;
+            color: #F5E6C8; overflow-x: hidden;
+        }
+        .parchment-tex {
+            background-color: #FFE9CE;
+            background-image: radial-gradient(rgba(26,26,26,0.035) 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+        /* ハイブリッドカード: 羊皮紙 + 太枠 + モダン配置 */
+        .h-card {
+            background: #FFE9CE; border: 3px solid #1A1A1A; border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.19,1,0.22,1);
+        }
+        .h-card:hover { border-color: #FDC800; box-shadow: 0 0 14px rgba(253,200,0,0.35); transform: translate(-3px,-3px); }
+        .h-card h3 { color: #1A1A1A; }
+        /* 日付スタンプ（控えめ） */
+        .stamp {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-family: 'IBM Plex Mono','Noto Sans JP',monospace;
+            font-size: 11px; color: #FDC800; border: 1.5px solid rgba(253,200,0,0.5);
+            border-radius: 6px; padding: 2px 8px; letter-spacing: 0.04em;
+        }
+        .stamp.on-parchment { color: #0B1437; border-color: rgba(11,20,55,0.4); }
+        /* 今日の一冊ヒーロー */
+        .hero-card { background: #FFE9CE; border: 3px solid #1A1A1A; border-radius: 20px; box-shadow: 0 4px 0 rgba(253,200,0,0.2), 0 6px 20px rgba(0,0,0,0.3); }
+        /* 横スクロール */
+        .scroller { display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 1rem; scroll-snap-type: x mandatory; }
+        .scroller > * { flex: 0 0 300px; scroll-snap-align: start; }
+        .scroller::-webkit-scrollbar { height: 6px; } .scroller::-webkit-scrollbar-thumb { background: #FDC800; border-radius: 3px; }
+        .view { display: none; } .view.active { display: block; animation: f 0.4s ease; }
+        @keyframes f { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        .tab-btn { border-bottom: 2px solid transparent; }
+        .tab-btn.active { color: #FDC800; border-color: #FDC800; }
+        .twinkle { animation: tw 3s ease-in-out infinite; }
+        @keyframes tw { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+        .article-body p { color: #1A1A1A; line-height: 1.85; margin: 1rem 0; font-family: 'Cossette Texte','Noto Sans JP',sans-serif; }
+        .article-body h2 { font-family: 'New Rocker','Noto Sans JP',cursive; color: #1A1A1A; font-size: 1.6rem; margin: 1.6rem 0 0.5rem; border-bottom: 2px solid #FDC800; padding-bottom: 0.3rem; display: inline-block; }
+        .article-body code { background: rgba(253,200,0,0.2); color: #1A1A1A; padding: 2px 6px; border-radius: 4px; font-family: 'IBM Plex Mono','Noto Sans JP',monospace; }
+        .article-body blockquote { background: #0B1437; color: #F5E6C8; border-left: 4px solid #FDC800; border-radius: 0 12px 12px 0; padding: 1rem 1.4rem; margin: 1.2rem 0; }
+        a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #FDC800; outline-offset: 2px; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-thumb { background: #FDC800; border-radius: 4px; }
+    </style>
+</head>
+
+<body class="font-body min-h-screen">
+
+    <!-- ヘッダー: モダン + 星アクセント -->
+    <header class="sticky top-0 z-40 bg-night/85 backdrop-blur border-b border-gold/25">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center gap-6">
+            <a href="#" class="font-display text-2xl text-cream flex items-center gap-1">
+                <svg class="w-5 h-5 text-gold twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg>
+                AI<span class="text-gold">_</span>GEEK<span class="text-gold">.</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 font-mono text-xs tracking-wider text-cream/70">
+                <a href="#" class="hover:text-gold">HOME</a>
+                <a href="#" class="hover:text-gold">ARCHIVE</a>
+                <a href="#" class="hover:text-gold">ABOUT</a>
+            </nav>
+            <div class="flex-1 max-w-xs ml-auto relative">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-cream/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                <input type="text" placeholder="記事を探す..." class="w-full bg-night-2/70 border border-cream/15 rounded-full text-sm text-cream placeholder-cream/30 pl-9 pr-3 py-2 focus:border-gold focus:outline-none">
+            </div>
+            <div class="hidden md:flex items-center gap-1.5 font-mono text-xs">
+                <button class="text-gold">JA</button><span class="text-cream/30">/</span><button class="text-cream/50 hover:text-gold">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- タブ -->
+    <div class="max-w-7xl mx-auto px-6 pt-6">
+        <div class="flex gap-6 border-b border-cream/10">
+            <button class="tab-btn active pb-3 font-mono text-xs tracking-wider" data-view="home">HOME</button>
+            <button class="tab-btn pb-3 font-mono text-xs tracking-wider text-cream/50" data-view="archive">ARCHIVE</button>
+            <button class="tab-btn pb-3 font-mono text-xs tracking-wider text-cream/50" data-view="detail">ARTICLE</button>
+        </div>
+        <p class="font-mono text-[10px] text-gold/60 mt-2">▸ モックC — ハイブリッド。モダンなUX設計ベースに、要所で図書館の装飾（星・日付スタンプ・羊皮紙）を効かせる。</p>
+    </div>
+
+    <!-- ========== HOME ========== -->
+    <section id="view-home" class="view active max-w-7xl mx-auto px-6 py-10 space-y-14">
+
+        <!-- ヒーロー: 今日の一冊 + 統計/検索 -->
+        <div class="grid lg:grid-cols-3 gap-6">
+            <!-- 今日の一冊（羊皮紙 + 装飾） -->
+            <a href="#" class="hero-card parchment-tex p-8 lg:col-span-2 group relative">
+                <div class="flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-gold twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg>
+                    <span class="font-mono text-xs text-ink/60 tracking-widest">TODAY'S PICK · 本日の一品</span>
+                    <span class="stamp on-parchment ml-auto">第69巻</span>
+                </div>
+                <div class="stamp on-parchment mb-4">📅 2026.05.07 · AI NEWS</div>
+                <h1 class="font-display text-3xl md:text-5xl text-ink leading-tight mb-4 group-hover:text-night-2 transition-colors">ロボットが変形！AI活用ビジネスが加速する未来</h1>
+                <p class="font-body text-ink/75 text-lg leading-relaxed mb-6 max-w-2xl">変形ロボット、ディープフェイクの脅威、ビジネスAI活用サービスなど、私たちの生活に直結する最新AIニュースを分かりやすく解説。</p>
+                <span class="inline-flex items-center gap-2 font-mono text-sm bg-gold text-ink border-2 border-ink rounded-xl px-5 py-2.5 font-bold">この記事を読む →</span>
+            </a>
+            <!-- 統計 + シリーズ導線 -->
+            <div class="flex flex-col gap-4">
+                <div class="bg-night-2/60 border border-gold/30 rounded-2xl p-5">
+                    <div class="font-mono text-[10px] text-gold tracking-widest mb-3">▸ CODEX STATUS</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div><div class="font-display text-3xl text-cream">69</div><div class="font-mono text-[10px] text-cream/50">記事 / 巻</div></div>
+                        <div><div class="font-display text-3xl text-cream">75</div><div class="font-mono text-[10px] text-cream/50">連続更新日</div></div>
+                        <div><div class="font-display text-3xl text-cream">5</div><div class="font-mono text-[10px] text-cream/50">対応言語</div></div>
+                        <div><div class="font-display text-3xl text-cream">2</div><div class="font-mono text-[10px] text-cream/50">シリーズ</div></div>
+                    </div>
+                </div>
+                <div class="bg-night-2/60 border border-gold/30 rounded-2xl p-5">
+                    <div class="font-mono text-[10px] text-gold tracking-widest mb-3">▸ QUICK SEARCH</div>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="px-3 py-1.5 border border-cream/30 text-cream/80 rounded-full font-mono text-xs hover:border-gold hover:text-gold transition-colors">2026.05</button>
+                        <button class="px-3 py-1.5 border border-cream/30 text-cream/80 rounded-full font-mono text-xs hover:border-gold hover:text-gold transition-colors">2026.04</button>
+                        <button class="px-3 py-1.5 border border-cream/30 text-cream/80 rounded-full font-mono text-xs hover:border-gold hover:text-gold transition-colors">2026.03</button>
+                        <button class="px-3 py-1.5 border border-cream/30 text-cream/80 rounded-full font-mono text-xs hover:border-gold hover:text-gold transition-colors">全期間</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- シリーズ導線 -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <svg class="w-6 h-6 text-gold twinkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4 1-3 14-4-1z" stroke-linejoin="round"/></svg>
+                <h2 class="font-display text-2xl text-cream">シリーズから探す</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+                <a href="#" class="h-card p-6 group flex items-center gap-5">
+                    <div class="w-16 h-16 rounded-2xl bg-gold/15 border-2 border-gold flex items-center justify-center flex-shrink-0">
+                        <span class="font-display text-2xl text-gold">AI</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-display text-xl text-ink">AI NEWS · 日次記録</div>
+                        <div class="font-mono text-xs text-ink/60 mt-1">毎日綴るAI最前線 · 全65巻</div>
+                    </div>
+                    <span class="text-gold text-2xl group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a href="#" class="h-card p-6 group flex items-center gap-5">
+                    <div class="w-16 h-16 rounded-2xl bg-azure/15 border-2 border-azure flex items-center justify-center flex-shrink-0">
+                        <svg class="w-8 h-8 text-azure" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14v7"/></svg>
+                    </div>
+                    <div class="flex-1">
+                        <div class="font-display text-xl text-ink">初心者向け · 呪文書</div>
+                        <div class="font-mono text-xs text-ink/60 mt-1">プロンプトの基礎 · 全4巻</div>
+                    </div>
+                    <span class="text-azure text-2xl group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 新着: 横スクロール（本を並べる） -->
+        <div>
+            <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-gold twinkle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg>
+                    <h2 class="font-display text-2xl text-cream">新着の記録</h2>
+                    <span class="font-mono text-xs text-cream/40">/ 横に並んだ巻をスクロール</span>
+                </div>
+                <a href="#" class="font-mono text-xs text-gold hover:underline">すべて見る →</a>
+            </div>
+            <div class="scroller" id="recent-scroller"></div>
+        </div>
+    </section>
+
+    <!-- ========== ARCHIVE ========== -->
+    <section id="view-archive" class="view max-w-7xl mx-auto px-6 py-10">
+        <div class="mb-8">
+            <h1 class="font-display text-4xl text-cream">アーカイブ</h1>
+            <p class="font-mono text-xs text-cream/50 mt-1">全 <b class="text-gold">69</b> 巻を検索・フィルタ</p>
+        </div>
+
+        <!-- 検索 + フィルタ -->
+        <div class="bg-night-2/50 border border-gold/25 rounded-2xl p-5 mb-8">
+            <div class="relative mb-4">
+                <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-cream/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                <input type="text" placeholder="キーワードを探す..." class="w-full bg-night border-2 border-cream/15 rounded-xl text-cream placeholder-cream/30 pl-11 pr-4 py-3 focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/15">
+            </div>
+            <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+                <button class="px-3 py-1.5 bg-gold text-ink rounded-full font-bold">全巻</button>
+                <button class="px-3 py-1.5 border border-cream/25 text-cream/80 rounded-full hover:border-gold hover:text-gold">AI NEWS</button>
+                <button class="px-3 py-1.5 border border-cream/25 text-cream/80 rounded-full hover:border-gold hover:text-gold">初心者向け</button>
+                <span class="text-cream/20 mx-1">|</span>
+                <button class="px-3 py-1.5 border border-cream/25 text-cream/80 rounded-full hover:border-gold hover:text-gold">2026.05</button>
+                <button class="px-3 py-1.5 border border-cream/25 text-cream/80 rounded-full hover:border-gold hover:text-gold">2026.04</button>
+                <button class="px-3 py-1.5 border border-cream/25 text-cream/80 rounded-full hover:border-gold hover:text-gold">2026.03</button>
+                <span class="ml-auto text-cream/50">新着順 ↓ · <b class="text-gold">10</b> 件表示</span>
+            </div>
+        </div>
+
+        <!-- 月別グリッド -->
+        <div class="flex items-baseline gap-3 mb-4">
+            <h2 class="font-display text-2xl text-gold">2026年5月</h2>
+            <span class="font-mono text-xs text-cream/40">6巻</span>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="archive-grid"></div>
+    </section>
+
+    <!-- ========== DETAIL ========== -->
+    <section id="view-detail" class="view max-w-3xl mx-auto px-6 py-10">
+        <button class="font-mono text-xs text-gold mb-6 hover:underline">← 戻る</button>
+        <article class="bg-parchment border-3 border-ink rounded-2xl p-8 md:p-12 shadow-card relative">
+            <div class="flex flex-wrap items-center gap-3 mb-6 pb-6 border-b-2 border-ink/15">
+                <span class="stamp on-parchment">📅 2026.05.07</span>
+                <span class="px-3 py-1 bg-night text-gold border-2 border-ink rounded-full font-mono text-xs">AI NEWS</span>
+                <span class="font-mono text-xs text-ink/50 ml-auto">第69巻 · 3 min</span>
+            </div>
+            <h1 class="font-display text-3xl md:text-5xl text-ink leading-tight mb-8">ロボットが変形！AI活用ビジネスが加速する未来</h1>
+            <div class="article-body">
+                <p>毎日刻々と進化するAIの世界。今日は3つのニュースをお届けします。</p>
+                <h2>transformするロボットたち</h2>
+                <p>形状を変形させるロボットの実用化が進んでいます。環境に合わせて姿を変える新しい世代の機械が登場しました。</p>
+                <blockquote>「AIは道具ではなく、共に働くパートナーになりつつある」</blockquote>
+                <p>ビジネス現場では、<code>AI活用サービス</code>が次々と立ち上がり、小規模事業者でも高度な分析が可能に。</p>
+            </div>
+            <!-- 前後 -->
+            <div class="grid grid-cols-2 gap-4 mt-10 pt-6 border-t-2 border-ink/15">
+                <a href="#" class="h-card p-4">
+                    <div class="font-mono text-[10px] text-ink/50">← 前の巻</div>
+                    <div class="font-display text-base text-ink leading-tight mt-1">AIモデルの正確性と倫理</div>
+                </a>
+                <a href="#" class="h-card p-4 text-right">
+                    <div class="font-mono text-[10px] text-ink/50">次の巻 →</div>
+                    <div class="font-display text-base text-ink leading-tight mt-1">AI企業の大型投資ラッシュ</div>
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <footer class="border-t border-gold/20 mt-20 py-8 text-center">
+        <p class="font-mono text-xs text-cream/40">AI_GEEK ✦ Mystic Codex · モックC · ハイブリッド · 東京</p>
+    </footer>
+
+    <script>
+        const POSTS = [
+            { t:'ロボットが変形！AI活用ビジネスが加速する未来', c:'AI NEWS', d:'2026.05.07', read:'3' },
+            { t:'AI企業の大型投資ラッシュと日本行政のAI基盤公開で業界が激震', c:'AI NEWS', d:'2026.05.05', read:'4' },
+            { t:'医療診断でAIが人間の医者を上回る性能を発揮', c:'AI NEWS', d:'2026.05.04', read:'3' },
+            { t:'AI音声認識アプリが進化、ゲーミングPCもAI対話に対応', c:'AI NEWS', d:'2026.05.03', read:'3' },
+            { t:'AIモデルの正確性と倫理、軍事利用から規制まで', c:'AI NEWS', d:'2026.05.02', read:'5' },
+            { t:'Amazon・Alphabetが過去最速のAI投資拡大', c:'AI NEWS', d:'2026.04.30', read:'4' },
+            { t:'まじん式プロンプトを使ってみた', c:'For Beginner', d:'2026.03.18', read:'6' },
+            { t:'プロンプトテクニック ~基礎編~', c:'For Beginner', d:'2026.03.04', read:'5' },
+        ];
+        // 横スクロール新着（小カード）
+        document.getElementById('recent-scroller').innerHTML = POSTS.map(p => `
+            <a href="#" class="h-card p-5 flex flex-col group">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="font-mono text-[10px] ${p.c==='AI NEWS'?'text-gold':'text-azure'}">${p.c}</span>
+                    <span class="font-mono text-[10px] text-ink/50">${p.d}</span>
+                </div>
+                <h3 class="font-display text-lg leading-tight flex-1 group-hover:text-night-2 transition-colors">${p.t}</h3>
+                <div class="font-mono text-[10px] text-ink/40 mt-3 pt-3 border-t border-ink/10">${p.read} min · 読む →</div>
+            </a>`).join('');
+        // ARCHIVE グリッド
+        document.getElementById('archive-grid').innerHTML = POSTS.filter(p => p.d.startsWith('2026.05')).map(p => `
+            <a href="#" class="h-card p-6 group flex flex-col">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="font-mono text-xs ${p.c==='AI NEWS'?'text-gold':'text-azure'}">${p.c}</span>
+                    <span class="font-mono text-xs text-ink/50">${p.d}</span>
+                </div>
+                <h3 class="font-display text-xl leading-tight flex-1 group-hover:text-night-2 transition-colors">${p.t}</h3>
+                <div class="font-mono text-[10px] text-ink/40 mt-4 pt-3 border-t border-ink/10">${p.read} min read →</div>
+            </a>`).join('');
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.classList.add('text-cream/50'); });
+                btn.classList.add('active'); btn.classList.remove('text-cream/50');
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                document.getElementById('view-' + btn.dataset.view).classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

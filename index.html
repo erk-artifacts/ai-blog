@@ -18,28 +18,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&family=IBM+Plex+Mono:wght@400;500;700&family=New+Rocker&family=Noto+Sans+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        display: ['Syne', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['New Rocker', 'Noto Sans JP', 'cursive'],
+                        body: ['Cossette Texte', 'Noto Sans JP', 'sans-serif'],
+                        mono: ['IBM Plex Mono', 'Noto Sans JP', 'monospace'],
                     },
                     colors: {
-                        'acid-green': '#CCFF00',
-                        'deep-black': '#050505',
-                        'off-white': '#F0F0F0',
+                        'night': '#0B1437', 'night-2': '#0F1A4B',
+                        'gold': '#FDC800', 'azure': '#0250CC',
+                        'parchment': '#FFE9CE', 'ink': '#1A1A1A', 'cream': '#F5E6C8',
+                        'success': '#16A34A', 'warning': '#D97706', 'danger': '#DC2626',
+                    },
+                    borderWidth: {
+                        '3': '3px', '4': '4px',
+                    },
+                    borderRadius: {
+                        '2xl': '16px', '3xl': '24px',
+                    },
+                    boxShadow: {
+                        'card': '0 2px 8px rgba(0, 0, 0, 0.3)',
+                        'gold-glow': '0 0 12px rgba(253, 200, 0, 0.4)',
                     },
                     animation: {
                         'marquee': 'marquee 25s linear infinite',
+                        'twinkle': 'twinkle 4s ease-in-out infinite',
                     },
                     keyframes: {
                         marquee: {
                             '0%': { transform: 'translateX(0%)' },
                             '100%': { transform: 'translateX(-100%)' },
+                        },
+                        twinkle: {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '1' },
                         }
                     }
                 }
@@ -47,9 +64,40 @@
         }
     </script>
     <style>
+        /* ===== デザイントークン: 魔法の図書館 / Mystic Codex ===== */
+        :root {
+            /* 配色 - 夜空レイヤ (Fantasy) */
+            --color-night: #0B1437;
+            --color-night-2: #0F1A4B;
+            --color-gold: #FDC800;
+            --color-azure: #0250CC;
+            /* 配色 - 羊皮紙レイヤ (Fiction) */
+            --color-parchment: #FFE9CE;
+            --color-ink: #1A1A1A;
+            --color-cream: #F5E6C8;
+            /* ステータス */
+            --color-success: #16A34A;
+            --color-warning: #D97706;
+            --color-danger: #DC2626;
+            /* タイポグラフィ（英字装飾 + Noto Sans JP fallback） */
+            --font-display: 'New Rocker', 'Noto Sans JP', cursive;
+            --font-body: 'Cossette Texte', 'Noto Sans JP', sans-serif;
+            --font-mono: 'IBM Plex Mono', 'Noto Sans JP', monospace;
+            /* 角丸・シャドウ・ボーダー */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 9999px;
+            --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-gold-glow: 0 0 12px rgba(253, 200, 0, 0.4);
+            --border-ink: 3px solid #1A1A1A;
+            --border-ink-thin: 2px solid #1A1A1A;
+        }
+
         body {
-            background-color: #050505;
-            color: #F0F0F0;
+            background-color: #0B1437;
+            background: radial-gradient(ellipse at top, #0F1A4B 0%, #0B1437 60%) fixed;
+            color: #F5E6C8;
             overflow-x: hidden;
             cursor: none;
         }
@@ -63,7 +111,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 9998;
-            opacity: 0.07;
+            opacity: 0.04;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
@@ -81,23 +129,28 @@
         .cursor-dot {
             width: 8px;
             height: 8px;
-            background-color: #CCFF00;
+            background-color: #FDC800;
         }
 
         .cursor-outline {
             width: 40px;
             height: 40px;
-            border: 1px solid #CCFF00;
+            border: 1px solid #FDC800;
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
 
         body:has(a:hover) .cursor-outline,
         body:has(button:hover) .cursor-outline,
         body:has(.clickable:hover) .cursor-outline,
-        body:has(input:hover) .cursor-outline {
+        body:has(input:hover) .cursor-outline,
+        body:has(a:focus-visible) .cursor-outline,
+        body:has(button:focus-visible) .cursor-outline,
+        body:has(.clickable:focus-visible) .cursor-outline,
+        body:has(input:focus-visible) .cursor-outline,
+        body:has(select:focus-visible) .cursor-outline {
             width: 80px;
             height: 80px;
-            background-color: rgba(204, 255, 0, 0.1);
+            background-color: rgba(253, 200, 0, 0.1);
             backdrop-filter: invert(1);
             border-color: transparent;
         }
@@ -119,10 +172,10 @@
             bottom: -10px;
             width: 4px;
             height: 4px;
-            background: #CCFF00;
+            background: #FDC800;
             border-radius: 50%;
             opacity: 0;
-            box-shadow: 0 0 10px #CCFF00, 0 0 20px #CCFF00;
+            box-shadow: 0 0 10px #FDC800, 0 0 20px #FDC800;
             /* 光る表現 */
             animation: rise 15s infinite ease-in;
         }
@@ -260,20 +313,23 @@
 
         /* テキストエフェクト */
         .text-outline {
-            -webkit-text-stroke: 1px #F0F0F0;
+            -webkit-text-stroke: 1px #F5E6C8;
             color: transparent;
             transition: all 0.3s ease;
         }
 
         .group:hover .text-outline {
-            color: #CCFF00;
+            color: #FDC800;
             -webkit-text-stroke: 0px;
         }
 
-        /* カードデザイン */
+        /* カードデザイン: 羊皮紙のページ（Fiction）× 金の輝き（Fantasy） */
         .brutalist-card {
-            border: 1px solid #333;
-            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            background: var(--color-parchment);
+            border: var(--border-ink);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -281,7 +337,7 @@
             justify-content: space-between;
         }
 
-        /* サムネイルがある場合は背景色のアニメーションを少し控えめにする */
+        /* ホバー時に差し込む金の微光（画像フラッドではなく光の差し込み） */
         .brutalist-card::before {
             content: '';
             position: absolute;
@@ -289,22 +345,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #CCFF00;
+            background: var(--color-gold);
             transform: translateY(100%);
             transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
             z-index: 0;
-            opacity: 0.1;
-            /* 画像があるときは少し薄くして画像を見やすくする */
+            opacity: 0;
         }
 
         .brutalist-card:hover {
-            border-color: #CCFF00;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(204, 255, 0, 0.1);
+            border-color: var(--color-gold);
+            transform: translate(-3px, -3px); /* 左上に浮く */
+            box-shadow: var(--shadow-gold-glow); /* 金のグロー（フラット寄り） */
         }
 
         .brutalist-card:hover::before {
             transform: translateY(0);
+            opacity: 0.08;
         }
 
         .brutalist-card:hover * {
@@ -312,41 +368,85 @@
             z-index: 10;
         }
 
-        /* ホバー時のテキスト色制御 */
-        .brutalist-card:hover h3,
+        /* カード内タイトル: 常に読みやすく（背景/画像への同化防止）
+           墨色 + 羊皮紙色の縁取りで、薄い画像や背景上でも視認性を確保 */
+        .brutalist-card h3 {
+            color: var(--color-ink);
+            text-shadow:
+                0 1px 2px rgba(255, 233, 206, 0.95),
+                0 0 6px rgba(255, 233, 206, 0.5);
+        }
+
+        /* ホバー時のテキスト色制御: 羊皮紙上の黒を維持（h3 は常時ルールで制御） */
         .brutalist-card:hover p,
         .brutalist-card:hover span {
-            color: #fff !important;
-            /* 画像の上なので白文字を維持 */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-            /* 読みやすさ確保 */
+            color: var(--color-ink) !important;
         }
 
         .brutalist-card:hover .meta-tag {
-            border-color: #CCFF00;
-            color: #CCFF00 !important;
-            background: rgba(0, 0, 0, 0.8);
+            border-color: var(--color-gold);
+            color: var(--color-ink) !important;
+            background: var(--color-gold);
         }
 
-        /* 記事本文のスタイル */
+        /* 記事本文: 夜空に浮かぶ羊皮紙のページ */
+        .article-body {
+            background: var(--color-parchment);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: var(--border-ink);
+            box-shadow: var(--shadow-card);
+        }
+
+        .article-body h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-ink);
+            border-bottom: 3px solid var(--color-gold);
+            padding-bottom: 0.5rem;
+        }
+
         .article-body h2 {
-            font-family: 'Syne', sans-serif;
+            font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 700;
             margin-top: 3rem;
             margin-bottom: 1.5rem;
-            color: #CCFF00;
+            color: var(--color-ink);
+            border-bottom: 3px solid var(--color-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-ink);
+        }
+
+        .article-body h4 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-ink);
         }
 
         .article-body p {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-body);
             line-height: 1.8;
             margin-bottom: 1.5rem;
-            color: #ccc;
+            color: var(--color-ink);
         }
 
         .article-body strong {
-            color: #fff;
+            color: var(--color-night);
             font-weight: bold;
         }
 
@@ -354,22 +454,30 @@
             list-style: square;
             margin-left: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #ccc;
+            color: var(--color-ink);
+        }
+
+        .article-body ol {
+            list-style: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-ink);
         }
 
         .article-body li {
             margin-bottom: 0.5rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-body);
         }
 
+        /* 引用: 魔法の巻物風・夜空カード */
         .article-body blockquote {
-            border-left: 4px solid #CCFF00;
-            padding-left: 1.5rem;
+            background: var(--color-night);
+            color: var(--color-cream);
+            border-left: 4px solid var(--color-gold);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 1rem 1.5rem;
             margin: 2rem 0;
             font-style: italic;
-            color: #fff;
-            background: #111;
-            padding: 1rem;
         }
 
         /* 画像パーツの追加スタイル */
@@ -378,46 +486,46 @@
         }
 
         .article-body figcaption {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: #CCFF00;
+            color: var(--color-gold);
             margin-top: 0.5rem;
             text-align: right;
         }
 
         .article-body img {
             width: 100%;
-            border: 1px solid #CCFF00;
-            filter: grayscale(100%);
-            transition: filter 0.5s ease;
+            border: 3px solid var(--color-ink);
+            border-radius: var(--radius-md);
+            filter: grayscale(0);
+            transition: filter 0.5s ease, box-shadow 0.3s ease;
         }
 
         .article-body img:hover {
-            filter: grayscale(0%);
+            box-shadow: var(--shadow-gold-glow);
         }
 
         /* リンクスタイル（参考記事リンク用） */
         .article-body a {
-            color: #CCFF00;
+            color: var(--color-azure);
             text-decoration: none;
-            border-bottom: 1px solid #CCFF00;
+            border-bottom: 2px solid var(--color-gold);
             padding-bottom: 2px;
             transition: all 0.3s ease;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
             font-weight: 500;
         }
 
         .article-body a:hover {
-            background-color: #CCFF00;
-            color: #050505;
+            background-color: var(--color-gold);
+            color: var(--color-ink);
             padding: 2px 4px;
-            border-bottom: 2px solid #CCFF00;
-            box-shadow: 0 0 10px rgba(204, 255, 0, 0.3);
+            border-bottom: 2px solid var(--color-gold);
         }
 
         .article-body a:visited {
-            color: #99CC00;
-            border-bottom-color: #99CC00;
+            color: var(--color-azure);
+            border-bottom-color: var(--color-gold);
         }
 
         .article-body .source-link {
@@ -436,7 +544,7 @@
         .article-body .references-section {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 2px solid #333;
+            border-top: 2px dashed var(--color-ink);
         }
 
         .article-body .references-section ol {
@@ -449,79 +557,42 @@
             line-height: 1.6;
         }
 
-        /* 見出しレベル (h1, h3, h4) */
-        .article-body h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            color: #CCFF00;
-        }
-
-        .article-body h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            color: #CCFF00;
-        }
-
-        .article-body h4 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            color: #CCFF00;
-        }
-
-        /* コードブロック (```) */
+        /* コードブロック (```): 夜空カード、コードは金 */
         .article-body pre {
-            background: #0d1a00;
-            border: 1px solid #3a5200;
-            border-left: 4px solid #CCFF00;
+            background: var(--color-night);
+            border: 2px solid var(--color-gold);
+            border-radius: var(--radius-md);
             padding: 1.5rem;
             margin: 2rem 0;
             overflow-x: auto;
-            border-radius: 0.25rem;
-            box-shadow: 0 0 12px rgba(204, 255, 0, 0.06);
+            box-shadow: none;
         }
 
         .article-body pre code {
             background: none;
             border: none;
             padding: 0;
-            color: #CCFF00;
-            font-family: 'JetBrains Mono', monospace;
+            color: var(--color-gold);
+            font-family: var(--font-mono);
             font-size: 0.9rem;
             line-height: 1.6;
         }
 
         /* インラインコード (`) */
         .article-body code {
-            background: #1c2800;
-            color: #CCFF00;
+            background: rgba(253, 200, 0, 0.15);
+            color: var(--color-ink);
             padding: 0.2rem 0.45rem;
-            border-radius: 0.25rem;
-            border: 1px solid #4d6600;
-            font-family: 'JetBrains Mono', monospace;
+            border-radius: 6px;
+            border: none;
+            font-family: var(--font-mono);
             font-size: 0.88em;
         }
 
-        /* 番号付きリスト (1. 2. 3.) */
-        .article-body ol {
-            list-style: decimal;
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #ccc;
-        }
-
-        /* 水平線 (---) */
+        /* 水平線 (---): 手描き風の破線 */
         .article-body hr {
             border: none;
-            border-top: 1px solid #333;
+            border-top: 2px dashed var(--color-ink);
             margin: 2.5rem 0;
         }
 
@@ -530,27 +601,31 @@
             width: 100%;
             border-collapse: collapse;
             margin: 2rem 0;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: var(--font-mono);
             font-size: 0.9rem;
+            border: 2px solid var(--color-ink);
+            border-radius: var(--radius-md);
+            overflow: hidden;
         }
 
         .article-body th {
-            background: #111;
-            color: #CCFF00;
+            background: var(--color-night);
+            color: var(--color-gold);
             font-weight: 700;
             padding: 0.75rem 1rem;
-            border: 1px solid #333;
+            border: 1px solid var(--color-ink);
             text-align: left;
         }
 
         .article-body td {
+            background: var(--color-parchment);
+            color: var(--color-ink);
             padding: 0.75rem 1rem;
-            border: 1px solid #333;
-            color: #ccc;
+            border: 1px solid var(--color-ink);
         }
 
-        .article-body tr:nth-child(even) {
-            background: #0a0a0a;
+        .article-body tr:nth-child(even) td {
+            background: rgba(26, 26, 26, 0.05);
         }
 
         /* 表示切り替え用 */
@@ -564,14 +639,259 @@
             top: 0;
             left: 0;
             height: 4px;
-            background: #CCFF00;
+            background: #FDC800;
             z-index: 9999;
             width: 0%;
+        }
+
+        /* グローバルフォーカスリング（キーボード操作の可視化） */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible,
+        [tabindex]:focus-visible {
+            outline: 2px solid #FDC800;
+            outline-offset: 2px;
+        }
+
+        /* アニメーションを嫌うユーザー向け：演出を抑制しカーソルを通常に戻す。
+           cursor:none のままでは通常カーソルが消失し操作不能になるため必須。 */
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                cursor: auto;
+            }
+
+            .ember {
+                animation: none;
+                display: none;
+            }
+
+            .noise-overlay {
+                opacity: 0.03;
+            }
+
+            /* カスタムカーソル要素を隠し、通常のシステムカーソルに委ねる */
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+
+        /* ===== モックA装飾: 図書館メタファー（Mystic Codex） =====
+           既存トークン（--color-*/--shadow-card/--shadow-gold-glow/--border-ink/--font-*）を再利用。
+           .brutalist-card / .article-body と共存。 */
+
+        /* 羊皮紙テクスチャ（微細なドットで質感を演出） */
+        .parchment-tex {
+            background-color: var(--color-parchment);
+            background-image:
+                radial-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+                radial-gradient(rgba(139, 90, 30, 0.05) 1px, transparent 1px);
+            background-size: 14px 14px, 22px 22px;
+            background-position: 0 0, 7px 7px;
+        }
+
+        /* 日付スタンプ（インク押印風・傾きあり） */
+        .date-stamp {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: var(--font-mono);
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+            border-radius: 6px;
+            padding: 4px 10px;
+            line-height: 1.1;
+            transform: rotate(-3deg);
+            background: rgba(253, 200, 0, 0.06);
+            letter-spacing: 0.05em;
+        }
+
+        .date-stamp.on-parchment {
+            color: var(--color-night);
+            border-color: var(--color-night);
+            background: rgba(11, 20, 55, 0.05);
+        }
+
+        /* 本の表紙（背表紙 + 四つのコーナー飾り + 倍角シャドウ） */
+        .book-cover {
+            position: relative;
+            background: var(--color-parchment);
+            border: 4px double var(--color-ink);
+            border-radius: 6px 20px 6px 6px;
+            padding: 2.5rem;
+            box-shadow: 8px 8px 0 rgba(253, 200, 0, 0.15), var(--shadow-card);
+        }
+
+        .book-cover::before {
+            /* 背表紙 */
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -10px;
+            width: 14px;
+            background: linear-gradient(90deg, var(--color-night), #1a2a5a);
+            border-radius: 6px 0 0 6px;
+        }
+
+        .corner {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border: 2px solid var(--color-gold);
+        }
+
+        .corner.tl { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+        .corner.tr { top: 10px; right: 10px; border-left: 0; border-bottom: 0; }
+        .corner.bl { bottom: 10px; left: 10px; border-right: 0; border-top: 0; }
+        .corner.br { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+        /* 封蝋（金色の円形シール） */
+        .wax-seal {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, var(--color-gold), #c79a00);
+            border: 2px solid var(--color-ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.4);
+            transform: rotate(8deg);
+        }
+
+        /* タイムライン（縦軸 + ノード） */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(var(--color-gold), rgba(253, 200, 0, 0.1));
+        }
+
+        .tl-node {
+            position: relative;
+        }
+
+        .tl-node::before {
+            content: '';
+            position: absolute;
+            left: -1.85rem;
+            top: 10px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--color-night);
+            border: 2px solid var(--color-gold);
+        }
+
+        .tl-node.daily::before { background: var(--color-gold); }
+
+        /* 本棚の月別タブ */
+        .shelf-tab {
+            transition: all 0.2s;
+        }
+
+        .shelf-tab.active {
+            background: var(--color-gold);
+            color: var(--color-ink);
+            border-color: var(--color-ink);
+        }
+
+        /* 書物を開く（詳細ページの外枠パネル） */
+        .open-book {
+            background: var(--color-parchment);
+            border: 3px solid var(--color-ink);
+            border-radius: 6px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* しおり（右上に垂れるリボン） */
+        .ribbon {
+            position: absolute;
+            top: -2px;
+            right: 40px;
+            width: 28px;
+            height: 60px;
+            background: var(--color-gold);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* article-body を open-book 内でフラット化（背景/枠/余白を外枠に譲る） */
+        .article-body--flush {
+            background: transparent;
+            border: 0;
+            padding: 0;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        /* インクカード（タイポ主導のカード・羊皮紙 + 墨枠 + 金グロー） */
+        .ink-card {
+            background: var(--color-parchment);
+            border: var(--border-ink);
+            border-radius: var(--radius-md);
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .ink-card:hover {
+            border-color: var(--color-gold);
+            box-shadow: var(--shadow-gold-glow);
+            transform: translate(-2px, -2px);
+        }
+
+        /* ink-card 内タイトル: 常時墨色で読みやすく（背景同化防止） */
+        .ink-card h3 {
+            color: var(--color-ink);
+        }
+
+        /* フィルタチップ（ARCHIVEの絞り込み） */
+        .filter-chip {
+            transition: all 0.2s;
+            border: 2px solid rgba(245, 230, 200, 0.4);
+            color: var(--color-cream);
+        }
+
+        .filter-chip:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+        }
+
+        .filter-chip.active {
+            background: var(--color-gold);
+            color: var(--color-ink);
+            border-color: var(--color-ink);
+        }
+
+        .filter-chip.month.active {
+            background: var(--color-cream);
+            color: var(--color-ink);
+            border-color: var(--color-ink);
         }
     </style>
 </head>
 
-<body class="font-display">
+<body class="font-body">
     <div class="noise-overlay"></div>
     <div class="digital-embers">
         <div class="ember"></div>
@@ -595,22 +915,23 @@
     <div id="reading-progress"></div>
 
     <header
-        class="fixed top-0 w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center bg-transparent backdrop-blur-[2px]">
-        <div onclick="showList()"
-            class="text-2xl font-black tracking-tighter hover:text-acid-green transition-colors cursor-pointer clickable">
-            AI_GEEK<span class="text-acid-green">.</span>
-        </div>
+        class="fixed top-0 w-full z-50 mix-blend-difference px-6 py-4 flex justify-between items-center bg-transparent backdrop-blur-[2px]">
+        <a href="#/" class="flex items-center gap-3 cursor-pointer clickable group">
+            <svg class="w-7 h-7 text-gold transition-transform group-hover:rotate-12 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg>
+            <div class="leading-none">
+                <div class="font-display text-2xl text-cream tracking-tight" data-i18n="codex-name">MYSTIC CODEX</div>
+                <div class="font-mono text-[9px] text-gold/90 tracking-[0.2em] hidden sm:block" data-i18n="codex-sub">魔法の図書館 · 司書の記録</div>
+            </div>
+        </a>
 
-        <nav class="hidden md:flex gap-8 font-mono text-sm items-center">
-            <a href="#" onclick="showList()" class="hover:line-through decoration-acid-green clickable"
-                data-i18n="nav-home">HOME</a>
-            <a href="#" onclick="showArchive()" class="hover:line-through decoration-acid-green clickable"
-                data-i18n="nav-archive">ARCHIVE</a>
-            <a href="#" onclick="showAbout()" class="hover:line-through decoration-acid-green clickable"
-                data-i18n="nav-about">ABOUT</a>
-            <select id="lang-switcher" onchange="applyLanguage(this.value)" class="font-mono text-xs bg-transparent border border-gray-600 text-gray-400
-                       px-2 py-1 hover:border-acid-green focus:border-acid-green
-                       focus:outline-none transition-colors cursor-pointer ml-2">
+        <nav class="hidden md:flex gap-7 font-mono text-sm items-center">
+            <a href="#/" class="hover:text-gold transition-colors clickable" data-i18n="nav-home">司書の案内</a>
+            <a href="#/archive" class="hover:text-gold transition-colors clickable" data-i18n="nav-archive">書架</a>
+            <a href="#/about" class="hover:text-gold transition-colors clickable" data-i18n="nav-about">書斎</a>
+            <button onclick="showArchive()" class="flex items-center gap-1.5 px-3 py-1.5 border-2 border-gold text-gold rounded-full hover:bg-gold hover:text-ink transition-colors clickable" data-i18n="nav-search" aria-label="検索">🔍 探す</button>
+            <select id="lang-switcher" aria-label="Language" onchange="applyLanguage(this.value)" class="font-mono text-xs bg-transparent border-2 border-cream text-cream/70
+                       px-2 py-1 hover:border-gold focus:border-gold
+                       focus:outline-none transition-colors cursor-pointer ml-1">
                 <option value="ja">日本語</option>
                 <option value="en">EN</option>
                 <option value="zh-tw">繁中</option>
@@ -619,81 +940,129 @@
             </select>
         </nav>
 
-        <button id="mobile-menu-btn"
-            class="md:hidden font-mono text-xs border border-acid-green text-acid-green px-2 py-1 hover:bg-acid-green hover:text-black transition-colors clickable"
+        <button id="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu-overlay"
+            class="md:hidden font-mono text-xs border border-gold text-gold px-2 py-1 hover:bg-gold hover:text-ink transition-colors clickable"
             data-i18n="menu-btn">
             // MENU
         </button>
     </header>
 
-    <div id="mobile-menu-overlay"
-        class="fixed inset-0 bg-[#050505] z-[100] transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-12 md:hidden">
-        <button id="mobile-menu-close" class="absolute top-6 right-6 font-mono text-xl text-acid-green clickable">
+    <div id="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="ナビゲーションメニュー"
+        class="fixed inset-0 bg-night z-[100] transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-12 md:hidden">
+        <button id="mobile-menu-close" aria-label="メニューを閉じる" class="absolute top-6 right-6 font-mono text-xl text-gold clickable">
             [X]
         </button>
 
-        <a href="#" onclick="showList(); closeMobileMenu()"
-            class="text-[2.75rem] font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none"
+        <a href="#/" onclick="closeMobileMenu()"
+            class="text-[2.75rem] font-black hover:text-gold transition-colors clickable text-outline hover:text-outline-none"
             data-i18n="nav-home">
             HOME
         </a>
-        <a href="#" onclick="showArchive(); closeMobileMenu()"
-            class="text-[2.75rem] font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none"
+        <a href="#/archive" onclick="closeMobileMenu()"
+            class="text-[2.75rem] font-black hover:text-gold transition-colors clickable text-outline hover:text-outline-none"
             data-i18n="nav-archive">
             ARCHIVE
         </a>
-        <a href="#" onclick="showAbout(); closeMobileMenu()"
-            class="text-[2.75rem] font-black hover:text-acid-green transition-colors clickable text-outline hover:text-outline-none"
+        <a href="#/about" onclick="closeMobileMenu()"
+            class="text-[2.75rem] font-black hover:text-gold transition-colors clickable text-outline hover:text-outline-none"
             data-i18n="nav-about">
             ABOUT
         </a>
 
         <div class="flex gap-3 font-mono text-xs">
             <button onclick="applyLanguage('ja'); closeMobileMenu()"
-                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="ja">日本語</button>
-            <span class="text-gray-700">|</span>
+                class="lang-btn text-cream/70 hover:text-gold transition-colors py-3 px-2" data-lang="ja">日本語</button>
+            <span class="text-cream/50">|</span>
             <button onclick="applyLanguage('en'); closeMobileMenu()"
-                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="en">EN</button>
-            <span class="text-gray-700">|</span>
+                class="lang-btn text-cream/70 hover:text-gold transition-colors py-3 px-2" data-lang="en">EN</button>
+            <span class="text-cream/50">|</span>
             <button onclick="applyLanguage('zh-tw'); closeMobileMenu()"
-                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="zh-tw">繁中</button>
-            <span class="text-gray-700">|</span>
+                class="lang-btn text-cream/70 hover:text-gold transition-colors py-3 px-2" data-lang="zh-tw">繁中</button>
+            <span class="text-cream/50">|</span>
             <button onclick="applyLanguage('zh-cn'); closeMobileMenu()"
-                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="zh-cn">简中</button>
-            <span class="text-gray-700">|</span>
+                class="lang-btn text-cream/70 hover:text-gold transition-colors py-3 px-2" data-lang="zh-cn">简中</button>
+            <span class="text-cream/50">|</span>
             <button onclick="applyLanguage('ko'); closeMobileMenu()"
-                class="lang-btn text-gray-500 hover:text-acid-green transition-colors" data-lang="ko">한국어</button>
+                class="lang-btn text-cream/70 hover:text-gold transition-colors py-3 px-2" data-lang="ko">한국어</button>
         </div>
 
-        <div class="absolute bottom-10 font-mono text-xs text-gray-500" data-i18n="menu-sys-nav">
+        <div class="absolute bottom-10 font-mono text-xs text-cream/70" data-i18n="menu-sys-nav">
             /// SYSTEM NAVIGATION
         </div>
     </div>
 
     <div id="view-list" class="transition-opacity duration-500">
-        <section class="h-[60vh] w-full flex flex-col justify-center items-center relative pt-20">
-            <div class="z-10 text-center mix-blend-exclusion">
-                <h1 class="text-[10vw] leading-[0.85] font-black tracking-tighter">
-                    DEV<br><span class="text-outline">LOG</span>
-                </h1>
+        <!-- 司書の案内ヒーロー -->
+        <section class="w-full flex flex-col items-center relative pt-28 pb-12 px-6 text-center">
+            <div class="z-10 max-w-3xl">
+                <div class="flex justify-center mb-6">
+                    <div class="date-stamp">
+                        <span class="text-[10px]" data-i18n="hero-entry">ENTRY</span>
+                        <span class="text-base font-bold" id="hero-date">2026.05.07</span>
+                    </div>
+                </div>
+                <h1 class="font-display text-5xl md:text-7xl text-cream leading-tight mb-4" data-i18n="hero-welcome">司書の案内</h1>
+                <p class="font-body text-cream/80 text-lg leading-relaxed" data-i18n="librarian-welcome">ようこそ、魔法の図書館へ。AIの最前線を、毎日一巻ずつ綴っております。どうぞ、お好きな巻をお開きください。</p>
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <div class="px-4 py-2 border-2 border-gold/50 rounded-full font-mono text-sm"><span class="text-gold font-bold text-lg" id="stat-volumes">69</span><span class="text-cream/70 ml-1" data-i18n="stat-volumes">巻</span></div>
+                    <div class="px-4 py-2 border-2 border-gold/50 rounded-full font-mono text-sm"><span class="text-gold font-bold text-lg" id="stat-streak">75</span><span class="text-cream/70 ml-1" data-i18n="stat-streak">日連続更新</span></div>
+                    <div class="px-4 py-2 border-2 border-gold/50 rounded-full font-mono text-sm"><span class="text-gold font-bold text-lg" id="stat-series">2</span><span class="text-cream/70 ml-1" data-i18n="stat-series">シリーズ</span></div>
+                    <div class="px-4 py-2 border-2 border-gold/50 rounded-full font-mono text-sm"><span class="text-gold font-bold text-lg" id="stat-langs">5</span><span class="text-cream/70 ml-1" data-i18n="stat-langs">言語対応</span></div>
+                </div>
             </div>
         </section>
 
-        <main class="px-4 py-10 max-w-7xl mx-auto">
-            <div class="flex justify-between items-end mb-12 border-b border-gray-800 pb-4">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tighter" data-i18n="latest-articles">LATEST ARTICLES
-                </h2>
-            </div>
+        <main class="px-4 pb-16 max-w-6xl mx-auto space-y-16">
+            <!-- 本日の一品 -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-7 h-7 text-gold animate-twinkle flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg>
+                    <h2 class="font-display text-3xl text-gold" data-i18n="todays-pick">本日の一品</h2>
+                    <span class="font-mono text-xs text-cream/50" data-i18n="todays-pick-sub">/ Today's Codex</span>
+                </div>
+                <div id="todays-codex"></div>
+            </section>
 
-            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-            </div>
+            <!-- 司書の日誌 -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-7 h-7 text-gold animate-twinkle flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h12" stroke-linecap="round"/></svg>
+                    <h2 class="font-display text-3xl text-gold" data-i18n="librarian-journal">司書の日誌</h2>
+                    <span class="font-mono text-xs text-cream/50" data-i18n="librarian-journal-sub">/ 新着の記録</span>
+                </div>
+                <div class="ink-card parchment-tex p-6 md:p-8">
+                    <div class="timeline space-y-4" id="timeline-list"></div>
+                </div>
+            </section>
 
-            <div class="flex justify-center mt-16 mb-8">
-                <button onclick="showArchive()" class="group relative font-mono text-sm border-2 border-acid-green text-acid-green
-                           px-10 py-4 uppercase tracking-widest overflow-hidden
-                           hover:text-black transition-colors duration-300 clickable">
-                    <span class="relative z-10" data-i18n="browse-all">BROWSE ALL ARTICLES &rarr;</span>
-                    <div class="absolute inset-0 bg-acid-green transform scale-x-0 group-hover:scale-x-100
+            <!-- 書架を探す -->
+            <section>
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-7 h-7 text-gold animate-twinkle flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16 5l4 1-3 14-4-1z" stroke-linejoin="round"/></svg>
+                    <h2 class="font-display text-3xl text-gold" data-i18n="find-shelves">書架を探す</h2>
+                    <span class="font-mono text-xs text-cream/50" data-i18n="find-shelves-sub">/ Shelves</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- 月別の本棚 -->
+                    <div class="ink-card p-6">
+                        <h3 class="font-display text-xl text-ink mb-4">📅 <span data-i18n="monthly-shelf">月別の本棚</span></h3>
+                        <div class="flex flex-wrap gap-2" id="shelf-tabs"></div>
+                    </div>
+                    <!-- シリーズ -->
+                    <div class="ink-card p-6">
+                        <h3 class="font-display text-xl text-ink mb-4">✦ <span data-i18n="series-title">シリーズ</span></h3>
+                        <div class="space-y-3" id="series-cards"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 書架をすべて見る -->
+            <div class="flex justify-center pt-4">
+                <button onclick="showArchive()" class="group relative font-mono text-sm border-2 border-gold text-gold
+                           px-10 py-4 tracking-widest overflow-hidden
+                           hover:text-ink transition-colors duration-300 clickable">
+                    <span class="relative z-10" data-i18n="browse-all">書架をすべて見る &rarr;</span>
+                    <div class="absolute inset-0 bg-gold transform scale-x-0 group-hover:scale-x-100
                                 transition-transform duration-300 origin-left"></div>
                 </button>
             </div>
@@ -701,149 +1070,120 @@
     </div>
 
     <div id="view-archive" class="hidden-view transition-opacity duration-500">
-        <main class="px-4 pt-32 pb-10 max-w-7xl mx-auto min-h-screen">
-            <div class="mb-16">
-                <div class="flex items-center gap-4 mb-4">
-                    <button onclick="showList()" class="font-mono text-xs border border-gray-600 px-4 py-2
-                               hover:bg-acid-green hover:text-black hover:border-acid-green
-                               transition-colors uppercase clickable" data-i18n="back-home">
-                        &larr; HOME
-                    </button>
-                    <span class="font-mono text-xs text-gray-500" data-i18n="full-archive">// FULL ARCHIVE</span>
+        <main class="px-4 pt-32 pb-16 max-w-6xl mx-auto min-h-screen">
+            <!-- ヘッダー -->
+            <div class="mb-10">
+                <div class="flex items-center gap-4 mb-6">
+                    <button onclick="showList()" class="font-mono text-xs border-2 border-cream shadow-card px-4 py-2 hover:bg-gold hover:text-ink hover:border-gold hover:shadow-gold-glow hover:-translate-y-0.5 transition-all clickable" data-i18n="back-home">&larr; 司書の案内</button>
                 </div>
-
-                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8" data-i18n-html="archive-heading">
-                    ALL<br><span class="text-outline">LOGS</span>
-                </h1>
-
-                <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-800 pb-4 gap-6">
-                    <p class="font-mono text-sm text-gray-400">
-                        <span id="archive-count" class="text-acid-green">0</span><span data-i18n="entries-found">
-                            ENTRIES FOUND</span>
-                    </p>
-
-                    <div class="w-full md:w-1/3 relative group">
-                        <div class="absolute -inset-1 bg-acid-green opacity-20 group-focus-within:opacity-100
-                                    transition-opacity duration-500 blur-sm rounded-sm"></div>
-                        <input type="text" id="archive-search-input" placeholder="SEARCH_LOGS..."
-                            data-i18n-placeholder="search-placeholder" class="relative w-full bg-[#050505] border border-gray-700 text-acid-green
-                                      font-mono p-3 focus:outline-none focus:border-acid-green
-                                      transition-colors uppercase placeholder-gray-600 text-sm">
-                        <div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 font-mono text-xs pointer-events-none"
-                            data-i18n="search-type">
-                            /// TYPE
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <h1 class="font-display text-5xl md:text-6xl text-cream" data-i18n="archive-title">書架の目次</h1>
+                    <p class="font-mono text-xs text-gold/70 mt-2" data-i18n="archive-sub">/ Index of the Stacks</p>
                 </div>
             </div>
 
+            <!-- 検索 -->
+            <div class="max-w-2xl mx-auto mb-6">
+                <div class="relative">
+                    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-cream/40 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+                    <input type="text" id="archive-search-input" data-i18n-placeholder="search-placeholder"
+                        class="w-full bg-night border-2 border-cream text-gold placeholder-cream/40 rounded-2xl pl-12 pr-4 py-3 font-mono text-sm focus:border-gold focus:outline-none focus:ring-4 focus:ring-gold/20 transition-all">
+                </div>
+            </div>
+
+            <!-- フィルタチップ（JS描画: シリーズ + 月別 + ソート） -->
+            <div class="flex flex-wrap justify-center items-center gap-2 mb-6" id="filter-chips"></div>
+
+            <!-- 件数 -->
+            <p class="font-mono text-sm text-cream/70 mb-8 text-center"><span id="archive-count" class="text-gold font-bold">0</span><span data-i18n="entries-found"> 件</span></p>
+
+            <!-- 結果なし -->
             <div id="archive-no-results" class="hidden text-center py-20">
-                <p class="font-mono text-acid-green text-xl mb-2" data-i18n="system-error">>> SYSTEM ERROR: DATA NOT
-                    FOUND</p>
-                <p class="font-mono text-gray-500 text-sm" data-i18n="try-keyword">TRY ANOTHER KEYWORD.</p>
+                <p class="font-mono text-gold text-xl mb-2" data-i18n="system-error">>> 該当する巻が見つかりません</p>
+                <p class="font-mono text-cream/70 text-sm mb-6" data-i18n="try-keyword">別のキーワードや条件でお試しください。</p>
+                <button onclick="clearArchiveSearch()" class="font-mono text-sm border-2 border-gold text-gold px-6 py-3 shadow-card hover:bg-gold hover:text-ink hover:shadow-gold-glow hover:-translate-y-0.5 transition-all clickable" data-i18n="clear-btn">条件をクリア</button>
             </div>
 
-            <div id="archive-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-            </div>
+            <!-- 月別グループ（JS描画） -->
+            <div id="archive-grid" class="space-y-10"></div>
         </main>
     </div>
 
-    <div id="view-detail" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        <button onclick="goBack()"
-            class="mb-10 font-mono text-xs border border-gray-600 px-4 py-2 hover:bg-acid-green hover:text-black hover:border-acid-green transition-colors uppercase clickable"
-            data-i18n="back-to-index">
-            &larr; BACK TO INDEX
-        </button>
-
-        <article class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <aside class="lg:col-span-3 lg:sticky lg:top-32 h-fit">
-                <div class="border-t border-acid-green pt-4 mb-8">
-                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="label-category">CATEGORY</p>
-                    <p id="detail-category" class="font-mono text-lg font-bold text-acid-green">AI AGENT</p>
-                </div>
-                <div class="border-t border-gray-800 pt-4 mb-8">
-                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="label-published">PUBLISHED</p>
-                    <p id="detail-date" class="font-mono text-lg">2026.02.17</p>
-                </div>
-                <div class="hidden lg:block border-t border-gray-800 pt-4">
-                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="label-status">STATUS</p>
-                    <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 bg-acid-green rounded-full animate-pulse"></div>
-                        <span class="font-mono text-xs" data-i18n="reading">READING...</span>
-                    </div>
-                </div>
-            </aside>
-
-            <div class="lg:col-span-9">
-                <h1 id="detail-title" class="text-5xl md:text-7xl font-black tracking-tight mb-12 leading-[1.1]">
-                    TITLE GOES HERE
-                </h1>
-                <div id="detail-content" class="article-body text-lg text-gray-300">
-                </div>
-                <div class="mt-20 pt-10 border-t border-gray-800 flex justify-between items-center">
-                    <span class="font-mono text-gray-500" data-i18n="end-of-transmission">END OF TRANSMISSION</span>
-                    <button onclick="goBack()" class="font-mono text-acid-green hover:underline clickable"
-                        data-i18n="close-file">CLOSE FILE</button>
-                </div>
+    <main id="view-detail" class="hidden-view min-h-screen pt-32 pb-20 px-4 max-w-4xl mx-auto">
+        <button onclick="goBack()" class="mb-6 font-mono text-sm text-gold hover:underline clickable" data-i18n="back-to-stacks">&larr; 書架に戻る</button>
+        <div class="open-book parchment-tex p-6 md:p-10">
+            <div class="ribbon"></div>
+            <!-- 表紙ヘッダー: 日付スタンプ + シリーズ + 巻数（JS描画） -->
+            <div class="flex flex-wrap items-center gap-3 mb-6 pb-6 border-b-2 border-ink/20" id="detail-meta"></div>
+            <h1 id="detail-title" class="font-display text-3xl md:text-5xl text-ink leading-tight mb-2"></h1>
+            <div id="detail-content" class="article-body article-body--flush text-base md:text-lg"></div>
+            <!-- 前後の巻（JS描画） -->
+            <div id="detail-prev-next" class="mt-10 pt-8 border-t-2 border-ink/20"></div>
+            <!-- 巻の終わり -->
+            <div class="mt-8 pt-6 border-t border-ink/10 flex justify-between items-center">
+                <span class="font-mono text-xs text-ink/50" data-i18n="end-of-transmission">— 巻の終わり —</span>
+                <button onclick="goBack()" class="font-mono text-sm text-night hover:underline clickable" data-i18n="back-to-stacks">書架に戻る</button>
             </div>
-        </article>
-    </div>
+        </div>
+    </main>
 
-    <div id="view-about" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
+    <main id="view-about" class="hidden-view min-h-screen pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="relative z-0">
-                <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-800"
+                <h1 class="text-[12vw] md:text-[8vw] leading-[0.8] font-display font-black tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-br from-cream to-night-2"
                     data-i18n-html="about-heading">
-                    WHO<br>AM<br><span class="text-acid-green">I ?</span>
+                    WHO<br>AM<br><span class="text-gold">I ?</span>
                 </h1>
             </div>
-            <div class="border border-gray-800 p-8 bg-[#0a0a0a] relative group z-10 shadow-2xl">
-                <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-acid-green"></div>
-                <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-acid-green"></div>
+            <div class="border border-cream/15 p-8 bg-night-2 relative group z-10 shadow-gold-glow">
+                <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold"></div>
+                <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold"></div>
 
                 <h2 class="text-2xl font-bold mb-6 font-display">AI_ERIKA <span
-                        class="text-gray-600 text-sm font-mono ml-2" data-i18n="admin-label">// ADMIN</span></h2>
-                <p class="font-mono text-gray-400 mb-6 leading-relaxed" data-i18n-html="about-bio">
+                        class="text-cream/40 text-sm font-mono ml-2" data-i18n="admin-label">// ADMIN</span></h2>
+                <p class="font-mono text-cream/70 mb-6 leading-relaxed" data-i18n-html="about-bio">
                     AI技術と最新ツールの可能性を探求するスペシャリスト。<br>
                     最新のAI関連ニュースや、独自に検証した実験的なコードを、この "ログ" に記録しています。
                     <br><br>
-                    <span class="text-acid-green">>> CURRENT STATUS:</span> BUILDING NEW AGENTS.
+                    <span class="text-gold">>> CURRENT STATUS:</span> BUILDING NEW AGENTS.
                 </p>
                 <div class="mb-8">
-                    <p class="font-mono text-xs text-gray-500 mb-2" data-i18n="skill-set">SKILL_SET</p>
+                    <p class="font-mono text-xs text-cream/70 mb-2" data-i18n="skill-set">SKILL_SET</p>
                     <div class="flex flex-wrap gap-2">
                         <span
-                            class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">WORKFLOW
+                            class="border-2 border-cream px-3 py-1 text-xs font-mono shadow-card hover:bg-gold hover:text-ink hover:shadow-gold-glow hover:-translate-y-0.5 transition-all cursor-default">WORKFLOW
                             AUTOMATION</span>
                         <span
-                            class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">APP
+                            class="border-2 border-cream px-3 py-1 text-xs font-mono shadow-card hover:bg-gold hover:text-ink hover:shadow-gold-glow hover:-translate-y-0.5 transition-all cursor-default">APP
                             DEVELOPMENT</span>
                         <span
-                            class="border border-gray-700 px-3 py-1 text-xs font-mono hover:bg-acid-green hover:text-black transition-colors cursor-default">AI
+                            class="border-2 border-cream px-3 py-1 text-xs font-mono shadow-card hover:bg-gold hover:text-ink hover:shadow-gold-glow hover:-translate-y-0.5 transition-all cursor-default">AI
                             VIDEO GENERATION</span>
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <a href="#"
-                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">INSTAGRAM</a>
-                    <a href="#"
-                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">FACEBOOK</a>
-                    <a href="#"
-                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">X</a>
-                    <a href="#"
-                        class="font-mono text-sm border-b border-acid-green pb-1 hover:text-acid-green transition-colors">GITHUB</a>
+                    <span
+                        class="font-mono text-sm border-b border-gold pb-1 hover:text-gold transition-colors cursor-default">INSTAGRAM</span>
+                    <span
+                        class="font-mono text-sm border-b border-gold pb-1 hover:text-gold transition-colors cursor-default">FACEBOOK</span>
+                    <span
+                        class="font-mono text-sm border-b border-gold pb-1 hover:text-gold transition-colors cursor-default">X</span>
+                    <span
+                        class="font-mono text-sm border-b border-gold pb-1 hover:text-gold transition-colors cursor-default">GITHUB</span>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer class="border-t border-gray-800 bg-black pt-20 pb-6 px-6 mt-20">
-        <div class="flex flex-col md:flex-row justify-between items-end gap-10">
-            <h2
-                class="text-[15vw] leading-none font-black text-transparent bg-clip-text bg-gradient-to-b from-gray-700 to-black select-none">
-                GEEK</h2>
-            <div class="font-mono text-sm text-gray-500 mb-4 text-right">
-                <p data-i18n="footer-location">TOKYO, JAPAN</p>
+    <footer class="border-t border-gold/20 bg-night pt-12 pb-8 px-6 mt-20">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-gold animate-twinkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg>
+                <span class="font-display text-lg text-cream" data-i18n="codex-name">MYSTIC CODEX</span>
+                <span class="font-mono text-xs text-gold/60 hidden sm:inline" data-i18n="footer-tagline">· 魔法の図書館</span>
+            </div>
+            <div class="font-mono text-xs text-cream/60">
+                <span data-i18n="footer-location">TOKYO, JAPAN</span>
             </div>
         </div>
     </footer>
@@ -852,109 +1192,164 @@
         // ===== i18n =====
         const TRANSLATIONS = {
             ja: {
-                'nav-home': 'HOME', 'nav-archive': 'ARCHIVE', 'nav-about': 'ABOUT',
+                'codex-name': 'MYSTIC CODEX', 'codex-sub': '\u9b54\u6cd5\u306e\u56f3\u66f8\u9928 \u00b7 \u53f8\u66f8\u306e\u8a18\u9332',
+                'nav-home': '\u53f8\u66f8\u306e\u6848\u5185', 'nav-archive': '\u66f8\u67b6', 'nav-about': '\u66f8\u658e', 'nav-search': '\ud83d\udd0d \u63a2\u3059',
                 'menu-btn': '// MENU', 'menu-sys-nav': '/// SYSTEM NAVIGATION',
-                'latest-articles': 'LATEST ARTICLES', 'browse-all': 'BROWSE ALL ARTICLES \u2192',
-                'back-home': '\u2190 HOME', 'full-archive': '// FULL ARCHIVE',
-                'archive-heading': 'ALL<br><span class="text-outline">LOGS</span>',
-                'entries-found': ' ENTRIES FOUND', 'search-placeholder': 'SEARCH_LOGS...',
-                'search-type': '/// TYPE',
-                'system-error': '>> SYSTEM ERROR: DATA NOT FOUND',
-                'try-keyword': 'TRY ANOTHER KEYWORD.',
-                'back-to-index': '\u2190 BACK TO INDEX',
-                'label-category': 'CATEGORY', 'label-published': 'PUBLISHED', 'label-status': 'STATUS',
-                'reading': 'READING...',
-                'end-of-transmission': 'END OF TRANSMISSION', 'close-file': 'CLOSE FILE',
-                'about-heading': 'WHO<br>AM<br><span class="text-acid-green">I ?</span>',
-                'admin-label': '// ADMIN',
-                'about-bio': 'AI\u6280\u8853\u3068\u6700\u65b0\u30c4\u30fc\u30eb\u306e\u53ef\u80fd\u6027\u3092\u63a2\u6c42\u3059\u308b\u30b9\u30da\u30b7\u30e3\u30ea\u30b9\u30c8\u3002<br>\u6700\u65b0\u306eAI\u95a2\u9023\u30cb\u30e5\u30fc\u30b9\u3084\u3001\u72ec\u81ea\u306b\u691c\u8a3c\u3057\u305f\u5b9f\u9a13\u7684\u306a\u30b3\u30fc\u30c9\u3092\u3001\u3053\u306e \u201c\u30ed\u30b0\u201d \u306b\u8a18\u9332\u3057\u3066\u3044\u307e\u3059\u3002<br><br><span class="text-acid-green">&gt;&gt; CURRENT STATUS:</span> BUILDING NEW AGENTS.',
-                'skill-set': 'SKILL_SET',
-                'footer-location': 'TOKYO, JAPAN',
-                'loading': 'LOADING...', 'load-error': '\u8a18\u4e8b\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002'
+                'hero-entry': 'ENTRY', 'hero-welcome': '\u53f8\u66f8\u306e\u6848\u5185',
+                'librarian-welcome': '\u3088\u3046\u3053\u305d\u3001\u9b54\u6cd5\u306e\u56f3\u66f8\u9928\u3078\u3002AI\u306e\u6700\u524d\u7dda\u3092\u3001\u6bce\u65e5\u4e00\u5dfb\u305a\u3064\u7db4\u3063\u3066\u304a\u308a\u307e\u3059\u3002\u3069\u3046\u305e\u3001\u304a\u597d\u304d\u306a\u5dfb\u3092\u304a\u958b\u304d\u304f\u3060\u3055\u3044\u3002',
+                'stat-volumes': '\u5dfb', 'stat-streak': '\u65e5\u9023\u7d9a\u66f4\u65b0', 'stat-series': '\u30b7\u30ea\u30fc\u30ba', 'stat-langs': '\u8a00\u8a9e\u5bfe\u5fdc',
+                'todays-pick': '\u672c\u65e5\u306e\u4e00\u54c1', 'todays-pick-sub': '/ \u4eca\u65e5\u306e\u4e00\u518a',
+                'librarian-journal': '\u53f8\u66f8\u306e\u65e5\u8a8c', 'librarian-journal-sub': '/ \u65b0\u7740\u306e\u8a18\u9332',
+                'find-shelves': '\u66f8\u67b6\u3092\u63a2\u3059', 'find-shelves-sub': '/ Shelves',
+                'monthly-shelf': '\u6708\u5225\u306e\u672c\u68da', 'series-title': '\u30b7\u30ea\u30fc\u30ba',
+                'series-daily': 'AI NEWS \u65e5\u6b21\u8a18\u9332', 'series-daily-sub': '\u6bce\u65e5\u7db4\u308bAI\u6700\u524d\u7dda',
+                'series-beginner': '\u521d\u5fc3\u8005\u5411\u3051\u546a\u6587\u66f8', 'series-beginner-sub': '\u30d7\u30ed\u30f3\u30d7\u30c8\u306e\u57fa\u790e',
+                'browse-all': '\u66f8\u67b6\u3092\u3059\u3079\u3066\u898b\u308b \u2192',
+                'back-home': '\u2190 \u53f8\u66f8\u306e\u6848\u5185',
+                'archive-title': '\u66f8\u67b6\u306e\u76ee\u6b21', 'archive-sub': '/ \u5168\u5dfb\u3092\u691c\u7d22\u30fb\u7d5e\u308a\u8fbc\u307f',
+                'search-placeholder': '\u5dfb\u306e\u30bf\u30a4\u30c8\u30eb\u30fb\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u63a2\u3059\u2026',
+                'filter-all': '\u5168\u5dfb', 'filter-ai-news': 'AI NEWS', 'filter-beginner': '\u521d\u5fc3\u8005', 'filter-all-months': '\u5168\u671f\u9593',
+                'sort-new': '\u65b0\u7740\u9806', 'sort-old': '\u53e4\u3044\u9806',
+                'entries-found': ' \u4ef6',
+                'system-error': '>> \u8a72\u5f53\u3059\u308b\u5dfb\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093', 'try-keyword': '\u5225\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3084\u6761\u4ef6\u3067\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002',
+                'clear-btn': '\u6761\u4ef6\u3092\u30af\u30ea\u30a2',
+                'vol-prefix': '\u7b2c', 'vol-suffix': '\u5dfb', 'unit-vol': '\u5dfb',
+                'open-volume': '\u3053\u306e\u5dfb\u3092\u958b\u304f', 'back-to-stacks': '\u2190 \u66f8\u67b6\u306b\u623b\u308b', 'prev-vol': '\u524d\u306e\u5dfb', 'next-vol': '\u6b21\u306e\u5dfb',
+                'end-of-transmission': '\u2014 \u5dfb\u306e\u7d42\u308f\u308a \u2014',
+                'about-heading': '\u53f8\u66f8\u306e<br>\u66f8<br><span class="text-gold">\u658e</span>',
+                'admin-label': '// \u53f8\u66f8',
+                'about-bio': '\u9b54\u6cd5\u306e\u56f3\u66f8\u9928\u306e\u53f8\u66f8\u3002AI\u306e\u6700\u524d\u7dda\u3092\u3001\u6bce\u65e5\u4e00\u5dfb\u305a\u3064\u7db4\u308a\u3001\u65b0\u3057\u3044\u77e5\u6075\u3092\u3053\u306e\u66f8\u67b6\u306b\u4e26\u3079\u3066\u304a\u308a\u307e\u3059\u3002<br>\u96e3\u3057\u3044\u6280\u8853\u3082\u3001\u7269\u8a9e\u306e\u3088\u3046\u306b\u8aad\u3081\u308b\u5de5\u592b\u3092\u3053\u3053\u308d\u304c\u3051\u3066\u3044\u307e\u3059\u3002<br><br><span class="text-gold">&gt;&gt; \u73fe\u5728:</span> \u65b0\u3057\u3044\u5dfb\u3092\u57f7\u7b46\u4e2d\u3002',
+                'skill-set': '\u30b9\u30ad\u30eb\u30bb\u30c3\u30c8',
+                'footer-location': '\u6771\u4eac, \u65e5\u672c', 'footer-tagline': '\u00b7 \u9b54\u6cd5\u306e\u56f3\u66f8\u9928',
+                'loading': '\u8aad\u307f\u8fbc\u307f\u4e2d\u2026', 'load-error': '\u8a18\u4e8b\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002'
             },
             en: {
-                'nav-home': 'HOME', 'nav-archive': 'ARCHIVE', 'nav-about': 'ABOUT',
+                'codex-name': 'MYSTIC CODEX', 'codex-sub': 'The Mystic Library \u00b7 Librarian\'s Records',
+                'nav-home': 'Welcome', 'nav-archive': 'Stacks', 'nav-about': 'Study', 'nav-search': '\ud83d\udd0d Search',
                 'menu-btn': '// MENU', 'menu-sys-nav': '/// SYSTEM NAVIGATION',
-                'latest-articles': 'LATEST ARTICLES', 'browse-all': 'BROWSE ALL ARTICLES \u2192',
-                'back-home': '\u2190 HOME', 'full-archive': '// FULL ARCHIVE',
-                'archive-heading': 'ALL<br><span class="text-outline">LOGS</span>',
-                'entries-found': ' ENTRIES FOUND', 'search-placeholder': 'SEARCH_LOGS...',
-                'search-type': '/// TYPE',
-                'system-error': '>> SYSTEM ERROR: DATA NOT FOUND',
-                'try-keyword': 'TRY ANOTHER KEYWORD.',
-                'back-to-index': '\u2190 BACK TO INDEX',
-                'label-category': 'CATEGORY', 'label-published': 'PUBLISHED', 'label-status': 'STATUS',
-                'reading': 'READING...',
-                'end-of-transmission': 'END OF TRANSMISSION', 'close-file': 'CLOSE FILE',
-                'about-heading': 'WHO<br>AM<br><span class="text-acid-green">I ?</span>',
-                'admin-label': '// ADMIN',
-                'about-bio': 'A specialist exploring the potential of AI technology and the latest tools.<br>Recording the latest AI news and independently verified experimental code in this \u201clog\u201d.<br><br><span class="text-acid-green">&gt;&gt; CURRENT STATUS:</span> BUILDING NEW AGENTS.',
+                'hero-entry': 'ENTRY', 'hero-welcome': 'The Librarian\'s Welcome',
+                'librarian-welcome': 'Welcome to the Mystic Library. I chronicle the AI frontier, one volume a day. Please, open whichever volume calls to you.',
+                'stat-volumes': 'volumes', 'stat-streak': 'days updated', 'stat-series': 'series', 'stat-langs': 'languages',
+                'todays-pick': 'Today\'s Codex', 'todays-pick-sub': '/ Pick of the Day',
+                'librarian-journal': 'Librarian\'s Journal', 'librarian-journal-sub': '/ Latest entries',
+                'find-shelves': 'Find a Shelf', 'find-shelves-sub': '/ Shelves',
+                'monthly-shelf': 'Shelves by Month', 'series-title': 'Series',
+                'series-daily': 'AI NEWS \u2014 Daily Record', 'series-daily-sub': 'The AI frontier, daily',
+                'series-beginner': 'Spells for Beginners', 'series-beginner-sub': 'Prompt fundamentals',
+                'browse-all': 'Browse all shelves \u2192',
+                'back-home': '\u2190 Welcome',
+                'archive-title': 'Index of the Stacks', 'archive-sub': '/ Search & filter every volume',
+                'search-placeholder': 'Search titles or keywords\u2026',
+                'filter-all': 'All', 'filter-ai-news': 'AI NEWS', 'filter-beginner': 'Beginner', 'filter-all-months': 'All months',
+                'sort-new': 'Newest', 'sort-old': 'Oldest',
+                'entries-found': ' found',
+                'system-error': '>> No matching volumes found', 'try-keyword': 'Try another keyword or filter.',
+                'clear-btn': 'Clear filters',
+                'vol-prefix': 'Vol. ', 'vol-suffix': '', 'unit-vol': ' vols',
+                'open-volume': 'Open this volume', 'back-to-stacks': '\u2190 Back to stacks', 'prev-vol': 'Previous', 'next-vol': 'Next',
+                'end-of-transmission': '\u2014 End of volume \u2014',
+                'about-heading': 'THE<br>LIBRARIAN\'S<br><span class="text-gold">STUDY</span>',
+                'admin-label': '// Librarian',
+                'about-bio': 'The librarian of the Mystic Library. I chronicle the AI frontier one volume a day, lining new wisdom on these shelves.<br>Even complex technology is woven into stories anyone can read.<br><br><span class="text-gold">&gt;&gt; NOW:</span> Writing the next volume.',
                 'skill-set': 'SKILL_SET',
-                'footer-location': 'TOKYO, JAPAN',
-                'loading': 'LOADING...', 'load-error': 'Failed to load article.'
+                'footer-location': 'Tokyo, Japan', 'footer-tagline': '· The Mystic Library',
+                'loading': 'Loading…', 'load-error': 'Failed to load the article.'
             },
             'zh-tw': {
-                'nav-home': '\u9996\u9801', 'nav-archive': '\u5b58\u6a94', 'nav-about': '\u95dc\u65bc',
+                'codex-name': 'MYSTIC CODEX', 'codex-sub': '\u9b54\u6cd5\u5716\u66f8\u9928 \u00b7 \u53f8\u66f8\u7684\u7d00\u9304',
+                'nav-home': '\u53f8\u66f8\u7684\u5f15\u5c0e', 'nav-archive': '\u66f8\u67b6', 'nav-about': '\u66f8\u9f4b', 'nav-search': '\ud83d\udd0d \u641c\u5c0b',
                 'menu-btn': '// \u9078\u55ae', 'menu-sys-nav': '/// \u7cfb\u7d71\u5c0e\u89bd',
-                'latest-articles': '\u6700\u65b0\u6587\u7ae0', 'browse-all': '\u700f\u89bd\u6240\u6709\u6587\u7ae0 \u2192',
-                'back-home': '\u2190 \u9996\u9801', 'full-archive': '// \u5b8c\u6574\u5b58\u6a94',
-                'archive-heading': '\u6240\u6709<br><span class="text-outline">\u8a18\u9304</span>',
-                'entries-found': ' \u7bc7\u6587\u7ae0', 'search-placeholder': '\u641c\u5c0b\u6587\u7ae0...',
-                'search-type': '/// \u8f38\u5165',
-                'system-error': '>> \u7cfb\u7d71\u932f\u8aa4\uff1a\u627e\u4e0d\u5230\u8cc7\u6599',
-                'try-keyword': '\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u3002',
-                'back-to-index': '\u2190 \u8fd4\u56de\u5217\u8868',
-                'label-category': '\u5206\u985e', 'label-published': '\u767c\u5e03\u65e5\u671f', 'label-status': '\u72c0\u614b',
-                'reading': '\u8f09\u5165\u4e2d...',
-                'end-of-transmission': '\u6587\u7ae0\u7d50\u675f', 'close-file': '\u95dc\u9589',
-                'about-heading': '\u6211<br>\u662f<br><span class="text-acid-green">\u8ab0\uff1f</span>',
-                'admin-label': '// \u7ba1\u7406\u54e1',
-                'about-bio': '\u63a2\u7d22 AI \u6280\u8853\u8207\u6700\u65b0\u5de5\u5177\u53ef\u80fd\u6027\u7684\u5c08\u5bb6\u3002<br>\u5728\u9019\u500b\u300c\u65e5\u8a8c\u300d\u4e2d\u8a18\u9304\u6700\u65b0\u7684 AI \u76f8\u95dc\u65b0\u8061\u548c\u7368\u7acb\u9a57\u8b49\u7684\u5be6\u9a57\u6027\u7a0b\u5f0f\u78bc\u3002<br><br><span class="text-acid-green">&gt;&gt; \u76ee\u524d\u72c0\u614b\uff1a</span> \u6b63\u5728\u5efa\u69cb\u65b0\u7684 AI \u4ee3\u7406\u7a0b\u5f0f\u3002',
+                'hero-entry': 'ENTRY', 'hero-welcome': '\u53f8\u66f8\u7684\u5f15\u5c0e',
+                'librarian-welcome': '\u6b61\u8fce\u4f86\u5230\u9b54\u6cd5\u5716\u66f8\u9928\u3002\u6211\u6bcf\u65e5\u5c07 AI \u7684\u6700\u524d\u7dda\u5beb\u6210\u4e00\u5377\uff0c\u8acb\u96a8\u610f\u7ffb\u95b1\u60a8\u559c\u6b61\u7684\u5377\u6b21\u3002',
+                'stat-volumes': '\u5377', 'stat-streak': '\u65e5\u9023\u7e8c\u66f4\u65b0', 'stat-series': '\u7cfb\u5217', 'stat-langs': '\u8a9e\u8a00',
+                'todays-pick': '\u4eca\u65e5\u7cbe\u9078', 'todays-pick-sub': '/ \u4eca\u65e5\u4e00\u518a',
+                'librarian-journal': '\u53f8\u66f8\u7684\u65e5\u8a8c', 'librarian-journal-sub': '/ \u6700\u65b0\u7d00\u9304',
+                'find-shelves': '\u5c0b\u627e\u66f8\u67b6', 'find-shelves-sub': '/ Shelves',
+                'monthly-shelf': '\u4f9d\u6708\u4efd', 'series-title': '\u7cfb\u5217',
+                'series-daily': 'AI NEWS \u6bcf\u65e5\u7d00\u9304', 'series-daily-sub': '\u6bcf\u65e5\u8a18\u9304 AI \u6700\u524d\u7dda',
+                'series-beginner': '\u521d\u5b78\u8005\u5492\u6587\u66f8', 'series-beginner-sub': '\u63d0\u793a\u8a5e\u57fa\u790e',
+                'browse-all': '\u700f\u89bd\u5168\u90e8\u66f8\u67b6 \u2192',
+                'back-home': '\u2190 \u53f8\u66f8\u7684\u5f15\u5c0e',
+                'archive-title': '\u66f8\u67b6\u76ee\u9304', 'archive-sub': '/ \u641c\u5c0b\u8207\u7be9\u9078\u6240\u6709\u5377\u6b21',
+                'search-placeholder': '\u641c\u5c0b\u6a19\u984c\u6216\u95dc\u9375\u5b57\u2026',
+                'filter-all': '\u5168\u90e8', 'filter-ai-news': 'AI NEWS', 'filter-beginner': '\u521d\u5b78\u8005', 'filter-all-months': '\u6240\u6709\u6708\u4efd',
+                'sort-new': '\u6700\u65b0', 'sort-old': '\u6700\u820a',
+                'entries-found': ' \u7b46',
+                'system-error': '>> \u627e\u4e0d\u5230\u7b26\u5408\u7684\u5377\u6b21', 'try-keyword': '\u8acb\u5617\u8a66\u5176\u4ed6\u95dc\u9375\u5b57\u6216\u689d\u4ef6\u3002',
+                'clear-btn': '\u6e05\u9664\u689d\u4ef6',
+                'vol-prefix': '\u7b2c', 'vol-suffix': '\u5377', 'unit-vol': '\u5377',
+                'open-volume': '\u7ffb\u958b\u6b64\u5377', 'back-to-stacks': '\u2190 \u8fd4\u56de\u66f8\u67b6', 'prev-vol': '\u4e0a\u4e00\u5377', 'next-vol': '\u4e0b\u4e00\u5377',
+                'end-of-transmission': '\u2014 \u5377\u6b21\u7d50\u675f \u2014',
+                'about-heading': '\u53f8\u66f8\u7684<br>\u66f8<br><span class="text-gold">\u9f4b</span>',
+                'admin-label': '// \u53f8\u66f8',
+                'about-bio': '\u63a2\u7d22 AI \u6280\u8853\u8207\u6700\u65b0\u5de5\u5177\u53ef\u80fd\u6027\u7684\u5c08\u5bb6\u3002<br>\u5728\u9019\u500b\u300c\u65e5\u8a8c\u300d\u4e2d\u8a18\u9304\u6700\u65b0\u7684 AI \u76f8\u95dc\u65b0\u8061\u548c\u7368\u7acb\u9a57\u8b49\u7684\u5be6\u9a57\u6027\u7a0b\u5f0f\u78bc\u3002<br><br><span class="text-gold">&gt;&gt; \u76ee\u524d\u72c0\u614b\uff1a</span> \u6b63\u5728\u5efa\u69cb\u65b0\u7684 AI \u4ee3\u7406\u7a0b\u5f0f\u3002',
                 'skill-set': '\u6280\u80fd\u7d44\u5408',
-                'footer-location': '\u6771\u4eac\uff0c\u65e5\u672c',
-                'loading': '\u8f09\u5165\u4e2d...', 'load-error': '\u6587\u7ae0\u8f09\u5165\u5931\u6557\u3002'
+                'footer-location': '\u6771\u4eac\uff0c\u65e5\u672c', 'footer-tagline': '\u00b7 \u9b54\u6cd5\u5716\u66f8\u9928',
+                'loading': '\u8f09\u5165\u4e2d\u2026', 'load-error': '\u6587\u7ae0\u8f09\u5165\u5931\u6557\u3002'
             },
             'zh-cn': {
-                'nav-home': '\u9996\u9875', 'nav-archive': '\u6863\u6848', 'nav-about': '\u5173\u4e8e',
+                'codex-name': 'MYSTIC CODEX', 'codex-sub': '\u9b54\u6cd5\u56fe\u4e66\u9986 \u00b7 \u53f8\u4e66\u7684\u8bb0\u5f55',
+                'nav-home': '\u53f8\u4e66\u7684\u5f15\u5bfc', 'nav-archive': '\u4e66\u67b6', 'nav-about': '\u4e66\u658b', 'nav-search': '\ud83d\udd0d \u641c\u7d22',
                 'menu-btn': '// \u83dc\u5355', 'menu-sys-nav': '/// \u7cfb\u7edf\u5bfc\u822a',
-                'latest-articles': '\u6700\u65b0\u6587\u7ae0', 'browse-all': '\u6d4f\u89c8\u6240\u6709\u6587\u7ae0 \u2192',
-                'back-home': '\u2190 \u9996\u9875', 'full-archive': '// \u5b8c\u6574\u6863\u6848',
-                'archive-heading': '\u6240\u6709<br><span class="text-outline">\u8bb0\u5f55</span>',
-                'entries-found': ' \u7bc7\u6587\u7ae0', 'search-placeholder': '\u641c\u7d22\u6587\u7ae0...',
-                'search-type': '/// \u8f93\u5165',
-                'system-error': '>> \u7cfb\u7edf\u9519\u8bef\uff1a\u627e\u4e0d\u5230\u6570\u636e',
-                'try-keyword': '\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u5173\u952e\u8bcd\u3002',
-                'back-to-index': '\u2190 \u8fd4\u56de\u5217\u8868',
-                'label-category': '\u5206\u7c7b', 'label-published': '\u53d1\u5e03\u65e5\u671f', 'label-status': '\u72b6\u6001',
-                'reading': '\u52a0\u8f7d\u4e2d...',
-                'end-of-transmission': '\u6587\u7ae0\u7ed3\u675f', 'close-file': '\u5173\u95ed',
-                'about-heading': '\u6211<br>\u662f<br><span class="text-acid-green">\u8c01\uff1f</span>',
-                'admin-label': '// \u7ba1\u7406\u5458',
-                'about-bio': '\u63a2\u7d22 AI \u6280\u672f\u4e0e\u6700\u65b0\u5de5\u5177\u53ef\u80fd\u6027\u7684\u4e13\u5bb6\u3002<br>\u5728\u8fd9\u4e2a\u300c\u65e5\u5fd7\u300d\u4e2d\u8bb0\u5f55\u6700\u65b0\u7684 AI \u76f8\u5173\u65b0\u95fb\u548c\u72ec\u7acb\u9a8c\u8bc1\u7684\u5b9e\u9a8c\u6027\u4ee3\u7801\u3002<br><br><span class="text-acid-green">&gt;&gt; \u5f53\u524d\u72b6\u6001\uff1a</span> \u6b63\u5728\u6784\u5efa\u65b0\u7684 AI \u4ee3\u7406\u3002',
+                'hero-entry': 'ENTRY', 'hero-welcome': '\u53f8\u4e66\u7684\u5f15\u5bfc',
+                'librarian-welcome': '\u6b22\u8fce\u6765\u5230\u9b54\u6cd5\u56fe\u4e66\u9986\u3002\u6211\u6bcf\u65e5\u5c06 AI \u7684\u6700\u524d\u7ebf\u5199\u6210\u4e00\u5377\uff0c\u8bf7\u968f\u610f\u7ffb\u9605\u60a8\u559c\u6b22\u7684\u5377\u6b21\u3002',
+                'stat-volumes': '\u5377', 'stat-streak': '\u65e5\u8fde\u7eed\u66f4\u65b0', 'stat-series': '\u7cfb\u5217', 'stat-langs': '\u8bed\u8a00',
+                'todays-pick': '\u4eca\u65e5\u7cbe\u9009', 'todays-pick-sub': '/ \u4eca\u65e5\u4e00\u518c',
+                'librarian-journal': '\u53f8\u4e66\u7684\u65e5\u5fd7', 'librarian-journal-sub': '/ \u6700\u65b0\u8bb0\u5f55',
+                'find-shelves': '\u5bfb\u627e\u4e66\u67b6', 'find-shelves-sub': '/ Shelves',
+                'monthly-shelf': '\u6309\u6708\u4efd', 'series-title': '\u7cfb\u5217',
+                'series-daily': 'AI NEWS \u6bcf\u65e5\u8bb0\u5f55', 'series-daily-sub': '\u6bcf\u65e5\u8bb0\u5f55 AI \u6700\u524d\u7ebf',
+                'series-beginner': '\u521d\u5b66\u8005\u5492\u6587\u4e66', 'series-beginner-sub': '\u63d0\u793a\u8bcd\u57fa\u7840',
+                'browse-all': '\u6d4f\u89c8\u5168\u90e8\u4e66\u67b6 \u2192',
+                'back-home': '\u2190 \u53f8\u4e66\u7684\u5f15\u5bfc',
+                'archive-title': '\u4e66\u67b6\u76ee\u5f55', 'archive-sub': '/ \u641c\u7d22\u4e0e\u7b5b\u9009\u6240\u6709\u5377\u6b21',
+                'search-placeholder': '\u641c\u7d22\u6807\u9898\u6216\u5173\u952e\u5b57\u2026',
+                'filter-all': '\u5168\u90e8', 'filter-ai-news': 'AI NEWS', 'filter-beginner': '\u521d\u5b66\u8005', 'filter-all-months': '\u6240\u6709\u6708\u4efd',
+                'sort-new': '\u6700\u65b0', 'sort-old': '\u6700\u65e7',
+                'entries-found': ' \u7bc7',
+                'system-error': '>> \u627e\u4e0d\u5230\u7b26\u5408\u6761\u4ef6\u7684\u5377\u6b21', 'try-keyword': '\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u5173\u952e\u5b57\u6216\u6761\u4ef6\u3002',
+                'clear-btn': '\u6e05\u9664\u6761\u4ef6',
+                'vol-prefix': '\u7b2c', 'vol-suffix': '\u5377', 'unit-vol': '\u5377',
+                'open-volume': '\u7ffb\u5f00\u6b64\u5377', 'back-to-stacks': '\u2190 \u8fd4\u56de\u4e66\u67b6', 'prev-vol': '\u4e0a\u4e00\u5377', 'next-vol': '\u4e0b\u4e00\u5377',
+                'end-of-transmission': '\u2014 \u5377\u6b21\u7ed3\u675f \u2014',
+                'about-heading': '\u53f8\u4e66\u7684<br>\u4e66<br><span class="text-gold">\u658b</span>',
+                'admin-label': '// \u53f8\u4e66',
+                'about-bio': '\u63a2\u7d22 AI \u6280\u672f\u4e0e\u6700\u65b0\u5de5\u5177\u53ef\u80fd\u6027\u7684\u4e13\u5bb6\u3002<br>\u5728\u8fd9\u4e2a\u300c\u65e5\u5fd7\u300d\u4e2d\u8bb0\u5f55\u6700\u65b0\u7684 AI \u76f8\u5173\u65b0\u95fb\u548c\u72ec\u7acb\u9a8c\u8bc1\u7684\u5b9e\u9a8c\u6027\u4ee3\u7801\u3002<br><br><span class="text-gold">&gt;&gt; \u5f53\u524d\u72b6\u6001\uff1a</span> \u6b63\u5728\u6784\u5efa\u65b0\u7684 AI \u4ee3\u7406\u3002',
                 'skill-set': '\u6280\u80fd\u7ec4\u5408',
-                'footer-location': '\u4e1c\u4eac\uff0c\u65e5\u672c',
-                'loading': '\u52a0\u8f7d\u4e2d...', 'load-error': '\u6587\u7ae0\u52a0\u8f7d\u5931\u8d25\u3002'
+                'footer-location': '\u4e1c\u4eac\uff0c\u65e5\u672c', 'footer-tagline': '\u00b7 \u9b54\u6cd5\u56fe\u4e66\u9986',
+                'loading': '\u52a0\u8f7d\u4e2d\u2026', 'load-error': '\u6587\u7ae0\u52a0\u8f7d\u5931\u8d25\u3002'
             },
             ko: {
-                'nav-home': '\ud648', 'nav-archive': '\uc544\uce74\uc774\ube0c', 'nav-about': '\uc18c\uac1c',
+                'codex-name': 'MYSTIC CODEX', 'codex-sub': '\ub9c8\ubc95 \ub3c4\uc11c\uad00 \u00b7 \uc0ac\uc11c\uc758 \uae30\ub85d',
+                'nav-home': '\uc0ac\uc11c\uc758 \uc548\ub0b4', 'nav-archive': '\uc11c\uac00', 'nav-about': '\uc11c\uc7ac', 'nav-search': '\ud83d\udd0d \uac80\uc0c9',
                 'menu-btn': '// \uba54\ub274', 'menu-sys-nav': '/// \uc2dc\uc2a4\ud15c \ub0b4\ube44\uac8c\uc774\uc158',
-                'latest-articles': '\uc5ec\uac04 \uae30\uc0ac', 'browse-all': '\uc804\uccb4 \uae00 \ubcf4\uae30 \u2192',
-                'back-home': '\u2190 \ud648', 'full-archive': '// \uc804\uccb4 \uc544\uce74\uc774\ube0c',
-                'archive-heading': '\uc804\uccb4<br><span class="text-outline">\uae30\ub85d</span>',
-                'entries-found': '\uac1c\uc758 \uae30\uc0ac', 'search-placeholder': '\uae30\uc0ac \uac80\uc0c9...',
-                'search-type': '/// \uc785\ub825',
-                'system-error': '>> \uc2dc\uc2a4\ud15c \uc624\ub958: \ub370\uc774\ud130\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc74c',
-                'try-keyword': '\ub2e4\ub978 \ud0a4\uc6cc\ub4dc\ub97c \uc2dc\ub3c4\ud574 \ubcf4\uc138\uc694.',
-                'back-to-index': '\u2190 \ubaa9\ub85d\uc73c\ub85c',
-                'label-category': '\uce74\ud14c\uace0\ub9ac', 'label-published': '\uac8c\uc2dc\uc77c', 'label-status': '\uc0c1\ud0dc',
-                'reading': '\ubd88\ub7ec\uc624\ub294 \uc911...',
-                'end-of-transmission': '\uc804\uc1a1 \uc644\ub8cc', 'close-file': '\ub2eb\uae30',
-                'about-heading': '\ub098\ub294<br>\ub204\uad6c<br><span class="text-acid-green">\uc778\uac00\uff1f</span>',
-                'admin-label': '// \uad00\ub9ac\uc790',
-                'about-bio': 'AI \uae30\uc220\uacfc \ucd5c\uc2e0 \ub3c4\uad6c\uc758 \uac00\ub2a5\uc131\uc744 \ud0d0\uad6c\ud558\ub294 \uc804\ubb38\uac00.<br>\uc5ec\uac04 AI \uad00\ub828 \ub274\uc2a4\uc640 \ub3c5\uc790\uc801\uc73c\ub85c \uac80\uc99d\ud55c \uc2e4\ud5d8\uc801\uc778 \ucf54\ub4dc\ub97c \uc774 \u201c\ub85c\uadf8\u201d\uc5d0 \uae30\ub85d\ud569\ub2c8\ub2e4.<br><br><span class="text-acid-green">&gt;&gt; \ud604\uc7ac \uc0c1\ud0dc:</span> \uc0c8\ub85c\uc6b4 \uc5d0\uc774\uc804\ud2b8 \uad6c\ucd95 \uc911.',
+                'hero-entry': 'ENTRY', 'hero-welcome': '\uc0ac\uc11c\uc758 \uc548\ub0b4',
+                'librarian-welcome': '\ub9c8\ubc95 \ub3c4\uc11c\uad00\uc5d0 \uc624\uc2e0 \uac83\uc744 \ud658\uc601\ud569\ub2c8\ub2e4. AI\uc758 \ucd5c\uc804\uc120\uc744 \ub9e4\uc77c \ud55c \uad8c\uc529 \uc801\uc5b4 \ub0b4\ub824\uac11\ub2c8\ub2e4. \ub9c8\uc74c\uc5d0 \ub4dc\ub294 \uad8c\uc744 \ud3bc\uccd0 \ubcf4\uc138\uc694.',
+                'stat-volumes': '\uad8c', 'stat-streak': '\uc77c \uc5f0\uc18d \uc5c5\ub370\uc774\ud2b8', 'stat-series': '\uc2dc\ub9ac\uc988', 'stat-langs': '\uc5b8\uc5b4',
+                'todays-pick': '\uc624\ub298\uc758 \ud55c \uad8c', 'todays-pick-sub': '/ \uc624\ub298\uc758 \uc120\ud0dd',
+                'librarian-journal': '\uc0ac\uc11c\uc758 \uc77c\uc9c0', 'librarian-journal-sub': '/ \ucd5c\uc2e0 \uae30\ub85d',
+                'find-shelves': '\uc11c\uac00 \ucc3e\uae30', 'find-shelves-sub': '/ Shelves',
+                'monthly-shelf': '\uc6d4\ubcc4 \uc11c\uac00', 'series-title': '\uc2dc\ub9ac\uc988',
+                'series-daily': 'AI NEWS \uc77c\uc77c \uae30\ub85d', 'series-daily-sub': '\ub9e4\uc77c \uae30\ub85d\ud558\ub294 AI \ucd5c\uc804\uc120',
+                'series-beginner': '\ucd08\ubcf4\uc790 \uc8fc\ubb38\uc11c', 'series-beginner-sub': '\ud504\ub86c\ud504\ud2b8 \uae30\ucd08',
+                'browse-all': '\uc11c\uac00 \uc804\uccb4 \ubcf4\uae30 \u2192',
+                'back-home': '\u2190 \uc0ac\uc11c\uc758 \uc548\ub0b4',
+                'archive-title': '\uc11c\uac00 \ubaa9\ub85d', 'archive-sub': '/ \ubaa8\ub4e0 \uad8c\uc744 \uac80\uc0c9\u00b7\ud544\ud130',
+                'search-placeholder': '\uc81c\ubaa9\uc774\ub098 \ud0a4\uc6cc\ub4dc \uac80\uc0c9\u2026',
+                'filter-all': '\uc804\uccb4', 'filter-ai-news': 'AI NEWS', 'filter-beginner': '\ucd08\ubcf4\uc790', 'filter-all-months': '\ubaa8\ub4e0 \ub2ec',
+                'sort-new': '\ucd5c\uc2e0\uc21c', 'sort-old': '\uc624\ub798\ub41c\uc21c',
+                'entries-found': ' \uac74',
+                'system-error': '>> \ud574\ub2f9\ud558\ub294 \uad8c\uc744 \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4', 'try-keyword': '\ub2e4\ub978 \ud0a4\uc6cc\ub4dc\ub098 \uc870\uac74\uc73c\ub85c \uc2dc\ub3c4\ud574 \ubcf4\uc138\uc694.',
+                'clear-btn': '\uc870\uac74 \ucd08\uae30\ud654',
+                'vol-prefix': '\uc81c ', 'vol-suffix': '\uad8c', 'unit-vol': '\uad8c',
+                'open-volume': '\uc774 \uad8c \ud3bc\uce58\uae30', 'back-to-stacks': '\u2190 \uc11c\uac00\ub85c', 'prev-vol': '\uc774\uc804 \uad8c', 'next-vol': '\ub2e4\uc74c \uad8c',
+                'end-of-transmission': '\u2014 \uad8c\uc758 \ub05d \u2014',
+                'about-heading': '\uc0ac\uc11c\uc758<br>\uc11c<br><span class="text-gold">\uc7ac</span>',
+                'admin-label': '// \uc0ac\uc11c',
+                'about-bio': 'AI \uae30\uc220\uacfc \ucd5c\uc2e0 \ub3c4\uad6c\uc758 \uac00\ub2a5\uc131\uc744 \ud0d0\uad6c\ud558\ub294 \uc804\ubb38\uac00.<br>\uc5ec\uac04 AI \uad00\ub828 \ub274\uc2a4\uc640 \ub3c5\uc790\uc801\uc73c\ub85c \uac80\uc99d\ud55c \uc2e4\ud5d8\uc801\uc778 \ucf54\ub4dc\ub97c \uc774 \u201c\ub85c\uadf8\u201d\uc5d0 \uae30\ub85d\ud569\ub2c8\ub2e4.<br><br><span class="text-gold">&gt;&gt; \ud604\uc7ac \uc0c1\ud0dc:</span> \uc0c8\ub85c\uc6b4 \uc5d0\uc774\uc804\ud2b8 \uad6c\ucd95 \uc911.',
                 'skill-set': '\uc2a4\ud0ac\uc14b',
-                'footer-location': '\ub3c4\ucfc4, \uc77c\ubcf8',
-                'loading': '\ubd88\ub7ec\uc624\ub294 \uc911...', 'load-error': '\uae30\uc0ac\ub97c \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4.'
+                'footer-location': '\ub3c4\ucfc4, \uc77c\ubcf8', 'footer-tagline': '\u00b7 \ub9c8\ubc95 \ub3c4\uc11c\uad00',
+                'loading': '\ubd88\ub7ec\uc624\ub294 \uc911\u2026', 'load-error': '\uae30\uc0ac\ub97c \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4.'
             }
         };
 
@@ -980,8 +1375,8 @@
             if (sel) sel.value = lang;
             document.querySelectorAll('.lang-btn[data-lang]').forEach(function (btn) {
                 var active = btn.getAttribute('data-lang') === lang;
-                btn.classList.toggle('text-acid-green', active);
-                btn.classList.toggle('text-gray-500', !active);
+                btn.classList.toggle('text-gold', active);
+                btn.classList.toggle('text-cream/70', !active);
             });
         };
     </script>
@@ -1007,19 +1402,29 @@
         const viewDetail = document.getElementById('view-detail');
         const viewAbout = document.getElementById('view-about');
 
-        const blogGrid = document.getElementById('blog-grid');
+        // HOME 要素
+        const heroDate = document.getElementById('hero-date');
+        const statVolumes = document.getElementById('stat-volumes');
+        const statStreak = document.getElementById('stat-streak');
+        const statSeries = document.getElementById('stat-series');
+        const statLangs = document.getElementById('stat-langs');
+        const todaysCodex = document.getElementById('todays-codex');
+        const timelineList = document.getElementById('timeline-list');
+        const shelfTabs = document.getElementById('shelf-tabs');
+        const seriesCards = document.getElementById('series-cards');
 
         // アーカイブページ要素
         const archiveGrid = document.getElementById('archive-grid');
         const archiveSearchInput = document.getElementById('archive-search-input');
         const archiveNoResultsMsg = document.getElementById('archive-no-results');
         const archiveCount = document.getElementById('archive-count');
+        const filterChips = document.getElementById('filter-chips');
 
         // 詳細ページ要素
         const detailTitle = document.getElementById('detail-title');
-        const detailCategory = document.getElementById('detail-category');
-        const detailDate = document.getElementById('detail-date');
+        const detailMeta = document.getElementById('detail-meta');
         const detailContent = document.getElementById('detail-content');
+        const detailPrevNext = document.getElementById('detail-prev-next');
 
         // スマホメニュー要素
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1029,68 +1434,232 @@
         // 詳細ページからの戻り先を記録
         let previousView = 'list';
 
-        // グリッド描画関数（汎用：targetGrid に描画、noResultsEl で結果なし表示を制御）
-        // forceNormal: true の場合、全カードを normal サイズで描画（アーカイブ用）
-        // lang: 言語コード（省略時はlocalStorageから取得）
-        function renderPosts(articles, targetGrid, noResultsEl, forceNormal, lang) {
-            const currentLang = lang || localStorage.getItem('lang') || 'ja';
+        // アーカイブの絞り込み状態（シリーズ / 月 / ソート）
+        let archiveFilter = { series: 'all', month: 'all', sort: 'new' };
 
-            targetGrid.innerHTML = '';
-            if (articles.length === 0) {
-                if (noResultsEl) noResultsEl.classList.remove('hidden');
-                return;
-            } else {
-                if (noResultsEl) noResultsEl.classList.add('hidden');
-            }
+        // ===== 図書館メタファー: ヘルパー =====
+        // シリーズ判定（クライアント推論: For Beginner 以外は日次）
+        function seriesOf(post) {
+            return post.category === 'For Beginner' ? 'beginner' : 'daily';
+        }
+        // 月キー（'2026.05.07' → '2026.05'）
+        function monthOf(post) {
+            return post.date.slice(0, 7);
+        }
+        // 現在言語のタイトル/要約（フォールバック付き）
+        function langTitle(post, lang) { return post['title_' + lang] || post.title || ''; }
+        function langSummary(post, lang) { return post['summary_' + lang] || post.summary || ''; }
+        // 巻数テキスト（daily=第N巻 / beginner=Vol.BN）
+        function volText(post) {
+            return post._series === 'daily' ? t('vol-prefix') + post._vol + t('vol-suffix') : 'Vol.' + post._vol;
+        }
+        // 月ラベル（i18n）
+        function monthLabel(ym, lang) {
+            const parts = ym.split('.');
+            const y = parts[0], m = parseInt(parts[1], 10);
+            const months = {
+                ja: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                'zh-tw': ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                'zh-cn': ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                ko: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+            };
+            const names = months[lang] || months.ja;
+            if (lang === 'en') return names[m - 1] + ' ' + y;
+            if (lang === 'ja') return y + '年' + m + '月';
+            if (lang === 'ko') return y + '년 ' + m + '월';
+            return y + '年' + m + '月';
+        }
+        // 統計
+        function getStats() {
+            const days = new Set(posts.map(p => p.date));
+            const seriesSet = new Set(posts.map(p => seriesOf(p)));
+            return { total: posts.length, streak: days.size, series: seriesSet.size, langs: 5 };
+        }
 
-            articles.forEach(post => {
-                // 多言語対応：現在の言語のタイトル・要約を取得、なければ日本語フォールバック
-                const displayTitle = post[`title_${currentLang}`] || post.title || '';
-                const displaySummary = post[`summary_${currentLang}`] || post.summary || '';
-
-                let colClass = "lg:col-span-4";
-                let heightClass = "h-[400px]";
-
-                if (!forceNormal) {
-                    if (post.type === 'big') { colClass = "lg:col-span-8"; heightClass = "h-[450px]"; }
-                    else if (post.type === 'tall') { colClass = "lg:col-span-4 row-span-2"; heightClass = "h-[auto] min-h-[500px]"; }
-                }
-
-                const imageHTML = post.thumbnail ? `
-                    <div class="absolute inset-0 z-0 overflow-hidden">
-                        <img src="${post.thumbnail}"
-                             class="w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700 ease-out"
-                             alt="${displayTitle}">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/60 to-transparent"></div>
-                    </div>
-                ` : '';
-
-                const articleHTML = `
-                    <article onclick="showDetail(${post.id})" class="clickable group brutalist-card ${colClass} ${heightClass} relative bg-[#0a0a0a] cursor-pointer overflow-hidden border border-[#333]">
-                        ${imageHTML}
-                        <div class="relative z-10 flex flex-col justify-between h-full p-8">
-                            <div class="flex justify-between items-start w-full mb-6">
-                                <span class="font-mono text-xs border border-gray-600 px-2 py-1 rounded-full meta-tag bg-black/50 backdrop-blur-sm group-hover:border-acid-green group-hover:text-acid-green transition-colors">
-                                    ${post.category}
-                                </span>
-                                <span class="font-mono text-xs text-gray-400 group-hover:text-white transition-colors drop-shadow-md">
-                                    ${post.date}
-                                </span>
-                            </div>
-                            <div class="flex flex-col justify-end">
-                                <h3 class="text-3xl md:text-4xl font-bold mb-4 leading-tight drop-shadow-lg group-hover:translate-x-2 transition-transform duration-500">
-                                    ${displayTitle}
-                                </h3>
-                                <div class="w-full h-[1px] bg-gray-800 my-4 group-hover:bg-acid-green transition-colors"></div>
-                                <p class="font-mono text-sm text-gray-400 max-w-md line-clamp-2 drop-shadow-md group-hover:text-white transition-colors">
-                                    ${displaySummary}
-                                </p>
-                            </div>
+        // ===== HOME: 本日の一品 =====
+        function renderTodaysCodex(lang) {
+            if (!posts.length) { todaysCodex.innerHTML = ''; return; }
+            const post = posts[0];
+            const title = langTitle(post, lang);
+            const summary = langSummary(post, lang);
+            const isDaily = post._series === 'daily';
+            todaysCodex.innerHTML = `
+                <div class="book-cover parchment-tex md:flex items-center gap-8 relative">
+                    <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                    <div class="flex-shrink-0 flex flex-col items-center gap-3 mb-6 md:mb-0 md:w-40">
+                        <div class="wax-seal"><svg class="w-7 h-7 text-ink" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6-6.3 4.6 2.3-7.4-6-4.6h7.6z"/></svg></div>
+                        <div class="text-center">
+                            <div class="font-mono text-[10px] text-ink/60 tracking-widest">SERIES</div>
+                            <div class="font-display text-lg text-ink leading-tight">${post.category}</div>
                         </div>
-                    </article>
-                `;
-                targetGrid.innerHTML += articleHTML;
+                        <div class="font-display text-4xl ${isDaily ? 'text-gold' : 'text-azure'}">${volText(post)}</div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="date-stamp on-parchment mb-4"><span class="text-[9px]">PUBLISHED</span><span class="text-sm font-bold">${post.date}</span></div>
+                        <h3 class="font-display text-2xl md:text-3xl text-ink leading-tight mb-4">${title}</h3>
+                        <p class="font-body text-ink/80 leading-relaxed mb-6">${summary}</p>
+                        <a href="#/post/${post.slug}" class="inline-flex items-center gap-2 font-mono text-sm bg-gold text-ink border-2 border-ink rounded-2xl px-6 py-3 font-bold hover:translate-x-1 transition-transform shadow-card clickable">${t('open-volume')} →</a>
+                    </div>
+                </div>`;
+        }
+
+        // ===== HOME: 司書の日誌（タイムライン） =====
+        function renderTimeline(lang) {
+            timelineList.innerHTML = posts.slice(0, 6).map(p => {
+                const title = langTitle(p, lang);
+                const isDaily = p._series === 'daily';
+                const badgeClass = isDaily ? 'bg-gold/20 text-night' : 'bg-azure/15 text-azure';
+                return `
+                    <div class="tl-node ${isDaily ? 'daily' : ''}">
+                        <a href="#/post/${p.slug}" class="flex flex-wrap items-center gap-x-4 gap-y-1 group clickable">
+                            <span class="font-mono text-xs text-ink/60 w-24 flex-shrink-0">${p.date}</span>
+                            <span class="font-display text-base md:text-lg text-ink group-hover:text-night-2 transition-colors flex-1 min-w-0 truncate">${title}</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 ${badgeClass} rounded-full border border-ink/20">${p.category}</span>
+                        </a>
+                    </div>`;
+            }).join('');
+        }
+
+        // ===== HOME: 書架を探す（月別タブ + シリーズ） =====
+        function renderShelves(lang) {
+            const months = [...new Set(posts.map(p => monthOf(p)))];
+            shelfTabs.innerHTML = months.map(ym => {
+                const cnt = posts.filter(p => monthOf(p) === ym).length;
+                return `<button onclick="filterByMonth('${ym}')" class="shelf-tab px-4 py-2 border-2 border-ink rounded-full font-mono text-sm hover:bg-gold/10 transition-colors ${archiveFilter.month === ym ? 'active' : 'text-ink/70'}">${ym} <span class="text-[10px] opacity-60">${cnt}</span></button>`;
+            }).join('');
+
+            const dailyCount = posts.filter(p => seriesOf(p) === 'daily').length;
+            const beginnerCount = posts.filter(p => seriesOf(p) === 'beginner').length;
+            seriesCards.innerHTML = `
+                <button onclick="filterBySeries('daily')" class="w-full flex items-center justify-between p-3 border-2 border-ink/30 rounded-xl hover:border-gold hover:bg-gold/10 transition-colors clickable text-left">
+                    <div><div class="font-display text-lg text-ink">${t('series-daily')}</div><div class="font-mono text-xs text-ink/60">${t('series-daily-sub')} · ${dailyCount}${t('unit-vol')}</div></div>
+                    <span class="text-gold text-xl">→</span>
+                </button>
+                <button onclick="filterBySeries('beginner')" class="w-full flex items-center justify-between p-3 border-2 border-ink/30 rounded-xl hover:border-gold hover:bg-gold/10 transition-colors clickable text-left">
+                    <div><div class="font-display text-lg text-ink">${t('series-beginner')}</div><div class="font-mono text-xs text-ink/60">${t('series-beginner-sub')} · ${beginnerCount}${t('unit-vol')}</div></div>
+                    <span class="text-gold text-xl">→</span>
+                </button>`;
+        }
+
+        // ===== ARCHIVE: フィルタチップ =====
+        function renderFilterChips(lang) {
+            const months = [...new Set(posts.map(p => monthOf(p)))];
+            const seriesChip = (val, label) => `<button onclick="setFilter('series','${val}')" class="filter-chip px-4 py-2 rounded-full font-mono text-sm ${archiveFilter.series === val ? 'active' : ''}">${label}</button>`;
+            const monthChip = (val, label) => `<button onclick="setFilter('month','${val}')" class="filter-chip month px-4 py-2 rounded-full font-mono text-sm ${archiveFilter.month === val ? 'active' : ''}">${label}</button>`;
+            const sortChip = (val, label) => `<button onclick="setFilter('sort','${val}')" class="filter-chip px-4 py-2 rounded-full font-mono text-sm ${archiveFilter.sort === val ? 'active' : ''}">${label}</button>`;
+            let html = '';
+            html += seriesChip('all', t('filter-all'));
+            html += seriesChip('daily', t('filter-ai-news'));
+            html += seriesChip('beginner', t('filter-beginner'));
+            html += '<span class="px-1 self-center text-cream/30">|</span>';
+            html += monthChip('all', t('filter-all-months'));
+            months.slice(0, 8).forEach(ym => { html += monthChip(ym, ym); });
+            html += '<span class="px-1 self-center text-cream/30">|</span>';
+            html += sortChip('new', t('sort-new'));
+            html += sortChip('old', t('sort-old'));
+            filterChips.innerHTML = html;
+        }
+        window.setFilter = function (kind, val) {
+            if (kind === 'series') archiveFilter.series = val;
+            else if (kind === 'month') archiveFilter.month = val;
+            else if (kind === 'sort') archiveFilter.sort = val;
+            const lang = localStorage.getItem('lang') || 'ja';
+            renderFilterChips(lang);
+            renderArchiveGrouped(lang);
+        };
+        // HOME の書架/シリーズカードからの導線
+        window.filterByMonth = function (ym) { archiveFilter.month = ym; archiveFilter.series = 'all'; showArchive(); };
+        window.filterBySeries = function (s) { archiveFilter.series = s; archiveFilter.month = 'all'; showArchive(); };
+
+        // ARCHIVE / 前後の巻 共通: 1件のカード
+        function renderPostCard(post, lang) {
+            const title = langTitle(post, lang);
+            const isDaily = post._series === 'daily';
+            return `
+                <a href="#/post/${post.slug}" class="ink-card p-5 group clickable block">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-mono text-xs text-ink/60">${post.date}</span>
+                        <span class="font-display text-sm ${isDaily ? 'text-gold' : 'text-azure'}">${volText(post)}</span>
+                    </div>
+                    <h3 class="font-display text-xl text-ink leading-tight group-hover:text-night-2 transition-colors mb-2">${title}</h3>
+                    <span class="font-mono text-[10px] text-ink/50">${post.category}</span>
+                </a>`;
+        }
+
+        // ===== ARCHIVE: 月別グループ描画（検索 + フィルタ + ソート 適用） =====
+        function renderArchiveGrouped(lang) {
+            const term = archiveSearchInput.value.toLowerCase();
+            let filtered = posts.filter(p => {
+                if (archiveFilter.series !== 'all' && p._series !== archiveFilter.series) return false;
+                if (archiveFilter.month !== 'all' && monthOf(p) !== archiveFilter.month) return false;
+                const title = langTitle(p, lang).toLowerCase();
+                const summary = langSummary(p, lang).toLowerCase();
+                return term === '' || title.includes(term) || p.category.toLowerCase().includes(term) || summary.includes(term);
             });
+            if (archiveFilter.sort === 'old') {
+                filtered = [...filtered].sort((a, b) => a.date.localeCompare(b.date));
+            }
+            archiveCount.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                archiveGrid.innerHTML = '';
+                archiveNoResultsMsg.classList.remove('hidden');
+                return;
+            }
+            archiveNoResultsMsg.classList.add('hidden');
+
+            // 月別グループ化
+            const groups = {};
+            filtered.forEach(p => { const ym = monthOf(p); (groups[ym] = groups[ym] || []).push(p); });
+            const keys = Object.keys(groups).sort((a, b) =>
+                archiveFilter.sort === 'old' ? a.localeCompare(b) : b.localeCompare(a));
+
+            archiveGrid.innerHTML = keys.map(ym => `
+                <div>
+                    <div class="flex items-baseline gap-3 mb-4 border-b-2 border-gold/30 pb-2">
+                        <h2 class="font-display text-2xl md:text-3xl text-gold">${monthLabel(ym, lang)}</h2>
+                        <span class="font-mono text-xs text-cream/50">${groups[ym].length}${t('unit-vol')}</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">${groups[ym].map(p => renderPostCard(p, lang)).join('')}</div>
+                </div>`).join('');
+        }
+
+        // ===== DETAIL: 表紙ヘッダー =====
+        function renderDetailMeta(post) {
+            const isDaily = post._series === 'daily';
+            const badgeClass = isDaily ? 'bg-night text-gold' : 'bg-azure text-cream';
+            detailMeta.innerHTML = `
+                <div class="date-stamp on-parchment"><span class="text-[9px]">PUBLISHED</span><span class="text-sm font-bold">${post.date}</span></div>
+                <span class="px-3 py-1 ${badgeClass} border-2 border-ink rounded-full font-mono text-xs">${post.category}</span>
+                <span class="font-display text-xl ${isDaily ? 'text-gold' : 'text-azure'} ml-auto">${volText(post)}</span>`;
+        }
+
+        // ===== DETAIL: 前後の巻（同シリーズ優先） =====
+        function renderDetailPrevNext(post, lang) {
+            const same = posts.filter(p => p._series === post._series);
+            const idx = same.findIndex(p => p.slug === post.slug);
+            const prev = idx > 0 ? same[idx - 1] : null;   // より新しい巻
+            const next = idx >= 0 && idx < same.length - 1 ? same[idx + 1] : null;  // より古い巻
+            let html = '<div class="grid md:grid-cols-2 gap-4">';
+            if (prev) {
+                html += `<a href="#/post/${prev.slug}" class="ink-card p-4 group clickable block">
+                    <div class="font-mono text-[10px] text-ink/50">← ${t('prev-vol')}</div>
+                    <div class="font-display text-lg text-ink leading-tight group-hover:text-night-2 transition-colors">${langTitle(prev, lang)}</div>
+                    <div class="font-mono text-xs text-ink/60 mt-1">${prev.date} · ${volText(prev)}</div>
+                </a>`;
+            } else {
+                html += '<div></div>';
+            }
+            if (next) {
+                html += `<a href="#/post/${next.slug}" class="ink-card p-4 text-right group clickable block">
+                    <div class="font-mono text-[10px] text-ink/50">${t('next-vol')} →</div>
+                    <div class="font-display text-lg text-ink leading-tight group-hover:text-night-2 transition-colors">${langTitle(next, lang)}</div>
+                    <div class="font-mono text-xs text-ink/60 mt-1">${next.date} · ${volText(next)}</div>
+                </a>`;
+            }
+            html += '</div>';
+            detailPrevNext.innerHTML = html;
         }
 
         // 初期化処理
@@ -1098,38 +1667,59 @@
             // 1. 日付順（新しい順）に並べ替える
             posts.sort((a, b) => b.date.localeCompare(a.date));
 
-            // 2. IDとレイアウトタイプ（big/tall/normal）を自動割り当て
+            // 2. id / _series / _vol（シリーズごとの巻数）を付与
+            const dailyTotal = posts.filter(p => seriesOf(p) === 'daily').length;
+            const beginnerAsc = posts.filter(p => seriesOf(p) === 'beginner')
+                .sort((a, b) => a.date.localeCompare(b.date));
+            let dailyIdx = 0;
             posts.forEach((post, index) => {
                 post.id = index;
-                if (index === 0) post.type = 'big';
-                else if (index === 1) post.type = 'tall';
-                else post.type = 'normal';
+                post._series = seriesOf(post);
+                if (post._series === 'daily') {
+                    post._vol = dailyTotal - dailyIdx;  // 最新が最大
+                    dailyIdx++;
+                }
             });
+            beginnerAsc.forEach((post, i) => { post._vol = 'B' + (i + 1); });
 
-            // 3. トップページは最新4件のみ描画
+            // 3. 統計バッジ + ヒーロー日付
+            const stats = getStats();
+            if (statVolumes) statVolumes.textContent = stats.total;
+            if (statStreak) statStreak.textContent = stats.streak;
+            if (statSeries) statSeries.textContent = stats.series;
+            if (statLangs) statLangs.textContent = stats.langs;
+            if (heroDate && posts.length) heroDate.textContent = posts[0].date;
+
+            // 4. HOME 描画（本日の一品 / 司書の日誌 / 書架）
             const initialLang = localStorage.getItem('lang') || 'ja';
-            renderPosts(posts.slice(0, 4), blogGrid, null, false, initialLang);
+            renderTodaysCodex(initialLang);
+            renderTimeline(initialLang);
+            renderShelves(initialLang);
 
-            // 4. アーカイブ検索イベントリスナー
-            archiveSearchInput.addEventListener('input', (e) => {
-                const lang = localStorage.getItem('lang') || 'ja';
-                const term = e.target.value.toLowerCase();
-                const filtered = posts.filter(post =>
-                    (post[`title_${lang}`] || post.title || '').toLowerCase().includes(term) ||
-                    post.category.toLowerCase().includes(term) ||
-                    (post[`summary_${lang}`] || post.summary || '').toLowerCase().includes(term)
-                );
-                archiveCount.textContent = filtered.length;
-                renderPosts(filtered, archiveGrid, archiveNoResultsMsg, true, lang);
+            // 5. ARCHIVE 初期描画（フィルタチップ + 月別グループ）
+            renderFilterChips(initialLang);
+            renderArchiveGrouped(initialLang);
+
+            // 6. アーカイブ検索イベントリスナー
+            archiveSearchInput.addEventListener('input', () => {
+                renderArchiveGrouped(localStorage.getItem('lang') || 'ja');
             });
 
-            // 5. スマホメニュー開閉ロジック
+            // 7. スマホメニュー開閉ロジック
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenuOverlay.classList.remove('translate-x-full');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                mobileMenuClose.focus();
             });
             mobileMenuClose.addEventListener('click', closeMobileMenu);
+            // Esc キーでモバイルメニューを閉じる（アクセシビリティ: role="dialog" パターン）
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenuOverlay.classList.contains('translate-x-full')) {
+                    closeMobileMenu();
+                }
+            });
 
-            // 6. 言語設定を適用
+            // 8. 言語設定を適用
             applyLanguage(localStorage.getItem('lang') || 'ja');
 
             // 言語切り替え時の再描画処理を追加
@@ -1138,38 +1728,61 @@
                 originalApplyLanguage(lang);
                 // 現在のビューに応じて再描画
                 if (!viewList.classList.contains('hidden-view')) {
-                    renderPosts(posts.slice(0, 4), blogGrid, null, false, lang);
+                    renderTodaysCodex(lang);
+                    renderTimeline(lang);
+                    renderShelves(lang);
                 } else if (!viewArchive.classList.contains('hidden-view')) {
-                    const term = archiveSearchInput.value.toLowerCase();
-                    const filtered = posts.filter(post =>
-                        (post[`title_${lang}`] || post.title || '').toLowerCase().includes(term) ||
-                        post.category.toLowerCase().includes(term) ||
-                        (post[`summary_${lang}`] || post.summary || '').toLowerCase().includes(term)
-                    );
-                    archiveCount.textContent = filtered.length;
-                    renderPosts(filtered, archiveGrid, archiveNoResultsMsg, true, lang);
+                    renderFilterChips(lang);
+                    renderArchiveGrouped(lang);
                 } else if (!viewDetail.classList.contains('hidden-view') && window.currentPostSlug) {
-                    // 詳細ページを再読み込み
+                    // 詳細ページを再読み込み（hash は変更しない）
                     const post = posts.find(p => p.slug === window.currentPostSlug);
-                    if (post) showDetail(post.id);
+                    if (post) showDetail(post.id, false);
                 }
             };
+
+            // ハッシュルータ初期化：hashchange 監視 + 初回復元
+            window.addEventListener('hashchange', route);
+            route();
         }
 
         // スマホメニューを閉じる
         function closeMobileMenu() {
             mobileMenuOverlay.classList.add('translate-x-full');
+            const btn = document.getElementById('mobile-menu-btn');
+            if (btn) {
+                btn.setAttribute('aria-expanded', 'false');
+                btn.focus();
+            }
         }
         // グローバルにアクセスできるようにwindowに紐付け
         window.closeMobileMenu = closeMobileMenu;
 
+        // アーカイブ検索・フィルタをクリアして全巻を再描画
+        function clearArchiveSearch() {
+            archiveSearchInput.value = '';
+            archiveFilter = { series: 'all', month: 'all', sort: 'new' };
+            const lang = localStorage.getItem('lang') || 'ja';
+            renderFilterChips(lang);
+            renderArchiveGrouped(lang);
+        }
+        window.clearArchiveSearch = clearArchiveSearch;
+
         // 詳細ページを表示
-        window.showDetail = function (id) {
+        window.showDetail = function (id, pushHistory = true) {
             const post = posts.find(p => p.id === id);
             if (!post) return;
 
-            // 言語切り替え用に現在の記事スラグを保存
+            // 言語切り替え・再試行ボタン用に現在の記事 id/slug を保存
+            window.currentPostId = post.id;
             window.currentPostSlug = post.slug;
+
+            // ハッシュを更新（pushHistory 時のみ）。hashchange → route() → showDetail(id, false) で実際描画。
+            const targetHash = '#/post/' + post.slug;
+            if (pushHistory && location.hash !== targetHash) {
+                location.hash = targetHash;
+                return;
+            }
 
             const currentLang = localStorage.getItem('lang') || 'ja';
             const displayTitle = post[`title_${currentLang}`] || post.title || '';
@@ -1182,9 +1795,12 @@
             }
 
             detailTitle.innerText = displayTitle;
-            detailCategory.innerText = post.category;
-            detailDate.innerText = post.date;
-            detailContent.innerHTML = `<p class="font-mono text-gray-500 animate-pulse">${t('loading')}</p>`;
+            renderDetailMeta(post);
+            detailPrevNext.innerHTML = '';
+            detailContent.innerHTML = `
+                <div class="border-l-4 border-gold pl-4 py-2">
+                    <p class="font-mono text-night/60 animate-pulse">${t('loading')}</p>
+                </div>`;
 
             viewList.style.opacity = '0';
             viewArchive.style.opacity = '0';
@@ -1225,12 +1841,17 @@
                         html = html.replace(/<h2[^>]*>参考リンク<\/h2>([\s\S]*)$/,
                             '<div class="references-section"><h2>参考リンク</h2>$1</div>');
                         detailContent.innerHTML = html;
+                        renderDetailPrevNext(post, currentLang);
                     })
                     .catch(err => {
                         if (post.body) {
                             detailContent.innerHTML = renderPostBody(post.body);
                         } else {
-                            detailContent.innerHTML = `<p class="text-red-400 font-mono">${t('load-error')}</p>`;
+                            detailContent.innerHTML = `
+                                <div class="border-2 border-red-500 p-8">
+                                    <p class="text-red-400 font-mono mb-4">${t('load-error')}</p>
+                                    <button onclick="showDetail(window.currentPostId)" class="font-mono text-sm border-2 border-gold text-gold px-6 py-3 hover:bg-gold hover:text-ink transition-colors uppercase tracking-widest clickable">RETRY</button>
+                                </div>`;
                         }
                         console.error('Failed to load post body:', err);
                     });
@@ -1246,7 +1867,11 @@
         }
 
         // ABOUTページを表示
-        window.showAbout = function () {
+        window.showAbout = function (pushHistory = true) {
+            if (pushHistory && location.hash !== '#/about') {
+                location.hash = '#/about';
+                return; // hashchange → route() → showAbout(false)
+            }
             viewList.style.opacity = '0';
             viewArchive.style.opacity = '0';
             viewDetail.style.opacity = '0';
@@ -1267,7 +1892,11 @@
         };
 
         // リスト（TOP）に戻る
-        window.showList = function () {
+        window.showList = function (pushHistory = true) {
+            if (pushHistory && location.hash !== '#/' && location.hash !== '') {
+                location.hash = '#/';
+                return; // hashchange → route() → showList(false)
+            }
             viewArchive.style.opacity = '0';
             viewDetail.style.opacity = '0';
             viewAbout.style.opacity = '0';
@@ -1284,7 +1913,11 @@
         };
 
         // アーカイブ（全記事一覧）を表示
-        window.showArchive = function () {
+        window.showArchive = function (pushHistory = true) {
+            if (pushHistory && location.hash !== '#/archive') {
+                location.hash = '#/archive';
+                return; // hashchange → route() → showArchive(false)
+            }
             viewList.style.opacity = '0';
             viewDetail.style.opacity = '0';
             viewAbout.style.opacity = '0';
@@ -1296,10 +1929,11 @@
                 viewArchive.classList.remove('hidden-view');
                 window.scrollTo(0, 0);
 
-                // 全記事を描画
+                // 全巻を描画（フィルタチップ + 月別グループ）
                 archiveSearchInput.value = '';
-                renderPosts(posts, archiveGrid, archiveNoResultsMsg, true);
-                archiveCount.textContent = posts.length;
+                const lang = localStorage.getItem('lang') || 'ja';
+                renderFilterChips(lang);
+                renderArchiveGrouped(lang);
 
                 viewArchive.style.opacity = '0';
                 requestAnimationFrame(() => {
@@ -1311,14 +1945,41 @@
 
         // 詳細ページから戻る（遷移元に応じてhomeかarchiveに戻る）
         window.goBack = function () {
-            if (previousView === 'archive') showArchive();
-            else showList();
+            // ハッシュ履歴があれば戻る（hashchange → route でビュー復元）。直リン時は previousView へ。
+            if (location.hash && location.hash !== '#/' && window.history.length > 1) {
+                window.history.back();
+            } else if (previousView === 'archive') {
+                showArchive();
+            } else {
+                showList();
+            }
         };
+
+        // ハッシュルータ：URL hash に基づいてビューを切り替え（pushHistory=false で呼び、無限ループを防ぐ）
+        function route() {
+            const hash = location.hash || '#/';
+            if (hash === '#/archive') {
+                showArchive(false);
+            } else if (hash === '#/about') {
+                showAbout(false);
+            } else if (hash.indexOf('#/post/') === 0) {
+                const slug = decodeURIComponent(hash.slice(7));
+                const post = posts.find(p => p.slug === slug);
+                if (post) showDetail(post.id, false);
+                else showList(false);
+            } else {
+                showList(false);
+            }
+        }
+        window.route = route;
 
         // カーソル追従
         const cursorDot = document.getElementById("cursor-dot");
         const cursorOutline = document.getElementById("cursor-outline");
+        // prefers-reduced-motion 設定時はカーソル追従を無効化（内耳疾患・CPU/バッテリー配慮）
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.addEventListener("mousemove", function (e) {
+            if (prefersReducedMotion) return;
             const posX = e.clientX;
             const posY = e.clientY;
             cursorDot.style.left = `${posX}px`;

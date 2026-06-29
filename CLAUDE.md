@@ -8,6 +8,7 @@ AI関連ニュースを収集し、GitHub Pages ブログ (erk-artifacts/ai-blog
 
 ## プロジェクト構成
 - `.claude/skills/generate-news-post/` - Claude Code手動実行用スキル
+- `.claude/skills/fantasy-fiction/` - ブログUIデザインガイドライン（Fantasy×Fiction「魔法の図書館 / Mystic Codex」ハイブリッド: 夜空 #0B1437 × 金 #FDC800 × 羊皮紙 #FFE9CE、New Rocker / Cossette Texte / IBM Plex Mono / Noto Sans JP）。index.html / admin.html のデザイン作業時に参照。旧スキル `.claude/skills/neobrutalism/`（acid green ネオブータリズム）は履歴保持で残存
 - `scripts/generate-post.mjs` - GitHub Actions自動実行用Node.jsスクリプト
 - `scripts/translate-existing.mjs` - 既存記事の一括翻訳
 - `scripts/translate-single.mjs` - 単一記事の翻訳

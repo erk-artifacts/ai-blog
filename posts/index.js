@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の波と新たな課題、実用化最前線",
+    "title_en": "AI Frontier Today：The Wave of AI Evolution and New Challenges, at the Forefront of Practical Application",
+    "title_zh-tw": "今日 AI 前沿：AI進化的浪潮與新的挑戰，實用化最前線",
+    "title_zh-cn": "今日 AI 前沿：AI进化浪潮与新挑战，实用化最前线",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 물결과 새로운 과제, 실용화 최전선",
+    "category": "AI NEWS",
+    "date": "2026.06.30",
+    "thumbnail": "",
+    "summary": "OpenAIの運用問題からAI搭載PC、業務効率化AI、セキュリティ脅威、そして最新技術World IDを活用したAI広告まで、AI最前線の動きを解説します。",
+    "summary_en": "We will explain the latest developments on the AI front, from OpenAI's operational issues to AI-powered PCs, business efficiency AI, security threats, and AI advertising utilizing the latest technology, World ID.",
+    "summary_zh-tw": "從OpenAI的營運問題，到AI搭載PC、業務效率化AI、資安威脅，以及活用最新技術World ID的AI廣告，本文將解說AI最前線的動向。",
+    "summary_zh-cn": "本文将解析从OpenAI的运营问题，到AI PC、业务效率提升AI、安全威胁，以及利用最新技术World ID的AI广告等AI前沿动态。",
+    "summary_ko": "OpenAI의 운영 문제부터 AI 탑재 PC, 업무 효율화 AI, 보안 위협, 그리고 최신 기술 World ID를 활용한 AI 광고에 이르기까지, AI 최전선의 움직임을 해설합니다.",
+    "slug": "2026-06-30"
+  },
+  {
     "title": "今日のAI最前線：米政府のAI規制と進化する次世代モデル、そして広がるAI活用",
     "title_en": "AI Frontier Today：US government AI regulations, evolving next-generation models, and expanding AI use",
     "title_zh-tw": "今日 AI 前沿：美國政府的AI監管、演進中的次世代模型，以及日益普及的AI應用",

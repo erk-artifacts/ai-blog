@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：グーグルが爆速画像生成AIを発表、Anthropicモデルの規制解除も！",
+    "title_en": "AI Frontier Today：Google announces lightning-fast image generation AI, plus the lifting of restrictions on Anthropic models!",
+    "title_zh-tw": "今日 AI 前沿：Google 發表極速圖像生成 AI，Anthropic 模型也解除管制！",
+    "title_zh-cn": "今日 AI 前沿：谷歌发布极速图片生成AI，Anthropic模型也解除限制！",
+    "title_ko": "오늘의 AI 최전선：구글이 초고속 이미지 생성 AI를 발표, Anthropic 모델 규제 해제도!",
+    "category": "AI NEWS",
+    "date": "2026.07.01",
+    "thumbnail": "",
+    "summary": "Googleがわずか4秒で画像を生成する新AIを発表。Anthropicの主要AIモデルへの輸出規制も解除され、AI開発の加速が期待されます。",
+    "summary_en": "Google announced a new AI that generates images in just 4 seconds. Export restrictions on Anthropic's major AI models have also been lifted, and AI development is expected to accelerate.",
+    "summary_zh-tw": "Google發布了可在短短4秒內生成圖像的新AI。針對Anthropic主要AI模型的出口管制也已解除，預計AI開發將會加速。",
+    "summary_zh-cn": "谷歌发布了仅需4秒即可生成图像的新AI。Anthropic主要AI模型的出口管制也已解除，有望加速AI发展。",
+    "summary_ko": "구글이 단 4초 만에 이미지를 생성하는 새로운 AI를 발표했습니다. 앤스로픽의 주요 AI 모델에 대한 수출 규제도 해제되어, AI 개발 가속화가 기대됩니다.",
+    "slug": "2026-07-01"
+  },
+  {
     "title": "今日のAI最前線：AI進化の波と新たな課題、実用化最前線",
     "title_en": "AI Frontier Today：The Wave of AI Evolution and New Challenges, at the Forefront of Practical Application",
     "title_zh-tw": "今日 AI 前沿：AI進化的浪潮與新的挑戰，實用化最前線",

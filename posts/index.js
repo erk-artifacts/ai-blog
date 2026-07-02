@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI時代のインフラと人材、そしてエンタメ進化の秘訣",
+    "title_en": "AI Frontier Today：Infrastructure and Talent in the AI Era, and the Secret to the Evolution of Entertainment",
+    "title_zh-tw": "今日 AI 前沿：AI時代的基礎設施與人才，以及娛樂進化的秘訣",
+    "title_zh-cn": "今日 AI 前沿：AI时代的基础设施和人才，以及娱乐进化的秘诀",
+    "title_ko": "오늘의 AI 최전선：AI 시대의 인프라와 인재, 그리고 엔터테인먼트 진화의 비결",
+    "category": "AI NEWS",
+    "date": "2026.07.02",
+    "thumbnail": "",
+    "summary": "AI活用が進む現代社会で直面するインフラの課題、ドローンが拓くエンタメの新境地、そしてAIを支えるデータエンジニアの重要性に迫ります。",
+    "summary_en": "We delve into the infrastructure challenges faced in modern society as AI utilization advances, the new frontiers in entertainment being pioneered by drones, and the importance of data engineers supporting AI.",
+    "summary_zh-tw": "在AI應用日益普及的現代社會中，我們將深入探討所面臨的基礎設施挑戰、無人機開拓的娛樂新境地，以及支援AI的數據工程師的重要性。",
+    "summary_zh-cn": "本文将聚焦于人工智能应用日益普及的现代社会中面临的基础设施挑战、无人机开辟的娱乐新领域，以及支撑人工智能的数据工程师的重要性。",
+    "summary_ko": "AI 활용이 가속화되는 현대 사회에서 직면하는 인프라 과제, 드론이 개척하는 엔터테인먼트의 새로운 지평, 그리고 AI를 뒷받침하는 데이터 엔지니어의 중요성을 다룹니다.",
+    "slug": "2026-07-02"
+  },
+  {
     "title": "今日のAI最前線：グーグルが爆速画像生成AIを発表、Anthropicモデルの規制解除も！",
     "title_en": "AI Frontier Today：Google announces lightning-fast image generation AI, plus the lifting of restrictions on Anthropic models!",
     "title_zh-tw": "今日 AI 前沿：Google 發表極速圖像生成 AI，Anthropic 模型也解除管制！",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：業務をAIで効率化！データ連携からセキュリティまで最新ソリューション",
+    "title_en": "AI Frontier Today：Streamline operations with AI! Latest solutions from data integration to security",
+    "title_zh-tw": "今日 AI 前沿：以AI提升業務效率！從資料整合到資安的最新解決方案",
+    "title_zh-cn": "今日 AI 前沿：利用AI提升业务效率！从数据集成到安全，最新解决方案",
+    "title_ko": "오늘의 AI 최전선：AI로 업무 효율화! 데이터 연동부터 보안까지 최신 솔루션",
+    "category": "AI NEWS",
+    "date": "2026.07.03",
+    "thumbnail": "",
+    "summary": "最新AIサービスでビジネス効率化とセキュリティ強化！kintone向けAI連携、プロンプト制御AIファイアウォール、生成AIリスク対策ツールなど、今日のAIトレンドを深掘り。",
+    "summary_en": "Boost business efficiency and strengthen security with the latest AI services! Deep dive into today's AI trends, including AI integration for kintone, prompt-controlled AI firewalls, and generative AI risk management tools.",
+    "summary_zh-tw": "透過最新 AI 服務，提升商業效率並強化安全性！深入探討 kintone 專用 AI 整合、提示詞控制 AI 防火牆、生成式 AI 風險對策工具等今日 AI 趨勢。",
+    "summary_zh-cn": "最新 AI 服务助力业务效率提升与安全强化！深入探讨 kintone AI 集成、提示词控制 AI 防火墙、生成式 AI 风险管理工具等当今 AI 趋势。",
+    "summary_ko": "최신 AI 서비스로 비즈니스 효율화 및 보안 강화! kintone용 AI 연동, 프롬프트 제어 AI 방화벽, 생성형 AI 리스크 관리 도구 등 오늘날의 AI 트렌드를 심층 분석합니다.",
+    "slug": "2026-07-03"
+  },
+  {
     "title": "今日のAI最前線：AI時代のインフラと人材、そしてエンタメ進化の秘訣",
     "title_en": "AI Frontier Today：Infrastructure and Talent in the AI Era, and the Secret to the Evolution of Entertainment",
     "title_zh-tw": "今日 AI 前沿：AI時代的基礎設施與人才，以及娛樂進化的秘訣",

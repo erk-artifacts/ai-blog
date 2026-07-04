@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI特化PCからAnthropicの医療分野進出まで、最新AIトレンドを深掘り",
+    "title_en": "AI Frontier Today：From AI-specialized PCs to Anthropic's expansion into the medical field, a deep dive into the latest AI trends",
+    "title_zh-tw": "今日 AI 前沿：從AI特化PC到Anthropic進軍醫療領域，深入探討最新AI趨勢",
+    "title_zh-cn": "今日 AI 前沿：从AI专用PC到Anthropic进军医疗领域，深入探讨最新AI趋势",
+    "title_ko": "오늘의 AI 최전선：AI 특화 PC부터 앤트로픽의 의료 분야 진출까지, 최신 AI 트렌드 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.07.04",
+    "thumbnail": "",
+    "summary": "高性能PCでのローカルLLM活用、Claude Codeでのbot開発、AI専門用語集、AIノートPCの登場、そしてAnthropicの医療分野参入など、AIの最前線を解説します。",
+    "summary_en": "We will explain the forefront of AI, including leveraging local LLMs on high-performance PCs, bot development with Claude Code, an AI glossary, the emergence of AI laptops, and Anthropic's entry into the medical field.",
+    "summary_zh-tw": "我們將深入解析AI的前沿發展，包括高效能PC上本地LLM的應用、透過Claude Code開發bot、AI專業術語集、AI筆記型電腦的問世，以及Anthropic進軍醫療領域等。",
+    "summary_zh-cn": "高性能PC上本地LLM的应用、使用Claude Code开发机器人、AI专业术语词汇表、AI笔记本电脑的出现，以及Anthropic进军医疗领域等，我们将解读AI的最前沿。",
+    "summary_ko": "고성능 PC에서의 로컬 LLM 활용, Claude Code를 활용한 봇 개발, AI 전문 용어집, AI 노트북 등장, 그리고 Anthropic의 의료 분야 진출 등 AI의 최전선을 해설합니다.",
+    "slug": "2026-07-04"
+  },
+  {
     "title": "今日のAI最前線：業務をAIで効率化！データ連携からセキュリティまで最新ソリューション",
     "title_en": "AI Frontier Today：Streamline operations with AI! Latest solutions from data integration to security",
     "title_zh-tw": "今日 AI 前沿：以AI提升業務效率！從資料整合到資安的最新解決方案",

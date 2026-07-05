@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の波：企業戦略から日常生活、創作の未来まで",
+    "title_en": "AI Frontier Today：The Wave of AI Evolution: From Corporate Strategy to Daily Life and the Future of Creation",
+    "title_zh-tw": "今日 AI 前沿：AI 進化的浪潮：從企業戰略到日常生活、創作的未來",
+    "title_zh-cn": "今日 AI 前沿：AI进化浪潮：从企业战略到日常生活，乃至创作的未来",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 물결 : 기업 전략부터 일상생활, 창작의 미래까지",
+    "category": "AI NEWS",
+    "date": "2026.07.05",
+    "thumbnail": "",
+    "summary": "AI業界の主要プレーヤーの動向、Googleの創造的CM、企業内AI利用規制、著作権論争、AI搭載デバイスの進化など、多角的なAIの最前線を解説します。",
+    "summary_en": "We will explore the multifaceted forefront of AI, covering topics such as trends among major players in the AI industry, Google's creative commercials, regulations on internal AI use, copyright disputes, and the evolution of AI-powered devices.",
+    "summary_zh-tw": "AI業界主要參與者的動態、Google的創意廣告、企業內部AI使用規範、著作權爭議、AI搭載裝置的演進等，將多面向地解說AI的最新前線。",
+    "summary_zh-cn": "AI行业主要参与者的动向、谷歌的创意广告、企业内部AI使用规范、著作权争议、AI搭载设备的演进等，将从多角度解读AI的前沿发展。",
+    "summary_ko": "AI 업계 주요 플레이어의 동향, 구글의 창의적인 광고, 기업 내 AI 이용 규제, 저작권 논쟁, AI 탑재 기기의 진화 등 다각적인 AI의 최전선을 해설합니다.",
+    "slug": "2026-07-05"
+  },
+  {
     "title": "今日のAI最前線：AI特化PCからAnthropicの医療分野進出まで、最新AIトレンドを深掘り",
     "title_en": "AI Frontier Today：From AI-specialized PCs to Anthropic's expansion into the medical field, a deep dive into the latest AI trends",
     "title_zh-tw": "今日 AI 前沿：從AI特化PC到Anthropic進軍醫療領域，深入探討最新AI趨勢",

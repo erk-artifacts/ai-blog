@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIビジネス加速と日常生活への浸透",
+    "title_en": "AI Frontier Today：Accelerating AI Business and its Penetration into Daily Life",
+    "title_zh-tw": "今日 AI 前沿：AI商業加速與日常生活滲透",
+    "title_zh-cn": "今日 AI 前沿：AI业务加速与日常生活渗透",
+    "title_ko": "오늘의 AI 최전선：AI 비즈니스 가속과 일상생활로의 침투",
+    "category": "AI NEWS",
+    "date": "2026.07.06",
+    "thumbnail": "",
+    "summary": "シャープのAIサーバ事業拡大、金融分野でのAIエージェント活用、開発者コミュニティ支援、AI動画制作・AIボイスレコーダーの普及、そしてChatGPTと業務アプリの連携など、多岐にわたるAIの最前線をご紹介します。",
+    "summary_en": "We will introduce the diverse frontiers of AI, including Sharp's expanding AI server business, the use of AI agents in the financial sector, support for developer communities, the popularization of AI video production and AI voice recorders, and the integration of ChatGPT with business applications.",
+    "summary_zh-tw": "夏普的AI伺服器業務擴展、金融領域中AI代理的應用、開發者社群的支援、AI影片製作與AI錄音筆的普及，以及ChatGPT與業務應用程式的整合等，我們將為您介紹涵蓋多方面的AI最前線。",
+    "summary_zh-cn": "我们将介绍夏普AI服务器业务的拓展、AI代理在金融领域的应用、开发者社区的支持、AI视频制作和AI录音笔的普及，以及ChatGPT与业务应用的集成等，涵盖AI前沿的诸多方面。",
+    "summary_ko": "샤프의 AI 서버 사업 확대, 금융 분야에서의 AI 에이전트 활용, 개발자 커뮤니티 지원, AI 동영상 제작 및 AI 보이스 레코더 보급, 그리고 ChatGPT와 업무 앱 연동 등, 다방면에 걸친 AI의 최전선을 소개해 드립니다.",
+    "slug": "2026-07-06"
+  },
+  {
     "title": "今日のAI最前線：AI進化の波：企業戦略から日常生活、創作の未来まで",
     "title_en": "AI Frontier Today：The Wave of AI Evolution: From Corporate Strategy to Daily Life and the Future of Creation",
     "title_zh-tw": "今日 AI 前沿：AI 進化的浪潮：從企業戰略到日常生活、創作的未來",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：イーロン・マスクのAI企業に新展開！分散GPUが加速、AI画像生成も進化中",
+    "title_en": "AI Frontier Today：New developments at Elon Musk's AI company! Distributed GPUs are accelerating, and AI image generation is also evolving.",
+    "title_zh-tw": "今日 AI 前沿：伊隆·馬斯克的AI公司有新發展！分散式GPU加速，AI圖像生成也正在演進中",
+    "title_zh-cn": "今日 AI 前沿：埃隆·马斯克的AI公司有新进展！分布式GPU加速，AI图像生成也正在进化中",
+    "title_ko": "오늘의 AI 최전선：일론 머스크의 AI 기업에 신전개! 분산 GPU가 가속, AI 이미지 생성도 진화 중",
+    "category": "AI NEWS",
+    "date": "2026.07.07",
+    "thumbnail": "",
+    "summary": "イーロン・マスク氏率いるxAIがSpaceXAIに名称変更し事業統合。NTTドコモビジネスはGPU分散インフラを開放。AIによる画像生成能力の進化も話題に。AIのビジネスと技術の最前線に注目です！",
+    "summary_en": "xAI, led by Elon Musk, has changed its name to SpaceXAI and integrated its businesses. NTT Docomo Business has opened its GPU distributed infrastructure. The evolution of AI's image generation capabilities is also a hot topic. Pay attention to the forefront of AI business and technology!",
+    "summary_zh-tw": "由伊隆·馬斯克領導的xAI更名為SpaceXAI並進行業務整合。NTT Docomo Business 開放了GPU分散式基礎設施。AI的圖像生成能力進化也成為話題。敬請關注AI的商業與技術最前線！",
+    "summary_zh-cn": "由埃隆·马斯克领导的xAI更名为SpaceXAI并整合业务。NTT Docomo Business开放GPU分布式基础设施。AI图像生成能力的进化也成为热门话题。请关注AI的商业和技术前沿！",
+    "summary_ko": "일론 머스크 씨가 이끄는 xAI가 SpaceXAI로 명칭을 변경하고 사업을 통합했습니다. NTT 도코모 비즈니스는 GPU 분산 인프라를 개방했습니다. AI에 의한 이미지 생성 능력의 진화 또한 화제가 되고 있습니다. AI 비즈니스와 기술의 최전선에 주목합니다!",
+    "slug": "2026-07-07"
+  },
+  {
     "title": "今日のAI最前線：AIビジネス加速と日常生活への浸透",
     "title_en": "AI Frontier Today：Accelerating AI Business and its Penetration into Daily Life",
     "title_zh-tw": "今日 AI 前沿：AI商業加速與日常生活滲透",

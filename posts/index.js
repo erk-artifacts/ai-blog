@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：業務効率化から未来の働き方まで、AIが変える私たちの日常",
+    "title_en": "AI Frontier Today：From operational efficiency to the future of work, AI is transforming our daily lives",
+    "title_zh-tw": "今日 AI 前沿：業務效率化到未來工作模式，AI改變我們的日常",
+    "title_zh-cn": "今日 AI 前沿：从业务效率提升到未来工作方式，AI改变我们的日常生活",
+    "title_ko": "오늘의 AI 최전선：업무 효율화부터 미래의 근무 방식까지, AI가 바꾸는 우리의 일상",
+    "category": "AI NEWS",
+    "date": "2026.07.09",
+    "thumbnail": "",
+    "summary": "AIアシスタント、Excel連携、生成AI活用事例、AI同時翻訳機、そしてAI特化イベントなど、AIが私たちの働き方と生活をどう変えるか最前線を解説します。",
+    "summary_en": "We will explain the cutting edge of how AI is transforming our work and lives, covering topics such as AI assistants, Excel integration, generative AI use cases, AI simultaneous translation devices, and AI-focused events.",
+    "summary_zh-tw": "AI助理、Excel整合、生成式AI應用案例、AI即時翻譯機，以及AI專屬活動等，我們將剖析AI如何改變我們工作與生活方式的最前線發展。",
+    "summary_zh-cn": "AI助手、Excel联动、生成式AI应用案例、AI同声翻译机以及AI专题活动等，我们将为您解读AI将如何改变我们的工作和生活的最前沿。",
+    "summary_ko": "AI 비서, Excel 연동, 생성형 AI 활용 사례, AI 동시 통역기, 그리고 AI 특화 이벤트 등, AI가 우리의 업무 방식과 생활을 어떻게 변화시킬지 최전선을 설명합니다.",
+    "slug": "2026-07-09"
+  },
+  {
     "title": "今日のAI最前線：イーロン・マスクのAI企業に新展開！分散GPUが加速、AI画像生成も進化中",
     "title_en": "AI Frontier Today：New developments at Elon Musk's AI company! Distributed GPUs are accelerating, and AI image generation is also evolving.",
     "title_zh-tw": "今日 AI 前沿：伊隆·馬斯克的AI公司有新發展！分散式GPU加速，AI圖像生成也正在演進中",

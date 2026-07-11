@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの倫理と進化が交錯する最新動向",
+    "title_en": "AI Frontier Today：Latest developments at the intersection of AI ethics and evolution",
+    "title_zh-tw": "今日 AI 前沿：AI倫理與進化交錯的最新動向",
+    "title_zh-cn": "今日 AI 前沿：人工智能伦理与进化交织的最新动向",
+    "title_ko": "오늘의 AI 최전선：AI의 윤리와 진화가 교차하는 최신 동향",
+    "category": "AI NEWS",
+    "date": "2026.07.11",
+    "thumbnail": "",
+    "summary": "MetaのAI機能停止、AppleのOpenAI提訴、AIレコーダー、AI対応PCの登場、オープンソースAIの重要性など、倫理と進化が交錯するAIの最新動向を深掘りします。",
+    "summary_en": "We will delve into the latest AI trends where ethics and evolution intersect, including Meta's AI feature shutdown, Apple's lawsuit against OpenAI, the emergence of AI recorders and AI-ready PCs, and the importance of open-source AI.",
+    "summary_zh-tw": "Meta 暫停 AI 功能、Apple 起訴 OpenAI、AI 錄音筆和支援 AI 的電腦問世、開源 AI 的重要性等，深入探討倫理與進化交織的 AI 最新趨勢。",
+    "summary_zh-cn": "Meta的AI功能停用、苹果起诉OpenAI、AI录音笔、AI PC的登场、开源AI的重要性等，深入探讨AI的最新动态，其中伦理与进化相互交织。",
+    "summary_ko": "Meta의 AI 기능 중단, Apple의 OpenAI 고소, AI 레코더, AI PC의 등장, 오픈소스 AI의 중요성 등 윤리와 진화가 교차하는 AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-07-11"
+  },
+  {
     "title": "今日のAI最前線：業務効率化から未来の働き方まで、AIが変える私たちの日常",
     "title_en": "AI Frontier Today：From operational efficiency to the future of work, AI is transforming our daily lives",
     "title_zh-tw": "今日 AI 前沿：業務效率化到未來工作模式，AI改變我們的日常",

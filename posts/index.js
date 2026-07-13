@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが拓く現場改善と未来の人材育成",
+    "title_en": "AI Frontier Today：AI: Paving the Way for Operational Improvement and Future Talent Development",
+    "title_zh-tw": "今日 AI 前沿：AI 開創現場改善與未來人才培育",
+    "title_zh-cn": "今日 AI 前沿：AI赋能现场改善与未来人才培养",
+    "title_ko": "오늘의 AI 최전선：AI가 열어갈 현장 개선과 미래 인재 양성",
+    "category": "AI NEWS",
+    "date": "2026.07.13",
+    "thumbnail": "",
+    "summary": "最新AI技術が現場の効率化とセキュリティを強化し、次世代のAI人材育成も加速。私たちの生活をより豊かにするAIの進化に注目です。",
+    "summary_en": "The latest AI technology enhances on-site efficiency and security, and also accelerates the development of next-generation AI talent. Pay attention to the evolution of AI, which enriches our lives.",
+    "summary_zh-tw": "最新的AI技術強化了現場的效率與安全性，同時也加速了次世代AI人才的培育。請關注AI的演進，它將使我們的生活更加豐富。",
+    "summary_zh-cn": "最新AI技术强化现场效率和安全性，并加速下一代AI人才培养。请关注AI的进化，它将使我们的生活更丰富。",
+    "summary_ko": "최신 AI 기술이 현장 효율화 및 보안을 강화하고, 차세대 AI 인재 양성도 가속화합니다. 우리 삶을 더욱 풍요롭게 할 AI의 진화에 주목할 만합니다.",
+    "slug": "2026-07-13"
+  },
+  {
     "title": "今日のAI最前線：AIの倫理と進化が交錯する最新動向",
     "title_en": "AI Frontier Today：Latest developments at the intersection of AI ethics and evolution",
     "title_zh-tw": "今日 AI 前沿：AI倫理與進化交錯的最新動向",

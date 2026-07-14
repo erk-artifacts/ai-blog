@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の波、ビジネスから生成まで最新動向を深掘り",
+    "title_en": "AI Frontier Today：The Wave of AI Evolution: A Deep Dive into the Latest Trends from Business to Generative AI",
+    "title_zh-tw": "今日 AI 前沿：AI進化浪潮：從商業到生成，深度剖析最新趨勢",
+    "title_zh-cn": "今日 AI 前沿：AI进化浪潮，深度解析从商业到生成式AI的最新动向",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 물결, 비즈니스부터 생성까지 최신 동향을 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.07.14",
+    "thumbnail": "",
+    "summary": "富士通のAIモダナイゼーションからUberのロボタクシー、Claudeの深層、動画生成のPixVerse、そしてAIエージェントのNous Researchまで、最新AIニュースを解説。",
+    "summary_en": "From Fujitsu's AI modernization to Uber's robotaxis, the depths of Claude, PixVerse for video generation, and Nous Research for AI agents – we explain the latest AI news.",
+    "summary_zh-tw": "從富士通的AI現代化專案、Uber的機器人計程車、Claude的深度、影片生成的PixVerse，到AI代理Nous Research，解析最新AI新聞。",
+    "summary_zh-cn": "富士通的AI现代化、Uber的机器人出租车、Claude的深度、视频生成PixVerse以及AI智能体Nous Research等最新AI新闻解读。",
+    "summary_ko": "후지쯔의 AI 현대화부터 우버의 로보택시, 클로드의 심층, 동영상 생성 픽스버스, 그리고 AI 에이전트 누스 리서치까지, 최신 AI 뉴스를 해설.",
+    "slug": "2026-07-14"
+  },
+  {
     "title": "今日のAI最前線：AIが拓く現場改善と未来の人材育成",
     "title_en": "AI Frontier Today：AI: Paving the Way for Operational Improvement and Future Talent Development",
     "title_zh-tw": "今日 AI 前沿：AI 開創現場改善與未來人才培育",

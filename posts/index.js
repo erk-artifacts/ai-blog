@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI創薬スタートアップが20億ドル評価、ChatGPTはW杯予想に進化！今日のAI技術はどこまで進む？",
+    "title_en": "AI Frontier Today：AI drug discovery startup valued at $2 billion, ChatGPT evolves for World Cup predictions! How far will today's AI technology advance?",
+    "title_zh-tw": "今日 AI 前沿：AI藥物研發新創公司估值達20億美元，ChatGPT則進化到預測世界盃！今日的AI技術能發展到什麼程度？",
+    "title_zh-cn": "今日 AI 前沿：AI制药初创公司估值20亿美元，ChatGPT进化预测世界杯！当今AI技术将走向何方？",
+    "title_ko": "오늘의 AI 최전선：AI 신약 개발 스타트업이 20억 달러 가치 평가를 받으며, 챗GPT는 월드컵 예측까지 진화! 오늘날의 AI 기술은 어디까지 발전할까요?",
+    "category": "AI NEWS",
+    "date": "2026.07.15",
+    "thumbnail": "",
+    "summary": "AI創薬の大型スタートアップ誕生から、ChatGPTのW杯予想への応用、OpenAIの新たなハードウェア開発まで、最新AIニュースを深掘り！",
+    "summary_en": "From the birth of major AI drug discovery startups, to the application of ChatGPT for World Cup predictions, and OpenAI's new hardware development – we deep dive into the latest AI news!",
+    "summary_zh-tw": "從AI藥物開發的大型新創公司誕生，到ChatGPT應用於世界盃預測，再到OpenAI開發新硬體，深入探討最新AI新聞！",
+    "summary_zh-cn": "从AI制药大型初创公司诞生，到ChatGPT应用于世界杯预测，再到OpenAI研发新硬件，深度剖析最新AI新闻！",
+    "summary_ko": "AI 신약 개발 대규모 스타트업 탄생부터, ChatGPT의 월드컵 예측 적용, OpenAI의 새로운 하드웨어 개발까지, 최신 AI 뉴스를 심층 분석!",
+    "slug": "2026-07-15"
+  },
+  {
     "title": "今日のAI最前線：AI進化の波、ビジネスから生成まで最新動向を深掘り",
     "title_en": "AI Frontier Today：The Wave of AI Evolution: A Deep Dive into the Latest Trends from Business to Generative AI",
     "title_zh-tw": "今日 AI 前沿：AI進化浪潮：從商業到生成，深度剖析最新趨勢",

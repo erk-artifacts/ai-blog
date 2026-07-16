@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIとビジネスの融合加速！DropboxのAI強化からOpenAIの新ハードウェアまで",
+    "title_en": "AI Frontier Today：AI and Business Integration Accelerating! From Dropbox's AI Enhancement to OpenAI's New Hardware",
+    "title_zh-tw": "今日 AI 前沿：AI與商業融合加速！從Dropbox強化AI到OpenAI的新硬體",
+    "title_zh-cn": "今日 AI 前沿：AI与商业的融合加速！从Dropbox的AI强化到OpenAI的新硬件",
+    "title_ko": "오늘의 AI 최전선：AI와 비즈니스의 융합 가속! Dropbox의 AI 강화부터 OpenAI의 새 하드웨어까지",
+    "category": "AI NEWS",
+    "date": "2026.07.16",
+    "thumbnail": "",
+    "summary": "DropboxがClaude連携で業務をAI強化。OpenAIは動くAIスピーカーや専用キーパッドを発表。みずほはNVIDIAとオンプレAIを共同検証し、MicrosoftのAI戦略も明らかに。AIが社会に深く浸透し、ビジネスのあり方が大きく変わろうとしています。",
+    "summary_en": "Dropbox is enhancing its operations with AI through Claude integration. OpenAI announced a mobile AI speaker and a dedicated keypad. Mizuho is jointly verifying on-prem AI with NVIDIA, and Microsoft's AI strategy has also been revealed. AI is deeply permeating society, and the way business is conducted is about to change significantly.",
+    "summary_zh-tw": "Dropbox 透過與 Claude 合作，強化業務的 AI 能力。OpenAI 發表了可動式 AI 揚聲器和專用鍵盤。瑞穗與 NVIDIA 共同驗證本地部署 AI，同時微軟的 AI 策略也隨之揭露。AI 深入滲透社會，商業模式即將發生巨大變化。",
+    "summary_zh-cn": "Dropbox 通过与 Claude 集成，用 AI 强化业务。OpenAI 发布了会动的 AI 音箱和专用键盘。瑞穗与 NVIDIA 共同验证本地部署 AI，微软的 AI 战略也浮出水面。AI 正在深入渗透社会，商业模式即将发生重大变革。",
+    "summary_ko": "드롭박스는 클로드 연동으로 업무를 AI 강화. 오픈AI는 움직이는 AI 스피커와 전용 키패드를 발표. 미즈호는 엔비디아와 온프레미스 AI를 공동 검증하고, 마이크로소프트의 AI 전략도 공개. AI가 사회에 깊이 침투하여 비즈니스의 양상이 크게 변화하려고 합니다.",
+    "slug": "2026-07-16"
+  },
+  {
     "title": "今日のAI最前線：AI創薬スタートアップが20億ドル評価、ChatGPTはW杯予想に進化！今日のAI技術はどこまで進む？",
     "title_en": "AI Frontier Today：AI drug discovery startup valued at $2 billion, ChatGPT evolves for World Cup predictions! How far will today's AI technology advance?",
     "title_zh-tw": "今日 AI 前沿：AI藥物研發新創公司估值達20億美元，ChatGPT則進化到預測世界盃！今日的AI技術能發展到什麼程度？",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが変える未来：Netflixの制作現場からNVIDIAの国家規模AI工場まで",
+    "title_en": "AI Frontier Today：The Future AI is Transforming: From Netflix's Production Floor to NVIDIA's Nation-Scale AI Factory",
+    "title_zh-tw": "今日 AI 前沿：AI 改變的未來：從 Netflix 的製作現場到 NVIDIA 的國家級 AI 工廠",
+    "title_zh-cn": "今日 AI 前沿：AI改变的未来：从Netflix的制作现场到NVIDIA的国家规模AI工厂",
+    "title_ko": "오늘의 AI 최전선：AI가 바꿀 미래: 넷플릭스 제작 현장에서부터 엔비디아의 국가 규모 AI 공장까지",
+    "category": "AI NEWS",
+    "date": "2026.07.17",
+    "thumbnail": "",
+    "summary": "生成AIのコンテンツ制作への活用、新型ロボット掃除機、NVIDIAの日本でのAI工場構想、中国のAIモデル進化、介護AIカメラの機能拡充、AI Agent企業の拡大など、多様なAIニュースをお届けします。",
+    "summary_en": "We bring you diverse AI news, including the utilization of generative AI for content creation, new robot vacuum cleaners, NVIDIA's AI factory concept in Japan, the evolution of China's AI models, enhanced functionality for AI care cameras, and the expansion of AI Agent companies.",
+    "summary_zh-tw": "生成式AI內容製作應用、新型掃地機器人、NVIDIA日本AI工廠構想、中國AI模型演進、照護AI攝影機功能擴充、AI Agent企業擴大等，多樣AI新聞為您呈現。",
+    "summary_zh-cn": "生成式AI在内容创作中的应用、新型扫地机器人、英伟达在日本的AI工厂构想、中国AI模型演进、护理AI摄像头功能拓展、AI Agent企业扩张等，为您带来多样化的AI新闻。",
+    "summary_ko": "생성 AI의 콘텐츠 제작 활용, 신형 로봇 청소기, NVIDIA의 일본 AI 공장 구상, 중국의 AI 모델 진화, 돌봄 AI 카메라 기능 확충, AI 에이전트 기업 확장 등 다양한 AI 뉴스를 전해드립니다.",
+    "slug": "2026-07-17"
+  },
+  {
     "title": "今日のAI最前線：AIとビジネスの融合加速！DropboxのAI強化からOpenAIの新ハードウェアまで",
     "title_en": "AI Frontier Today：AI and Business Integration Accelerating! From Dropbox's AI Enhancement to OpenAI's New Hardware",
     "title_zh-tw": "今日 AI 前沿：AI與商業融合加速！從Dropbox強化AI到OpenAI的新硬體",

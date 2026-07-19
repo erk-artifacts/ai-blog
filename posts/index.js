@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIがスポーツ、医療、コンシューマーテックを変える！最新動向と倫理的課題",
+    "title_en": "AI Frontier Today：AI will transform sports, medicine, and consumer tech! Latest trends and ethical challenges",
+    "title_zh-tw": "今日 AI 前沿：AI 將改變體育、醫療與消費者科技！最新動向與倫理課題",
+    "title_zh-cn": "今日 AI 前沿：AI变革体育、医疗和消费科技！最新趋势和伦理挑战",
+    "title_ko": "오늘의 AI 최전선：AI가 스포츠, 의료, 컨슈머 테크를 바꾼다! 최신 동향과 윤리적 과제",
+    "category": "AI NEWS",
+    "date": "2026.07.19",
+    "thumbnail": "",
+    "summary": "スポーツ分析から医療、新興AIモデルの動向まで、AIが社会にもたらす影響と進化、そして潜在的なリスクを深掘りします。",
+    "summary_en": "From sports analytics to medical applications and the trends of emerging AI models, we will delve deep into AI's impact on society, its evolution, and its potential risks.",
+    "summary_zh-tw": "從運動分析到醫療，乃至新興AI模型趨勢，我們將深入探討AI對社會帶來的影響與演進，以及其潛在風險。",
+    "summary_zh-cn": "从体育分析到医疗，以及新兴AI模型的动向，我们将深入探讨AI给社会带来的影响、演进以及潜在风险。",
+    "summary_ko": "스포츠 분석부터 의료, 신흥 AI 모델 동향에 이르기까지, AI가 사회에 미치는 영향과 진화, 그리고 잠재적 위험을 심층적으로 다룹니다.",
+    "slug": "2026-07-19"
+  },
+  {
     "title": "今日のAI最前線：AIが変える未来：Netflixの制作現場からNVIDIAの国家規模AI工場まで",
     "title_en": "AI Frontier Today：The Future AI is Transforming: From Netflix's Production Floor to NVIDIA's Nation-Scale AI Factory",
     "title_zh-tw": "今日 AI 前沿：AI 改變的未來：從 Netflix 的製作現場到 NVIDIA 的國家級 AI 工廠",

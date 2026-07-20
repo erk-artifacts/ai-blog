@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIがサイバー攻撃を防ぎ、クリエイティブ制作を自動化！最前線の動向を追う",
+    "title_en": "AI Frontier Today：AI prevents cyberattacks and automates creative production! Tracking cutting-edge developments",
+    "title_zh-tw": "今日 AI 前沿：AI防範網路攻擊，自動化創意內容製作！追蹤最前線趨勢",
+    "title_zh-cn": "今日 AI 前沿：AI预防网络攻击，自动化创意制作！追踪前沿动态",
+    "title_ko": "오늘의 AI 최전선：AI가 사이버 공격을 막고, 크리에이티브 제작을 자동화! 최전선 동향 추적",
+    "category": "AI NEWS",
+    "date": "2026.07.20",
+    "thumbnail": "",
+    "summary": "Hugging FaceへのAI攻撃とAI防御、生成AIによる旅行サイト分析、AI専門メディア公開、AIによる3D制作自動化など、最新のAI活用事例と技術動向を解説します。",
+    "summary_en": "We will explain the latest AI application examples and technological trends, including AI attacks and AI defense against Hugging Face, travel website analysis using generative AI, the launch of an AI-specialized media outlet, and the automation of 3D production with AI.",
+    "summary_zh-tw": "將解說最新的AI應用案例與技術趨勢，內容包括針對Hugging Face的AI攻擊與AI防禦、生成式AI分析旅遊網站、AI專業媒體的公開發布、以及透過AI自動化3D製作等。",
+    "summary_zh-cn": "我们将解读最新的AI应用案例和技术趋势，包括针对Hugging Face的AI攻击与防御、生成式AI驱动的旅游网站分析、AI专业媒体发布以及AI驱动的3D制作自动化等。",
+    "summary_ko": "Hugging Face에 대한 AI 공격과 AI 방어, 생성형 AI를 활용한 여행 사이트 분석, AI 전문 미디어 공개, AI를 통한 3D 제작 자동화 등 최신 AI 활용 사례와 기술 동향을 설명합니다.",
+    "slug": "2026-07-20"
+  },
+  {
     "title": "今日のAI最前線：AIがスポーツ、医療、コンシューマーテックを変える！最新動向と倫理的課題",
     "title_en": "AI Frontier Today：AI will transform sports, medicine, and consumer tech! Latest trends and ethical challenges",
     "title_zh-tw": "今日 AI 前沿：AI 將改變體育、醫療與消費者科技！最新動向與倫理課題",

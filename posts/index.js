@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI最前線：Anthropicの著作権和解から採用・食品管理まで、AIが変えるビジネスと日常",
+    "title_en": "AI Frontier Today：AI Frontiers: From Anthropic's Copyright Settlement to Recruitment and Food Management, How AI is Changing Business and Daily Life",
+    "title_zh-tw": "今日 AI 前沿：AI最前線：從Anthropic的著作權和解到招募與食品管理，AI正在改變商業與日常生活",
+    "title_zh-cn": "今日 AI 前沿：AI前沿：从Anthropic的版权和解到招聘与食品管理，AI正在改变商业与日常生活",
+    "title_ko": "오늘의 AI 최전선：AI 최전선: Anthropic의 저작권 합의부터 채용 및 식품 관리까지, AI가 바꾸는 비즈니스와 일상",
+    "category": "AI NEWS",
+    "date": "2026.07.21",
+    "thumbnail": "",
+    "summary": "Anthropicの著作権和解、AI推論GPUの高性能化、食品表示チェック、採用テレアポ、就活相談、会計システムなど、多岐にわたるAIの進化とビジネス活用を紹介します。",
+    "summary_en": "We will introduce the diverse evolution and business applications of AI, including Anthropic's copyright settlement, high-performance AI inference GPUs, food label checking, recruitment telemarketing, job hunting consultations, and accounting systems.",
+    "summary_zh-tw": "Anthropic的版權和解、AI推論GPU的效能提升、食品標示檢查、人才招募電話行銷、求職諮詢、會計系統等，將介紹AI在多個領域的演進與商業應用。",
+    "summary_zh-cn": "Anthropic的版权和解、AI推理GPU的性能提升、食品标签检查、招聘电话邀约、求职咨询、会计系统等，将介绍AI在多个领域的演进与商业应用。",
+    "summary_ko": "앤트로픽의 저작권 합의, AI 추론 GPU의 고성능화, 식품 표시 체크, 채용 텔레마케팅, 취업 상담, 회계 시스템 등 다방면에 걸친 AI의 발전과 비즈니스 활용을 소개합니다.",
+    "slug": "2026-07-21"
+  },
+  {
     "title": "今日のAI最前線：AIがサイバー攻撃を防ぎ、クリエイティブ制作を自動化！最前線の動向を追う",
     "title_en": "AI Frontier Today：AI prevents cyberattacks and automates creative production! Tracking cutting-edge developments",
     "title_zh-tw": "今日 AI 前沿：AI防範網路攻擊，自動化創意內容製作！追蹤最前線趨勢",

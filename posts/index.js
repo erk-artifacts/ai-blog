@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：MicrosoftとMistralの提携強化から自治体AI活用まで、最新動向を深掘り！",
+    "title_en": "AI Frontier Today：From the strengthened partnership between Microsoft and Mistral to AI utilization by local governments, a deep dive into the latest trends!",
+    "title_zh-tw": "今日 AI 前沿：從微軟與Mistral強化合作到地方政府AI應用，深入探討最新動態！",
+    "title_zh-cn": "今日 AI 前沿：从Microsoft与Mistral的合作强化到地方政府AI应用，深入探讨最新动态！",
+    "title_ko": "오늘의 AI 최전선：마이크로소프트와 미스트랄의 제휴 강화부터 지자체 AI 활용까지, 최신 동향을 심층 분석!",
+    "category": "AI NEWS",
+    "date": "2026.07.22",
+    "thumbnail": "",
+    "summary": "MicrosoftとMistralの提携拡大、BlockのAI協働プラットフォーム公開、AIエージェントの安全な活用、AI導入のFAQ、AI検索時代のEC戦略、自治体のAI活用研修など、AIの最前線を分かりやすくお届けします。",
+    "summary_en": "Microsoft and Mistral's expanded partnership, Block's AI collaboration platform launch, safe utilization of AI agents, an FAQ on AI adoption, e-commerce strategies for the AI search era, AI utilization training for local governments, and more—we deliver the cutting edge of AI, explained simply.",
+    "summary_zh-tw": "微軟與Mistral擴大合作、Block發布AI協作平台、AI代理人的安全運用、AI導入常見問題、AI搜尋時代的電商策略、地方政府的AI應用培訓等，我們將以淺顯易懂的方式，為您呈現AI最前線。",
+    "summary_zh-cn": "Microsoft与Mistral扩大合作，Block发布AI协作平台，AI代理的安全应用，AI引入常见问题，AI搜索时代的电商策略，地方政府的AI应用培训等，我们将通俗易懂地为您呈现AI前沿动态。",
+    "summary_ko": "Microsoft와 Mistral의 협력 확대, Block의 AI 협업 플랫폼 공개, AI 에이전트의 안전한 활용, AI 도입 FAQ, AI 검색 시대의 전자상거래(EC) 전략, 지방정부의 AI 활용 연수 등, AI의 최전선을 알기 쉽게 전달해 드립니다.",
+    "slug": "2026-07-22"
+  },
+  {
     "title": "今日のAI最前線：AI最前線：Anthropicの著作権和解から採用・食品管理まで、AIが変えるビジネスと日常",
     "title_en": "AI Frontier Today：AI Frontiers: From Anthropic's Copyright Settlement to Recruitment and Food Management, How AI is Changing Business and Daily Life",
     "title_zh-tw": "今日 AI 前沿：AI最前線：從Anthropic的著作權和解到招募與食品管理，AI正在改變商業與日常生活",

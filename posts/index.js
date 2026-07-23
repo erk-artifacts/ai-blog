@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：企業AIツールの勢力図、SamsungのGemini搭載スマートグラス、そして日本のAI研究最前線！",
+    "title_en": "AI Frontier Today：The landscape of enterprise AI tools, Samsung's Gemini-powered smart glasses, and the forefront of AI research in Japan!",
+    "title_zh-tw": "今日 AI 前沿：企業AI工具的勢力版圖、三星搭載Gemini的智慧眼鏡、以及日本AI研究的最前線！",
+    "title_zh-cn": "今日 AI 前沿：企业AI工具的势力图、三星搭载Gemini的智能眼镜，以及日本的AI研究最前沿！",
+    "title_ko": "오늘의 AI 최전선：기업 AI 도구의 세력도, 삼성의 Gemini 탑재 스마트 글라스, 그리고 일본 AI 연구 최전선!",
+    "category": "AI NEWS",
+    "date": "2026.07.23",
+    "thumbnail": "",
+    "summary": "企業向けAIツールの利用動向、SamsungのGemini搭載スマートグラス発表、OpenAIパートナー認定、そして日本のAI研究受賞のニュースを深掘りします。",
+    "summary_en": "We will delve into the usage trends of AI tools for businesses, Samsung's announcement of Gemini-powered smart glasses, OpenAI partner certification, and news of a Japanese AI research award.",
+    "summary_zh-tw": "企業級AI工具的利用動向、三星發表搭載Gemini的智慧眼鏡、OpenAI合作夥伴認證，以及深入探討日本AI研究獲獎的消息。",
+    "summary_zh-cn": "企业AI工具的使用趋势、三星发布搭载Gemini的智能眼镜发布、OpenAI合作伙伴认证，以及日本AI研究获奖新闻，我们将对其进行深入探讨。",
+    "summary_ko": "기업용 AI 도구 이용 동향, 삼성의 Gemini 탑재 스마트 글라스 발표, OpenAI 파트너 인증, 그리고 일본 AI 연구 수상 소식을 심층 분석합니다.",
+    "slug": "2026-07-23"
+  },
+  {
     "title": "今日のAI最前線：MicrosoftとMistralの提携強化から自治体AI活用まで、最新動向を深掘り！",
     "title_en": "AI Frontier Today：From the strengthened partnership between Microsoft and Mistral to AI utilization by local governments, a deep dive into the latest trends!",
     "title_zh-tw": "今日 AI 前沿：從微軟與Mistral強化合作到地方政府AI應用，深入探討最新動態！",

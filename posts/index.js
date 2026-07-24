@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI活用が加速！ビジネス現場から安全対策まで最新動向を深掘り",
+    "title_en": "AI Frontier Today：AI utilization is accelerating! A deep dive into the latest trends, from business applications to safety measures.",
+    "title_zh-tw": "今日 AI 前沿：AI活用加速！從商業現場到安全對策，深度剖析最新動向",
+    "title_zh-cn": "今日 AI 前沿：AI应用加速！深挖从商业场景到安全对策的最新动态",
+    "title_ko": "오늘의 AI 최전선：AI 활용 가속화! 비즈니스 현장부터 안전 대책까지 최신 동향 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.07.24",
+    "thumbnail": "",
+    "summary": "MetaのAIキャンペーンやAIエージェントのセキュリティ対策、生成AIの課題克服、そして小売・EC・インフラ分野でのAI導入事例など、多岐にわたるAIの最新動向を深掘りします。",
+    "summary_en": "We will deep dive into a wide range of the latest AI trends, including Meta's AI campaigns, security measures for AI agents, overcoming challenges in generative AI, and AI implementation case studies in the retail, e-commerce, and infrastructure sectors.",
+    "summary_zh-tw": "我們將深入探討 AI 的最新動向，內容涵蓋 Meta 的 AI 行銷活動與 AI 代理程式的安全性措施、生成式 AI 的挑戰克服，以及零售、電子商務和基礎設施等領域的 AI 導入案例等。",
+    "summary_zh-cn": "我们将深入探讨Meta的AI活动、AI代理的安全措施、克服生成式AI的挑战，以及零售、电商、基础设施领域的AI应用案例等，多方面的AI最新动态。",
+    "summary_ko": "Meta의 AI 캠페인 및 AI 에이전트 보안 대책, 생성형 AI의 과제 극복, 그리고 소매/EC/인프라 분야에서의 AI 도입 사례 등, 다방면에 걸친 AI 최신 동향을 심층 분석합니다.",
+    "slug": "2026-07-24"
+  },
+  {
     "title": "今日のAI最前線：企業AIツールの勢力図、SamsungのGemini搭載スマートグラス、そして日本のAI研究最前線！",
     "title_en": "AI Frontier Today：The landscape of enterprise AI tools, Samsung's Gemini-powered smart glasses, and the forefront of AI research in Japan!",
     "title_zh-tw": "今日 AI 前沿：企業AI工具的勢力版圖、三星搭載Gemini的智慧眼鏡、以及日本AI研究的最前線！",

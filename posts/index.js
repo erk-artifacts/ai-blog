@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：新世代LLM「Claude Opus 5」登場！AIキーパッドから遺伝子編集まで広がるAIの最前線",
+    "title_en": "AI Frontier Today：New-Generation LLM \"Claude Opus 5\" Launched! The Expanding Forefront of AI, From AI Keypads to Gene Editing",
+    "title_zh-tw": "今日 AI 前沿：新世代LLM「Claude Opus 5」登場！AI的最前線從AI鍵盤延伸至基因編輯",
+    "title_zh-cn": "今日 AI 前沿：新世代LLM「Claude Opus 5」登场！从AI键盘到基因编辑，AI的前沿不断延伸",
+    "title_ko": "오늘의 AI 최전선：차세대 LLM 「Claude Opus 5」 등장! AI 키패드부터 유전자 편집까지 확장되는 AI의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.07.25",
+    "thumbnail": "",
+    "summary": "Anthropicの最新LLM「Claude Opus 5」が半額で提供開始。OpenAIのAIキーパッドや、AIラボへの大型投資、政治分野でのLLM活用、NVIDIAのオープンウェイトAI支持、Midjourneyの買収、遺伝子編集への応用など、AIの多岐にわたる進化を深掘りします。",
+    "summary_en": "Anthropic's latest LLM, \"Claude Opus 5,\" is now available at half price. We will delve deep into the diverse evolution of AI, including OpenAI's AI keypad, significant investments in AI labs, the application of LLMs in politics, NVIDIA's endorsement of open-weight AI, Midjourney's acquisition, and applications in gene editing.",
+    "summary_zh-tw": "Anthropic 的最新 LLM「Claude Opus 5」已開始半價提供。我們將深入探討 AI 在多個領域的演變，包括 OpenAI 的 AI 鍵盤、對 AI 實驗室的大筆投資、LLM 在政治領域的應用、NVIDIA 對開放權重 AI 的支持、收購 Midjourney，以及在基因編輯方面的應用等。",
+    "summary_zh-cn": "Anthropic的最新LLM「Claude Opus 5」已半价推出。我们将深入探讨AI在多方面的进化，包括OpenAI的AI键盘、对AI实验室的大笔投资、LLM在政治领域的应用、NVIDIA对开放权重AI的支持、收购Midjourney以及在基因编辑中的应用等。",
+    "summary_ko": "Anthropic의 최신 LLM 'Claude Opus 5'가 반값에 출시되었습니다. OpenAI의 AI 키패드와 AI 연구소에 대한 대규모 투자, 정치 분야에서의 LLM 활용, NVIDIA의 오픈 가중치 AI 지지, Midjourney 인수, 유전자 편집 적용 등 AI의 다양한 진화를 심층적으로 다룹니다.",
+    "slug": "2026-07-25"
+  },
+  {
     "title": "今日のAI最前線：AI活用が加速！ビジネス現場から安全対策まで最新動向を深掘り",
     "title_en": "AI Frontier Today：AI utilization is accelerating! A deep dive into the latest trends, from business applications to safety measures.",
     "title_zh-tw": "今日 AI 前沿：AI活用加速！從商業現場到安全對策，深度剖析最新動向",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが変える雇用、規制、そして私たちの日常",
+    "title_en": "AI Frontier Today：AI changing employment, regulation, and our daily lives",
+    "title_zh-tw": "今日 AI 前沿：AI改變就業、法規，以及我們的日常生活",
+    "title_zh-cn": "今日 AI 前沿：AI将改变就业、监管以及我们的日常生活",
+    "title_ko": "오늘의 AI 최전선：AI가 변화시킬 고용, 규제, 그리고 우리의 일상",
+    "category": "AI NEWS",
+    "date": "2026.07.26",
+    "thumbnail": "",
+    "summary": "AIが雇用、政策、インフラ、そして個人の意識に与える多角的な影響を深掘り。技術進化の光と影に迫ります。",
+    "summary_en": "A deep dive into the multifaceted impacts of AI on employment, policy, infrastructure, and individual consciousness, examining the light and shadow of technological advancement.",
+    "summary_zh-tw": "深入探討AI對就業、政策、基礎設施及個人意識所造成的多元影響。審視技術演進的光與影。",
+    "summary_zh-cn": "深入探讨AI对就业、政策、基础设施以及个人意识带来的多方面影响。揭示技术进步的光明与阴影。",
+    "summary_ko": "AI가 고용, 정책, 인프라, 그리고 개인의 의식에 미치는 다각적인 영향을 심층 분석합니다. 기술 진화의 빛과 그림자를 조명합니다.",
+    "slug": "2026-07-26"
+  },
+  {
     "title": "今日のAI最前線：新世代LLM「Claude Opus 5」登場！AIキーパッドから遺伝子編集まで広がるAIの最前線",
     "title_en": "AI Frontier Today：New-Generation LLM \"Claude Opus 5\" Launched! The Expanding Forefront of AI, From AI Keypads to Gene Editing",
     "title_zh-tw": "今日 AI 前沿：新世代LLM「Claude Opus 5」登場！AI的最前線從AI鍵盤延伸至基因編輯",

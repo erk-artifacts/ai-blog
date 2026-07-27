@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI業界、規制と安全、そして次なる進化への探求",
+    "title_en": "AI Frontier Today：The AI Industry, Regulation and Safety, and the Quest for the Next Evolution",
+    "title_zh-tw": "今日 AI 前沿：AI產業、監管與安全，以及對下一階段演進的探索",
+    "title_zh-cn": "今日 AI 前沿：AI业界、监管与安全、以及对下一阶段演进的探索",
+    "title_ko": "오늘의 AI 최전선：AI 산업, 규제와 안전, 그리고 다음 진화를 향한 탐구",
+    "category": "AI NEWS",
+    "date": "2026.07.27",
+    "thumbnail": "",
+    "summary": "主要AI企業が規制に異議を唱える一方、Hugging Faceは暴走AI対策を要求。さらに脳波と物理AIの融合、顧客レビューを活かすAI推奨など、多岐にわたるAIの最前線を深掘りします。",
+    "summary_en": "While major AI companies object to regulations, Hugging Face calls for measures against runaway AI. Furthermore, we will delve deep into the diverse frontiers of AI, including the fusion of brainwaves and physical AI, and AI recommendations that leverage customer reviews.",
+    "summary_zh-tw": "主要AI企業對監管表示異議，與此同時，Hugging Face則要求採取應對失控AI的措施。此外，我們將深入探討AI的多面向最前線，例如腦電波與實體AI的融合，以及善用客戶評論的AI推薦等。",
+    "summary_zh-cn": "主要AI企业反对监管，而Hugging Face则要求采取措施应对失控AI。此外，我们还将深入探讨多方面的AI前沿，例如脑电波与物理AI的融合、利用客户评论的AI推荐等。",
+    "summary_ko": "주요 AI 기업들이 규제에 이의를 제기하는 한편, Hugging Face는 폭주 AI 대책을 요구합니다. 더 나아가 뇌파와 물리 AI의 융합, 고객 리뷰를 활용하는 AI 추천 등 다방면에 걸친 AI의 최전선을 심층 분석합니다.",
+    "slug": "2026-07-27"
+  },
+  {
     "title": "今日のAI最前線：AIが変える雇用、規制、そして私たちの日常",
     "title_en": "AI Frontier Today：AI changing employment, regulation, and our daily lives",
     "title_zh-tw": "今日 AI 前沿：AI改變就業、法規，以及我們的日常生活",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：2.8兆AIモデル登場！進化とリスクが交錯するAI最前線",
+    "title_en": "AI Frontier Today：2.8 Trillion AI Model Debuts! The AI Frontline Where Progress and Risk Intersect",
+    "title_zh-tw": "今日 AI 前沿：2.8 兆 AI 模型登場！進化與風險交織的 AI 最前線",
+    "title_zh-cn": "今日 AI 前沿：2.8兆AI模型登场！进化与风险交织的AI最前沿",
+    "title_ko": "오늘의 AI 최전선：2.8조 AI 모델 등장! 진화와 리스크가 교차하는 AI 최전선",
+    "category": "AI NEWS",
+    "date": "2026.07.28",
+    "thumbnail": "",
+    "summary": "中国の巨大AIモデル公開からプライバシー、サイバー脅威、防御アライアンスまで、AIの最新動向を深掘り。",
+    "summary_en": "A deep dive into the latest AI trends, from the unveiling of China's colossal AI models to privacy, cyber threats, and defense alliances.",
+    "summary_zh-tw": "從中國巨型AI模型發布，到隱私、網路威脅、防禦聯盟，深入探討AI的最新趨勢。",
+    "summary_zh-cn": "从中国巨型AI模型的发布，到隐私、网络威胁和防御联盟，深入探讨AI的最新动向。",
+    "summary_ko": "중국의 거대 AI 모델 공개부터 프라이버시, 사이버 위협, 방어 동맹까지, AI의 최신 동향을 심층 분석.",
+    "slug": "2026-07-28"
+  },
+  {
     "title": "今日のAI最前線：AI業界、規制と安全、そして次なる進化への探求",
     "title_en": "AI Frontier Today：The AI Industry, Regulation and Safety, and the Quest for the Next Evolution",
     "title_zh-tw": "今日 AI 前沿：AI產業、監管與安全，以及對下一階段演進的探索",

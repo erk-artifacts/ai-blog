@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：広告AIの進化、超知能の未来、そしてAI倫理の議論",
+    "title_en": "AI Frontier Today：The evolution of advertising AI, the future of superintelligence, and the AI ethics debate",
+    "title_zh-tw": "今日 AI 前沿：廣告AI的進化、超智能的未來、以及AI倫理的討論",
+    "title_zh-cn": "今日 AI 前沿：广告AI的进化、超智能的未来、以及AI伦理的讨论",
+    "title_ko": "오늘의 AI 최전선：광고 AI의 진화, 초지능의 미래, 그리고 AI 윤리 논의",
+    "category": "AI NEWS",
+    "date": "2026.07.29",
+    "thumbnail": "",
+    "summary": "アドビの広告AI、ザッカーバーグの超知能論、AIエージェントのセキュリティ、AIゲームセンター、開発ペース調整提言、ミュトスの暗号解読など、AIの多角的な進化と課題を深掘りします。",
+    "summary_en": "Adobe's advertising AI, Zuckerberg's superintelligence theory, AI agent security, AI game centers, proposals to adjust the development pace, Mythos's code-breaking, and more – we will delve into the multifaceted evolution and challenges of AI.",
+    "summary_zh-tw": "Adobe 的廣告 AI、祖克柏的超智能理論、AI 代理人的安全性、AI 遊戲中心、調整開發步調的提議、Mythos 的密碼解讀等，我們將深入探討 AI 的多面向發展與挑戰。",
+    "summary_zh-cn": "Adobe的广告AI、扎克伯格的超智能理论、AI代理的安全性、AI游戏中心、开发速度调整建议、Mytho的密码破解等，我们将深入探讨AI的多角度演进与挑战。",
+    "summary_ko": "어도비의 광고 AI, 저커버그의 초지능론, AI 에이전트의 보안, AI 게임센터, 개발 속도 조정 제언, 뮈토스의 암호 해독 등, AI의 다각적인 진화와 과제를 심층 분석합니다.",
+    "slug": "2026-07-29"
+  },
+  {
     "title": "今日のAI最前線：2.8兆AIモデル登場！進化とリスクが交錯するAI最前線",
     "title_en": "AI Frontier Today：2.8 Trillion AI Model Debuts! The AI Frontline Where Progress and Risk Intersect",
     "title_zh-tw": "今日 AI 前沿：2.8 兆 AI 模型登場！進化與風險交織的 AI 最前線",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIエージェントが未来を変える！OpenAI復帰からマイクロソフトの競争激化、Metaの大型投資まで",
+    "title_en": "AI Frontier Today：AI Agents Will Change the Future! From OpenAI's Comeback to Microsoft's Intensifying Competition and Meta's Massive Investments",
+    "title_zh-tw": "今日 AI 前沿：AI 代理人將改變未來！從 OpenAI 回歸、微軟競爭白熱化到 Meta 巨額投資",
+    "title_zh-cn": "今日 AI 前沿：AI代理正在改变未来！从OpenAI复职到微软竞争加剧，再到Meta大手笔投资",
+    "title_ko": "오늘의 AI 최전선：AI 에이전트가 미래를 바꾼다! OpenAI 복귀부터 마이크로소프트의 경쟁 심화, Meta의 대규모 투자까지",
+    "category": "AI NEWS",
+    "date": "2026.07.30",
+    "thumbnail": "",
+    "summary": "OpenAI復帰、マイクロソフトとMetaのAI投資戦略、そしてAIエージェントの未来予測など、今週のAI業界を揺るがす最新ニュースを深掘りします。",
+    "summary_en": "We'll take a deep dive into the latest news shaking the AI industry this week, including OpenAI's return, Microsoft and Meta's AI investment strategies, and future predictions for AI agents.",
+    "summary_zh-tw": "我們將深入探討本週撼動 AI 業界的最新消息，包括 OpenAI 回歸、微軟和 Meta 的 AI 投資策略，以及對 AI 代理人未來預測等。",
+    "summary_zh-cn": "OpenAI复职、微软和Meta的AI投资策略，以及AI代理的未来预测等，我们将深入探讨本周震撼AI行业的最新消息。",
+    "summary_ko": "OpenAI 복귀, 마이크로소프트와 메타의 AI 투자 전략, 그리고 AI 에이전트의 미래 예측 등, 이번 주 AI 업계를 뒤흔드는 최신 뉴스를 심층 분석합니다.",
+    "slug": "2026-07-30"
+  },
+  {
     "title": "今日のAI最前線：広告AIの進化、超知能の未来、そしてAI倫理の議論",
     "title_en": "AI Frontier Today：The evolution of advertising AI, the future of superintelligence, and the AI ethics debate",
     "title_zh-tw": "今日 AI 前沿：廣告AI的進化、超智能的未來、以及AI倫理的討論",

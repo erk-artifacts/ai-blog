@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI業界の人材と安全保障：最新動向を深掘り",
+    "title_en": "AI Frontier Today：AI Industry Talent and Security: A Deep Dive into Latest Trends",
+    "title_zh-tw": "今日 AI 前沿：AI產業的人才與安全保障：最新動向深入探討",
+    "title_zh-cn": "今日 AI 前沿：AI行业的人才与安全保障：最新动态深入探讨",
+    "title_ko": "오늘의 AI 최전선：AI 산업의 인재와 안보: 최신 동향 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.07.31",
+    "thumbnail": "",
+    "summary": "OpenAIへの重要人物復帰、Anthropicのセキュリティテスト、新たな音声AIソリューション、AI伴走サービスの登場など、AI技術の発展と安全対策の最新動向を解説します。",
+    "summary_en": "This article explains the latest trends in AI technology development and safety measures, including the return of key figures to OpenAI, Anthropic's security tests, new voice AI solutions, and the emergence of AI coaching services.",
+    "summary_zh-tw": "OpenAI重要人物回歸、Anthropic的安全測試、新的語音AI解決方案、AI陪伴服務的推出等，本文將探討AI技術的發展與安全措施的最新動態。",
+    "summary_zh-cn": "重要人物回归OpenAI、Anthropic的安全测试、新的语音AI解决方案、AI陪伴服务的出现等，我们将解读AI技术发展和安全措施的最新动态。",
+    "summary_ko": "OpenAI 핵심 인물 복귀, Anthropic의 보안 테스트, 새로운 음성 AI 솔루션, AI 동반 서비스의 등장 등 AI 기술 발전과 안전 대책의 최신 동향을 설명합니다.",
+    "slug": "2026-07-31"
+  },
+  {
     "title": "今日のAI最前線：AIエージェントが未来を変える！OpenAI復帰からマイクロソフトの競争激化、Metaの大型投資まで",
     "title_en": "AI Frontier Today：AI Agents Will Change the Future! From OpenAI's Comeback to Microsoft's Intensifying Competition and Meta's Massive Investments",
     "title_zh-tw": "今日 AI 前沿：AI 代理人將改變未來！從 OpenAI 回歸、微軟競爭白熱化到 Meta 巨額投資",

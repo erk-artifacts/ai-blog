@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：最新AI動向を深掘り！Google EarthのAI機能撤回からSam Altmanの警鐘まで",
+    "title_en": "AI Frontier Today：Deep dive into the latest AI trends! From Google Earth's AI feature withdrawal to Sam Altman's warning",
+    "title_zh-tw": "今日 AI 前沿：最新AI動向深度剖析！從Google Earth的AI功能撤回，到Sam Altman的警鐘",
+    "title_zh-cn": "今日 AI 前沿：深入探讨最新AI动向！从Google Earth撤回AI功能到萨姆·奥特曼的警示",
+    "title_ko": "오늘의 AI 최전선：최신 AI 동향을 심층 분석! Google Earth의 AI 기능 철회부터 Sam Altman의 경고까지",
+    "category": "AI NEWS",
+    "date": "2026.08.01",
+    "thumbnail": "",
+    "summary": "Google EarthのAI機能撤回、Claudeの悪意あるコード、Sam AltmanのAIペース調整発言など、最新のAI業界の重要ニュースを解説します。",
+    "summary_en": "This article will explain key recent news in the AI industry, including the withdrawal of Google Earth's AI features, Claude's malicious code, and Sam Altman's comments on adjusting the pace of AI development.",
+    "summary_zh-tw": "Google Earth 的 AI 功能撤回、Claude 的惡意程式碼、Sam Altman 關於調整 AI 發展步調的言論等，本文將解說最新的 AI 業界重要新聞。",
+    "summary_zh-cn": "我们将解读最新的AI行业重要新闻，包括Google Earth撤回AI功能、Claude的恶意代码、Sam Altman关于调整AI发展速度的言论等。",
+    "summary_ko": "Google 어스의 AI 기능 철회, Claude의 악성 코드, Sam Altman의 AI 속도 조절 발언 등 최신 AI 업계의 주요 뉴스를 설명합니다.",
+    "slug": "2026-08-01"
+  },
+  {
     "title": "今日のAI最前線：AI業界の人材と安全保障：最新動向を深掘り",
     "title_en": "AI Frontier Today：AI Industry Talent and Security: A Deep Dive into Latest Trends",
     "title_zh-tw": "今日 AI 前沿：AI產業的人才與安全保障：最新動向深入探討",

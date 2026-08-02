@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：GoogleパーソナルAI日本展開、OpenAI成長の裏側とAIを巡る倫理・健康問題",
+    "title_en": "AI Frontier Today：Google Personal AI's Japan Expansion, the Inside Story of OpenAI's Growth, and Ethical and Health Issues Surrounding AI",
+    "title_zh-tw": "今日 AI 前沿：Google個人AI日本部署、OpenAI成長的幕後故事與圍繞AI的倫理及健康問題",
+    "title_zh-cn": "今日 AI 前沿：谷歌个人AI登陆日本、OpenAI增长的幕后与围绕AI的伦理与健康问题",
+    "title_ko": "오늘의 AI 최전선：Google 개인 AI 일본 출시, OpenAI 성장의 이면과 AI를 둘러싼 윤리 및 건강 문제",
+    "category": "AI NEWS",
+    "date": "2026.08.02",
+    "thumbnail": "",
+    "summary": "GoogleのパーソナルAIが日本に上陸し、OpenAIが驚異的な成長を遂げる中、AIの倫理、規制、人間への影響に関する議論が活発化しています。",
+    "summary_en": "While Google's personal AI has arrived in Japan and OpenAI is experiencing astounding growth, discussions regarding AI ethics, regulation, and its impact on humans are intensifying.",
+    "summary_zh-tw": "Google 的個人化 AI 進駐日本，且 OpenAI 實現驚人增長之際，關於 AI 倫理、法規與對人類影響的討論日趨熱烈。",
+    "summary_zh-cn": "谷歌的个人AI登陆日本，OpenAI取得惊人增长，与此同时，关于AI伦理、监管以及对人类影响的讨论日益活跃。",
+    "summary_ko": "Google의 개인 AI가 일본에 상륙하고, OpenAI가 경이로운 성장을 거두는 가운데, AI 윤리, 규제, 인간에게 미치는 영향에 대한 논의가 활발해지고 있습니다.",
+    "slug": "2026-08-02"
+  },
+  {
     "title": "今日のAI最前線：最新AI動向を深掘り！Google EarthのAI機能撤回からSam Altmanの警鐘まで",
     "title_en": "AI Frontier Today：Deep dive into the latest AI trends! From Google Earth's AI feature withdrawal to Sam Altman's warning",
     "title_zh-tw": "今日 AI 前沿：最新AI動向深度剖析！從Google Earth的AI功能撤回，到Sam Altman的警鐘",

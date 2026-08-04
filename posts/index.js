@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：EU、AI規制を強化！企業経営にAIは必須の時代へ",
+    "title_en": "AI Frontier Today：EU Tightens AI Regulations! AI Becomes Essential for Business Management.",
+    "title_zh-tw": "今日 AI 前沿：歐盟強化AI監管！AI成為企業經營不可或缺的時代",
+    "title_zh-cn": "今日 AI 前沿：欧盟加强AI监管！AI成为企业经营必不可少的时代已来临",
+    "title_ko": "오늘의 AI 최전선：EU, AI 규제 강화! 기업 경영에 AI는 필수인 시대로",
+    "category": "AI NEWS",
+    "date": "2026.08.04",
+    "thumbnail": "",
+    "summary": "EUのAI規制開始や企業でのAI活用事例、さらにパランティアCEOのAI業界への警鐘など、最新のAI動向を解説します。",
+    "summary_en": "We will explain the latest AI trends, including the start of EU AI regulation, examples of AI utilization in companies, and warnings from Palantir's CEO about the AI industry.",
+    "summary_zh-tw": "本文將解析最新的AI動向，包括歐盟AI監管的啟動、企業AI應用案例，以及Palantir執行長對AI產業敲響的警鐘等。",
+    "summary_zh-cn": "本文将解读最新的AI动向，包括欧盟AI监管的启动、企业中的AI应用案例，以及Palantir CEO对AI行业的警告等。",
+    "summary_ko": "EU의 AI 규제 시작 및 기업의 AI 활용 사례, 나아가 팔란티어 CEO의 AI 업계에 대한 경고 등, 최신 AI 동향을 설명합니다.",
+    "slug": "2026-08-04"
+  },
+  {
     "title": "今日のAI最前線：GoogleパーソナルAI日本展開、OpenAI成長の裏側とAIを巡る倫理・健康問題",
     "title_en": "AI Frontier Today：Google Personal AI's Japan Expansion, the Inside Story of OpenAI's Growth, and Ethical and Health Issues Surrounding AI",
     "title_zh-tw": "今日 AI 前沿：Google個人AI日本部署、OpenAI成長的幕後故事與圍繞AI的倫理及健康問題",

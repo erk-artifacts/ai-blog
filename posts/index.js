@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：SpaceXのAI巨額投資が未来を拓く！ビジネスと教育現場でのAI活用も加速",
+    "title_en": "AI Frontier Today：SpaceX's Massive AI Investment Paves the Way for the Future! AI Adoption Also Accelerates in Business and Education",
+    "title_zh-tw": "今日 AI 前沿：SpaceX的AI巨額投資開拓未來！商業和教育現場的AI應用也將加速",
+    "title_zh-cn": "今日 AI 前沿：SpaceX巨额投资AI，开启未来！商业和教育领域的AI应用也将加速",
+    "title_ko": "오늘의 AI 최전선：SpaceX의 AI 거액 투자가 미래를 개척한다! 비즈니스 및 교육 현장에서의 AI 활용 또한 가속화",
+    "category": "AI NEWS",
+    "date": "2026.08.05",
+    "thumbnail": "",
+    "summary": "SpaceXがAI事業に巨額投資し成長を牽引。企業向けAI導入支援や特別支援教育でのAI活用など、AIの社会実装が多方面で進んでいます。",
+    "summary_en": "SpaceX has invested heavily in its AI business, driving its growth. The social implementation of AI is progressing in various fields, including support for AI adoption by businesses and the use of AI in special needs education.",
+    "summary_zh-tw": "SpaceX巨額投資AI業務，引領其成長。AI的社會實踐在多個面向取得進展，包括協助企業導入AI、以及將AI應用於特殊教育等。",
+    "summary_zh-cn": "SpaceX在AI业务上投入巨资并推动其增长。AI的社会应用正在多方面推进，例如为企业提供AI导入支持以及在特殊教育中应用AI。",
+    "summary_ko": "스페이스X가 AI 사업에 막대한 투자를 하여 성장을 견인하고 있습니다. 기업용 AI 도입 지원 및 특수교육에서의 AI 활용 등, AI의 사회 구현이 다방면에서 진행되고 있습니다.",
+    "slug": "2026-08-05"
+  },
+  {
     "title": "今日のAI最前線：EU、AI規制を強化！企業経営にAIは必須の時代へ",
     "title_en": "AI Frontier Today：EU Tightens AI Regulations! AI Becomes Essential for Business Management.",
     "title_zh-tw": "今日 AI 前沿：歐盟強化AI監管！AI成為企業經營不可或缺的時代",

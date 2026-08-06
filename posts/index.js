@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI業界の巨人たちが動く！ワークマンからJRまで、AIの最新活用事例",
+    "title_en": "AI Frontier Today：Giants of the AI industry are on the move! From Workman to JR, the latest AI use cases",
+    "title_zh-tw": "今日 AI 前沿：AI業界的巨擘們動作頻頻！從Workman到JR，AI的最新應用案例",
+    "title_zh-cn": "今日 AI 前沿：AI业界巨头大动作！从Workman到JR，AI最新应用案例",
+    "title_ko": "오늘의 AI 최전선：AI 업계의 거물들이 움직인다! 워크맨부터 JR까지, AI의 최신 활용 사례",
+    "category": "AI NEWS",
+    "date": "2026.08.06",
+    "thumbnail": "",
+    "summary": "Google DeepMindのトップ交代や新会社設立、ワークマンやJR東日本のAI活用、中国AIの進展など、AIの最前線を深掘りします。",
+    "summary_en": "We will delve deep into the forefront of AI, covering topics such as Google DeepMind's leadership changes and new company establishment, AI utilization by Workman and JR East, advancements in Chinese AI, and more.",
+    "summary_zh-tw": "Google DeepMind的高層異動及新公司成立、Workman及JR東日本運用AI、中國AI的進展等，深入探討AI的最前線。",
+    "summary_zh-cn": "Google DeepMind的高层变动、新公司成立、Workman和JR东日本的AI应用、中国AI的进展等，我们将深入探讨AI的最前沿。",
+    "summary_ko": "Google DeepMind의 최고 경영진 교체 및 신규 회사 설립, 워크맨과 JR 동일본의 AI 활용, 중국 AI의 발전 등 AI 최전선을 심층 분석합니다.",
+    "slug": "2026-08-06"
+  },
+  {
     "title": "今日のAI最前線：SpaceXのAI巨額投資が未来を拓く！ビジネスと教育現場でのAI活用も加速",
     "title_en": "AI Frontier Today：SpaceX's Massive AI Investment Paves the Way for the Future! AI Adoption Also Accelerates in Business and Education",
     "title_zh-tw": "今日 AI 前沿：SpaceX的AI巨額投資開拓未來！商業和教育現場的AI應用也將加速",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIビジネスの加速と日常への浸透",
+    "title_en": "AI Frontier Today：The Acceleration of AI Business and its Integration into Everyday Life",
+    "title_zh-tw": "今日 AI 前沿：人工智慧業務加速與滲透日常",
+    "title_zh-cn": "今日 AI 前沿：AI业务的加速与日常生活的渗透",
+    "title_ko": "오늘의 AI 최전선：AI 비즈니스의 가속과 일상으로의 침투",
+    "category": "AI NEWS",
+    "date": "2026.08.07",
+    "thumbnail": "",
+    "summary": "リコージャパンの営業AI強化、味の素のAI半導体材料好調、AI搭載PC登場など、ビジネスから日常までAIの普及が進んでいます。",
+    "summary_en": "The proliferation of AI is progressing from business to daily life, as seen in Ricoh Japan's enhanced sales AI, Ajinomoto's strong performance in AI semiconductor materials, and the emergence of AI-equipped PCs.",
+    "summary_zh-tw": "理光日本強化營業AI、味之素AI半導體材料表現強勁、搭載AI的個人電腦問世等，AI的普及正從商務領域持續推進到日常生活。",
+    "summary_zh-cn": "リコージャパンの営業AI強化、味の素のAI半導体材料好調、AI搭載PC登場など、ビジネスから日常までAIの普及が進んでいます。",
+    "summary_ko": "리코 재팬의 영업 AI 강화, 아지노모토의 AI 반도체 재료 호조, AI 탑재 PC 등장 등, 비즈니스부터 일상까지 AI의 보급이 진행되고 있습니다.",
+    "slug": "2026-08-07"
+  },
+  {
     "title": "今日のAI最前線：AI業界の巨人たちが動く！ワークマンからJRまで、AIの最新活用事例",
     "title_en": "AI Frontier Today：Giants of the AI industry are on the move! From Workman to JR, the latest AI use cases",
     "title_zh-tw": "今日 AI 前沿：AI業界的巨擘們動作頻頻！從Workman到JR，AI的最新應用案例",

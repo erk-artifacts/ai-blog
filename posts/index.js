@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIが危険なモデル開発を一時停止！AIの安全性と進化の最前線",
+    "title_en": "AI Frontier Today：OpenAI Temporarily Halts Dangerous Model Development! AI Safety and the Forefront of Advancement",
+    "title_zh-tw": "今日 AI 前沿：OpenAI 暫停危險模型開發！AI 的安全性與演進的最前線",
+    "title_zh-cn": "今日 AI 前沿：OpenAI暂停开发危险模型！AI安全与进化的最前沿",
+    "title_ko": "오늘의 AI 최전선：OpenAI가 위험한 모델 개발을 일시 중단! AI의 안전성과 진화의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.08.08",
+    "thumbnail": "",
+    "summary": "OpenAIがAIのサイバー能力危険性で開発を停止、Anthropicは規制緩和。AIの倫理、進化、実用化に関する重要な動きが続々。",
+    "summary_en": "OpenAI has halted development due to the dangers of AI's cyber capabilities, while Anthropic has eased restrictions. Significant developments concerning AI ethics, evolution, and practical application continue to emerge.",
+    "summary_zh-tw": "OpenAI因應AI的網路能力潛在風險而停止開發，Anthropic則獲放寬管制。關於AI倫理、發展與實際應用，重要動向接連不斷。",
+    "summary_zh-cn": "OpenAI因AI的网络能力风险而停止开发，Anthropic则放松监管。围绕AI的伦理、演进和应用，重要动向层出不穷。",
+    "summary_ko": "OpenAI가 AI의 사이버 능력 위험성으로 개발을 중단했으며, Anthropic은 규제 완화 흐름을 보였습니다. AI의 윤리, 진화, 실용화에 관한 중요한 움직임이 잇따르고 있습니다.",
+    "slug": "2026-08-08"
+  },
+  {
     "title": "今日のAI最前線：AIビジネスの加速と日常への浸透",
     "title_en": "AI Frontier Today：The Acceleration of AI Business and its Integration into Everyday Life",
     "title_zh-tw": "今日 AI 前沿：人工智慧業務加速與滲透日常",

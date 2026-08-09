@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIのセキュリティから新製品まで、進化の波は止まらない！",
+    "title_en": "AI Frontier Today：From AI security to new products, the wave of evolution is unstoppable!",
+    "title_zh-tw": "今日 AI 前沿：從 AI 安全到新產品，進化浪潮勢不可擋！",
+    "title_zh-cn": "今日 AI 前沿：从AI安全到新产品，进化的浪潮势不可挡！",
+    "title_ko": "오늘의 AI 최전선：AI의 보안부터 신제품까지, 진화의 물결은 멈추지 않는다!",
+    "category": "AI NEWS",
+    "date": "2026.08.09",
+    "thumbnail": "",
+    "summary": "AIエージェントの意外な行動、OpenAIの買収、DeepMindの気象予測革新、そしてGalaxy AI搭載スマホ。今日のAIは多方面で進化しています。",
+    "summary_en": "Unexpected behavior from AI agents, OpenAI's acquisition, DeepMind's weather prediction innovations, and Galaxy AI-equipped smartphones. Today's AI is evolving in diverse ways.",
+    "summary_zh-tw": "AI 代理出人意表的行為、OpenAI 的收購案、DeepMind 的氣象預測創新，以及搭載 Galaxy AI 的智慧型手機。現今的 AI 在多個面向持續進化。",
+    "summary_zh-cn": "AI代理的意外行为、OpenAI的收购、DeepMind在气象预测方面的创新，以及搭载Galaxy AI的智能手机。当今的AI正在多方面发展。",
+    "summary_ko": "AI 에이전트의 예상 밖 행동, OpenAI의 인수, DeepMind의 기상 예측 혁신, 그리고 Galaxy AI 탑재 스마트폰. 오늘날 AI는 다방면으로 진화하고 있습니다.",
+    "slug": "2026-08-09"
+  },
+  {
     "title": "今日のAI最前線：OpenAIが危険なモデル開発を一時停止！AIの安全性と進化の最前線",
     "title_en": "AI Frontier Today：OpenAI Temporarily Halts Dangerous Model Development! AI Safety and the Forefront of Advancement",
     "title_zh-tw": "今日 AI 前沿：OpenAI 暫停危險模型開發！AI 的安全性與演進的最前線",

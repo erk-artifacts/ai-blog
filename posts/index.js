@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが拓く未来：健康からキャリア、そして動画生成まで",
+    "title_en": "AI Frontier Today：AI's Unveiling Future: From Health to Career, and Even Video Generation",
+    "title_zh-tw": "今日 AI 前沿：AI 開創的未來：從健康到職涯，乃至影片生成",
+    "title_zh-cn": "今日 AI 前沿：AI开创的未来：从健康到职业，再到视频生成",
+    "title_ko": "오늘의 AI 최전선：AI가 열어갈 미래: 건강부터 커리어, 그리고 동영상 생성까지",
+    "category": "AI NEWS",
+    "date": "2026.08.10",
+    "thumbnail": "",
+    "summary": "AIの進化が多岐にわたる領域に影響を与えている最新ニュースを厳選。健康管理から動画生成、キャリア変革、そしてAI向け半導体開発まで、その最前線を紐解きます。",
+    "summary_en": "We've carefully selected the latest news showcasing how AI's evolution is impacting a wide range of fields. We'll explore the cutting edge of this impact, from healthcare management and video generation to career transformation and the development of AI-specific semiconductors.",
+    "summary_zh-tw": "人工智慧的進化正影響著多個領域，我們精選了相關的最新消息。從健康管理、影片生成、職涯轉型，到針對AI的半導體開發，我們將揭示這些領域的最新進展。",
+    "summary_zh-cn": "精选AI发展对多个领域产生影响的最新资讯。从健康管理到视频生成、职业变革，以及AI半导体开发，我们将深入解读其最前沿。",
+    "summary_ko": "AI의 진화가 다양한 영역에 영향을 미치고 있는 최신 뉴스를 엄선. 건강 관리부터 동영상 생성, 커리어 변화, 그리고 AI용 반도체 개발까지, 그 최전선을 파헤쳐 봅니다.",
+    "slug": "2026-08-10"
+  },
+  {
     "title": "今日のAI最前線：AIのセキュリティから新製品まで、進化の波は止まらない！",
     "title_en": "AI Frontier Today：From AI security to new products, the wave of evolution is unstoppable!",
     "title_zh-tw": "今日 AI 前沿：從 AI 安全到新產品，進化浪潮勢不可擋！",

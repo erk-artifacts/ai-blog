@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI巨頭の戦略転換と社会浸透：未来のAIの形を占う",
+    "title_en": "AI Frontier Today：AI Giants' Strategic Shifts and Societal Integration: Predicting the Future Shape of AI",
+    "title_zh-tw": "今日 AI 前沿：AI巨擘的策略轉變與社會滲透：預測未來AI的樣貌",
+    "title_zh-cn": "今日 AI 前沿：AI巨头的战略转型与社会渗透：展望未来AI的形态",
+    "title_ko": "오늘의 AI 최전선：AI 거대 기업의 전략 전환과 사회 침투: 미래 AI의 모습을 전망하다",
+    "category": "AI NEWS",
+    "date": "2026.08.11",
+    "thumbnail": "",
+    "summary": "OpenAIの巨額資金調達、Metaのオープンモデル戦略再構築、Anthropicの動向、サイバーセキュリティ分野へのAI活用など、最新のAIトレンドを深掘り。",
+    "summary_en": "A deep dive into the latest AI trends, including OpenAI's massive fundraising, Meta's restructuring of its open model strategy, developments concerning Anthropic, and the application of AI in the cybersecurity sector.",
+    "summary_zh-tw": "深入探討 OpenAI 的巨額融資、Meta 的開放模型策略重組、Anthropic 的動向、以及 AI 在網路安全領域的應用等最新 AI 趨勢。",
+    "summary_zh-cn": "OpenAI的巨额融资、Meta的开源模型战略重构、Anthropic的动向、AI在网络安全领域的应用等，深入探讨最新AI趋势。",
+    "summary_ko": "OpenAI의 막대한 자금 조달, Meta의 오픈 모델 전략 재구축, Anthropic의 동향, 사이버 보안 분야로의 AI 활용 등, 최신 AI 트렌드를 심층 분석.",
+    "slug": "2026-08-11"
+  },
+  {
     "title": "今日のAI最前線：AIが拓く未来：健康からキャリア、そして動画生成まで",
     "title_en": "AI Frontier Today：AI's Unveiling Future: From Health to Career, and Even Video Generation",
     "title_zh-tw": "今日 AI 前沿：AI 開創的未來：從健康到職涯，乃至影片生成",

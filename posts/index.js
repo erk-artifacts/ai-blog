@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：GeminiとChatGPTが10億ユーザー突破、AIの透明性と進化の最前線",
+    "title_en": "AI Frontier Today：Gemini and ChatGPT Surpass 1 Billion Users, AI Transparency and the Forefront of Evolution",
+    "title_zh-tw": "今日 AI 前沿：Gemini 和 ChatGPT 突破十億用戶，AI 的透明性與進化的最前線",
+    "title_zh-cn": "今日 AI 前沿：Gemini和ChatGPT用户突破10亿，AI透明度与演进的最前沿",
+    "title_ko": "오늘의 AI 최전선：Gemini와 ChatGPT가 10억 사용자 돌파, AI의 투명성과 진화의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.08.12",
+    "thumbnail": "",
+    "summary": "GeminiとChatGPTが共に10億ユーザーを突破し、AIの普及が加速。倫理的利用、技術進化、社会実装に関する最新動向を深掘りします。",
+    "summary_en": "Gemini and ChatGPT have both surpassed 1 billion users, accelerating the adoption of AI. We will deep dive into the latest trends regarding ethical use, technological evolution, and social implementation.",
+    "summary_zh-tw": "Gemini和ChatGPT用戶數皆已突破10億，AI的普及正加速。本文將深入探討其倫理應用、技術演進和社會實踐等方面的最新動向。",
+    "summary_zh-cn": "Gemini和ChatGPT均已突破10亿用户，AI的普及正在加速。我们将深入探讨有关伦理使用、技术演进和社会应用方面的最新动向。",
+    "summary_ko": "제미니와 챗GPT가 모두 10억 사용자를 돌파하며 AI 보급이 가속화되고 있습니다. 윤리적 활용, 기술 진화, 사회 구현에 관한 최신 동향을 심층 분석합니다.",
+    "slug": "2026-08-12"
+  },
+  {
     "title": "今日のAI最前線：AI巨頭の戦略転換と社会浸透：未来のAIの形を占う",
     "title_en": "AI Frontier Today：AI Giants' Strategic Shifts and Societal Integration: Predicting the Future Shape of AI",
     "title_zh-tw": "今日 AI 前沿：AI巨擘的策略轉變與社會滲透：預測未來AI的樣貌",

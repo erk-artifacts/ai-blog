@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Grok 4.6登場！AIの進化とプライバシー保護の新たな挑戦",
+    "title_en": "AI Frontier Today：Grok 4.6 Launches! AI's Evolution and a New Challenge for Privacy Protection",
+    "title_zh-tw": "今日 AI 前沿：Grok 4.6登場！AI的進化與隱私保護的全新挑戰",
+    "title_zh-cn": "今日 AI 前沿：Grok 4.6 登场！AI 的演进与隐私保护的新挑战",
+    "title_ko": "오늘의 AI 최전선：Grok 4.6 등장! AI의 진화와 프라이버시 보호의 새로운 도전",
+    "category": "AI NEWS",
+    "date": "2026.08.13",
+    "thumbnail": "",
+    "summary": "AIの世界は新たな局面へ。Claudeの透かし機能やウェブのAIスクレイピング対策、Grok 4.6の登場、TwitchのAI学習データ利用が示す、進化と倫理のバランスについて解説します。",
+    "summary_en": "The world of AI is entering a new phase. We will discuss the balance between evolution and ethics, as demonstrated by Claude's watermarking feature, AI web scraping countermeasures, the advent of Grok 4.6, and Twitch's use of AI training data.",
+    "summary_zh-tw": "AI 的世界邁入了新局面。我們將針對 Claude 的浮水印功能、網路上針對 AI 數據爬取的對策、Grok 4.6 的登場，以及 Twitch 利用 AI 學習資料等案例，闡釋進化與倫理之間的平衡。",
+    "summary_zh-cn": "AI世界迈入新阶段。本文将解读Claude的水印功能、网页AI反爬措施、Grok 4.6的登场以及Twitch利用AI学习数据所体现的进化与伦理之间的平衡。",
+    "summary_ko": "AI의 세계는 새로운 국면을 맞이하고 있습니다. Claude의 워터마크 기능 및 웹의 AI 스크래핑 방지 대책, Grok 4.6의 등장, Twitch의 AI 학습 데이터 활용이 보여주는 진화와 윤리의 균형에 대해 설명합니다.",
+    "slug": "2026-08-13"
+  },
+  {
     "title": "今日のAI最前線：GeminiとChatGPTが10億ユーザー突破、AIの透明性と進化の最前線",
     "title_en": "AI Frontier Today：Gemini and ChatGPT Surpass 1 Billion Users, AI Transparency and the Forefront of Evolution",
     "title_zh-tw": "今日 AI 前沿：Gemini 和 ChatGPT 突破十億用戶，AI 的透明性與進化的最前線",

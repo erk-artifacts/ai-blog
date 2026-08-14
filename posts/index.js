@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AnthropicがAIエージェントの”縄張り争い”を警告！進化するAI活用の秘訣",
+    "title_en": "AI Frontier Today：Anthropic Warns of AI Agent 'Turf Wars'! Keys to Evolving AI Utilization",
+    "title_zh-tw": "今日 AI 前沿：Anthropic 警告 AI 智能體的「地盤之爭」！進化 AI 應用的秘訣",
+    "title_zh-cn": "今日 AI 前沿：Anthropic警告AI代理“地盘争夺”！不断发展的AI应用秘诀",
+    "title_ko": "오늘의 AI 최전선：앤스로픽이 AI 에이전트의 ”영역 다툼”을 경고! 진화하는 AI 활용의 비결",
+    "category": "AI NEWS",
+    "date": "2026.08.14",
+    "thumbnail": "",
+    "summary": "AnthropicがAIエージェントの協調・衝突を分析。AI活用の新概念「AI転換率」やトークン節約術、世界モデルの動向まで、AIの最新情報を深掘りします。",
+    "summary_en": "Anthropic analyzes the cooperation and conflict of AI agents. We delve deep into the latest AI information, covering everything from new concepts in AI utilization such as \"AI Conversion Rate\" and token-saving techniques, to trends in world models.",
+    "summary_zh-tw": "Anthropic 分析了 AI 代理的協作與衝突。本文將深入探討 AI 的最新資訊，包括 AI 應用新概念「AI 轉換率」、代幣節約技巧，以及世界模型的發展趨勢。",
+    "summary_zh-cn": "Anthropic 分析了 AI 代理的协作与冲突。本文将深入探讨 AI 最新信息，涵盖 AI 应用的新概念“AI 转化率”、token 节省技巧，以及世界模型的动向。",
+    "summary_ko": "엔트로픽이 AI 에이전트의 협력과 충돌을 분석했습니다. AI 활용의 새로운 개념인 \"AI 전환율\"부터 토큰 절약 기술, 세계 모델의 동향까지, AI의 최신 정보를 심층 분석합니다.",
+    "slug": "2026-08-14"
+  },
+  {
     "title": "今日のAI最前線：Grok 4.6登場！AIの進化とプライバシー保護の新たな挑戦",
     "title_en": "AI Frontier Today：Grok 4.6 Launches! AI's Evolution and a New Challenge for Privacy Protection",
     "title_zh-tw": "今日 AI 前沿：Grok 4.6登場！AI的進化與隱私保護的全新挑戰",

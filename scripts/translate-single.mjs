@@ -3,7 +3,7 @@ import path from 'path';
 import vm from 'vm';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { SUPPORTED_LANGUAGES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
+import { SUPPORTED_LANGUAGES, TITLE_PREFIXES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
 
 dotenv.config();
 
@@ -155,12 +155,18 @@ async function updatePostInIndex(indexPath, originalContent, post, translations)
   }
 
   // 各言語のtitleとsummaryフィールドを追加（存在しないまたは空の場合のみ）
+  // 接頭辞は元の日本語タイトルに付いている場合のみ翻訳にも付与する
+  // （2026-08 リニューアル以降の新記事は接頭辞なし）
+  const keepPrefix =
+    typeof entryObj.title === 'string' && entryObj.title.startsWith(TITLE_PREFIXES.ja);
   for (const lang of Object.keys(SUPPORTED_LANGUAGES)) {
     const titleField = `title_${lang}`;
     const summaryField = `summary_${lang}`;
 
     if (translations[lang]?.title) {
-      entryObj[titleField] = applyTitlePrefix(translations[lang].title, lang);
+      entryObj[titleField] = keepPrefix
+        ? applyTitlePrefix(translations[lang].title, lang)
+        : translations[lang].title;
     }
     if (translations[lang]?.summary) {
       entryObj[summaryField] = translations[lang].summary;

@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 import path from 'path';
 import vm from 'vm';
 import { fileURLToPath } from 'url';
-import { TITLE_PREFIXES } from './shared.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CHECK_ALL = process.argv.includes('--all');
@@ -40,19 +39,8 @@ export function validateEntry(entry) {
     }
   }
 
-  // --- 2. タイトルプレフィックス（AI NEWS のみ） ---
-  if (entry.category === 'AI NEWS') {
-    for (const [lang, field] of Object.entries(TITLE_FIELDS)) {
-      const value = entry[field];
-      if (!value) continue;
-      const prefix = TITLE_PREFIXES[lang];
-      if (prefix && !value.startsWith(prefix)) {
-        errors.push(
-          `Title (${lang}/${field}) missing prefix "${prefix}": "${value.slice(0, 60)}"`
-        );
-      }
-    }
-  }
+  // （旧 2. タイトルプレフィックス検査は廃止: 2026-08 のリニューアルで
+  //   定型接頭辞「今日のAI最前線」を撤廃したため。既存記事のタイトルは変更しない）
 
   // --- 3. サマリーのマークダウンヘッダー混入 ---
   for (const [lang, field] of Object.entries(SUMMARY_FIELDS)) {

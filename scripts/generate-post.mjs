@@ -3,10 +3,10 @@ import Parser from 'rss-parser';
 import fs from 'fs/promises';
 import path from 'path';
 import { execSync } from 'child_process';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import dotenv from 'dotenv';
 import { validateEntry } from './validate-post.mjs';
-import { SUPPORTED_LANGUAGES, TITLE_PREFIXES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
+import { SUPPORTED_LANGUAGES, translateWithGemini } from './shared.mjs';
 
 dotenv.config();
 
@@ -31,6 +31,39 @@ function withTimeout(promise, ms, label) {
   ]);
 }
 
+// AI関連キーワード（総合フィードの事前フィルタ用）
+// 注: JSの \b は日本語文字と英字の境界でも成立するため「生成AIが」等にもマッチする
+const AI_KEYWORDS =
+  /\bAI\b|人工知能|生成AI|機械学習|深層学習|ディープラーニング|大規模言語モデル|\bLLM\b|ChatGPT|GPT-\d|Gemini|Claude|Copilot|OpenAI|Anthropic|DeepMind|Hugging Face|Midjourney|Stable Diffusion|基盤モデル|推論モデル|AIエージェント|ニューラルネット|画像生成|音声認識|自動運転|ロボティクス|machine learning|deep learning|neural|artificial intelligence/i;
+
+// 宣伝・告知系の除外パターン（全フィード対象）
+const PR_PATTERNS =
+  /セミナー|ウェビナー|ホワイトペーパー|読み放題|無料開催|プレゼント|キャンペーン|抽選|割引|クーポン|資料請求|出展|来場|受講|受付開始|申し込み|申込|webinar|white\s?paper|sponsored/i;
+
+// AI関連性の判定: AI専門フィードは無条件で通し、総合フィードのみキーワードで絞る
+export function isAIRelevant(item) {
+  if (item.topic !== 'general') return true;
+  return AI_KEYWORDS.test(`${item.title} ${item.snippet}`);
+}
+
+// 宣伝・告知記事の判定（タイトルで判定。本文スニペットまで見ると誤爆しやすい）
+export function isPromotional(item) {
+  const t = item.title;
+  if (PR_PATTERNS.test(t)) return true;
+  // 「〜レポートを無料公開」型のPR（単なる「無料公開」は正規のニュースでも使われるため複合条件）
+  if (/無料/.test(t) && /レポート|資料|書籍|冊子|eBook|PDF|カタログ/i.test(t)) return true;
+  return false;
+}
+
+// ソースごとの件数上限をかけて特定フィードによる占有を防ぐ
+export function capPerSource(items, maxPerSource) {
+  const counts = {};
+  return items.filter((item) => {
+    counts[item.source] = (counts[item.source] || 0) + 1;
+    return counts[item.source] <= maxPerSource;
+  });
+}
+
 async function fetchAllFeeds() {
   const feedsConfig = JSON.parse(
     await fs.readFile(path.join(__dirname, 'rss-feeds.json'), 'utf-8')
@@ -52,6 +85,7 @@ async function fetchAllFeeds() {
           link: item.link || '',
           snippet: (item.contentSnippet || item.content || '').slice(0, 300),
           source: feed.name,
+          topic: feed.topic || 'ai',
           pubDate: item.isoDate || item.pubDate || '',
         }));
       } catch (err) {
@@ -67,6 +101,18 @@ async function fetchAllFeeds() {
     .filter((item) => item.title && item.link);
 
   console.log(`Total items from all feeds: ${items.length}`);
+
+  // Pre-filter: AI relevance (general feeds only) and promotional items (all feeds)
+  const beforeFilter = items.length;
+  items = items.filter((item) => {
+    if (!isAIRelevant(item)) return false;
+    if (isPromotional(item)) {
+      console.log(`  Excluded (PR): [${item.source}] ${item.title.slice(0, 60)}`);
+      return false;
+    }
+    return true;
+  });
+  console.log(`After AI/PR pre-filter: ${items.length} items (removed ${beforeFilter - items.length})`);
 
   // Filter to last 24 hours, expand to 48h if too few
   const now = Date.now();
@@ -84,8 +130,9 @@ async function fetchAllFeeds() {
     items = h48.length > 0 ? h48 : items;
   }
 
-  // Sort by date (newest first) and cap at 20
+  // Sort by date (newest first), cap per source, then cap at 20 total
   items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  items = capPerSource(items, 5);
   return items.slice(0, 20);
 }
 
@@ -123,14 +170,20 @@ async function generateBlogPost(newsItems) {
 【重要】AI・機械学習・LLM・生成AI・ロボティクスなどに直接関係しないニュース（一般的なIT・ビジネス・半導体・セキュリティなど）は必ず除外してください。AI関連ニュースが少ない場合は、5件や10件でも構いません。無理にかき集めず、質を優先してください。
 
 ## ニュース選定基準:
-- 多様性: 様々なソース・トピック（研究、ビジネス、製品、規制、個人の見解）をバランスよく
+- 多様性: 様々なソース・トピック（研究、ビジネス、製品、規制、社会影響）をバランスよく
 - 重要度: 業界への影響が大きいもの優先
 - 鮮度: 最新のものを優先
-- X投稿: Sam AltmanやDario Amodeiなどの業界リーダーの興味深い発言・見解を含める
 - 日本視点: 日本のソースからのニュースも積極的に含める
+- 宣伝の除外: セミナー・ウェビナーの告知、ホワイトペーパーやレポートの配布告知、キャンペーン、単なる自社製品の宣伝は選ばない
+
+## 事実性ルール（最重要）:
+- 本文に書いてよい事実は、下記ニュース一覧のタイトルと要約に含まれる情報のみです。一覧にない数値・日付・人物の発言・機能名・企業名を創作しないでください
+- 元記事リンクのURLは、ニュース一覧に記載されたURLを一字一句そのまま使ってください（短縮・変更・創作は禁止）
+- 一覧から確実に読み取れないことを補足する場合は「〜とみられます」「〜と報じられています」と推測であることを明示してください
+- 情報が少ないニュースは無理に膨らませず、短く紹介するに留めてください
 
 ## 要件:
-- title: キャッチーな日本語サブタイトル（接頭辞「今日のAI最前線」は自動付与されるので含めないでください。例：「GPT-5が発表され、AI業界が激震」）
+- title: その日の最も重要なニュースを軸にした日本語のニュース見出し（40字以内目安）。「今日のAI最前線」のような定型の接頭辞は付けず、新聞の見出しのように固有名詞と事実で書いてください（例：「Meta、オープンモデル『Glimmer』公開──『AIはみんなのもの』宣言」）
 - summary: 100文字以内の日本語サマリー
 - body: Markdown形式の本文（以下の記法を使用: ##見出し, **太字**, *斜体*, ---, > 引用, - リスト, [テキスト](URL)）
   - 各ニュースを ## 見出し で区切る
@@ -326,16 +379,6 @@ async function translateArticleToAllLanguages(article) {
   return translations;
 }
 
-// タイトルに固定プレフィックスを付与する
-function applyTitlePrefixAll(translations) {
-  for (const [lang, content] of Object.entries(translations)) {
-    if (content) {
-      content.title = applyTitlePrefix(content.title, lang);
-    }
-  }
-  return translations;
-}
-
 // ---------------------------------------------------------------------------
 // 3. Post Index & Markdown File Update
 // ---------------------------------------------------------------------------
@@ -438,10 +481,7 @@ async function updatePosts(translations, repoDir) {
 
 // Hard timeout: exit cleanly before GitHub Actions job timeout
 const SCRIPT_TIMEOUT_MS = 20 * 60 * 1000;
-const scriptTimer = setTimeout(() => {
-  console.error('FATAL: Script exceeded 20-minute hard timeout. Exiting.');
-  process.exit(1);
-}, SCRIPT_TIMEOUT_MS);
+let scriptTimer;
 
 async function main() {
   console.log('=== AI News Blog Post Generator ===');
@@ -533,8 +573,6 @@ async function main() {
     };
   }
 
-  // 固定プレフィックスをタイトルに付与
-  applyTitlePrefixAll(translatedPost);
   console.log(`Title (ja): ${translatedPost.ja.title}`);
 
   // バリデーション（警告のみ、CI失敗はさせない）
@@ -576,14 +614,25 @@ async function main() {
   process.exit(0);
 }
 
-main().catch((err) => {
-  clearTimeout(scriptTimer);
-  console.error('');
-  console.error('========== FATAL ERROR ==========');
-  console.error(`Message: ${err.message}`);
-  if (err.status) console.error(`Status: ${err.status}`);
-  if (err.error) console.error(`Error detail: ${JSON.stringify(err.error)}`);
-  console.error(`Stack: ${err.stack}`);
-  console.error('=================================');
-  process.exit(1);
-});
+// 直接実行されたときのみ main を起動する（テスト等で import しても副作用がないように）
+const isMain =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isMain) {
+  scriptTimer = setTimeout(() => {
+    console.error('FATAL: Script exceeded 20-minute hard timeout. Exiting.');
+    process.exit(1);
+  }, SCRIPT_TIMEOUT_MS);
+
+  main().catch((err) => {
+    clearTimeout(scriptTimer);
+    console.error('');
+    console.error('========== FATAL ERROR ==========');
+    console.error(`Message: ${err.message}`);
+    if (err.status) console.error(`Status: ${err.status}`);
+    if (err.error) console.error(`Error detail: ${JSON.stringify(err.error)}`);
+    console.error(`Stack: ${err.stack}`);
+    console.error('=================================');
+    process.exit(1);
+  });
+}

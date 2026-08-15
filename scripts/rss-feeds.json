@@ -1,59 +1,83 @@
 {
+  "_comment": "topic: 'ai' = AI専門フィード（そのまま採用） / 'general' = 総合フィード（スクリプト側でAIキーワードの事前フィルタを適用）",
   "feeds": [
     {
       "name": "TechCrunch AI",
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
-      "lang": "en"
+      "lang": "en",
+      "topic": "ai"
     },
     {
       "name": "The Verge AI",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-      "lang": "en"
+      "lang": "en",
+      "topic": "ai"
     },
     {
       "name": "Ars Technica AI",
       "url": "https://arstechnica.com/ai/feed/",
-      "lang": "en"
+      "lang": "en",
+      "topic": "ai"
     },
     {
-      "name": "MIT Technology Review",
-      "url": "https://www.technologyreview.com/feed/",
-      "lang": "en"
+      "name": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      "lang": "en",
+      "topic": "ai"
     },
     {
       "name": "VentureBeat AI",
       "url": "https://venturebeat.com/category/ai/feed/",
-      "lang": "en"
+      "lang": "en",
+      "topic": "ai"
     },
     {
       "name": "ITmedia AI+",
-      "url": "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml",
-      "lang": "ja"
+      "url": "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml",
+      "lang": "ja",
+      "topic": "ai"
     },
     {
       "name": "ASCII.jp テクノロジー",
       "url": "https://ascii.jp/rss.xml",
-      "lang": "ja"
+      "lang": "ja",
+      "topic": "general"
     },
     {
       "name": "日経 xTECH",
       "url": "https://xtech.nikkei.com/rss/index.rdf",
-      "lang": "ja"
+      "lang": "ja",
+      "topic": "general"
+    },
+    {
+      "name": "Publickey",
+      "url": "https://www.publickey1.jp/atom.xml",
+      "lang": "ja",
+      "topic": "general"
     },
     {
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
-      "lang": "en"
-    },
-    {
-      "name": "Anthropic News",
-      "url": "https://rsshub.app/anthropic/news",
-      "lang": "en"
+      "lang": "en",
+      "topic": "ai"
     },
     {
       "name": "Google AI Blog",
-      "url": "https://ai.googleblog.com/feeds/posts/default?alt=rss",
-      "lang": "en"
+      "url": "https://blog.google/technology/ai/rss/",
+      "lang": "en",
+      "topic": "ai"
+    },
+    {
+      "name": "Google DeepMind Blog",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "lang": "en",
+      "topic": "ai"
+    },
+    {
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "lang": "en",
+      "topic": "ai"
     }
   ]
 }

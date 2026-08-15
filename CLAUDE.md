@@ -8,7 +8,10 @@ AI関連ニュースを収集し、GitHub Pages ブログ (erk-artifacts/ai-blog
 
 ## プロジェクト構成
 - `.claude/skills/generate-news-post/` - Claude Code手動実行用スキル
-- `.claude/skills/fantasy-fiction/` - ブログUIデザインガイドライン（Fantasy×Fiction「魔法の図書館 / Mystic Codex」ハイブリッド: 夜空 #0B1437 × 金 #FDC800 × 羊皮紙 #FFE9CE、New Rocker / Cossette Texte / IBM Plex Mono / Noto Sans JP）。index.html / admin.html のデザイン作業時に参照。旧スキル `.claude/skills/neobrutalism/`（acid green ネオブータリズム）は履歴保持で残存
+- `.claude/skills/pastel-news/` - **【現行】ブログUIデザインガイドライン**「やわらかいニュースマシン」（The Verge 2022+ Storystream 由来のフィード型ニュース構造 × 目に優しいパステル: チャコール #20202A × サクラ #F2C6D8 × ラベンダー #C8BEF2 × ミント #B5E8D2、Noto Sans JP 900/700/500 / IBM Plex Mono / Anton）。**index.html / admin.html のデザイン作業時は必ずこれを参照する。** 影・グラデーション・ネオン・純黒/純白は使わない
+- `design-proposals/` - デザイン刷新の調査結果とモックアップ。`option-b-final.html` が承認済みの方向性、`palette-board.html` が配色比較ボード
+- `.claude/skills/fantasy-fiction/` - **【アーカイブ・参照しない】** 旧「魔法の図書館 / Mystic Codex」テーマ（夜空 #0B1437 × 金 #FDC800 × 羊皮紙 #FFE9CE、New Rocker / Cossette Texte）。履歴保持のみ
+- `.claude/skills/neobrutalism/` - **【アーカイブ・参照しない】** 旧 acid green ネオブータリズムテーマ。履歴保持のみ
 - `scripts/generate-post.mjs` - GitHub Actions自動実行用Node.jsスクリプト
 - `scripts/translate-existing.mjs` - 既存記事の一括翻訳
 - `scripts/translate-single.mjs` - 単一記事の翻訳

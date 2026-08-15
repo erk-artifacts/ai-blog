@@ -10,39 +10,174 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        display: ['New Rocker', 'Noto Sans JP', 'cursive'],
-                        body: ['Cossette Texte', 'Noto Sans JP', 'sans-serif'],
+                        display: ['Anton', 'Noto Sans JP', 'sans-serif'],
+                        body: ['Noto Sans JP', 'sans-serif'],
                         mono: ['IBM Plex Mono', 'Noto Sans JP', 'monospace'],
                     },
                     colors: {
-                        'night': '#0B1437', 'night-2': '#0F1A4B',
-                        'gold': '#FDC800', 'azure': '#0250CC',
-                        'parchment': '#FFE9CE', 'ink': '#1A1A1A', 'cream': '#F5E6C8',
+                        'canvas': '#20202A',
+                        'surface': '#2A2A35',
+                        'surface-2': '#33333F',
+                        'paper': '#ECEAF2',
+                        'muted': '#A8A6B5',
+                        'faint': '#7C7A8A',
+                        'sakura': '#F2C6D8',
+                        'lavender': '#C8BEF2',
+                        'mint': '#B5E8D2',
+                        'ink': '#20202A',
+                        'hair': 'rgba(255,255,255,.10)',
+                        'hair-2': 'rgba(255,255,255,.18)',
                     },
-                    borderRadius: { '2xl': '16px', '3xl': '24px' },
-                    boxShadow: {
-                        'card': '0 2px 8px rgba(0, 0, 0, 0.3)',
-                        'gold-glow': '0 0 12px rgba(253, 200, 0, 0.4)',
-                    },
+                    borderRadius: { DEFAULT: '4px', 'md': '4px', 'lg': '4px', 'xl': '4px', '2xl': '4px', '3xl': '4px' },
+                    boxShadow: { 'card': 'none' },
                 },
             },
         };
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&family=IBM+Plex+Mono:wght@400;500;700&family=New+Rocker&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0B1437; background: radial-gradient(ellipse at top, #0F1A4B 0%, #0B1437 60%) fixed; color: #F5E6C8; font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace; }
-        input, textarea { background: #FFE9CE; border: 2px solid #1A1A1A; color: #1A1A1A; width: 100%; padding: 10px; margin-top: 5px; border-radius: 12px; font-family: 'Cossette Texte', 'Noto Sans JP', sans-serif; }
-        input:focus, textarea:focus { border-color: #FDC800; box-shadow: 0 0 0 3px rgba(253, 200, 0, 0.3); outline: none; }
-        .label { color: #F5E6C8; opacity: 0.7; font-size: 0.8rem; margin-top: 15px; display: block; }
-        button { background: #FDC800; color: #1A1A1A; font-weight: bold; padding: 12px 24px; border: 3px solid #1A1A1A; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); cursor: pointer; margin-top: 20px; transition: transform 0.2s, box-shadow 0.2s; }
-        button:hover { transform: translate(-2px, -2px); box-shadow: 0 0 12px rgba(253, 200, 0, 0.4); }
-        #output { background: #0B1437; border: 2px solid #FDC800; color: #F5E6C8; padding: 20px; margin-top: 20px; white-space: pre-wrap; font-size: 0.9rem; border-radius: 12px; }
+        :root {
+            --bg:       #20202A;
+            --bg-2:     #2A2A35;
+            --bg-3:     #33333F;
+            --paper:    #ECEAF2;
+            --muted:    #A8A6B5;
+            --faint:    #7C7A8A;
+            --sakura:   #F2C6D8;
+            --lavender: #C8BEF2;
+            --mint:     #B5E8D2;
+            --ink:      #20202A;
+            --hair:     rgba(255,255,255,.10);
+            --hair-2:   rgba(255,255,255,.18);
+            --mono: 'IBM Plex Mono', 'Noto Sans JP', monospace;
+            --jp: 'Noto Sans JP', sans-serif;
+            --display: 'Anton', 'Noto Sans JP', sans-serif;
+        }
+        html { background: var(--bg); }
+        body {
+            background: var(--bg);
+            color: var(--paper);
+            font-family: var(--jp);
+            font-weight: 500;          /* 暗背景の日本語は 500 以上で可読性を確保 */
+            line-height: 1.9;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- 見出し --- */
+        .page-title {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: clamp(24px, 5.2vw, 38px);
+            letter-spacing: 0.01em;
+            color: var(--sakura);
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        /* --- フォーム --- */
+        .label {
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin-top: 22px;
+            margin-bottom: 6px;
+            display: block;
+        }
+        input, textarea {
+            background: var(--bg-2);
+            border: 1px solid var(--hair);
+            color: var(--paper);
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 0;
+            border-radius: 4px;
+            font-family: var(--jp);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.7;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        textarea { resize: vertical; }
+        /* 日付・URL などラテン系メタデータは等幅で */
+        #date, #thumbnail { font-family: var(--mono); font-weight: 400; letter-spacing: 0.02em; }
+        /* プレースホルダは情報を伝えるため --faint(3.3:1) ではなく --muted(5.8:1) を使う */
+        input::placeholder, textarea::placeholder { color: var(--muted); font-weight: 500; opacity: 1; }
+        input:hover, textarea:hover { border-color: var(--hair-2); }
+        input:focus, textarea:focus {
+            border-color: var(--lavender);
+            box-shadow: 0 0 0 3px rgba(200, 190, 242, 0.25);
+            outline: none;
+        }
+
+        /* --- ボタン --- */
+        button {
+            background: var(--lavender);
+            color: var(--ink);
+            font-family: var(--mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            line-height: 1;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 999px;   /* 押せるものは pill（サイト側のボタンと統一） */
+            cursor: pointer;
+            margin-top: 28px;
+            transition: background-color 0.15s;
+        }
+        button:hover { background: #D6CEF6; }
+        button:active { background: #BDB2EE; }
+
+        /* --- 出力パネル --- */
+        #output {
+            background: var(--bg-2);
+            border: 1px solid var(--hair);
+            color: var(--paper);
+            padding: 20px;
+            margin-top: 8px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: var(--mono);
+            font-size: 13px;
+            font-weight: 500;   /* JP を含むため 500（ダーク地の可読性） */
+            line-height: 1.7;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border-color 0.15s, background-color 0.15s;
+        }
+        #output:hover { border-color: var(--hair-2); background: var(--bg-3); }
+
+        /* 右カラムは左カラムと同じ高さまで BODY を伸ばして揃える */
+        .col-fill { display: flex; flex-direction: column; }
+        .col-fill #body { flex: 1 1 auto; min-height: 320px; }
+
+        .hint {
+            font-family: var(--mono);
+            font-size: 12px;
+            line-height: 1.7;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+        }
+        .hint-jp { font-family: var(--jp); font-weight: 500; font-size: 12px; color: var(--muted); letter-spacing: 0; }
+
         /* キーボード操作のフォーカス可視化（アクセシビリティ: WCAG 2.2 AA） */
         a:focus-visible, button:focus-visible, input:focus-visible,
         textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible {
-            outline: 2px solid #FDC800; outline-offset: 2px;
+            outline: 2px solid #C8BEF2; outline-offset: 2px;
         }
         /* prefers-reduced-motion: 装飾アニメーションを抑制（WCAG 2.2 SC 2.3.3） */
         @media (prefers-reduced-motion: reduce) {
@@ -56,10 +191,15 @@
 </head>
 <body class="p-8 max-w-4xl mx-auto">
 
-    <h1 class="text-2xl font-display font-bold mb-8 text-gold border-b-2 border-gold pb-4">>> POST_DATA_GENERATOR</h1>
+    <header class="mb-8 pb-4 border-b border-hair">
+        <p class="eyebrow mb-2">AI_GEEK &middot; INTERNAL TOOL</p>
+        <h1 class="page-title">>> POST_DATA_GENERATOR</h1>
+    </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
         <div>
+            <p class="eyebrow">01 / META</p>
+
             <label class="label">TITLE</label>
             <input type="text" id="title" placeholder="記事のタイトル">
 
@@ -71,28 +211,30 @@
 
             <label class="label">THUMBNAIL URL (Optional)</label>
             <input type="text" id="thumbnail" placeholder="https://...">
-            <p class="text-xs text-cream/60 mt-1">※画像がない場合は空欄でOK</p>
+            <p class="hint-jp mt-2">※画像がない場合は空欄でOK</p>
 
             <label class="label">SUMMARY (一覧用)</label>
             <textarea id="summary" rows="3" placeholder="短い要約..."></textarea>
         </div>
-        
-        <div>
+
+        <div class="col-fill">
+            <p class="eyebrow">02 / CONTENT</p>
+
             <label class="label">BODY (HTML / Markdown 対応)</label>
             <textarea id="body" rows="12" placeholder="HTMLまたはMarkdownで入力&#10;例: ## 見出し&#10;**太字** _斜体_ [リンク](URL)"></textarea>
-            <div class="text-xs text-cream/60 mt-2">
+            <div class="hint mt-3">
                 HTML: &lt;p&gt;, &lt;h2&gt;, &lt;ul&gt;&lt;li&gt;, &lt;blockquote&gt;, &lt;figure&gt;, &lt;a&gt;<br>
-                Markdown: ## 見出し, **太字**, _斜体_, [リンク](URL), - リスト, &gt; 引用
+                <span class="hint-jp">Markdown: ## 見出し, **太字**, _斜体_, [リンク](URL), - リスト, &gt; 引用</span>
             </div>
         </div>
     </div>
 
     <button onclick="generateCode()">Generate Code</button>
 
-    <div class="mt-8">
-        <p class="text-sm text-cream/60 mb-2">/// COPY THIS CODE & PASTE INTO posts.js</p>
+    <div class="mt-10 pt-6 border-t border-hair">
+        <p class="eyebrow mb-2">/// COPY THIS CODE &amp; PASTE INTO posts.js</p>
         <div id="output" role="button" tabindex="0" aria-label="生成コードをクリップボードにコピー" onclick="copyToClipboard()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyToClipboard()}">（ここに生成されたコードが表示されます）</div>
-        <p id="copy-msg" aria-live="polite" class="text-gold text-xs mt-2 hidden">COPIED TO CLIPBOARD!</p>
+        <p id="copy-msg" aria-live="polite" class="eyebrow mt-3 hidden" style="color:#B5E8D2">COPIED TO CLIPBOARD!</p>
     </div>
 
     <script>

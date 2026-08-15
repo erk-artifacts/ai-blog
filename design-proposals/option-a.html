@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI_GEEK — Option A: Warm Literary AI Journal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf9f5;
+    --ink: #141413;
+    --text: #3d3d3a;
+    --muted: #6c6a64;
+    --hairline: #e6dfd8;
+    --tan: #efe9de;
+    --coral: #cc785c;
+    --footer-bg: #181715;
+    --serif: 'Shippori Mincho', 'Noto Serif JP', serif;
+    --sans: 'Noto Sans JP', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  a { text-decoration: none; color: inherit; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+
+  h1, h2, h3, .serif {
+    font-family: var(--serif);
+    font-feature-settings: "palt";
+    letter-spacing: 0.01em;
+    line-height: 1.35;
+    word-break: auto-phrase;
+    color: var(--ink);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+  .mono-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  /* ---------- 1. Sticky nav ---------- */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--cream);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .topnav-inner {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand { display: flex; align-items: baseline; gap: 14px; }
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .brand-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: var(--coral); }
+  .nav-search {
+    display: flex; align-items: center;
+    color: var(--ink);
+  }
+  .nav-divider {
+    width: 1px; height: 18px;
+    background: var(--hairline);
+  }
+  .lang-switch {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .lang-switch .active { color: var(--ink); font-weight: 600; }
+  .lang-switch .sep { color: var(--hairline); }
+
+  /* ---------- 2. Masthead ---------- */
+  .masthead { padding: 112px 0 96px; }
+  .masthead h1 {
+    font-size: 44px;
+    font-weight: 500;
+  }
+  .masthead .lede {
+    margin-top: 24px;
+    font-size: 17px;
+    color: var(--text);
+  }
+  .masthead .stats {
+    margin-top: 32px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .masthead .stats .dot { color: var(--coral); padding: 0 6px; }
+
+  /* ---------- 3. Featured ---------- */
+  .featured-card {
+    display: flex;
+    background: var(--tan);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .featured-art {
+    flex: 0 0 40%;
+    position: relative;
+    min-height: 440px;
+    border-right: 1px solid var(--hairline);
+    overflow: hidden;
+  }
+  /* flat geometric pastel composition — CSS shapes only */
+  .shape { position: absolute; }
+  .sh-ground {                            /* horizon hairline */
+    left: 0; right: 0; bottom: 108px;
+    height: 1.5px;
+    background: var(--ink);
+    opacity: 0.5;
+  }
+  .sh-hill {                              /* distant hill on the horizon */
+    width: 250px; height: 125px;
+    right: -52px; bottom: 108px;
+    background: var(--hairline);
+    border-radius: 999px 999px 0 0;
+  }
+  .sh-arch {                              /* cream arch standing on the ground */
+    width: 172px; height: 252px;
+    left: 92px; bottom: 108px;
+    background: var(--cream);
+    border-radius: 999px 999px 0 0;
+  }
+  .sh-sun {                               /* coral sun overlapping the arch */
+    width: 116px; height: 116px;
+    left: 214px; top: 84px;
+    background: var(--coral);
+    border-radius: 50%;
+  }
+  .sh-ring {                              /* small ink outline moon */
+    width: 58px; height: 58px;
+    left: 74px; top: 92px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .sh-dot {                               /* small ink dot in the open sky */
+    width: 9px; height: 9px;
+    right: 56px; top: 132px;
+    background: var(--ink);
+    border-radius: 50%;
+  }
+  .featured-body {
+    flex: 1;
+    padding: 56px 64px 48px;
+    display: flex;
+    flex-direction: column;
+  }
+  .featured-body h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .featured-body .summary {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    max-width: 34em;
+  }
+  .featured-meta {
+    margin-top: auto;
+    padding-top: 32px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-top: 1px solid var(--hairline);
+  }
+  .readmore {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--coral);
+    letter-spacing: 0.02em;
+  }
+  .readmore:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ---------- 4. Filters ---------- */
+  .filters {
+    margin-top: 96px;
+    display: flex;
+    gap: 36px;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 0;
+  }
+  .chip {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    padding-bottom: 14px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+  .chip:hover { color: var(--ink); }
+  .chip.active {
+    color: var(--coral);
+    border-bottom-color: var(--coral);
+  }
+
+  /* ---------- 5. Archive ---------- */
+  .archive { margin-top: 72px; }
+  .archive-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+  .archive-head .view-all {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--coral);
+  }
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+    row-gap: 72px;
+  }
+  .post-card {
+    border-top: 1px solid var(--hairline);
+    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .post-card .eyebrow { font-size: 11px; }
+  .post-card h3 {
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(3 * 1.5em);
+  }
+  .post-card:hover h3 { color: var(--coral); }
+  .post-card .excerpt {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: calc(2 * 1.75em);
+  }
+  .post-card .mono-date { margin-top: 22px; }
+
+  /* ---------- 6. Subscribe band ---------- */
+  .subscribe {
+    margin-top: 120px;
+    background: var(--tan);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 88px 0;
+  }
+  .subscribe-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+  .subscribe h2 { font-size: 30px; font-weight: 500; }
+  .subscribe .sub-note {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .pill {
+    flex-shrink: 0;
+    display: inline-block;
+    background: var(--coral);
+    color: var(--cream);
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 14px 34px;
+    border-radius: 999px;
+  }
+  .pill:hover { background: #b8674d; }
+
+  /* ---------- 7. Footer ---------- */
+  footer {
+    background: var(--footer-bg);
+    color: var(--cream);
+    padding: 80px 0 48px;
+  }
+  .footer-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .footer-brand { display: flex; align-items: baseline; gap: 14px; }
+  .footer-brand .wordmark { color: var(--cream); font-size: 22px; }
+  .footer-brand .brand-sub { color: rgba(250, 249, 245, 0.5); }
+  .footer-nav {
+    display: flex;
+    gap: 28px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .footer-nav a { color: rgba(250, 249, 245, 0.75); }
+  .footer-nav a:hover { color: var(--cream); }
+  .footer-langs {
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(250, 249, 245, 0.5);
+    display: flex;
+    gap: 10px;
+  }
+  .footer-langs .sep { color: rgba(250, 249, 245, 0.2); }
+  .footer-rule {
+    margin-top: 48px;
+    border: 0;
+    border-top: 1px solid rgba(250, 249, 245, 0.14);
+  }
+  .footer-bottom {
+    margin-top: 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(250, 249, 245, 0.45);
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. Sticky top nav -->
+  <header class="topnav">
+    <div class="container topnav-inner">
+      <div class="brand">
+        <a class="wordmark" href="#">AI_GEEK</a>
+        <span class="brand-sub">Daily AI Digest</span>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#">ホーム</a>
+          <a href="#">アーカイブ</a>
+          <a href="#">ABOUT</a>
+        </nav>
+        <a class="nav-search" href="#" aria-label="検索">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="7.5" cy="7.5" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="11.6" y1="11.6" x2="16" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <span class="nav-divider"></span>
+        <div class="lang-switch">
+          <a class="active" href="#">日本語</a><span class="sep">|</span>
+          <a href="#">EN</a><span class="sep">|</span>
+          <a href="#">繁中</a><span class="sep">|</span>
+          <a href="#">简中</a><span class="sep">|</span>
+          <a href="#">한국어</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Masthead -->
+  <section class="masthead">
+    <div class="container">
+      <h1>今日のAIを、毎日一篇。</h1>
+      <p class="lede">AIの最前線を初心者にもわかりやすく。毎朝9時、5言語で自動配信。</p>
+      <p class="stats">154 Articles<span class="dot">·</span>5 Languages<span class="dot">·</span>Since 2026</p>
+    </div>
+  </section>
+
+  <!-- 3. Featured story -->
+  <section class="featured">
+    <div class="container">
+      <article class="featured-card">
+        <div class="featured-art" aria-hidden="true">
+          <span class="shape sh-ground"></span>
+          <span class="shape sh-hill"></span>
+          <span class="shape sh-arch"></span>
+          <span class="shape sh-sun"></span>
+          <span class="shape sh-ring"></span>
+          <span class="shape sh-dot"></span>
+        </div>
+        <div class="featured-body">
+          <p class="eyebrow">AI News — Today's Digest</p>
+          <h2>今日のAI最前線：AIを巡る法廷騒動から巨頭の戦略、技術の進化まで！</h2>
+          <p class="summary">AIの法廷での誤用問題、Google Geminiのウォーターマーク設定、MetaのオープンAI戦略、GPU最適化技術、OpenAIとAnthropicの価格競争など、AIの多面的な動きを解説します。</p>
+          <div class="featured-meta">
+            <time class="mono-date">2026.08.15</time>
+            <a class="readmore" href="#">続きを読む →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. Category filters -->
+  <div class="container">
+    <nav class="filters">
+      <a class="chip active" href="#">すべて</a>
+      <a class="chip" href="#">AI NEWS</a>
+      <a class="chip" href="#">TOOLS</a>
+      <a class="chip" href="#">RESEARCH</a>
+    </nav>
+  </div>
+
+  <!-- 5. Archive grid -->
+  <section class="archive">
+    <div class="container">
+      <div class="archive-head">
+        <p class="eyebrow">Archive — 最近の記事</p>
+        <a class="view-all" href="#">VIEW ALL →</a>
+      </div>
+      <div class="post-grid">
+
+        <article class="post-card">
+          <p class="eyebrow">AI News</p>
+          <h3>今日のAI最前線：AnthropicがAIエージェントの&quot;縄張り争い&quot;を警告！進化するAI活用の秘訣</h3>
+          <p class="excerpt">AnthropicがAIエージェントの協調・衝突を分析。AI活用の新概念「AI転換率」やトークン節約術、世界モデルの動向まで、AIの最新情報を深掘りします。</p>
+          <time class="mono-date">2026.08.14</time>
+        </article>
+
+        <article class="post-card">
+          <p class="eyebrow">AI News</p>
+          <h3>今日のAI最前線：Grok 4.6登場！AIの進化とプライバシー保護の新たな挑戦</h3>
+          <p class="excerpt">AIの世界は新たな局面へ。Claudeの透かし機能やウェブのAIスクレイピング対策、Grok 4.6の登場、TwitchのAI学習データ利用が示す、進化と倫理のバランスについて解説します。</p>
+          <time class="mono-date">2026.08.13</time>
+        </article>
+
+        <article class="post-card">
+          <p class="eyebrow">AI News</p>
+          <h3>今日のAI最前線：GeminiとChatGPTが10億ユーザー突破、AIの透明性と進化の最前線</h3>
+          <p class="excerpt">GeminiとChatGPTが共に10億ユーザーを突破し、AIの普及が加速。倫理的利用、技術進化、社会実装に関する最新動向を深掘りします。</p>
+          <time class="mono-date">2026.08.12</time>
+        </article>
+
+        <article class="post-card">
+          <p class="eyebrow">AI News</p>
+          <h3>今日のAI最前線：AI巨頭の戦略転換と社会浸透：未来のAIの形を占う</h3>
+          <p class="excerpt">OpenAIの巨額資金調達、Metaのオープンモデル戦略再構築、Anthropicの動向、サイバーセキュリティ分野へのAI活用など、最新のAIトレンドを深掘り。</p>
+          <time class="mono-date">2026.08.11</time>
+        </article>
+
+        <article class="post-card">
+          <p class="eyebrow">AI News</p>
+          <h3>今日のAI最前線：AIが拓く未来：健康からキャリア、そして動画生成まで</h3>
+          <p class="excerpt">AIの進化が多岐にわたる領域に影響を与えている最新ニュースを厳選。健康管理から動画生成、キャリア変革、そしてAI向け半導体開発まで、その最前線を紐解きます。</p>
+          <time class="mono-date">2026.08.10</time>
+        </article>
+
+        <article class="post-card">
+          <p class="eyebrow">AI News</p>
+          <h3>今日のAI最前線：AIのセキュリティから新製品まで、進化の波は止まらない！</h3>
+          <p class="excerpt">AIエージェントの意外な行動、OpenAIの買収、DeepMindの気象予測革新、そしてGalaxy AI搭載スマホ。今日のAIは多方面で進化しています。</p>
+          <time class="mono-date">2026.08.09</time>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Subscribe band -->
+  <section class="subscribe">
+    <div class="container subscribe-inner">
+      <div>
+        <h2>毎朝9時、あなたの言語で。</h2>
+        <p class="sub-note">RSSフィードで最新記事をお届けします。登録は無料です。</p>
+      </div>
+      <a class="pill" href="#">RSSで購読</a>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="wordmark serif">AI_GEEK</span>
+          <span class="brand-sub">Daily AI Digest</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#">ホーム</a>
+          <a href="#">アーカイブ</a>
+          <a href="#">About</a>
+          <a href="#">RSS</a>
+        </nav>
+      </div>
+      <div class="footer-langs">
+        <span>日本語</span><span class="sep">/</span>
+        <span>English</span><span class="sep">/</span>
+        <span>繁體中文</span><span class="sep">/</span>
+        <span>简体中文</span><span class="sep">/</span>
+        <span>한국어</span>
+      </div>
+      <hr class="footer-rule">
+      <div class="footer-bottom">
+        <span>© 2026 AI_GEEK — 毎日のAIニュースを、5言語で。</span>
+        <span>Generated daily at 09:00 JST</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

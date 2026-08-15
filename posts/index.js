@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIを巡る法廷騒動から巨頭の戦略、技術の進化まで！",
+    "title_en": "AI Frontier Today：From AI legal battles to the strategies of tech giants and technological evolution!",
+    "title_zh-tw": "今日 AI 前沿：從圍繞AI的法庭風波、巨頭策略，到技術演進！",
+    "title_zh-cn": "今日 AI 前沿：从围绕AI的法庭风波，到巨头战略、技术演进！",
+    "title_ko": "오늘의 AI 최전선：AI를 둘러싼 법정 소동부터 거물들의 전략, 기술의 진화까지!",
+    "category": "AI NEWS",
+    "date": "2026.08.15",
+    "thumbnail": "",
+    "summary": "AIの法廷での誤用問題、Google Geminiのウォーターマーク設定、MetaのオープンAI戦略、GPU最適化技術、OpenAIとAnthropicの価格競争など、AIの多面的な動きを解説します。",
+    "summary_en": "I will explain the multifaceted developments in AI, including issues of AI misuse in court, Google Gemini's watermark settings, Meta's open AI strategy, GPU optimization techniques, and the price competition between OpenAI and Anthropic.",
+    "summary_zh-tw": "解説人工智慧在法庭上的誤用問題、Google Gemini 的浮水印設定、Meta 的開放式人工智慧策略、GPU 最佳化技術、OpenAI 與 Anthropic 的價格競爭等多面向發展。",
+    "summary_zh-cn": "AI 在法庭上的误用问题、Google Gemini 的水印设置、Meta 的开放 AI 战略、GPU 优化技术、OpenAI 和 Anthropic 的价格竞争等，本文将解析 AI 的多方面动态。",
+    "summary_ko": "AI의 법정 오용 문제, Google Gemini의 워터마크 설정, Meta의 OpenAI 전략, GPU 최적화 기술, OpenAI와 Anthropic의 가격 경쟁 등, AI의 다면적인 움직임을 설명합니다.",
+    "slug": "2026-08-15"
+  },
+  {
     "title": "今日のAI最前線：AnthropicがAIエージェントの”縄張り争い”を警告！進化するAI活用の秘訣",
     "title_en": "AI Frontier Today：Anthropic Warns of AI Agent 'Turf Wars'! Keys to Evolving AI Utilization",
     "title_zh-tw": "今日 AI 前沿：Anthropic 警告 AI 智能體的「地盤之爭」！進化 AI 應用的秘訣",

@@ -1100,11 +1100,11 @@
         function renderArchiveStrip(lang) {
             const rest = Math.max(0, posts.length - 13);
             archiveStripNote.textContent = t('archive-note').replace('{n}', rest);
-            archiveStrip.innerHTML = posts.slice(10, 13).map((p, i) => `
+            archiveStrip.innerHTML = posts.slice(10, 13).map(p => `
                 <a href="#/post/${encodeURIComponent(p.slug)}" class="arc-tile">
                     <div class="row">
                         <span class="d">${p.date}</span>
-                        ${i === 1 ? `<span class="chip-tag">${escapeHtml(p.category)}</span>` : ''}
+                        ${p._series === 'beginner' ? `<span class="chip-tag">${t('filter-beginner')}</span>` : ''}
                     </div>
                     <h3>${escapeHtml(langTitle(p, lang))}</h3>
                 </a>`).join('');

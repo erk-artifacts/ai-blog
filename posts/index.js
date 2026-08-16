@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：Claude透かし技術の公開とAI利用の倫理的課題",
+    "title_en": "AI Frontier Today：Disclosure of Claude's Watermarking Technology and Ethical Challenges in AI Use",
+    "title_zh-tw": "今日 AI 前沿：Claude 浮水印技術的公開與 AI 利用的倫理課題",
+    "title_zh-cn": "今日 AI 前沿：Claude水印技术的公开与AI利用的伦理挑战",
+    "title_ko": "오늘의 AI 최전선：Claude 워터마크 기술 공개와 AI 이용의 윤리적 과제",
+    "category": "AI NEWS",
+    "date": "2026.08.16",
+    "thumbnail": "",
+    "summary": "AnthropicのClaudeに埋め込まれる電子透かし技術の公開、Grok悪用事例、AIチャットボットのユーモラスな活用、そしてSpaceXによるAIコーディングスタートアップCursor買収のニュースをお届けします。",
+    "summary_en": "We bring you news of the public disclosure of digital watermarking technology embedded in Anthropic's Claude, Grok abuse cases, humorous uses of AI chatbots, and SpaceX's acquisition of AI coding startup Cursor.",
+    "summary_zh-tw": "Anthropic的Claude內嵌電子浮水印技術的公開、Grok濫用案例、AI聊天機器人的幽默應用，以及SpaceX收購AI編碼新創公司Cursor等新聞。",
+    "summary_zh-cn": "Anthropic 的 Claude 中嵌入的数字水印技术发布、Grok 滥用案例、AI 聊天机器人的幽默应用，以及 SpaceX 收购 AI 编码初创公司 Cursor 的消息。",
+    "summary_ko": "Anthropic의 Claude에 내장될 디지털 워터마킹 기술 공개, Grok 오용 사례, AI 챗봇의 유머러스한 활용, 그리고 SpaceX의 AI 코딩 스타트업 Cursor 인수 소식을 전해드립니다.",
+    "slug": "2026-08-16"
+  },
+  {
     "title": "今日のAI最前線：AIを巡る法廷騒動から巨頭の戦略、技術の進化まで！",
     "title_en": "AI Frontier Today：From AI legal battles to the strategies of tech giants and technological evolution!",
     "title_zh-tw": "今日 AI 前沿：從圍繞AI的法庭風波、巨頭策略，到技術演進！",

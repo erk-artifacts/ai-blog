@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：中国オープンモデルの躍進からOpenAIの組織再編まで！進化を続けるAIの今",
+    "title_en": "AI Frontier Today：From the Surge of China's Open Models to OpenAI's Organizational Restructuring! The Evolving Present of AI",
+    "title_zh-tw": "今日 AI 前沿：從中國開源模型的躍進到OpenAI的組織重組！持續演進中的AI現狀",
+    "title_zh-cn": "今日 AI 前沿：从中国开放模型的跃进到OpenAI的组织重组！持续进化的AI现状",
+    "title_ko": "오늘의 AI 최전선：중국 오픈 모델의 약진부터 OpenAI의 조직 재편까지! 진화를 계속하는 AI의 현주소",
+    "category": "AI NEWS",
+    "date": "2026.08.17",
+    "thumbnail": "",
+    "summary": "中国製オープンモデルの台頭、ローカル動画生成AIの進化、そしてOpenAIの安全チーム解散やAI企業の買収など、AI業界の最新動向を深掘りします。",
+    "summary_en": "We will delve into the latest trends in the AI industry, including the rise of China-made open models, the evolution of local video generation AI, and developments such as OpenAI's safety team disbandment and AI company acquisitions.",
+    "summary_zh-tw": "中國製開源模型的崛起、本地影片生成AI的演進，以及OpenAI安全團隊的解散、AI企業的收購等，我們將深入探討AI產業的最新動向。",
+    "summary_zh-cn": "我们将深入探讨AI行业的最新动态，包括中国开源模型的崛起、本地视频生成AI的演进，以及OpenAI安全团队的解散和AI企业的收购等。",
+    "summary_ko": "중국산 오픈 모델의 부상, 로컬 영상 생성 AI의 진화, 그리고 OpenAI의 안전 팀 해체 및 AI 기업 인수 등, AI 업계의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-08-17"
+  },
+  {
     "title": "今日のAI最前線：Claude透かし技術の公開とAI利用の倫理的課題",
     "title_en": "AI Frontier Today：Disclosure of Claude's Watermarking Technology and Ethical Challenges in AI Use",
     "title_zh-tw": "今日 AI 前沿：Claude 浮水印技術的公開與 AI 利用的倫理課題",

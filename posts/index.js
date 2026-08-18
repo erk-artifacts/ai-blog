@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが切り拓く未来：産業から暮らしまで変革の波",
+    "title_en": "AI Frontier Today：AI: Pioneering the Future: A Wave of Transformation from Industry to Daily Life",
+    "title_zh-tw": "今日 AI 前沿：AI開創的未來：從產業到生活，變革浪潮",
+    "title_zh-cn": "今日 AI 前沿：AI开创的未来：从产业到生活，变革浪潮",
+    "title_ko": "오늘의 AI 최전선：AI가 열어갈 미래: 산업부터 일상까지 변혁의 물결",
+    "category": "AI NEWS",
+    "date": "2026.08.18",
+    "thumbnail": "",
+    "summary": "AIがビジネス、デバイス、国際関係、企業運営、働き方をどう変えるか、最新ニュースから未来の兆しを探ります。",
+    "summary_en": "From the latest news, we explore signs of the future regarding how AI will change business, devices, international relations, corporate operations, and work styles.",
+    "summary_zh-tw": "AI 如何改變商業、裝置、國際關係、企業營運以及工作方式，從最新消息中探尋未來的徵兆。",
+    "summary_zh-cn": "我们将从最新新闻中，探寻AI将如何改变商业、设备、国际关系、企业运营和工作方式的未来迹象。",
+    "summary_ko": "AI가 비즈니스, 디바이스, 국제 관계, 기업 운영, 근무 방식을 어떻게 바꿀지, 최신 뉴스에서 미래의 조짐을 탐색합니다.",
+    "slug": "2026-08-18"
+  },
+  {
     "title": "今日のAI最前線：中国オープンモデルの躍進からOpenAIの組織再編まで！進化を続けるAIの今",
     "title_en": "AI Frontier Today：From the Surge of China's Open Models to OpenAI's Organizational Restructuring! The Evolving Present of AI",
     "title_zh-tw": "今日 AI 前沿：從中國開源模型的躍進到OpenAI的組織重組！持續演進中的AI現狀",

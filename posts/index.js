@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ゲームから安全対策、ロボットまで！進化が止まらないAIの最新動向",
+    "title_en": "AI Frontier Today：From games to security, and robots! The latest developments in AI's unstoppable evolution.",
+    "title_zh-tw": "今日 AI 前沿：從遊戲、安全措施到機器人！進化不止的人工智慧最新動向",
+    "title_zh-cn": "今日 AI 前沿：从游戏、安全措施到机器人！进化不止的AI最新动向",
+    "title_ko": "오늘의 AI 최전선：게임부터 안전 대책, 로봇까지! 진화가 멈추지 않는 AI의 최신 동향",
+    "category": "AI NEWS",
+    "date": "2026.08.19",
+    "thumbnail": "",
+    "summary": "ChatGPTの教育活用からゲームへのGemini実装、OpenAIの安全対策、ヒューマノイドロボットの進化まで、AIの最新動向と私たちの生活への影響を探ります。",
+    "summary_en": "From the educational applications of ChatGPT and the implementation of Gemini in games to OpenAI's safety measures and the evolution of humanoid robots, we explore the latest trends in AI and their impact on our lives.",
+    "summary_zh-tw": "從ChatGPT在教育上的應用、Gemini在遊戲中的實作、OpenAI的安全措施，到人形機器人的進化，我們將探討AI的最新動向及其對我們生活的影響。",
+    "summary_zh-cn": "从ChatGPT在教育领域的应用，到Gemini在游戏中的实现、OpenAI的安全措施以及类人型机器人的演进，我们将探索AI的最新趋势及其对我们生活的影响。",
+    "summary_ko": "ChatGPT의 교육 활용부터 게임에 Gemini 구현, OpenAI의 안전 대책, 휴머노이드 로봇의 진화까지, AI의 최신 동향과 우리 삶에 미치는 영향을 살펴봅니다.",
+    "slug": "2026-08-19"
+  },
+  {
     "title": "今日のAI最前線：AIが切り拓く未来：産業から暮らしまで変革の波",
     "title_en": "AI Frontier Today：AI: Pioneering the Future: A Wave of Transformation from Industry to Daily Life",
     "title_zh-tw": "今日 AI 前沿：AI開創的未來：從產業到生活，變革浪潮",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：企業と教育のAI最前線：進化するプライバシー保護と活用戦略",
+    "title_en": "AI Frontier Today：The AI Forefront in Business and Education: Evolving Privacy Protection and Utilization Strategies",
+    "title_zh-tw": "今日 AI 前沿：企業與教育的AI最前線：不斷演進的隱私保護與應用策略",
+    "title_zh-cn": "今日 AI 前沿：企业与教育界的AI前沿：演进中的隐私保护与应用策略",
+    "title_ko": "오늘의 AI 최전선：기업과 교육의 AI 최전선: 진화하는 개인 정보 보호 및 활용 전략",
+    "category": "AI NEWS",
+    "date": "2026.08.20",
+    "thumbnail": "",
+    "summary": "最新AIニュースをお届け！企業の生成AI導入、学生支援、プライバシー保護、AI駆動開発、そして市場の動向まで、今日のAI業界のホットトピックを深掘りします。",
+    "summary_en": "Bringing you the latest AI news! We'll deep dive into today's hot topics in the AI industry, from enterprise generative AI adoption, student support, and privacy protection to AI-driven development and market trends.",
+    "summary_zh-tw": "送上最新AI新聞！從企業導入生成式AI、學生支援、隱私保護、AI驅動開發，乃至市場動向，深入探討今日AI產業的熱門話題。",
+    "summary_zh-cn": "最新AI新闻速递！我们将深入探讨今日AI行业的热点话题，涵盖企业生成式AI的部署、学生支持、隐私保护、AI驱动开发以及市场动向。",
+    "summary_ko": "최신 AI 뉴스를 전해드립니다! 기업의 생성형 AI 도입, 학생 지원, 개인 정보 보호, AI 기반 개발, 그리고 시장 동향까지, 오늘날 AI 산업의 핫 토픽을 심층 분석합니다.",
+    "slug": "2026-08-20"
+  },
+  {
     "title": "今日のAI最前線：ゲームから安全対策、ロボットまで！進化が止まらないAIの最新動向",
     "title_en": "AI Frontier Today：From games to security, and robots! The latest developments in AI's unstoppable evolution.",
     "title_zh-tw": "今日 AI 前沿：從遊戲、安全措施到機器人！進化不止的人工智慧最新動向",

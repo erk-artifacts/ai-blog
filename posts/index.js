@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：生活に溶け込むAIの波：ChatGPT連携からビジネス変革まで",
+    "title_en": "AI Frontier Today：The AI Wave Blending into Daily Life: From ChatGPT Integration to Business Transformation",
+    "title_zh-tw": "今日 AI 前沿：融入生活的AI浪潮：從ChatGPT整合到商業轉型",
+    "title_zh-cn": "今日 AI 前沿：融入生活的AI浪潮：从ChatGPT集成到商业变革",
+    "title_ko": "오늘의 AI 최전선：생활에 스며드는 AI의 물결: ChatGPT 연동부터 비즈니스 변혁까지",
+    "category": "AI NEWS",
+    "date": "2026.08.21",
+    "thumbnail": "",
+    "summary": "macOS版ChatGPTの連携機能強化、AIデータ需要の急増、OpenAIとAnthropicの競争激化、AI翻訳、AI契約書解析など、生活やビジネスにAIが深く浸透する最新動向を紹介します。",
+    "summary_en": "This introduces the latest trends where AI is deeply permeating daily life and business, including enhanced integration features for the macOS version of ChatGPT, soaring demand for AI data, intensifying competition between OpenAI and Anthropic, AI translation, AI contract analysis, and more.",
+    "summary_zh-tw": "macOS版ChatGPT的整合功能強化、AI數據需求激增、OpenAI與Anthropic的競爭加劇、AI翻譯、AI合約解析等，將介紹AI深入滲透生活和商業的最新趨勢。",
+    "summary_zh-cn": "macOS版ChatGPT的集成功能强化、AI数据需求激增、OpenAI和Anthropic的竞争加剧、AI翻译、AI合同解析等，介绍AI深度融入生活和商业的最新趋势。",
+    "summary_ko": "macOS 버전 ChatGPT의 연동 기능 강화, AI 데이터 수요의 급증, OpenAI와 Anthropic의 경쟁 심화, AI 번역, AI 계약서 분석 등, 생활 및 비즈니스에 AI가 깊이 스며드는 최신 동향을 소개합니다.",
+    "slug": "2026-08-21"
+  },
+  {
     "title": "今日のAI最前線：企業と教育のAI最前線：進化するプライバシー保護と活用戦略",
     "title_en": "AI Frontier Today：The AI Forefront in Business and Education: Evolving Privacy Protection and Utilization Strategies",
     "title_zh-tw": "今日 AI 前沿：企業與教育的AI最前線：不斷演進的隱私保護與應用策略",

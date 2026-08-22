@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の裏側：倫理、インフラ、そして未来",
+    "title_en": "AI Frontier Today：Behind the Scenes of AI Evolution: Ethics, Infrastructure, and the Future",
+    "title_zh-tw": "今日 AI 前沿：AI演進的背後：倫理、基礎設施，以及未來",
+    "title_zh-cn": "今日 AI 前沿：AI进化的幕后：伦理、基础设施、以及未来",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 이면: 윤리, 인프라, 그리고 미래",
+    "category": "AI NEWS",
+    "date": "2026.08.22",
+    "thumbnail": "",
+    "summary": "AnthropicのAI倫理問題、Nvidiaのインフラ投資、LinkedInのAI品質報告、AIエージェントの新常識、AIとクリエイターの葛藤、AI創薬、Meta AIグラスのプライバシー問題など、AIの最新動向を深掘り。",
+    "summary_en": "A deep dive into the latest AI trends, including Anthropic's AI ethics issues, Nvidia's infrastructure investments, LinkedIn's AI quality reports, the new paradigm for AI agents, conflicts between AI and creators, AI drug discovery, and privacy issues with Meta AI glasses.",
+    "summary_zh-tw": "Anthropic的AI倫理問題、Nvidia的基礎設施投資、LinkedIn的AI品質報告、AI代理人的新常識、AI與創作者的衝突、AI藥物開發、Meta AI眼鏡的隱私問題等，深入探討AI的最新動態。",
+    "summary_zh-cn": "Anthropic的AI伦理问题、英伟达的基础设施投资、领英的AI质量报告、AI代理的新常识、AI与创作者的冲突、AI创药、Meta AI眼镜的隐私问题等，深入探讨AI的最新动态。",
+    "summary_ko": "Anthropic의 AI 윤리 문제, Nvidia의 인프라 투자, LinkedIn의 AI 품질 보고, AI 에이전트의 새로운 상식, AI와 크리에이터의 갈등, AI 신약 개발, Meta AI 글래스의 프라이버시 문제 등, AI 최신 동향을 심층 분석.",
+    "slug": "2026-08-22"
+  },
+  {
     "title": "今日のAI最前線：生活に溶け込むAIの波：ChatGPT連携からビジネス変革まで",
     "title_en": "AI Frontier Today：The AI Wave Blending into Daily Life: From ChatGPT Integration to Business Transformation",
     "title_zh-tw": "今日 AI 前沿：融入生活的AI浪潮：從ChatGPT整合到商業轉型",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI教育の進化から安全規制の議論まで！",
+    "title_en": "AI Frontier Today：From the advancements in AI education to the discussions on safety regulations!",
+    "title_zh-tw": "今日 AI 前沿：從 AI教育的演進到安全監管的討論！",
+    "title_zh-cn": "今日 AI 前沿：从AI教育的演进到安全法规的讨论！",
+    "title_ko": "오늘의 AI 최전선：AI 교육의 진화부터 안전 규제의 논의까지!",
+    "category": "AI NEWS",
+    "date": "2026.08.23",
+    "thumbnail": "",
+    "summary": "ハーバードのAIアバター授業、DeepMind出身者の新AI研究、OpenAIの安全法案提言、AIラボの安全対策不足など、AIの最前線を深掘りします。",
+    "summary_en": "We will deep dive into the forefront of AI, covering topics such as Harvard's AI avatar classes, new AI research from DeepMind alumni, OpenAI's safety bill recommendations, and the lack of safety measures at AI labs.",
+    "summary_zh-tw": "哈佛的AI虛擬分身課程、DeepMind前員工的最新AI研究、OpenAI的AI安全法案建言、AI實驗室的安全措施不足等，深入探討AI的最前線。",
+    "summary_zh-cn": "哈佛大学的AI虚拟形象课程、DeepMind前员工的新AI研究、OpenAI的安全法案提案、AI实验室安全措施不足等，我们将深入探讨AI的前沿。",
+    "summary_ko": "하버드의 AI 아바타 수업, 딥마인드 출신자의 새로운 AI 연구, OpenAI의 안전 법안 제안, AI 연구소의 안전 대책 부족 등, AI의 최전선을 심층 분석합니다.",
+    "slug": "2026-08-23"
+  },
+  {
     "title": "今日のAI最前線：AI進化の裏側：倫理、インフラ、そして未来",
     "title_en": "AI Frontier Today：Behind the Scenes of AI Evolution: Ethics, Infrastructure, and the Future",
     "title_zh-tw": "今日 AI 前沿：AI演進的背後：倫理、基礎設施，以及未來",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：「親友」ロボットの終焉から新AIモデルまで、社会変革を加速するAI技術の今",
+    "title_en": "AI Frontier Today：From the Demise of 'Best Friend' Robots to New AI Models: The Current State of AI Technology Accelerating Social Transformation",
+    "title_zh-tw": "今日 AI 前沿：從「親友」機器人的終焉到新AI模型，加速社會變革的AI技術現況",
+    "title_zh-cn": "今日 AI 前沿：从「陪伴」机器人终结到新AI模型，加速社会变革的AI技术当下",
+    "title_ko": "오늘의 AI 최전선：「절친」 로봇의 종언부터 새로운 AI 모델까지, 사회 변화를 가속하는 AI 기술의 현재",
+    "category": "AI NEWS",
+    "date": "2026.08.24",
+    "thumbnail": "",
+    "summary": "首都高でのGemini活用事例やUnreal EngineとAIの連携、AI家庭教師の登場など、AIが社会に深く浸透する一方で、親友のようなロボットとの別れが倫理的問いを投げかけます。新しいAIモデルの登場も注目です。",
+    "summary_en": "While AI is deeply permeating society, as seen in examples like Gemini's applications on the Shuto Expressway, the integration of Unreal Engine and AI, and the emergence of AI tutors, parting with robots that are like best friends raises ethical questions. The advent of new AI models is also drawing attention.",
+    "summary_zh-tw": "首都高上 Gemini 的應用實例、Unreal Engine 與 AI 的整合、以及 AI 家庭教師的出現等，AI 深入滲透社會的同時，與如同摯友般的機器人告別則拋出了倫理問題。新的 AI 模型登場也備受關注。",
+    "summary_zh-cn": "AI在社会中深入渗透，例如Gemini在首都高速公路上的应用案例、Unreal Engine与AI的联动、AI家庭教师的出现等。与此同时，与亲如好友的机器人告别也提出了伦理问题。新AI模型的登场也备受关注。",
+    "summary_ko": "수도고속도로에서의 Gemini 활용 사례 및 언리얼 엔진과 AI의 연동, AI 가정교사의 등장 등, AI가 사회에 깊이 침투하는 한편, 가장 친한 친구와 같은 로봇과의 이별이 윤리적 질문을 던집니다. 새로운 AI 모델의 등장 또한 주목됩니다.",
+    "slug": "2026-08-24"
+  },
+  {
     "title": "今日のAI最前線：AI教育の進化から安全規制の議論まで！",
     "title_en": "AI Frontier Today：From the advancements in AI education to the discussions on safety regulations!",
     "title_zh-tw": "今日 AI 前沿：從 AI教育的演進到安全監管的討論！",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の光と影：金融、創造性、仕事、教育の最前線",
+    "title_en": "AI Frontier Today：The Light and Shadow of AI Evolution: At the Forefront of Finance, Creativity, Work, and Education",
+    "title_zh-tw": "今日 AI 前沿：AI進化的光與影：金融、創造力、工作、教育的最前線",
+    "title_zh-cn": "今日 AI 前沿：AI进化的光与影：金融、创造力、工作、教育的最前沿",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 빛과 그림자: 금융, 창의성, 일, 교육의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.08.25",
+    "thumbnail": "",
+    "summary": "AIが金融から教育、雇用まで多方面に影響を及ぼしています。創造性の壁やセキュリティニーズ、仕事への影響など、AIの最新動向を深掘りします。",
+    "summary_en": "AI is influencing various sectors, from finance to education and employment. We delve deeper into the latest AI trends, including creativity barriers, security needs, and the impact on jobs.",
+    "summary_zh-tw": "人工智慧對從金融、教育到就業等諸多領域都產生了廣泛影響。我們將深入探討人工智慧的最新發展，包括創造力瓶頸、安全需求以及對就業的影響等。",
+    "summary_zh-cn": "AI正在从金融、教育到就业等多个方面产生影响。我们将深入探讨AI的最新发展趋势，例如创意障碍、安全需求以及对工作的影响。",
+    "summary_ko": "AI가 금융부터 교육, 고용에 이르기까지 다방면에 영향을 미치고 있습니다. 창의성의 한계, 보안 요구 사항, 일자리 영향 등 AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-08-25"
+  },
+  {
     "title": "今日のAI最前線：「親友」ロボットの終焉から新AIモデルまで、社会変革を加速するAI技術の今",
     "title_en": "AI Frontier Today：From the Demise of 'Best Friend' Robots to New AI Models: The Current State of AI Technology Accelerating Social Transformation",
     "title_zh-tw": "今日 AI 前沿：從「親友」機器人的終焉到新AI模型，加速社會變革的AI技術現況",

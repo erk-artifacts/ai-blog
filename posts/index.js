@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ロボティクス躍進、OpenAIの波紋、そして日本のAIソリューションと倫理的問い",
+    "title_en": "AI Frontier Today：Leaps in Robotics, OpenAI's Ripple Effect, and Japan's AI Solutions and Ethical Questions",
+    "title_zh-tw": "今日 AI 前沿：機器人學躍進、OpenAI引發的波瀾，以及日本的AI解決方案與倫理問題",
+    "title_zh-cn": "今日 AI 前沿：机器人技术飞跃、OpenAI引发的波澜，以及日本的AI解决方案与伦理问题",
+    "title_ko": "오늘의 AI 최전선：로봇공학의 약진, OpenAI의 파문, 그리고 일본의 AI 솔루션과 윤리적 질문",
+    "category": "AI NEWS",
+    "date": "2026.08.26",
+    "thumbnail": "",
+    "summary": "ロボティクス企業の大型資金調達、OpenAIの幹部流出、AIエージェントのプライバシー対応、フィジカルAIの進化、そしてAIの「意識」に関する倫理的議論まで、今週もAI業界は大きな動きを見せています。",
+    "summary_en": "From major funding rounds for robotics companies, OpenAI's executive exodus, privacy compliance for AI agents, and the evolution of physical AI, to ethical debates surrounding AI \"consciousness,\" the AI industry once again saw significant developments this week.",
+    "summary_zh-tw": "機器人公司的大筆融資、OpenAI高階主管流失、AI代理人的隱私處理、實體AI的發展，以及關於AI「意識」的倫理討論，本週AI產業仍是動作頻頻。",
+    "summary_zh-cn": "机器人企业的巨额融资、OpenAI高管流失、AI代理的隐私应对、物理AI的进化，以及关于AI“意识”的伦理讨论，本周AI行业也动向频繁。",
+    "summary_ko": "로보틱스 기업의 대규모 자금 조달, OpenAI의 간부 유출, AI 에이전트의 프라이버시 대응, 피지컬 AI의 진화, 그리고 AI의 \"의식\"에 관한 윤리적 논의까지, 이번 주에도 AI 업계는 큰 움직임을 보이고 있습니다.",
+    "slug": "2026-08-26"
+  },
+  {
     "title": "今日のAI最前線：AI進化の光と影：金融、創造性、仕事、教育の最前線",
     "title_en": "AI Frontier Today：The Light and Shadow of AI Evolution: At the Forefront of Finance, Creativity, Work, and Education",
     "title_zh-tw": "今日 AI 前沿：AI進化的光與影：金融、創造力、工作、教育的最前線",

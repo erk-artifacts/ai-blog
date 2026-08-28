@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ローカルAIが身近に！NPU・GPU搭載PCとAI活用ヒント",
+    "title_en": "AI Frontier Today：Local AI at Your Fingertips! NPU/GPU-Equipped PCs and AI Usage Tips",
+    "title_zh-tw": "今日 AI 前沿：本機AI觸手可及！NPU・GPU搭載電腦與AI運用提示",
+    "title_zh-cn": "今日 AI 前沿：本地AI触手可及！搭载NPU和GPU的PC与AI应用提示",
+    "title_ko": "오늘의 AI 최전선：로컬 AI가 더 가까이! NPU・GPU 탑재 PC와 AI 활용 팁",
+    "category": "AI NEWS",
+    "date": "2026.08.28",
+    "thumbnail": "",
+    "summary": "ローカルAI向けPCの進化と、アイドルが語るAI活用術を解説。AIがもっと身近になる最新動向を深掘りします。",
+    "summary_en": "Exploring the evolution of PCs for local AI and AI utilization tips from idols. We'll delve into the latest trends making AI more accessible.",
+    "summary_zh-tw": "解說本地AI PC 的演進，以及偶像暢談的AI應用技巧。深入探討讓AI更貼近生活的最新趨勢。",
+    "summary_zh-cn": "解析本地AI PC的演进，以及偶像分享的AI应用技巧，深挖让AI更触手可及的最新动向。",
+    "summary_ko": "로컬 AI용 PC의 진화와, 아이돌이 말하는 AI 활용법을 설명합니다. AI가 더욱 가까워지는 최신 동향을 심층 분석합니다.",
+    "slug": "2026-08-28"
+  },
+  {
     "title": "今日のAI最前線：ロボティクス躍進、OpenAIの波紋、そして日本のAIソリューションと倫理的問い",
     "title_en": "AI Frontier Today：Leaps in Robotics, OpenAI's Ripple Effect, and Japan's AI Solutions and Ethical Questions",
     "title_zh-tw": "今日 AI 前沿：機器人學躍進、OpenAI引發的波瀾，以及日本的AI解決方案與倫理問題",

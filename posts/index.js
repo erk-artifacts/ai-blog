@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ピクセルAI音声入力、国際婚活AI翻訳、ビジネス戦略AIツールが登場！",
+    "title_en": "AI Frontier Today：Pixel AI voice input, international matchmaking AI translation, and business strategy AI tools are here!",
+    "title_zh-tw": "今日 AI 前沿：Pixel AI 語音輸入、國際婚活 AI 翻譯、商業策略 AI 工具登場！",
+    "title_zh-cn": "今日 AI 前沿：像素AI语音输入、国际婚恋AI翻译、商业战略AI工具登场！",
+    "title_ko": "오늘의 AI 최전선：픽셀 AI 음성 입력, 국제 결혼 활동 AI 번역, 비즈니스 전략 AI 도구가 등장!",
+    "category": "AI NEWS",
+    "date": "2026.08.29",
+    "thumbnail": "",
+    "summary": "最新PixelスマホのAI音声入力から国際婚活のAI翻訳、そしてビジネス戦略を支援するAIツールまで、AI技術が多様な分野で進化しています。",
+    "summary_en": "From AI voice input on the latest Pixel smartphones to AI translation for international marriage hunting, and even AI tools that support business strategies, AI technology is evolving in diverse fields.",
+    "summary_zh-tw": "從最新Pixel手機的AI語音輸入，到國際婚戀的AI翻譯，乃至支援商業策略的AI工具，AI技術正在多元領域中持續進化。",
+    "summary_zh-cn": "从最新款 Pixel 智能手机的 AI 语音输入，到国际婚恋的 AI 翻译，再到支持商业战略的 AI 工具，AI 技术正在多样化领域中不断发展。",
+    "summary_ko": "최신 픽셀 스마트폰의 AI 음성 입력부터 국제 결혼 매칭 AI 번역, 그리고 비즈니스 전략을 지원하는 AI 도구까지, AI 기술이 다양한 분야에서 진화하고 있습니다.",
+    "slug": "2026-08-29"
+  },
+  {
     "title": "今日のAI最前線：ローカルAIが身近に！NPU・GPU搭載PCとAI活用ヒント",
     "title_en": "AI Frontier Today：Local AI at Your Fingertips! NPU/GPU-Equipped PCs and AI Usage Tips",
     "title_zh-tw": "今日 AI 前沿：本機AI觸手可及！NPU・GPU搭載電腦與AI運用提示",

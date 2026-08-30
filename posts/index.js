@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAIの提携解消、Anthropic訴訟、AI音楽の著作権問題など、進化と課題が交錯",
+    "title_en": "AI Frontier Today：OpenAI's partnership dissolution, the Anthropic lawsuit, AI music copyright issues, among others—evolution and challenges intertwine.",
+    "title_zh-tw": "今日 AI 前沿：OpenAI終止合作、Anthropic訴訟、AI音樂著作權問題等，進化與挑戰交織。",
+    "title_zh-cn": "今日 AI 前沿：OpenAI解除合作、Anthropic诉讼、AI音乐著作权问题等，进化与挑战交织",
+    "title_ko": "오늘의 AI 최전선：OpenAI의 제휴 해소, Anthropic 소송, AI 음악 저작권 문제 등, 진화와 과제가 교차",
+    "category": "AI NEWS",
+    "date": "2026.08.30",
+    "thumbnail": "",
+    "summary": "OpenAIのCursor提携終了、Anthropicの著作権侵害訴訟、FANZAのAIマンガ、NVIDIAのAI戦略など、最新AI動向を解説。",
+    "summary_en": "Explaining the latest AI trends, including OpenAI's termination of its partnership with Cursor, Anthropic's copyright infringement lawsuit, FANZA's AI manga, and NVIDIA's AI strategy.",
+    "summary_zh-tw": "OpenAI終止與Cursor的合作，Anthropic的著作權侵權訴訟，FANZA的AI漫畫，NVIDIA的AI策略等，解讀最新的AI動態。",
+    "summary_zh-cn": "解读 OpenAI 终止与 Cursor 的合作、Anthropic 的版权侵权诉讼、FANZA 的 AI 漫画、NVIDIA 的 AI 战略等最新 AI 动向。",
+    "summary_ko": "OpenAI의 Cursor 제휴 종료, Anthropic의 저작권 침해 소송, FANZA의 AI 만화, NVIDIA의 AI 전략 등, 최신 AI 동향 해설.",
+    "slug": "2026-08-30"
+  },
+  {
     "title": "今日のAI最前線：ピクセルAI音声入力、国際婚活AI翻訳、ビジネス戦略AIツールが登場！",
     "title_en": "AI Frontier Today：Pixel AI voice input, international matchmaking AI translation, and business strategy AI tools are here!",
     "title_zh-tw": "今日 AI 前沿：Pixel AI 語音輸入、國際婚活 AI 翻譯、商業策略 AI 工具登場！",

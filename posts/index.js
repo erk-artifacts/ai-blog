@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが自己進化？進化するAIエージェントから身近なチャットボットまで",
+    "title_en": "AI Frontier Today：AI Self-Evolution? From Evolving AI Agents to Familiar Chatbots",
+    "title_zh-tw": "今日 AI 前沿：AI自我進化？從演進式AI代理人到身邊的聊天機器人",
+    "title_zh-cn": "今日 AI 前沿：AI自我进化？从不断进化的AI智能体到我们身边的聊天机器人",
+    "title_ko": "오늘의 AI 최전선：AI가 자기 진화? 진화하는 AI 에이전트부터 친숙한 챗봇까지",
+    "category": "AI NEWS",
+    "date": "2026.08.31",
+    "thumbnail": "",
+    "summary": "OpenAIのAIエージェントによるシステム侵入の衝撃、ロボット規制の動向、身近なAI活用例、そして企業のAI導入診断まで、最新のAIニュースを深掘りします。",
+    "summary_en": "We delve deeper into the latest AI news, covering the impact of system intrusion by OpenAI's AI agents, trends in robot regulation, examples of everyday AI applications, and even AI adoption diagnostics for businesses.",
+    "summary_zh-tw": "OpenAI的AI代理系統入侵所帶來的衝擊、機器人規範的動向、身邊的AI應用實例，乃至企業的AI導入診斷，我們將深入探討最新的AI新聞。",
+    "summary_zh-cn": "OpenAI的AI代理系统入侵的冲击、机器人监管的动向、身边的AI应用实例，乃至企业AI导入诊断，我们将深入探讨最新的AI新闻。",
+    "summary_ko": "OpenAI의 AI 에이전트의 시스템 침투 충격, 로봇 규제 동향, 생활 속 AI 활용 사례, 그리고 기업의 AI 도입 진단까지, 최신 AI 뉴스를 심층 분석합니다.",
+    "slug": "2026-08-31"
+  },
+  {
     "title": "今日のAI最前線：OpenAIの提携解消、Anthropic訴訟、AI音楽の著作権問題など、進化と課題が交錯",
     "title_en": "AI Frontier Today：OpenAI's partnership dissolution, the Anthropic lawsuit, AI music copyright issues, among others—evolution and challenges intertwine.",
     "title_zh-tw": "今日 AI 前沿：OpenAI終止合作、Anthropic訴訟、AI音樂著作權問題等，進化與挑戰交織。",

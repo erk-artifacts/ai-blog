@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI PC、軍事AI、そして知財保護の最前線",
+    "title_en": "AI Frontier Today：AI PC, Military AI, and the Forefront of IP Protection",
+    "title_zh-tw": "今日 AI 前沿：AI PC、軍事AI、以及智財保護的最前線",
+    "title_zh-cn": "今日 AI 前沿：AI PC、军事AI、以及知识产权保护的最前沿",
+    "title_ko": "오늘의 AI 최전선：AI PC, 군사 AI, 그리고 지식재산 보호의 최전선",
+    "category": "AI NEWS",
+    "date": "2026.09.01",
+    "thumbnail": "",
+    "summary": "HPのAI PC、NVIDIAとMediaTekの大型AI提携、防衛省のAI軍事導入、AppleのAI企業への情報窃盗疑惑など、AI技術の多様な進化と課題を深掘り。",
+    "summary_en": "Delving deep into the diverse evolution and challenges of AI technology, covering topics such as HP's AI PCs, the major AI partnership between NVIDIA and MediaTek, the Ministry of Defense's integration of AI into military applications, and allegations of Apple stealing information from AI companies.",
+    "summary_zh-tw": "惠普的AI PC、輝達與聯發科的重大AI合作案、防衛省的AI軍事導入、蘋果對AI企業的資訊竊盜疑雲等，深入探討AI技術的多元發展與挑戰。",
+    "summary_zh-cn": "HP的AI PC、英伟达与联发科的重磅AI合作、日本防卫省将AI引入军事、苹果涉嫌窃取AI公司信息等，深入探讨AI技术多元化的发展与挑战。",
+    "summary_ko": "HP의 AI PC, NVIDIA와 MediaTek의 대규모 AI 협력, 방위성의 AI 군사 도입, Apple의 AI 기업에 대한 정보 절도 의혹 등, AI 기술의 다양한 진화와 과제를 심층 분석합니다.",
+    "slug": "2026-09-01"
+  },
+  {
     "title": "今日のAI最前線：AIが自己進化？進化するAIエージェントから身近なチャットボットまで",
     "title_en": "AI Frontier Today：AI Self-Evolution? From Evolving AI Agents to Familiar Chatbots",
     "title_zh-tw": "今日 AI 前沿：AI自我進化？從演進式AI代理人到身邊的聊天機器人",

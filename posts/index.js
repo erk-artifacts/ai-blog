@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが生活に浸透！LINEヤフーの広告からダイソンの歯ブラシ、そしてイベント論争まで",
+    "title_en": "AI Frontier Today：AI deeply integrated into our lives! From LINE Yahoo ads to Dyson toothbrushes, and even event controversies.",
+    "title_zh-tw": "今日 AI 前沿：AI滲透生活！從LINE Yahoo的廣告到Dyson的牙刷，再到活動爭議",
+    "title_zh-cn": "今日 AI 前沿：AI已融入生活！从LINE雅虎的广告到戴森的牙刷，再到活动争议",
+    "title_ko": "오늘의 AI 최전선：AI가 생활에 깊이 스며들다! LINE 야후의 광고부터 다이슨 칫솔, 그리고 이벤트 논란까지",
+    "category": "AI NEWS",
+    "date": "2026.09.02",
+    "thumbnail": "",
+    "summary": "LINEヤフーのAI広告拡大、ダイソンのAI歯ブラシ登場、PKSHA AI SaaS注目、そしてGMOイベントにおける「フィジカルAI」を巡る議論まで、多岐にわたるAIの最新動向を深掘りします。",
+    "summary_en": "We will delve deep into a wide range of the latest AI trends, from LINE Yahoo's expanding AI advertising and the debut of Dyson's AI toothbrush, to the attention on PKSHA AI SaaS, and even discussions surrounding \"Physical AI\" at the GMO event.",
+    "summary_zh-tw": "從LINE雅虎擴大AI廣告、戴森AI牙刷的登場、PKSHA AI SaaS備受關注，乃至於GMO活動中圍繞「實體AI」的討論，我們將深入探討多樣化的AI最新動態。",
+    "summary_zh-cn": "LINE Yahoo 的 AI 广告扩张，戴森的 AI 牙刷登场，PKSHA AI SaaS 受关注，以及 GMO 活动中围绕“物理 AI”的讨论，我们将深入探讨涵盖多方面的 AI 最新动向。",
+    "summary_ko": "LINE 야후의 AI 광고 확대, 다이슨의 AI 칫솔 등장, PKSHA AI SaaS 주목, 그리고 GMO 이벤트에서의 '피지컬 AI'를 둘러싼 논의까지, 다방면에 걸친 AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-09-02"
+  },
+  {
     "title": "今日のAI最前線：AI PC、軍事AI、そして知財保護の最前線",
     "title_en": "AI Frontier Today：AI PC, Military AI, and the Forefront of IP Protection",
     "title_zh-tw": "今日 AI 前沿：AI PC、軍事AI、以及智財保護的最前線",

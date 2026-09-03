@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI導入で業務効率化！ロボットとAIエージェントが拓く未来",
+    "title_en": "AI Frontier Today：Boost operational efficiency with AI adoption! The future unlocked by robots and AI agents.",
+    "title_zh-tw": "今日 AI 前沿：AI導入，業務效率化！機器人與AI代理人開創的未來",
+    "title_zh-cn": "今日 AI 前沿：AI导入实现业务效率化！机器人与AI智能体开创未来",
+    "title_ko": "오늘의 AI 최전선：AI 도입으로 업무 효율화! 로봇과 AI 에이전트가 열어갈 미래",
+    "category": "AI NEWS",
+    "date": "2026.09.03",
+    "thumbnail": "",
+    "summary": "AI社長、ロボットソリューション、AIエージェントなど、AIを活用した業務効率化と自動化の最前線をご紹介します。",
+    "summary_en": "We introduce the forefront of AI-powered business efficiency and automation, including AI CEOs, robot solutions, and AI agents.",
+    "summary_zh-tw": "介紹AI社長、機器人解決方案、AI代理人等，運用AI實現業務效率化與自動化的最前線。",
+    "summary_zh-cn": "AI社长、机器人解决方案、AI智能体等，为您介绍AI驱动的业务效率提升与自动化最前沿。",
+    "summary_ko": "AI 사장, 로봇 솔루션, AI 에이전트 등, AI를 활용한 업무 효율화와 자동화의 최전선을 소개합니다.",
+    "slug": "2026-09-03"
+  },
+  {
     "title": "今日のAI最前線：AIが生活に浸透！LINEヤフーの広告からダイソンの歯ブラシ、そしてイベント論争まで",
     "title_en": "AI Frontier Today：AI deeply integrated into our lives! From LINE Yahoo ads to Dyson toothbrushes, and even event controversies.",
     "title_zh-tw": "今日 AI 前沿：AI滲透生活！從LINE Yahoo的廣告到Dyson的牙刷，再到活動爭議",

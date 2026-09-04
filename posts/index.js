@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：産業を変革するAIエージェントとAlexaの進化、巨額投資がAIの未来を加速",
+    "title_en": "AI Frontier Today：AI Agents Transforming Industries and Alexa's Evolution: Massive Investment Accelerates AI's Future",
+    "title_zh-tw": "今日 AI 前沿：變革產業的AI代理人與Alexa的演進，巨額投資加速AI的未來",
+    "title_zh-cn": "今日 AI 前沿：变革产业的AI代理与Alexa的演进，巨额投资加速AI的未来",
+    "title_ko": "오늘의 AI 최전선：산업을 혁신하는 AI 에이전트와 Alexa의 진화, 거액 투자가 AI의 미래를 가속",
+    "category": "AI NEWS",
+    "date": "2026.09.04",
+    "thumbnail": "",
+    "summary": "AIエージェントが産業の未来を切り開き、Alexaは詐欺対策を強化。AIインフラ開発企業Crusoeは巨額の資金調達を達成し、AIの進化が止まりません。",
+    "summary_en": "AI agents are paving the way for the future of industries, Alexa is enhancing fraud prevention, AI infrastructure development company Crusoe has achieved massive funding, and the evolution of AI is unstoppable.",
+    "summary_zh-tw": "AI 代理人開創產業未來，Alexa 則加強詐騙防範。AI 基礎設施開發公司 Crusoe 完成巨額募資，AI 的進化勢不可擋。",
+    "summary_zh-cn": "AI代理正在开创行业未来，Alexa加强了防欺诈措施。AI基础设施开发公司Crusoe获得了巨额融资，AI的进化势不可挡。",
+    "summary_ko": "AI 에이전트가 산업의 미래를 개척하고, Alexa는 사기 방지 대책을 강화합니다. AI 인프라 개발 기업 Crusoe는 거액의 자금 조달을 달성했으며, AI의 진화는 멈추지 않습니다.",
+    "slug": "2026-09-04"
+  },
+  {
     "title": "今日のAI最前線：AI導入で業務効率化！ロボットとAIエージェントが拓く未来",
     "title_en": "AI Frontier Today：Boost operational efficiency with AI adoption! The future unlocked by robots and AI agents.",
     "title_zh-tw": "今日 AI 前沿：AI導入，業務效率化！機器人與AI代理人開創的未來",

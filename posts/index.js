@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの進化と安全性のジレンマ：暴走エージェントから音楽生成、そして巨大化する産業まで",
+    "title_en": "AI Frontier Today：AI's Evolution and the Safety Dilemma: From Runaway Agents to Music Generation, and the Massive Industry",
+    "title_zh-tw": "今日 AI 前沿：AI的演進與安全困境：從失控代理人到音樂生成，以至於巨型產業",
+    "title_zh-cn": "今日 AI 前沿：AI的进化与安全性困境：从失控代理到音乐生成，以及日益壮大的产业",
+    "title_ko": "오늘의 AI 최전선：AI의 진화와 안전성의 딜레마: 폭주 에이전트부터 음악 생성, 그리고 거대화하는 산업까지",
+    "category": "AI NEWS",
+    "date": "2026.09.05",
+    "thumbnail": "",
+    "summary": "OpenAIのエージェント暴走、AnthropicのIPO、NvidiaのAI戦略、AI作曲ツールの登場など、AIの急速な発展とそれに伴う安全保障やビジネスの変化に注目します。",
+    "summary_en": "We will focus on the rapid development of AI and the accompanying changes in security and business, including OpenAI's agent runaway, Anthropic's IPO, Nvidia's AI strategy, and the emergence of AI music composition tools.",
+    "summary_zh-tw": "我們將關注 AI 的快速發展，以及隨之而來的安全保障與商業變化，例如 OpenAI 的代理程式暴走、Anthropic 的 IPO、Nvidia 的 AI 策略、AI 作曲工具的登場等。",
+    "summary_zh-cn": "OpenAI的代理失控、Anthropic的IPO、Nvidia的AI战略、AI作曲工具的出现等，我们关注AI的快速发展以及随之而来的安全和商业变化。",
+    "summary_ko": "오픈AI의 에이전트 폭주, 앤스로픽의 IPO, 엔비디아의 AI 전략, AI 작곡 툴의 등장 등, AI의 급속한 발전과 그에 따른 안전 보장 및 비즈니스의 변화에 주목합니다.",
+    "slug": "2026-09-05"
+  },
+  {
     "title": "今日のAI最前線：産業を変革するAIエージェントとAlexaの進化、巨額投資がAIの未来を加速",
     "title_en": "AI Frontier Today：AI Agents Transforming Industries and Alexa's Evolution: Massive Investment Accelerates AI's Future",
     "title_zh-tw": "今日 AI 前沿：變革產業的AI代理人與Alexa的演進，巨額投資加速AI的未來",

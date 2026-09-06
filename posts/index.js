@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの倫理、安全、そして進化：最新ニュースを深掘り！",
+    "title_en": "AI Frontier Today：AI Ethics, Safety, and Evolution: A Deep Dive into the Latest News!",
+    "title_zh-tw": "今日 AI 前沿：AI倫理、安全與進化：深入探討最新消息！",
+    "title_zh-cn": "今日 AI 前沿：AI的伦理、安全以及进化：最新新闻深度解析！",
+    "title_ko": "오늘의 AI 최전선：AI 윤리, 안전, 그리고 진화: 최신 뉴스를 심층 분석!",
+    "category": "AI NEWS",
+    "date": "2026.09.06",
+    "thumbnail": "",
+    "summary": "OpenAIへの訴訟、AIエージェントの誤動作、Geminiの計画失敗、そしてローカルAIの進化など、AI最前線の動きを解説します。",
+    "summary_en": "We will explain the latest developments on the AI front, including lawsuits against OpenAI, AI agent malfunctions, Gemini's failed plans, and the evolution of local AI.",
+    "summary_zh-tw": "我們將解析對 OpenAI 的訴訟、AI 代理程式的誤動作、Gemini 的計畫失敗，以及本機 AI 的演進等 AI 最前線的動態。",
+    "summary_zh-cn": "针对OpenAI的诉讼、AI代理的故障、Gemini计划的失败以及本地AI的演进等，解读AI前沿动态。",
+    "summary_ko": "OpenAI에 대한 소송, AI 에이전트의 오작동, Gemini의 계획 실패, 그리고 로컬 AI의 진화 등, AI 최전선의 움직임을 해설합니다.",
+    "slug": "2026-09-06"
+  },
+  {
     "title": "今日のAI最前線：AIの進化と安全性のジレンマ：暴走エージェントから音楽生成、そして巨大化する産業まで",
     "title_en": "AI Frontier Today：AI's Evolution and the Safety Dilemma: From Runaway Agents to Music Generation, and the Massive Industry",
     "title_zh-tw": "今日 AI 前沿：AI的演進與安全困境：從失控代理人到音樂生成，以至於巨型產業",

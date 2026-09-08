@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：夫婦喧嘩もAIが仲裁！？ 日常とAIの新たな接点",
+    "title_en": "AI Frontier Today：AI to mediate even marital disputes!? A new intersection of daily life and AI.",
+    "title_zh-tw": "今日 AI 前沿：夫婦吵架也能讓AI仲裁！？ 日常與AI的新接點",
+    "title_zh-cn": "今日 AI 前沿：夫妻吵架AI也能调解？！ 日常与AI的新的交汇点",
+    "title_ko": "오늘의 AI 최전선：부부싸움도 AI가 중재!? 일상과 AI의 새로운 접점",
+    "category": "AI NEWS",
+    "date": "2026.09.08",
+    "thumbnail": "",
+    "summary": "AIが夫婦のカウンセリングからロボット業界の連携、そしてAI自身の「記憶」の探求まで、私たちの生活と技術の最前線に迫ります。",
+    "summary_en": "AI delves into the forefront of our lives and technology, from marriage counseling and collaboration in the robotics industry, to the exploration of AI's own \"memory.\"",
+    "summary_zh-tw": "AI將從夫妻諮詢、機器人產業的合作，到對AI自身「記憶」的探索，觸及我們生活與科技的最前線。",
+    "summary_zh-cn": "AI将从夫妻咨询、到机器人行业的协作，乃至对AI自身“记忆”的探索，触及我们生活和技术的最前沿。",
+    "summary_ko": "AI가 부부 상담부터 로봇 산업의 협력, 그리고 AI 자신의 '기억' 탐구에 이르기까지, 우리 삶과 기술의 최전선에 다가갑니다.",
+    "slug": "2026-09-08"
+  },
+  {
     "title": "今日のAI最前線：AIの倫理、安全、そして進化：最新ニュースを深掘り！",
     "title_en": "AI Frontier Today：AI Ethics, Safety, and Evolution: A Deep Dive into the Latest News!",
     "title_zh-tw": "今日 AI 前沿：AI倫理、安全與進化：深入探討最新消息！",

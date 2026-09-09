@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI研究の最前線からビジネス応用まで！注目の動きを深掘り",
+    "title_en": "AI Frontier Today：From the Forefront of AI Research to Business Applications! A Deep Dive into Key Trends.",
+    "title_zh-tw": "今日 AI 前沿：從AI研究的最前線到商業應用！深度解析焦點動向",
+    "title_zh-cn": "今日 AI 前沿：从AI研究前沿到商业应用！深度解读热门动向",
+    "title_ko": "오늘의 AI 최전선：AI 연구 최전선부터 비즈니스 응용까지! 주목할 만한 움직임을 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.09.09",
+    "thumbnail": "",
+    "summary": "OpenAIの数学的発見と不正疑惑、AIジュエリーデザインアプリ、宿泊施設のAI対応状況、ロボット研究の受賞、AIマーケティング活用、経営者向けAI研修・コンサルなど、多岐にわたるAIの進化と応用事例を深掘りします。",
+    "summary_en": "We will delve deep into a wide range of AI advancements and application examples, including OpenAI's mathematical discoveries and allegations of misconduct, AI jewelry design apps, the AI readiness of accommodation facilities, robotics research awards, AI marketing applications, and AI training and consulting for executives.",
+    "summary_zh-tw": "從OpenAI的數學發現與舞弊指控、AI珠寶設計應用程式、住宿設施的AI整合現況、機器人研究的獲獎成果、AI在行銷上的應用，到針對企業高階主管的AI培訓與顧問服務等，本文將深入探討AI在各領域的多元發展與應用案例。",
+    "summary_zh-cn": "OpenAI的数学发现与不当行为指控、AI珠宝设计应用、住宿设施的AI就绪状况、机器人研究获奖、AI营销应用、面向管理者的AI培训与咨询等，我们将深入探讨AI的多元进化与应用案例。",
+    "summary_ko": "OpenAI의 수학적 발견과 부정 의혹, AI 주얼리 디자인 앱, 숙박 시설의 AI 도입 현황, 로봇 연구 수상, AI 마케팅 활용, 경영자 대상 AI 교육 및 컨설팅 등 다양한 AI의 진화와 응용 사례를 심층적으로 다룹니다.",
+    "slug": "2026-09-09"
+  },
+  {
     "title": "今日のAI最前線：夫婦喧嘩もAIが仲裁！？ 日常とAIの新たな接点",
     "title_en": "AI Frontier Today：AI to mediate even marital disputes!? A new intersection of daily life and AI.",
     "title_zh-tw": "今日 AI 前沿：夫婦吵架也能讓AI仲裁！？ 日常與AI的新接點",

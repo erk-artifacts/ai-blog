@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI活用時代のデータ戦略と広報、そして倫理的課題",
+    "title_en": "AI Frontier Today：Data Strategy and Public Relations in the AI-driven Era, and Ethical Challenges",
+    "title_zh-tw": "今日 AI 前沿：AI應用時代的數據策略與公關、以及倫理議題",
+    "title_zh-cn": "今日 AI 前沿：AI应用时代的数据战略、公共关系，以及伦理挑战",
+    "title_ko": "오늘의 AI 최전선：AI 활용 시대의 데이터 전략과 홍보, 그리고 윤리적 과제",
+    "category": "AI NEWS",
+    "date": "2026.09.10",
+    "thumbnail": "",
+    "summary": "BoxのAI時代のデータ環境、生成AIポスターの倫理問題、AI時代の広報戦略セミナーについて解説します。",
+    "summary_en": "We will discuss Box's AI-era data environment, the ethical issues of generative AI posters, and an AI-era public relations strategy seminar.",
+    "summary_zh-tw": "我將針對 Box 的 AI 時代數據環境、生成式 AI 海報的倫理問題，以及 AI 時代的公關策略研討會進行說明。",
+    "summary_zh-cn": "Box的AI时代数据环境、生成式AI海报的伦理问题、AI时代的公关战略研讨会。",
+    "summary_ko": "Box의 AI 시대 데이터 환경, 생성형 AI 포스터의 윤리 문제, AI 시대 홍보 전략 세미나에 대해 설명합니다.",
+    "slug": "2026-09-10"
+  },
+  {
     "title": "今日のAI最前線：AI研究の最前線からビジネス応用まで！注目の動きを深掘り",
     "title_en": "AI Frontier Today：From the Forefront of AI Research to Business Applications! A Deep Dive into Key Trends.",
     "title_zh-tw": "今日 AI 前沿：從AI研究的最前線到商業應用！深度解析焦點動向",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：ChatGPTが広告プラットフォームに？OpenAIの数学問題解決の進捗も",
+    "title_en": "AI Frontier Today：ChatGPT as an advertising platform? Also, OpenAI's progress in solving math problems",
+    "title_zh-tw": "今日 AI 前沿：ChatGPT 將成為廣告平台？OpenAI 數學問題解決的進展",
+    "title_zh-cn": "今日 AI 前沿：ChatGPT将成为广告平台？OpenAI在数学问题解决方面的进展",
+    "title_ko": "오늘의 AI 최전선：ChatGPT, 광고 플랫폼으로? OpenAI의 수학 문제 해결 진척 상황도",
+    "category": "AI NEWS",
+    "date": "2026.09.11",
+    "thumbnail": "",
+    "summary": "AmazonとOpenAIが広告提携し、AIワークショップも活発化。会計や畜産分野でのAI活用も進み、OpenAIがミレニアム懸賞問題で進展を見せるなど、多岐にわたるAIの進化が加速しています。",
+    "summary_en": "Amazon and OpenAI have formed an advertising partnership, and AI workshops are also becoming more active. With AI utilization progressing in fields such as accounting and livestock, and OpenAI showing advancements in the Millennium Prize Problems, the multifaceted evolution of AI is accelerating.",
+    "summary_zh-tw": "亞馬遜和OpenAI達成廣告合作，AI工作坊也日益活躍。AI在會計和畜牧業領域的應用也持續進展，OpenAI在千禧年大獎難題上展現進展，多方面的AI進化正在加速。",
+    "summary_zh-cn": "亚马逊与OpenAI达成广告合作，AI工作坊也日益活跃。AI在会计和畜牧业等领域的应用不断取得进展，此外，OpenAI在千年大奖难题方面也展现出新的进展，AI的多元化发展正在加速。",
+    "summary_ko": "아마존과 OpenAI가 광고 제휴를 맺고, AI 워크숍도 활발해지고 있습니다. 회계 및 축산 분야에서의 AI 활용도 진전되고 있으며, OpenAI가 밀레니엄 현상 문제에서 진전을 보이는 등, 다양한 AI의 진화가 가속화되고 있습니다.",
+    "slug": "2026-09-11"
+  },
+  {
     "title": "今日のAI最前線：AI活用時代のデータ戦略と広報、そして倫理的課題",
     "title_en": "AI Frontier Today：Data Strategy and Public Relations in the AI-driven Era, and Ethical Challenges",
     "title_zh-tw": "今日 AI 前沿：AI應用時代的數據策略與公關、以及倫理議題",

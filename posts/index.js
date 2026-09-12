@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：GPT-6 AstraからAI倫理問題、開発競争の行方まで",
+    "title_en": "AI Frontier Today：From GPT-6 Astra to AI ethics issues and the future of the development race",
+    "title_zh-tw": "今日 AI 前沿：從GPT-6 Astra到AI倫理問題、開發競爭的發展方向",
+    "title_zh-cn": "今日 AI 前沿：GPT-6 Astra 到 AI 伦理问题、开发竞争的走向",
+    "title_ko": "오늘의 AI 최전선：GPT-6 Astra부터 AI 윤리 문제, 개발 경쟁의 향방까지",
+    "category": "AI NEWS",
+    "date": "2026.09.12",
+    "thumbnail": "",
+    "summary": "GPT-6 Astraの進化、ロボット学習データ市場の活況、AI開発の倫理的課題、そして未来を左右する安全保障議論まで、AI業界の最前線を深掘りします。",
+    "summary_en": "We will deep dive into the forefront of the AI industry, from the evolution of GPT-6 Astra, the booming robot learning data market, and ethical challenges in AI development, to security discussions that will shape the future.",
+    "summary_zh-tw": "從 GPT-6 Astra 的演進、機器人學習資料市場的活絡、AI 開發的倫理挑戰，到左右未來走向的國家安全議題討論，本文將深入探討 AI 產業的最前線。",
+    "summary_zh-cn": "GPT-6 Astra的演进、机器人学习数据市场的蓬勃发展、AI开发的伦理挑战，乃至决定未来的安全保障讨论，我们将深入探讨AI行业的最前沿。",
+    "summary_ko": "GPT-6 Astra의 진화, 로봇 학습 데이터 시장의 활황, AI 개발의 윤리적 과제, 그리고 미래를 좌우할 안보 논의까지, AI 업계의 최전선을 심층 분석합니다.",
+    "slug": "2026-09-12"
+  },
+  {
     "title": "今日のAI最前線：ChatGPTが広告プラットフォームに？OpenAIの数学問題解決の進捗も",
     "title_en": "AI Frontier Today：ChatGPT as an advertising platform? Also, OpenAI's progress in solving math problems",
     "title_zh-tw": "今日 AI 前沿：ChatGPT 將成為廣告平台？OpenAI 數學問題解決的進展",

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI業界の重要人物が語るAIの未来と倫理、そして意外な進化",
+    "title_en": "AI Frontier Today：Key figures in the AI industry discuss the future and ethics of AI, and its unexpected evolution.",
+    "title_zh-tw": "今日 AI 前沿：AI業界重要人物講述AI的未來與倫理，以及出乎意料的進化",
+    "title_zh-cn": "今日 AI 前沿：AI行业重要人物探讨AI的未来与伦理，以及意想不到的进化",
+    "title_ko": "오늘의 AI 최전선：AI 산업 주요 인사들이 말하는 AI의 미래와 윤리, 그리고 의외의 진화",
+    "category": "AI NEWS",
+    "date": "2026.09.13",
+    "thumbnail": "",
+    "summary": "AI業界のトップが開発ペースや安全性に言及。一方で、AIは企業のシステム管理やスマートウォッチ、さらには予期せぬ攻撃にも利用され、私たちの日常と社会に深く浸透し始めています。",
+    "summary_en": "Top figures in the AI industry comment on the pace of development and safety. Meanwhile, AI is being utilized for corporate system management, smartwatches, and even unforeseen attacks, beginning to deeply permeate our daily lives and society.",
+    "summary_zh-tw": "AI業界的領袖提及開發速度和安全性。另一方面，AI被應用於企業系統管理、智慧手錶，甚至是預期之外的攻擊，正逐漸深入滲透到我們的日常生活與社會中。",
+    "summary_zh-cn": "AI行业领袖们提及了开发速度和安全性。与此同时，AI也被用于企业系统管理、智能手表，甚至意想不到的攻击，正日益深入地渗透到我们的日常生活和社会中。",
+    "summary_ko": "AI 업계의 선두주자들이 개발 속도 및 안전성에 대해 언급했습니다. 한편으로, AI는 기업의 시스템 관리, 스마트워치, 나아가 예상치 못한 공격에도 활용되어 우리의 일상과 사회에 깊이 스며들기 시작했습니다.",
+    "slug": "2026-09-13"
+  },
+  {
     "title": "今日のAI最前線：GPT-6 AstraからAI倫理問題、開発競争の行方まで",
     "title_en": "AI Frontier Today：From GPT-6 Astra to AI ethics issues and the future of the development race",
     "title_zh-tw": "今日 AI 前沿：從GPT-6 Astra到AI倫理問題、開發競爭的發展方向",

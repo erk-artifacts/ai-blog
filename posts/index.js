@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIが働き方を革新！ノーコード開発から現場支援、そして未来の技術活用まで",
+    "title_en": "AI Frontier Today：AI Revolutionizes the Way We Work! From No-Code Development to On-Site Support, and Future Technology Utilization.",
+    "title_zh-tw": "今日 AI 前沿：AI 革新工作方式！從無程式碼開發到現場支援，乃至未來技術應用",
+    "title_zh-cn": "今日 AI 前沿：AI 变革工作方式！从无代码开发到现场支援，再到未来技术应用",
+    "title_ko": "오늘의 AI 최전선：AI가 일하는 방식을 혁신한다! 노코드 개발부터 현장 지원, 그리고 미래 기술 활용까지",
+    "category": "AI NEWS",
+    "date": "2026.09.14",
+    "thumbnail": "",
+    "summary": "Claris FileMakerのAI機能強化、Teachme Bizによるマニュアル自動生成、そして戦場のドローン映像をAI訓練データに活用する動きなど、AIが多様な分野で進化を続ける最新動向を深掘りします。",
+    "summary_en": "We will delve into the latest trends where AI continues to evolve in various fields, such as AI enhancements in Claris FileMaker, automatic manual generation by Teachme Biz, and the movement to utilize battlefield drone footage as AI training data.",
+    "summary_zh-tw": "Claris FileMaker的AI功能強化、Teachme Biz的手冊自動生成、以及活用戰場上的無人機影像作為AI訓練數據等，我們將深入探討AI在多元領域中持續進化的最新動向。",
+    "summary_zh-cn": "Claris FileMaker的AI功能强化、Teachme Biz的自动手册生成，以及将战场无人机影像用于AI训练数据的动向等，我们将深入探讨AI在多个领域持续演进的最新动态。",
+    "summary_ko": "클라리스 파일메이커의 AI 기능 강화, 티치미 비즈를 통한 매뉴얼 자동 생성, 그리고 전장 드론 영상을 AI 훈련 데이터로 활용하는 움직임 등, AI가 다양한 분야에서 계속 진화하는 최신 동향을 심층 분석합니다.",
+    "slug": "2026-09-14"
+  },
+  {
     "title": "今日のAI最前線：AI業界の重要人物が語るAIの未来と倫理、そして意外な進化",
     "title_en": "AI Frontier Today：Key figures in the AI industry discuss the future and ethics of AI, and its unexpected evolution.",
     "title_zh-tw": "今日 AI 前沿：AI業界重要人物講述AI的未來與倫理，以及出乎意料的進化",

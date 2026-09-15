@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：東京に無人タクシー！AIが変える働き方と心のケア",
+    "title_en": "AI Frontier Today：Driverless Taxis in Tokyo! How AI is Changing Work Styles and Mental Care",
+    "title_zh-tw": "今日 AI 前沿：東京有無人計程車！AI改變工作方式與心理照護",
+    "title_zh-cn": "今日 AI 前沿：东京无人驾驶出租车！AI改变的工作方式与心理健康关怀",
+    "title_ko": "오늘의 AI 최전선：도쿄에 무인 택시! AI가 바꾸는 일하는 방식과 마음 건강 관리",
+    "category": "AI NEWS",
+    "date": "2026.09.15",
+    "thumbnail": "",
+    "summary": "自動運転タクシーの東京導入、AIロボットが拓く新時代、生成AIと技術書の共存、心の健康を支えるAIアプリなど、最新のAI動向を解説します。",
+    "summary_en": "We will explain the latest AI trends, such as the introduction of self-driving taxis in Tokyo, a new era opened up by AI robots, the coexistence of generative AI and technical books, and AI apps that support mental health.",
+    "summary_zh-tw": "自駕計程車於東京導入、AI機器人開創新時代、生成式AI與技術書籍的共存、支援心理健康的AI應用程式等，將解說最新的AI趨勢。",
+    "summary_zh-cn": "我们将解读最新的AI动态，包括自动驾驶出租车在东京的引入、AI机器人开启的新时代、生成式AI与技术书籍的共存，以及支持心理健康的AI应用等。",
+    "summary_ko": "자율주행 택시의 도쿄 도입, AI 로봇이 여는 신시대, 생성형 AI와 기술서적의 공존, 정신 건강을 지원하는 AI 앱 등 최신 AI 동향을 해설합니다.",
+    "slug": "2026-09-15"
+  },
+  {
     "title": "今日のAI最前線：AIが働き方を革新！ノーコード開発から現場支援、そして未来の技術活用まで",
     "title_en": "AI Frontier Today：AI Revolutionizes the Way We Work! From No-Code Development to On-Site Support, and Future Technology Utilization.",
     "title_zh-tw": "今日 AI 前沿：AI 革新工作方式！從無程式碼開發到現場支援，乃至未來技術應用",

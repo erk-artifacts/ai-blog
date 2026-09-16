@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIサブスクで生活が変わる？最先端技術から規制論争まで徹底解説",
+    "title_en": "AI Frontier Today：Can AI Subscriptions Transform Your Life? An In-depth Guide from Cutting-Edge Technology to Regulatory Debates",
+    "title_zh-tw": "今日 AI 前沿：AI訂閱會改變生活嗎？從最尖端技術到監管爭議的深度解析",
+    "title_zh-cn": "今日 AI 前沿：AI订阅会改变生活吗？从最尖端技术到监管争议的彻底解析",
+    "title_ko": "오늘의 AI 최전선：AI 구독으로 생활이 바뀔까? 최첨단 기술부터 규제 논쟁까지 심층 분석",
+    "category": "AI NEWS",
+    "date": "2026.09.16",
+    "thumbnail": "",
+    "summary": "MetaのAI機能強化サブスクやGoogleの次世代音声AI、NVIDIAの新AIサーバーなど、今日のAI進化と社会への影響を解説。規制を巡る議論も紹介。",
+    "summary_en": "Discuss today's AI advancements and their impact on society, including Meta's AI-enhanced subscriptions, Google's next-generation voice AI, and NVIDIA's new AI servers. Also introduce the ongoing debates surrounding regulation.",
+    "summary_zh-tw": "Meta 的 AI 功能強化訂閱服務、Google 的次世代語音 AI、NVIDIA 的新型 AI 伺服器等，本文將解說當今 AI 的演進及其對社會的影響，並介紹圍繞法規的討論。",
+    "summary_zh-cn": "阐述Meta的AI功能增强订阅、Google的下一代语音AI、NVIDIA的新型AI服务器等当今AI的发展，以及它们对社会的影响。同时介绍围绕监管的讨论。",
+    "summary_ko": "Meta의 AI 기능 강화 구독 서비스 및 Google의 차세대 음성 AI, NVIDIA의 신규 AI 서버 등, 오늘날의 AI 진화와 사회에 미치는 영향을 해설합니다. 규제를 둘러싼 논의도 소개합니다.",
+    "slug": "2026-09-16"
+  },
+  {
     "title": "今日のAI最前線：東京に無人タクシー！AIが変える働き方と心のケア",
     "title_en": "AI Frontier Today：Driverless Taxis in Tokyo! How AI is Changing Work Styles and Mental Care",
     "title_zh-tw": "今日 AI 前沿：東京有無人計程車！AI改變工作方式與心理照護",

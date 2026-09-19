@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI最前線：最新研究から倫理、国家安全保障まで",
+    "title_en": "AI Frontier Today：The AI Frontier: From Cutting-Edge Research to Ethics and National Security",
+    "title_zh-tw": "今日 AI 前沿：AI最前線：從最新研究、倫理到國家安全保障",
+    "title_zh-cn": "今日 AI 前沿：AI前沿：从最新研究到伦理、国家安全",
+    "title_ko": "오늘의 AI 최전선：AI 최전선: 최신 연구부터 윤리, 국가 안보까지",
+    "category": "AI NEWS",
+    "date": "2026.09.19",
+    "thumbnail": "",
+    "summary": "AIの進化は止まらず、誤情報、生物学応用、倫理、生活支援、新モデル、物理AI、重要人事、規制、セキュリティまで多岐にわたるトピックが浮上。その最前線を解説します。",
+    "summary_en": "AI's evolution is relentless, bringing forth a diverse range of topics encompassing misinformation, biological applications, ethics, daily life assistance, new models, physical AI, key personnel, regulation, and security. We will explain the forefront of these developments.",
+    "summary_zh-tw": "AI的演進勢不可擋，從假資訊、生物學應用、倫理、生活支援、新模型、實體AI、重要人事、監管到安全，多面向的議題應運而生。本文將為您解析其最前沿發展。",
+    "summary_zh-cn": "AI的演进永不停歇，从错误信息、生物学应用、伦理、生活辅助、新模型、物理AI、重要人事变动、监管到安全，多方面话题层出不穷。本文将解读其最前沿进展。",
+    "summary_ko": "AI의 진화는 멈추지 않고, 오정보, 생물학 응용, 윤리, 생활 지원, 신규 모델, 물리 AI, 중요 인사, 규제, 보안까지 다방면에 걸친 토픽이 부상하고 있습니다. 그 최전선을 해설합니다.",
+    "slug": "2026-09-19"
+  },
+  {
     "title": "今日のAI最前線：AIサブスクで生活が変わる？最先端技術から規制論争まで徹底解説",
     "title_en": "AI Frontier Today：Can AI Subscriptions Transform Your Life? An In-depth Guide from Cutting-Edge Technology to Regulatory Debates",
     "title_zh-tw": "今日 AI 前沿：AI訂閱會改變生活嗎？從最尖端技術到監管爭議的深度解析",

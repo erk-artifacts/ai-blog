@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIと規制の攻防、そして私たちの生活を変える進化",
+    "title_en": "AI Frontier Today：AI and the Regulatory Battle, and Life-Changing Evolution",
+    "title_zh-tw": "今日 AI 前沿：人工智慧與法規的攻防，以及改變我們生活的進化",
+    "title_zh-cn": "今日 AI 前沿：AI与监管的博弈，以及改变我们生活的进化",
+    "title_ko": "오늘의 AI 최전선：AI와 규제의 공방, 그리고 우리 삶을 바꾸는 진화",
+    "category": "AI NEWS",
+    "date": "2026.09.20",
+    "thumbnail": "",
+    "summary": "MetaのAIアシスタントの登場から、Geminiのハッキング事件、政治家のAI戦略、そして日常を豊かにする製品まで、AIの多面的な動きを解説します。",
+    "summary_en": "From the launch of Meta's AI assistant, the Gemini hacking incident, politicians' AI strategies, and products that enrich daily life, we will explain the multifaceted developments in AI.",
+    "summary_zh-tw": "從Meta的AI助理問世，到Gemini的駭客事件，政治人物的AI策略，以及能豐富日常生活的產品，本文將闡述AI多面向的動態。",
+    "summary_zh-cn": "从Meta AI助手的亮相，到Gemini的黑客事件、政治家的AI战略，以及丰富日常生活的AI产品，本文将解读AI的多方面发展。",
+    "summary_ko": "Meta의 AI 어시스턴트 등장부터 Gemini의 해킹 사건, 정치인의 AI 전략, 그리고 일상을 풍요롭게 하는 제품까지, AI의 다면적인 움직임을 해설합니다.",
+    "slug": "2026-09-20"
+  },
+  {
     "title": "今日のAI最前線：AI最前線：最新研究から倫理、国家安全保障まで",
     "title_en": "AI Frontier Today：The AI Frontier: From Cutting-Edge Research to Ethics and National Security",
     "title_zh-tw": "今日 AI 前沿：AI最前線：從最新研究、倫理到國家安全保障",

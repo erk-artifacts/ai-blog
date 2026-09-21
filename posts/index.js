@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI進化の光と影：トランプ氏、GoogleのGemini、そしてNVIDIAの視点",
+    "title_en": "AI Frontier Today：The Light and Shadow of AI Evolution: Trump, Google's Gemini, and NVIDIA's Perspective",
+    "title_zh-tw": "今日 AI 前沿：AI演進的光與影：川普氏、Google 的 Gemini，以及 NVIDIA 的觀點",
+    "title_zh-cn": "今日 AI 前沿：AI进化的光与影：特朗普、谷歌的Gemini、以及英伟达的视角",
+    "title_ko": "오늘의 AI 최전선：AI 진화의 빛과 그림자: 트럼프 씨, 구글의 제미나이, 그리고 엔비디아의 시점",
+    "category": "AI NEWS",
+    "date": "2026.09.21",
+    "thumbnail": "",
+    "summary": "トランプ氏の「AI Force」構想、Google Geminiのセキュリティ懸念、マイクラ攻略AI、そしてNVIDIAのAI脅威論否定など、AIの最前線を深掘りします。",
+    "summary_en": "We will delve deep into the forefront of AI, including Donald Trump's \"AI Force\" concept, security concerns surrounding Google Gemini, AI for conquering Minecraft, and NVIDIA's denial of AI threat theories.",
+    "summary_zh-tw": "川普的「AI Force」構想、Google Gemini 的資安疑慮、Minecraft 攻略 AI，以及 NVIDIA 否認 AI 威脅論等，深入探討 AI 的最前線。",
+    "summary_zh-cn": "特朗普的“AI Force”构想、Google Gemini的安全担忧、我的世界攻略AI，以及NVIDIA否认AI威胁论等，我们将深入探讨AI的最前沿。",
+    "summary_ko": "트럼프 전 대통령의 \"AI Force\" 구상, Google Gemini의 보안 우려, 마인크래프트 공략 AI, 그리고 엔비디아의 AI 위협론 부정 등 AI의 최전선을 심층적으로 다룹니다.",
+    "slug": "2026-09-21"
+  },
+  {
     "title": "今日のAI最前線：AIと規制の攻防、そして私たちの生活を変える進化",
     "title_en": "AI Frontier Today：AI and the Regulatory Battle, and Life-Changing Evolution",
     "title_zh-tw": "今日 AI 前沿：人工智慧與法規的攻防，以及改變我們生活的進化",

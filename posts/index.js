@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：政策から詐欺対策まで！進化するAIの最新トレンド",
+    "title_en": "AI Frontier Today：From policy to fraud countermeasures! The latest trends in evolving AI",
+    "title_zh-tw": "今日 AI 前沿：從政策到詐欺防治！進化中的AI最新趨勢",
+    "title_zh-cn": "今日 AI 前沿：从政策到反欺诈！AI的最新发展趋势",
+    "title_ko": "오늘의 AI 최전선：정책부터 사기 예방까지! 진화하는 AI의 최신 트렌드",
+    "category": "AI NEWS",
+    "date": "2026.09.22",
+    "thumbnail": "",
+    "summary": "OpenAIの国際標準提言、AIエージェントの攻防、Grok 4.7の進化、AI詐欺の巧妙化など、多角的なAIの現在地と未来を深掘りします。",
+    "summary_en": "We will deeply explore the current state and future of AI from multiple angles, including OpenAI's international standard recommendations, the dynamics surrounding AI agents, the evolution of Grok 4.7, and the increasing sophistication of AI scams.",
+    "summary_zh-tw": "OpenAI的國際標準提案、AI智能體的攻防、Grok 4.7的進化、AI詐騙手法的巧妙化等，我們將深入剖析AI多面向的現況與未來。",
+    "summary_zh-cn": "OpenAI的国际标准提案、AI代理的攻防、Grok 4.7的演进、AI诈骗的日益复杂化等，多角度深入探讨AI的现状与未来。",
+    "summary_ko": "OpenAI의 국제 표준 제언, AI 에이전트 공방, Grok 4.7의 진화, AI 사기의 교묘화 등, 다각적인 AI의 현주소와 미래를 심층 분석합니다.",
+    "slug": "2026-09-22"
+  },
+  {
     "title": "今日のAI最前線：AI進化の光と影：トランプ氏、GoogleのGemini、そしてNVIDIAの視点",
     "title_en": "AI Frontier Today：The Light and Shadow of AI Evolution: Trump, Google's Gemini, and NVIDIA's Perspective",
     "title_zh-tw": "今日 AI 前沿：AI演進的光與影：川普氏、Google 的 Gemini，以及 NVIDIA 的觀點",

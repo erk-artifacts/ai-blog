@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：「Super Intelligence」改称論争から新モデル、AI投資の行方まで",
+    "title_en": "AI Frontier Today：From the \"Super Intelligence\" renaming controversy to new models and the future of AI investment",
+    "title_zh-tw": "今日 AI 前沿：「超級智慧」改稱爭議到新模型，乃至AI投資的走向",
+    "title_zh-cn": "今日 AI 前沿：从“超级智能”更名争议到新模型、AI投资的走向",
+    "title_ko": "오늘의 AI 최전선：「슈퍼 인텔리전스」 개칭 논쟁부터 신모델, AI 투자 향방까지",
+    "category": "AI NEWS",
+    "date": "2026.09.23",
+    "thumbnail": "",
+    "summary": "AIの名称論争、最新モデルの発表、倫理的課題、経済効果、セキュリティ対策まで、今日のAI業界の主要な動きを初心者にもわかりやすく解説します。",
+    "summary_en": "We will explain the major developments in today's AI industry in an easy-to-understand way for beginners, covering everything from AI naming controversies and the announcement of the latest models to ethical challenges, economic impact, and security measures.",
+    "summary_zh-tw": "AI名稱爭議、最新模型發表、倫理課題、經濟效益，乃至資安對策，我們將為初學者深入淺出地解說當今AI產業的主要動向。",
+    "summary_zh-cn": "从AI命名之争、最新模型发布、伦理挑战、经济影响，到安全对策，本文将为初学者通俗易懂地解读当今AI行业的主要动向。",
+    "summary_ko": "AI 명칭 논쟁, 최신 모델 발표, 윤리적 과제, 경제적 효과, 보안 대책까지, 오늘날 AI 업계의 주요 동향을 초보자도 이해하기 쉽게 설명합니다.",
+    "slug": "2026-09-23"
+  },
+  {
     "title": "今日のAI最前線：政策から詐欺対策まで！進化するAIの最新トレンド",
     "title_en": "AI Frontier Today：From policy to fraud countermeasures! The latest trends in evolving AI",
     "title_zh-tw": "今日 AI 前沿：從政策到詐欺防治！進化中的AI最新趨勢",

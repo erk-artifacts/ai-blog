@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIガバナンスからパーソナルアシスタントまで、進化を続けるAIの今",
+    "title_en": "AI Frontier Today：From AI Governance to personal assistants, today's continuously evolving AI.",
+    "title_zh-tw": "今日 AI 前沿：從 AI 治理到個人助理，不斷演進的 AI 現今",
+    "title_zh-cn": "今日 AI 前沿：从AI治理到个人助理，持续进化的AI的当下",
+    "title_ko": "오늘의 AI 최전선：AI 거버넌스부터 개인 비서까지, 진화를 거듭하는 AI의 현재",
+    "category": "AI NEWS",
+    "date": "2026.09.24",
+    "thumbnail": "",
+    "summary": "企業内のシャドーAI問題、Metaの新たなAIエージェント「Muse」、カスハラ対策AI、AIの記憶セミナー、Apple Intelligenceの対話メモ、製造現場のフィジカルAIなど、多岐にわたるAIの最前線をお届けします。",
+    "summary_en": "We bring you the diverse forefront of AI, including shadow AI issues within enterprises, Meta's new AI agent \"Muse\", AI for combating customer harassment, AI memory seminars, Apple Intelligence's conversation notes, and physical AI on manufacturing floors.",
+    "summary_zh-tw": "企業內部的影子AI問題、Meta新推出的AI代理「Muse」、客戶騷擾對策AI、AI記憶研討會、Apple Intelligence的對話備忘錄、製造現場的實體AI等，我們將呈現多元AI的最前線。",
+    "summary_zh-cn": "企业内的影子AI问题、Meta的新AI代理“Muse”、反客户骚扰AI、AI记忆研讨会、Apple Intelligence的对话备忘录、制造现场的物理AI等，我们将为您带来AI领域的多方面前沿动态。",
+    "summary_ko": "기업 내 섀도우 AI 문제, Meta의 새로운 AI 에이전트 「Muse」, 악성 민원 방지 AI, AI의 기억 세미나, Apple Intelligence의 대화 메모, 제조 현장의 피지컬 AI 등, 다방면에 걸친 AI의 최전선을 전해드립니다.",
+    "slug": "2026-09-24"
+  },
+  {
     "title": "今日のAI最前線：「Super Intelligence」改称論争から新モデル、AI投資の行方まで",
     "title_en": "AI Frontier Today：From the \"Super Intelligence\" renaming controversy to new models and the future of AI investment",
     "title_zh-tw": "今日 AI 前沿：「超級智慧」改稱爭議到新模型，乃至AI投資的走向",

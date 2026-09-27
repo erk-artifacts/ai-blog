@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの進化は止まらない！ Googleの買い物AIからOpenAIのモデル停止まで",
+    "title_en": "AI Frontier Today：AI's evolution is unstoppable! From Google's shopping AI to OpenAI's model suspension",
+    "title_zh-tw": "今日 AI 前沿：AI 的進化永不止息！從 Google 的購物 AI 到 OpenAI 的模型停止",
+    "title_zh-cn": "今日 AI 前沿：AI的进化势不可挡！从谷歌的购物AI到OpenAI的模型停止",
+    "title_ko": "오늘의 AI 최전선：AI의 진화는 멈추지 않는다! Google의 쇼핑 AI부터 OpenAI의 모델 중단까지",
+    "category": "AI NEWS",
+    "date": "2026.09.27",
+    "thumbnail": "",
+    "summary": "Googleが買い物AIをテスト、OpenAIは最先端モデルの訓練を一時停止。医療費へのAIの影響やデジタルアバターの倫理、ウェブの未来まで、AIの最新動向を深掘りします。",
+    "summary_en": "Google tests shopping AI, OpenAI pauses training of its most advanced model. We deep dive into the latest AI trends, from AI's impact on healthcare costs and the ethics of digital avatars, to the future of the web.",
+    "summary_zh-tw": "Google 正在測試購物 AI，OpenAI 暫停訓練其最先進模型。本文將深入探討 AI 的最新動向，從其對醫療費用的影響、數位分身的倫理，乃至於網路的未來。",
+    "summary_zh-cn": "谷歌正在测试购物AI，OpenAI暂停了最先进模型的训练。从AI对医疗成本的影响、数字替身的伦理，到网络的未来，深入探讨AI的最新动向。",
+    "summary_ko": "Google이 쇼핑 AI를 테스트하고, OpenAI는 최첨단 모델 훈련을 일시 중단했습니다. 의료비에 대한 AI의 영향, 디지털 아바타의 윤리, 웹의 미래까지, AI의 최신 동향을 심층 분석합니다.",
+    "slug": "2026-09-27"
+  },
+  {
     "title": "今日のAI最前線：AIガバナンスからパーソナルアシスタントまで、進化を続けるAIの今",
     "title_en": "AI Frontier Today：From AI Governance to personal assistants, today's continuously evolving AI.",
     "title_zh-tw": "今日 AI 前沿：從 AI 治理到個人助理，不斷演進的 AI 現今",

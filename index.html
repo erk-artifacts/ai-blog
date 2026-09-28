@@ -15,7 +15,8 @@
         gtag('config', 'G-V8W7KJQHE6');
     </script>
     <title>AI_GEEK - AI Blog</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./vendor/marked.umd.js"></script>
+    <script src="./vendor/purify.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -1271,7 +1272,15 @@
                     html = html.replace(/<p>(<a [^>]*>→[^<]*<\/a>)<\/p>/g, '<p class="source-link">$1</p>');
                     html = html.replace(/<h2[^>]*>参考リンク<\/h2>([\s\S]*)$/,
                         '<div class="references-section"><h2>参考リンク</h2>$1</div>');
-                    detailContent.innerHTML = html;
+                    detailContent.innerHTML = DOMPurify.sanitize(html, {
+                        USE_PROFILES: { html: true },
+                        FORBID_TAGS: ['style', 'form', 'input', 'button'],
+                        FORBID_ATTR: ['style', 'id', 'name'],
+                    });
+                    detailContent.querySelectorAll('a').forEach(link => {
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                    });
 
                     // 読了時間（日本語は約500字/分）
                     const readEl = document.getElementById('detail-readtime');

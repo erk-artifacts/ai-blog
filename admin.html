@@ -253,20 +253,7 @@
             const summary = document.getElementById('summary').value;
             let body = document.getElementById('body').value;
 
-            // 改行をHTML上で見やすくインデントするための処理（簡易）
-            // バックティック文字だけエスケープ
-            body = body.replace(/`/g, "\\`");
-
-            const code = `{
-        title: "${title}",
-        category: "${category}",
-        date: "${date}",
-        thumbnail: "${thumbnail}",
-        summary: "${summary}",
-        body: \`
-${body}
-        \`
-    },`;
+            const code = JSON.stringify({ title, category, date, thumbnail, summary, body }, null, 2) + ',';
 
             document.getElementById('output').innerText = code;
         }

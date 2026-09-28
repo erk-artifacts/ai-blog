@@ -1,0 +1,52 @@
+{
+  "now": "2026-09-28T01:00:00.000Z",
+  "news": [
+    {
+      "title": "架空のAI評価ツールを公開",
+      "link": "https://example.com/news_(AI)",
+      "snippet": "架空の研究所はAI評価ツールを公開した。説明会は2026年9月29日に開催する。利用料金は未発表。",
+      "source": "架空研究所",
+      "sourceType": "primary",
+      "pubDate": "2026-09-27T23:00:00.000Z",
+      "collectedAt": "2026-09-28T00:55:00.000Z"
+    },
+    {
+      "title": "架空の飲食店が開店",
+      "link": "https://example.net/food",
+      "snippet": "AIとは関係のない飲食店の開店情報。",
+      "source": "架空ニュース",
+      "sourceType": "secondary",
+      "pubDate": "2026-09-28T00:00:00.000Z",
+      "collectedAt": "2026-09-28T00:55:00.000Z"
+    }
+  ],
+  "selection": {
+    "stories": [
+      {
+        "sourceIds": ["s1"],
+        "category": "研究・技術",
+        "reason": "AIの評価手法に関する新しい公開情報のため。",
+        "facts": [
+          { "text": "架空の研究所がAI評価ツールを公開しました。", "sourceId": "s1", "evidence": "架空の研究所はAI評価ツールを公開した。" }
+        ],
+        "eventDate": { "date": "2026-09-29", "sourceId": "s1", "evidence": "説明会は2026年9月29日に開催する。", "label": "説明会" }
+      }
+    ]
+  },
+  "draft": {
+    "title": "AI評価の新しい選択肢、利用条件は続報待ち",
+    "summary": "架空の研究所がAI評価ツールを公開。評価に使える可能性がある一方、料金や実際の性能は確認が必要です。",
+    "highlights": [{ "storyId": "n1", "text": "AI評価ツールの公開が発表されました。" }],
+    "stories": [
+      {
+        "storyId": "n1",
+        "headline": "AI評価ツールが公開、検証の選択肢に",
+        "whyItMatters": "AIを比較する際の評価方法を検討する材料になります。",
+        "audience": "AIを導入・評価する開発者や担当者。",
+        "impact": "条件が合えば、評価作業に利用できる可能性があります。",
+        "uncertainty": "利用料金は未発表です。資料の抜粋だけでは性能や利用条件の全体像は判断できません。"
+      }
+    ],
+    "overview": "今回は評価手法に関する1件を取り上げました。導入判断には、公開資料と実際の検証結果を確認する必要があります。"
+  }
+}

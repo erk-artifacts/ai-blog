@@ -1,13 +1,14 @@
 import Parser from 'rss-parser';
 import fs from 'fs/promises';
 import path from 'path';
-import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { marked } from 'marked';
 import { validateEntry } from './validate-post.mjs';
-import { SUPPORTED_LANGUAGES, TITLE_PREFIXES, applyTitlePrefix, translateWithOpenAI } from './shared.mjs';
-
-dotenv.config();
+import { SUPPORTED_LANGUAGES, assertArticle, assertSlug, parsePostsIndex, serializePostsIndex, japanDate, selectNewsItems } from './shared.mjs';
+import { generateDigest as generateBlogPost, validCalendarDate } from './editorial.mjs';
+import { writeAtomic } from './storage.mjs';
+import { createGenerationState, saveGenerationState, loadGenerationState, completeTranslations } from './generation-state.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DRY_RUN = process.argv.includes('--dry-run');
@@ -17,40 +18,39 @@ const FETCH_ONLY = process.argv.includes('--fetch-only');
 // 1. RSS Feed Fetching
 // ---------------------------------------------------------------------------
 
-function withTimeout(promise, ms, label) {
-  let timer;
-  return Promise.race([
-    promise.then(
-      val => { clearTimeout(timer); return val; },
-      err => { clearTimeout(timer); throw err; }
-    ),
-    new Promise((_, reject) => {
-      timer = setTimeout(() => reject(new Error(`Timeout after ${ms}ms: ${label}`)), ms);
-    }),
-  ]);
+export async function fetchFeed(url, { timeoutMs = 15000 } = {}) {
+  // rss-parser.parseURL rejects without closing failed/timed-out requests.
+  // Fetch owns the network lifetime; rss-parser only handles the completed XML.
+  const response = await fetch(url, {
+    headers: { 'User-Agent': 'rss-parser', Accept: 'application/rss+xml, application/atom+xml, application/xml' },
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+  if (!response.ok) {
+    await response.body?.cancel();
+    throw new Error(`Status code ${response.status}`);
+  }
+  const charset = /charset=["']?([^;\s"']+)/i.exec(response.headers.get('content-type') || '')?.[1] || 'utf-8';
+  const xml = new TextDecoder(charset).decode(await response.arrayBuffer());
+  return new Parser().parseString(xml);
 }
 
 async function fetchAllFeeds() {
   const feedsConfig = JSON.parse(
     await fs.readFile(path.join(__dirname, 'rss-feeds.json'), 'utf-8')
   );
-  const parser = new Parser({ timeout: 10000 });
-
   const results = await Promise.allSettled(
     feedsConfig.feeds.map(async (feed) => {
       try {
         console.log(`  Fetching ${feed.name}...`);
-        const data = await withTimeout(
-          parser.parseURL(feed.url),
-          15000,
-          feed.name
-        );
+        const data = await fetchFeed(feed.url);
         console.log(`  ${feed.name}: ${data.items.length} items`);
         return data.items.map((item) => ({
           title: item.title || '',
           link: item.link || '',
-          snippet: (item.contentSnippet || item.content || '').slice(0, 300),
+          snippet: (item.contentSnippet || item.content || '').slice(0, 1500),
           source: feed.name,
+          sourceType: feed.sourceType || 'unknown',
+          collectedAt: new Date().toISOString(),
           pubDate: item.isoDate || item.pubDate || '',
         }));
       } catch (err) {
@@ -67,352 +67,96 @@ async function fetchAllFeeds() {
 
   console.log(`Total items from all feeds: ${items.length}`);
 
-  // Filter to last 24 hours, expand to 48h if too few
-  const now = Date.now();
-  const h24 = items.filter(
-    (item) => item.pubDate && now - new Date(item.pubDate).getTime() < 86400000
-  );
-
-  if (h24.length >= 5) {
-    items = h24;
-  } else {
-    const h48 = items.filter(
-      (item) =>
-        item.pubDate && now - new Date(item.pubDate).getTime() < 172800000
-    );
-    items = h48.length > 0 ? h48 : items;
-  }
-
-  // Sort by date (newest first) and cap at 20
-  items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-  return items.slice(0, 20);
+  if (!items.length) throw new Error('RSS feeds returned no usable items');
+  return selectNewsItems(items);
 }
 
 // ---------------------------------------------------------------------------
 // 2. Blog Post Generation via OpenAI API
 // ---------------------------------------------------------------------------
 
-async function generateBlogPost(newsItems) {
-  if (!process.env.OPENAI_API_KEY) {
-    throw new Error('OPENAI_API_KEY environment variable is not set');
+function validateNewsItemCount(blogPost, minItems = 1) {
+  if (typeof blogPost?.body !== 'string') return false;
+  const sections = [];
+  for (const token of marked.lexer(blogPost.body)) {
+    if (token.type === 'heading' && token.depth === 2) sections.push({ heading: token.text.trim(), hasSource: false });
+    else if (sections.length) marked.walkTokens([token], child => {
+      if (child.type === 'link' && /^https?:\/\//.test(child.href)) sections.at(-1).hasSource = true;
+    });
   }
-
-  const newsList = newsItems
-    .map(
-      (item, i) =>
-        `${i + 1}. [${item.source}] ${item.title}\n   URL: ${item.link}\n   ${item.snippet}`
-    )
-    .join('\n\n');
-
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
-
-  const systemPrompt = `あなたは日本語テックブロガーです。AI初心者にもわかりやすく、読みやすい記事を書きます。
-
-【重要】出力は必ず指定されたJSON形式のみで返してください。余計な形式やテキストを一切加えず、JSONオブジェクトのみを出力してください。マークダウンのコードブロック（\`\`\`）で囲まないでください。説明文や前置きも不要です。記事には必ず元記事へのリンクを含めてください。
-
-【JSON形式の注意】bodyフィールドはMarkdown形式です。JSONとして有効な文字列にしてください。`;
-
-  const userPrompt = `以下のニュース一覧から**AI（人工知能）に直接関連するニュースのみ**を選び、日本語のブログ記事を作成してください。
-
-【重要】AI・機械学習・LLM・生成AI・ロボティクスなどに直接関係しないニュース（一般的なIT・ビジネス・半導体・セキュリティなど）は必ず除外してください。AI関連ニュースが少ない場合は、5件や10件でも構いません。無理にかき集めず、質を優先してください。
-
-## ニュース選定基準:
-- 多様性: 様々なソース・トピック（研究、ビジネス、製品、規制、個人の見解）をバランスよく
-- 重要度: 業界への影響が大きいもの優先
-- 鮮度: 最新のものを優先
-- X投稿: Sam AltmanやDario Amodeiなどの業界リーダーの興味深い発言・見解を含める
-- 日本視点: 日本のソースからのニュースも積極的に含める
-
-## 要件:
-- title: キャッチーな日本語サブタイトル（接頭辞「今日のAI最前線」は自動付与されるので含めないでください。例：「GPT-5が発表され、AI業界が激震」）
-- summary: 100文字以内の日本語サマリー
-- body: Markdown形式の本文（以下の記法を使用: ##見出し, **太字**, *斜体*, ---, > 引用, - リスト, [テキスト](URL)）
-  - 各ニュースを ## 見出し で区切る
-  - 専門用語には括弧で簡単な説明を添える（例：LLM（大規模言語モデル））
-  - 各ニュース解説の末尾に必ず元記事へのリンクを追加する
-    例: [→ 元記事を読む（ソース名）](元記事URL)
-  - 各ニュースの最後に「私たちの生活への影響」を一文で添える
-  - ニュース間は --- で区切る
-  - 最後に「まとめ」セクション（## まとめ）を入れる
-  - 記事の最後に「参考リンク」セクション（## 参考リンク）を追加し、すべての元記事URLを番号付きリストで掲載する
-    例: 1. [ソース名: 記事タイトル](URL)
-
-## 出力形式:
-【重要】以下のJSON形式のみで返してください。余計な説明、コードブロックは一切含めないでください。JSONオブジェクトのみを出力してください。
-
-{"title":"記事タイトル","summary":"要約テキスト","body":"## 見出し\n\n本文...\n\n---\n\n## まとめ\n\n..."}
-
-## 本日の日付: ${dateStr}
-
-## ニュース一覧:
-${newsList}`;
-
-  const model = process.env.OPENAI_MODEL || 'gpt-6-luna';
-  const MAX_RETRIES = 3;
-  let response;
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      console.log(`Calling OpenAI API model: ${model} (attempt ${attempt}/${MAX_RETRIES})`);
-      const apiResponse = await fetch('https://api.openai.com/v1/responses', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model,
-          instructions: systemPrompt,
-          input: userPrompt,
-          max_output_tokens: 8000,
-          text: { format: { type: 'json_object' } },
-        }),
-        signal: AbortSignal.timeout(120000),
-      });
-
-      if (!apiResponse.ok) {
-        const errorBody = await apiResponse.text();
-        const error = new Error(`OpenAI API returned ${apiResponse.status}: ${errorBody}`);
-        error.status = apiResponse.status;
-        throw error;
-      }
-      response = await apiResponse.json();
-      break;
-    } catch (err) {
-      const status = err.status || 'unknown';
-      console.warn(`OpenAI API attempt ${attempt} failed: ${status} ${err.message || ''}`);
-      const retryable = [408, 429, 500, 502, 503, 504].includes(err.status)
-        || err.name === 'TimeoutError'
-        || err.name === 'TypeError';
-      if (!retryable || attempt === MAX_RETRIES) throw err;
-      const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
-      console.warn(`  Retrying in ${delay}ms...`);
-      await new Promise(r => setTimeout(r, delay));
-    }
-  }
-
-  const usage = response.usage || {};
-  console.log(`API response received. Usage: ${usage.input_tokens ?? 'unknown'} input, ${usage.output_tokens ?? 'unknown'} output tokens`);
-  const text = (response.output || [])
-    .filter(item => item.type === 'message')
-    .flatMap(item => item.content || [])
-    .filter(item => item.type === 'output_text')
-    .map(item => item.text)
-    .join('')
-    .trim();
-  if (!text) throw new Error(`OpenAI API returned no text (status: ${response.status || 'unknown'})`);
-
-  // Try to parse as JSON, with multi-step fallback extraction
-  try {
-    return JSON.parse(text);
-  } catch (parseError) {
-    console.warn('Initial JSON parse failed, attempting fallback extraction...');
-    console.warn(`Parse error: ${parseError.message}`);
-
-    // Step A: extract from markdown code fence (```json ... ``` or ``` ... ```)
-    const fenceMatch = text.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
-    if (fenceMatch) {
-      try {
-        const extracted = JSON.parse(fenceMatch[1]);
-        console.log('Successfully extracted JSON from markdown code fence');
-        return extracted;
-      } catch {
-        console.warn('Failed to parse JSON inside markdown code fence, trying object regex...');
-      }
-    }
-
-    // Step B: extract raw JSON object via greedy regex
-    const match = text.match(/\{[\s\S]*\}/);
-    if (match) {
-      try {
-        const extracted = JSON.parse(match[0]);
-        console.log('Successfully extracted JSON from response');
-        return extracted;
-      } catch (innerErr) {
-        console.error('Failed to parse extracted JSON block');
-        console.error(`Extracted text (first 500 chars): ${match[0].slice(0, 500)}`);
-      }
-    }
-
-    // Log the invalid response for debugging
-    console.error('========== INVALID API RESPONSE ==========');
-    console.error(`Full response (first 1000 chars):\n${text.slice(0, 1000)}`);
-    console.error('==========================================');
-    throw new Error(`OpenAI API response is not valid JSON. See logs above for details.`);
-  }
-}
-
-// ---------------------------------------------------------------------------
-// 2.5. Output Validation
-// ---------------------------------------------------------------------------
-
-function validateNewsItemCount(blogPost, minItems = 3) {
-  const h2Matches = blogPost.body.match(/^## /gm);
-  const h2Count = h2Matches ? h2Matches.length : 0;
-
-  // ## headings include: news items + "まとめ" + "参考リンク"
-  // So actual news items = h2Count - 2
-  const newsItemCount = h2Count - 2;
-
-  console.log(`  Validation: Found ${newsItemCount} news items (${h2Count} h2 tags total)`);
-
-  if (newsItemCount < minItems) {
-    console.warn(`  ✗ Insufficient items: expected ${minItems}+, got ${newsItemCount}`);
-    return false;
-  }
-
-  console.log(`  ✓ Item count OK: ${newsItemCount} items`);
-  return true;
-}
-
-// ---------------------------------------------------------------------------
-// 2.5. Translation
-// ---------------------------------------------------------------------------
-
-// Translate article to all supported languages (parallel)
-async function translateArticleToAllLanguages(article) {
-  const translations = {
-    ja: { title: article.title, summary: article.summary, body: article.body }
-  };
-
-  const langCodes = Object.keys(SUPPORTED_LANGUAGES);
-
-  console.log(`  Translating to ${langCodes.length} languages in parallel...`);
-
-  // 並列で翻訳
-  const translationPromises = langCodes.map(async (langCode) => {
-    console.log(`  Translating to ${langCode}...`);
-    try {
-      const result = {
-        title: await translateWithOpenAI(article.title, langCode),
-        summary: await translateWithOpenAI(article.summary, langCode),
-        body: await translateWithOpenAI(article.body, langCode)
-      };
-      console.log(`  ✓ ${langCode} translation complete`);
-      return { langCode, result };
-    } catch (err) {
-      console.warn(`  ✗ ${langCode} translation failed: ${err.message}`);
-      return null;
-    }
-  });
-
-  // すべての翻訳を待つ
-  const results = await Promise.all(translationPromises);
-
-  // 成功した翻訳をtranslationsオブジェクトに追加
-  for (const { langCode, result } of results) {
-    if (result) {
-      translations[langCode] = result;
-    }
-  }
-
-  return translations;
-}
-
-// タイトルに固定プレフィックスを付与する
-function applyTitlePrefixAll(translations) {
-  for (const [lang, content] of Object.entries(translations)) {
-    if (content) {
-      content.title = applyTitlePrefix(content.title, lang);
-    }
-  }
-  return translations;
+  const headings = sections.map(section => section.heading);
+  if ((!headings.includes('まとめ') && !headings.includes('今日の見取り図')) || !headings.includes('参考リンク')) return false;
+  const count = sections.filter(section => !['今日の要点', '今日の見取り図', 'まとめ', '参考リンク'].includes(section.heading)
+    && section.hasSource).length;
+  return count >= minItems;
 }
 
 // ---------------------------------------------------------------------------
 // 3. Post Index & Markdown File Update
 // ---------------------------------------------------------------------------
 
-async function updatePosts(translations, repoDir) {
+async function updatePosts(translations, repoDir, options = {}) {
   const postsDir = path.join(repoDir, 'posts');
   const indexPath = path.join(postsDir, 'index.js');
-
-  // Ensure posts/ directory exists
-  await fs.mkdir(postsDir, { recursive: true });
-
-  // Create language directories
-  for (const lang of Object.keys(translations)) {
-    await fs.mkdir(path.join(postsDir, lang), { recursive: true });
+  const original = await fs.readFile(indexPath, 'utf8');
+  const posts = parsePostsIndex(original);
+  const baseSlug = options.publicationDate || japanDate();
+  if (!validCalendarDate(baseSlug)) throw new Error('Invalid publication date');
+  if (options.generationId && !/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/.test(options.generationId)) throw new Error('Invalid generation ID');
+  const existing = options.generationId ? posts.find(post => post.generationId === options.generationId) : undefined;
+  if (options.publishedSlug) {
+    assertSlug(options.publishedSlug);
+    if (!options.generationId || (existing && existing.slug !== options.publishedSlug)) throw new Error('Checkpoint publication identity mismatch');
   }
-
-  const today = new Date();
-  const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
-  const baseSlug = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-
-  // Determine unique slug (handle multiple posts on the same day)
-  let slug = baseSlug;
+  let slug = existing?.slug || options.publishedSlug || baseSlug;
   let counter = 2;
-  while (true) {
-    try {
-      await fs.access(path.join(postsDir, 'ja', `${slug}.md`));
-      slug = `${baseSlug}-${counter}`;
-      counter++;
-    } catch {
-      break; // File doesn't exist, slug is available
-    }
+  while (!existing && (posts.some(post => post.slug === slug) || await fs.stat(path.join(postsDir, 'ja', slug + '.md')).then(() => true, error => {
+    if (error.code === 'ENOENT') return false;
+    throw error;
+  }))) {
+    if (options.publishedSlug) throw new Error('Checkpoint slug is occupied by another article; refusing to overwrite');
+    slug = baseSlug + '-' + counter++;
   }
 
-  // Step A: Write Markdown files to language directories
-  const createdFiles = [];
+  assertArticle(translations.ja);
+  if (existing && (existing.title !== translations.ja.title || existing.summary !== translations.ja.summary || existing.date !== baseSlug.replaceAll('-', '.'))) {
+    throw new Error('Published Japanese metadata differs from checkpoint; refusing to overwrite edits');
+  }
+  const entry = { ...existing, title: translations.ja.title, summary: translations.ja.summary,
+    category: 'AI NEWS', date: baseSlug.replaceAll('-', '.'), thumbnail: '', slug };
+  if (options.generationId) entry.generationId = options.generationId;
   for (const [lang, content] of Object.entries(translations)) {
-    const langDir = path.join(postsDir, lang);
-    const mdPath = path.join(langDir, `${slug}.md`);
-    await fs.writeFile(mdPath, content.body, 'utf-8');
-    createdFiles.push(mdPath);
-    console.log(`Created ${mdPath}`);
+    if (lang !== 'ja' && !Object.hasOwn(SUPPORTED_LANGUAGES, lang)) throw new Error('Unsupported language');
+    assertArticle(content);
+    if (lang !== 'ja') { entry['title_' + lang] = content.title; entry['summary_' + lang] = content.summary; }
   }
-
-  // Step B: Update posts/index.js metadata
-  console.log(`Reading ${indexPath}...`);
-  const original = await fs.readFile(indexPath, 'utf-8');
-
-  const newEntry = `  {
-    "title": ${JSON.stringify(translations.ja.title)},
-    "title_en": ${JSON.stringify(translations.en?.title || '')},
-    "title_zh-tw": ${JSON.stringify(translations['zh-tw']?.title || '')},
-    "title_zh-cn": ${JSON.stringify(translations['zh-cn']?.title || '')},
-    "title_ko": ${JSON.stringify(translations.ko?.title || '')},
-    "category": "AI NEWS",
-    "date": "${dateStr}",
-    "thumbnail": "",
-    "summary": ${JSON.stringify(translations.ja.summary)},
-    "summary_en": ${JSON.stringify(translations.en?.summary || '')},
-    "summary_zh-tw": ${JSON.stringify(translations['zh-tw']?.summary || '')},
-    "summary_zh-cn": ${JSON.stringify(translations['zh-cn']?.summary || '')},
-    "summary_ko": ${JSON.stringify(translations.ko?.summary || '')},
-    "slug": "${slug}"
-  }`;
-
-  // Insert new entry right after "const posts = ["
-  const marker = 'const posts = [';
-  const insertPoint = original.indexOf(marker);
-  if (insertPoint === -1) {
-    throw new Error('Could not find "const posts = [" in posts/index.js');
-  }
-
-  const afterMarker = insertPoint + marker.length;
-  const updated =
-    original.slice(0, afterMarker) +
-    '\n' +
-    newEntry +
-    ',' +
-    original.slice(afterMarker);
-
-  await fs.writeFile(indexPath, updated, 'utf-8');
-
-  // Syntax validation
+  const errors = validateEntry(entry);
+  if (errors.length) throw new Error('Post validation failed: ' + errors.join('; '));
+  const updated = serializePostsIndex(existing ? posts.map(post => post === existing ? entry : post) : [entry, ...posts]);
+  const createdFiles = [];
   try {
-    execSync(`node --check "${indexPath}"`, { stdio: 'pipe' });
-  } catch {
-    // Rollback on syntax error
-    await fs.writeFile(indexPath, original, 'utf-8');
-    for (const file of createdFiles) {
-      await fs.unlink(file).catch(() => {});
+    for (const [lang, content] of Object.entries(translations)) {
+      await fs.mkdir(path.join(postsDir, lang), { recursive: true });
+      const file = path.join(postsDir, lang, slug + '.md');
+      if (existing) {
+        const saved = await fs.readFile(file, 'utf8').catch(error => { if (error.code === 'ENOENT') return null; throw error; });
+        if (saved !== null) {
+          if (saved !== content.body) throw new Error(`Published ${lang} body differs from checkpoint; refusing to overwrite edits`);
+          continue;
+        }
+      }
+      const handle = await fs.open(file, 'wx');
+      createdFiles.push(file);
+      try { await handle.writeFile(content.body, 'utf8'); } finally { await handle.close(); }
     }
-    throw new Error('Generated posts/index.js has syntax errors, rolled back to original');
+    // Publish the index only after all bodies have been saved.
+    await writeAtomic(indexPath, updated);
+  } catch (error) {
+    await Promise.all(createdFiles.map(file => fs.unlink(file).catch(() => {})));
+    throw error;
   }
-
-  console.log(`Updated ${indexPath}`);
+  console.log('Saved post: ' + slug + ' (' + Object.keys(translations).join(', ') + ')');
+  return slug;
 }
 
 // ---------------------------------------------------------------------------
@@ -420,153 +164,79 @@ async function updatePosts(translations, repoDir) {
 // ---------------------------------------------------------------------------
 
 // Hard timeout: exit cleanly before GitHub Actions job timeout
-const SCRIPT_TIMEOUT_MS = 20 * 60 * 1000;
-const scriptTimer = setTimeout(() => {
-  console.error('FATAL: Script exceeded 20-minute hard timeout. Exiting.');
-  process.exit(1);
-}, SCRIPT_TIMEOUT_MS);
+const SCRIPT_TIMEOUT_MS = 24 * 60 * 1000;
+let scriptTimer;
 
 async function main() {
-  console.log('=== AI News Blog Post Generator ===');
-  console.log(`Date: ${new Date().toISOString()}`);
-  console.log(`REPO_DIR: ${process.env.REPO_DIR || '(not set, using ".")'}`);
-  console.log(`DRY_RUN: ${DRY_RUN}`);
-  console.log(`FETCH_ONLY: ${FETCH_ONLY}`);
-  console.log('');
-
-  console.log('Step 1: Fetching RSS feeds...');
-  const newsItems = await fetchAllFeeds();
-
-  if (newsItems.length === 0) {
-    console.log('No recent news items found. Skipping generation.');
-    process.exit(0);
-  }
-
-  console.log(`Found ${newsItems.length} news items.\n`);
-
-  if (FETCH_ONLY) {
-    console.log('--- Fetched News Items ---');
-    newsItems.forEach((item, i) => {
-      console.log(`${i + 1}. [${item.source}] ${item.title}`);
-      console.log(`   ${item.link}`);
-      console.log(`   ${item.pubDate}`);
-      console.log();
-    });
-    process.exit(0);
-  }
-
-  if (!process.env.OPENAI_API_KEY) {
-    console.warn('OPENAI_API_KEY is not set. Skipping generation to avoid workflow failure.');
-    clearTimeout(scriptTimer);
-    process.exit(0);
-  }
-
-  console.log('Step 2: Generating blog post via OpenAI GPT-6 Luna...');
-  let blogPost;
-  const MAX_ATTEMPTS = 3;
-  const MIN_NEWS_ITEMS = 3;
-
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-    console.log(`Generation attempt ${attempt}/${MAX_ATTEMPTS}...`);
-
-    try {
-      blogPost = await withTimeout(generateBlogPost(newsItems), 120_000, 'generateBlogPost');
-
-      if (validateNewsItemCount(blogPost, MIN_NEWS_ITEMS)) {
-        console.log(`✓ Successfully generated blog post with ${MIN_NEWS_ITEMS}+ items`);
-        break;
-      } else {
-        if (attempt < MAX_ATTEMPTS) {
-          console.warn(`Attempt ${attempt} generated too few items. Retrying in 3s...`);
-          await new Promise((r) => setTimeout(r, 3000));
-        }
-      }
-    } catch (err) {
-      console.warn(`Attempt ${attempt} failed: ${err.message}`);
-      if (attempt < MAX_ATTEMPTS) {
-        console.warn('Retrying in 3s...');
-        await new Promise((r) => setTimeout(r, 3000));
-      } else {
-        throw err;
-      }
-    }
-  }
-
-  if (!blogPost || !validateNewsItemCount(blogPost, MIN_NEWS_ITEMS)) {
-    throw new Error(`Failed to generate blog post with ${MIN_NEWS_ITEMS}+ items after ${MAX_ATTEMPTS} attempts`);
-  }
-
-  console.log(`Generated: ${blogPost.title}\n`);
-
-  // Step 2.5: Translate to all languages
-  console.log('Step 2.5: Translating to all languages...');
-  console.log(`  OPENAI_API_KEY set: ${!!process.env.OPENAI_API_KEY}`);
-
-  let translatedPost;
-  try {
-    translatedPost = await translateArticleToAllLanguages(blogPost);
-    console.log('✓ Translation complete');
-    console.log(`  Translated languages: ${Object.keys(translatedPost).join(', ')}`);
-  } catch (err) {
-    console.warn(`Translation failed: ${err.message}`);
-    console.warn(`  Error stack: ${err.stack}`);
-    // Fallback: continue with Japanese only
-    translatedPost = {
-      ja: { title: blogPost.title, summary: blogPost.summary, body: blogPost.body }
-    };
-  }
-
-  // 固定プレフィックスをタイトルに付与
-  applyTitlePrefixAll(translatedPost);
-  console.log(`Title (ja): ${translatedPost.ja.title}`);
-
-  // バリデーション（警告のみ、CI失敗はさせない）
-  const previewEntry = {
-    title: translatedPost.ja?.title || '',
-    title_en: translatedPost.en?.title || '',
-    'title_zh-tw': translatedPost['zh-tw']?.title || '',
-    'title_zh-cn': translatedPost['zh-cn']?.title || '',
-    title_ko: translatedPost.ko?.title || '',
-    category: 'AI NEWS',
-    summary: translatedPost.ja?.summary || '',
-    summary_en: translatedPost.en?.summary || '',
-    'summary_zh-tw': translatedPost['zh-tw']?.summary || '',
-    'summary_zh-cn': translatedPost['zh-cn']?.summary || '',
-    summary_ko: translatedPost.ko?.summary || '',
-  };
-  const validationErrors = validateEntry(previewEntry);
-  if (validationErrors.length > 0) {
-    console.warn('\n⚠ Post validation warnings:');
-    for (const err of validationErrors) {
-      console.warn(`  ${err}`);
-    }
-    console.warn('');
+  const args = process.argv.slice(2);
+  const resumeIndex = args.indexOf('--resume');
+  const resumeFile = resumeIndex < 0 ? null : args[resumeIndex + 1];
+  if (resumeIndex >= 0 && (!resumeFile || resumeFile.startsWith('--') || FETCH_ONLY)) throw new Error('Usage: --resume <checkpoint.json> [--dry-run]');
+  const repoDir = process.env.REPO_DIR || path.resolve(__dirname, '..');
+  console.log('=== AI News Editorial Pipeline ===');
+  let state;
+  let checkpoint;
+  if (resumeFile) {
+    checkpoint = path.resolve(resumeFile);
+    state = await loadGenerationState(checkpoint);
+    console.log('Resuming checkpoint: ' + checkpoint);
   } else {
-    console.log('✓ Post validation passed');
+    if (!FETCH_ONLY && !process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY environment variable is not set');
+    const newsItems = await fetchAllFeeds();
+    console.log('Found ' + newsItems.length + ' recent news candidates.');
+    if (FETCH_ONLY) {
+      newsItems.forEach(item => console.log(item.source + ': ' + item.title + '\n  ' + item.link));
+      return;
+    }
+    if (!newsItems.length) { console.log('No recent news. Skipping publication.'); return; }
+    const digest = await generateBlogPost(newsItems);
+    if (!digest) { console.log('No relevant AI news selected. Skipping publication.'); return; }
+    state = createGenerationState(digest);
+    checkpoint = path.join(repoDir, 'output', 'generation', state.provenance.publicationDate + '-' + state.generationId + '.json');
+    if (!DRY_RUN) {
+      await saveGenerationState(checkpoint, state);
+      console.log('Japanese article and evidence saved: ' + checkpoint);
+    }
   }
 
+  const missing = () => Object.keys(SUPPORTED_LANGUAGES).filter(lang => !state.translations[lang]);
+  if (missing().length && !process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY is required for pending translations');
+  await completeTranslations(state, DRY_RUN ? async () => {} : current => saveGenerationState(checkpoint, current));
   if (DRY_RUN) {
     console.log('--- DRY RUN (no file changes) ---');
-    console.log(JSON.stringify(blogPost, null, 2));
-    process.exit(0);
+    console.log(JSON.stringify(state.translations, null, 2));
+    if (missing().length) throw new Error('Dry run has pending translations: ' + missing().join(', '));
+    return;
   }
 
-  console.log('Step 3: Updating posts...');
-  const repoDir = process.env.REPO_DIR || '.';
-  await updatePosts(translatedPost, repoDir);
-  clearTimeout(scriptTimer);
-  console.log('\nDone!');
-  process.exit(0);
+  state.publishedSlug = await updatePosts(state.translations, repoDir, {
+    publicationDate: state.provenance.publicationDate, generationId: state.generationId, publishedSlug: state.publishedSlug,
+  });
+  await saveGenerationState(checkpoint, state);
+  if (missing().length) {
+    console.warn('Published with pending translations: ' + missing().join(', '));
+    console.warn('Resume with: npm run generate -- --resume "' + checkpoint + '"');
+  }
+  console.log('Done. Checkpoint: ' + checkpoint);
 }
 
-main().catch((err) => {
-  clearTimeout(scriptTimer);
-  console.error('');
-  console.error('========== FATAL ERROR ==========');
-  console.error(`Message: ${err.message}`);
-  if (err.status) console.error(`Status: ${err.status}`);
-  if (err.error) console.error(`Error detail: ${JSON.stringify(err.error)}`);
-  console.error(`Stack: ${err.stack}`);
-  console.error('=================================');
-  process.exit(1);
-});
+export { generateBlogPost, validateNewsItemCount, updatePosts };
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  dotenv.config({ quiet: true });
+  scriptTimer = setTimeout(() => {
+    console.error('FATAL: Script exceeded hard timeout.');
+    process.exit(1);
+  }, SCRIPT_TIMEOUT_MS);
+  main().catch((err) => {
+    clearTimeout(scriptTimer);
+    console.error('');
+    console.error('========== FATAL ERROR ==========');
+    console.error(`Message: ${err.message}`);
+    if (err.status) console.error(`Status: ${err.status}`);
+    if (err.error) console.error(`Error detail: ${JSON.stringify(err.error)}`);
+    console.error(`Stack: ${err.stack}`);
+    console.error('=================================');
+    process.exitCode = 1;
+  }).finally(() => clearTimeout(scriptTimer));
+}

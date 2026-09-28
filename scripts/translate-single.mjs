@@ -1,21 +1,15 @@
 import fs from 'fs/promises';
 import path from 'path';
-import vm from 'vm';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { SUPPORTED_LANGUAGES, applyTitlePrefix, translateWithOpenAI } from './shared.mjs';
-
-dotenv.config();
+import { SUPPORTED_LANGUAGES, translateArticle as translateStructuredArticle, parsePostsIndex, assertSlug } from './shared.mjs';
+import { updatePostInIndex, writeAtomic } from './storage.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function translateArticle(article, targetLang) {
   try {
-    return {
-      title: await translateWithOpenAI(article.title, targetLang),
-      summary: await translateWithOpenAI(article.summary, targetLang),
-      body: await translateWithOpenAI(article.body, targetLang)
-    };
+    return await translateStructuredArticle(article, targetLang);
   } catch (err) {
     console.warn(`  ✗ ${targetLang} translation failed: ${err.message}`);
     return null;
@@ -23,6 +17,7 @@ async function translateArticle(article, targetLang) {
 }
 
 async function translateSingleFile(slug) {
+  assertSlug(slug);
   if (!process.env.OPENAI_API_KEY) {
     throw new Error('OPENAI_API_KEY environment variable is not set');
   }
@@ -48,10 +43,7 @@ async function translateSingleFile(slug) {
 
   let posts;
   try {
-    const script = new vm.Script(indexContent.replace('const posts', 'var posts'));
-    const context = vm.createContext({});
-    script.runInContext(context);
-    posts = context.posts;
+    posts = parsePostsIndex(indexContent);
   } catch (err) {
     console.error(`Failed to parse index.js: ${err.message}`);
     console.error(`First 200 chars of index.js:\n${indexContent.slice(0, 200)}`);
@@ -94,12 +86,14 @@ async function translateSingleFile(slug) {
     }
   }
 
+  if (!Object.keys(translations).length) throw new Error('All translations failed');
+
   // 各言語のファイルを保存
   for (const [lang, content] of Object.entries(translations)) {
     const langDir = path.join(postsDir, lang);
     await fs.mkdir(langDir, { recursive: true });
     const mdPath = path.join(langDir, `${slug}.md`);
-    await fs.writeFile(mdPath, content.body, 'utf-8');
+    await writeAtomic(mdPath, content.body);
     console.log(`Created: ${mdPath}`);
   }
 
@@ -109,87 +103,23 @@ async function translateSingleFile(slug) {
   console.log('\n=== Translation complete ===');
 }
 
-async function updatePostInIndex(indexPath, originalContent, post, translations) {
-  // slugマーカーを探す
-  const slugMarker = `"slug": "${post.slug}"`;
-  const slugIndex = originalContent.indexOf(slugMarker);
+// CLI only: importing this module has no side effects.
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  dotenv.config({ quiet: true });
+  const slug = process.argv[2];
 
-  if (slugIndex === -1) {
-    console.warn(`  Could not find slug marker for ${post.slug} in index.js`);
-    return;
+  if (!slug) {
+    console.error('Usage: npm run translate:single -- <slug>');
+    console.error('Example: npm run translate:single -- 2026-03-04-2');
+    process.exit(1);
   }
 
-  // 後方検索で開始 { を見つける
-  let depth = 0;
-  let entryStart = slugIndex;
-  while (entryStart >= 0) {
-    if (originalContent[entryStart] === '}') depth++;
-    if (originalContent[entryStart] === '{') {
-      depth--;
-      if (depth < 0) break;
-    }
-    entryStart--;
-  }
+  translateSingleFile(slug).catch(err => {
+    console.error('\n========== ERROR ==========');
+    console.error(`Message: ${err.message}`);
+    console.error(`Stack: ${err.stack}`);
+    console.error('========================');
+    process.exit(1);
+  });
 
-  // 前方検索で終了 } を見つける
-  depth = 0;
-  let entryEnd = slugIndex + slugMarker.length;
-  while (entryEnd < originalContent.length) {
-    if (originalContent[entryEnd] === '{') depth++;
-    if (originalContent[entryEnd] === '}') {
-      depth--;
-      if (depth < 0) break;
-    }
-    entryEnd++;
-  }
-
-  const originalEntry = originalContent.slice(entryStart, entryEnd + 1);
-
-  // エントリをパースしてオブジェクトに変換
-  let entryObj;
-  try {
-    entryObj = JSON.parse(originalEntry);
-  } catch (err) {
-    console.warn(`  Could not parse entry for ${post.slug}: ${err.message}`);
-    return;
-  }
-
-  // 各言語のtitleとsummaryフィールドを追加（存在しないまたは空の場合のみ）
-  for (const lang of Object.keys(SUPPORTED_LANGUAGES)) {
-    const titleField = `title_${lang}`;
-    const summaryField = `summary_${lang}`;
-
-    if (translations[lang]?.title) {
-      entryObj[titleField] = applyTitlePrefix(translations[lang].title, lang);
-    }
-    if (translations[lang]?.summary) {
-      entryObj[summaryField] = translations[lang].summary;
-    }
-  }
-
-  // オブジェクトを文字列に変換（元のフォーマットに合わせてインデント）
-  const updatedEntry = JSON.stringify(entryObj, null, 2);
-  const indentedEntry = updatedEntry.split('\n').map(line => '  ' + line).join('\n');
-
-  // ファイル全体内でエントリを置換
-  const updatedContent = originalContent.replace(originalEntry, indentedEntry);
-  await fs.writeFile(indexPath, updatedContent, 'utf-8');
-  console.log(`Updated ${indexPath}`);
 }
-
-// 実行
-const slug = process.argv[2];
-
-if (!slug) {
-  console.error('Usage: npm run translate:single -- <slug>');
-  console.error('Example: npm run translate:single -- 2026-03-04-2');
-  process.exit(1);
-}
-
-translateSingleFile(slug).catch(err => {
-  console.error('\n========== ERROR ==========');
-  console.error(`Message: ${err.message}`);
-  console.error(`Stack: ${err.stack}`);
-  console.error('========================');
-  process.exit(1);
-});

@@ -4,6 +4,8 @@
   "description": "AI news blog post generator for GitHub Pages",
   "type": "module",
   "scripts": {
+    "test": "node --test",
+    "vendor:sync": "node scripts/sync-vendor.mjs",
     "generate": "node scripts/generate-post.mjs",
     "test:fetch": "node scripts/generate-post.mjs --fetch-only",
     "test:dry": "node scripts/generate-post.mjs --dry-run",
@@ -13,7 +15,12 @@
     "validate:all": "node scripts/validate-post.mjs --all"
   },
   "dependencies": {
+    "dompurify": "3.4.16",
     "dotenv": "^17.3.1",
+    "marked": "18.0.14",
     "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
   }
 }

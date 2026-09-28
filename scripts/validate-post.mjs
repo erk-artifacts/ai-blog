@@ -1,8 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import vm from 'vm';
 import { fileURLToPath } from 'url';
-import { TITLE_PREFIXES } from './shared.mjs';
+import { TITLE_PREFIXES, parsePostsIndex, assertSlug } from './shared.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CHECK_ALL = process.argv.includes('--all');
@@ -31,6 +30,13 @@ const SUMMARY_FIELDS = {
  */
 export function validateEntry(entry) {
   const errors = [];
+  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) return ['Entry must be an object'];
+  for (const field of new Set(['slug', 'date', 'category', ...Object.values(TITLE_FIELDS), ...Object.values(SUMMARY_FIELDS)])) {
+    if (entry[field] !== undefined && typeof entry[field] !== 'string') errors.push(`Invalid string field: ${field}`);
+  }
+  if (errors.length) return errors;
+  try { assertSlug(entry.slug); } catch { errors.push('Invalid post slug'); }
+  if (!/^\d{4}\.\d{2}\.\d{2}$/.test(entry.date || '')) errors.push('Invalid post date');
 
   // --- 1. 必須フィールドの空チェック ---
   const required = ['title', 'summary', 'slug', 'date', 'category'];
@@ -123,11 +129,7 @@ export function validateEntry(entry) {
 async function loadPosts() {
   const indexPath = path.resolve(__dirname, '..', 'posts', 'index.js');
   const content = await fs.readFile(indexPath, 'utf-8');
-  // vm では const 宣言が context に公開されないため var に変換
-  const script = new vm.Script(content.replace('const posts', 'var posts'));
-  const context = vm.createContext({});
-  script.runInContext(context);
-  return context.posts;
+  return parsePostsIndex(content);
 }
 
 // --- CLI エントリポイント ---
@@ -168,7 +170,7 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch((err) => {
   console.error(`Fatal error: ${err.message}`);
   process.exit(1);
 });

@@ -3,57 +3,68 @@
     {
       "name": "TechCrunch AI",
       "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "secondary"
     },
     {
       "name": "The Verge AI",
       "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "secondary"
     },
     {
       "name": "Ars Technica AI",
       "url": "https://arstechnica.com/ai/feed/",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "secondary"
     },
     {
       "name": "MIT Technology Review",
       "url": "https://www.technologyreview.com/feed/",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "secondary"
     },
     {
       "name": "VentureBeat AI",
       "url": "https://venturebeat.com/category/ai/feed/",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "secondary"
     },
     {
       "name": "ITmedia AI+",
       "url": "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml",
-      "lang": "ja"
+      "lang": "ja",
+      "sourceType": "secondary"
     },
     {
       "name": "ASCII.jp テクノロジー",
       "url": "https://ascii.jp/rss.xml",
-      "lang": "ja"
+      "lang": "ja",
+      "sourceType": "secondary"
     },
     {
       "name": "日経 xTECH",
       "url": "https://xtech.nikkei.com/rss/index.rdf",
-      "lang": "ja"
+      "lang": "ja",
+      "sourceType": "secondary"
     },
     {
       "name": "OpenAI News",
       "url": "https://openai.com/news/rss.xml",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "primary"
     },
     {
       "name": "Anthropic News",
       "url": "https://rsshub.app/anthropic/news",
-      "lang": "en"
+      "lang": "en",
+      "sourceType": "unknown"
     },
     {
       "name": "Google AI Blog",
-      "url": "https://ai.googleblog.com/feeds/posts/default?alt=rss",
-      "lang": "en"
+      "url": "https://blog.google/technology/ai/rss/",
+      "lang": "en",
+      "sourceType": "primary"
     }
   ]
 }

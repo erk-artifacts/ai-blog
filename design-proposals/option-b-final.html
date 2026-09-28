@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI_GEEK — Option B: Dark News Machine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #20202A;
+    --paper: #ECEAF2;
+    --muted: #A8A6B5;
+    --mint: #C8BEF2;
+    --violet: #F2C6D8;
+    --pink: #B5E8D2;
+    --tile: #2A2A35;
+    --hair: rgba(255,255,255,.10);
+    --gap: 20px;
+    --mono: 'IBM Plex Mono', 'Noto Sans JP', monospace;
+    --jp: 'Noto Sans JP', sans-serif;
+    --display: 'Anton', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { background: var(--ink); }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--jp);
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  .mono {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ============ 1. TOP BAR ============ */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--ink);
+    border-bottom: 1px solid var(--hair);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    height: 60px;
+    padding: 0 var(--gap);
+  }
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--display);
+    font-size: 27px;
+    letter-spacing: 0.01em;
+    color: var(--paper);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .wordmark .slash {
+    display: inline-block;
+    width: 12px;
+    height: 30px;
+    background: var(--mint);
+    transform: skewX(-18deg);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.28);
+    color: var(--paper);
+    white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--mint); color: var(--mint); }
+  .pill--mint {
+    background: var(--mint);
+    border-color: var(--mint);
+    color: var(--ink);
+  }
+  .pill--mint:hover { color: var(--ink); }
+  .langs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 14px;
+    padding-left: 18px;
+    border-left: 1px solid var(--hair);
+  }
+  .lang {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 5px 9px;
+    border-radius: 999px;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .lang.on {
+    background: var(--tile);
+    color: var(--mint);
+    border: 1px solid rgba(200,190,242,.45);
+  }
+
+  /* ============ 2. TICKER ============ */
+  .ticker {
+    background: var(--mint);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0 10px 20px;
+  }
+  .ticker span {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .ticker b {
+    font-weight: 600;
+    padding: 0 14px;
+    color: var(--ink);
+  }
+
+  /* ============ PAGE FRAME ============ */
+  .frame { padding: var(--gap); }
+
+  /* ============ 3. HERO ============ */
+  .hero {
+    background: var(--violet);
+    color: var(--ink);
+    padding: 68px 64px 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+  }
+  .hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+  .hero .eyebrow .tag {
+    background: var(--ink);
+    color: var(--mint);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 6px 12px;
+    line-height: 1;
+  }
+  .hero .eyebrow .meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .hero h1 {
+    font-family: var(--jp);
+    font-weight: 900;
+    font-size: 62px;
+    line-height: 1.18;
+    letter-spacing: 0;
+    font-feature-settings: "palt";
+    word-break: auto-phrase;
+    color: var(--ink);
+    max-width: 880px;
+    margin-bottom: 28px;
+  }
+  .hero .excerpt {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--ink);
+    max-width: 660px;
+    margin-bottom: 34px;
+  }
+  .btn-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--mint);
+    font-family: var(--jp);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1;
+    padding: 16px 32px;
+    border-radius: 999px;
+  }
+  .btn-read .arrow { font-family: var(--mono); font-weight: 600; }
+  .hero .bigdate {
+    font-family: var(--display);
+    font-size: 150px;
+    line-height: 0.9;
+    color: var(--ink);
+    text-align: right;
+    text-transform: uppercase;
+    align-self: start;
+  }
+  .hero .bigdate small {
+    display: block;
+    font-size: 44px;
+    line-height: 1;
+    margin-top: 10px;
+    color: var(--ink);
+  }
+
+  /* ============ 4. TWO LANES ============ */
+  .lanes {
+    display: grid;
+    grid-template-columns: 62fr 38fr;
+    gap: var(--gap);
+    margin-top: var(--gap);
+    align-items: stretch;
+  }
+  .main-lane {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--gap);
+  }
+  .feature {
+    padding: 48px 48px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .feature .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .feature h2 {
+    font-family: var(--jp);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 1.25;
+    letter-spacing: 0;
+    font-feature-settings: "palt";
+    word-break: auto-phrase;
+    margin-bottom: 16px;
+  }
+  .feature p {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 620px;
+  }
+  .feature--mint { background: var(--mint); color: var(--ink); }
+  .feature--mint .eyebrow { color: var(--ink); }
+  .feature--mint h2 { color: var(--ink); }
+  .feature--mint p { color: var(--ink); font-weight: 500; }
+  .feature--dark { background: var(--tile); }
+  .feature--dark .eyebrow { color: var(--mint); }
+  .feature--dark h2 { color: var(--paper); }
+  .feature--dark:hover h2 { color: var(--violet); }
+  .feature--dark p { color: var(--muted); }
+  .feature .foot {
+    margin-top: auto;
+    padding-top: 26px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .feature .more {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .feature .idx {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .feature--mint .idx { color: var(--ink); }
+  .feature--dark .idx { color: var(--muted); }
+  .feature--mint .more { border-bottom: 2px solid var(--ink); color: var(--ink); padding-bottom: 3px; }
+  .feature--dark .more { border-bottom: 2px solid var(--violet); color: var(--paper); padding-bottom: 3px; }
+
+  /* ---- Right rail: STORYSTREAM ---- */
+  .rail { min-width: 0; }
+  .rail-label {
+    font-family: var(--display);
+    font-size: 34px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--paper);
+    padding-top: 8px;
+  }
+  .rail-bar {
+    height: 8px;
+    background: var(--mint);
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  .stream-item {
+    display: block;
+    padding: 22px 0 24px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .stream-item .ts {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--violet);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .stream-item .t {
+    font-family: var(--jp);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--paper);
+    font-feature-settings: "palt";
+  }
+  .stream-item:hover .t { color: var(--mint); }
+  .rail-cta {
+    margin-top: 26px;
+  }
+  .rail-cta .pill { padding: 12px 24px; font-size: 12px; }
+
+  /* ============ 5. ARCHIVE ============ */
+  .archive { margin-top: 72px; }
+  .archive-head {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .archive-head .label {
+    font-family: var(--display);
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--paper);
+  }
+  .archive-head .count {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+  }
+  .arc-tile {
+    background: var(--tile);
+    padding: 32px 32px 38px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .arc-tile .row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .arc-tile .date {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .tag-pink {
+    background: var(--pink);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 5px 11px;
+    border-radius: 999px;
+  }
+  .arc-tile h3 {
+    font-family: var(--jp);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--paper);
+    font-feature-settings: "palt";
+  }
+  .arc-tile:hover h3 { color: var(--mint); }
+
+  /* ============ 6. FOOTER ============ */
+  footer {
+    margin-top: 72px;
+    background: var(--ink);
+    border-top: 2px solid var(--mint);
+    padding: 64px var(--gap) 48px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 80px;
+    align-items: start;
+    padding-bottom: 52px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .foot-mark {
+    font-family: var(--display);
+    font-size: 58px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .foot-mark .slash {
+    display: inline-block;
+    width: 20px;
+    height: 58px;
+    background: var(--mint);
+    transform: skewX(-18deg);
+  }
+  .foot-col .h {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .foot-col a {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--paper);
+    line-height: 2.3;
+  }
+  .foot-col a:hover { color: var(--mint); }
+  .copyright {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 28px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. STICKY TOP BAR -->
+  <header class="topbar">
+    <a class="wordmark" href="#"><span class="slash"></span>AI_GEEK</a>
+    <nav class="nav">
+      <a class="pill" href="#">ホーム</a>
+      <a class="pill" href="#">アーカイブ</a>
+      <a class="pill" href="#">ABOUT</a>
+      <a class="pill pill--mint" href="#">検索</a>
+      <div class="langs">
+        <a class="lang on" href="#">日本語</a>
+        <a class="lang" href="#">EN</a>
+        <a class="lang" href="#">繁中</a>
+        <a class="lang" href="#">简中</a>
+        <a class="lang" href="#">한국어</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 2. MINT TICKER -->
+  <div class="ticker">
+    <span>DAILY AI DIGEST<b>—</b>毎朝09:00 JST 更新<b>—</b>154 POSTS<b>—</b>5 LANGUAGES<b>—</b>POWERED BY RSS × LLM<b>—</b>DAILY AI DIGEST<b>—</b>毎朝09:00 JST 更新<b>—</b>154 POSTS<b>—</b>5 LANGUAGES<b>—</b>POWERED BY RSS × LLM<b>—</b>DAILY AI DIGEST<b>—</b>毎朝09:00 JST 更新<b>—</b>154 POSTS<b>—</b>5 LANGUAGES</span>
+  </div>
+
+  <div class="frame">
+
+    <!-- 3. HERO -->
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          <span class="tag">TODAY</span>
+          <span class="meta">2026.08.15 FRI — LATEST DIGEST</span>
+        </div>
+        <h1>今日のAI最前線：AIを巡る法廷騒動から巨頭の戦略、技術の進化まで！</h1>
+        <p class="excerpt">AIの法廷での誤用問題、Google Geminiのウォーターマーク設定、MetaのオープンAI戦略、GPU最適化技術、OpenAIとAnthropicの価格競争など、AIの多面的な動きを解説します。</p>
+        <a class="btn-read" href="#">読む <span class="arrow">↗</span></a>
+      </div>
+      <div class="bigdate">08.15<small>FRI</small></div>
+    </section>
+
+    <!-- 4. TWO LANES -->
+    <section class="lanes">
+      <div class="main-lane">
+
+        <a class="feature feature--mint" href="#">
+          <div class="eyebrow">AI NEWS / 2026.08.14</div>
+          <h2>AnthropicがAIエージェントの&ldquo;縄張り争い&rdquo;を警告！</h2>
+          <p>AIエージェントの協調・衝突を分析。新概念「AI転換率」やトークン節約術、世界モデルの動向まで深掘り。</p>
+          <div class="foot"><span class="more">続きを読む ↗</span><span class="idx">DIGEST NO.153</span></div>
+        </a>
+
+        <a class="feature feature--dark" href="#">
+          <div class="eyebrow">AI NEWS / 2026.08.13</div>
+          <h2>Grok 4.6登場！AIの進化とプライバシー保護の新たな挑戦</h2>
+          <p>Claudeの透かし機能、AIスクレイピング対策、TwitchのAI学習データ利用が示す進化と倫理のバランス。</p>
+          <div class="foot"><span class="more">続きを読む ↗</span><span class="idx">DIGEST NO.152</span></div>
+        </a>
+
+      </div>
+
+      <aside class="rail">
+        <div class="rail-label">Storystream</div>
+        <div class="rail-bar"></div>
+
+        <a class="stream-item" href="#">
+          <span class="ts">08.12 09:00</span>
+          <span class="t">GeminiとChatGPTが10億ユーザー突破、AIの透明性と進化の最前線</span>
+        </a>
+        <a class="stream-item" href="#">
+          <span class="ts">08.11 09:00</span>
+          <span class="t">AI巨頭の戦略転換と社会浸透：未来のAIの形を占う</span>
+        </a>
+        <a class="stream-item" href="#">
+          <span class="ts">08.10 09:00</span>
+          <span class="t">AIが拓く未来：健康からキャリア、そして動画生成まで</span>
+        </a>
+        <a class="stream-item" href="#">
+          <span class="ts">08.09 09:00</span>
+          <span class="t">AIのセキュリティから新製品まで、進化の波は止まらない！</span>
+        </a>
+        <a class="stream-item" href="#">
+          <span class="ts">08.08 09:00</span>
+          <span class="t">OpenAIが危険なモデル開発を一時停止！AIの安全性と進化の最前線</span>
+        </a>
+        <a class="stream-item" href="#">
+          <span class="ts">08.07 09:00</span>
+          <span class="t">AIビジネスの加速と日常への浸透</span>
+        </a>
+        <a class="stream-item" href="#">
+          <span class="ts">08.06 09:00</span>
+          <span class="t">AI業界の巨人たちが動く！ワークマンからJRまで、AIの最新活用事例</span>
+        </a>
+
+        <div class="rail-cta">
+          <a class="pill" href="#">アーカイブへ →</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- 5. ARCHIVE -->
+    <section class="archive">
+      <div class="archive-head">
+        <div class="label">Archive</div>
+        <div class="count">147 OLDER POSTS — 2025.09 → 2026.08</div>
+      </div>
+      <div class="archive-grid">
+
+        <a class="arc-tile" href="#">
+          <div class="row"><span class="date">2026.08.05</span></div>
+          <h3>AIエージェント元年、その実力と課題を徹底検証</h3>
+        </a>
+
+        <a class="arc-tile" href="#">
+          <div class="row"><span class="date">2026.08.04</span><span class="tag-pink">DEEP DIVE</span></div>
+          <h3>オープンソースLLMの逆襲：小型モデルが変える開発現場</h3>
+        </a>
+
+        <a class="arc-tile" href="#">
+          <div class="row"><span class="date">2026.08.03</span></div>
+          <h3>AI規制の最前線：EU・アメリカ・日本の温度差を読み解く</h3>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 6. FOOTER -->
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-mark"><span class="slash"></span>AI_GEEK</div>
+      <div class="foot-col">
+        <div class="h">Navigate</div>
+        <a href="#">HOME</a>
+        <a href="#">ARCHIVE</a>
+        <a href="#">ABOUT</a>
+        <a href="#">RSS</a>
+      </div>
+      <div class="foot-col">
+        <div class="h">Languages</div>
+        <a href="#">日本語</a>
+        <a href="#">ENGLISH</a>
+        <a href="#">繁體中文</a>
+        <a href="#">简体中文</a>
+        <a href="#">한국어</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 AI_GEEK — AI NEWS, DAILY, IN 5 LANGUAGES</div>
+  </footer>
+
+</body>
+</html>

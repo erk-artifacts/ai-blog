@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI_GEEK — Option C: AI-Native Craft Minimalism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ Reset & tokens ============ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --canvas: #0a0a0b;
+    --surface-1: #101012;
+    --surface-2: #141416;
+    --surface-3: #18181a;
+    --hairline: rgba(255,255,255,0.08);
+    --hairline-strong: rgba(255,255,255,0.14);
+    --text-primary: #f4f4f6;
+    --text-body: #c9cdd3;
+    --text-muted: #9ba1a6;
+    --text-faint: #62666d;
+    --accent: #5e6ad2;
+    --accent-bright: #828fff;
+  }
+
+  html { background: var(--canvas); }
+
+  body {
+    background: var(--canvas);
+    color: var(--text-body);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 1064px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  a { text-decoration: none; }
+
+  /* ============ 1. Nav ============ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 64px;
+    background: var(--canvas);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-inner {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+  }
+  .wordmark .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-links a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1;
+  }
+  .nav-links a.active { color: var(--text-primary); }
+  .nav-links a[lang="en"] { font-family: 'Inter', sans-serif; font-weight: 500; }
+  .chip-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    color: var(--text-muted);
+  }
+  .chip-search .key {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+  .chip-search .label-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .chip-lang {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 12.5px;
+    color: var(--text-body);
+  }
+  .chip-lang .caret {
+    font-size: 9px;
+    color: var(--text-faint);
+  }
+
+  /* ============ 2. Hero ============ */
+  .hero {
+    padding: 96px 0 72px;
+  }
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.35;
+    letter-spacing: 0;
+    font-feature-settings: "palt";
+    word-break: auto-phrase;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+  .hero .sub {
+    font-size: 16px;
+    color: var(--text-body);
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+  .stat-chips {
+    display: flex;
+    gap: 12px;
+  }
+  .stat-chip {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+  }
+  .stat-chip .mono { color: var(--text-muted); }
+  .stat-chip .num { color: var(--text-primary); }
+
+  /* ============ 3. Featured card ============ */
+  .featured-wrap { padding-bottom: 80px; }
+  .featured {
+    background: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 40px 48px 36px;
+  }
+  .featured .eyebrow { margin-bottom: 20px; }
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-bright);
+    flex: none;
+  }
+  .featured h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-feature-settings: "palt";
+    word-break: auto-phrase;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    max-width: 860px;
+  }
+  .featured .excerpt {
+    font-size: 15px;
+    color: var(--text-body);
+    max-width: 780px;
+    margin-bottom: 28px;
+  }
+  .featured-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--hairline);
+  }
+  .read-link {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: var(--accent-bright);
+  }
+  .read-link .arr { font-family: 'Inter', sans-serif; font-weight: 500; }
+
+  /* ============ 4. Feed / archive list ============ */
+  .archive { padding-bottom: 88px; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .section-label .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--hairline);
+  }
+  .feed { border-top: 1px solid var(--hairline); margin-top: 16px; }
+  .feed-row {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .feed-row.is-hover { isolation: isolate; }
+  .feed-row.is-hover::before {
+    content: "";
+    position: absolute;
+    inset: 1px -16px;
+    background: var(--surface-1);
+    border-radius: 8px;
+    z-index: -1;
+  }
+  .feed-date {
+    flex: none;
+    width: 56px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+  .feed-main { flex: 1; min-width: 0; }
+  .feed-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 0;
+    font-feature-settings: "palt";
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .feed-row.is-hover .feed-title { color: #ffffff; }
+  .feed-excerpt {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .feed-langs {
+    flex: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+  }
+  .feed-more {
+    display: inline-block;
+    margin-top: 28px;
+    font-family: 'IBM Plex Mono', 'Noto Sans JP', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--accent-bright);
+  }
+
+  /* ============ 5. Feature tiles ============ */
+  .tiles { padding-bottom: 96px; }
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .tile {
+    background: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 28px 28px 26px;
+  }
+  .tile-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .tile h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-feature-settings: "palt";
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  .tile p {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  /* CSS marks — 16px geometric, lavender */
+  .mark { width: 16px; height: 16px; position: relative; flex: none; }
+  /* globe */
+  .mark-globe {
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+  }
+  .mark-globe::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -1.5px;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 13px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+  }
+  .mark-globe::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -0.75px;
+    width: 13px;
+    height: 1.5px;
+    background: var(--accent);
+  }
+  /* clock */
+  .mark-clock {
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+  }
+  .mark-clock::before {
+    content: "";
+    position: absolute;
+    left: 5.75px;
+    top: 2.5px;
+    width: 4px;
+    height: 4px;
+    border-left: 1.5px solid var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+  }
+  /* rss */
+  .mark-rss::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 13px;
+    height: 13px;
+    border-top: 1.5px solid var(--accent);
+    border-right: 1.5px solid var(--accent);
+    border-top-right-radius: 13px;
+  }
+  .mark-rss::after {
+    content: "";
+    position: absolute;
+    left: 0.5px;
+    bottom: 0.5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .mark-rss i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 7px;
+    height: 7px;
+    border-top: 1.5px solid var(--accent);
+    border-right: 1.5px solid var(--accent);
+    border-top-right-radius: 7px;
+  }
+
+  /* ============ 6. Footer ============ */
+  .footer {
+    border-top: 1px solid var(--hairline);
+    padding: 56px 0 48px;
+  }
+  .footer-cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 56px;
+  }
+  .footer .tagline {
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .footer .meta-lines {
+    margin-top: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    line-height: 2.2;
+  }
+  .footer .meta-lines .on { color: var(--text-muted); }
+  .footer-nav {
+    display: flex;
+    gap: 88px;
+  }
+  .footer-col .head {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1;
+  }
+  .footer-col a[lang="en"] { font-family: 'Inter', sans-serif; font-weight: 500; }
+  .footer-col .mono-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+  .copyright {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ 1. Nav ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="wordmark"><span class="dot"></span>AI_GEEK</a>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#" class="active">ホーム</a>
+          <a href="#">アーカイブ</a>
+          <a href="#" lang="en">About</a>
+        </nav>
+        <div class="chip-search">
+          <span class="key">&#8984;K</span>
+          <span class="label-jp">検索</span>
+        </div>
+        <div class="chip-lang">日本語 <span class="caret">&#9662;</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 2. Hero ============ -->
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="mono">DAILY AI DIGEST &mdash; EVERY MORNING 09:00 JST</span>
+      </div>
+      <h1>AIの今日を、静かに正確に。</h1>
+      <p class="sub">AI関連ニュースを毎日自動収集し、5言語で配信するデイリーダイジェスト。</p>
+      <div class="stat-chips">
+        <div class="stat-chip"><span class="mono"><span class="num">154</span>&nbsp;POSTS</span></div>
+        <div class="stat-chip"><span class="mono"><span class="num">5</span>&nbsp;LANGUAGES</span></div>
+        <div class="stat-chip"><span class="mono">UPDATED&nbsp;<span class="num">2026.08.15</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. Featured card ============ -->
+  <section class="featured-wrap">
+    <div class="container">
+      <article class="featured">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          <span class="mono">TODAY &mdash; 2026.08.15 FRI</span>
+        </div>
+        <h2>今日のAI最前線：AIを巡る法廷騒動から巨頭の戦略、技術の進化まで！</h2>
+        <p class="excerpt">AIの法廷での誤用問題、Google Geminiのウォーターマーク設定、MetaのオープンAI戦略、GPU最適化技術、OpenAIとAnthropicの価格競争など、AIの多面的な動きを解説します。</p>
+        <div class="featured-footer">
+          <a href="#" class="read-link">記事を読む <span class="arr">&rarr;</span></a>
+          <span class="mono">5 MIN READ</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 4. Feed ============ -->
+  <section class="archive">
+    <div class="container">
+      <div class="section-label">
+        <span class="mono">ARCHIVE &#9472; 2026.08</span>
+        <span class="rule"></span>
+      </div>
+
+      <div class="feed">
+        <article class="feed-row">
+          <span class="feed-date">08.14</span>
+          <div class="feed-main">
+            <h3 class="feed-title">AnthropicがAIエージェントの&ldquo;縄張り争い&rdquo;を警告！進化するAI活用の秘訣</h3>
+            <p class="feed-excerpt">AIエージェントの協調・衝突を分析。新概念「AI転換率」やトークン節約術まで深掘り。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row is-hover">
+          <span class="feed-date">08.13</span>
+          <div class="feed-main">
+            <h3 class="feed-title">Grok 4.6登場！AIの進化とプライバシー保護の新たな挑戦</h3>
+            <p class="feed-excerpt">Claudeの透かし機能、AIスクレイピング対策、進化と倫理のバランスを解説。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row">
+          <span class="feed-date">08.12</span>
+          <div class="feed-main">
+            <h3 class="feed-title">GeminiとChatGPTが10億ユーザー突破、AIの透明性と進化の最前線</h3>
+            <p class="feed-excerpt">AIの普及が加速。倫理的利用、技術進化、社会実装の最新動向。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row">
+          <span class="feed-date">08.11</span>
+          <div class="feed-main">
+            <h3 class="feed-title">AI巨頭の戦略転換と社会浸透:未来のAIの形を占う</h3>
+            <p class="feed-excerpt">OpenAIの巨額資金調達、Metaのオープンモデル戦略再構築など。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row">
+          <span class="feed-date">08.10</span>
+          <div class="feed-main">
+            <h3 class="feed-title">AIが拓く未来:健康からキャリア、そして動画生成まで</h3>
+            <p class="feed-excerpt">健康管理から動画生成、キャリア変革、AI向け半導体開発まで。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row">
+          <span class="feed-date">08.09</span>
+          <div class="feed-main">
+            <h3 class="feed-title">AIのセキュリティから新製品まで、進化の波は止まらない！</h3>
+            <p class="feed-excerpt">AIエージェントの意外な行動、OpenAIの買収、DeepMindの気象予測革新。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row">
+          <span class="feed-date">08.08</span>
+          <div class="feed-main">
+            <h3 class="feed-title">OpenAIが危険なモデル開発を一時停止！AIの安全性と進化の最前線</h3>
+            <p class="feed-excerpt">AIのサイバー能力危険性で開発停止、Anthropicは規制緩和。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+
+        <article class="feed-row">
+          <span class="feed-date">08.07</span>
+          <div class="feed-main">
+            <h3 class="feed-title">AIビジネスの加速と日常への浸透</h3>
+            <p class="feed-excerpt">リコージャパンの営業AI強化、味の素のAI半導体材料好調、AI搭載PC登場。</p>
+          </div>
+          <span class="feed-langs">JA&middot;EN&middot;ZH&middot;KO</span>
+        </article>
+      </div>
+
+      <a href="#" class="feed-more">すべての記事 (154) &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ============ 5. Feature tiles ============ -->
+  <section class="tiles">
+    <div class="container">
+      <div class="tiles-grid">
+        <div class="tile">
+          <div class="tile-head">
+            <span class="mono" style="font-size:11px;">I18N</span>
+            <span class="mark mark-globe"></span>
+          </div>
+          <h3>5言語対応</h3>
+          <p>日本語・英語・繁體中文・简体中文・한국어に自動翻訳して同時配信。</p>
+        </div>
+        <div class="tile">
+          <div class="tile-head">
+            <span class="mono" style="font-size:11px;">AUTOMATION</span>
+            <span class="mark mark-clock"></span>
+          </div>
+          <h3>毎朝9時 自動配信</h3>
+          <p>RSSを収集し、AIが要約・執筆。毎朝9時（JST）に自動で公開します。</p>
+        </div>
+        <div class="tile">
+          <div class="tile-head">
+            <span class="mono" style="font-size:11px;">FEED</span>
+            <span class="mark mark-rss"><i></i></span>
+          </div>
+          <h3>RSS対応</h3>
+          <p>お好みのリーダーで購読可能。更新をリアルタイムに受け取れます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div>
+          <a href="#" class="wordmark"><span class="dot"></span>AI_GEEK</a>
+          <p class="tagline">AI NEWS, DISTILLED DAILY.</p>
+          <p class="meta-lines">
+            SOURCES&nbsp;&nbsp;12 RSS FEEDS<br>
+            PIPELINE&nbsp;&nbsp;FETCH &rarr; WRITE &rarr; TRANSLATE &times;4<br>
+            STATUS&nbsp;&nbsp;<span class="on">OPERATIONAL &mdash; LAST RUN 09:00 JST</span>
+          </p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <p class="head">SITE</p>
+            <ul>
+              <li><a href="#">ホーム</a></li>
+              <li><a href="#">アーカイブ</a></li>
+              <li><a href="#" lang="en">About</a></li>
+              <li><a href="#" class="mono-item" lang="en">RSS</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <p class="head">LANGUAGES</p>
+            <ul>
+              <li><a href="#">日本語</a></li>
+              <li><a href="#" lang="en">English</a></li>
+              <li><a href="#">繁體中文</a></li>
+              <li><a href="#">简体中文</a></li>
+              <li><a href="#">한국어</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AI_GEEK &mdash; GENERATED &amp; CURATED BY AI, REVIEWED DAILY.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,6 +1,22 @@
 // 記事メタデータ（本文は posts/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：OpenAI新発表に迫る！AIの進化と社会実装が加速する一日",
+    "title_en": "AI Frontier Today：Delving into OpenAI's New Announcements! A Day of Accelerating AI Evolution and Social Implementation",
+    "title_zh-tw": "今日 AI 前沿：聚焦 OpenAI 最新發表！AI 的進化與社會應用加速的一天",
+    "title_zh-cn": "今日 AI 前沿：直击OpenAI最新发布！AI进化与社会落地加速的一天",
+    "title_ko": "오늘의 AI 최전선：OpenAI 신규 발표에 주목하다! AI의 진화와 사회 적용이 가속화되는 하루",
+    "category": "AI NEWS",
+    "date": "2026.09.28",
+    "thumbnail": "",
+    "summary": "OpenAIの次なる発表に注目が集まる中、国内ではAIソリューションの展示会や自治体での活用が広がり、AIの社会実装が加速。米中首脳は新たな概念「SI」に合意するなど、AIの未来を巡る動きが活発化しています。",
+    "summary_en": "Amid rising anticipation for OpenAI's next announcement, the social implementation of AI is accelerating domestically, with exhibitions of AI solutions and their expanding use by local governments. Activities concerning the future of AI are also becoming more active, including US and Chinese leaders agreeing on a new concept, \"SI.\"",
+    "summary_zh-tw": "在OpenAI下次發布備受矚目之際，國內AI解決方案的展覽會及在地方政府的應用日益普及，AI的社會實踐正加速進行。美中兩國元首就新概念「SI」達成共識等，圍繞AI未來的動向也日益活躍。",
+    "summary_zh-cn": "OpenAI的下一次发布备受关注，国内AI解决方案展会和在地方政府中的应用不断扩大，AI的社会实践正在加速。中美两国领导人就“SI”新概念达成一致，围绕AI未来的动向日益活跃。",
+    "summary_ko": "OpenAI의 다음 발표에 이목이 집중되는 가운데, 국내에서는 AI 솔루션 전시회와 지방자치단체에서의 활용이 확대되며, AI의 사회 구현이 가속화되고 있습니다. 미중 정상은 새로운 개념 \"SI\"에 합의하는 등, AI의 미래를 둘러싼 움직임이 활발해지고 있습니다.",
+    "slug": "2026-09-28"
+  },
+  {
     "title": "今日のAI最前線：AIの進化は止まらない！ Googleの買い物AIからOpenAIのモデル停止まで",
     "title_en": "AI Frontier Today：AI's evolution is unstoppable! From Google's shopping AI to OpenAI's model suspension",
     "title_zh-tw": "今日 AI 前沿：AI 的進化永不止息！從 Google 的購物 AI 到 OpenAI 的模型停止",

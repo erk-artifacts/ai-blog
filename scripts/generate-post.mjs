@@ -1,4 +1,3 @@
-import { GoogleGenAI } from '@google/genai';
 import Parser from 'rss-parser';
 import fs from 'fs/promises';
 import path from 'path';
@@ -6,7 +5,7 @@ import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { validateEntry } from './validate-post.mjs';
-import { SUPPORTED_LANGUAGES, TITLE_PREFIXES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
+import { SUPPORTED_LANGUAGES, TITLE_PREFIXES, applyTitlePrefix, translateWithOpenAI } from './shared.mjs';
 
 dotenv.config();
 
@@ -90,17 +89,13 @@ async function fetchAllFeeds() {
 }
 
 // ---------------------------------------------------------------------------
-// 2. Blog Post Generation via Gemini API
+// 2. Blog Post Generation via OpenAI API
 // ---------------------------------------------------------------------------
 
 async function generateBlogPost(newsItems) {
-  if (!process.env.GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY environment variable is not set');
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OPENAI_API_KEY environment variable is not set');
   }
-
-  const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
-  });
 
   const newsList = newsItems
     .map(
@@ -153,71 +148,59 @@ async function generateBlogPost(newsItems) {
 ## ニュース一覧:
 ${newsList}`;
 
-  const preferredModel = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
-  const modelFallbacks = [
-    preferredModel,
-    'gemini-2.5-flash',
-    'gemini-2.5-flash-lite',
-  ].filter((model, index, arr) => model && arr.indexOf(model) === index);
-
-  // 指数バックオフ付きで各モデルを試す
-  const MAX_RETRIES_PER_MODEL = 3;
+  const model = process.env.OPENAI_MODEL || 'gpt-6-luna';
+  const MAX_RETRIES = 3;
   let response;
-  for (const model of modelFallbacks) {
-    let lastModelError;
-    for (let attempt = 1; attempt <= MAX_RETRIES_PER_MODEL; attempt++) {
-      try {
-        console.log(`Calling Gemini API model: ${model} (attempt ${attempt}/${MAX_RETRIES_PER_MODEL})`);
-        response = await ai.models.generateContent({
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      console.log(`Calling OpenAI API model: ${model} (attempt ${attempt}/${MAX_RETRIES})`);
+      const apiResponse = await fetch('https://api.openai.com/v1/responses', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           model,
-          contents: userPrompt,
-          config: {
-            systemInstruction: systemPrompt,
-            maxOutputTokens: 8000,
-            responseMimeType: 'application/json',
-          },
-        });
-        console.log(`Success with ${model}`);
-        break;
-      } catch (err) {
-        lastModelError = err;
-        console.warn(`Model ${model} failed (attempt ${attempt}): ${err.status || 'unknown'} ${err.message || ''}`);
+          instructions: systemPrompt,
+          input: userPrompt,
+          max_output_tokens: 8000,
+          text: { format: { type: 'json_object' } },
+        }),
+        signal: AbortSignal.timeout(120000),
+      });
 
-        // 過負荷・タイムアウト・レート制限の場合は指数バックオフでリトライ
-        const isOverloaded = err.status === 503 || err.status === 500;
-        const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
-        const isRateLimit = err.status === 429;
-
-        if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES_PER_MODEL) {
-          const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000); // Max 10秒
-          console.warn(`  Retrying in ${delay}ms...`);
-          await new Promise(r => setTimeout(r, delay));
-          continue;
-        }
-
-        // リトライしても無意味なエラー
-        const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
-
-        if (isFatal) {
-          throw err; // すぐに失敗させる
-        }
-
-        // その他のエラーは次のモデルを試す
-        if (attempt === MAX_RETRIES_PER_MODEL) {
-          console.warn(`  Giving up on ${model}, trying next model...`);
-        }
+      if (!apiResponse.ok) {
+        const errorBody = await apiResponse.text();
+        const error = new Error(`OpenAI API returned ${apiResponse.status}: ${errorBody}`);
+        error.status = apiResponse.status;
+        throw error;
       }
+      response = await apiResponse.json();
+      break;
+    } catch (err) {
+      const status = err.status || 'unknown';
+      console.warn(`OpenAI API attempt ${attempt} failed: ${status} ${err.message || ''}`);
+      const retryable = [408, 429, 500, 502, 503, 504].includes(err.status)
+        || err.name === 'TimeoutError'
+        || err.name === 'TypeError';
+      if (!retryable || attempt === MAX_RETRIES) throw err;
+      const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
+      console.warn(`  Retrying in ${delay}ms...`);
+      await new Promise(r => setTimeout(r, delay));
     }
-    if (response) break; // 成功したらループ終了
   }
 
-  if (!response) {
-    throw new Error(`Failed to call Gemini API with all candidate models. Last error: ${lastModelError?.message || 'unknown error'}`);
-  }
-
-  console.log(`API response received. Usage: ${response.usageMetadata.promptTokenCount} input, ${response.usageMetadata.candidatesTokenCount} output tokens`);
-
-  const text = response.text.trim();
+  const usage = response.usage || {};
+  console.log(`API response received. Usage: ${usage.input_tokens ?? 'unknown'} input, ${usage.output_tokens ?? 'unknown'} output tokens`);
+  const text = (response.output || [])
+    .filter(item => item.type === 'message')
+    .flatMap(item => item.content || [])
+    .filter(item => item.type === 'output_text')
+    .map(item => item.text)
+    .join('')
+    .trim();
+  if (!text) throw new Error(`OpenAI API returned no text (status: ${response.status || 'unknown'})`);
 
   // Try to parse as JSON, with multi-step fallback extraction
   try {
@@ -255,7 +238,7 @@ ${newsList}`;
     console.error('========== INVALID API RESPONSE ==========');
     console.error(`Full response (first 1000 chars):\n${text.slice(0, 1000)}`);
     console.error('==========================================');
-    throw new Error(`Gemini API response is not valid JSON. See logs above for details.`);
+    throw new Error(`OpenAI API response is not valid JSON. See logs above for details.`);
   }
 }
 
@@ -301,9 +284,9 @@ async function translateArticleToAllLanguages(article) {
     console.log(`  Translating to ${langCode}...`);
     try {
       const result = {
-        title: await translateWithGemini(article.title, langCode),
-        summary: await translateWithGemini(article.summary, langCode),
-        body: await translateWithGemini(article.body, langCode)
+        title: await translateWithOpenAI(article.title, langCode),
+        summary: await translateWithOpenAI(article.summary, langCode),
+        body: await translateWithOpenAI(article.body, langCode)
       };
       console.log(`  ✓ ${langCode} translation complete`);
       return { langCode, result };
@@ -472,13 +455,13 @@ async function main() {
     process.exit(0);
   }
 
-  if (!process.env.GEMINI_API_KEY) {
-    console.warn('GEMINI_API_KEY is not set. Skipping generation to avoid workflow failure.');
+  if (!process.env.OPENAI_API_KEY) {
+    console.warn('OPENAI_API_KEY is not set. Skipping generation to avoid workflow failure.');
     clearTimeout(scriptTimer);
     process.exit(0);
   }
 
-  console.log('Step 2: Generating blog post via Gemini API...');
+  console.log('Step 2: Generating blog post via OpenAI GPT-6 Luna...');
   let blogPost;
   const MAX_ATTEMPTS = 3;
   const MIN_NEWS_ITEMS = 3;
@@ -517,7 +500,7 @@ async function main() {
 
   // Step 2.5: Translate to all languages
   console.log('Step 2.5: Translating to all languages...');
-  console.log(`  GEMINI_API_KEY set: ${!!process.env.GEMINI_API_KEY}`);
+  console.log(`  OPENAI_API_KEY set: ${!!process.env.OPENAI_API_KEY}`);
 
   let translatedPost;
   try {

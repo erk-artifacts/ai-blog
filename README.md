@@ -24,8 +24,8 @@ ai-blog/
 ### 自動生成（GitHub Actions）
 毎日朝9時JST（00:00 UTC）に実行され、以下を行います：
 1. RSSフィードからAI関連ニュースを収集
-2. Gemini APIで日本語ブログ記事を生成
-3. 各言語に翻訳（英語、中国語繁体/簡体、韓国語）
+2. OpenAI GPT-6 Luna APIで日本語ブログ記事を生成
+3. OpenAI APIで各言語に翻訳（英語、中国語繁体/簡体、韓国語）
 4. ファイル保存とGitHubへプッシュ
 
 ### 手動実行
@@ -57,7 +57,8 @@ npm run translate:single -- 2026-03-04-2
 `.env` ファイルを作成してAPIキーを設定：
 
 ```env
-GEMINI_API_KEY=your-api-key-here
+OPENAI_API_KEY=your-openai-api-key-here
+OPENAI_MODEL=gpt-6-luna
 ```
 
 `.env` ファイルは `.gitignore` に含まれているため、リポジトリにプッシュされません。
@@ -66,7 +67,8 @@ GEMINI_API_KEY=your-api-key-here
 
 GitHub Actionsで使用する環境変数はリポジトリの「Settings → Secrets and variables → Actions」で設定してください：
 
-- `GEMINI_API_KEY` - Google Gemini APIキー
+- `OPENAI_API_KEY` - OpenAI APIキー（記事生成用）
+- `OPENAI_MODEL` - 記事生成・翻訳モデル（任意、デフォルト `gpt-6-luna`）
 
 ## ファイル構造
 
@@ -110,7 +112,6 @@ const posts = [
 
 ```json
 {
-  "@google/genai": "^1.0.0",
   "rss-parser": "^3.13.0",
   "dotenv": "^17.3.1"
 }

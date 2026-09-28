@@ -1,5 +1,3 @@
-import { GoogleGenAI } from '@google/genai';
-
 // ---------------------------------------------------------------------------
 // Supported Languages
 // ---------------------------------------------------------------------------
@@ -34,51 +32,67 @@ export function applyTitlePrefix(title, lang) {
 // Translation
 // ---------------------------------------------------------------------------
 
-export async function translateWithGemini(text, targetLang, options = {}) {
-  const { model = process.env.GEMINI_MODEL || 'gemini-2.5-flash' } = options;
+export async function translateWithOpenAI(text, targetLang, options = {}) {
+  const { model = process.env.OPENAI_MODEL || 'gpt-6-luna' } = options;
   const langConfig = SUPPORTED_LANGUAGES[targetLang];
 
-  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+  if (!langConfig) throw new Error(`Unsupported target language: ${targetLang}`);
+  if (!process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY environment variable is not set');
   const MAX_RETRIES = 3;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       console.log(`    Translating to ${targetLang} (${text.length} chars, attempt ${attempt}/${MAX_RETRIES})...`);
 
-      const response = await ai.models.generateContent({
-        model,
-        contents: text,
-        config: {
-          systemInstruction: `You are a professional translator. ${langConfig.prompt}.
+      const apiResponse = await fetch('https://api.openai.com/v1/responses', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model,
+          instructions: `You are a professional translator. ${langConfig.prompt}.
 - Keep technical terms accurate
 - Preserve Markdown formatting exactly
 - Do not add explanations or extra text
 - Return only the translated text`,
-          maxOutputTokens: 8192,
-        },
+          input: text,
+          max_output_tokens: 8192,
+        }),
+        signal: AbortSignal.timeout(120000),
       });
 
-      const translatedText = response.text;
+      if (!apiResponse.ok) {
+        const error = new Error(`OpenAI API returned ${apiResponse.status}: ${await apiResponse.text()}`);
+        error.status = apiResponse.status;
+        throw error;
+      }
+      const response = await apiResponse.json();
+      const translatedText = (response.output || [])
+        .filter(item => item.type === 'message')
+        .flatMap(item => item.content || [])
+        .filter(item => item.type === 'output_text')
+        .map(item => item.text)
+        .join('')
+        .trim();
+      if (!translatedText) throw new Error(`OpenAI API returned no translation (status: ${response.status || 'unknown'})`);
       console.log(`    Translation received (${translatedText.length} chars)`);
       return translatedText;
     } catch (err) {
       console.warn(`    Translation attempt ${attempt} failed: ${err.status || 'unknown'} ${err.message || ''}`);
 
-      const isOverloaded = err.status === 503 || err.status === 500;
-      const isTimeout = err.status === 504 || String(err.message || '').toLowerCase().includes('timeout');
-      const isRateLimit = err.status === 429;
-
-      if ((isOverloaded || isTimeout || isRateLimit) && attempt < MAX_RETRIES) {
+      const retryable = [408, 429, 500, 502, 503, 504].includes(err.status)
+        || err.name === 'TimeoutError'
+        || err.name === 'TypeError';
+      if (retryable && attempt < MAX_RETRIES) {
         const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
         console.warn(`    Retrying translation in ${delay}ms...`);
         await new Promise(r => setTimeout(r, delay));
         continue;
       }
 
-      const isFatal = err.status === 400 || err.status === 401 || err.status === 403;
-      if (isFatal || attempt === MAX_RETRIES) {
-        throw err;
-      }
+      throw err;
     }
   }
 }

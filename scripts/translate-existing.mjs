@@ -3,7 +3,7 @@ import path from 'path';
 import vm from 'vm';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { SUPPORTED_LANGUAGES, applyTitlePrefix, translateWithGemini } from './shared.mjs';
+import { SUPPORTED_LANGUAGES, applyTitlePrefix, translateWithOpenAI } from './shared.mjs';
 
 dotenv.config();
 
@@ -12,9 +12,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 async function translateArticle(article, targetLang) {
   try {
     return {
-      title: await translateWithGemini(article.title, targetLang),
-      summary: await translateWithGemini(article.summary, targetLang),
-      body: await translateWithGemini(article.body, targetLang)
+      title: await translateWithOpenAI(article.title, targetLang),
+      summary: await translateWithOpenAI(article.summary, targetLang),
+      body: await translateWithOpenAI(article.body, targetLang)
     };
   } catch (err) {
     console.warn(`  ✗ ${targetLang} translation failed: ${err.message}`);
@@ -94,8 +94,8 @@ async function updatePostInIndex(indexPath, originalContent, post, translations)
 }
 
 async function translateExistingPosts() {
-  if (!process.env.GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY environment variable is not set');
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OPENAI_API_KEY environment variable is not set');
   }
 
   const postsDir = path.join(__dirname, '..', 'posts');

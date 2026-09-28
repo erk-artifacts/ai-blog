@@ -33,17 +33,17 @@ npm run translate:single -- <slug>  # 特定の記事を翻訳
 
 ### データフロー
 1. **RSSフィード取得**: `rss-feeds.json` で定義されたフィードから24〜48時間以内のニュースを取得
-2. **記事生成**: Gemini API (`gemini-2.5-flash` デフォルト) で日本語記事をJSON形式で生成
+2. **記事生成**: OpenAI API (`gpt-6-luna` デフォルト) で日本語記事をJSON形式で生成
 3. **翻訳**: 生成された記事を英語、中国語（繁体/簡体）、韓国語に並列翻訳
 4. **保存**: 各言語の `posts/{lang}/{slug}.md` に本文保存、`posts/index.js` にメタデータ追加
 
 ### エラーハンドリングとリトライ戦略
 
 **メイン生成 (`generate-post.mjs`)**:
-- モデルフォールバック: 優先モデル → gemini-2.5-flash → gemini-2.5-flash-lite
-- 各モデルで最大3回リトライ（指数バックオフ: 1秒 → 2秒 → 4秒、最大10秒）
-- 503/500 (Overloaded/Internal)、504 (Timeout)、429 (Rate Limit) はリトライ
-- 400/401/403 エラーは即時失敗（致命的エラー）
+- モデル: `OPENAI_MODEL`（デフォルト `gpt-6-luna`）
+- 最大3回リトライ（指数バックオフ: 1秒 → 2秒、最大10秒）
+- 408/429/5xx とネットワーク・タイムアウトはリトライ
+- その他のHTTPエラーは即時失敗
 - 翻訳失敗時は日本語のみで継続
 
 **翻訳関数**:
@@ -51,8 +51,8 @@ npm run translate:single -- <slug>  # 特定の記事を翻訳
 - リトライ不要なエラーはスキップして次の言語へ
 
 ### 環境変数
-- `GEMINI_API_KEY` (必須): Google Gemini APIキー
-- `GEMINI_MODEL` (任意): デフォルト `gemini-2.5-flash`
+- `OPENAI_MODEL` (任意): デフォルト `gpt-6-luna`
+- `OPENAI_API_KEY` (必須): OpenAI APIキー（記事生成・翻訳用）
 - `REPO_DIR` (GitHub Actionsで設定): リポジトリのルートパス
 
 ### 記事構造

@@ -1,5 +1,22 @@
-// 記事メタデータ（本文は posts/{slug}.md に分離）
+// 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
+  {
+    "title": "今日のAI最前線：企業向けAI基盤の発表や大型買収、安全性・脆弱性対応の課題",
+    "summary": "Metaの企業向けAI基盤、AMDの買収発表に加え、モデルの安全性や脆弱性対応を巡る課題が報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.09.29",
+    "thumbnail": "",
+    "slug": "2026-09-29",
+    "generationId": "6350c012-2da1-4c56-bcdf-7b426bcbf269",
+    "title_en": "AI Frontier Today：Enterprise AI platform announcements, major acquisitions, and challenges in safety and vulnerability response",
+    "summary_en": "Reports covered Meta’s enterprise AI platform and AMD’s acquisition announcement, as well as challenges involving model safety and vulnerability response.",
+    "title_zh-cn": "今日 AI 前沿：企业级AI平台发布、大型收购，以及安全与漏洞应对挑战",
+    "summary_zh-cn": "报道称，Meta推出企业级AI平台，AMD宣布大型收购；此外，模型安全和漏洞应对方面的挑战也受到关注。",
+    "title_ko": "오늘의 AI 최전선：기업용 AI 기반 발표와 대형 인수, 안전성·취약점 대응 과제",
+    "summary_ko": "Meta의 기업용 AI 기반과 AMD의 인수 발표에 더해, 모델 안전성과 취약점 대응을 둘러싼 과제가 보도되었습니다.",
+    "title_zh-tw": "今日 AI 前沿：企業 AI 平台發布、大型收購，以及安全與漏洞應對方面的挑戰",
+    "summary_zh-tw": "Meta 發布企業 AI 平台，AMD 宣布收購案；此外，報導也提及模型安全與漏洞應對方面的挑戰。"
+  },
   {
     "title": "今日のAI最前線：OpenAI新発表に迫る！AIの進化と社会実装が加速する一日",
     "title_en": "AI Frontier Today：Delving into OpenAI's New Announcements! A Day of Accelerating AI Evolution and Social Implementation",

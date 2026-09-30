@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：安全方針や政府の呼称、AI製品と決済基盤をめぐる動き",
+    "summary": "OpenAIの上場判断、米政府のAI呼称変更、新エージェントの公開、AI取引を見据えた決済基盤づくりが伝えられた。",
+    "category": "AI NEWS",
+    "date": "2026.09.30",
+    "thumbnail": "",
+    "slug": "2026-09-30",
+    "generationId": "a8f8d2a3-7201-4df4-9971-0f45489bec07",
+    "title_zh-cn": "今日 AI 前沿：安全政策、政府对人工智能的称呼，以及人工智能产品与支付基础设施的进展",
+    "summary_zh-cn": "据报道，OpenAI的上市决定、美国政府更改人工智能称呼、新智能体发布，以及面向人工智能交易的支付基础设施建设均有新进展。",
+    "title_en": "AI Frontier Today：Developments in Safety Policy, Government Terminology, AI Products, and Payment Infrastructure",
+    "summary_en": "Reports covered OpenAI’s decision on going public, a change in how the US government refers to AI, the launch of a new agent, and efforts to build payment infrastructure for AI-driven commerce.",
+    "title_zh-tw": "今日 AI 前沿：安全政策、政府用語、AI產品與支付基礎設施的最新動向",
+    "summary_zh-tw": "據報導，OpenAI的上市決定、美國政府更改AI稱呼、新代理的發布，以及著眼於AI交易的支付基礎設施建置等動態。",
+    "title_ko": "오늘의 AI 최전선：안전 정책과 정부의 AI 명칭, AI 제품 및 결제 기반을 둘러싼 움직임",
+    "summary_ko": "OpenAI의 상장 판단, 미국 정부의 AI 명칭 변경, 신규 에이전트 공개, AI 거래를 염두에 둔 결제 기반 구축이 전해졌다."
+  },
+  {
     "title": "今日のAI最前線：企業向けAI基盤の発表や大型買収、安全性・脆弱性対応の課題",
     "summary": "Metaの企業向けAI基盤、AMDの買収発表に加え、モデルの安全性や脆弱性対応を巡る課題が報じられました。",
     "category": "AI NEWS",

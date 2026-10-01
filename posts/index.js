@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：新AIモデルの段階提供と、AIを支える国内サーバー・設計企業の動き",
+    "summary": "Googleはサイバー防衛者向けに新モデルを段階提供する方針を示し、シャープはAIサーバーの受注を開始。AI設計企業への支援も報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.01",
+    "thumbnail": "",
+    "slug": "2026-10-01",
+    "generationId": "6922544d-a16b-471a-9538-2981037d6477",
+    "title_en": "AI Frontier Today：Phased Rollout of a New AI Model and Moves by Domestic Server and Design Companies Supporting AI",
+    "summary_en": "Google plans to gradually roll out a new model to cyber defenders, while Sharp has begun taking orders for AI servers. Support for an AI design company was also reported.",
+    "title_ko": "오늘의 AI 최전선：새 AI 모델의 단계적 제공과 AI를 뒷받침하는 국내 서버·설계 기업의 움직임",
+    "summary_ko": "Google은 사이버 방어자를 대상으로 새 모델을 단계적으로 제공하겠다는 방침을 밝혔고, 샤프는 AI 서버 주문을 받기 시작했습니다. AI 설계 기업에 대한 투자 소식도 전해졌습니다.",
+    "title_zh-cn": "今日 AI 前沿：新AI模型分阶段推出，以及日本服务器和设计企业的AI动向",
+    "summary_zh-cn": "Google表示将分阶段向网络防御人员提供新模型，夏普开始承接AI服务器订单。媒体还报道称，一家AI设计企业获得了投资支持。"
+  },
+  {
     "title": "今日のAI最前線：安全方針や政府の呼称、AI製品と決済基盤をめぐる動き",
     "summary": "OpenAIの上場判断、米政府のAI呼称変更、新エージェントの公開、AI取引を見据えた決済基盤づくりが伝えられた。",
     "category": "AI NEWS",

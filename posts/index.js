@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：音声・視覚を使うAI機能が相次いで登場、AI検索訴訟ではGoogle側に判断",
+    "summary": "Microsoft、Google、OpenAI、AMDが製品・機能を発表する一方、GoogleのAI検索を巡る反トラスト訴訟は棄却されました。",
+    "category": "AI NEWS",
+    "date": "2026.10.02",
+    "thumbnail": "",
+    "slug": "2026-10-02",
+    "generationId": "695271d6-2659-44c4-9ecf-521956a90d3f",
+    "title_en": "AI Frontier Today：AI features using audio and vision debut in quick succession; Google prevails in AI search lawsuit",
+    "summary_en": "Microsoft, Google, OpenAI, and AMD announced products and features, while an antitrust lawsuit over Google’s AI search was dismissed.",
+    "title_ko": "오늘의 AI 최전선：음성·시각을 활용하는 AI 기능 잇따라 등장, AI 검색 소송에서는 Google에 유리한 판단",
+    "summary_ko": "Microsoft, Google, OpenAI, AMD가 제품과 기능을 발표한 가운데, Google의 AI 검색을 둘러싼 반독점 소송은 기각됐습니다.",
+    "title_zh-tw": "今日 AI 前沿：語音與視覺 AI 功能接連推出，Google 在 AI 搜尋訴訟中獲判勝訴",
+    "summary_zh-tw": "Microsoft、Google、OpenAI 與 AMD 發表產品及功能之際，針對 Google AI 搜尋的反托拉斯訴訟遭到駁回。",
+    "title_zh-cn": "今日 AI 前沿：语音与视觉AI功能接连推出，Google在AI搜索诉讼中获胜",
+    "summary_zh-cn": "Microsoft、Google、OpenAI和AMD发布了产品与功能；与此同时，针对Google AI搜索的反垄断诉讼被驳回。"
+  },
+  {
     "title": "今日のAI最前線：新AIモデルの段階提供と、AIを支える国内サーバー・設計企業の動き",
     "summary": "Googleはサイバー防衛者向けに新モデルを段階提供する方針を示し、シャープはAIサーバーの受注を開始。AI設計企業への支援も報じられました。",
     "category": "AI NEWS",

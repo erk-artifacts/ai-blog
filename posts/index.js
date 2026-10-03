@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIエージェントの自作利用とアクセス制御、企業の事業転換が話題に",
+    "summary": "MetaはMuse連携ガジェット向けSDKを公開し、AppleはmacOSの広範なアクセス権限を厳格化する方針を示しました。音楽分野への事業再編や仕事向けエージェントも報じられています。",
+    "category": "AI NEWS",
+    "date": "2026.10.03",
+    "thumbnail": "",
+    "slug": "2026-10-03",
+    "generationId": "e88463ca-b731-4f90-a810-43c9c13509fc",
+    "title_en": "AI Frontier Today：DIY AI Agent Gadgets, Access Controls, and Corporate Realignment in the Spotlight",
+    "summary_en": "Meta released an SDK for DIY gadgets that connect to Muse, while Apple plans to tighten broad access permissions in macOS. A business pivot toward music and a work-focused agent were also reported.",
+    "title_ko": "오늘의 AI 최전선：AI 에이전트의 직접 제작 활용과 접근 제어, 기업의 사업 전환이 화제",
+    "summary_ko": "Meta는 Muse 연동 가젯용 SDK를 공개했고, Apple은 macOS의 광범위한 접근 권한을 엄격히 관리하겠다는 방침을 밝혔습니다. 음악 분야로의 사업 재편과 업무용 에이전트도 보도됐습니다.",
+    "title_zh-tw": "今日 AI 前沿：自製 AI 代理的應用與存取控制、企業業務轉型成為焦點",
+    "summary_zh-tw": "Meta 公開了與 Muse 連動的硬體開發套件，Apple 則表示將收緊 macOS 的廣泛存取權限。報導也提及音樂領域的業務重組，以及面向工作的代理。",
+    "title_zh-cn": "今日 AI 前沿：自制并使用AI代理、访问控制及企业业务转型成为话题",
+    "summary_zh-cn": "Meta发布了面向Muse联动小工具的SDK，Apple表示将收紧macOS广泛访问权限的授予方式。媒体还报道了音乐领域的业务重组，以及面向工作的代理。"
+  },
+  {
     "title": "今日のAI最前線：音声・視覚を使うAI機能が相次いで登場、AI検索訴訟ではGoogle側に判断",
     "summary": "Microsoft、Google、OpenAI、AMDが製品・機能を発表する一方、GoogleのAI検索を巡る反トラスト訴訟は棄却されました。",
     "category": "AI NEWS",

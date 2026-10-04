@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全性をめぐる問題提起と、利用モデル・開発環境の変化",
+    "summary": "OpenAIの元社員による安全性への懸念のほか、Geminiのプラン変更やAIを開発・機器に組み込む動きが報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.04",
+    "thumbnail": "",
+    "slug": "2026-10-04",
+    "generationId": "6c90f39c-d9ba-495d-8886-ecbc53a114e3",
+    "title_zh-cn": "今日 AI 前沿：围绕AI安全性的质疑，以及使用模型与开发环境的变化",
+    "summary_zh-cn": "据报道，OpenAI前员工表达了对安全性的担忧；此外，Gemini套餐调整，以及将AI融入开发和设备的举措也受到关注。",
+    "title_en": "AI Frontier Today：Concerns raised over AI safety, alongside shifts in models and development environments",
+    "summary_en": "Reports covered safety concerns raised by a former OpenAI employee, changes to Gemini plans, and efforts to integrate AI into development workflows and devices.",
+    "title_ko": "오늘의 AI 최전선：AI 안전성에 대한 문제 제기와 이용 모델·개발 환경의 변화",
+    "summary_ko": "OpenAI 전 직원의 안전성 우려와 함께 Gemini 요금제 변경, AI를 개발 및 기기에 통합하려는 움직임이 보도됐습니다.",
+    "title_zh-tw": "今日 AI 前沿：AI安全問題的提出，以及使用模型與開發環境的變化",
+    "summary_zh-tw": "據報導，除了OpenAI前員工對安全性的憂慮外，Gemini方案調整，以及將AI整合至開發流程與裝置的動向也受到關注。"
+  },
+  {
     "title": "今日のAI最前線：AIエージェントの自作利用とアクセス制御、企業の事業転換が話題に",
     "summary": "MetaはMuse連携ガジェット向けSDKを公開し、AppleはmacOSの広範なアクセス権限を厳格化する方針を示しました。音楽分野への事業再編や仕事向けエージェントも報じられています。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI投稿の増加、対戦ボットの行動、米国のAI安全性をめぐる動き",
+    "summary": "AI生成の投稿を理由にGoogleが報奨金制度を停止したほか、AIボットの行動や米国の安全性議論に関する報道があった。",
+    "category": "AI NEWS",
+    "date": "2026.10.05",
+    "thumbnail": "",
+    "slug": "2026-10-05",
+    "generationId": "c8c44a41-07cf-4030-bb55-d00ac448d424",
+    "title_en": "AI Frontier Today：Rise in AI Submissions, the Behavior of Competitive Bots, and Developments in U.S. AI Safety",
+    "summary_en": "Google suspended its bug bounty program due to an increase in AI-generated submissions, while reports also covered AI bot behavior and U.S. debates over safety.",
+    "title_ko": "오늘의 AI 최전선：AI 제출물 증가, 대전 봇의 행동, 미국의 AI 안전성 관련 움직임",
+    "summary_ko": "AI가 생성한 제출물이 늘어난 것을 이유로 Google이 포상금 제도를 중단했고, AI 봇의 행동과 미국의 안전성 논의에 관한 보도도 나왔다.",
+    "title_zh-cn": "今日 AI 前沿：AI投稿增加、对战机器人的行为与美国围绕AI安全性的动向",
+    "summary_zh-cn": "据报道，谷歌因AI生成的投稿而暂停了奖励计划；此外，还有关于AI机器人的行为以及美国安全性讨论的报道。",
+    "title_zh-tw": "今日 AI 前沿：AI投稿增加、對戰機器人的行為，以及美國圍繞AI安全性的動向",
+    "summary_zh-tw": "據報導，Google因AI生成投稿增加而暫停獎勵計畫；此外，也有關於AI機器人行為及美國安全性討論的報導。"
+  },
+  {
     "title": "今日のAI最前線：AIの安全性をめぐる問題提起と、利用モデル・開発環境の変化",
     "summary": "OpenAIの元社員による安全性への懸念のほか、Geminiのプラン変更やAIを開発・機器に組み込む動きが報じられました。",
     "category": "AI NEWS",

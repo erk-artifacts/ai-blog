@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：生成AIの識別・医療利用・エージェント安全性・企業向けモデル",
+    "summary": "EUでのAI識別策、医療サービスの試験導入、エージェント間の脅威、企業向けモデルの発表を整理します。",
+    "category": "AI NEWS",
+    "date": "2026.10.06",
+    "thumbnail": "",
+    "slug": "2026-10-06",
+    "generationId": "a58e3841-6643-4fa2-b8fc-990841bf5afa",
+    "title_en": "AI Frontier Today：Generative AI Identification, Medical Use, Agent Safety, and Enterprise Models",
+    "summary_en": "A roundup of AI identification measures in the EU, a trial of an AI medical service, threats between agents, and the launch of an enterprise-focused model.",
+    "title_ko": "오늘의 AI 최전선：생성형 AI 식별·의료 활용·에이전트 안전성·기업용 모델",
+    "summary_ko": "EU의 AI 식별 조치, 의료 서비스의 시험 도입, 에이전트 간 위협, 기업용 모델 발표를 정리합니다.",
+    "title_zh-tw": "今日 AI 前沿：生成式 AI 的識別、醫療應用、代理安全性與企業模型",
+    "summary_zh-tw": "整理歐盟的 AI 識別措施、醫療服務試行、代理之間的威脅，以及企業模型的發布。",
+    "title_zh-cn": "今日 AI 前沿：生成式AI的识别、医疗应用、智能体安全与企业模型",
+    "summary_zh-cn": "梳理欧盟的AI识别措施、医疗服务试点、智能体之间的威胁，以及面向企业的模型发布。"
+  },
+  {
     "title": "今日のAI最前線：AI投稿の増加、対戦ボットの行動、米国のAI安全性をめぐる動き",
     "summary": "AI生成の投稿を理由にGoogleが報奨金制度を停止したほか、AIボットの行動や米国の安全性議論に関する報道があった。",
     "category": "AI NEWS",

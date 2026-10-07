@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：画像モデルの値下げからAI基盤投資まで、5つの動き",
+    "summary": "Googleの画像モデル更新、Mistralの大型モデル公開、OpenAIの数学成果や透かし方針、Lambdaの資金調達報道を整理します。",
+    "category": "AI NEWS",
+    "date": "2026.10.07",
+    "thumbnail": "",
+    "slug": "2026-10-07",
+    "generationId": "76aeb549-4249-4e16-a1f6-731126aaf900",
+    "title_zh-cn": "今日 AI 前沿：从图像模型降价到AI基础设施投资：五大动向",
+    "summary_zh-cn": "梳理Google图像模型更新、Mistral大型模型发布、OpenAI数学成果与水印政策，以及Lambda融资报道。",
+    "title_en": "AI Frontier Today：From Image-Model Price Cuts to AI Infrastructure Investment: Five Developments",
+    "summary_en": "A roundup of Google’s image-model update, Mistral’s release of a large model, OpenAI’s math results and watermarking policy, and reports of Lambda’s fundraising.",
+    "title_ko": "오늘의 AI 최전선：이미지 모델 가격 인하부터 AI 인프라 투자까지, 5가지 동향",
+    "summary_ko": "Google의 이미지 모델 업데이트, Mistral의 대형 모델 공개, OpenAI의 수학 성과와 워터마크 방침, Lambda의 자금 조달 보도를 정리합니다."
+  },
+  {
     "title": "今日のAI最前線：生成AIの識別・医療利用・エージェント安全性・企業向けモデル",
     "summary": "EUでのAI識別策、医療サービスの試験導入、エージェント間の脅威、企業向けモデルの発表を整理します。",
     "category": "AI NEWS",

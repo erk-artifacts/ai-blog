@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：対話型AIの新機能からAI向けPC、企業向けエージェントまで",
+    "summary": "各社がAIモデルや製品を更新する一方、サイバー攻撃でのAI利用は個別事案ごとの確認が難しいと専門家が指摘しています。",
+    "category": "AI NEWS",
+    "date": "2026.10.08",
+    "thumbnail": "",
+    "slug": "2026-10-08",
+    "generationId": "775b0d44-2291-4fda-832a-3f151952fa31",
+    "title_ko": "오늘의 AI 최전선：대화형 AI 신기능부터 AI용 PC, 기업용 에이전트까지",
+    "summary_ko": "각사가 AI 모델과 제품을 업데이트하는 한편, 전문가들은 사이버 공격에서의 AI 활용 여부를 개별 사례별로 확인하기 어렵다고 지적합니다.",
+    "title_en": "AI Frontier Today：From New Interactive AI Features to AI PCs and Enterprise Agents",
+    "summary_en": "As companies update AI models and products, experts say it is difficult to verify AI use in cyberattacks on a case-by-case basis.",
+    "title_zh-cn": "今日 AI 前沿：从对话式 AI 新功能到 AI PC、企业级智能体",
+    "summary_zh-cn": "各家公司更新 AI 模型和产品之际，专家指出，外界很难逐起确认网络攻击中是否使用了 AI。",
+    "title_zh-tw": "今日 AI 前沿：從對話式 AI 新功能、AI PC 到企業級代理",
+    "summary_zh-tw": "各家公司更新 AI 模型與產品之際，專家指出，難以逐一確認 AI 是否被用於個別網路攻擊事件。"
+  },
+  {
     "title": "今日のAI最前線：画像モデルの値下げからAI基盤投資まで、5つの動き",
     "summary": "Googleの画像モデル更新、Mistralの大型モデル公開、OpenAIの数学成果や透かし方針、Lambdaの資金調達報道を整理します。",
     "category": "AI NEWS",

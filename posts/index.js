@@ -1,6 +1,19 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI研究と運用をめぐる成果、リスク、社内の異議",
+    "summary": "AI利用の調査や酵素発見、脆弱性スキャンが報じられる一方、結果の限界や安全性をめぐる課題も示されています。",
+    "category": "AI NEWS",
+    "date": "2026.10.09",
+    "thumbnail": "",
+    "slug": "2026-10-09",
+    "generationId": "fa654282-3cb3-4cee-b722-64f495c80f4e",
+    "title_en": "AI Frontier Today：Developments, risks, and internal dissent in AI research and operations",
+    "summary_en": "Reports cover research into AI use, enzyme discovery, and vulnerability scanning, while also highlighting limits to the findings and challenges around safety.",
+    "title_ko": "오늘의 AI 최전선：AI 연구와 운영을 둘러싼 성과, 위험, 내부 이견",
+    "summary_ko": "AI 이용 조사와 효소 발견, 취약점 스캔이 보도되는 한편, 결과의 한계와 안전성 관련 과제도 제기되고 있습니다."
+  },
+  {
     "title": "今日のAI最前線：対話型AIの新機能からAI向けPC、企業向けエージェントまで",
     "summary": "各社がAIモデルや製品を更新する一方、サイバー攻撃でのAI利用は個別事案ごとの確認が難しいと専門家が指摘しています。",
     "category": "AI NEWS",

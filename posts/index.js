@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全対策、開発現場の課題と市場評価をめぐる動き",
+    "summary": "AIの評価環境や警察への誤情報、企業内の説明の食い違いが明らかに。コーディング支援の効果と新モデルの評価額にも注目が集まります。",
+    "category": "AI NEWS",
+    "date": "2026.10.10",
+    "thumbnail": "",
+    "slug": "2026-10-10",
+    "generationId": "b383dc79-c464-4de1-92d5-debbecefda04",
+    "title_en": "AI Frontier Today：AI Safety Measures, Challenges in Development, and Shifts in Market Valuations",
+    "summary_en": "Developments have emerged around AI evaluation environments, misinformation sent to police, and conflicting accounts within companies. The effectiveness of coding assistance and the valuation of a new model are also drawing attention.",
+    "title_ko": "오늘의 AI 최전선：AI 안전 대책, 개발 현장의 과제와 시장 평가를 둘러싼 움직임",
+    "summary_ko": "AI 평가 환경과 경찰에 전달된 허위 정보, 기업 내부 설명의 불일치가 드러났습니다. 코딩 지원의 효과와 신모델의 기업 가치에도 관심이 쏠립니다.",
+    "title_zh-tw": "今日 AI 前沿：AI安全措施、開發現場課題與市場評價的最新動態",
+    "summary_zh-tw": "AI評估環境、向警方傳送錯誤資訊，以及企業內部說法不一等情況浮上檯面。程式碼輔助工具的成效與新模型的估值也受到關注。"
+  },
+  {
     "title": "今日のAI最前線：AI研究と運用をめぐる成果、リスク、社内の異議",
     "summary": "AI利用の調査や酵素発見、脆弱性スキャンが報じられる一方、結果の限界や安全性をめぐる課題も示されています。",
     "category": "AI NEWS",

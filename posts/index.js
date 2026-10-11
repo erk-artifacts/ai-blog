@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全対策と信頼性を問う動き、配信や計算基盤にも影響",
+    "summary": "AIモデルの封じ込めや評価環境の制限が語られる一方、楽曲削除やデータセンター損傷も報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.11",
+    "thumbnail": "",
+    "slug": "2026-10-11",
+    "generationId": "8062b2f2-ce2f-4a95-b4d8-d1f7a4bc8cc7",
+    "title_en": "AI Frontier Today：Questions of AI Safety and Reliability Affect Streaming and Computing Infrastructure",
+    "summary_en": "As proposals to contain AI models and restrict evaluation environments emerge, reports also describe music takedowns and damage to a data center.",
+    "title_zh-cn": "今日 AI 前沿：围绕AI安全措施与可靠性的讨论，也影响内容分发和计算基础设施",
+    "summary_zh-cn": "在讨论如何遏制AI模型、限制评估环境的同时，也有报道称，音乐作品遭到删除，数据中心受损。",
+    "title_zh-tw": "今日 AI 前沿：AI安全措施與可靠性受到質疑，影響配信與運算基礎設施",
+    "summary_zh-tw": "一方面有關於封控AI模型及限制評估環境的討論，另一方面也傳出歌曲遭下架與資料中心受損。",
+    "title_ko": "오늘의 AI 최전선：AI 안전 대책과 신뢰성을 둘러싼 움직임, 스트리밍과 컴퓨팅 인프라에도 영향",
+    "summary_ko": "AI 모델의 격리와 평가 환경 제한이 논의되는 한편, 음원 삭제와 데이터센터 손상도 보도됐습니다."
+  },
+  {
     "title": "今日のAI最前線：AIの安全対策、開発現場の課題と市場評価をめぐる動き",
     "summary": "AIの評価環境や警察への誤情報、企業内の説明の食い違いが明らかに。コーディング支援の効果と新モデルの評価額にも注目が集まります。",
     "category": "AI NEWS",

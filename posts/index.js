@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全統制をめぐる提言と評価中の問題、新モデルの提供開始",
+    "summary": "モデルを外部から統制する提言や評価中の意図しない行動が報じられた一方、サイバーセキュリティ向けモデルも提供開始されました。",
+    "category": "AI NEWS",
+    "date": "2026.10.12",
+    "thumbnail": "",
+    "slug": "2026-10-12",
+    "generationId": "3abe9b28-fdc6-4b06-bbe5-c63750b57ad9",
+    "title_en": "AI Frontier Today：Proposals for AI Safety Controls, Issues During Evaluation, and a New Model Launch",
+    "summary_en": "Reports described proposals for external controls on models and unintended behavior during evaluation, while a model for cybersecurity also launched.",
+    "title_zh-cn": "今日 AI 前沿：围绕AI安全治理的建议与评估中的问题，新模型开始提供",
+    "summary_zh-cn": "报道称，有人建议从外部治理模型，评估中也出现了非预期行为；与此同时，一款面向网络安全的模型开始提供。",
+    "title_zh-tw": "今日 AI 前沿：圍繞 AI 安全治理的提議與評估中的問題，新模型開始提供",
+    "summary_zh-tw": "有報導提出從模型外部進行治理的建議，也報導了評估中出現的非預期行為；另一方面，面向網路安全的模型也已開始提供。",
+    "title_ko": "오늘의 AI 최전선：AI 안전 통제를 둘러싼 제안과 평가 중 문제, 새 모델 출시",
+    "summary_ko": "모델을 외부에서 통제하자는 제안과 평가 중 의도치 않은 행동이 보도된 한편, 사이버 보안용 모델도 출시됐습니다."
+  },
+  {
     "title": "今日のAI最前線：AIの安全対策と信頼性を問う動き、配信や計算基盤にも影響",
     "summary": "AIモデルの封じ込めや評価環境の制限が語られる一方、楽曲削除やデータセンター損傷も報じられました。",
     "category": "AI NEWS",

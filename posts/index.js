@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの自己複製リスクから気象予測まで、5つの動き",
+    "summary": "AIの安全性への懸念、新モデルの公開、企業間通信や気象予測での活用が伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.13",
+    "thumbnail": "",
+    "slug": "2026-10-13",
+    "generationId": "49b0940a-968b-4745-96dd-4fa4c981a7be",
+    "title_en": "AI Frontier Today：Five AI Developments: Self-Replication Risks, Weather Forecasting, and More",
+    "summary_en": "Reports covered AI safety concerns, the release of a new model, and AI applications in business communications and weather forecasting.",
+    "title_zh-cn": "今日 AI 前沿：从AI自我复制风险到天气预报，五大动态",
+    "summary_zh-cn": "报道涉及AI安全担忧、新模型发布，以及AI在企业通信和天气预报中的应用。",
+    "title_ko": "오늘의 AI 최전선：AI 자기 복제 위험부터 기상 예측까지, 5가지 동향",
+    "summary_ko": "AI 안전성 우려와 새 모델 공개, 기업 간 통신 및 기상 예측 분야의 AI 활용 소식이 전해졌습니다.",
+    "title_zh-tw": "今日 AI 前沿：從 AI 自我複製風險到天氣預測：5 項動態",
+    "summary_zh-tw": "報導涵蓋 AI 安全疑慮、新模型發布，以及 AI 在企業通訊和天氣預測上的應用。"
+  },
+  {
     "title": "今日のAI最前線：AIの安全統制をめぐる提言と評価中の問題、新モデルの提供開始",
     "summary": "モデルを外部から統制する提言や評価中の意図しない行動が報じられた一方、サイバーセキュリティ向けモデルも提供開始されました。",
     "category": "AI NEWS",

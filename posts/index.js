@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：アプリ開発から宇宙・職場まで、広がるAIの動き",
+    "summary": "Google Playの新機能、SpaceXの衛星構想、生成AIへの不安調査、OpenAI社内の録音装置をめぐる報道を整理します。",
+    "category": "AI NEWS",
+    "date": "2026.10.14",
+    "thumbnail": "",
+    "slug": "2026-10-14",
+    "generationId": "dd6994d9-81da-45ca-990d-66a33cec7fda",
+    "title_en": "AI Frontier Today：AI’s expanding reach, from app development to space and the workplace",
+    "summary_en": "A roundup of Google Play’s new features, SpaceX’s satellite plans, a survey on concerns about generative AI, and reports about a recording device at OpenAI’s office.",
+    "title_ko": "오늘의 AI 최전선：앱 개발부터 우주·직장까지, 확산되는 AI 동향",
+    "summary_ko": "Google Play의 새 기능, SpaceX의 위성 구상, 생성형 AI에 대한 우려 조사, OpenAI 사내 녹음 장치를 둘러싼 보도를 정리합니다.",
+    "title_zh-tw": "今日 AI 前沿：從應用程式開發到太空與職場，AI動態持續擴大",
+    "summary_zh-tw": "整理 Google Play 新功能、SpaceX 的衛星構想、生成式 AI 焦慮調查，以及 OpenAI 辦公室錄音裝置相關報導。"
+  },
+  {
     "title": "今日のAI最前線：AIの自己複製リスクから気象予測まで、5つの動き",
     "summary": "AIの安全性への懸念、新モデルの公開、企業間通信や気象予測での活用が伝えられました。",
     "category": "AI NEWS",

@@ -1,6 +1,19 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全責任、企業導入と業務利用の動き",
+    "summary": "OpenAIへの提訴のほか、Anthropicの導入状況、AI対応製品や半導体設計、採用面接での活用が伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.15",
+    "thumbnail": "",
+    "slug": "2026-10-15",
+    "generationId": "9f336a48-6c18-4e9a-be00-a9664d521052",
+    "title_en": "AI Frontier Today：AI Safety Responsibilities, Corporate Adoption, and Workplace Use",
+    "summary_en": "Reports covered a lawsuit against OpenAI, Anthropic’s adoption figures, AI-focused products and chip design, and the use of AI in job interviews.",
+    "title_ko": "오늘의 AI 최전선：AI 안전 책임, 기업 도입과 업무 활용 동향",
+    "summary_ko": "OpenAI 피소를 비롯해 Anthropic의 도입 현황, AI 대응 제품과 반도체 설계, 채용 면접에서의 활용이 전해졌습니다."
+  },
+  {
     "title": "今日のAI最前線：アプリ開発から宇宙・職場まで、広がるAIの動き",
     "summary": "Google Playの新機能、SpaceXの衛星構想、生成AIへの不安調査、OpenAI社内の録音装置をめぐる報道を整理します。",
     "category": "AI NEWS",

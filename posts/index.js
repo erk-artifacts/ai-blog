@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの独立評価から企業導入、日常向け製品まで新たな動き",
+    "summary": "AIの安全性評価やローカル実行モデル、ブラウザー連携、デバイス、企業向け導入支援の発表が相次いだ。",
+    "category": "AI NEWS",
+    "date": "2026.10.16",
+    "thumbnail": "",
+    "slug": "2026-10-16",
+    "generationId": "f2266f1d-673f-4cda-8dc6-8821c645aadf",
+    "title_en": "AI Frontier Today：New Developments in Independent AI Evaluations, Enterprise Adoption, and Everyday Products",
+    "summary_en": "Announcements included AI safety evaluations, locally run models, browser integration, devices, and support for enterprise AI adoption.",
+    "title_ko": "오늘의 AI 최전선：AI 독립 평가부터 기업 도입, 일상용 제품까지 새로운 움직임",
+    "summary_ko": "AI 안전성 평가, 로컬 실행 모델, 브라우저 연동, 기기, 기업용 도입 지원 프로그램 발표가 잇따랐다.",
+    "title_zh-cn": "今日 AI 前沿：从AI独立评估、企业部署到日常产品的新动向",
+    "summary_zh-cn": "AI安全评估、本地运行模型、浏览器集成、设备和企业部署支持等方面接连发布新消息。"
+  },
+  {
     "title": "今日のAI最前線：AIの安全責任、企業導入と業務利用の動き",
     "summary": "OpenAIへの提訴のほか、Anthropicの導入状況、AI対応製品や半導体設計、採用面接での活用が伝えられました。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの不正利用報告と、モデル評価・学習データをめぐる動き",
+    "summary": "AIエージェントの侵入やAI生成の違法コンテンツをめぐる報道の一方、新モデルとMetaの規約変更も注目されています。",
+    "category": "AI NEWS",
+    "date": "2026.10.17",
+    "thumbnail": "",
+    "slug": "2026-10-17",
+    "generationId": "4468c800-cf0b-4ab7-bcf2-382d324d1645",
+    "title_zh-tw": "今日 AI 前沿：AI遭不當利用的報導，以及模型評估與訓練資料的相關動向",
+    "summary_zh-tw": "在AI代理程式入侵與AI生成違法內容相關報導之外，新模型與Meta的條款變更也受到關注。",
+    "title_ko": "오늘의 AI 최전선：AI 악용 보도와 모델 평가·학습 데이터 관련 동향",
+    "summary_ko": "AI 에이전트 침입과 AI 생성 불법 콘텐츠를 둘러싼 보도가 나온 가운데, 신모델과 Meta의 약관 변경도 주목받고 있습니다.",
+    "title_zh-cn": "今日 AI 前沿：关于AI滥用报告，以及模型评估与训练数据的动向",
+    "summary_zh-cn": "关于AI代理入侵和AI生成违法内容的报道引发关注，与此同时，新模型和Meta条款变更也受到瞩目。",
+    "title_en": "AI Frontier Today：Reports of AI Misuse and Developments in Model Evaluation and Training Data",
+    "summary_en": "Reports of AI agent intrusions and AI-generated illegal content have drawn attention, alongside a new model and changes to Meta’s terms."
+  },
+  {
     "title": "今日のAI最前線：AIの独立評価から企業導入、日常向け製品まで新たな動き",
     "summary": "AIの安全性評価やローカル実行モデル、ブラウザー連携、デバイス、企業向け導入支援の発表が相次いだ。",
     "category": "AI NEWS",

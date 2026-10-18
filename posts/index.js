@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI利用をめぐる規約変更、サービス制限と安全対策",
+    "summary": "Metaの規約文言変更やAIエージェントのアクセス制限、安全上の懸念が報じられ、金融分野での導入例も紹介されています。",
+    "category": "AI NEWS",
+    "date": "2026.10.18",
+    "thumbnail": "",
+    "slug": "2026-10-18",
+    "generationId": "458bef8e-b72c-446f-b980-c8d50e731cd7",
+    "title_en": "AI Frontier Today：Policy Changes on AI Use, Service Restrictions, and Safety Measures",
+    "summary_en": "Reports cover changes to Meta’s policy wording, restrictions on AI agents’ access, and safety concerns, alongside an example of AI adoption in finance.",
+    "title_zh-tw": "今日 AI 前沿：AI 使用相關規約變更、服務限制與安全措施",
+    "summary_zh-tw": "Meta 修改規約措辭、AI 代理程式的存取限制及安全疑慮受到報導，亦介紹金融領域的導入案例。",
+    "title_zh-cn": "今日 AI 前沿：围绕AI使用的条款变更、服务限制与安全措施",
+    "summary_zh-cn": "据报道，Meta修改了条款措辞，AI代理访问受到限制，相关安全问题也引发关注；此外，文中还介绍了金融领域的应用案例。",
+    "title_ko": "오늘의 AI 최전선：AI 이용 약관 변경, 서비스 제한과 안전 대책",
+    "summary_ko": "Meta의 약관 문구 변경과 AI 에이전트 접근 제한, 안전 우려가 보도됐으며 금융 분야의 도입 사례도 소개됐습니다."
+  },
+  {
     "title": "今日のAI最前線：AIの不正利用報告と、モデル評価・学習データをめぐる動き",
     "summary": "AIエージェントの侵入やAI生成の違法コンテンツをめぐる報道の一方、新モデルとMetaの規約変更も注目されています。",
     "category": "AI NEWS",

@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：量子計算の実機実証から、AI企業の公益・安全対策や人材移動まで",
+    "summary": "量子計算の精度向上に関する実証のほか、AI企業の資金配分や監視、自動運転の設計、人材の動きが報じられた。",
+    "category": "AI NEWS",
+    "date": "2026.10.19",
+    "thumbnail": "",
+    "slug": "2026-10-19",
+    "generationId": "8f951196-59fe-4bcd-acc5-a26fe2978067",
+    "title_en": "AI Frontier Today：From a real-world quantum computing demonstration to AI companies’ public-benefit and safety measures, and workforce moves",
+    "summary_en": "Reports covered a demonstration of improved quantum computing accuracy, AI companies’ funding and oversight, autonomous-driving design, and workforce moves.",
+    "title_ko": "오늘의 AI 최전선：양자 컴퓨팅 실기기 실증부터 AI 기업의 공익·안전 대책과 인력 이동까지",
+    "summary_ko": "양자 컴퓨팅 정확도 향상 실증과 더불어 AI 기업의 자금 배분과 감독, 자율주행 설계, 인력 이동이 보도됐다.",
+    "title_zh-tw": "今日 AI 前沿：從量子計算實機驗證，到 AI 企業的公益、安全措施與人才流動",
+    "summary_zh-tw": "除了量子計算精度提升的實證，報導也涵蓋 AI 企業的資金配置與監督、自動駕駛設計，以及人才流動。"
+  },
+  {
     "title": "今日のAI最前線：AI利用をめぐる規約変更、サービス制限と安全対策",
     "summary": "Metaの規約文言変更やAIエージェントのアクセス制限、安全上の懸念が報じられ、金融分野での導入例も紹介されています。",
     "category": "AI NEWS",

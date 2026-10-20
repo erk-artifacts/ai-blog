@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI開発基盤の発表と、計算資源・安全管理を巡る動き",
+    "summary": "Amazonの開発ツール発表やAnthropicの契約協議報道に加え、AIの管理と規制を巡る議論が伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.20",
+    "thumbnail": "",
+    "slug": "2026-10-20",
+    "generationId": "a23dab67-0705-479e-b41b-225a39958ba8",
+    "title_en": "AI Frontier Today：AI Development Platform Announced Amid Moves on Computing Resources and Safety Oversight",
+    "summary_en": "Alongside Amazon’s developer tool announcement and reports of contract talks involving Anthropic, discussions continued over AI oversight and regulation.",
+    "title_ko": "오늘의 AI 최전선：AI 개발 기반 발표와 컴퓨팅 자원·안전 관리를 둘러싼 동향",
+    "summary_ko": "Amazon의 개발 도구 발표와 Anthropic의 계약 협의 보도에 더해, AI 관리와 규제를 둘러싼 논의가 전해졌습니다.",
+    "title_zh-tw": "今日 AI 前沿：AI 開發平台發布，以及圍繞運算資源與安全管理的動向",
+    "summary_zh-tw": "除了 Amazon 發布開發工具、Anthropic 合約協商的報導外，也傳出有關 AI 管理與監管的討論。",
+    "title_zh-cn": "今日 AI 前沿：AI开发平台发布，以及围绕算力资源与安全管理的动向",
+    "summary_zh-cn": "除亚马逊发布开发工具、Anthropic合同磋商的报道外，还有关于AI管理与监管的讨论。"
+  },
+  {
     "title": "今日のAI最前線：量子計算の実機実証から、AI企業の公益・安全対策や人材移動まで",
     "summary": "量子計算の精度向上に関する実証のほか、AI企業の資金配分や監視、自動運転の設計、人材の動きが報じられた。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIのコード移行能力、車載アシスタント、政策と計算資源をめぐる動き",
+    "summary": "モデル評価や車内AIの機能拡張が伝えられる一方、AI規制案と計算資源の確保も焦点になっています。",
+    "category": "AI NEWS",
+    "date": "2026.10.21",
+    "thumbnail": "",
+    "slug": "2026-10-21",
+    "generationId": "7b2ea45c-7915-4502-89d7-6f3afa032c2f",
+    "title_zh-cn": "今日 AI 前沿：围绕AI代码迁移能力、车载助手、政策与计算资源的动态",
+    "summary_zh-cn": "模型评测和车载AI功能扩展受到关注，AI监管提案与计算资源保障也成为焦点。",
+    "title_zh-tw": "今日 AI 前沿：AI程式碼遷移能力、車載助理、政策與運算資源相關動態",
+    "summary_zh-tw": "模型評估與車載 AI 功能擴充的消息陸續傳出，AI 監管提案及運算資源的取得也成為焦點。",
+    "title_ko": "오늘의 AI 최전선：AI의 코드 마이그레이션 역량, 차량용 어시스턴트, 정책과 컴퓨팅 자원을 둘러싼 동향",
+    "summary_ko": "모델 평가와 차량 내 AI 기능 확장이 전해지는 한편, AI 규제안과 컴퓨팅 자원 확보도 관심을 받고 있습니다.",
+    "title_en": "AI Frontier Today：Developments in AI Code Migration, In-Car Assistants, Policy, and Computing Resources",
+    "summary_en": "Reports highlight model evaluations and expanded in-car AI features, while proposed AI regulations and access to computing resources are also in focus."
+  },
+  {
     "title": "今日のAI最前線：AI開発基盤の発表と、計算資源・安全管理を巡る動き",
     "summary": "Amazonの開発ツール発表やAnthropicの契約協議報道に加え、AIの管理と規制を巡る議論が伝えられました。",
     "category": "AI NEWS",

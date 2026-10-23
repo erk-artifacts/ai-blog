@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIエージェントの日本展開から資金調達・研究・権利問題まで",
+    "summary": "MetaのAIエージェントが日本で提供開始。OpenAIの調達報道、Canvaの画像生成モデル、AIエージェント研究と学習データをめぐる懸念も伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.23",
+    "thumbnail": "",
+    "slug": "2026-10-23",
+    "generationId": "eff401cb-4e51-4327-8f40-551dfc27ccfd",
+    "title_zh-cn": "今日 AI 前沿：从AI智能体进军日本到融资、研究与权利问题",
+    "summary_zh-cn": "Meta的AI智能体开始在日本提供服务。还有报道称OpenAI正在筹集资金、Canva推出图像生成模型，以及AI智能体研究和训练数据相关的担忧。",
+    "title_ko": "오늘의 AI 최전선：AI 에이전트의 일본 진출부터 자금 조달·연구·권리 문제까지",
+    "summary_ko": "Meta의 AI 에이전트가 일본에서 서비스를 시작했습니다. OpenAI의 자금 조달 보도, Canva의 이미지 생성 모델, AI 에이전트 연구와 학습 데이터에 대한 우려도 전해졌습니다.",
+    "title_en": "AI Frontier Today：From Meta’s AI Agent Launch in Japan to Funding, Research, and Rights Issues",
+    "summary_en": "Meta’s AI agent is now available in Japan. Reports also covered OpenAI’s fundraising, Canva’s image-generation model, AI agent research, and concerns over training data.",
+    "title_zh-tw": "今日 AI 前沿：從 AI 代理人在日本推出，到募資、研究與權利問題",
+    "summary_zh-tw": "Meta 的 AI 代理人已在日本推出。另有報導指出 OpenAI 正籌備募資、Canva 推出圖像生成模型，以及 AI 代理人研究與訓練資料相關疑慮。"
+  },
+  {
     "title": "今日のAI最前線：AIのコード移行能力、車載アシスタント、政策と計算資源をめぐる動き",
     "summary": "モデル評価や車内AIの機能拡張が伝えられる一方、AI規制案と計算資源の確保も焦点になっています。",
     "category": "AI NEWS",

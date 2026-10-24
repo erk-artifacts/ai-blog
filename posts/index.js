@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの訓練環境と利用をめぐる安全・データ管理の動き",
+    "summary": "モデルの安全性評価や社内の情報管理、個人データとAI・広告の関係をめぐり、企業の対応が相次いでいます。",
+    "category": "AI NEWS",
+    "date": "2026.10.24",
+    "thumbnail": "",
+    "slug": "2026-10-24",
+    "generationId": "fb16dc58-f87d-4f3c-af7f-aa746d088e98",
+    "title_zh-cn": "今日 AI 前沿：围绕 AI 训练环境与使用的安全及数据管理动向",
+    "summary_zh-cn": "围绕模型安全评估、企业内部信息管理，以及个人数据与 AI、广告之间的关系，企业接连采取行动。",
+    "title_zh-tw": "今日 AI 前沿：AI訓練環境與使用相關的安全及資料管理動態",
+    "summary_zh-tw": "圍繞模型安全評估、企業內部資訊管理，以及個人資料與AI、廣告之間的關係，企業接連採取行動。",
+    "title_en": "AI Frontier Today：Developments in AI Training Environments, Use, Safety, and Data Management",
+    "summary_en": "Companies are taking a series of steps concerning model safety evaluations, internal information management, and the relationship between personal data, AI, and advertising.",
+    "title_ko": "오늘의 AI 최전선：AI 훈련 환경과 활용을 둘러싼 안전·데이터 관리 동향",
+    "summary_ko": "모델 안전성 평가와 사내 정보 관리, 개인정보와 AI·광고의 관계를 둘러싸고 기업들의 대응이 잇따르고 있습니다."
+  },
+  {
     "title": "今日のAI最前線：AIエージェントの日本展開から資金調達・研究・権利問題まで",
     "summary": "MetaのAIエージェントが日本で提供開始。OpenAIの調達報道、Canvaの画像生成モデル、AIエージェント研究と学習データをめぐる懸念も伝えられました。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI広告の表示義務やモデルの安全性評価、新たな音声AIの発表",
+    "summary": "州法によるAI広告表示の義務化や、モデルの安全性・政治的推薦傾向に関する報告が出ました。",
+    "category": "AI NEWS",
+    "date": "2026.10.25",
+    "thumbnail": "",
+    "slug": "2026-10-25",
+    "generationId": "c281d10f-24c1-4888-92f3-d0923b502859",
+    "title_en": "AI Frontier Today：AI Ad Labeling Requirements, Model Safety Assessments, and a New Voice AI Announced",
+    "summary_en": "Reports covered state requirements to label AI-generated ads, model safety and political recommendation tendencies, and a newly announced voice AI.",
+    "title_ko": "오늘의 AI 최전선：AI 광고 표시 의무와 모델 안전성 평가, 새로운 음성 AI 발표",
+    "summary_ko": "주법에 따른 AI 광고 표시 의무화와 모델의 안전성·정치적 추천 경향에 관한 보고가 나왔습니다.",
+    "title_zh-cn": "今日 AI 前沿：AI广告标注义务、模型安全评估与新语音AI发布",
+    "summary_zh-cn": "各州要求为AI广告添加标注的法律、有关模型安全性和政治推荐倾向的报告相继发布。",
+    "title_zh-tw": "今日 AI 前沿：AI 廣告標示義務、模型安全性評估與新語音 AI 發表",
+    "summary_zh-tw": "州法要求 AI 廣告加註標示；另有報告探討模型安全性與政治推薦傾向。"
+  },
+  {
     "title": "今日のAI最前線：AIの訓練環境と利用をめぐる安全・データ管理の動き",
     "summary": "モデルの安全性評価や社内の情報管理、個人データとAI・広告の関係をめぐり、企業の対応が相次いでいます。",
     "category": "AI NEWS",

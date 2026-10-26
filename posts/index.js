@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全対策、データ利用、コミュニティでの扱いをめぐる動き",
+    "summary": "学習環境の隔離方針や広告利用の例外規定、AIをめぐるコミュニティの規則など、異なる課題が示されました。",
+    "category": "AI NEWS",
+    "date": "2026.10.26",
+    "thumbnail": "",
+    "slug": "2026-10-26",
+    "generationId": "0347286a-585f-4f23-bc33-1bb6a11981f9",
+    "title_en": "AI Frontier Today：Developments in AI Safety Measures, Data Use, and Community Policies",
+    "summary_en": "Different challenges emerged, including policies to isolate training environments, exceptions for advertising use of data, and community rules concerning AI.",
+    "title_ko": "오늘의 AI 최전선：AI 안전 대책, 데이터 이용, 커뮤니티 내 취급을 둘러싼 움직임",
+    "summary_ko": "학습 환경 격리 방침과 광고 이용 예외 규정, AI 관련 커뮤니티 규칙 등 서로 다른 과제가 제기됐습니다.",
+    "title_zh-tw": "今日 AI 前沿：圍繞 AI 安全措施、資料使用及社群處置的動向",
+    "summary_zh-tw": "學習環境隔離方針、廣告用途的例外規定，以及社群對 AI 的規則等不同議題浮現。",
+    "title_zh-cn": "今日 AI 前沿：围绕AI安全措施、数据使用及社区规范的最新动态",
+    "summary_zh-cn": "学练环境隔离政策、广告用途的例外条款以及社区对AI的规则等，展现了不同方面的挑战。"
+  },
+  {
     "title": "今日のAI最前線：AI広告の表示義務やモデルの安全性評価、新たな音声AIの発表",
     "summary": "州法によるAI広告表示の義務化や、モデルの安全性・政治的推薦傾向に関する報告が出ました。",
     "category": "AI NEWS",

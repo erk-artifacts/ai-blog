@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIモデルの発表や安全性の報告、研究成果とデータセンターの課題",
+    "summary": "新モデルや研究、開発現場での利用例が紹介される一方、AIの挙動や電力確保の課題も報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.27",
+    "thumbnail": "",
+    "slug": "2026-10-27",
+    "generationId": "78914423-89d6-4d06-b4d5-8a2b26a0e707",
+    "title_zh-cn": "今日 AI 前沿：AI模型发布与安全报告、研究成果及数据中心挑战",
+    "summary_zh-cn": "新模型、研究成果和开发现场的应用案例受到介绍，同时也有报道关注AI的行为表现和电力保障方面的挑战。",
+    "title_en": "AI Frontier Today：AI Model Launches, Safety Reports, Research Results, and Data Center Challenges",
+    "summary_en": "New models, research, and examples of workplace use were featured, while reports also highlighted challenges involving AI behavior and securing power.",
+    "title_zh-tw": "今日 AI 前沿：AI 模型發表、安全性報告、研究成果與資料中心挑戰",
+    "summary_zh-tw": "報導介紹了新模型、研究成果及開發現場的應用案例，同時也提及 AI 行為與電力供應方面的挑戰。",
+    "title_ko": "오늘의 AI 최전선：AI 모델 발표와 안전성 보고, 연구 성과 및 데이터센터 과제",
+    "summary_ko": "새 모델과 연구, 개발 현장에서의 활용 사례가 소개되는 한편, AI의 행동과 전력 확보의 어려움도 보도됐습니다."
+  },
+  {
     "title": "今日のAI最前線：AIの安全対策、データ利用、コミュニティでの扱いをめぐる動き",
     "summary": "学習環境の隔離方針や広告利用の例外規定、AIをめぐるコミュニティの規則など、異なる課題が示されました。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI企業の上場準備と、医療・サイバー・企業統治を巡る課題",
+    "summary": "AnthropicのIPO準備が報じられる一方、AIの公開範囲や安全性、責任を巡る懸念も浮かんでいます。",
+    "category": "AI NEWS",
+    "date": "2026.10.28",
+    "thumbnail": "",
+    "slug": "2026-10-28",
+    "generationId": "4c91dfa7-54bb-44c5-a3aa-d84c5ce93d29",
+    "title_en": "AI Frontier Today：AI Companies Preparing to Go Public, and Challenges Around Healthcare, Cybersecurity, and Corporate Governance",
+    "summary_en": "As reports emerge that Anthropic is preparing for an IPO, concerns are also being raised about the scope of AI disclosures, safety, and accountability.",
+    "title_ko": "오늘의 AI 최전선：AI 기업의 상장 준비와 의료·사이버 보안·기업 지배구조를 둘러싼 과제",
+    "summary_ko": "Anthropic의 IPO 준비가 보도되는 한편, AI의 공개 범위와 안전성, 책임을 둘러싼 우려도 제기되고 있습니다.",
+    "title_zh-cn": "今日 AI 前沿：AI企业的上市准备，以及医疗、网络安全与企业治理面临的挑战",
+    "summary_zh-cn": "有报道称，Anthropic正为IPO做准备；与此同时，围绕AI公开范围、安全性和责任归属的担忧也在浮现。",
+    "title_zh-tw": "今日 AI 前沿：AI企業的上市準備，以及醫療、網路安全與企業治理課題",
+    "summary_zh-tw": "Anthropic準備IPO的消息傳出之際，AI公開範圍、安全性與責任歸屬等疑慮也逐漸浮現。"
+  },
+  {
     "title": "今日のAI最前線：AIモデルの発表や安全性の報告、研究成果とデータセンターの課題",
     "summary": "新モデルや研究、開発現場での利用例が紹介される一方、AIの挙動や電力確保の課題も報じられました。",
     "category": "AI NEWS",

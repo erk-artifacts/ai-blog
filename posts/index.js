@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの説得力と業務自動化、広がる導入と検証の動き",
+    "summary": "購買を促す対話型AIの研究や、企業でのAIエージェント導入計画が報じられた。安全性や実際の効果は個別に見極めが必要だ。",
+    "category": "AI NEWS",
+    "date": "2026.10.29",
+    "thumbnail": "",
+    "slug": "2026-10-29",
+    "generationId": "2720d817-834d-415a-a889-cded08c116c2",
+    "title_en": "AI Frontier Today：AI Persuasion and Business Automation: Adoption and Scrutiny on the Rise",
+    "summary_en": "Reports covered research into conversational AI that encourages purchases and corporate plans to introduce AI agents. Safety and real-world effectiveness need to be assessed on a case-by-case basis.",
+    "title_zh-tw": "今日 AI 前沿：AI的說服力與業務自動化：導入與驗證趨勢擴大",
+    "summary_zh-tw": "研究報導指出，對話式 AI 會促進消費者購買；企業導入 AI 代理人的計畫也受到關注。安全性與實際成效仍須個別評估。",
+    "title_zh-cn": "今日 AI 前沿：AI说服力与业务自动化：应用扩大与验证动向",
+    "summary_zh-cn": "有报道称，研究探讨了促使消费者购买的对话式 AI，企业也计划引入 AI 代理。安全性和实际效果仍需分别审慎评估。",
+    "title_ko": "오늘의 AI 최전선：AI의 설득력과 업무 자동화, 확산되는 도입과 검증 움직임",
+    "summary_ko": "구매를 유도하는 대화형 AI에 관한 연구와 기업의 AI 에이전트 도입 계획이 보도됐다. 안전성과 실제 효과는 각각 따져볼 필요가 있다."
+  },
+  {
     "title": "今日のAI最前線：AI企業の上場準備と、医療・サイバー・企業統治を巡る課題",
     "summary": "AnthropicのIPO準備が報じられる一方、AIの公開範囲や安全性、責任を巡る懸念も浮かんでいます。",
     "category": "AI NEWS",

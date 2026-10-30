@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：採用実験からクラウド投資、AI事業の拡張まで",
+    "summary": "AI面接の研究成果や、クラウド・自動車・家庭向けサービスでの企業の動きが伝えられています。",
+    "category": "AI NEWS",
+    "date": "2026.10.30",
+    "thumbnail": "",
+    "slug": "2026-10-30",
+    "generationId": "120ea05a-f411-4bec-bbf7-061c7ea09be1",
+    "title_en": "AI Frontier Today：From Hiring Experiments to Cloud Investment and AI Business Expansion",
+    "summary_en": "Reports cover research findings on AI interviews and corporate moves in cloud computing, automotive, and home services.",
+    "title_ko": "오늘의 AI 최전선：채용 실험부터 클라우드 투자, AI 사업 확장까지",
+    "summary_ko": "AI 면접 연구 결과와 클라우드·자동차·가정용 서비스 분야에서 기업들이 보이는 움직임을 전합니다.",
+    "title_zh-cn": "今日 AI 前沿：从招聘实验到云计算投资，再到AI业务扩张",
+    "summary_zh-cn": "报道介绍了AI面试的研究成果，以及企业在云计算、汽车和家庭服务领域的动向。"
+  },
+  {
     "title": "今日のAI最前線：AIの説得力と業務自動化、広がる導入と検証の動き",
     "summary": "購買を促す対話型AIの研究や、企業でのAIエージェント導入計画が報じられた。安全性や実際の効果は個別に見極めが必要だ。",
     "category": "AI NEWS",

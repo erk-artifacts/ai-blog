@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：中国でのAI機能展開やスクレイピング規格、衛星上のAI実験などに動き",
+    "summary": "Appleの中国向け提供計画、AIスクレイピング拒否の新標準、衛星上でのAI応答実験などが報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.10.31",
+    "thumbnail": "",
+    "slug": "2026-10-31",
+    "generationId": "15f1ddc5-ad53-4398-8593-796efea10ee0",
+    "title_zh-cn": "今日 AI 前沿：中国AI功能上线计划、拒绝AI抓取新标准及卫星AI实验等动态",
+    "summary_zh-cn": "报道称，苹果计划在中国提供相关服务，四家AI公司将采用拒绝AI抓取的新标准，谷歌则宣布卫星上的AI模型已对提示作出响应。",
+    "title_en": "AI Frontier Today：Developments in AI feature rollout in China, anti-scraping standards, and satellite-based AI experiments",
+    "summary_en": "Reports covered Apple’s plans for China, a new standard for refusing AI scraping, and an experiment in which an AI responded to a prompt from a satellite.",
+    "title_ko": "오늘의 AI 최전선：中国のAI機能提供計画、スクレイピング拒否標準、衛星上のAI実験などに動き",
+    "summary_ko": "Appleの中国向け提供計画、AIスクレイピング拒否の新標準、衛星上でのAI応答実験などが報じられました。",
+    "title_zh-tw": "今日 AI 前沿：中國在AI功能推出、爬取規範與衛星AI實驗等方面出現新進展",
+    "summary_zh-tw": "據報導，Apple計畫在中國推出相關服務、四家公司將採用拒絕AI爬取的新標準，Google也宣布在衛星上成功進行AI回應實驗。"
+  },
+  {
     "title": "今日のAI最前線：採用実験からクラウド投資、AI事業の拡張まで",
     "summary": "AI面接の研究成果や、クラウド・自動車・家庭向けサービスでの企業の動きが伝えられています。",
     "category": "AI NEWS",

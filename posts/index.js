@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI学習の共通設定案から、企業資金や安全性をめぐる動きまで",
+    "summary": "AI学習利用の共通設定案、Apple Intelligenceの中国展開、訴訟・拡張機能の安全性、OpenAIの資金調達報道を紹介します。",
+    "category": "AI NEWS",
+    "date": "2026.11.01",
+    "thumbnail": "",
+    "slug": "2026-11-01",
+    "generationId": "66c70d5e-edb5-4fdd-9a60-a470a77fa4e4",
+    "title_en": "AI Frontier Today：From a proposed common setting for AI training to developments around corporate funding and safety",
+    "summary_en": "A proposed common setting for AI training use, Apple Intelligence’s China rollout, litigation and extension security, and reports on OpenAI’s fundraising.",
+    "title_ko": "오늘의 AI 최전선：AI学習の共通設定案から、企業資金や安全性をめぐる動きまで",
+    "summary_ko": "AI学習利用の共通設定案、Apple Intelligenceの中国展開、訴訟・拡張機能の安全性、OpenAIの資金調達報道を紹介します。",
+    "title_zh-cn": "今日 AI 前沿：从AI训练通用设置提案到企业融资与安全性相关动态",
+    "summary_zh-cn": "介绍AI训练用途通用设置提案、Apple Intelligence在中国推出、诉讼与扩展功能安全性，以及有关OpenAI融资的报道。"
+  },
+  {
     "title": "今日のAI最前線：中国でのAI機能展開やスクレイピング規格、衛星上のAI実験などに動き",
     "summary": "Appleの中国向け提供計画、AIスクレイピング拒否の新標準、衛星上でのAI応答実験などが報じられました。",
     "category": "AI NEWS",

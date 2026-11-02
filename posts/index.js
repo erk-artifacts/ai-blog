@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIを巡る訴訟、企業の製品方針と現場の対策",
+    "summary": "xAIの環境訴訟が継続へ。AppleのCEO発言や、建設現場の生成AI対策、OpenAIの施設呼称変更の可能性も報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.02",
+    "thumbnail": "",
+    "slug": "2026-11-02",
+    "generationId": "3d543c01-92cb-4c99-bb62-6a683a146a16",
+    "title_en": "AI Frontier Today：Lawsuits over AI, corporate product policies, and on-the-ground measures",
+    "summary_en": "The xAI environmental lawsuit will proceed. Reports also covered remarks by Apple’s CEO, measures to address generative AI risks at construction sites, and a possible change to the name of OpenAI’s facilities.",
+    "title_ko": "오늘의 AI 최전선：AI 관련 소송, 기업의 제품 방침과 현장의 대응",
+    "summary_ko": "xAI의 환경 소송이 계속 진행됩니다. Apple CEO의 발언과 건설 현장의 생성형 AI 대응, OpenAI의 시설 명칭 변경 가능성도 보도됐습니다.",
+    "title_zh-cn": "今日 AI 前沿：围绕AI的诉讼、企业产品方针与一线应对措施",
+    "summary_zh-cn": "xAI环境诉讼将继续审理。报道称，Apple CEO谈及公司产品方针，建筑工地正在采取生成式AI应对措施，OpenAI也可能更改设施称谓。",
+    "title_zh-tw": "今日 AI 前沿：圍繞 AI 的訴訟、企業產品方針與第一線因應措施",
+    "summary_zh-tw": "xAI環境訴訟將繼續審理。另有報導指出，Apple執行長談及產品方針、建築工地因應生成式 AI 的措施，以及 OpenAI 可能更改設施名稱。"
+  },
+  {
     "title": "今日のAI最前線：AI学習の共通設定案から、企業資金や安全性をめぐる動きまで",
     "summary": "AI学習利用の共通設定案、Apple Intelligenceの中国展開、訴訟・拡張機能の安全性、OpenAIの資金調達報道を紹介します。",
     "category": "AI NEWS",

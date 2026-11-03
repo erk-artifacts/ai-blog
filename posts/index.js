@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：自己改善型AIへの警告から電力・安全対策まで、AIを支える技術とインフラの動き",
+    "summary": "Anthropicの能力進展への警告に加え、AI企業の資金・インフラ投資や電力融通、脆弱性報奨金の施策が明らかになりました。",
+    "category": "AI NEWS",
+    "date": "2026.11.03",
+    "thumbnail": "",
+    "slug": "2026-11-03",
+    "generationId": "e518fdbd-c8f7-41fe-8343-4c4ed69abf15",
+    "title_zh-cn": "今日 AI 前沿：从对自我改进型AI的警告到电力与安全措施：支撑AI的技术和基础设施动态",
+    "summary_zh-cn": "除了Anthropic对能力进展发出警告外，AI企业的资金与基础设施投资、电力调度以及漏洞赏金措施也相继披露。",
+    "title_zh-tw": "今日 AI 前沿：從對 AI 自我改進能力的警告，到電力與安全措施：支撐 AI 的技術與基礎設施動態",
+    "summary_zh-tw": "除了 Anthropic 對能力進展發出警告，AI 公司的融資與基礎設施投資、電力調度，以及漏洞獎勵措施也陸續揭曉。",
+    "title_en": "AI Frontier Today：From Warnings About Self-Improving AI to Power and Safety Measures: Technology and Infrastructure Supporting AI",
+    "summary_en": "Alongside Anthropic’s warning about advances in AI capabilities, developments emerged in AI companies’ funding and infrastructure investments, power sharing, and vulnerability bounty programs.",
+    "title_ko": "오늘의 AI 최전선：자기 개선형 AI에 대한 경고부터 전력·안전 대책까지, AI를 뒷받침하는 기술과 인프라 동향",
+    "summary_ko": "Anthropic이 AI 역량 발전에 대한 경고를 내놓은 데 이어, AI 기업의 자금·인프라 투자와 전력 지원, 취약점 포상 제도가 알려졌습니다."
+  },
+  {
     "title": "今日のAI最前線：AIを巡る訴訟、企業の製品方針と現場の対策",
     "summary": "xAIの環境訴訟が継続へ。AppleのCEO発言や、建設現場の生成AI対策、OpenAIの施設呼称変更の可能性も報じられました。",
     "category": "AI NEWS",

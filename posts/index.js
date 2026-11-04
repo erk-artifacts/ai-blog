@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI応答の出所検証とMOD投稿時のAI利用申告",
+    "summary": "Anthropicは応答のモデル由来を確認する仕組みに取り組み、Nexus Modsは新規MODでAI利用の申告を必須にします。",
+    "category": "AI NEWS",
+    "date": "2026.11.04",
+    "thumbnail": "",
+    "slug": "2026-11-04",
+    "generationId": "c4d3fc11-c35e-46e4-99f5-7b4120b966b4",
+    "title_en": "AI Frontier Today：Verifying the Origin of AI Responses and Requiring AI Use Disclosures for MOD Uploads",
+    "summary_en": "Anthropic is working on a way to verify which model produced a response, while Nexus Mods will require disclosures about AI use for new MODs.",
+    "title_zh-cn": "今日 AI 前沿：AI响应来源验证与发布MOD时申报AI使用情况",
+    "summary_zh-cn": "Anthropic正致力于开发验证响应是否源自特定模型的机制，Nexus Mods则将要求新MOD发布者申报是否使用了AI。",
+    "title_ko": "오늘의 AI 최전선：AI 응답의 출처 검증과 MOD 게시 시 AI 사용 공개",
+    "summary_ko": "Anthropic은 응답이 어떤 모델에서 생성됐는지 확인하는 방법을 개발하고 있으며, Nexus Mods는 신규 MOD에서 AI 사용 여부를 공개하도록 의무화합니다.",
+    "title_zh-tw": "今日 AI 前沿：驗證 AI 回應來源與 MOD 投稿時申報 AI 使用情況",
+    "summary_zh-tw": "Anthropic 正著手開發確認回應是否來自指定模型的機制；Nexus Mods 則將要求新 MOD 投稿者申報是否在製作過程中使用 AI。"
+  },
+  {
     "title": "今日のAI最前線：自己改善型AIへの警告から電力・安全対策まで、AIを支える技術とインフラの動き",
     "summary": "Anthropicの能力進展への警告に加え、AI企業の資金・インフラ投資や電力融通、脆弱性報奨金の施策が明らかになりました。",
     "category": "AI NEWS",

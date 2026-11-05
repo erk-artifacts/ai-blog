@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：画像生成、データセンター、家庭用セキュリティーでAI活用の動き",
+    "summary": "画像生成AIの機能拡張やAIデータセンター事業の売上見通しが示された一方、企業のAI支出や政治活動にも注目が集まっています。",
+    "category": "AI NEWS",
+    "date": "2026.11.05",
+    "thumbnail": "",
+    "slug": "2026-11-05",
+    "generationId": "5e78a1ba-db21-4316-9e3a-b500d8be65e8",
+    "title_en": "AI Frontier Today：AI advances in image generation, data centers, and home security",
+    "summary_en": "OpenAI announced expanded image-generation features, while Qualcomm outlined data center revenue targets. Corporate AI spending and political activity also drew attention.",
+    "title_zh-cn": "今日 AI 前沿：图像生成、数据中心与家庭安防领域的AI应用动向",
+    "summary_zh-cn": "图像生成AI功能扩展和AI数据中心业务的营收预期相继公布，企业AI支出与政治活动也受到关注。",
+    "title_ko": "오늘의 AI 최전선：이미지 생성, 데이터센터, 가정용 보안 분야의 AI 활용 동향",
+    "summary_ko": "이미지 생성 AI 기능 확장과 AI 데이터센터 사업의 매출 전망이 제시된 한편, 기업의 AI 지출과 정치 활동에도 관심이 쏠리고 있습니다.",
+    "title_zh-tw": "今日 AI 前沿：圖像生成、資料中心與家庭安全領域的 AI 應用動向",
+    "summary_zh-tw": "圖像生成 AI 功能擴充及 AI 資料中心業務的營收展望出爐之際，企業 AI 支出與政治活動也受到關注。"
+  },
+  {
     "title": "今日のAI最前線：AI応答の出所検証とMOD投稿時のAI利用申告",
     "summary": "Anthropicは応答のモデル由来を確認する仕組みに取り組み、Nexus Modsは新規MODでAI利用の申告を必須にします。",
     "category": "AI NEWS",

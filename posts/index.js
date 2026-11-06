@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：データセンターへの住民投票と、広がるAIエージェントの動き",
+    "summary": "米国ではAIデータセンターへの規制を求める投票が相次ぐ一方、企業は旅行・業務向けエージェントを発表しています。",
+    "category": "AI NEWS",
+    "date": "2026.11.06",
+    "thumbnail": "",
+    "slug": "2026-11-06",
+    "generationId": "f3f48773-5666-4d4d-bb52-45135e157688",
+    "title_en": "AI Frontier Today：Referendums on Data Centers and the Expanding Reach of AI Agents",
+    "summary_en": "In the United States, votes calling for restrictions on AI data centers are taking place across the country, while companies are announcing agents for travel and work.",
+    "title_zh-cn": "今日 AI 前沿：围绕数据中心的居民投票，以及不断扩展的 AI 智能体动向",
+    "summary_zh-cn": "美国接连举行要求监管 AI 数据中心的投票，与此同时，企业发布了面向旅行和工作的智能体。",
+    "title_zh-tw": "今日 AI 前沿：圍繞資料中心的公投，以及日益擴大的 AI 代理動向",
+    "summary_zh-tw": "美國接連出現要求管制 AI 資料中心的公投，與此同時，企業也宣布推出面向旅遊與工作的代理。",
+    "title_ko": "오늘의 AI 최전선：데이터센터 주민투표와 확산되는 AI 에이전트 움직임",
+    "summary_ko": "미국에서는 AI 데이터센터 규제를 요구하는 투표가 잇따르는 한편, 기업들은 여행·업무용 에이전트를 발표하고 있습니다."
+  },
+  {
     "title": "今日のAI最前線：画像生成、データセンター、家庭用セキュリティーでAI活用の動き",
     "summary": "画像生成AIの機能拡張やAIデータセンター事業の売上見通しが示された一方、企業のAI支出や政治活動にも注目が集まっています。",
     "category": "AI NEWS",

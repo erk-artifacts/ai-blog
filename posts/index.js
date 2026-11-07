@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全対策、データセンター開発、資金調達をめぐる動き",
+    "summary": "オラクルのAIリスク対策やArtexサーバーの露出に加え、Googleによるデータセンター案件取得、OpenAIの資金調達報道、Metaの新機能が伝えられた。",
+    "category": "AI NEWS",
+    "date": "2026.11.07",
+    "thumbnail": "",
+    "slug": "2026-11-07",
+    "generationId": "e1434c7c-57b9-474f-89bb-bd7359592fc9",
+    "title_ko": "오늘의 AI 최전선：AI 안전 대책, 데이터센터 개발, 자금 조달을 둘러싼 동향",
+    "summary_ko": "오라클의 AI 위험 대응과 Artex 서버 노출에 더해, Google의 데이터센터 프로젝트 인수, OpenAI의 자금 조달 보도, Meta의 새 기능이 전해졌다.",
+    "title_en": "AI Frontier Today：Developments in AI Safety, Data Center Projects, and Fundraising",
+    "summary_en": "Reports covered Oracle’s efforts to address AI risks and the exposure of Artex servers, as well as Google’s acquisition of a data center project, OpenAI fundraising, and a new Meta feature.",
+    "title_zh-tw": "今日 AI 前沿：AI安全措施、資料中心開發與募資動態",
+    "summary_zh-tw": "除Oracle的AI風險對策與Artex伺服器曝露事件外，也傳出Google收購資料中心專案、OpenAI募資消息，以及Meta推出新功能。",
+    "title_zh-cn": "今日 AI 前沿：围绕AI安全措施、数据中心开发与融资的动态",
+    "summary_zh-cn": "除甲骨文应对AI风险的措施和Artex服务器暴露事件外，还有报道称Google收购数据中心项目、OpenAI融资以及Meta推出新功能。"
+  },
+  {
     "title": "今日のAI最前線：データセンターへの住民投票と、広がるAIエージェントの動き",
     "summary": "米国ではAIデータセンターへの規制を求める投票が相次ぐ一方、企業は旅行・業務向けエージェントを発表しています。",
     "category": "AI NEWS",

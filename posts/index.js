@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI開発の加速、巨額調達、半導体審査やデータ利用の課題",
+    "summary": "AI開発の進展や資金調達が報じられる一方、半導体の審査、ツールの露出、学習データの扱いも焦点です。",
+    "category": "AI NEWS",
+    "date": "2026.11.08",
+    "thumbnail": "",
+    "slug": "2026-11-08",
+    "generationId": "a713b592-b671-4ef5-85ac-747004a8c8f0",
+    "title_en": "AI Frontier Today：Accelerating AI Development, Major Fundraising, and Challenges in Chip Reviews and Data Use",
+    "summary_en": "Reports highlight advances in AI development and fundraising, while scrutiny of chip buyers, exposed tools, and the handling of training data also remains in focus.",
+    "title_zh-cn": "今日 AI 前沿：AI开发提速、巨额融资、芯片审查与数据使用问题",
+    "summary_zh-cn": "AI开发进展和融资消息受到报道的同时，芯片审查、工具暴露以及训练数据的处理方式也成为焦点。",
+    "title_zh-tw": "今日 AI 前沿：AI 開發加速、巨額融資、半導體審查與資料使用課題",
+    "summary_zh-tw": "在 AI 開發進展與融資消息受到報導之際，半導體審查、工具曝露以及訓練資料的處理方式也成為焦點。",
+    "title_ko": "오늘의 AI 최전선：AI 개발 가속, 대규모 자금 조달, 반도체 심사와 데이터 이용 과제",
+    "summary_ko": "AI 개발 진전과 자금 조달이 보도되는 한편, 반도체 심사, 도구 노출, 학습 데이터 취급도 주목받고 있습니다."
+  },
+  {
     "title": "今日のAI最前線：AIの安全対策、データセンター開発、資金調達をめぐる動き",
     "summary": "オラクルのAIリスク対策やArtexサーバーの露出に加え、Googleによるデータセンター案件取得、OpenAIの資金調達報道、Metaの新機能が伝えられた。",
     "category": "AI NEWS",

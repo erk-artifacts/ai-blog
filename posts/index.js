@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：画像生成の知財保護、Siriの機能拡張、AI音楽の権利問題",
+    "summary": "生成AIの安全策や著作権を検証する動きと、業務・製品での活用、企業経営を巡る報道が並んだ。",
+    "category": "AI NEWS",
+    "date": "2026.11.09",
+    "thumbnail": "",
+    "slug": "2026-11-09",
+    "generationId": "997b3076-eee3-4fec-bbba-ff23aa84ebf4",
+    "title_en": "AI Frontier Today：Intellectual Property Protection for Image Generation, Expanded Siri Features, and Rights Issues in AI Music",
+    "summary_en": "Reports covered efforts to assess generative AI safeguards and copyright, its use in business and products, and corporate governance.",
+    "title_ko": "오늘의 AI 최전선：이미지 생성 지식재산권 보호, Siri 기능 확장, AI 음악 권리 문제",
+    "summary_ko": "생성형 AI의 안전장치와 저작권을 검증하는 움직임, 업무·제품에서의 활용, 기업 경영을 둘러싼 보도가 이어졌다.",
+    "title_zh-tw": "今日 AI 前沿：影像生成的智慧財產保護、Siri功能擴充與AI音樂的權利問題",
+    "summary_zh-tw": "報導涵蓋檢視生成式AI安全措施與著作權的動向、AI在業務和產品中的應用，以及企業經營相關議題。"
+  },
+  {
     "title": "今日のAI最前線：AI開発の加速、巨額調達、半導体審査やデータ利用の課題",
     "summary": "AI開発の進展や資金調達が報じられる一方、半導体の審査、ツールの露出、学習データの扱いも焦点です。",
     "category": "AI NEWS",

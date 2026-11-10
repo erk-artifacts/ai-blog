@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：未成年者保護の拡大、AI企業のIPO報道と安全保障上の調査",
+    "summary": "Instagramの年齢推定による保護機能の適用拡大に加え、AnthropicのIPO計画やAI関連企業をめぐる報道が伝えられた。",
+    "category": "AI NEWS",
+    "date": "2026.11.10",
+    "thumbnail": "",
+    "slug": "2026-11-10",
+    "generationId": "b0198d20-bd9d-475d-b921-4032f5eeb3ba",
+    "title_en": "AI Frontier Today：Expanded Protections for Minors, Reports on AI Company IPOs and National Security Investigations",
+    "summary_en": "Meta is expanding the use of Instagram’s age-estimation technology to apply protections, while reports also covered Anthropic’s IPO plans and investigations involving AI-related companies.",
+    "title_ko": "오늘의 AI 최전선：미성년자 보호 확대, AI 기업의 IPO 보도와 안보 관련 조사",
+    "summary_ko": "Instagram의 연령 추정에 따른 보호 기능 적용 확대와 함께 Anthropic의 IPO 계획, AI 관련 기업을 둘러싼 보도가 전해졌다.",
+    "title_zh-tw": "今日 AI 前沿：擴大未成年人保護措施、AI企業IPO報導與國安調查",
+    "summary_zh-tw": "除了Instagram擴大適用年齡推估保護功能外，也有報導指出Anthropic正推進IPO計畫，並關注與AI相關企業的安全調查。"
+  },
+  {
     "title": "今日のAI最前線：画像生成の知財保護、Siriの機能拡張、AI音楽の権利問題",
     "summary": "生成AIの安全策や著作権を検証する動きと、業務・製品での活用、企業経営を巡る報道が並んだ。",
     "category": "AI NEWS",

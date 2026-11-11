@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI規制と安全性の動き、製品発表や企業買収も",
+    "summary": "ニューヨーク州のAI規制案やアプリのアクセス問題の報告に加え、製品発表、買収、研究動向の分析が伝えられた。",
+    "category": "AI NEWS",
+    "date": "2026.11.11",
+    "thumbnail": "",
+    "slug": "2026-11-11",
+    "generationId": "9625745c-5ae9-4ff4-9213-ac87b35a09f0",
+    "title_en": "AI Frontier Today：AI Regulation and Safety Developments, Alongside Product Announcements and Acquisitions",
+    "summary_en": "Reports covered New York State’s proposed AI regulations and an app access issue, as well as product announcements, an acquisition, and an analysis of research trends.",
+    "title_zh-cn": "今日 AI 前沿：AI监管与安全动态、产品发布及企业收购",
+    "summary_zh-cn": "除纽约州AI监管提案和应用访问问题的报道外，还有产品发布、企业收购及研究趋势分析等消息。",
+    "title_zh-tw": "今日 AI 前沿：AI監管與安全動態、產品發布及企業收購",
+    "summary_zh-tw": "報導涵蓋紐約州AI監管提案與應用程式存取問題，也分析了產品發布、企業收購及研究動向。",
+    "title_ko": "오늘의 AI 최전선：AI 규제와 안전성 동향, 제품 발표와 기업 인수도",
+    "summary_ko": "뉴욕주의 AI 규제안과 앱 접근 문제에 관한 보고와 함께 제품 발표, 인수, 연구 동향 분석이 전해졌다."
+  },
+  {
     "title": "今日のAI最前線：未成年者保護の拡大、AI企業のIPO報道と安全保障上の調査",
     "summary": "Instagramの年齢推定による保護機能の適用拡大に加え、AnthropicのIPO計画やAI関連企業をめぐる報道が伝えられた。",
     "category": "AI NEWS",

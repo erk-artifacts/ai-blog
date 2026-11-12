@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI研究、航空会社の利用制限、開発ツールで広がる論点",
+    "summary": "細胞別のDNA変異予測モデルやAWSのローカル再現ツールが発表される一方、AIエージェントの利用制限や企業報道も注目されます。",
+    "category": "AI NEWS",
+    "date": "2026.11.12",
+    "thumbnail": "",
+    "slug": "2026-11-12",
+    "generationId": "ee2cd764-7f47-4a6e-a777-84588e765b90",
+    "title_en": "AI Frontier Today：Key Issues in AI Research, Airline Restrictions, and Development Tools",
+    "summary_en": "New developments include a cell-specific DNA variant prediction model and an AWS local emulation tool, while restrictions on AI agents and corporate news also draw attention.",
+    "title_zh-tw": "今日 AI 前沿：AI研究、航空公司使用限制與開發工具引發的議題",
+    "summary_zh-tw": "細胞別DNA變異預測模型與AWS本機模擬工具相繼發布之際，AI代理程式使用限制及企業相關報導也受到關注。",
+    "title_ko": "오늘의 AI 최전선：AI 연구, 항공사 이용 제한, 개발 도구를 둘러싼 쟁점",
+    "summary_ko": "세포별 DNA 변이 예측 모델과 AWS 로컬 재현 도구가 발표되는 한편, AI 에이전트 이용 제한과 기업 관련 보도도 주목받고 있습니다.",
+    "title_zh-cn": "今日 AI 前沿：AI研究、航空公司使用限制与开发工具引发的广泛议题",
+    "summary_zh-cn": "细胞特异性DNA变异预测模型和AWS本地模拟工具相继发布，与此同时，AI代理使用限制及企业相关报道也受到关注。"
+  },
+  {
     "title": "今日のAI最前線：AI規制と安全性の動き、製品発表や企業買収も",
     "summary": "ニューヨーク州のAI規制案やアプリのアクセス問題の報告に加え、製品発表、買収、研究動向の分析が伝えられた。",
     "category": "AI NEWS",

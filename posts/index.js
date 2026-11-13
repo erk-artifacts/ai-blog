@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：企業のAI安全対策から航空管制・新モデルまで、導入の動き広がる",
+    "summary": "社内AIの情報流出可能性が明らかになる一方、ロボット研究や航空管制支援、新モデルの提供も進んでいます。",
+    "category": "AI NEWS",
+    "date": "2026.11.13",
+    "thumbnail": "",
+    "slug": "2026-11-13",
+    "generationId": "3077e2b3-f439-4c9d-b6f7-e84f762f5ac9",
+    "title_en": "AI Frontier Today：AI adoption expands from corporate safety measures to air traffic control and new models",
+    "summary_en": "As the possibility of information leaks through workplace AI comes to light, robotics research, air traffic control support, and the rollout of new models are also moving forward.",
+    "title_zh-cn": "今日 AI 前沿：从企业AI安全措施到航空管制和新模型，应用步伐不断扩大",
+    "summary_zh-cn": "在企业内部AI可能发生信息泄露的情况浮出水面的同时，机器人研究、航空管制辅助以及新模型的推出也在推进。",
+    "title_zh-tw": "今日 AI 前沿：從企業 AI 安全措施到航空管制與新模型，導入趨勢擴大",
+    "summary_zh-tw": "企業內部 AI 的資訊外流可能性浮現之際，機器人研究、航空管制支援及新模型的推出也持續推進。",
+    "title_ko": "오늘의 AI 최전선：기업의 AI 안전 대책부터 항공 관제·신모델까지, 도입 움직임 확산",
+    "summary_ko": "사내 AI에서 정보가 유출됐을 가능성이 드러난 가운데, 로봇 연구와 항공 관제 지원, 신모델 제공도 진행되고 있습니다."
+  },
+  {
     "title": "今日のAI最前線：AI研究、航空会社の利用制限、開発ツールで広がる論点",
     "summary": "細胞別のDNA変異予測モデルやAWSのローカル再現ツールが発表される一方、AIエージェントの利用制限や企業報道も注目されます。",
     "category": "AI NEWS",

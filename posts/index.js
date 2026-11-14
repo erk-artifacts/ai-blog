@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIエージェントの決済機能や航空管制への活用、企業・規制をめぐる動き",
+    "summary": "購入を行うAIエージェントや航空管制支援の拡大が発表され、企業評価や輸出規制、映像技術の実証も報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.14",
+    "thumbnail": "",
+    "slug": "2026-11-14",
+    "generationId": "376272f4-7e4d-41b1-8095-9ab3099fc2b5",
+    "title_en": "AI Frontier Today：AI Agents’ Payment Features, Use in Air Traffic Control, and Developments Involving Companies and Regulation",
+    "summary_en": "The expansion of AI agents that make purchases and AI support for air traffic control was announced, alongside reports on company valuations, export controls, and a demonstration of imaging technology.",
+    "title_ko": "오늘의 AI 최전선：AI 에이전트 결제 기능과 항공 교통 관제 활용, 기업·규제를 둘러싼 움직임",
+    "summary_ko": "구매를 수행하는 AI 에이전트와 항공 교통 관제 지원의 확대가 발표됐고, 기업 가치 평가와 수출 규제, 영상 기술 실증도 보도됐습니다.",
+    "title_zh-tw": "今日 AI 前沿：AI代理人的支付功能、航空管制應用，以及企業與監管動態",
+    "summary_zh-tw": "報導指出，可代為購物的 AI 代理人與航空管制支援應用正在擴大；此外也有企業估值、出口管制及影像技術實證相關消息。",
+    "title_zh-cn": "今日 AI 前沿：AI智能体支付功能、航空管制应用及企业与监管动态",
+    "summary_zh-cn": "有消息宣布，能够代为购物的AI智能体和航空管制辅助工具将扩大应用；此外，企业估值、出口管制以及视频技术验证也受到报道。"
+  },
+  {
     "title": "今日のAI最前線：企業のAI安全対策から航空管制・新モデルまで、導入の動き広がる",
     "summary": "社内AIの情報流出可能性が明らかになる一方、ロボット研究や航空管制支援、新モデルの提供も進んでいます。",
     "category": "AI NEWS",

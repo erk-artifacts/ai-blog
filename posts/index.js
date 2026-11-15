@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIエージェントの決済、航空管制への助言、企業をめぐる動き",
+    "summary": "購入ごとに承認を求めるAIウォレットが発表され、FAAは航空交通管理へのAI助言を全米に拡大。NVIDIAをめぐる署名活動や投資家の懸念も報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.15",
+    "thumbnail": "",
+    "slug": "2026-11-15",
+    "generationId": "9f6a393b-b7b9-4fb0-b67c-9f0c312b695d",
+    "title_ko": "오늘의 AI 최전선：AI 에이전트 결제, 항공 관제 자문, 기업을 둘러싼 움직임",
+    "summary_ko": "구매할 때마다 승인을 요청하는 AI 지갑이 발표됐고, FAA는 항공 교통 관리에 활용되는 AI 자문을 전국으로 확대했습니다. NVIDIA를 둘러싼 서명 운동과 투자자들의 우려도 보도됐습니다.",
+    "title_en": "AI Frontier Today：AI Agent Payments, Advice for Air Traffic Control, and Corporate Developments",
+    "summary_en": "A wallet that asks for approval before each purchase was announced, and the FAA reportedly expanded AI advice for air traffic management nationwide. A petition involving NVIDIA and investor concerns were also reported.",
+    "title_zh-tw": "今日 AI 前沿：AI 代理人支付、航空管制建議與企業動態",
+    "summary_zh-tw": "有消息宣布推出每筆購買都須取得核准的 AI 錢包；FAA 據報將 AI 對航空交通管理的建議擴大至全美。報導也提及要求黃仁勳復出的連署活動，以及投資人的疑慮。",
+    "title_zh-cn": "今日 AI 前沿：AI代理的支付、为航空管制提供建议及企业动态",
+    "summary_zh-cn": "一款要求每次购买都获得批准的AI钱包已发布；据报道，FAA已将用于航空交通管理的AI建议扩展至全美。有关NVIDIA的请愿活动和投资者的担忧也受到报道。"
+  },
+  {
     "title": "今日のAI最前線：AIエージェントの決済機能や航空管制への活用、企業・規制をめぐる動き",
     "summary": "購入を行うAIエージェントや航空管制支援の拡大が発表され、企業評価や輸出規制、映像技術の実証も報じられました。",
     "category": "AI NEWS",

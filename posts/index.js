@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：医療AIの評価研究から物理学支援、半導体資金調達まで",
+    "summary": "Appleは健康相談AIへの利用者評価を調査。フリーランスのAI利用や物理研究支援、AIセンサー企業の資金調達も伝えられた。",
+    "category": "AI NEWS",
+    "date": "2026.11.16",
+    "thumbnail": "",
+    "slug": "2026-11-16",
+    "generationId": "a028f53e-325a-4dfc-8b09-969004033657",
+    "title_en": "AI Frontier Today：From Medical AI Evaluation and Physics Research Support to Semiconductor Funding",
+    "summary_en": "Apple is studying users’ evaluations of AI health advice. Reports also covered AI use by freelancers, support for physics research, and funding for an AI sensor company.",
+    "title_zh-cn": "今日 AI 前沿：从医疗AI评估研究到物理学辅助、半导体融资",
+    "summary_zh-cn": "苹果正在调查用户对健康咨询AI的评价。另有报道称，研究涉及自由职业者使用AI和AI辅助物理研究，AI传感器企业也获得了融资。",
+    "title_zh-tw": "今日 AI 前沿：從醫療 AI 評估研究到物理學研究支援與半導體募資",
+    "summary_zh-tw": "Apple調查使用者對健康諮詢 AI 的評價。另有報導探討自由工作者使用 AI、AI 協助物理研究，以及 AI 感測器企業募資。",
+    "title_ko": "오늘의 AI 최전선：의료 AI 평가 연구부터 물리학 연구 지원, 반도체 자금 조달까지",
+    "summary_ko": "Apple은 건강 상담 AI에 대한 이용자 평가를 조사한다. 프리랜서의 AI 활용과 물리학 연구 지원, AI 센서 기업의 자금 조달 소식도 전해졌다."
+  },
+  {
     "title": "今日のAI最前線：AIエージェントの決済、航空管制への助言、企業をめぐる動き",
     "summary": "購入ごとに承認を求めるAIウォレットが発表され、FAAは航空交通管理へのAI助言を全米に拡大。NVIDIAをめぐる署名活動や投資家の懸念も報じられました。",
     "category": "AI NEWS",

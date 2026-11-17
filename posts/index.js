@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの計算資源と安全をめぐる規制・研究の動き",
+    "summary": "米国の輸出規制やAIサービスの安全対策、量子計算の実証など、AIをめぐる制度と技術の動きが報告されました。",
+    "category": "AI NEWS",
+    "date": "2026.11.17",
+    "thumbnail": "",
+    "slug": "2026-11-17",
+    "generationId": "7a59dbc1-db8f-4103-b2e2-aa6c714b1f37",
+    "title_en": "AI Frontier Today：Regulatory and Research Developments in AI Computing Resources and Safety",
+    "summary_en": "Developments in AI policy and technology were reported, including U.S. export controls, safety measures for AI services, and a quantum computing demonstration.",
+    "title_zh-tw": "今日 AI 前沿：AI運算資源與安全相關的監管及研究動態",
+    "summary_zh-tw": "報導涵蓋美國出口管制、AI服務安全措施，以及量子計算實證等AI制度與技術動態。",
+    "title_ko": "오늘의 AI 최전선：AI 컴퓨팅 자원과 안전을 둘러싼 규제·연구 동향",
+    "summary_ko": "미국의 수출 규제와 AI 서비스의 안전 대책, 양자 컴퓨팅 실증 등 AI를 둘러싼 제도와 기술의 움직임이 보고되었습니다.",
+    "title_zh-cn": "今日 AI 前沿：围绕 AI 计算资源与安全的监管和研究进展",
+    "summary_zh-cn": "报告介绍了围绕 AI 的制度与技术进展，包括美国出口管制、AI 服务安全措施以及量子计算实验。"
+  },
+  {
     "title": "今日のAI最前線：医療AIの評価研究から物理学支援、半導体資金調達まで",
     "summary": "Appleは健康相談AIへの利用者評価を調査。フリーランスのAI利用や物理研究支援、AIセンサー企業の資金調達も伝えられた。",
     "category": "AI NEWS",

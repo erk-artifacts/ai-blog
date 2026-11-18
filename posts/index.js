@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：CopilotへのOffice統合、NVIDIA決算とAIをめぐる発言・動画",
+    "summary": "Microsoftの製品統合、NVIDIAの決算と経営体制、AGIや意識に関する発言、AI生成動画が取り上げられた。",
+    "category": "AI NEWS",
+    "date": "2026.11.18",
+    "thumbnail": "",
+    "slug": "2026-11-18",
+    "generationId": "9b2bfade-c87a-4488-bcbe-cae5f875368c",
+    "title_en": "AI Frontier Today：Office Integration into Copilot, NVIDIA Earnings, and Statements and Videos About AI",
+    "summary_en": "Microsoft product integration, NVIDIA’s earnings and leadership, remarks about AGI and consciousness, and AI-generated videos were covered.",
+    "title_ko": "오늘의 AI 최전선：Copilot과 Office의 통합, NVIDIA 실적과 AI 관련 발언·동영상",
+    "summary_ko": "Microsoft의 제품 통합, NVIDIA의 실적과 경영진 구성, AGI와 의식에 관한 발언, AI 생성 동영상이 다뤄졌다.",
+    "title_zh-tw": "今日 AI 前沿：Copilot整合Office、NVIDIA財報與AI相關言論及影片",
+    "summary_zh-tw": "報導涵蓋Microsoft的產品整合、NVIDIA的財報與管理層動態、關於AGI及意識的言論，以及AI生成影片。",
+    "title_zh-cn": "今日 AI 前沿：Copilot整合Office、NVIDIA财报及围绕AI的言论与视频",
+    "summary_zh-cn": "内容涉及Microsoft的产品整合、NVIDIA的财报与管理层安排、关于AGI和意识的言论，以及AI生成视频。"
+  },
+  {
     "title": "今日のAI最前線：AIの計算資源と安全をめぐる規制・研究の動き",
     "summary": "米国の輸出規制やAIサービスの安全対策、量子計算の実証など、AIをめぐる制度と技術の動きが報告されました。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI専用小型PCの発表と、AIサービスをめぐる信頼・運用上の課題",
+    "summary": "AI処理をうたう小型PCが発表される一方、仲介APIの安全性や学校での検索機能の扱いなども報じられた。",
+    "category": "AI NEWS",
+    "date": "2026.11.19",
+    "thumbnail": "",
+    "slug": "2026-11-19",
+    "generationId": "25bc4244-233b-42c8-90c6-537a742b2639",
+    "title_en": "AI Frontier Today：Announcement of a Compact PC Dedicated to AI, and Trust and Operational Challenges Surrounding AI Services",
+    "summary_en": "A compact PC touting AI processing capabilities was announced, while reports also highlighted the security of intermediary APIs and how schools are handling search features.",
+    "title_zh-cn": "今日 AI 前沿：AI专用小型电脑发布，以及围绕AI服务的信任与运营挑战",
+    "summary_zh-cn": "一款主打AI处理能力的小型电脑发布之际，关于中介API的安全性以及学校如何使用搜索功能等问题也受到报道。",
+    "title_zh-tw": "今日 AI 前沿：AI專用小型電腦發表，以及AI服務面臨的信任與營運挑戰",
+    "summary_zh-tw": "主打AI運算的小型電腦正式發表之際，AI中介API的安全性，以及學校如何處理搜尋功能等議題也受到報導。",
+    "title_ko": "오늘의 AI 최전선：AI 전용 소형 PC 발표와 AI 서비스의 신뢰·운영상 과제",
+    "summary_ko": "AI 처리를 내세운 소형 PC가 발표된 한편, 중개 API의 안전성과 학교에서 검색 기능을 어떻게 다룰지 등에 관한 소식도 전해졌다."
+  },
+  {
     "title": "今日のAI最前線：CopilotへのOffice統合、NVIDIA決算とAIをめぐる発言・動画",
     "summary": "Microsoftの製品統合、NVIDIAの決算と経営体制、AGIや意識に関する発言、AI生成動画が取り上げられた。",
     "category": "AI NEWS",

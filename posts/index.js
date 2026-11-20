@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI計算基盤の構想から、上場・製品開発・安全性の課題まで",
+    "summary": "衛星上のAIデータセンター計画やAnthropicの上場が進む一方、AIエージェント開発や誤検知をめぐる動きも伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.20",
+    "thumbnail": "",
+    "slug": "2026-11-20",
+    "generationId": "dc6b3038-0aaa-49a7-857d-f557fd334fbc",
+    "title_en": "AI Frontier Today：From AI computing infrastructure plans to challenges in listings, product development, and safety",
+    "summary_en": "Plans for an AI data center in satellite orbit and Anthropic’s public listing moved forward, while developments involving AI agent development and false alarms were also reported.",
+    "title_ko": "오늘의 AI 최전선：AI 컴퓨팅 인프라 구상부터 상장·제품 개발·안전성 과제까지",
+    "summary_ko": "위성 궤도상 AI 데이터센터 계획과 Anthropic의 상장이 추진되는 가운데, AI 에이전트 개발과 오탐을 둘러싼 동향도 전해졌습니다.",
+    "title_zh-cn": "今日 AI 前沿：从AI计算基础设施构想，到上市、产品开发与安全挑战",
+    "summary_zh-cn": "卫星轨道AI数据中心计划和Anthropic上市取得进展之际，AI智能体开发及误报问题也受到关注。"
+  },
+  {
     "title": "今日のAI最前線：AI専用小型PCの発表と、AIサービスをめぐる信頼・運用上の課題",
     "summary": "AI処理をうたう小型PCが発表される一方、仲介APIの安全性や学校での検索機能の扱いなども報じられた。",
     "category": "AI NEWS",

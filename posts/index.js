@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの能力評価と、情報保護をめぐる対策・サービスの動き",
+    "summary": "AIの能力評価に関する報告のほか、情報漏えい対策や業務エージェントの提供開始が伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.21",
+    "thumbnail": "",
+    "slug": "2026-11-21",
+    "generationId": "6df37f2b-a4b9-42ee-9eb1-5dc5eccac3e9",
+    "title_en": "AI Frontier Today：AI Capability Assessments and Developments in Information Protection Measures and Services",
+    "summary_en": "Reports covered assessments of AI capabilities, measures to prevent information leaks, and the launch of a business AI agent.",
+    "title_ko": "오늘의 AI 최전선：AI 역량 평가와 정보 보호를 둘러싼 대응 및 서비스 동향",
+    "summary_ko": "AI 역량 평가에 관한 보고와 함께 정보 유출 방지 대책 및 업무 에이전트 출시 소식이 전해졌습니다.",
+    "title_zh-cn": "今日 AI 前沿：AI能力评估，以及信息保护措施与服务动态",
+    "summary_zh-cn": "除了有关AI能力评估的报告，还有消息称，防止信息泄露的措施和面向业务的智能体已开始提供。",
+    "title_zh-tw": "今日 AI 前沿：AI能力評估，以及資訊保護措施與服務的動向",
+    "summary_zh-tw": "除了有關AI能力評估的報告，也有資訊外洩防範措施及業務代理服務開始提供的消息。"
+  },
+  {
     "title": "今日のAI最前線：AI計算基盤の構想から、上場・製品開発・安全性の課題まで",
     "summary": "衛星上のAIデータセンター計画やAnthropicの上場が進む一方、AIエージェント開発や誤検知をめぐる動きも伝えられました。",
     "category": "AI NEWS",

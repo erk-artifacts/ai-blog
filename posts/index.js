@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの証明主張から安全対策、国際ルールの議論まで",
+    "summary": "数学上の重大な証明主張には検証状況の食い違いがあり、AIの情報保護や軍事利用をめぐる課題も浮かびました。",
+    "category": "AI NEWS",
+    "date": "2026.11.22",
+    "thumbnail": "",
+    "slug": "2026-11-22",
+    "generationId": "fd968c3d-5366-45fc-915a-835f2a025d15",
+    "title_en": "AI Frontier Today：From AI Proof Claims to Safety Measures and Debates on International Rules",
+    "summary_en": "Reports differ on the verification status of a major mathematical proof claim, while challenges involving AI data privacy and military use have also emerged.",
+    "title_ko": "오늘의 AI 최전선：AI의 증명 주장부터 안전 대책, 국제 규칙 논의까지",
+    "summary_ko": "수학의 중대한 증명 주장을 둘러싸고 검증 상황에 대한 보도가 엇갈렸으며, AI의 정보 보호와 군사적 이용을 둘러싼 과제도 드러났습니다.",
+    "title_zh-tw": "今日 AI 前沿：從 AI 的證明主張到安全措施、國際規則的討論",
+    "summary_zh-tw": "關於重大數學證明的主張，驗證狀況的報導彼此矛盾；此外，AI 的資訊保護與軍事用途也浮現相關課題。",
+    "title_zh-cn": "今日 AI 前沿：从AI证明主张到安全措施与国际规则讨论",
+    "summary_zh-cn": "关于重大数学证明的主张，其验证情况在报道中存在分歧；围绕AI信息保护和军事用途的挑战也浮现出来。"
+  },
+  {
     "title": "今日のAI最前線：AIの能力評価と、情報保護をめぐる対策・サービスの動き",
     "summary": "AIの能力評価に関する報告のほか、情報漏えい対策や業務エージェントの提供開始が伝えられました。",
     "category": "AI NEWS",

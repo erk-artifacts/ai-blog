@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの評価基準から軍事規制まで、開発と統制をめぐる議論",
+    "summary": "共通の評価指標や兵器規制の協議、数学研究でのAI活用など、AIの能力と管理に関する話題が並びました。",
+    "category": "AI NEWS",
+    "date": "2026.11.23",
+    "thumbnail": "",
+    "slug": "2026-11-23",
+    "generationId": "67b3b0cf-60ec-4aaa-b7c1-5aa2e06a66b0",
+    "title_en": "AI Frontier Today：Debates on AI Development and Governance, from Evaluation Standards to Military Regulation",
+    "summary_en": "Topics included common evaluation metrics, negotiations on weapons regulation, and the use of AI in mathematical research, highlighting questions about AI capabilities and oversight.",
+    "title_ko": "오늘의 AI 최전선：AI 평가 기준부터 군사 규제까지, 개발과 통제를 둘러싼 논의",
+    "summary_ko": "공통 평가 지표와 무기 규제 협의, 수학 연구에서의 AI 활용 등 AI의 역량과 관리에 관한 여러 주제가 다뤄졌습니다.",
+    "title_zh-tw": "今日 AI 前沿：從 AI 評估標準到軍事管制，圍繞開發與管控的討論",
+    "summary_zh-tw": "共同評估指標、武器管制協商，以及 AI 在數學研究中的應用等話題，呈現了關於 AI 能力與管理的討論。"
+  },
+  {
     "title": "今日のAI最前線：AIの証明主張から安全対策、国際ルールの議論まで",
     "summary": "数学上の重大な証明主張には検証状況の食い違いがあり、AIの情報保護や軍事利用をめぐる課題も浮かびました。",
     "category": "AI NEWS",

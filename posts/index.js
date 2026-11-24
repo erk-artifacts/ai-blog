@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AIの安全性を巡る訴訟と、企業・セキュリティ分野の大きな動き",
+    "summary": "Grokを巡る訴訟のほか、NVIDIAのCEO復帰やセキュリティ企業の買収計画、Linux向け保護環境が伝えられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.24",
+    "thumbnail": "",
+    "slug": "2026-11-24",
+    "generationId": "2a4c3076-33be-4e6b-b083-11c243160caf",
+    "title_en": "AI Frontier Today：Lawsuits Over AI Safety and Major Developments in Business and Security",
+    "summary_en": "Alongside lawsuits involving Grok, reports covered NVIDIA’s CEO returning to the role, a security company’s acquisition plan, and a protective environment for Linux.",
+    "title_ko": "오늘의 AI 최전선：AI 안전성을 둘러싼 소송과 기업·보안 분야의 주요 움직임",
+    "summary_ko": "Grok 관련 소송과 함께 NVIDIA CEO의 복귀, 보안 기업의 인수 계획, Linux용 보호 환경이 전해졌습니다.",
+    "title_zh-tw": "今日 AI 前沿：圍繞 AI 安全性的訴訟，以及企業與資安領域的重大動向",
+    "summary_zh-tw": "除圍繞 Grok 的訴訟外，消息還包括 NVIDIA 執行長復職、資安企業收購計畫，以及面向 Linux 的防護環境。",
+    "title_zh-cn": "今日 AI 前沿：围绕AI安全的诉讼，以及企业与安全领域的重大动向",
+    "summary_zh-cn": "除围绕Grok的诉讼外，还有NVIDIA CEO复职、安全企业收购计划，以及面向Linux的保护环境等消息。"
+  },
+  {
     "title": "今日のAI最前線：AIの評価基準から軍事規制まで、開発と統制をめぐる議論",
     "summary": "共通の評価指標や兵器規制の協議、数学研究でのAI活用など、AIの能力と管理に関する話題が並びました。",
     "category": "AI NEWS",

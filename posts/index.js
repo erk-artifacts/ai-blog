@@ -1,6 +1,21 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：利用者データの保護から宇宙・企業向けAIまで、広がるAIの課題と活用",
+    "summary": "チャット履歴の売却問題やAI衛星の認可、企業向け支援サービスなど、AIをめぐる動きが安全性と活用の両面で伝えられています。",
+    "category": "AI NEWS",
+    "date": "2026.11.26",
+    "thumbnail": "",
+    "slug": "2026-11-26",
+    "generationId": "3415e93f-5a9b-48ee-981f-8cc2b9eb37fc",
+    "title_en": "AI Frontier Today：AI’s Expanding Challenges and Uses, from Protecting User Data to Space and Enterprise Applications",
+    "summary_en": "Developments involving the sale of chat histories, authorization for AI satellites, and enterprise support services highlight both the safety challenges and practical uses of AI.",
+    "title_ko": "오늘의 AI 최전선：이용자 데이터 보호부터 우주·기업용 AI까지, 확산하는 AI의 과제와 활용",
+    "summary_ko": "채팅 기록 매각 문제와 AI 위성 승인, 기업 대상 지원 서비스 등 AI를 둘러싼 움직임이 안전성과 활용 양면에서 전해지고 있습니다.",
+    "title_zh-cn": "今日 AI 前沿：从保护用户数据到太空与企业AI，AI面临的挑战与应用不断扩展",
+    "summary_zh-cn": "围绕聊天记录出售问题、AI卫星获批以及企业支持服务等动态，AI在安全保障和实际应用两方面的发展受到关注。"
+  },
+  {
     "title": "今日のAI最前線：AIの安全性を巡る訴訟と、企業・セキュリティ分野の大きな動き",
     "summary": "Grokを巡る訴訟のほか、NVIDIAのCEO復帰やセキュリティ企業の買収計画、Linux向け保護環境が伝えられました。",
     "category": "AI NEWS",

@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：宇宙のAI計算基盤構想から、データ保護や現場支援まで",
+    "summary": "衛星配備計画、ユーザーデータの保護をめぐる動き、AIの業務・アクセシビリティ活用が報じられました。",
+    "category": "AI NEWS",
+    "date": "2026.11.27",
+    "thumbnail": "",
+    "slug": "2026-11-27",
+    "generationId": "645bb7b8-4a57-4a64-ac44-9f966424d507",
+    "title_zh-cn": "今日 AI 前沿：从太空AI计算基础设施构想，到数据保护与一线支持等",
+    "summary_zh-cn": "报道涉及卫星部署计划、用户数据保护相关动向，以及AI在业务和无障碍支持方面的应用。",
+    "title_en": "AI Frontier Today：From Plans for an AI Computing Infrastructure in Space to Data Protection and Workplace Support",
+    "summary_en": "Reports covered a satellite deployment plan, efforts to protect user data, and the use of AI in business operations and accessibility.",
+    "title_ko": "오늘의 AI 최전선：우주 AI 컴퓨팅 기반 구상부터 데이터 보호와 현장 지원까지",
+    "summary_ko": "위성 배치 계획, 사용자 데이터 보호를 둘러싼 움직임, AI의 업무 및 접근성 활용이 보도됐습니다.",
+    "title_zh-tw": "今日 AI 前沿：從太空 AI 計算基礎設施構想，到資料保護與現場支援",
+    "summary_zh-tw": "報導涵蓋衛星部署計畫、保護使用者資料的相關行動，以及 AI 在業務與無障礙支援上的應用。"
+  },
+  {
     "title": "今日のAI最前線：利用者データの保護から宇宙・企業向けAIまで、広がるAIの課題と活用",
     "summary": "チャット履歴の売却問題やAI衛星の認可、企業向け支援サービスなど、AIをめぐる動きが安全性と活用の両面で伝えられています。",
     "category": "AI NEWS",

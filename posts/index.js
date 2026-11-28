@@ -1,6 +1,23 @@
 // 記事メタデータ（本文は posts/{lang}/{slug}.md に分離）
 const posts = [
   {
+    "title": "今日のAI最前線：AI機能の発表から企業投資・運用課題まで、広がる影響を追う",
+    "summary": "AIでカスタムウィジェットを作る機能の発表や、AI需要を見込む設備投資、OSS保守と個人情報保護をめぐる課題を紹介します。",
+    "category": "AI NEWS",
+    "date": "2026.11.28",
+    "thumbnail": "",
+    "slug": "2026-11-28",
+    "generationId": "81dddd46-6021-4838-b785-33f889366ba2",
+    "title_en": "AI Frontier Today：Tracking AI’s expanding impact, from feature announcements to corporate investment and operational challenges",
+    "summary_en": "This digest covers an AI-powered custom widget creation feature, capital investment anticipating AI demand, and challenges involving OSS maintenance and personal data protection.",
+    "title_zh-cn": "今日 AI 前沿：从AI功能发布到企业投资与运营挑战，追踪不断扩大的影响",
+    "summary_zh-cn": "介绍利用AI创建自定义小组件的功能发布、着眼于AI需求的设备投资，以及OSS维护和个人信息保护方面的挑战。",
+    "title_ko": "오늘의 AI 최전선：AI 기능 발표부터 기업 투자·운영 과제까지, 확산되는 영향 살펴보기",
+    "summary_ko": "AI로 맞춤 위젯을 만드는 기능 발표와 AI 수요를 겨냥한 설비 투자, OSS 유지·보수 및 개인정보 보호를 둘러싼 과제를 소개합니다.",
+    "title_zh-tw": "今日 AI 前沿：從 AI 功能發布到企業投資與營運挑戰，追蹤影響持續擴大",
+    "summary_zh-tw": "介紹以 AI 建立自訂小工具的新功能、因應 AI 需求的設備投資，以及 OSS 維護與個人資訊保護所面臨的挑戰。"
+  },
+  {
     "title": "今日のAI最前線：宇宙のAI計算基盤構想から、データ保護や現場支援まで",
     "summary": "衛星配備計画、ユーザーデータの保護をめぐる動き、AIの業務・アクセシビリティ活用が報じられました。",
     "category": "AI NEWS",
